@@ -1,0 +1,33 @@
+id: terminal-bench-science-0.1
+name: Terminal-Bench-Science 0.1
+version: "0.1"
+family_id: terminal-bench
+aliases: []
+tags:
+  - agentic
+categories:
+  - science
+  - terminal-use
+domains:
+  agentic: 0.4
+  software-code: 0.1
+  reasoning: 0.5
+  knowledge-information: 0
+  communication-professional: 0
+holdout: public
+chance_level: 0
+transform:
+  type: accuracy
+  input_scale: percent
+n_items: 70
+obs_type: count
+default_k: 3
+harness_url: https://www.terminal-bench-science.ai/announcement
+source_ids:
+  - terminal-bench-science
+status: shadow
+metadata_sources:
+  - https://www.terminal-bench-science.ai/announcement
+notes: 70 scientific workflows; three trials per task. Published native agent
+  runs remain source evidence pending a common-harness, effort-pinned
+  evaluation.

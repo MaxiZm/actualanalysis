@@ -1,0 +1,18 @@
+id: apodex-1-1
+name: Apodex 1.1
+organization: Apodex
+family: Apodex
+release_date: 2026-08-30
+open_weights: false
+license: Proprietary
+aliases:
+  - Apodex 1.1
+  - apodex-1-1
+reasoning: true
+context_length: 256000
+modality: multimodal
+source_url: https://arxiv.org/abs/2608.23283
+metadata_sources:
+  - https://arxiv.org/abs/2608.23283
+  - https://artificialanalysis.ai/models/apodex-1-1
+status: active

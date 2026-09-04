@@ -1,0 +1,33 @@
+id: healthbench-professional
+name: HealthBench Professional
+version: 2026-length-adjusted
+family_id: healthbench-professional
+aliases: []
+tags:
+  - chat
+categories:
+  - professional-tasks
+  - knowledge
+domains:
+  agentic: 0
+  software-code: 0
+  reasoning: 0.2
+  knowledge-information: 0.3
+  communication-professional: 0.5
+holdout: public
+chance_level: 0
+transform:
+  type: accuracy
+  input_scale: percent
+n_items: 525
+obs_type: judge
+default_k: 1
+harness_url: https://cdn.openai.com/dd128428-0184-4e25-b155-3a7686c7d744/HealthBench-Professional.pdf
+source_ids:
+  - vendor-model-cards
+status: watchlist
+metadata_sources:
+  - https://cdn.openai.com/dd128428-0184-4e25-b155-3a7686c7d744/HealthBench-Professional.pdf
+notes: Physician-authored clinical chats, length-adjusted rubric score. Excluded
+  from fitting until compatible per-run uncertainty and a pinned grader are
+  reported.

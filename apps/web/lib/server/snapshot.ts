@@ -6,18 +6,24 @@ import { parse } from "yaml";
 
 import {
   FIXTURE_SITE_DATA,
+  compareIndexRank,
   type IndexKind,
   type SiteData,
 } from "../data";
-import {
-  mapCommittedSnapshot,
-  type PublishedSiteData,
-} from "../snapshot-data";
+import { mapCommittedSnapshot, type PublishedSiteData } from "../snapshot-data";
 import {
   isSnapshotAssetName,
   snapshotAssetContentType,
 } from "../snapshot-assets";
-import { DisplaySpeedFileSchema, withDisplaySpeed } from "../display-data";
+import {
+  DisplaySpeedFileSchema,
+  withDisplaySpeed,
+  DisplayCostFileSchema,
+  withDisplayCost,
+  DisplayBenchmarkFileSchema,
+  withDisplayBenchmarks,
+} from "../display-data";
+import type { z } from "zod";
 
 export type PublishedSnapshot = PublishedSiteData;
 
@@ -35,30 +41,40 @@ export interface SnapshotAsset {
 
 let loadedSnapshotPromise: Promise<LoadedSnapshot | null> | undefined;
 let displaySpeedPromise: ReturnType<typeof readDisplaySpeed> | undefined;
+let displayCostPromise: ReturnType<typeof readDisplayCost> | undefined;
+let displayBenchmarkPromise:
+  | ReturnType<typeof readDisplayBenchmarks>
+  | undefined;
 
 function candidateSnapshotRoots(): string[] {
   const configured = process.env.ACTUALANALYSIS_SNAPSHOT_DIR;
-  return [...new Set([
-    ...(configured ? [path.resolve(configured)] : []),
-    path.resolve(process.cwd(), "data/snapshots"),
-    path.resolve(process.cwd(), "../../data/snapshots"),
-  ])];
+  return [
+    ...new Set([
+      ...(configured ? [path.resolve(configured)] : []),
+      path.resolve(process.cwd(), "data/snapshots"),
+      path.resolve(process.cwd(), "../../data/snapshots"),
+    ]),
+  ];
 }
 
 function candidateDataRoots(): string[] {
   const configured = process.env.ACTUALANALYSIS_DATA_DIR;
-  return [...new Set([
-    ...(configured ? [path.resolve(configured)] : []),
-    path.resolve(process.cwd(), "data"),
-    path.resolve(process.cwd(), "../../data"),
-  ])];
+  return [
+    ...new Set([
+      ...(configured ? [path.resolve(configured)] : []),
+      path.resolve(process.cwd(), "data"),
+      path.resolve(process.cwd(), "../../data"),
+    ]),
+  ];
 }
 
 async function readDisplaySpeed() {
   for (const root of candidateDataRoots()) {
     try {
       const parsed = DisplaySpeedFileSchema.parse(
-        parse(await readFile(path.join(root, "manual", "speed-aa.yaml"), "utf8")),
+        parse(
+          await readFile(path.join(root, "manual", "speed-aa.yaml"), "utf8"),
+        ),
       );
       return parsed.observations;
     } catch {
@@ -68,22 +84,54 @@ async function readDisplaySpeed() {
   return [];
 }
 
-async function candidateSnapshotFiles(): Promise<Array<{ file: string; date: string; priority: number }>> {
-  const candidates: Array<{ file: string; date: string; priority: number }> = [];
-  const roots = candidateSnapshotRoots();
-  await Promise.all(roots.map(async (root, priority) => {
+async function readDisplayRegistry<T extends z.ZodTypeAny>(
+  filename: string,
+  schema: T,
+): Promise<z.infer<T> | null> {
+  for (const root of candidateDataRoots()) {
     try {
-      const entries = await readdir(root, { withFileTypes: true });
-      for (const entry of entries) {
-        if (entry.isDirectory() && /^\d{4}-\d{2}-\d{2}$/u.test(entry.name)) {
-          candidates.push({ file: path.join(root, entry.name, "snapshot.json"), date: entry.name, priority });
-        }
-      }
+      return schema.parse(
+        parse(await readFile(path.join(root, "manual", filename), "utf8")),
+      );
     } catch {
-      // Missing snapshot roots are expected in a fresh checkout and in package-local builds.
+      /* Private display registries are optional in clean checkouts. */
     }
-  }));
-  return candidates.sort((left, right) => right.date.localeCompare(left.date) || left.priority - right.priority);
+  }
+  return null;
+}
+const readDisplayCost = () =>
+  readDisplayRegistry("cost-aa.yaml", DisplayCostFileSchema);
+const readDisplayBenchmarks = () =>
+  readDisplayRegistry("benchmarks-aa.yaml", DisplayBenchmarkFileSchema);
+
+async function candidateSnapshotFiles(): Promise<
+  Array<{ file: string; date: string; priority: number }>
+> {
+  const candidates: Array<{ file: string; date: string; priority: number }> =
+    [];
+  const roots = candidateSnapshotRoots();
+  await Promise.all(
+    roots.map(async (root, priority) => {
+      try {
+        const entries = await readdir(root, { withFileTypes: true });
+        for (const entry of entries) {
+          if (entry.isDirectory() && /^\d{4}-\d{2}-\d{2}$/u.test(entry.name)) {
+            candidates.push({
+              file: path.join(root, entry.name, "snapshot.json"),
+              date: entry.name,
+              priority,
+            });
+          }
+        }
+      } catch {
+        // Missing snapshot roots are expected in a fresh checkout and in package-local builds.
+      }
+    }),
+  );
+  return candidates.sort(
+    (left, right) =>
+      right.date.localeCompare(left.date) || left.priority - right.priority,
+  );
 }
 
 async function readLatestSnapshot(): Promise<LoadedSnapshot | null> {
@@ -93,7 +141,8 @@ async function readLatestSnapshot(): Promise<LoadedSnapshot | null> {
         await readFile(/* turbopackIgnore: true */ candidate.file, "utf8"),
       );
       const mapped = mapCommittedSnapshot(raw, candidate.date);
-      if (mapped) return { directory: path.dirname(candidate.file), snapshot: mapped };
+      if (mapped)
+        return { directory: path.dirname(candidate.file), snapshot: mapped };
     } catch {
       // A malformed or partial export never becomes public; continue to the next dated candidate.
     }
@@ -109,11 +158,15 @@ export function loadLatestCommittedSnapshot(): Promise<PublishedSnapshot | null>
   return loadedSnapshotPromise.then((loaded) => loaded?.snapshot ?? null);
 }
 
-export async function loadLatestSnapshotAsset(name: string): Promise<SnapshotAsset | null> {
+export async function loadLatestSnapshotAsset(
+  name: string,
+): Promise<SnapshotAsset | null> {
   if (!isSnapshotAssetName(name)) return null;
-  const loaded = process.env.NODE_ENV === "development"
-    ? await readLatestSnapshot()
-    : (loadedSnapshotPromise ??= readLatestSnapshot(), await loadedSnapshotPromise);
+  const loaded =
+    process.env.NODE_ENV === "development"
+      ? await readLatestSnapshot()
+      : ((loadedSnapshotPromise ??= readLatestSnapshot()),
+        await loadedSnapshotPromise);
   if (!loaded) return null;
   try {
     const [directoryPath, assetPath] = await Promise.all([
@@ -139,16 +192,31 @@ export async function loadSiteData(): Promise<SiteData> {
 
 /** UI-only view that overlays the isolated, non-redistributable speed registry. */
 export async function loadDisplaySiteData(): Promise<SiteData> {
-  const observations = process.env.NODE_ENV === "development"
-    ? await readDisplaySpeed()
-    : await (displaySpeedPromise ??= readDisplaySpeed());
-  return withDisplaySpeed(await loadSiteData(), observations);
+  const development = process.env.NODE_ENV === "development";
+  const [data, observations, cost, benchmarks] = await Promise.all([
+    loadSiteData(),
+    development
+      ? readDisplaySpeed()
+      : (displaySpeedPromise ??= readDisplaySpeed()),
+    development
+      ? readDisplayCost()
+      : (displayCostPromise ??= readDisplayCost()),
+    development
+      ? readDisplayBenchmarks()
+      : (displayBenchmarkPromise ??= readDisplayBenchmarks()),
+  ]);
+  return withDisplayBenchmarks(
+    withDisplayCost(withDisplaySpeed(data, observations), cost),
+    benchmarks,
+  );
 }
 
 export function latestRunForKind(snapshot: PublishedSnapshot, kind: IndexKind) {
   return snapshot.runs
     .filter((run) => run.kind === kind)
-    .sort((left, right) => Date.parse(right.createdAt) - Date.parse(left.createdAt))[0];
+    .sort(
+      (left, right) => Date.parse(right.createdAt) - Date.parse(left.createdAt),
+    )[0];
 }
 
 export function scoresForRun(snapshot: PublishedSnapshot, runId: string) {
@@ -156,23 +224,20 @@ export function scoresForRun(snapshot: PublishedSnapshot, runId: string) {
   if (!run || latestRunForKind(snapshot, run.kind)?.id !== runId) return [];
   return [...snapshot.models]
     .filter((model) => model.indexes[run.kind] !== undefined)
-    .sort((left, right) => {
-      const leftIndex = left.indexes[run.kind];
-      const rightIndex = right.indexes[run.kind];
-      if (!leftIndex) return rightIndex ? 1 : 0;
-      if (!rightIndex) return -1;
-      return (leftIndex.rank ?? Number.MAX_SAFE_INTEGER) - (rightIndex.rank ?? Number.MAX_SAFE_INTEGER)
-        || (rightIndex.score ?? Number.NEGATIVE_INFINITY) - (leftIndex.score ?? Number.NEGATIVE_INFINITY);
-    })
+    .sort((left, right) => compareIndexRank(left, right, run.kind))
     .flatMap((model) => {
       const score = model.indexes[run.kind];
-      return score ? [{
-        runId,
-        modelId: model.id,
-        modelSlug: model.slug,
-        modelName: model.name,
-        organization: model.organization,
-        ...score,
-      }] : [];
+      return score
+        ? [
+            {
+              runId,
+              modelId: model.id,
+              modelSlug: model.slug,
+              modelName: model.name,
+              organization: model.organization,
+              ...score,
+            },
+          ]
+        : [];
     });
 }

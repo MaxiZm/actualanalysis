@@ -2,10 +2,16 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 from pathlib import Path
 from time import monotonic
 
-import jax
+import numpyro
+
+# Parallel CPU chains require the host device count to be set before JAX initializes.
+numpyro.set_host_device_count(max(1, int(os.environ.get("ACI12_CHAINS", "4"))))
+
+import jax  # noqa: E402
 import numpy as np
 from numpyro.diagnostics import effective_sample_size, summary
 from numpyro.infer import MCMC, NUTS
@@ -15,15 +21,16 @@ from .model import aci_model
 from .summarize import build_posterior_summary
 
 
+# Convergence is judged on panel-calibrated estimands (what is published) plus the
+# scale-free hyperparameters; raw Z/beta sit on an unidentified ridge by design.
 DECLARED_PARAMETERS = {
-    "Z",
-    "beta",
-    "difficulty",
-    "discrimination",
-    "effort_mean",
-    "effort_sd",
+    "Z_cal",
+    "G_cal",
     "Omega",
     "cell_sigma",
+    "effort_mean",
+    "effort_sd",
+    "run_noise",
 }
 
 
@@ -84,29 +91,31 @@ def _diagnostics(samples: dict, extra: dict, chains: int) -> dict:
 
 def run(input_path: Path, output_path: Path, posterior_path: Path, summary_path: Path) -> None:
     data = json.loads(input_path.read_text())
-    inference = data["inference"]
+    inference = dict(data["inference"])
+    # Developer overrides for quick local runs; production settings live in index-config.yaml.
+    for key, env in (("chains", "ACI12_CHAINS"), ("warmup", "ACI12_WARMUP"), ("samples", "ACI12_SAMPLES")):
+        if os.environ.get(env):
+            inference[key] = int(os.environ[env])
+    if os.environ.get("ACI12_PROGRESS"):
+        data["progress_bar"] = True
     jax.config.update("jax_enable_x64", True)
 
-    dense_sites = [
-        "varsigma",
-        "effort_mean",
-        "effort_sd",
-        "beta",
-        "log_alpha",
-        "family_sd",
-        "cell_sigma",
-        "scale_a_indep",
-        "scale_a_self",
-        "mu_self",
-        "omega_bar",
-    ]
-    if not data.get("one_trait_baseline", False):
-        dense_sites.append("L_Omega")
+    # A dense mass matrix over the hyperparameter block was tried and made the
+    # sampler saturate its tree depth with a 0.009 step size (R-hat up to 2.9);
+    # a diagonal mass matrix mixes well on this posterior. Dense adaptation is
+    # available for experiments via ACI12_DENSE=1.
+    dense_mass: list | bool = False
+    if os.environ.get("ACI12_DENSE"):
+        dense_sites = ["varsigma", "effort_mean", "effort_sd", "beta", "log_alpha", "family_sd", "cell_sigma",
+                       "scale_a_indep", "scale_a_self", "mu_self", "omega_bar"]
+        if not data.get("one_trait_baseline", False):
+            dense_sites.append("L_Omega")
+        dense_mass = [tuple(dense_sites)]
 
     kernel = NUTS(
         aci_model,
         target_accept_prob=float(inference.get("target_accept", 0.90)),
-        dense_mass=[tuple(dense_sites)],
+        dense_mass=dense_mass,
         init_strategy=init_to_median(),
     )
     mcmc = MCMC(
@@ -119,8 +128,9 @@ def run(input_path: Path, output_path: Path, posterior_path: Path, summary_path:
     )
     started = monotonic()
     mcmc.run(jax.random.PRNGKey(int(data.get("seed", 20260904))), data=data, extra_fields=("diverging", "potential_energy"))
-    elapsed = monotonic() - started
     chain_samples = mcmc.get_samples(group_by_chain=True)
+    jax.block_until_ready(chain_samples)
+    elapsed = monotonic() - started
     flat_samples = mcmc.get_samples(group_by_chain=False)
 
     retained = int(inference.get("retained_draws", 8000))
@@ -136,6 +146,9 @@ def run(input_path: Path, output_path: Path, posterior_path: Path, summary_path:
     diagnostics = _diagnostics(chain_samples, mcmc.get_extra_fields(group_by_chain=True), int(inference.get("chains", 4)))
     diagnostics["elapsed_seconds"] = elapsed
     diagnostics["posterior_draws"] = int(next(iter(flat_samples.values())).shape[0])
+    diagnostics["engine"] = "numpyro-nuts"
+    diagnostics["inference"] = {key: inference.get(key) for key in ("chains", "warmup", "samples", "target_accept")}
+    diagnostics["devices"] = int(jax.local_device_count())
 
     issues = []
     for name, values in diagnostics["parameters"].items():
@@ -145,12 +158,29 @@ def run(input_path: Path, output_path: Path, posterior_path: Path, summary_path:
             b = values["ess_bulk"]; issues.append(f"{name}: bulk ESS {b}")
         if values["ess_tail"] < float(inference.get("min_ess", 400)):
             t = values["ess_tail"]; issues.append(f"{name}: tail ESS {t}")
-    # 1.2.2 zero divergences gate (§6)
+    # Monte Carlo standard error per published quantity (§6): scores are 10 x the
+    # calibrated trait, so MCSE in display points is 10 * sd / sqrt(ESS_bulk).
+    mcse_limit = float(inference.get("max_score_mcse", 0.3))
+    for name in ("G_cal", "Z_cal"):
+        if name not in chain_samples:
+            continue
+        values = np.asarray(chain_samples[name], dtype=float)
+        flat = values.reshape((-1,) + values.shape[2:])
+        sd = np.nanstd(flat, axis=0)
+        ess = np.asarray(effective_sample_size(values.reshape((values.shape[0], values.shape[1], -1))), dtype=float).reshape(sd.shape)
+        with np.errstate(all="ignore"):
+            mcse = 10.0 * sd / np.sqrt(np.maximum(ess, 1.0))
+        finite = mcse[np.isfinite(mcse) & (sd > 1e-12)]
+        worst = float(np.max(finite)) if finite.size else 0.0
+        diagnostics.setdefault("mcse_display_points", {})[name] = worst
+        if worst > mcse_limit:
+            issues.append(f"{name}: MCSE {worst:.3f} display points exceeds {mcse_limit}")
+    # zero divergences gate (§6)
     div = diagnostics["divergences"]
     div_frac = diagnostics["divergence_fraction"]
     ebfmi_min = min(diagnostics["ebfmi"])
     if div > 0 and float(inference.get("max_divergence_fraction", 0.0)) == 0.0:
-        issues.append(f"divergences: {div} (1.2.2 requires zero)")
+        issues.append(f"divergences: {div} (method 1.2 requires zero)")
     elif div_frac > float(inference.get("max_divergence_fraction", 0.0)):
         issues.append(f"divergence fraction {div_frac}")
     if ebfmi_min < float(inference.get("min_ebfmi", 0.3)):

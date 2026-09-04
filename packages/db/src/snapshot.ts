@@ -100,12 +100,18 @@ export function selectSnapshotRuns(
 export async function publishSnapshotFilesAtomically(
   output: string,
   files: SnapshotFiles,
+  options: { replaceExisting?: boolean } = {},
 ): Promise<void> {
   const parent = path.dirname(output);
   await mkdir(parent, { recursive: true });
   try {
     await lstat(output);
-    throw new Error(`Refusing to overwrite existing snapshot directory: ${output}`);
+    if (!options.replaceExisting) throw new Error(`Refusing to overwrite existing snapshot directory: ${output}`);
+    // A same-day refresh after a newer accepted run set: the previous export is
+    // archived (never deleted) so the dated path always holds the latest runs.
+    const archive = path.join(parent, ".archive");
+    await mkdir(archive, { recursive: true });
+    await rename(output, path.join(archive, `${path.basename(output)}-${new Date().toISOString().replaceAll(":", "-")}`));
   } catch (error) {
     if (!(error && typeof error === "object" && "code" in error && error.code === "ENOENT")) throw error;
   }
@@ -121,6 +127,37 @@ export async function publishSnapshotFilesAtomically(
   }
 }
 
+/** Retired conditions are kept in the database audit, but leave every current export. */
+export function excludeRetiredBenchmarks<
+  B extends { id: string; status?: string | null },
+  R extends { benchmarkId: string },
+  P extends { benchmarkId: string },
+  C extends { benchmarkId: string },
+>(input: { benchmarks: B[]; results: R[]; params: P[]; cells: C[] }) {
+  const benchmarks = input.benchmarks.filter((row) => row.status !== "retired");
+  const ids = new Set(benchmarks.map((row) => row.id));
+  return {
+    benchmarks,
+    results: input.results.filter((row) => ids.has(row.benchmarkId)),
+    params: input.params.filter((row) => ids.has(row.benchmarkId)),
+    cells: input.cells.filter((row) => ids.has(row.benchmarkId)),
+  };
+}
+
+/** A corrected publication lists exactly the input observations it reviewed.
+ * Rows from older DB runs remain in storage, but cannot silently reappear in the
+ * current benchmark tables/exports after a revision or duplicate correction.
+ * Older run sets without an inventory retain their historical export behavior.
+ */
+export function selectCurrentEvidence<R extends { observationKey: string | null }>(
+  rows: R[], runs: Array<{ params: Record<string, unknown> | null }>,
+): R[] {
+  const inventories = runs.map(run => run.params?.current_evidence_observation_keys);
+  if (!inventories.length || !inventories.every((keys): keys is string[] => Array.isArray(keys) && keys.every(key => typeof key === "string"))) return rows;
+  const allowed = new Set(inventories.flat());
+  return rows.filter(row => row.observationKey !== null && allowed.has(row.observationKey));
+}
+
 /**
  * Writes the complete audit surface for the selected index runs. Source rows
  * retain their redistribution policy so consumers can distinguish reusable
@@ -131,6 +168,7 @@ export async function exportSnapshot(
   root: string,
   stamp = new Date().toISOString().slice(0, 10),
   exactRunIds?: SnapshotRunIds,
+  options: { replaceExisting?: boolean } = {},
 ): Promise<SnapshotSummary> {
   const allRuns = await db.select().from(indexRuns).orderBy(desc(indexRuns.createdAt));
   const { chosen, history } = selectSnapshotRuns(allRuns, exactRunIds);
@@ -140,7 +178,7 @@ export async function exportSnapshot(
   const output = path.join(root, "data", "snapshots", stamp);
   const runIds = chosen.map((run) => run.id);
   const historyRunIds = history.map((run) => run.id);
-  const [sourceRows, scoreRows, params, cellRows, resultRows, modelRows, benchmarkRows, priceRows] = await Promise.all([
+  const [sourceRows, scoreRows, allParams, allCells, allResults, modelRows, allBenchmarks, priceRows] = await Promise.all([
     db.select().from(sources),
     historyRunIds.length ? db.select().from(indexScores).where(inArray(indexScores.runId, historyRunIds)) : [],
     runIds.length ? db.select().from(benchmarkParams).where(inArray(benchmarkParams.runId, runIds)) : [],
@@ -150,6 +188,9 @@ export async function exportSnapshot(
     db.select().from(benchmarks),
     db.select().from(pricing),
   ]);
+  const { benchmarks: benchmarkRows, results: resultRows, params, cells: cellRows } = excludeRetiredBenchmarks({
+    benchmarks: allBenchmarks, results: selectCurrentEvidence(allResults, chosen), params: allParams, cells: allCells,
+  });
   const diagnostics = Object.fromEntries(chosen.map((run) => {
     const paramsRecord = run.params ?? {};
     const runDiagnostics = typeof paramsRecord.diagnostics === "object" && paramsRecord.diagnostics !== null
@@ -164,6 +205,7 @@ export async function exportSnapshot(
     data_policy: "All benchmark evidence is available for on-site audit. Rows whose source is not redistributable are display-only.",
     exclusions: [
       "speed observations are non-redistributable and are never included",
+      "rows absent from the selected publication evidence inventory remain in database history and are excluded from current exports",
     ],
     diagnostics,
     runs: history,
@@ -188,7 +230,7 @@ export async function exportSnapshot(
     "sources.csv": serializeSnapshotCsv(sourceRows as unknown as Array<Record<string, unknown>>),
     "pricing.csv": serializeSnapshotCsv(priceRows as unknown as Array<Record<string, unknown>>),
   };
-  await publishSnapshotFilesAtomically(output, files);
+  await publishSnapshotFilesAtomically(output, files, options);
   return { output, runs: history.length, scores: scoreRows.length, results: resultRows.length };
 }
 

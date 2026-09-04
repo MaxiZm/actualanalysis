@@ -3,12 +3,20 @@ name: Humanity's Last Exam (no tools)
 version: hf-5a81a4c7271a2a2a312b9a690f0c2fde837e4c29
 grader_version: cais-hle@73ae974b1844c3ffa64c3f4343d9f1f259575700/o3-mini-2025-01-31
 family_id: hle
-aliases: [HLE, HLE no tools, Humanity's Last Exam]
-tags: [chat]
-categories: [knowledge, reasoning]
-domains: { agentic: 0, software-code: 0.03, reasoning: 0.65, knowledge-information: 0.30, communication-professional: 0.02 }
+aliases: [ HLE, HLE no tools, Humanity's Last Exam ]
+tags: [ chat ]
+categories: [ knowledge, reasoning ]
+domains:
+  {
+    agentic: 0,
+    software-code: 0.03,
+    reasoning: 0.65,
+    knowledge-information: 0.30,
+    communication-professional: 0.02
+  }
 holdout: public
-holdout_details: Public automatically gated 2,500-item test split at the declared immutable Hugging Face revision.
+holdout_details: Public automatically gated 2,500-item test split at the
+  declared immutable Hugging Face revision.
 chance_level: 0
 obs_type: count
 public_release_date: 2025-01-23
@@ -18,12 +26,19 @@ is_reference: false
 transform: { type: accuracy, input_scale: percent }
 n_items: 2500
 harness_url: https://labs.scale.com/leaderboard/humanitys_last_exam
-source_ids: [scale, epoch, vendor-model-cards]
+source_ids: [ scale, epoch, vendor-model-cards ]
 metadata_sources:
   - https://huggingface.co/api/datasets/cais/hle/revision/5a81a4c7271a2a2a312b9a690f0c2fde837e4c29
   - https://github.com/centerforaisafety/hle/commit/73ae974b1844c3ffa64c3f4343d9f1f259575700
   - https://raw.githubusercontent.com/centerforaisafety/hle/73ae974b1844c3ffa64c3f4343d9f1f259575700/hle_eval/run_judge_results.py
   - https://raw.githubusercontent.com/centerforaisafety/hle/73ae974b1844c3ffa64c3f4343d9f1f259575700/hle_eval/run_model_predictions.py
   - https://arxiv.org/html/2501.14249
-status: watchlist
-notes: Exact new runs must use the pinned dataset, evaluator, judge, and response prompt. Historical Scale rows do not expose those pins. Chance level 0 is retained only as the current schema convention; the mixed multiple-choice and short-answer suite needs item-type-aware chance correction or an explicit versioned convention before promotion. HLE-Verified is distinct.
+status: active
+notes: Exact new runs must use the pinned dataset, evaluator, judge, and
+  response prompt. Historical Scale rows do not expose those pins. Chance level
+  0 is retained only as the current schema convention; the mixed multiple-choice
+  and short-answer suite needs item-type-aware chance correction or an explicit
+  versioned convention before promotion. HLE-Verified is distinct.
+promotion_rule: "Promoted to active under method 1.2.3: the benchmark has independent results
+  for ≥8 registered models; metadata pins that are still missing are carried as
+  metadata_incomplete on each observation instead of blocking the fit."

@@ -40,7 +40,12 @@ export function deduplicateRecords(records: readonly RawResult[]): RawResult[] {
   const unique = new Map<string, RawResult>();
   for (const candidate of records) {
     const record = RawResultSchema.parse(candidate);
-    unique.set(idempotencyKey(record), record);
+    const key = idempotencyKey(record);
+    const existing = unique.get(key);
+    const timestamp = (row: RawResult) => row.record_type === "benchmark_result" ? row.observed_on : row.fetched_at;
+    // Source arrays can be reverse-chronological. Never let input order (or a
+    // larger score) replace a newer observation of the same configuration.
+    if (!existing || timestamp(record) >= timestamp(existing)) unique.set(key, record);
   }
   return [...unique.values()].sort((left, right) => idempotencyKey(left).localeCompare(idempotencyKey(right)));
 }

@@ -1,14 +1,41 @@
 id: frontiermath-v2-tiers-1-3
 name: FrontierMath v2 Tiers 1-3
 version: v2-tiers-1-3
-aliases: [FrontierMath v2 Tier 1-3, FrontierMath 2 T1-T3, FrontierMath-Tiers-1-3-v2-Private]
-tags: [chat]
-categories: [mathematics]
+aliases:
+  [
+    FrontierMath v2 Tier 1-3,
+    FrontierMath 2 T1-T3,
+    FrontierMath-Tiers-1-3-v2-Private
+  ]
+tags: [ chat ]
+categories: [ mathematics ]
 holdout: private
 chance_level: 0
 transform: { type: accuracy, input_scale: percent }
-n_items: 295
+n_items: 285
 harness_url: https://epoch.ai/benchmarks/frontiermath-tiers-1-3-v2
-source_ids: [epoch, vendor-model-cards]
-status: watchlist
-notes: Excluded until an independent observation source and the complete ACI 1.2 registry metadata are available.
+source_ids: [ epoch, vendor-model-cards ]
+status: active
+notes: The v2 private test set contains 285 problems after excluding published
+  examples. Epoch run-level scores, reported standard errors and exact reasoning
+  configurations are preserved. Results on the pre-June-2026 v1 problems are a
+  different benchmark and are excluded.
+obs_type: count
+domains:
+  agentic: 0
+  software-code: 0
+  reasoning: 1
+  knowledge-information: 0
+  communication-professional: 0
+promotion_rule: "Promoted to active under method 1.2.3: the benchmark has
+  independent results for ≥8 registered models; metadata pins that are still
+  missing are carried as metadata_incomplete on each observation instead of
+  blocking the fit."
+default_k: 1
+family_id: frontiermath
+grader_version: 2.0.0
+public_release_date: 2026-06-12
+tool_policy: python-submit-answer
+metadata_sources:
+  - https://epoch.ai/benchmarks/frontiermath-tiers-1-3-v2
+  - https://epoch.ai/data/benchmarks.csv

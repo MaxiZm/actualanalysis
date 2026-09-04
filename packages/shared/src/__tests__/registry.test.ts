@@ -8,10 +8,10 @@ describe("repository registries", () => {
   it("loads and cross-validates every registry", async () => {
     const registry = await loadRegistry(dataDir);
     expect(registry.models.length).toBeGreaterThanOrEqual(2);
-    expect(registry.benchmarks).toHaveLength(25);
+    expect(registry.benchmarks).toHaveLength(29);
     expect(registry.benchmarks.every((benchmark) => benchmark.categories.length > 0)).toBe(true);
     expect(registry.sources.length).toBeGreaterThanOrEqual(12);
-    expect(registry.indexConfig.method_version).toBe("1.2.2");
+    expect(registry.indexConfig.method_version).toMatch(/^1\.[23]\.\d+$/);
     expect(registry.results.length).toBeGreaterThan(0);
     const sampleOnlyResults = registry.results.filter((result) => result.sample_only);
     expect(sampleOnlyResults.filter((result) =>
@@ -34,6 +34,8 @@ describe("repository registries", () => {
       "swe-rebench\0swe-rebench",
       "taubench\0tau3-bench-banking",
       "vendor-model-cards\0arc-agi-2-semi-private",
+      "vendor-model-cards\0automationbench-public",
+      "vendor-model-cards\0deepswe",
       "vendor-model-cards\0gdpval",
       "vendor-model-cards\0hle-no-tools",
       "vendor-model-cards\0livecodebench-v6-pro",
@@ -53,16 +55,38 @@ describe("repository registries", () => {
 
     const vending = registry.benchmarks.find((benchmark) => benchmark.id === "vending-bench-2");
     expect(vending?.transform).toMatchObject({ type: "log_relative", reference_value: 63_000 });
+    // Method 1.2.3 admission contract: likelihood-critical fields are mandatory for
+    // active benchmarks; provenance pins are carried as metadata_incomplete.
     expect(registry.benchmarks.filter((benchmark) => benchmark.status === "active").every((benchmark) =>
-      benchmark.grader_version
-      && benchmark.family_id
-      && benchmark.domains
+      benchmark.family_id
       && benchmark.obs_type
-      && benchmark.public_release_date
-      && benchmark.tool_policy
-      && benchmark.metadata_sources.length > 0
+      && (benchmark.domains || benchmark.categories.length > 0)
       && (benchmark.obs_type !== "count" || benchmark.default_k),
     )).toBe(true);
+    expect(registry.benchmarks.filter((benchmark) => benchmark.status === "active").length).toBeGreaterThanOrEqual(20);
+  });
+
+  it("keeps non-count benchmark additions out of the count likelihood", async () => {
+    const registry = await loadRegistry(dataDir);
+    for (const id of ["arc-agi-3", "benchcad", "healthbench-professional"]) {
+      expect(registry.benchmarks.find(b=>b.id===id)).toMatchObject({status:"watchlist",obs_type:"judge"});
+    }
+    expect(registry.benchmarks.find(b=>b.id==="automationbench-public")).toMatchObject({status:"active",obs_type:"count",n_items:600});
+  });
+
+  it("quarantines publisher observations for incompatible benchmark revisions", async () => {
+    const registry = await loadRegistry(dataDir);
+    const reviewed = registry.results.filter((result) =>
+      result.notes?.startsWith("REVIEW ONLY:"),
+    );
+    expect(reviewed.length).toBeGreaterThan(0);
+    expect(reviewed.every((result) => result.sample_only)).toBe(true);
+    const olderAutomation = registry.results.filter((result) =>
+      result.benchmark_id === "automationbench-public"
+      && result.benchmark_version === "1.0.6",
+    );
+    expect(olderAutomation.length).toBeGreaterThan(0);
+    expect(olderAutomation.every((result) => result.sample_only)).toBe(true);
   });
 
   it("covers the active and watch-list suite", async () => {

@@ -1,16 +1,29 @@
 id: deepswe
 name: DeepSWE
 version: "1"
-aliases: [Deep SWE, Datacurve DeepSWE]
-tags: [agentic]
-categories: [software-engineering]
+aliases: [ Deep SWE, Datacurve DeepSWE ]
+tags: [ agentic ]
+categories: [ software-engineering ]
 holdout: public
 holdout_details: Original Datacurve software-engineering tasks.
 chance_level: 0
 transform: { type: accuracy, input_scale: percent }
 n_items: 113
 harness_url: https://deepswe.datacurve.ai/
-source_ids: [datacurve, epoch]
-status: watchlist
-promotion_rule: Active after reaching at least eight model configurations; demote if comparable coverage falls below that threshold.
-notes: Excluded until the dataset and harness revisions plus the full ACI 1.2 benchmark metadata are pinned.
+source_ids: [ datacurve, epoch, vendor-model-cards ]
+status: active
+promotion_rule: "Promoted to active under method 1.2.3: the benchmark has
+  independent results for ≥8 registered models; metadata pins that are still
+  missing are carried as metadata_incomplete on each observation instead of
+  blocking the fit."
+notes: Excluded until the dataset and harness revisions plus the full ACI 1.2
+  benchmark metadata are pinned.
+obs_type: count
+domains:
+  agentic: 0.25
+  software-code: 0.7
+  reasoning: 0.05
+  knowledge-information: 0
+  communication-professional: 0
+default_k: 1
+family_id: deepswe

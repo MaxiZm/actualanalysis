@@ -1,0 +1,19 @@
+id: hy3
+name: Hy3
+organization: Tencent
+family: Hy3
+release_date: 2026-07-06
+open_weights: true
+license: Apache-2.0
+aliases:
+  - Hy3
+  - tencent/hy3
+  - hy3
+reasoning: true
+context_length: 256000
+modality: text
+source_url: https://huggingface.co/tencent/Hy3
+metadata_sources:
+  - https://huggingface.co/tencent/Hy3
+  - https://artificialanalysis.ai/models/hy3
+status: active

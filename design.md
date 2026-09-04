@@ -52,7 +52,7 @@ Compact outlined controls with 4–6px radii. Labels are literal actions: “Com
 
 ## What pages MUST share
 
-Header, snapshot pill, font stack, palette, filter language, chart color mapping, focus treatment, table density, and inline footer.
+Header, compact snapshot summary, font stack, palette, filter language, chart color mapping, focus treatment, table density, and inline footer.
 
 ## What pages MAY differ on
 
@@ -159,3 +159,8 @@ The live source of truth is `apps/web/tokens.css`.
   --radius: 0.375rem;
 }
 ```
+
+
+## Brand mark
+
+The twin-A monogram shares a horizontal baseline: two model profiles compared on one scale. Use the solid cobalt tile and white mark at small sizes; preserve the SVG geometry. Header 30px, footer 24px. The mark uses `--color-brand` (#0758CE) and `--color-brand-ink` (white), fixed across light and dark themes. Source: `apps/web/public/brand/actualanalysis.svg`.

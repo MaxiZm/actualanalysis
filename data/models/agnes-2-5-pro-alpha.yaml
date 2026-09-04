@@ -1,0 +1,19 @@
+id: agnes-2-5-pro-alpha
+name: Agnes 2.5 Pro Alpha
+organization: Sapiens AI
+family: Agnes
+release_date: 2026-07-24
+open_weights: true
+license: Apache-2.0
+aliases:
+  - Agnes-2.5-Pro-Alpha
+  - Agnes 2.5 Pro Alpha
+  - agnes-2-5-pro-alpha
+reasoning: true
+context_length: 1000000
+modality: multimodal
+source_url: https://huggingface.co/Agnes-AI/Agnes-2.5-Pro-Alpha
+metadata_sources:
+  - https://huggingface.co/Agnes-AI/Agnes-2.5-Pro-Alpha
+  - https://artificialanalysis.ai/models/agnes-2-5-pro-alpha
+status: preview

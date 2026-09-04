@@ -1,0 +1,8 @@
+id: automationbench
+name: Zapier AutomationBench
+url: https://github.com/zapier/AutomationBench
+license: See upstream license
+kind: runner
+redistributable: false
+notes: Factual score citations only. Retain exact source and configuration;
+  source content is not bundled.

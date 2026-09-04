@@ -1,17 +1,67 @@
+import { Hint } from "@/components/ui/hint";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { TextureButton } from "@/components/ui/texture-button";
+
 function compactValue(value: unknown): string {
   if (value === null) return "none";
-  if (typeof value === "string" || typeof value === "number" || typeof value === "boolean") return String(value);
+  if (["string", "number", "boolean"].includes(typeof value))
+    return String(value);
   return JSON.stringify(value);
 }
 
-export function EvidenceConfig({ config }: { config: Record<string, unknown> }) {
-  const entries = Object.entries(config).sort(([left], [right]) => left.localeCompare(right));
-  if (!entries.length) return <span className="cell-note">Default configuration</span>;
-  return <span className="config-chips" aria-label="Evaluation configuration">
-    {entries.map(([key, value]) => <span className="config-chip" key={key} title={`${key}: ${compactValue(value)}`}><b>{key.replaceAll("_", " ")}</b> {compactValue(value)}</span>)}
-  </span>;
+export function EvidenceConfig({
+  config,
+}: {
+  config: Record<string, unknown>;
+}) {
+  const entries = Object.entries(config).sort(([left], [right]) =>
+    left.localeCompare(right),
+  );
+  if (!entries.length)
+    return <span className="cell-note">Default configuration</span>;
+  return (
+    <Popover>
+      <PopoverTrigger asChild>
+        <TextureButton
+          variant="ghost"
+          size="sm"
+          className="configuration-trigger"
+          aria-label={`Evaluation configuration: ${entries.length} settings`}
+        >
+          {entries.length} {entries.length === 1 ? "setting" : "settings"} ↗
+        </TextureButton>
+      </PopoverTrigger>
+      <PopoverContent align="start" className="configuration-popover">
+        <h3>Evaluation configuration</h3>
+        <dl>
+          {entries.map(([key, value]) => (
+            <div key={key}>
+              <dt>{key.replaceAll("_", " ")}</dt>
+              <dd>{compactValue(value)}</dd>
+            </div>
+          ))}
+        </dl>
+      </PopoverContent>
+    </Popover>
+  );
 }
 
-export function InfoTip({ label, children }: { label: string; children: string }) {
-  return <abbr className="info-tip" aria-label={`${label}: ${children}`} title={children}>i</abbr>;
+export function InfoTip({
+  label,
+  children,
+}: {
+  label: string;
+  children: string;
+}) {
+  return (
+    <Hint text={`${label}: ${children}`}>
+      <span tabIndex={0} className="info-tip" aria-label={label}>
+        i
+      </span>
+    </Hint>
+  );
 }

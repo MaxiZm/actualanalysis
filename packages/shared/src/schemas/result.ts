@@ -65,9 +65,10 @@ export const SpeedObservationSchema = z
   .object({
     model_id: RegistryIdSchema,
     provider: NonEmptyStringSchema,
-    ttft_s: z.number().finite().nonnegative(),
-    tokens_per_s: z.number().finite().positive(),
-    workload: z.enum(["1k", "10k", "100k"]),
+    ttft_s: z.number().finite().nonnegative().nullable(),
+    tokens_per_s: z.number().finite().positive().nullable(),
+    configuration: z.string().optional(),
+    workload: z.enum(["1k", "10k", "100k", "source-default"]),
     observed_on: IsoDateSchema,
     source_url: HttpUrlSchema,
     redistributable: z.literal(false),
@@ -78,6 +79,9 @@ export const SpeedFileSchema = z
   .object({
     redistributable: z.literal(false),
     warning: NonEmptyStringSchema,
+    methodology_url: z.string().url().optional(),
+    selection: z.string().optional(),
+    definitions: z.record(z.string()).optional(),
     observations: z.array(SpeedObservationSchema),
   })
   .strict();

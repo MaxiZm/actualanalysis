@@ -76,14 +76,17 @@ def build_posterior_summary(data: dict, samples: dict[str, np.ndarray]) -> dict:
     # --- 1. Panel Normalization and Equal-Domain Composite G_s ---
     panel_indices = [system_ids.index(sid) for sid in data["calibration_panel_system_ids"] if sid in system_ids]
     if len(panel_indices) < 12:
-        # Fallback to all systems if panel not explicitly in system_ids
-        panel_indices = list(range(min(len(system_ids), 12)))
+        raise ValueError(f"Calibration panel has {len(panel_indices)} fitted systems; at least 12 are required to standardize the scales")
 
-    # Compute panel mean and sd per domain per draw
+    # Panel standardization per draw (methodology §5.1): location and scale of
+    # every domain are taken from the calibration panel in each posterior draw,
+    # which makes the published coordinates invariant to the sampler's per-domain
+    # shift/scale indeterminacy. A tiny floor guards against a degenerate draw;
+    # with the LogNormal trait-spread prior the panel spread never approaches it.
     panel_Z = Z[:, panel_indices, :]  # (n_draws, |P|, 5)
     mu_P = np.mean(panel_Z, axis=1)  # (n_draws, 5)
-    varsigma_P = np.std(panel_Z, axis=1, ddof=1)  # (n_draws, 5)
-    varsigma_P = np.maximum(varsigma_P, 1e-6)
+    scale_floor = float(data.get("panel_scale_floor", 0.05))
+    varsigma_P = np.maximum(np.std(panel_Z, axis=1, ddof=1), scale_floor)  # (n_draws, 5)
 
     # Standardized traits Z_tilde_sk = (Z_sk - mu_Pk) / varsigma_Pk
     Z_tilde = (Z - mu_P[:, None, :]) / varsigma_P[:, None, :]  # (n_draws, n_systems, 5)
@@ -93,11 +96,21 @@ def build_posterior_summary(data: dict, samples: dict[str, np.ndarray]) -> dict:
     G_raw = np.mean(Z_tilde, axis=2)  # (n_draws, n_systems)
     panel_G = G_raw[:, panel_indices]
     mu_PG = np.mean(panel_G, axis=1)
-    sd_PG = np.std(panel_G, axis=1, ddof=1)
-    sd_PG = np.maximum(sd_PG, 1e-6)
+    sd_PG = np.maximum(np.std(panel_G, axis=1, ddof=1), scale_floor)
 
     # Composite ACI-G display
     display_G = 50.0 + 10.0 * (G_raw - mu_PG[:, None]) / sd_PG[:, None]
+
+    # Task views use the same relative panel scale as Mixed. Basket utilities
+    # remain a separate estimand and must never be presented as capability indexes.
+    profile_displays = {}
+    for name, profile in data["profiles"].items():
+        weights = np.asarray([profile["weights"].get(domain, 0) for domain in domains])
+        raw = Z_tilde @ weights
+        panel = raw[:, panel_indices]
+        profile_displays[name] = 50.0 + 10.0 * (
+            raw - np.mean(panel, axis=1)[:, None]
+        ) / np.maximum(np.std(panel, axis=1, ddof=1), scale_floor)[:, None]
 
     # --- 2. Observations and Cells Mapping ---
     cells_by_system: dict[int, list[int]] = defaultdict(list)
@@ -130,6 +143,7 @@ def build_posterior_summary(data: dict, samples: dict[str, np.ndarray]) -> dict:
         safe_residuals = []
 
         family_cells: dict[str, list[int]] = defaultdict(list)
+        cell_tau_sq: dict[int, float] = {}
         benchmark_information: dict[str, float] = defaultdict(float)
         family_information: dict[str, float] = defaultdict(float)
 
@@ -163,6 +177,7 @@ def build_posterior_summary(data: dict, samples: dict[str, np.ndarray]) -> dict:
                 v = float(r.get("variance", 0.05))
                 obs_precision += 1.0 / max(v, 1e-4)
             tau_sq = 1.0 / obs_precision if obs_precision > 0 else 1.0
+            cell_tau_sq[cell_index] = tau_sq
             info = (alpha_med ** 2) / (tau_sq + 2.0 * (sigma_med ** 2))
             benchmark_information[benchmark_ids[b_idx]] += info
             family_information[fam_id] += info
@@ -173,8 +188,8 @@ def build_posterior_summary(data: dict, samples: dict[str, np.ndarray]) -> dict:
 
         # Exposure gap E_s^gap (§10.3)
         exposure_gap = None
-        if len(exposed_residuals) >= 2 and len(safe_residuals) >= 2:
-            exposure_gap = float(np.mean(exposed_residuals) - np.mean(safe_residuals))
+        # A benchmark-adjusted exposure refit is not computed in this release.
+        # Comparing raw observations across different conditions is invalid.
 
         # Precision-drop concentration gate c_sF (§8.1)
         # Gradient vector a_G = (1 / (K * sd_PG)) * D_P^{-1} 1
@@ -195,7 +210,7 @@ def build_posterior_summary(data: dict, samples: dict[str, np.ndarray]) -> dict:
                     lam_vec = lambdas[b_idx]  # (5,)
                     a_val = discrimination[d_idx, b_idx]
                     sig_val = cell_sigma[d_idx, b_idx]
-                    term = (a_val ** 2 / (0.1 + 2.0 * sig_val ** 2)) * np.outer(lam_vec, lam_vec)
+                    term = (a_val ** 2 / (cell_tau_sq.get(c_idx, 1.0) + 2.0 * sig_val ** 2)) * np.outer(lam_vec, lam_vec)
                     lambda_full += term
                     if c_idx not in f_cells:
                         lambda_drop += term
@@ -230,17 +245,18 @@ def build_posterior_summary(data: dict, samples: dict[str, np.ndarray]) -> dict:
             "max_family_share": max_family_share,
             "own_data_reduction": r_s_overall,
             "concentration_c_sf": max_q90_csF,
-            "loo_max_delta": 0.0,
+            "loo_max_delta": None,  # PSIS-LOO not computed in this release
             "exposure_gap": exposure_gap,
-            "adversarial_shift": 0.0,
+            "adversarial_shift": None,  # adversarial self-report refit not run in this release
         }
 
         tiers = data["tiers"]
         def meets(threshold: dict) -> bool:
-            c_sf_gate = 0.35 if threshold.get("min_domains", 4) >= 4 else 0.55
+            c_sf_gate = float(threshold.get("max_concentration", 0.35 if threshold.get("min_domains", 4) >= 4 else 0.55))
             return (general_summary["width"] <= threshold["max_width"]
                     and evidence["domains"] >= threshold["min_domains"]
                     and safe_cells >= threshold["min_safe_cells"]
+                    and max_family_share <= float(threshold.get("max_family_share", 1.0))
                     and max_q90_csF <= c_sf_gate
                     and r_s_overall >= float(threshold.get("min_own_data_reduction", 0.50)))
 
@@ -252,8 +268,10 @@ def build_posterior_summary(data: dict, samples: dict[str, np.ndarray]) -> dict:
             d_summary = _summary(domain_display[:, system_index, d_idx])
             d_post_var = float(np.var(domain_display[:, system_index, d_idx]))
             r_sk = float(max(0.0, min(1.0, 1.0 - d_post_var / 100.0)))
-            n_sk = sum(1 for c_idx in direct_cells if lambdas[data["cell_benchmark_index"][c_idx], d_idx] > 0)
-            published = (n_sk >= 2 and d_summary["width"] <= tiers.get("domain_max_width", 15.0) and r_sk >= 0.50)
+            # Own-profile cells that materially load on the domain (share >= 0.25);
+            # a 5% spill-over share does not make a cell evidence for that domain.
+            n_sk = sum(1 for c_idx in direct_cells if lambdas[data["cell_benchmark_index"][c_idx], d_idx] >= float(data.get("domain_cell_min_share", 0.25)))
+            published = (n_sk >= 2 and d_summary["width"] <= tiers.get("domain_max_width", 15.0) and r_sk >= float(tiers.get("domain_min_own_data_reduction", 0.50)))
             domain_output[domain] = {
                 **d_summary,
                 "published": published,
@@ -268,15 +286,25 @@ def build_posterior_summary(data: dict, samples: dict[str, np.ndarray]) -> dict:
             missing = []
             weighted = np.zeros(n_draws)
             for d_idx, domain in enumerate(domains):
+                if not profile["weights"].get(domain, 0):
+                    continue
                 basket = profile["baskets"].get(domain, [])
-                available = [benchmark_ids.index(item) for item in basket if item in benchmark_ids]
-                missing.extend(item for item in basket if item not in benchmark_ids)
+                utility_eligible = data.get("benchmark_utility_eligible", [False] * len(benchmark_ids))
+                available = [benchmark_ids.index(item) for item in basket
+                             if item in benchmark_ids and utility_eligible[benchmark_ids.index(item)]]
+                missing.extend(item for item in basket if item not in benchmark_ids
+                               or not utility_eligible[benchmark_ids.index(item)])
                 if available:
                     # Utility on available conditions
                     prob_sum = np.zeros(n_draws)
                     for b_idx in available:
-                        eta_draw = discrimination[:, b_idx] * (Z[:, system_index, d_idx] - difficulty[:, b_idx])
-                        prob_sum += 1.0 / (1.0 + np.exp(-eta_draw))
+                        # The fitted parameter named difficulty is -beta, not
+                        # the location beta/alpha. Apply all declared loadings.
+                        eta_draw = -difficulty[:, b_idx] + discrimination[:, b_idx] * (Z[:, system_index, :] @ lambdas[b_idx])
+                        family = data["benchmark_family_index"][b_idx]
+                        if "family_z" in samples and "family_sd" in samples:
+                            eta_draw += np.asarray(samples["family_sd"]) * np.asarray(samples["family_z"])[:, system_index, family]
+                        prob_sum += 1.0 / (1.0 + np.exp(-np.clip(eta_draw, -40, 40)))
                     prob_avg = prob_sum / len(available)
                     weighted += float(profile["weights"].get(domain, 0)) * prob_avg
 
@@ -294,6 +322,16 @@ def build_posterior_summary(data: dict, samples: dict[str, np.ndarray]) -> dict:
                 "missing_benchmarks": sorted(set(missing)),
             }
 
+        index_profiles = {}
+        for name, draws in profile_displays.items():
+            summary = _summary(draws[:, system_index])
+            required = [d for d in domains if data["profiles"][name]["weights"].get(d, 0) >= tiers.get("profile_domain_weight_gate", 0.15)]
+            # Gate the composite's own uncertainty and direct domain evidence.
+            # Do not veto a composite because one marginal interval is wider.
+            published = (tier != "provisional" and summary["width"] <= tiers["ranked"]["max_width"]
+                         and all(domain_output[d]["n_sk"] >= 2 for d in required))
+            index_profiles[name] = {**summary, "published": published}
+
         systems[system_id] = {
             "model_id": system_id.rsplit("@", 1)[0],
             "profile": system_id.rsplit("@", 1)[1],
@@ -306,13 +344,14 @@ def build_posterior_summary(data: dict, samples: dict[str, np.ndarray]) -> dict:
             "domains": domain_output,
             "baskets": profile_output,
             "task_profiles": profile_output,
+            "index_profiles": index_profiles,
         }
 
     # Views ranking
     view_draws = {
         "mixed": {sid: display_G[:, idx] for idx, sid in enumerate(system_ids)},
-        "agentic": {sid: domain_display[:, idx, domains.index("agentic")] for idx, sid in enumerate(system_ids)},
-        "chat": task_profile_draws.get("chat", {}),
+        "agentic": {sid: profile_displays["agentic"][:, idx] for idx, sid in enumerate(system_ids)},
+        "chat": {sid: profile_displays["chat"][:, idx] for idx, sid in enumerate(system_ids)},
     }
 
     views = {}
@@ -321,10 +360,8 @@ def build_posterior_summary(data: dict, samples: dict[str, np.ndarray]) -> dict:
         for sid in system_ids:
             sys_info = systems[sid]
             pub = sys_info["tier"] != "provisional"
-            if view_name == "agentic":
-                pub = pub and sys_info["domains"]["agentic"]["published"]
-            if view_name == "chat":
-                pub = pub and sys_info["task_profiles"]["chat"]["published"]
+            if view_name in ("agentic", "chat"):
+                pub = pub and sys_info["index_profiles"][view_name]["published"]
             if pub and sid in v_draws:
                 eligible.append(sid)
 
@@ -337,7 +374,7 @@ def build_posterior_summary(data: dict, samples: dict[str, np.ndarray]) -> dict:
             val_summary = _summary(values)
             ranking = rank_output.get(sid)
             view[sid] = {
-                "score": round(val_summary["median"]) if ranking else None,
+                "score": val_summary["median"] if ranking else None,
                 "ci_low": val_summary["low"],
                 "ci_high": val_summary["high"],
                 "rank": ranking["rank"] if ranking else None,
@@ -352,25 +389,63 @@ def build_posterior_summary(data: dict, samples: dict[str, np.ndarray]) -> dict:
 
     benchmark_output = {}
     for idx, b_id in enumerate(benchmark_ids):
-        log_a = np.log(np.maximum(discrimination[:, idx], 1e-6))
+        # Calibrated 1-D coordinates along this benchmark's actual trait mix.
+        # eta = slope * (t - location), t has panel mean 0 / sd 1 per draw.
+        projection = panel_Z @ lambdas[idx]
+        projection_mean = np.mean(projection, axis=1)
+        projection_sd = np.maximum(np.std(projection, axis=1, ddof=1), scale_floor)
+        calibrated_slope = discrimination[:, idx] * projection_sd
+        calibrated_location = (difficulty[:, idx] / discrimination[:, idx] - projection_mean) / projection_sd
+        log_a = np.log(np.maximum(calibrated_slope, 1e-6))
         w_log_a = float(np.quantile(log_a, 0.95) - np.quantile(log_a, 0.05))
         benchmark_output[b_id] = {
-            "difficulty": float(np.median(difficulty[:, idx])),
-            "discrimination": float(np.median(discrimination[:, idx])),
+            "difficulty": float(np.median(calibrated_location)),
+            "discrimination": float(np.median(calibrated_slope)),
             "cell_misfit_sd": float(np.median(cell_sigma[:, idx])),
             "alpha_unidentified": bool(w_log_a > np.log(4.0)),
         }
 
+    # Per-cell evidence: observed logit (precision-weighted over the cell's rows),
+    # predicted logit without the misfit term, and the misfit standardized by the
+    # benchmark misfit scale. Counts are converted through the chance/ceiling map.
+    eta_cell = np.asarray(samples.get("eta_cell"))
+    cell_misfit = np.asarray(samples.get("cell_misfit"))
+    have_eta = eta_cell is not None and eta_cell.ndim == 2 and eta_cell.shape[1] == len(data["cell_system_index"])
+    have_misfit = cell_misfit is not None and cell_misfit.ndim == 2 and cell_misfit.shape[1] == len(data["cell_system_index"])
+
+    def observed_logit(row: dict) -> tuple[float, float] | None:
+        if "y" in row:
+            return float(row["y"]), float(row.get("variance", 0.05))
+        if "x" in row:
+            n = float(row.get("n_tasks", 1)) * float(row.get("k_trials", 1))
+            if n <= 0:
+                return None
+            chance = float(row.get("chance_level", 0.0))
+            ceiling = float(row.get("ceiling", 1.0))
+            frac = float(row["x"]) / n
+            p = (frac - chance) / max(ceiling - chance, 1e-6)
+            p = min(max(p, 0.005), 0.995)
+            return float(np.log(p / (1 - p))), float(1.0 / max(n * p * (1 - p), 1e-6))
+        return None
+
     cell_output = []
     for c_idx, (s_idx, b_idx) in enumerate(zip(data["cell_system_index"], data["cell_benchmark_index"])):
         sig = max(float(np.median(cell_sigma[:, b_idx])), 1e-6)
+        pairs = [pair for pair in (observed_logit(row) for row in observations_by_cell.get(c_idx, [])) if pair is not None]
+        if pairs:
+            weights = np.asarray([1.0 / max(v, 1e-6) for _, v in pairs])
+            observed = float(np.sum(weights * np.asarray([y for y, _ in pairs])) / np.sum(weights))
+        else:
+            observed = float("nan")
+        misfit_med = float(np.median(cell_misfit[:, c_idx])) if have_misfit else 0.0
+        eta_med = float(np.median(eta_cell[:, c_idx])) if have_eta else float(np.median(Z[:, s_idx, :] @ lambdas[b_idx]))
         cell_output.append({
             "system_id": system_ids[s_idx],
             "benchmark_id": benchmark_ids[b_idx],
-            "theta_median": float(np.median(Z[:, s_idx, :] @ lambdas[b_idx])),
-            "observed_logit": 0.0,
-            "misfit_median": 0.0,
-            "z_median": 0.0,
+            "theta_median": float(np.median(eta_cell[:, c_idx] - cell_misfit[:, c_idx])) if have_eta and have_misfit else eta_med,
+            "observed_logit": observed,
+            "misfit_median": misfit_med,
+            "z_median": misfit_med / sig,
         })
 
     scales = {
@@ -389,7 +464,7 @@ def build_posterior_summary(data: dict, samples: dict[str, np.ndarray]) -> dict:
     }
 
     return {
-        "method_version": "1.2.2",
+        "method_version": data.get("method_version", "1.2.x"),
         "scales": scales,
         "systems": systems,
         "views": views,

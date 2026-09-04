@@ -1,0 +1,19 @@
+id: solar-pro4
+name: Solar Pro 4
+organization: Upstage
+family: Solar
+release_date: 2026-08-06
+open_weights: false
+license: Proprietary
+aliases:
+  - Solar Pro 4
+  - solar-pro4
+reasoning: true
+context_length: 524288
+modality: text
+source_url: https://www.upstage.ai/blog/en/solar-pro-4
+metadata_sources:
+  - https://www.upstage.ai/blog/en/solar-pro-4
+  - https://artificialanalysis.ai/models/solar-pro4
+status: active
+max_output: 131072

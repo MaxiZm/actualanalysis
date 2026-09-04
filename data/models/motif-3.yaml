@@ -1,0 +1,20 @@
+id: motif-3
+name: Motif 3
+organization: Motif Technologies
+family: Motif
+release_date: 2026-08-12
+open_weights: true
+license: See publisher license
+aliases:
+  - Motif 3
+  - motif-3
+reasoning: true
+context_length: 262144
+modality: text
+source_url: https://arxiv.org/abs/2608.09119
+metadata_sources:
+  - https://arxiv.org/abs/2608.09119
+  - https://artificialanalysis.ai/models/motif-3
+status: active
+params_total_b: 314
+params_active_b: 13.2

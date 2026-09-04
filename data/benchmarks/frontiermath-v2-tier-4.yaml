@@ -1,12 +1,19 @@
 id: frontiermath-v2-tier-4
 name: FrontierMath v2 Tier 4
 version: v2-tier-4
-grader_version: FrontierMath v2 Tier 4 release
+grader_version: 2.0.0
 family_id: frontiermath
-aliases: [FrontierMath v2 T4, FrontierMath 2 Tier 4, FrontierMath-Tier-4-v2-Private, FrontierMath-Tier-4-2025-07-01-Private]
-tags: [chat]
-categories: [mathematics]
-domains: { agentic: 0, software-code: 0, reasoning: 1, knowledge-information: 0, communication-professional: 0 }
+aliases: [ FrontierMath v2 T4, FrontierMath 2 Tier 4, FrontierMath-Tier-4-v2-Private ]
+tags: [ chat ]
+categories: [ mathematics ]
+domains:
+  {
+    agentic: 0,
+    software-code: 0,
+    reasoning: 1,
+    knowledge-information: 0,
+    communication-professional: 0
+  }
 holdout: private
 chance_level: 0
 obs_type: count
@@ -14,11 +21,18 @@ public_release_date: 2026-06-12
 default_k: 1
 tool_policy: python-submit-answer
 transform: { type: accuracy, input_scale: percent }
-n_items: 43
+n_items: 41
 harness_url: https://epoch.ai/benchmarks/frontiermath-tier-4-v2
-source_ids: [epoch, vendor-model-cards]
+source_ids: [ epoch, vendor-model-cards ]
 metadata_sources:
   - https://epoch.ai/benchmarks/frontiermath-tier-4-v2
-  - https://epoch.ai/frontiermath/tiers-1-4
-status: watchlist
-notes: Identity is pinned, but current evidence has no independent source; held in shadow/watchlist until the ACI promotion criteria are met.
+  - https://epoch.ai/data/benchmarks.csv
+status: active
+notes: The v2 private test set contains 41 problems after excluding published
+  examples. Epoch run-level scores, reported standard errors and exact reasoning
+  configurations are preserved. Results on the pre-June-2026 v1 problems are a
+  different benchmark and are excluded.
+promotion_rule: "Promoted to active under method 1.2.3: the benchmark has
+  independent results for ≥8 registered models; metadata pins that are still
+  missing are carried as metadata_incomplete on each observation instead of
+  blocking the fit."

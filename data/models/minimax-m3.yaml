@@ -1,0 +1,19 @@
+id: minimax-m3
+name: MiniMax-M3
+organization: MiniMax
+family: MiniMax-M3
+release_date: 2026-06-01
+open_weights: true
+license: minimax-community
+aliases:
+  - MiniMax-M3
+  - minimax/minimax-m3
+  - minimax-m3
+reasoning: true
+context_length: 1000000
+modality: multimodal
+source_url: https://huggingface.co/MiniMaxAI/MiniMax-M3
+metadata_sources:
+  - https://huggingface.co/MiniMaxAI/MiniMax-M3
+  - https://artificialanalysis.ai/models/minimax-m3
+status: active

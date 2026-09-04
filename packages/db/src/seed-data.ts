@@ -2,7 +2,7 @@ import { createHash } from "node:crypto";
 import { eq } from "drizzle-orm";
 import type { Registry } from "@actualanalysis/shared";
 import type { RawResult } from "@actualanalysis/ingest";
-import { selectPreferredResults } from "@actualanalysis/ingest";
+import { harmonizeObservationLineages, selectLineageObservations } from "@actualanalysis/ingest";
 import type { DatabaseWriter } from "./client.js";
 import { benchmarks, models, pricing, results, sources, speed } from "./schema.js";
 
@@ -224,6 +224,9 @@ export async function seedRegistry(db: DatabaseWriter, registry: Registry): Prom
   }
 
   for (const row of registry.manualSpeed.observations) {
+    // Partial observations remain available in the UI registry. The legacy
+    // isolated speed table requires both metrics and is never exported.
+    if (row.ttft_s === null || row.tokens_per_s === null) continue;
     await db
       .insert(speed)
       .values({
@@ -267,7 +270,7 @@ export async function persistIngestRecords(
   db: DatabaseWriter,
   recordsToPersist: readonly RawResult[],
 ): Promise<PersistIngestSummary> {
-  const mapped = recordsToPersist.filter((record) =>
+  const mapped = harmonizeObservationLineages(recordsToPersist).filter((record) =>
     record.record_type === "pricing"
       ? record.model_id !== undefined
       : record.model_id !== undefined && record.benchmark_id !== undefined,
@@ -401,19 +404,19 @@ export async function persistIngestRecords(
       });
   }
 
-  const selection = selectPreferredResults(benchmarkRecords);
+  const selection = selectLineageObservations(benchmarkRecords);
   const keptByGroup = new Map<string, string>();
   for (const record of selection.kept) {
     if (record.record_type !== "benchmark_result" || !record.model_id || !record.benchmark_id) continue;
     const id = rowIds.get(resultObservationKey(record));
-    const groupKey = resultGroupKey(record);
-    if (id && !keptByGroup.has(groupKey)) keptByGroup.set(groupKey, id);
+    const groupKey = record.lineage_id;
+    if (id && groupKey && !keptByGroup.has(groupKey)) keptByGroup.set(groupKey, id);
   }
   let superseded = 0;
   for (const record of selection.superseded) {
     if (record.record_type !== "benchmark_result" || !record.model_id || !record.benchmark_id) continue;
     const rowId = rowIds.get(resultObservationKey(record));
-    const parentId = keptByGroup.get(resultGroupKey(record));
+    const parentId = record.lineage_id ? keptByGroup.get(record.lineage_id) : undefined;
     if (!rowId || !parentId) continue;
     await db.update(results).set({ supersededBy: parentId }).where(eq(results.id, rowId));
     superseded += 1;

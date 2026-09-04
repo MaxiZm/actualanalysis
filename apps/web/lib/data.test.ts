@@ -19,24 +19,24 @@ describe("fixture data contract", () => {
     expect(fixtureEnvelope(MODELS).meta.disclaimer).toContain("synthetic fixture data");
   });
 
-  it("keeps every leaderboard ordered by its selected rank", () => {
+  it("orders every profile by its displayed median and retains all models", () => {
     for (const kind of INDEX_KINDS) {
-      const ranks = getLeaderboard(kind).map((model) => model.indexes[kind]?.rank);
-      expect(ranks).not.toContain(null);
-      expect(ranks).not.toContain(undefined);
-      expect(ranks).toEqual([...ranks].sort((a, b) => (a ?? Number.MAX_SAFE_INTEGER) - (b ?? Number.MAX_SAFE_INTEGER)));
+      const board = getLeaderboard(kind);
+      expect(board).toHaveLength(MODELS.length);
+      const values = board.map((model) => model.indexes[kind]!.score ?? model.indexes[kind]!.robustScore);
+      expect(values).toEqual([...values].sort((a, b) => b - a));
     }
   });
 
-  it("returns every model scored for the requested index without requiring other indexes", () => {
+  it("keeps models without a score visible after scored models", () => {
     const mixed = MODELS[0]!.indexes.mixed;
     const chat = MODELS[0]!.indexes.chat;
     if (!mixed || !chat) throw new Error("fixture model must provide mixed and chat scores");
     const mixedOnly = { ...MODELS[0]!, id: "mixed-only", indexes: { mixed } };
     const chatOnly = { ...MODELS[0]!, id: "chat-only", indexes: { chat } };
 
-    expect(getLeaderboard("mixed", [mixedOnly, chatOnly]).map((model) => model.id)).toEqual(["mixed-only"]);
-    expect(getLeaderboard("chat", [mixedOnly, chatOnly]).map((model) => model.id)).toEqual(["chat-only"]);
+    expect(getLeaderboard("mixed", [mixedOnly, chatOnly]).map((model) => model.id)).toEqual(["mixed-only", "chat-only"]);
+    expect(getLeaderboard("chat", [mixedOnly, chatOnly]).map((model) => model.id)).toEqual(["chat-only", "mixed-only"]);
   });
 
   it("accepts only public index kinds", () => {

@@ -10,3 +10,5 @@ export * from "./orchestrator.js";
 export * from "./observation-annotations.js";
 export * from "./types.js";
 export * from "./unmapped-report.js";
+
+export * from "./lib/lineage.js";

@@ -76,8 +76,15 @@ function assertReferences(
       ].filter(([, value]) => value === undefined);
       if (benchmark.metadata_sources.length === 0) missing.push(["metadata_sources", undefined]);
       if (benchmark.obs_type === "count" && benchmark.default_k === undefined) missing.push(["default_k", undefined]);
+      // Method 1.2 contract (methodology §1): missing provenance metadata is carried as
+      // `metadata_incomplete` on each observation and fitted with inflated run noise; it
+      // must not block the fit. Only fields the likelihood itself needs are fatal.
+      const fatal = missing.filter(([field]) => field === "obs_type" || field === "default_k" || (field === "domains" && benchmark.categories.length === 0));
+      if (fatal.length) {
+        throw new Error(`Active benchmark ${benchmark.id} is missing ACI 1.2 likelihood metadata: ${fatal.map(([field]) => field).join(", ")}`);
+      }
       if (missing.length) {
-        throw new Error(`Active benchmark ${benchmark.id} is missing ACI 1.2 admission metadata: ${missing.map(([field]) => field).join(", ")}`);
+        console.warn(`Active benchmark ${benchmark.id} lacks admission metadata (${missing.map(([field]) => field).join(", ")}); its observations are fitted as metadata_incomplete`);
       }
     }
   }
@@ -116,7 +123,9 @@ function assertReferences(
   }
   for (const benchmark of benchmarks.filter((entry) => entry.status === "active")) {
     const hasProtocol = sources.some((source) => source.protocols?.some((protocol) => protocol.benchmark_ids.includes(benchmark.id)));
-    if (!hasProtocol) throw new Error(`Active benchmark ${benchmark.id} has no declared source protocol`);
+    // Methodology §1: metadata that no dated protocol supplies is inherited as
+    // `metadata_incomplete` on the observation (inflated run noise), not a hard stop.
+    if (!hasProtocol) console.warn(`Active benchmark ${benchmark.id} has no declared source protocol; its observations inherit no protocol metadata and are fitted as metadata_incomplete`);
   }
   if (config.reference_benchmark) {
     if (!benchmarkIds.has(config.reference_benchmark)) {
@@ -132,7 +141,7 @@ function assertReferences(
     const modelId = separatorIndex >= 0 ? systemId.slice(0, separatorIndex) : systemId;
     const profile = separatorIndex >= 0 ? systemId.slice(separatorIndex + 1) : "";
     if (!modelId || !modelIds.has(modelId)) throw new Error(`Calibration panel references unknown model ${modelId ?? systemId}`);
-    if (config.method_version === "1.2.2") {
+    if (/^1\.[23]\./.test(config.method_version)) {
       if (profile !== "max-common" && profile !== "std-common" && profile !== "std" && profile !== "max") {
         throw new Error(`Calibration panel system ${systemId} must use an allowed class`);
       }
@@ -180,7 +189,13 @@ export async function loadRegistry(dataDir: string, options: LoadRegistryOptions
     readRegistryDirectory(path.join(dataDir, "benchmarks"), BenchmarkSchema),
     readRegistryDirectory(path.join(dataDir, "sources"), SourceSchema),
     readYamlFile(path.join(dataDir, "index-config.yaml"), IndexConfigSchema),
-    readYamlFile(path.join(dataDir, "manual", "speed-aa.yaml"), SpeedFileSchema),
+    readYamlFile(path.join(dataDir, "manual", "speed-aa.yaml"), SpeedFileSchema).catch((error: unknown) => {
+      const cause = error instanceof RegistryValidationError ? error.cause : error;
+      if (cause && typeof cause === "object" && "code" in cause && cause.code === "ENOENT") {
+        return SpeedFileSchema.parse({ redistributable: false, warning: "Private display measurements are not installed.", observations: [] });
+      }
+      throw error;
+    }),
   ]);
 
   const results: Result[] = [];

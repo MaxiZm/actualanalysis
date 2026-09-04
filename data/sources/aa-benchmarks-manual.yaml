@@ -1,0 +1,7 @@
+id: aa-benchmarks-manual
+name: Artificial Analysis benchmark observations (manual isolation)
+url: https://artificialanalysis.ai/evaluations/critpt
+license: Non-redistributable Artificial Analysis observations
+kind: manual
+redistributable: false
+notes: Attributed display-only values. Never include this source in CC-BY snapshots, downloads, bulk APIs, or public index fitting.

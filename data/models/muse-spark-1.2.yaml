@@ -1,0 +1,26 @@
+id: muse-spark-1.2
+name: Muse Spark 1.2
+organization: Meta AI
+family: Muse Spark
+release_date: 2026-08-05
+open_weights: false
+license: Proprietary
+aliases:
+  - meta/muse-spark-1.2
+  - Muse Spark 1.2
+  - muse-spark-1-2
+reasoning: true
+context_length: 1048576
+modality: multimodal
+source_url: https://research.meta.ai/blog/introducing-muse-code-and-muse-spark-1-2
+metadata_sources:
+  - https://research.meta.ai/blog/introducing-muse-code-and-muse-spark-1-2
+  - https://artificialanalysis.ai/models/muse-spark-1-2
+status: active
+max_effort_tier: xhigh
+default_effort_tier: xhigh
+effort_tier_order:
+  - low
+  - medium
+  - high
+  - xhigh

@@ -1,0 +1,34 @@
+id: automationbench-public
+name: AutomationBench · public
+version: public-2026-07
+family_id: automationbench-public
+aliases: []
+tags:
+  - agentic
+categories:
+  - tool-use
+  - professional-tasks
+domains:
+  agentic: 0.7
+  software-code: 0
+  reasoning: 0.1
+  knowledge-information: 0
+  communication-professional: 0.2
+holdout: public
+chance_level: 0
+transform:
+  type: accuracy
+  input_scale: percent
+n_items: 600
+obs_type: count
+default_k: 1
+harness_url: https://github.com/zapier/AutomationBench
+source_ids:
+  - automationbench
+  - vendor-model-cards
+status: active
+metadata_sources:
+  - https://github.com/zapier/AutomationBench
+notes: Strict task completion on 600 public business workflows. Separate from
+  the harder private leaderboard and partial-credit reward. July 2026 classifier
+  revision.

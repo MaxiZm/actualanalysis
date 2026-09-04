@@ -1,0 +1,487 @@
+results:
+  - model_id: deepseek-v4-pro-0813
+    benchmark_id: deepswe
+    source_id: vendor-model-cards
+    score: 62.7
+    score_unit: percent
+    observed_on: 2026-09-05
+    url: https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813
+    provenance: self_report
+    metadata_incomplete: true
+    config: &a1
+      reasoning_effort: max
+      temperature: 1
+      top_p: 0.95
+    notes: "REVIEW ONLY: the source identifies DeepSWE v1.1 or leaves its dataset
+      revision unspecified, while the registry is pinned to version 1. No
+      verified task-set equivalence is established. Publisher evaluation using
+      DeepSeek Harness minimal mode at max effort. Different harness from
+      mini-swe-agent results; retained with native harness provenance. Dataset
+      revision is not stated in the table."
+    effort_tier: max
+    harness: DeepSeek Harness (minimal mode)
+    harness_class: native
+    sample_only: true
+  - model_id: deepseek-v4-flash-0731
+    benchmark_id: deepswe
+    source_id: vendor-model-cards
+    score: 54.4
+    score_unit: percent
+    observed_on: 2026-09-05
+    url: https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731
+    provenance: self_report
+    metadata_incomplete: true
+    config: *a1
+    notes: "REVIEW ONLY: the source identifies DeepSWE v1.1 or leaves its dataset
+      revision unspecified, while the registry is pinned to version 1. No
+      verified task-set equivalence is established. Publisher evaluation using
+      DeepSeek Harness minimal mode at max effort. Different harness from
+      mini-swe-agent results; retained with native harness provenance. Dataset
+      revision is not stated in the table."
+    effort_tier: max
+    harness: DeepSeek Harness (minimal mode)
+    harness_class: native
+    sample_only: true
+  - model_id: deepseek-v4-flash-vision-exp
+    benchmark_id: deepswe
+    source_id: vendor-model-cards
+    score: 59.3
+    score_unit: percent
+    observed_on: 2026-09-05
+    url: https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-Vision-Exp
+    provenance: self_report
+    metadata_incomplete: true
+    config: *a1
+    notes: "REVIEW ONLY: the source identifies DeepSWE v1.1 or leaves its dataset
+      revision unspecified, while the registry is pinned to version 1. No
+      verified task-set equivalence is established. Publisher evaluation using
+      DeepSeek Harness minimal mode at max effort. Different harness from
+      mini-swe-agent results; retained with native harness provenance. Dataset
+      revision is not stated in the table."
+    effort_tier: max
+    harness: DeepSeek Harness (minimal mode)
+    harness_class: native
+    sample_only: true
+  - model_id: deepseek-v4-pro-0813
+    benchmark_id: automationbench-public
+    source_id: vendor-model-cards
+    score: 31.8
+    score_unit: percent
+    observed_on: 2026-09-05
+    url: https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813
+    provenance: self_report
+    metadata_incomplete: true
+    config: *a1
+    notes: "REVIEW ONLY: this is AutomationBench v1.0.6 or an unspecified public
+      revision, not the registered current public task set. Do not pool these
+      tasks with the current leaderboard. Publisher AutomationBench Public
+      evaluation. Exact task-set and verifier revisions are not stated; no
+      assumption that this is the updated v3 leaderboard protocol."
+    effort_tier: max
+    harness: DeepSeek Harness (minimal mode)
+    harness_class: native
+    sample_only: true
+  - model_id: deepseek-v4-flash-0731
+    benchmark_id: automationbench-public
+    source_id: vendor-model-cards
+    score: 25.1
+    score_unit: percent
+    observed_on: 2026-09-05
+    url: https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731
+    provenance: self_report
+    metadata_incomplete: true
+    config: *a1
+    notes: "REVIEW ONLY: this is AutomationBench v1.0.6 or an unspecified public
+      revision, not the registered current public task set. Do not pool these
+      tasks with the current leaderboard. Publisher AutomationBench Public
+      evaluation. Exact task-set and verifier revisions are not stated; no
+      assumption that this is the updated v3 leaderboard protocol."
+    effort_tier: max
+    harness: DeepSeek Harness (minimal mode)
+    harness_class: native
+    sample_only: true
+  - model_id: deepseek-v4-flash-vision-exp
+    benchmark_id: automationbench-public
+    source_id: vendor-model-cards
+    score: 25.7
+    score_unit: percent
+    observed_on: 2026-09-05
+    url: https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-Vision-Exp
+    provenance: self_report
+    metadata_incomplete: true
+    config: *a1
+    notes: "REVIEW ONLY: this is AutomationBench v1.0.6 or an unspecified public
+      revision, not the registered current public task set. Do not pool these
+      tasks with the current leaderboard. Publisher AutomationBench Public
+      evaluation. Exact task-set and verifier revisions are not stated; no
+      assumption that this is the updated v3 leaderboard protocol."
+    effort_tier: max
+    harness: DeepSeek Harness (minimal mode)
+    harness_class: native
+    sample_only: true
+  - model_id: deepseek-v4-pro-0813
+    benchmark_id: hle-no-tools
+    source_id: vendor-model-cards
+    score: 42.7
+    score_unit: percent
+    observed_on: 2026-09-05
+    url: https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813
+    provenance: self_report
+    metadata_incomplete: true
+    config: {}
+    notes: "REVIEW ONLY: the source does not establish the registered 2,500-item
+      immutable HLE split and pinned o3-mini judge; some Qwen rows explicitly
+      use GPT-4o. Do not treat these as the registered evaluation. The publisher
+      separates HLE without tools (42.7) from HLE with tools (60.0). Only the
+      former is recorded; modality subset and grader commit are not disclosed."
+    tool_policy: none
+    sample_only: true
+  - model_id: deepseek-v4-pro-0424
+    benchmark_id: gpqa-diamond
+    source_id: vendor-model-cards
+    score: 90.1
+    score_unit: percent
+    observed_on: 2026-09-05
+    url: https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro
+    provenance: self_report
+    metadata_incomplete: true
+    config:
+      reasoning_effort: max
+    notes: April preview model-card instruct evaluation, DS-V4-Pro Max column. Kept
+      distinct from August 13 post-training. HLE with-tools, base-model and
+      retired-benchmark columns are not imported. The named Diamond subset
+      contains 198 questions; no aggregate GPQA/full-set or tool-enabled result
+      is substituted.
+    effort_tier: max
+    tool_policy: none
+    n_items: 198
+    benchmark_version: diamond-198
+  - model_id: deepseek-v4-pro-0424
+    benchmark_id: hle-no-tools
+    source_id: vendor-model-cards
+    score: 37.7
+    score_unit: percent
+    observed_on: 2026-09-05
+    url: https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro
+    provenance: self_report
+    metadata_incomplete: true
+    config:
+      reasoning_effort: max
+    notes: "REVIEW ONLY: the source does not establish the registered 2,500-item
+      immutable HLE split and pinned o3-mini judge; some Qwen rows explicitly
+      use GPT-4o. Do not treat these as the registered evaluation. April preview
+      model-card instruct evaluation, DS-V4-Pro Max column. Kept distinct from
+      August 13 post-training. HLE with-tools, base-model and retired-benchmark
+      columns are not imported."
+    effort_tier: max
+    tool_policy: none
+    sample_only: true
+  - model_id: deepseek-v4-pro-0424
+    benchmark_id: simpleqa-verified
+    source_id: vendor-model-cards
+    score: 57.9
+    score_unit: percent
+    observed_on: 2026-09-05
+    url: https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro
+    provenance: self_report
+    metadata_incomplete: true
+    config:
+      reasoning_effort: max
+    notes: "REVIEW ONLY: the source reports pass@1 accuracy; this does not establish
+      equivalence to the registered abstention-aware metric. April preview
+      model-card instruct evaluation, DS-V4-Pro Max column. Kept distinct from
+      August 13 post-training. HLE with-tools, base-model and retired-benchmark
+      columns are not imported."
+    effort_tier: max
+    tool_policy: none
+    sample_only: true
+  - model_id: glm-5.3-flash
+    benchmark_id: deepswe
+    source_id: vendor-model-cards
+    score: 63.4
+    score_unit: percent
+    observed_on: 2026-09-05
+    url: https://docs.z.ai/guides/vlm/glm-5.3-flash
+    provenance: self_report
+    metadata_incomplete: true
+    config:
+      reasoning_effort: max
+      temperature: 0.95
+      top_p: 1
+      context_length: 400000
+      timeout_hours: 6
+    notes: "REVIEW ONLY: the source identifies DeepSWE v1.1 or leaves its dataset
+      revision unspecified, while the registry is pinned to version 1. No
+      verified task-set equivalence is established. Z.ai documentation reports
+      DeepSWE v1.1 63.4. The linked model card specifies mini-swe-agent,
+      temperature 0.95, top_p 1, six hours and 400K context."
+    benchmark_version: "1.1"
+    effort_tier: max
+    harness: mini-swe-agent
+    harness_class: common
+    sample_only: true
+  - model_id: glm-5.3-flash
+    benchmark_id: automationbench-public
+    source_id: vendor-model-cards
+    score: 48.8
+    score_unit: percent
+    observed_on: 2026-09-05
+    url: https://docs.z.ai/guides/vlm/glm-5.3-flash
+    provenance: self_report
+    metadata_incomplete: true
+    config:
+      reasoning_effort: max
+    notes: "REVIEW ONLY: this is AutomationBench v1.0.6 or an unspecified public
+      revision, not the registered current public task set. Do not pool these
+      tasks with the current leaderboard. Z.ai reports 48.8; its model card
+      identifies AutomationBench v1.0.6 including the null-type fix from PR13.
+      Protocol version is retained instead of treating it as the public v3
+      leaderboard."
+    benchmark_version: 1.0.6
+    effort_tier: max
+    sample_only: true
+  - model_id: qwen3.8-flash-next
+    benchmark_id: gpqa-diamond
+    source_id: vendor-model-cards
+    score: 91.7
+    score_unit: percent
+    observed_on: 2026-09-05
+    url: https://huggingface.co/Qwen/Qwen3.8-Flash-Next
+    provenance: self_report
+    metadata_incomplete: true
+    config:
+      mode: thinking
+    notes: Exact Qwen checkpoint column in the publisher model-card benchmark table.
+      Thinking enabled; the table does not pin a per-benchmark effort setting.
+      The named Diamond subset contains 198 questions; no aggregate
+      GPQA/full-set or tool-enabled result is substituted.
+    tool_policy: none
+    n_items: 198
+    benchmark_version: diamond-198
+  - model_id: qwen3.8-flash-next
+    benchmark_id: hle-no-tools
+    source_id: vendor-model-cards
+    score: 35.9
+    score_unit: percent
+    observed_on: 2026-09-05
+    url: https://huggingface.co/Qwen/Qwen3.8-Flash-Next
+    provenance: self_report
+    metadata_incomplete: true
+    config:
+      mode: thinking
+    notes: "REVIEW ONLY: the source does not establish the registered 2,500-item
+      immutable HLE split and pinned o3-mini judge; some Qwen rows explicitly
+      use GPT-4o. Do not treat these as the registered evaluation. Publisher HLE
+      column, judged by GPT-4o according to its footnote. No tools are listed in
+      this reasoning section; the modality subset and judge snapshot are not
+      disclosed."
+    tool_policy: none
+    grader_version: GPT-4o (publisher named judge, exact snapshot unspecified)
+    sample_only: true
+  - model_id: qwen3.8-flash-next
+    benchmark_id: deepswe
+    source_id: vendor-model-cards
+    score: 58.7
+    score_unit: percent
+    observed_on: 2026-09-05
+    url: https://huggingface.co/Qwen/Qwen3.8-Flash-Next
+    provenance: self_report
+    metadata_incomplete: true
+    config:
+      mode: thinking
+      temperature: 1
+      top_p: 0.95
+      context_length: 262144
+    notes: "REVIEW ONLY: the source identifies DeepSWE v1.1 or leaves its dataset
+      revision unspecified, while the registry is pinned to version 1. No
+      verified task-set equivalence is established. Publisher DeepSWE v1.1
+      result selects the higher score from Claude Code and mini-swe-agent.
+      Retained as self-report with mixed/unknown harness rather than a
+      common-harness independent observation."
+    benchmark_version: "1.1"
+    harness: Best of Claude Code and mini-swe-agent
+    harness_class: unknown
+    sample_only: true
+  - model_id: qwen3.8-27b
+    benchmark_id: gpqa-diamond
+    source_id: vendor-model-cards
+    score: 89.2
+    score_unit: percent
+    observed_on: 2026-09-05
+    url: https://huggingface.co/Qwen/Qwen3.8-27B
+    provenance: self_report
+    metadata_incomplete: true
+    config:
+      mode: thinking
+    notes: Exact Qwen checkpoint column in the publisher model-card benchmark table.
+      Thinking enabled; the table does not pin a per-benchmark effort setting.
+      The named Diamond subset contains 198 questions; no aggregate
+      GPQA/full-set or tool-enabled result is substituted.
+    tool_policy: none
+    n_items: 198
+    benchmark_version: diamond-198
+  - model_id: qwen3.8-27b
+    benchmark_id: hle-no-tools
+    source_id: vendor-model-cards
+    score: 30.8
+    score_unit: percent
+    observed_on: 2026-09-05
+    url: https://huggingface.co/Qwen/Qwen3.8-27B
+    provenance: self_report
+    metadata_incomplete: true
+    config:
+      mode: thinking
+    notes: "REVIEW ONLY: the source does not establish the registered 2,500-item
+      immutable HLE split and pinned o3-mini judge; some Qwen rows explicitly
+      use GPT-4o. Do not treat these as the registered evaluation. Publisher HLE
+      column, judged by GPT-4o according to its footnote. No tools are listed in
+      this reasoning section; the modality subset and judge snapshot are not
+      disclosed."
+    tool_policy: none
+    grader_version: GPT-4o (publisher named judge, exact snapshot unspecified)
+    sample_only: true
+  - model_id: qwen3.8-27b
+    benchmark_id: deepswe
+    source_id: vendor-model-cards
+    score: 42.2
+    score_unit: percent
+    observed_on: 2026-09-05
+    url: https://huggingface.co/Qwen/Qwen3.8-27B
+    provenance: self_report
+    metadata_incomplete: true
+    config:
+      mode: thinking
+      temperature: 1
+      top_p: 0.95
+      context_length: 262144
+    notes: "REVIEW ONLY: the source identifies DeepSWE v1.1 or leaves its dataset
+      revision unspecified, while the registry is pinned to version 1. No
+      verified task-set equivalence is established. Publisher DeepSWE v1.1
+      result selects the higher score from Claude Code and mini-swe-agent.
+      Retained as self-report with mixed/unknown harness rather than a
+      common-harness independent observation."
+    benchmark_version: "1.1"
+    harness: Best of Claude Code and mini-swe-agent
+    harness_class: unknown
+    sample_only: true
+  - model_id: qwen3.6-27b
+    benchmark_id: gpqa-diamond
+    source_id: vendor-model-cards
+    score: 87.8
+    score_unit: percent
+    observed_on: 2026-09-05
+    url: https://huggingface.co/Qwen/Qwen3.6-27B
+    provenance: self_report
+    metadata_incomplete: true
+    config:
+      mode: thinking
+    notes: Exact Qwen3.6-27B column in the publisher model card. No transfer from
+      the adjacent 35B-A3B or 3.5 columns; reasoning evaluation metadata is
+      incomplete. The named Diamond subset contains 198 questions; no aggregate
+      GPQA/full-set or tool-enabled result is substituted.
+    tool_policy: none
+    n_items: 198
+    benchmark_version: diamond-198
+  - model_id: qwen3.6-27b
+    benchmark_id: hle-no-tools
+    source_id: vendor-model-cards
+    score: 24
+    score_unit: percent
+    observed_on: 2026-09-05
+    url: https://huggingface.co/Qwen/Qwen3.6-27B
+    provenance: self_report
+    metadata_incomplete: true
+    config:
+      mode: thinking
+    notes: "REVIEW ONLY: the source does not establish the registered 2,500-item
+      immutable HLE split and pinned o3-mini judge; some Qwen rows explicitly
+      use GPT-4o. Do not treat these as the registered evaluation. Exact
+      Qwen3.6-27B column in the publisher model card. No transfer from the
+      adjacent 35B-A3B or 3.5 columns; reasoning evaluation metadata is
+      incomplete."
+    tool_policy: none
+    sample_only: true
+  - model_id: nex-n2-pro
+    benchmark_id: gpqa-diamond
+    source_id: vendor-model-cards
+    score: 90.7
+    score_unit: percent
+    observed_on: 2026-09-05
+    url: https://huggingface.co/nex-agi/Nex-N2-Pro
+    provenance: self_report
+    metadata_incomplete: true
+    config: {}
+    notes: Nex-N2-Pro column in the publisher benchmark table; not the Nex-N2-mini
+      column. The named Diamond subset contains 198 questions; no aggregate
+      GPQA/full-set or tool-enabled result is substituted.
+    tool_policy: none
+    n_items: 198
+    benchmark_version: diamond-198
+  - model_id: nex-n2-pro
+    benchmark_id: deepswe
+    source_id: vendor-model-cards
+    score: 33.6
+    score_unit: percent
+    observed_on: 2026-09-05
+    url: https://huggingface.co/nex-agi/Nex-N2-Pro
+    provenance: self_report
+    metadata_incomplete: true
+    config: {}
+    notes: "REVIEW ONLY: the source identifies DeepSWE v1.1 or leaves its dataset
+      revision unspecified, while the registry is pinned to version 1. No
+      verified task-set equivalence is established. Nex-N2-Pro column in the
+      publisher benchmark table. The publisher does not identify the DeepSWE
+      revision or exact evaluation harness."
+    sample_only: true
+  - model_id: solar-open2-250b
+    benchmark_id: gpqa-diamond
+    source_id: vendor-model-cards
+    score: 86.3
+    score_unit: percent
+    observed_on: 2026-09-05
+    url: https://huggingface.co/upstage/Solar-Open2-250B
+    provenance: self_report
+    metadata_incomplete: true
+    config: {}
+    notes: Solar Open 2 250B-A15B column in the publisher English benchmark table;
+      HLE explicitly excludes tools. Exact benchmark run/grader version is
+      absent. The named Diamond subset contains 198 questions; no aggregate
+      GPQA/full-set or tool-enabled result is substituted.
+    tool_policy: none
+    n_items: 198
+    benchmark_version: diamond-198
+  - model_id: solar-open2-250b
+    benchmark_id: hle-no-tools
+    source_id: vendor-model-cards
+    score: 28.8
+    score_unit: percent
+    observed_on: 2026-09-05
+    url: https://huggingface.co/upstage/Solar-Open2-250B
+    provenance: self_report
+    metadata_incomplete: true
+    config: {}
+    notes: "REVIEW ONLY: the source does not establish the registered 2,500-item
+      immutable HLE split and pinned o3-mini judge; some Qwen rows explicitly
+      use GPT-4o. Do not treat these as the registered evaluation. Solar Open 2
+      250B-A15B column in the publisher English benchmark table; HLE explicitly
+      excludes tools. Exact benchmark run/grader version is absent."
+    tool_policy: none
+    sample_only: true
+  - model_id: nemotron-3-ultra
+    benchmark_id: hle-no-tools
+    source_id: vendor-model-cards
+    score: 26.7
+    score_unit: percent
+    observed_on: 2026-09-05
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16
+    provenance: self_report
+    metadata_incomplete: true
+    config: {}
+    notes: "REVIEW ONLY: the source does not establish the registered 2,500-item
+      immutable HLE split and pinned o3-mini judge; some Qwen rows explicitly
+      use GPT-4o. Do not treat these as the registered evaluation. NVIDIA
+      model-card N-3-Ultra 550B-A55B HLE no-tools result. SciCode subtasks and
+      CritPt no-tools are deliberately not mapped to the differently configured
+      registry benchmarks."
+    tool_policy: none
+    sample_only: true

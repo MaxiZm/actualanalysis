@@ -67,6 +67,21 @@ function observation(overrides: Partial<AciObservation> = {}): AciObservation {
 }
 
 describe("ACI 1.2 observation contract", () => {
+  it("preserves run-level uncertainty instead of fabricating counts from a registry task-set size", () => {
+    const row = prepareAci12(
+      [observation({ score: 0.725, standardError: 0.07149950427751244 })],
+      [system], [benchmark({ nTasks: 41, chanceLevel: 0 })], config,
+    ).observations[0]!;
+    expect(row.likelihood).toBe("a_prime");
+    expect(row.x).toBeUndefined();
+    expect(row.variance).toBeCloseTo((0.07149950427751244 / (0.725 * 0.275)) ** 2, 12);
+    const exact = prepareAci12(
+      [observation({ score: 0.725, xCorrect: 29, nTasks: 40, standardError: 0.07149950427751244 })],
+      [system], [benchmark({ nTasks: 41, chanceLevel: 0 })], config,
+    ).observations[0]!;
+    expect(exact).toMatchObject({ likelihood: "a_single", x: 29, totalTrials: 40 });
+  });
+
   it("uses the corrected A-prime delta-method variance", () => {
     const prepared = prepareAci12(
       [observation({ standardError: 0.02 })],
@@ -108,7 +123,7 @@ describe("ACI 1.2 observation contract", () => {
     expect(["class_unassigned", "profile_unassigned"]).toContain(prepared.rejections[0]?.reason);
   });
 
-  it("matches declared effort tiers case-insensitively without inferring a missing tier", () => {
+  it("matches declared effort tiers case-insensitively and assigns a missing tier as approximate std-common", () => {
     const matched = prepareAci12(
       [observation({ effortTier: " Default ", nTasks: 100 })],
       [system],
@@ -122,7 +137,9 @@ describe("ACI 1.2 observation contract", () => {
       [benchmark()],
       config,
     );
-    expect(["class_unassigned", "profile_unassigned"]).toContain(missing.rejections[0]?.reason);
+    expect(missing.rejections).toEqual([]);
+    expect(missing.observations[0]?.profile).toBe("std-common");
+    expect(missing.observations[0]?.metadataIncomplete).toBe(true);
   });
 
   it("rejects source-incompatible aggregates but inflates unpinned reference metadata", () => {

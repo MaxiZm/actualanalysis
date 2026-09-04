@@ -1,0 +1,19 @@
+id: qwen3.7-plus
+name: Qwen3.7 Plus
+organization: Alibaba
+family: Qwen3
+release_date: 2026-06-01
+open_weights: false
+license: Proprietary
+aliases:
+  - qwen/qwen3.7-plus
+  - Qwen3.7 Plus
+  - qwen3-7-plus
+reasoning: true
+context_length: 1000000
+modality: multimodal
+source_url: https://www.qwencloud.com/models/qwen3.7-plus
+metadata_sources:
+  - https://www.qwencloud.com/models/qwen3.7-plus
+  - https://artificialanalysis.ai/models/qwen3-7-plus
+status: active

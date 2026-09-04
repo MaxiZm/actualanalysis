@@ -1,0 +1,7 @@
+id: aa-cost-manual
+name: Artificial Analysis cost per task (manual isolation)
+url: https://artificialanalysis.ai/leaderboards/models/
+license: Non-redistributable Artificial Analysis observations
+kind: manual
+redistributable: false
+notes: Weighted mean USD per Intelligence Index v4.1.1 task, using the source’s actual token expenditure and benchmark weights. Display-only; never include in CC-BY snapshots or exports.

@@ -1,0 +1,25 @@
+id: deepseek-v4-pro-0813
+name: DeepSeek V4 Pro 0813
+organization: DeepSeek
+family: DeepSeek V4
+release_date: 2026-08-13
+open_weights: true
+license: MIT
+aliases:
+  - DeepSeek-V4-Pro-0813
+reasoning: true
+context_length: 1000000
+modality: text
+source_url: https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813
+metadata_sources:
+  - https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813
+  - https://artificialanalysis.ai/models/deepseek-v4-pro
+status: active
+max_effort_tier: max
+default_effort_tier: max
+effort_tier_order:
+  - low
+  - high
+  - max
+notes: August 13 official release. Kept separate from the April 24 preview;
+  preview benchmark results are not transferred.

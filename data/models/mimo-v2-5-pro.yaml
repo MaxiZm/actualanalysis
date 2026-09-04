@@ -1,0 +1,19 @@
+id: mimo-v2-5-pro
+name: MiMo-V2.5-Pro
+organization: Xiaomi
+family: MiMo
+release_date: 2026-04-22
+open_weights: true
+license: MIT
+aliases:
+  - MiMo-V2.5-Pro
+  - xiaomi/mimo-v2.5-pro
+  - mimo-v2-5-pro
+reasoning: true
+context_length: 1000000
+modality: text
+source_url: https://huggingface.co/XiaomiMiMo/MiMo-V2.5-Pro
+metadata_sources:
+  - https://huggingface.co/XiaomiMiMo/MiMo-V2.5-Pro
+  - https://artificialanalysis.ai/models/mimo-v2-5-pro
+status: active

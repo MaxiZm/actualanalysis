@@ -1,14 +1,29 @@
 id: tau3-bench-banking
 name: tau3-bench Banking
 version: tau3
-aliases: [tau3 Banking, τ³-bench Banking, tau^3-bench banking]
-tags: [agentic]
-categories: [customer-service, tool-use]
+aliases: [ tau3 Banking, τ³-bench Banking, tau^3-bench banking ]
+tags: [ agentic ]
+categories: [ customer-service, tool-use ]
 holdout: public
 chance_level: 0
 transform: { type: accuracy, input_scale: percent }
 n_items: 97
 harness_url: https://taubench.com/
-source_ids: [taubench, vendor-model-cards]
-status: watchlist
-notes: The benchmark is currently mutable and has documented task fixes. Excluded until a commit, retrieval configuration, evaluator version, and per-task trial outcomes are pinned.
+source_ids: [ taubench, vendor-model-cards ]
+status: active
+notes: The benchmark is currently mutable and has documented task fixes.
+  Excluded until a commit, retrieval configuration, evaluator version, and
+  per-task trial outcomes are pinned.
+obs_type: count
+default_k: 4
+domains:
+  agentic: 0.7
+  software-code: 0
+  reasoning: 0.05
+  knowledge-information: 0.05
+  communication-professional: 0.2
+promotion_rule: "Promoted to active under method 1.2.3: the benchmark has
+  independent results for ≥8 registered models; metadata pins that are still
+  missing are carried as metadata_incomplete on each observation instead of
+  blocking the fit."
+family_id: tau3-bench-banking

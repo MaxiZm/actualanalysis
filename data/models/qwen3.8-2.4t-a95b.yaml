@@ -1,0 +1,25 @@
+id: qwen3.8-2.4t-a95b
+name: Qwen3.8 2.4T A95B
+organization: Alibaba
+family: Qwen3
+release_date: 2026-08-12
+open_weights: true
+license: qwen3.8-max
+aliases:
+  - Qwen3.8-2.4T-A95B
+  - Qwen3.8 2.4T A95B
+  - qwen3-8-2-4t-a95b
+reasoning: true
+context_length: 262144
+modality: text
+source_url: https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B
+metadata_sources:
+  - https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B
+  - https://artificialanalysis.ai/models/qwen3-8-2-4t-a95b
+status: active
+params_total_b: 2400
+params_active_b: 95
+notes: Open checkpoint. Qwen3.8-Max is a separately served product with vision
+  and other API features; its model-card benchmark column is not assigned to
+  these open weights. Native context is 262,144; publisher documents extension
+  to 1,010,000.

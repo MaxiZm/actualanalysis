@@ -1,0 +1,18 @@
+id: a-x-k2
+name: A.X-K2
+organization: SK Telecom
+family: A.X-K2
+release_date: 2026-08-12
+open_weights: true
+license: Apache-2.0
+aliases:
+  - A.X-K2
+  - a-x-k2
+reasoning: true
+context_length: 262144
+modality: text
+source_url: https://huggingface.co/skt/A.X-K2
+metadata_sources:
+  - https://huggingface.co/skt/A.X-K2
+  - https://artificialanalysis.ai/models/a-x-k2
+status: active

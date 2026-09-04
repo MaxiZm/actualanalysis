@@ -11,7 +11,21 @@ describe("public model DTO", () => {
       ...source,
       aliases: ["private/display-alias"],
       displayEconomics: { provider: "should never leak" },
-      pricing: source.pricing.map((price) => ({ ...price, privateSentinel: "restricted" })),
+      costPerTask: {
+        usdPerTask: 1.234567,
+        definition: "private task cost",
+        provider: "AA",
+        configuration: "high",
+        workload: "AA suite",
+        observedOn: "2026-09-05",
+        sourceUrl: "https://example.com",
+        methodologyUrl: "https://example.com/method",
+        redistributable: false as const,
+      },
+      pricing: source.pricing.map((price) => ({
+        ...price,
+        privateSentinel: "restricted",
+      })),
     };
 
     const dto = toPublicModelDto(tainted);
@@ -21,6 +35,8 @@ describe("public model DTO", () => {
     expect(dto.pricing).toHaveLength(source.pricing.length);
     expect(serialized).not.toContain("aliases");
     expect(serialized).not.toContain("displayEconomics");
+    expect(serialized).not.toContain("costPerTask");
+    expect(serialized).not.toContain("private task cost");
     expect(serialized).not.toContain("tokensPerSecond");
     expect(serialized).not.toContain("privateSentinel");
     expect(serialized).not.toContain("should never leak");

@@ -9,6 +9,7 @@ import {
   ingestSources,
   resolveRecordAliases,
   selectPreferredResults,
+  selectLineageObservations,
   stableStringify,
   writeUnmappedReportIfChanged,
   type RawResult,
@@ -21,6 +22,7 @@ import {
   persistIngestRecords,
   persistRunInTransaction,
   RunArtifactSchema,
+  resultObservationKey,
   seedRegistry,
   type RunArtifact,
 } from "@actualanalysis/db";
@@ -139,14 +141,23 @@ export function assessRunSet(
 ): RunSetReadiness {
   const createdKinds = kinds.filter((kind) => runs[kind] !== undefined);
   const missingKinds = kinds.filter((kind) => runs[kind] === undefined);
-  const unpublishableKinds = kinds.filter((kind) => {
+  // Methodology §8.2: a provisional system is published as an interval. A
+  // view in which no system reaches Ranked (e.g. the chat basket while the
+  // communication domain is thin) is therefore still publishable as intervals;
+  // only the headline mixed view must rank at least one system.
+  const hasRanked = (kind: IndexKind) => {
     const run = runs[kind];
-    return run !== undefined && !run.scores.some((score) => !score.provisional && score.rank !== null);
-  });
+    return run !== undefined && run.scores.some((score) => !score.provisional && score.rank !== null);
+  };
+  const unpublishableKinds = kinds.filter((kind) => kind === "mixed" && runs[kind] !== undefined && !hasRanked(kind));
+  const intervalOnlyKinds = kinds.filter((kind) => kind !== "mixed" && runs[kind] !== undefined && !hasRanked(kind));
   const issues: Partial<Record<IndexKind, string>> = {};
   for (const kind of missingKinds) issues[kind] = "no run artifact was produced";
   for (const kind of unpublishableKinds) {
     issues[kind] = "run has no non-provisional score with a published rank";
+  }
+  for (const kind of intervalOnlyKinds) {
+    issues[kind] = "interval-only view: no system reaches the Ranked tier in this profile";
   }
   return {
     complete: missingKinds.length === 0 && unpublishableKinds.length === 0,
@@ -728,10 +739,12 @@ function toAci12RunArtifacts(
   diagnostics: Record<string, unknown>,
   createdAt: string,
   posteriorPath: string,
+  evidenceObservationKeys: string[],
 ): Record<IndexKind, RunArtifact> {
   const benchmarkById = new Map(registry.benchmarks.map((benchmark) => [benchmark.id, benchmark]));
   const profileMetric = (kind: IndexKind, systemId: string) => {
     const system = posterior.systems[systemId]!;
+    if (kind !== "mixed" && system.index_profiles?.[kind]) return system.index_profiles[kind]!;
     if (kind === "agentic") return system.domains.agentic!;
     if (kind === "chat") return system.task_profiles.chat!;
     return system.display;
@@ -750,6 +763,7 @@ function toAci12RunArtifacts(
         reference_benchmark_id: registry.indexConfig.reference_benchmark ?? null,
         scales: posterior.scales,
         joint_posterior_path: posteriorPath,
+        current_evidence_observation_keys: evidenceObservationKeys,
         inference: registry.indexConfig.inference,
         diagnostics,
         systems: posterior.systems,
@@ -827,9 +841,10 @@ async function main(): Promise<void> {
     await writeFile(options.ingestOutput, `${JSON.stringify(ingested.records, null, 2)}\n`, "utf8");
   }
 
-  const mapped = mappedBenchmarkRecords(ingested.records);
+  const lineageSelection = selectLineageObservations(ingested.records);
+  const mapped = mappedBenchmarkRecords(lineageSelection.kept);
   const strongestTierMapped = mappedBenchmarkRecords(ingested.selectedRecords);
-  const isAci12 = ingested.registry.indexConfig.method_version === "1.2.2";
+  const isAci12 = /^1\.[23]\./.test(ingested.registry.indexConfig.method_version);
   // Method 1.2 fits every non-duplicate observation in the joint likelihood. The
   // canonical-config, provenance-supersession and legacy uncertainty gates below
   // exist only for replaying pre-1.2 runs.
@@ -867,12 +882,13 @@ async function main(): Promise<void> {
     );
     const referenceCoverage = auditReferenceCoverage(joint.preparation, joint.benchmarks, ingested.registry.indexConfig.calibration_panel);
     const readinessReason = joint.preparation.observations.length === 0
-      ? `ACI 1.2.2 has no profile-assigned observations; ${joint.preparation.rejections.length} observations were rejected`
+      ? `ACI ${ingested.registry.indexConfig.method_version} has no profile-assigned observations; ${joint.preparation.rejections.length} observations were rejected`
       : !perDomainAudit.passed
-        ? `ACI 1.2.2 calibration panel per-domain coverage audit failed: systems [${perDomainAudit.failingSystemIds.join(", ")}] have < 2 independent cells in at least one domain. See metadata unblock table.`
+        ? `ACI ${ingested.registry.indexConfig.method_version} calibration panel coverage audit failed: systems [${perDomainAudit.failingSystemIds.join(", ")}] do not satisfy the rule (>= ${perDomainAudit.rule.minCellsPerDomain} independent cell in every domain, >= 2 in at least ${perDomainAudit.rule.minDomainsWithTwo} domains); ${perDomainAudit.candidateSystemIds.length} fitted systems qualify. See aci12-preparation.json candidateSystemIds.`
         : null;
     aci12Eligibility = {
-      policy: "all observations share a cell latent; only duplicate lineages and invalid observations are rejected",
+      policy: "distinct configurations share a cell latent; verified origin lineages are counted once and invalid observations are rejected",
+      duplicate_source_copies: lineageSelection.superseded.length,
       observations_received: mapped.length,
       observations_prepared_for_fit: joint.preparation.observations.length,
       systems_prepared_for_fit: representedSystems.size,
@@ -915,6 +931,7 @@ async function main(): Promise<void> {
           posterior.diagnostics as unknown as Record<string, unknown>,
           startedAt,
           posterior.posteriorPath,
+          mapped.map(resultObservationKey),
         ));
       } catch (error) {
         const reason = error instanceof Error ? error.message : String(error);
@@ -1043,7 +1060,7 @@ async function main(): Promise<void> {
             if (!mixed || !agentic || !chat) {
               throw new Error("Committed publication is missing one or more exact run IDs");
             }
-            snapshot = await exportSnapshot(db, root, startedAt.slice(0, 10), { mixed, agentic, chat });
+            snapshot = await exportSnapshot(db, root, startedAt.slice(0, 10), { mixed, agentic, chat }, { replaceExisting: true });
           }
         }
       } finally {

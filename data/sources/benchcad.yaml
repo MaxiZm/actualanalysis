@@ -1,0 +1,8 @@
+id: benchcad
+name: BenchCAD
+url: https://benchcad.com/
+license: MIT code; CC-BY-4.0 dataset
+kind: runner
+redistributable: false
+notes: Factual score citations only. Retain exact source and configuration;
+  source content is not bundled.

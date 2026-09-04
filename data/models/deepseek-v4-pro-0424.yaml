@@ -1,0 +1,25 @@
+id: deepseek-v4-pro-0424
+name: DeepSeek V4 Pro (0424 Preview)
+organization: DeepSeek
+family: DeepSeek V4
+release_date: 2026-04-24
+open_weights: true
+license: MIT
+aliases:
+  - DeepSeek-V4-Pro-0424
+  - DeepSeek V4 Pro Preview
+reasoning: true
+context_length: 1000000
+modality: text
+source_url: https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro
+metadata_sources:
+  - https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro
+  - https://artificialanalysis.ai/models/deepseek-v4-pro-0424
+status: preview
+max_effort_tier: max
+default_effort_tier: max
+effort_tier_order:
+  - none
+  - high
+  - max
+notes: April 24 preview checkpoint. Kept separate from the August 13 official release.

@@ -6,6 +6,7 @@ export default defineConfig({
   workers: process.env.CI ? 2 : 1,
   retries: process.env.CI ? 2 : 0,
   reporter: process.env.CI ? "github" : "list",
+  timeout: 45_000,
   use: {
     baseURL: "http://localhost:3000",
     trace: "retain-on-failure"

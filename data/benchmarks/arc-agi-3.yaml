@@ -2,24 +2,35 @@ id: arc-agi-3
 name: ARC-AGI-3
 version: "3"
 family_id: arc-agi
-aliases: [ARC AGI 3, ARC Prize 3]
-tags: [chat, agentic]
-categories: [abstract-reasoning, tool-use]
-domains: { agentic: 0.45, software-code: 0, reasoning: 0.55, knowledge-information: 0, communication-professional: 0 }
+aliases: [ ARC AGI 3, ARC Prize 3 ]
+tags: [ chat, agentic ]
+categories: [ abstract-reasoning, tool-use ]
+domains:
+  {
+    agentic: 0.45,
+    software-code: 0,
+    reasoning: 0.55,
+    knowledge-information: 0,
+    communication-professional: 0
+  }
 holdout: semi_private
-holdout_details: Official model evaluations currently publish the semi-private dataset; private scores are not exposed.
+holdout_details: Official model evaluations currently publish the semi-private
+  dataset; private scores are not exposed.
 chance_level: 0
 public_release_date: 2026-03-25
-tool_policy: Interactive ARC game API actions; the official Kaggle environment disables internet access.
+tool_policy: Interactive ARC game API actions; the official Kaggle environment
+  disables internet access.
 transform: { type: accuracy, input_scale: percent }
 n_items: 55
 harness_url: https://arcprize.org/arc-agi/3/
-source_ids: [arcprize, vendor-model-cards]
+source_ids: [ arcprize, vendor-model-cards ]
 metadata_sources:
   - https://arcprize.org/media/ARC_AGI_3_Technical_Report.pdf
   - https://arcprize.org/blog/arc-agi-3-launch
   - https://docs.arcprize.org/methodology
   - https://github.com/arcprize/ARC-AGI-3-Kaggle-Starter
 status: watchlist
-promotion_rule: Active after reaching at least eight model configurations; demote if comparable coverage falls below that threshold.
-notes: Published rows use Relative Human Action Efficiency, not binomial accuracy. Retained for audit but excluded until ACI has a dedicated RHAE transform, chance process, uncertainty model, and immutable grader pin.
+promotion_rule: Publish only after a dedicated RHAE likelihood and source uncertainty are available.
+notes: Relative Human Action Efficiency is a continuous action-efficiency metric, not a binomial success rate. Source scores remain visible; excluded from capability fitting in 1.3.0.
+obs_type: judge
+default_k: 1

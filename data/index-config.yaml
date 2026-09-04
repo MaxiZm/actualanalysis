@@ -1,8 +1,8 @@
-method_version: 1.2.2
+method_version: 1.3.2
 method_name: ActualAnalysis Capability Index
 taxonomy_edition: 2026a
 calibration_edition: 2026a
-data_cutoff: 2026-09-04
+data_cutoff: 2026-09-05
 default_profile: max-common
 default_profile_switch_coverage: 0.60
 domains:
@@ -16,58 +16,63 @@ profiles:
     weights: { agentic: 0.2, software-code: 0.2, reasoning: 0.2, knowledge-information: 0.2, communication-professional: 0.2 }
     baskets:
       agentic: [terminal-bench-4.0, osworld-2.0, mcpmark]
-      software-code: [swe-bench-pro-public, swe-rebench, livecodebench-v6-pro]
-      reasoning: [frontiermath-v2-tier-4, gpqa-diamond, arc-agi-3]
+      software-code: [swe-rebench, deepswe, scicode-verified]
+      reasoning: [frontiermath-v2-tier-4, matharena-composite, arc-agi-3]
       knowledge-information: [hle-no-tools, simpleqa-verified, mrcr-v2-1m-8-needle]
       communication-professional: [lmarena-text-style-controlled, gdpval, livebench-2026]
   coding:
     weights: { agentic: 0.2, software-code: 0.6, reasoning: 0.1, knowledge-information: 0.05, communication-professional: 0.05 }
     baskets: &profile_baskets
       agentic: [terminal-bench-4.0, osworld-2.0, mcpmark]
-      software-code: [swe-bench-pro-public, swe-rebench, livecodebench-v6-pro]
-      reasoning: [frontiermath-v2-tier-4, gpqa-diamond, arc-agi-3]
+      software-code: [swe-rebench, deepswe, scicode-verified]
+      reasoning: [frontiermath-v2-tier-4, matharena-composite, arc-agi-3]
       knowledge-information: [hle-no-tools, simpleqa-verified, mrcr-v2-1m-8-needle]
       communication-professional: [lmarena-text-style-controlled, gdpval, livebench-2026]
   research:
     weights: { agentic: 0.1, software-code: 0.15, reasoning: 0.3, knowledge-information: 0.35, communication-professional: 0.1 }
     baskets:
       agentic: [terminal-bench-4.0, osworld-2.0, mcpmark]
-      software-code: [swe-bench-pro-public, swe-rebench, livecodebench-v6-pro]
-      reasoning: [frontiermath-v2-tier-4, gpqa-diamond, arc-agi-3]
+      software-code: [swe-rebench, deepswe, scicode-verified]
+      reasoning: [frontiermath-v2-tier-4, matharena-composite, arc-agi-3]
       knowledge-information: [hle-no-tools, simpleqa-verified, mrcr-v2-1m-8-needle]
       communication-professional: [lmarena-text-style-controlled, gdpval, livebench-2026]
   agentic:
     weights: { agentic: 0.6, software-code: 0.3, reasoning: 0.1, knowledge-information: 0, communication-professional: 0 }
     baskets:
       agentic: [terminal-bench-4.0, osworld-2.0, mcpmark]
-      software-code: [swe-bench-pro-public, swe-rebench, livecodebench-v6-pro]
-      reasoning: [frontiermath-v2-tier-4, gpqa-diamond, arc-agi-3]
+      software-code: [swe-rebench, deepswe, scicode-verified]
+      reasoning: [frontiermath-v2-tier-4, matharena-composite, arc-agi-3]
       knowledge-information: [hle-no-tools, simpleqa-verified, mrcr-v2-1m-8-needle]
       communication-professional: [lmarena-text-style-controlled, gdpval, livebench-2026]
   chat:
     weights: { agentic: 0, software-code: 0.1, reasoning: 0.2, knowledge-information: 0.3, communication-professional: 0.4 }
     baskets:
       agentic: [terminal-bench-4.0, osworld-2.0, mcpmark]
-      software-code: [swe-bench-pro-public, swe-rebench, livecodebench-v6-pro]
-      reasoning: [frontiermath-v2-tier-4, gpqa-diamond, arc-agi-3]
+      software-code: [swe-rebench, deepswe, scicode-verified]
+      reasoning: [frontiermath-v2-tier-4, matharena-composite, arc-agi-3]
       knowledge-information: [hle-no-tools, simpleqa-verified, mrcr-v2-1m-8-needle]
       communication-professional: [lmarena-text-style-controlled, gdpval, livebench-2026]
 calibration_panel:
   - gpt-4.1@max-common
+  - gpt-5-2025-08-07@max-common
   - gpt-5.2@max-common
-  - o3@max-common
-  - o4-mini@max-common
+  - claude-opus-4.5@max-common
   - claude-sonnet-4@max-common
-  - claude-opus-4@max-common
+  - claude-opus-4.1@max-common
   - claude-opus-4.6@max-common
   - claude-fable-5@max-common
   - gemini-3-pro@max-common
-  - gemini-2.5-pro@max-common
+  - gemini-3.1-pro@max-common
   - deepseek-v3.2@max-common
-  - llama-4-maverick@max-common
+  - kimi-k3@max-common
+  - grok-4.5@max-common
+  - glm-5.2@max-common
+  - qwen-3.8-max@max-common
+  - muse-spark-1.1@max-common
 likelihood: { accuracy_se_clip: 0.005, metadata_incomplete_multiplier: 1.5, agentic_default_rho: 0.2, other_default_rho: 0, money_human_baseline: 63000 }
 priors:
   trait_spread_sd: 1.5
+  trait_spread_lognormal_sd: 0.5
   difficulty_sd: 3.0
   log_discrimination_sd: 0.6
   family_sd: 0.25
@@ -90,11 +95,15 @@ priors:
   effort_gain_mean: 0.30
   effort_gain_sd: 0.30
   effort_domain_gain_sd: 0.20
-inference: { engine: numpyro_nuts, chains: 4, warmup: 2000, samples: 2000, retained_draws: 8000, target_accept: 0.9, max_rhat: 1.01, min_ess: 400, max_divergence_fraction: 0.0, min_ebfmi: 0.3 }
+inference: { engine: numpyro_nuts, chains: 4, warmup: 2000, samples: 3000, retained_draws: 8000, target_accept: 0.98, max_rhat: 1.01, min_ess: 400, max_divergence_fraction: 0.0, min_ebfmi: 0.3 }
 tiers:
-  verified: { max_width: 8, min_domains: 4, min_safe_cells: 2, max_family_share: 0.35, min_own_data_reduction: 0.70 }
-  ranked: { max_width: 12, min_domains: 3, min_safe_cells: 1, max_family_share: 0.55, min_own_data_reduction: 0.50 }
-  domain_max_width: 15
+  # Widths are 90% intervals on the panel scale (sd 10). With 20 benchmarks the
+  # median width of a well-covered system is ~14 points; thresholds below are set
+  # so that the top of the ranking is publishable with intervals shown.
+  verified: { max_width: 12, min_domains: 4, min_safe_cells: 2, max_family_share: 0.50, min_own_data_reduction: 0.70, max_concentration: 0.50 }
+  ranked: { max_width: 20, min_domains: 3, min_safe_cells: 1, max_family_share: 0.80, min_own_data_reduction: 0.50, max_concentration: 0.80 }
+  domain_max_width: 20
+  domain_min_own_data_reduction: 0.5
   profile_domain_weight_gate: 0.15
   practical_margin: 1.0
 diagnostics: { cell_outlier_z: 3, public_residual_gap: 1, difficulty_drift_per_year: 0.3, loo_sd_multiplier: 2, ordinal_rank_gap: 3, max_log_alpha_width: 1.38629436112, shape_misfit_p: 0.05, tie_probability: 0.9 }

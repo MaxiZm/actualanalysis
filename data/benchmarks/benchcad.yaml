@@ -1,0 +1,33 @@
+id: benchcad
+name: BenchCAD · agentic 1k subset
+version: vision2code-agentic-1k
+family_id: benchcad
+aliases: []
+tags:
+  - agentic
+categories:
+  - coding
+  - reasoning
+domains:
+  agentic: 0.3
+  software-code: 0.35
+  reasoning: 0.35
+  knowledge-information: 0
+  communication-professional: 0
+holdout: public
+chance_level: 0
+transform:
+  type: accuracy
+  input_scale: percent
+n_items: 1000
+obs_type: judge
+default_k: 1
+harness_url: https://benchcad.com/
+source_ids:
+  - benchcad
+status: watchlist
+metadata_sources:
+  - https://benchcad.com/
+notes: Vendor-reported voxel IoU with tools on the 1,000-file subset. Not the
+  full 17,900-part IoU × execution benchmark. Excluded from fitting pending
+  source uncertainty and matched configuration pins.

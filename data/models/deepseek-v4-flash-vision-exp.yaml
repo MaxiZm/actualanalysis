@@ -1,0 +1,25 @@
+id: deepseek-v4-flash-vision-exp
+name: DeepSeek V4 Flash Vision Exp
+organization: DeepSeek
+family: DeepSeek V4
+release_date: 2026-08-21
+open_weights: true
+license: MIT
+aliases: []
+reasoning: true
+context_length: 1000000
+modality: multimodal
+source_url: https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-Vision-Exp
+metadata_sources:
+  - https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-Vision-Exp
+  - https://artificialanalysis.ai/models/deepseek-v4-flash-vision
+status: preview
+max_effort_tier: max
+default_effort_tier: max
+effort_tier_order:
+  - low
+  - high
+  - max
+notes: Experimental multimodal release. AA first measured the API on August 21;
+  the subsequently published open checkpoint is linked separately. No results
+  are transferred from text-only Flash.

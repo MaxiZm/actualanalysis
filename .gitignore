@@ -17,3 +17,10 @@ __pycache__/
 *.py[cod]
 *$py.class
 .pytest_cache/
+
+# Private, attributed UI overlays are restored from a deployment secret.
+data/manual/speed-aa.yaml
+data/manual/cost-aa.yaml
+data/manual/benchmarks-aa.yaml
+# Same-day audit copies remain local; dated publications are tracked.
+data/snapshots/.archive/

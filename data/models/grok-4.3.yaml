@@ -1,0 +1,25 @@
+id: grok-4.3
+name: Grok 4.3
+organization: xAI
+family: Grok
+release_date: 2026-04-30
+open_weights: false
+license: Proprietary
+aliases:
+  - Grok 4.3
+  - grok-4-3-medium
+reasoning: true
+context_length: 1000000
+modality: multimodal
+source_url: https://docs.x.ai/developers/models/grok-4.3
+metadata_sources:
+  - https://docs.x.ai/developers/models/grok-4.3
+  - https://artificialanalysis.ai/models/grok-4-3-medium
+status: active
+max_effort_tier: high
+default_effort_tier: low
+effort_tier_order:
+  - none
+  - low
+  - medium
+  - high

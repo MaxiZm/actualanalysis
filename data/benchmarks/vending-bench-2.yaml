@@ -1,9 +1,9 @@
 id: vending-bench-2
 name: Vending-Bench 2
 version: "2"
-aliases: [Vending Bench 2, VendingBench2]
-tags: [agentic]
-categories: [long-horizon]
+aliases: [ Vending Bench 2, VendingBench2 ]
+tags: [ agentic ]
+categories: [ long-horizon ]
 holdout: private
 chance_level: 0
 transform:
@@ -13,6 +13,20 @@ transform:
   scale: 1
 n_items: null
 harness_url: https://andonlabs.com/evals/vending-bench-2
-source_ids: [andonlabs, epoch, vendor-model-cards]
-status: watchlist
-notes: The money likelihood requires at least three run balances. Upstream publishes only aggregate mean, SEM, and n, so current rows remain visible but are not fitted.
+source_ids: [ andonlabs, epoch, vendor-model-cards ]
+status: active
+notes: The money likelihood requires at least three run balances. Upstream
+  publishes only aggregate mean, SEM, and n, so current rows remain visible but
+  are not fitted.
+obs_type: money
+domains:
+  agentic: 0.8
+  software-code: 0
+  reasoning: 0.1
+  knowledge-information: 0
+  communication-professional: 0.1
+promotion_rule: "Promoted to active under method 1.2.3: the benchmark has
+  independent results for ≥8 registered models; metadata pins that are still
+  missing are carried as metadata_incomplete on each observation instead of
+  blocking the fit."
+family_id: vending-bench

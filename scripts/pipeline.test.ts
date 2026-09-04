@@ -138,13 +138,15 @@ describe("pipeline run handoff", () => {
       chat: { ...artifact, kind: "chat" as const },
     };
 
+    // Only the mixed view must rank a system; an all-provisional profile view is
+    // published as intervals (methodology §8.2) and reported as interval-only.
     expect(assessRunSet(runs)).toMatchObject({
       complete: false,
       missingKinds: [],
-      unpublishableKinds: ["mixed", "agentic"],
+      unpublishableKinds: ["mixed"],
       issues: {
         mixed: "run has no non-provisional score with a published rank",
-        agentic: "run has no non-provisional score with a published rank",
+        agentic: "interval-only view: no system reaches the Ranked tier in this profile",
       },
     });
     expect(planPersistence(runs, { skipScore: false, commitSnapshot: true })).toMatchObject({
@@ -152,6 +154,8 @@ describe("pipeline run handoff", () => {
       writeDatabase: false,
       exportSnapshot: false,
     });
+    const rankedMixed = { ...runs, mixed: { ...artifact, kind: "mixed" as const } };
+    expect(assessRunSet(rankedMixed)).toMatchObject({ complete: true, unpublishableKinds: [] });
   });
 
   it("blocks material evidence regressions against the latest prior publication", () => {
@@ -278,7 +282,7 @@ describe("pipeline scoring input selection", () => {
     expect(provenance.superseded).toEqual([selfReportedMax]);
   });
 
-  it("excludes the live FrontierMath and ARC3 missing-n cases without throwing", async () => {
+  it("excludes a missing-n accuracy row on the legacy path without throwing and keeps rows whose benchmark declares n", async () => {
     const registry = await registryPromise;
     const registryWithoutFrontierMathN = {
       benchmarks: registry.benchmarks.map((benchmark) =>
@@ -296,19 +300,18 @@ describe("pipeline scoring input selection", () => {
       result({
         model: "GPT-6 Astra",
         model_id: "gpt-6-astra",
-        benchmark: "ARC-AGI-3",
-        benchmark_id: "arc-agi-3",
-        source_id: "arcprize",
+        benchmark: "DeepSWE",
+        benchmark_id: "deepswe",
+        source_id: "datacurve",
         config: { evaluation_profile: "High", provider_adapter: false },
       }),
     ]);
 
     const eligibility = selectScorableRecords(registryWithoutFrontierMathN, rows);
-    expect(eligibility.records).toEqual([]);
-    expect(eligibility.exclusions.map((row) => [row.benchmark_id, row.reason_code])).toEqual([
-      ["arc-agi-3", "benchmark_inactive"],
-      ["frontiermath-v2-tiers-1-3", "benchmark_inactive"],
-    ]);
+    // DeepSWE is active and declares n_items, so the row is scorable; the
+    // FrontierMath row has neither n nor a reported SE and is excluded.
+    expect(eligibility.records.map((row) => row.benchmark_id)).toEqual(["deepswe"]);
+    expect(eligibility.exclusions.map((row) => row.benchmark_id)).toEqual(["frontiermath-v2-tiers-1-3"]);
   });
 
   it("implements transform-specific uncertainty eligibility", async () => {

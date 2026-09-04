@@ -1,5 +1,6 @@
 import type { AdapterContext, AdapterWarning, IngestAdapter, RawResult } from "../types.js";
 import { output } from "../lib/adapter.js";
+import { EPOCH_RUNS_URL, isEpochFrontierMathTask, parseEpochFrontierMathRuns } from "./epoch-runs.js";
 import { fetchText } from "../lib/http.js";
 import { numberAt, stringAt, valueAt } from "../lib/tabular.js";
 import { benchmarkResult, dateOnly, parseTabularPayload, percentAwareScore, sourceUrl } from "./helpers.js";
@@ -34,6 +35,18 @@ export class EpochAdapter implements IngestAdapter {
     const text = await fetchText(context, url);
     const rows = parseTabularPayload(text, url);
     const records: RawResult[] = [];
+    // Default production ingestion replaces the lossy ECI FrontierMath aggregate
+    // with its original run, which retains the exact revision and effort tier.
+    // Explicit custom feeds remain self-contained for offline fixture ingestion.
+    let runsFetchWarning: AdapterWarning | undefined;
+    if (url === EPOCH_ECI_URL) {
+      try {
+        const runsUrl = context.env.ACTUALANALYSIS_EPOCH_RUNS_URL ?? EPOCH_RUNS_URL;
+        records.push(...parseEpochFrontierMathRuns(await fetchText(context, runsUrl), runsUrl));
+      } catch (error) {
+        runsFetchWarning = { code: "fetch_failed", message: `Epoch run-level FrontierMath data unavailable: ${String(error)}`, url: EPOCH_RUNS_URL };
+      }
+    }
     let skippedPreprocessedMetrics = 0;
     let skippedRestrictedOrigin = 0;
     let skippedVersionMismatches = 0;
@@ -44,6 +57,9 @@ export class EpochAdapter implements IngestAdapter {
       const rawScore = valueAt(row, ["performance", "score", "value"]);
       const score = numberAt(row, ["performance", "score", "value"]);
       if (!model || !benchmark || score === undefined) continue;
+      // Never silently fall back to ECI's best-over-configurations aggregate for
+      // a benchmark with a declared run-level source. A fetch failure is visible.
+      if (url === EPOCH_ECI_URL && isEpochFrontierMathTask(benchmark)) continue;
       if (ECI_PREPROCESSED_NON_ACCURACY.has(benchmark)) {
         skippedPreprocessedMetrics += 1;
         continue;
@@ -91,6 +107,7 @@ export class EpochAdapter implements IngestAdapter {
           url,
         }]
       : [];
+    if (runsFetchWarning) warnings.push(runsFetchWarning);
     if (skippedRestrictedOrigin > 0) warnings.push({
       code: "partial",
       message: `Skipped ${skippedRestrictedOrigin} rows whose benchmark scores originate from Artificial Analysis`,

@@ -1,0 +1,8 @@
+id: terminal-bench-science
+name: Terminal-Bench Science
+url: https://www.terminal-bench-science.ai/announcement
+license: Apache-2.0 benchmark; source terms apply to leaderboard
+kind: runner
+redistributable: false
+notes: Factual score citations only. Retain exact source and configuration;
+  source content is not bundled.

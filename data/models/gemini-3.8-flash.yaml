@@ -5,7 +5,21 @@ family: Gemini 3.8
 release_date: 2026-09-02
 open_weights: false
 license: Proprietary
-aliases: [gemini-3.8, gemini3.8, "Gemini 3.8", gemini-3.8-flash]
+aliases:
+  - gemini-3.8
+  - gemini3.8
+  - Gemini 3.8
+  - gemini-3.8-flash
 source_url: https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash
 status: active
-
+context_length: 1048576
+max_output: 65536
+reasoning: true
+default_effort_tier: high
+max_effort_tier: high
+effort_tier_order:
+  - low
+  - medium
+  - high
+metadata_sources:
+  - https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash

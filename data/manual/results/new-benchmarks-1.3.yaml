@@ -1,0 +1,417 @@
+results:
+  - model_id: claude-opus-5
+    benchmark_id: automationbench-public
+    benchmark_version: public-2026-07
+    source_id: automationbench
+    score: 50.3
+    score_unit: percent
+    n_items: 600
+    observed_on: 2026-09-04
+    url: https://github.com/zapier/AutomationBench
+    provenance: independent
+    harness: AutomationBench public API toolset
+    metadata_incomplete: true
+    effort_tier: max
+    config:
+      reasoning_effort: max
+    harness_class: common
+    protocol_id: automationbench-public-2026-07
+    notes: Public 600-task strict pass rate from official README; highest reasoning
+      effort. Grader commit and run timestamps are not reported.
+  - model_id: kimi-k3
+    benchmark_id: automationbench-public
+    benchmark_version: public-2026-07
+    source_id: automationbench
+    score: 46.67
+    score_unit: percent
+    n_items: 600
+    observed_on: 2026-09-04
+    url: https://github.com/zapier/AutomationBench
+    provenance: independent
+    harness: AutomationBench public API toolset
+    metadata_incomplete: true
+    effort_tier: max
+    config:
+      reasoning_effort: max
+    harness_class: common
+    protocol_id: automationbench-public-2026-07
+    notes: Public 600-task strict pass rate from official README; highest reasoning
+      effort. Grader commit and run timestamps are not reported.
+  - model_id: claude-fable-5
+    benchmark_id: automationbench-public
+    benchmark_version: public-2026-07
+    source_id: automationbench
+    score: 46.17
+    score_unit: percent
+    n_items: 600
+    observed_on: 2026-09-04
+    url: https://github.com/zapier/AutomationBench
+    provenance: independent
+    harness: AutomationBench public API toolset
+    metadata_incomplete: true
+    effort_tier: max
+    config:
+      reasoning_effort: max
+    harness_class: common
+    protocol_id: automationbench-public-2026-07
+    notes: Public 600-task strict pass rate from official README; highest reasoning
+      effort. Grader commit and run timestamps are not reported.
+  - model_id: gpt-5.6-sol
+    benchmark_id: automationbench-public
+    benchmark_version: public-2026-07
+    source_id: automationbench
+    score: 45.83
+    score_unit: percent
+    n_items: 600
+    observed_on: 2026-09-04
+    url: https://github.com/zapier/AutomationBench
+    provenance: independent
+    harness: AutomationBench public API toolset
+    metadata_incomplete: true
+    effort_tier: max
+    config:
+      reasoning_effort: max
+    harness_class: common
+    protocol_id: automationbench-public-2026-07
+    notes: Public 600-task strict pass rate from official README; highest reasoning
+      effort. Grader commit and run timestamps are not reported.
+  - model_id: claude-opus-4.8
+    benchmark_id: automationbench-public
+    benchmark_version: public-2026-07
+    source_id: automationbench
+    score: 41
+    score_unit: percent
+    n_items: 600
+    observed_on: 2026-09-04
+    url: https://github.com/zapier/AutomationBench
+    provenance: independent
+    harness: AutomationBench public API toolset
+    metadata_incomplete: true
+    effort_tier: max
+    config:
+      reasoning_effort: max
+    harness_class: common
+    protocol_id: automationbench-public-2026-07
+    notes: Public 600-task strict pass rate from official README; highest reasoning
+      effort. Grader commit and run timestamps are not reported.
+  - model_id: gpt-5.6-terra
+    benchmark_id: automationbench-public
+    benchmark_version: public-2026-07
+    source_id: automationbench
+    score: 37.17
+    score_unit: percent
+    n_items: 600
+    observed_on: 2026-09-04
+    url: https://github.com/zapier/AutomationBench
+    provenance: independent
+    harness: AutomationBench public API toolset
+    metadata_incomplete: true
+    effort_tier: max
+    config:
+      reasoning_effort: max
+    harness_class: common
+    protocol_id: automationbench-public-2026-07
+    notes: Public 600-task strict pass rate from official README; highest reasoning
+      effort. Grader commit and run timestamps are not reported.
+  - model_id: claude-sonnet-5
+    benchmark_id: automationbench-public
+    benchmark_version: public-2026-07
+    source_id: automationbench
+    score: 34.67
+    score_unit: percent
+    n_items: 600
+    observed_on: 2026-09-04
+    url: https://github.com/zapier/AutomationBench
+    provenance: independent
+    harness: AutomationBench public API toolset
+    metadata_incomplete: true
+    effort_tier: max
+    config:
+      reasoning_effort: max
+    harness_class: common
+    protocol_id: automationbench-public-2026-07
+    notes: Public 600-task strict pass rate from official README; highest reasoning
+      effort. Grader commit and run timestamps are not reported.
+  - model_id: glm-5.2
+    benchmark_id: automationbench-public
+    benchmark_version: public-2026-07
+    source_id: automationbench
+    score: 26.17
+    score_unit: percent
+    n_items: 600
+    observed_on: 2026-09-04
+    url: https://github.com/zapier/AutomationBench
+    provenance: independent
+    harness: AutomationBench public API toolset
+    metadata_incomplete: true
+    effort_tier: max
+    config:
+      reasoning_effort: max
+    harness_class: common
+    protocol_id: automationbench-public-2026-07
+    notes: Public 600-task strict pass rate from official README; highest reasoning
+      effort. Grader commit and run timestamps are not reported.
+  - model_id: claude-opus-5
+    benchmark_id: terminal-bench-science-0.1
+    benchmark_version: "0.1"
+    source_id: terminal-bench-science
+    score: 30
+    score_unit: percent
+    n_items: 70
+    observed_on: 2026-09-04
+    url: https://www.terminal-bench-science.ai/announcement
+    provenance: independent
+    harness: Claude Code
+    metadata_incomplete: true
+    harness_class: native
+    k_trials: 3
+    notes: Three independent trials on each of 70 tasks. Effort not stated in
+      announcement; do not infer it from model name.
+  - model_id: gpt-5.6-sol
+    benchmark_id: terminal-bench-science-0.1
+    benchmark_version: "0.1"
+    source_id: terminal-bench-science
+    score: 22.4
+    score_unit: percent
+    n_items: 70
+    observed_on: 2026-09-04
+    url: https://www.terminal-bench-science.ai/announcement
+    provenance: independent
+    harness: Codex
+    metadata_incomplete: true
+    harness_class: native
+    k_trials: 3
+    notes: Three independent trials on each of 70 tasks. Effort not stated in
+      announcement; do not infer it from model name.
+  - model_id: claude-fable-5
+    benchmark_id: terminal-bench-science-0.1
+    benchmark_version: "0.1"
+    source_id: terminal-bench-science
+    score: 21.4
+    score_unit: percent
+    n_items: 70
+    observed_on: 2026-09-04
+    url: https://www.terminal-bench-science.ai/announcement
+    provenance: independent
+    harness: Claude Code
+    metadata_incomplete: true
+    harness_class: native
+    k_trials: 3
+    notes: Three independent trials on each of 70 tasks. Effort not stated in
+      announcement; do not infer it from model name.
+  - model_id: claude-opus-4.8
+    benchmark_id: terminal-bench-science-0.1
+    benchmark_version: "0.1"
+    source_id: terminal-bench-science
+    score: 10.5
+    score_unit: percent
+    n_items: 70
+    observed_on: 2026-09-04
+    url: https://www.terminal-bench-science.ai/announcement
+    provenance: independent
+    harness: Claude Code
+    metadata_incomplete: true
+    harness_class: native
+    k_trials: 3
+    notes: Three independent trials on each of 70 tasks. Effort not stated in
+      announcement; do not infer it from model name.
+  - model_id: glm-5.3
+    benchmark_id: terminal-bench-science-0.1
+    benchmark_version: "0.1"
+    source_id: terminal-bench-science
+    score: 8.1
+    score_unit: percent
+    n_items: 70
+    observed_on: 2026-09-04
+    url: https://www.terminal-bench-science.ai/announcement
+    provenance: independent
+    harness: Native agent (not specified)
+    metadata_incomplete: true
+    harness_class: native
+    k_trials: 3
+    notes: Three independent trials on each of 70 tasks. Effort not stated in
+      announcement; do not infer it from model name.
+  - model_id: gpt-5.6-luna
+    benchmark_id: terminal-bench-science-0.1
+    benchmark_version: "0.1"
+    source_id: terminal-bench-science
+    score: 3.3
+    score_unit: percent
+    n_items: 70
+    observed_on: 2026-09-04
+    url: https://www.terminal-bench-science.ai/announcement
+    provenance: independent
+    harness: Codex
+    metadata_incomplete: true
+    harness_class: native
+    k_trials: 3
+    notes: Three independent trials on each of 70 tasks. Effort not stated in
+      announcement; do not infer it from model name.
+  - model_id: gpt-5-2025-08-07
+    benchmark_id: healthbench-professional
+    benchmark_version: 2026-length-adjusted
+    source_id: vendor-model-cards
+    score: 46.2
+    score_unit: percent
+    n_items: 525
+    observed_on: 2026-09-04
+    url: https://deploymentsafety.openai.com/gpt-5-6
+    provenance: self_report
+    harness: HealthBench Professional length-adjusted
+    metadata_incomplete: true
+    harness_class: unknown
+    notes: Final system card Table 6, length-adjusted score. No binomial SE is
+      inferred from rubric tasks.
+  - model_id: gpt-5.1
+    benchmark_id: healthbench-professional
+    benchmark_version: 2026-length-adjusted
+    source_id: vendor-model-cards
+    score: 39.6
+    score_unit: percent
+    n_items: 525
+    observed_on: 2026-09-04
+    url: https://deploymentsafety.openai.com/gpt-5-6
+    provenance: self_report
+    harness: HealthBench Professional length-adjusted
+    metadata_incomplete: true
+    harness_class: unknown
+    notes: Final system card Table 6, length-adjusted score. No binomial SE is
+      inferred from rubric tasks.
+  - model_id: gpt-5.2
+    benchmark_id: healthbench-professional
+    benchmark_version: 2026-length-adjusted
+    source_id: vendor-model-cards
+    score: 45.9
+    score_unit: percent
+    n_items: 525
+    observed_on: 2026-09-04
+    url: https://deploymentsafety.openai.com/gpt-5-6
+    provenance: self_report
+    harness: HealthBench Professional length-adjusted
+    metadata_incomplete: true
+    harness_class: unknown
+    notes: Final system card Table 6, length-adjusted score. No binomial SE is
+      inferred from rubric tasks.
+  - model_id: gpt-5.4
+    benchmark_id: healthbench-professional
+    benchmark_version: 2026-length-adjusted
+    source_id: vendor-model-cards
+    score: 48.1
+    score_unit: percent
+    n_items: 525
+    observed_on: 2026-09-04
+    url: https://deploymentsafety.openai.com/gpt-5-6
+    provenance: self_report
+    harness: HealthBench Professional length-adjusted
+    metadata_incomplete: true
+    harness_class: unknown
+    notes: Final system card Table 6, length-adjusted score. No binomial SE is
+      inferred from rubric tasks.
+  - model_id: gpt-5.5
+    benchmark_id: healthbench-professional
+    benchmark_version: 2026-length-adjusted
+    source_id: vendor-model-cards
+    score: 51.8
+    score_unit: percent
+    n_items: 525
+    observed_on: 2026-09-04
+    url: https://deploymentsafety.openai.com/gpt-5-6
+    provenance: self_report
+    harness: HealthBench Professional length-adjusted
+    metadata_incomplete: true
+    harness_class: unknown
+    notes: Final system card Table 6, length-adjusted score. No binomial SE is
+      inferred from rubric tasks.
+  - model_id: gpt-5.6-sol
+    benchmark_id: healthbench-professional
+    benchmark_version: 2026-length-adjusted
+    source_id: vendor-model-cards
+    score: 60.5
+    score_unit: percent
+    n_items: 525
+    observed_on: 2026-09-04
+    url: https://deploymentsafety.openai.com/gpt-5-6
+    provenance: self_report
+    harness: HealthBench Professional length-adjusted
+    metadata_incomplete: true
+    harness_class: unknown
+    notes: Final system card Table 6, length-adjusted score. No binomial SE is
+      inferred from rubric tasks.
+  - model_id: gpt-5.6-terra
+    benchmark_id: healthbench-professional
+    benchmark_version: 2026-length-adjusted
+    source_id: vendor-model-cards
+    score: 57.7
+    score_unit: percent
+    n_items: 525
+    observed_on: 2026-09-04
+    url: https://deploymentsafety.openai.com/gpt-5-6
+    provenance: self_report
+    harness: HealthBench Professional length-adjusted
+    metadata_incomplete: true
+    harness_class: unknown
+    notes: Final system card Table 6, length-adjusted score. No binomial SE is
+      inferred from rubric tasks.
+  - model_id: gpt-5.6-luna
+    benchmark_id: healthbench-professional
+    benchmark_version: 2026-length-adjusted
+    source_id: vendor-model-cards
+    score: 55.7
+    score_unit: percent
+    n_items: 525
+    observed_on: 2026-09-04
+    url: https://deploymentsafety.openai.com/gpt-5-6
+    provenance: self_report
+    harness: HealthBench Professional length-adjusted
+    metadata_incomplete: true
+    harness_class: unknown
+    notes: Final system card Table 6, length-adjusted score. No binomial SE is
+      inferred from rubric tasks.
+  - model_id: gpt-6-astra
+    benchmark_id: benchcad
+    benchmark_version: vision2code-agentic-1k
+    source_id: benchcad
+    score: 95.9
+    score_unit: percent
+    n_items: 1000
+    observed_on: 2026-09-04
+    url: https://benchcad.com/
+    provenance: self_report
+    harness: Vision2Code with Python sandbox
+    metadata_incomplete: true
+    origin_provenance: self_report
+    harness_class: native
+    notes: BenchCAD homepage cites vendor-reported agentic voxel IoU on 1,000 files,
+      not the full benchmark. Display only.
+  - model_id: claude-fable-5.1
+    benchmark_id: benchcad
+    benchmark_version: vision2code-agentic-1k
+    source_id: benchcad
+    score: 84.3
+    score_unit: percent
+    n_items: 1000
+    observed_on: 2026-09-04
+    url: https://benchcad.com/
+    provenance: self_report
+    harness: Vision2Code with Python sandbox
+    metadata_incomplete: true
+    origin_provenance: self_report
+    harness_class: native
+    notes: BenchCAD homepage cites vendor-reported agentic voxel IoU on 1,000 files,
+      not the full benchmark. Display only.
+  - model_id: claude-opus-5
+    benchmark_id: benchcad
+    benchmark_version: vision2code-agentic-1k
+    source_id: benchcad
+    score: 82.1
+    score_unit: percent
+    n_items: 1000
+    observed_on: 2026-09-04
+    url: https://benchcad.com/
+    provenance: self_report
+    harness: Vision2Code with Python sandbox
+    metadata_incomplete: true
+    origin_provenance: self_report
+    harness_class: native
+    notes: BenchCAD homepage cites vendor-reported agentic voxel IoU on 1,000 files,
+      not the full benchmark. Display only.

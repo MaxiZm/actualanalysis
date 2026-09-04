@@ -26,7 +26,7 @@ export interface NutsRunResult {
 }
 
 export interface Aci12PosteriorOutput {
-  method_version: "1.2.2";
+  method_version: string;
   scales?: {
     aci_g: { unit: string; description: string };
     aci_domain: { unit: string; description: string };
@@ -61,6 +61,7 @@ export interface Aci12PosteriorOutput {
       published: boolean;
       missing_benchmarks: string[];
     }>;
+    index_profiles?: Record<string, { median: number; low: number; high: number; sd: number; width: number; published: boolean }>;
     task_profiles: Record<string, {
       median: number;
       low: number;
@@ -94,13 +95,28 @@ function primaryDomain(benchmark: AciBenchmarkDefinition): Domain {
   ACI_DOMAINS[0]!);
 }
 
-function runProcess(command: string, args: string[], cwd: string): Promise<void> {
+function runProcess(command: string, args: string[], cwd: string, timeoutMs: number): Promise<void> {
   return new Promise((resolve, reject) => {
-    const child = spawn(command, args, { cwd, stdio: ["ignore", "pipe", "pipe"] });
+    const child = spawn(command, args, { cwd, stdio: ["ignore", "pipe", "pipe"], env: process.env });
     let stderr = "";
+    let timedOut = false;
+    const timer = setTimeout(() => {
+      timedOut = true;
+      child.kill("SIGKILL");
+    }, timeoutMs);
     child.stderr.on("data", (chunk: Buffer) => { stderr += chunk.toString(); });
-    child.on("error", reject);
-    child.on("close", (code) => code === 0 ? resolve() : reject(new Error(`ACI NumPyro runner exited ${code}: ${stderr.trim()}`)));
+    child.on("error", (error: NodeJS.ErrnoException) => {
+      clearTimeout(timer);
+      reject(new Error(error.code === "ENOENT"
+        ? `ACI NumPyro runner needs \`${command}\` on PATH (install uv and run \`uv sync\` in packages/scoring/python)`
+        : `ACI NumPyro runner failed to start: ${error.message}`));
+    });
+    child.on("close", (code) => {
+      clearTimeout(timer);
+      if (timedOut) reject(new Error(`ACI NumPyro runner exceeded ${Math.round(timeoutMs / 60_000)} minutes and was killed`));
+      else if (code === 0) resolve();
+      else reject(new Error(`ACI NumPyro runner exited ${code}: ${stderr.trim().slice(-4000)}`));
+    });
   });
 }
 
@@ -113,6 +129,7 @@ export async function runAci12Nuts(options: {
   seed?: number;
   progressBar?: boolean;
   requireAccepted?: boolean;
+  timeoutMinutes?: number;
 }): Promise<NutsRunResult> {
   const observedSystemIds = [...new Set(options.preparation.observations.map((row) => row.systemId))].sort();
   const modelIds = [...new Set(observedSystemIds.map((id) => id.slice(0, id.lastIndexOf("@"))))].sort();
@@ -162,7 +179,7 @@ export async function runAci12Nuts(options: {
   ]));
 
   const data = {
-    method_version: "1.2.2",
+    method_version: options.config.method_version,
     n_models: modelIds.length,
     n_systems: representedSystemIds.length,
     n_benchmarks: benchmarks.length,
@@ -190,6 +207,7 @@ export async function runAci12Nuts(options: {
       return def ? isFixedEffort(def) : false;
     }),
     benchmark_family_index: benchmarks.map((benchmark) => familyIndex.get(benchmark.familyId)!),
+    benchmark_utility_eligible: benchmarks.map((benchmark) => benchmark.utilityStatus === "eligible" && ["count", "passk"].includes(benchmark.obsType)),
     benchmark_domains: benchmarks.map((benchmark) => ACI_DOMAINS.map((domain) => benchmark.domains[domain] ?? 0)),
     cell_system_index: cells.map((key) => systemIndex.get(key.split("\0")[0]!)!),
     cell_benchmark_index: cells.map((key) => benchmarkIndex.get(key.split("\0")[1]!)!),
@@ -231,10 +249,16 @@ export async function runAci12Nuts(options: {
   const summaryPath = path.join(options.outputDirectory, "aci12-summary.json");
   await writeFile(inputPath, `${JSON.stringify(data, null, 2)}\n`, "utf8");
   const pythonRoot = fileURLToPath(new URL("../python/", import.meta.url));
-  await runProcess("uv", ["run", "python", "-m", "aci12.runner", "--input", inputPath, "--output", diagnosticsPath, "--posterior", posteriorPath, "--summary", summaryPath], pythonRoot);
+  const timeoutMinutes = options.timeoutMinutes ?? options.config.acceptance?.max_runtime_minutes ?? 60;
+  await runProcess(
+    "uv",
+    ["run", "--frozen", "python", "-m", "aci12.runner", "--input", inputPath, "--output", diagnosticsPath, "--posterior", posteriorPath, "--summary", summaryPath],
+    pythonRoot,
+    timeoutMinutes * 60_000,
+  );
   const diagnostics = JSON.parse(await readFile(diagnosticsPath, "utf8")) as NutsDiagnostics;
   if ((options.requireAccepted ?? true) && !diagnostics.accepted) {
-    throw new Error(`ACI 1.2.2 posterior failed convergence: ${diagnostics.issues.slice(0, 8).join("; ")}`);
+    throw new Error(`ACI ${options.config.method_version} posterior failed convergence: ${diagnostics.issues.slice(0, 8).join("; ")}`);
   }
   const summary = JSON.parse(await readFile(summaryPath, "utf8")) as Aci12PosteriorOutput;
   return { diagnostics, summary, inputPath, posteriorPath, diagnosticsPath, summaryPath };

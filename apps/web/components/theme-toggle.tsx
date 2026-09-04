@@ -3,6 +3,7 @@
 import { useSyncExternalStore } from "react";
 
 import { MoonIcon, SunIcon } from "@/components/icons";
+import { TextureButton } from "@/components/ui/texture-button";
 
 type Theme = "light" | "dark";
 
@@ -41,7 +42,9 @@ export function ThemeToggle() {
   }
 
   return (
-    <button
+    <TextureButton
+      variant="secondary"
+      size="icon"
       className="icon-button"
       type="button"
       aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
@@ -49,6 +52,6 @@ export function ThemeToggle() {
       onClick={toggleTheme}
     >
       {theme === "dark" ? <SunIcon /> : <MoonIcon />}
-    </button>
+    </TextureButton>
   );
 }

@@ -1,0 +1,7 @@
+id: critpt
+name: CritPt benchmark authors
+url: https://github.com/CritPt-Benchmark/CritPt/tree/17c2545c302762d2f2d644d923ea4c301605cb08
+license: No explicit repository license; factual metadata attribution only
+kind: runner
+redistributable: false
+notes: Public challenge prompts and evaluation pipeline with private reference answers and grading service. Do not bundle benchmark content or treat AA-origin scores mirrored in the README as independently measured author results.

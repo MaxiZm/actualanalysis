@@ -2,7 +2,32 @@
 
 ActualAnalysis is an open model-comparison stack: public benchmark registries, source-aware ingestion, a robust latent-capability model, uncertainty estimates, anti-benchmaxxing diagnostics, and a fast comparison UI. It reports separate **Mixed**, **Agentic**, and **Chat** indexes instead of hiding incompatible workloads inside one arithmetic average. The app uses Next.js 16 rather than the originally proposed Next.js 15 because the supported 16.x line resolves known framework advisories.
 
-The repository is intentionally useful before a database is configured. The web app reads the latest valid committed snapshot—currently the first live snapshot dated `2026-09-04`—and falls back to clearly labelled synthetic fixture data if no valid snapshot is available. No benchmark score from Artificial Analysis is ingested. The isolated speed registry is excluded from exports and may be left empty.
+The repository is intentionally useful before a database is configured. The web app reads the latest valid committed snapshot—currently the first live snapshot dated `2026-09-04`—and falls back to clearly labelled synthetic fixture data if no valid snapshot is available. Artificial Analysis runtime, task cost and CritPt results are attributed UI overlays. They do not enter the capability fit or bulk exports; the private registries may be absent.
+
+## Scoring engine (method 1.3.2)
+
+Scores come from one joint five-domain Bayesian model fitted with NumPyro NUTS
+(`packages/scoring/python`). The Python environment is managed by `uv`:
+
+```bash
+cd packages/scoring/python && uv sync --frozen
+```
+
+`npm run pipeline -- --all --dry-run` ingests, prepares observations, audits the
+calibration panel and runs the fit (4 chains × 2,000 warm-up + 3,000 samples;
+several minutes on a laptop CPU). For quick local iterations use
+`ACI12_CHAINS=2 ACI12_WARMUP=300 ACI12_SAMPLES=300`; such runs never pass the
+convergence gate and are never published. Method rules live in
+[docs/methodology.md](docs/methodology.md); constants in `data/index-config.yaml`.
+
+## GitHub Pages
+
+The published site is [maxizm.github.io/actualanalysis](https://maxizm.github.io/actualanalysis/).
+The `Deploy GitHub Pages` workflow exports the current validated snapshot on pushes to `main` and manual runs. It preserves client-side filters, model comparisons and interactive charts. Data downloads and `.json` resources are static files; server-side query filtering and hourly refresh require a server deployment.
+
+Run `npm run build:pages` to create `work/pages-site`. The build stages a separate Next app and leaves normal server/API routes intact. `NEXT_PUBLIC_BASE_PATH` and `NEXT_PUBLIC_SITE_URL` configure the published path. Private AA display files are gitignored and restored from the repository secret `AA_DISPLAY_DATA_GZIP_BASE64` by `scripts/restore-display-data.mjs`; the public registry also works when those files are absent. Never commit this secret or its decoded source files. Same-day archived snapshots remain local.
+
+The source logo is `apps/web/public/brand/actualanalysis.svg`. Its twin A forms refer to ActualAnalysis and a shared comparison baseline. The same mark appears in the header, footer, SVG favicon, 16/32/48px ICO and Apple touch icon.
 
 ## Quick start
 
@@ -55,11 +80,11 @@ scripts/             End-to-end orchestration and cross-check helpers
 
 ## Data policy
 
-Every observation needs a source URL, observation date, harness/config metadata, and provenance tier. Independent runners supersede mirrors, which supersede self-reports; lower tiers remain visible but are excluded from the fitted cell while a better tier exists. Unknown in-scope names go to the versioned review queue at `data/manual/unmapped.yaml` instead of being silently merged. That report is timestamp-free, deterministically sorted, and rewritten only when its contents change, so repeated scheduled runs do not create review noise.
+Every observation needs a source URL, observation date, harness/config metadata, and provenance tier. Confirmed copies share a source lineage and enter the fit once. Distinct configurations and independent replications remain separate; provenance alone does not erase a valid evaluation. Current exports use the accepted run’s exact evidence inventory while earlier rows remain in database history. Unknown in-scope names go to the versioned review queue at `data/manual/unmapped.yaml` instead of being silently merged. That report is timestamp-free, deterministically sorted, and rewritten only when its contents change, so repeated scheduled runs do not create review noise.
 
 Kaggle result snapshots may be supplied as HTTP(S) URLs through the `ACTUALANALYSIS_KAGGLE_*_URL` variables or placed at `data/kaggle/<benchmark-id>.{csv,json,yaml,yml}`. The adapter deliberately has no guessed public defaults: currently discoverable datasets under these benchmark names contain question sets or third-party copies, not authoritative model-result leaderboards.
 
-The code is Apache-2.0. Redistributable registries and snapshots are CC-BY-4.0. `data/manual/speed-aa.yaml` is explicitly **not** part of the CC-BY dataset or snapshot exporter; see the warning in that file. Consult counsel before populating or publishing third-party measurements whose terms restrict reuse.
+The code is Apache-2.0. Redistributable registries and snapshots are CC-BY-4.0. `data/manual/speed-aa.yaml`, `cost-aa.yaml` and `benchmarks-aa.yaml` are explicitly **not** part of the CC-BY dataset, fit or bulk exporter; see the warnings in those files. Their UI values retain source and exact configuration links.
 
 ## Quality gates
 
@@ -86,4 +111,4 @@ The scoring tests cover the 1.2 likelihood transforms, lineage and profile gates
 
 Method version `1.0.0` produced the currently committed historical snapshot at `data/snapshots/2026-09-04`. Method `1.2.0` is now the configured scoring contract, but publication fails closed until the source registry supplies the effort-profile and harness metadata required to fit the frozen calibration panel. The existing snapshot is not relabelled or silently recomputed.
 
-This run was fail-soft rather than source-complete. The live capture included LMArena and ARC Prize; configured Kaggle feeds/local files were absent, while 16 accepted Kaggle observations and 18 accepted Terminal-Bench observations came from the versioned manual-results registry. Another 51 Kaggle rows remain review-only and were excluded from ingest. Those source conditions remain visible in the capture report and must not be interpreted as zero benchmark performance. The committed snapshot records a successful local pipeline publication only; this repository makes no claim that the app or snapshot has been externally deployed. Unknown in-scope names continue to flow to the deterministic, human-reviewable `data/manual/unmapped.yaml`, and future publication remains gated by the checks in [docs/methodology.md](docs/methodology.md).
+This run was fail-soft rather than source-complete. The live capture included LMArena and ARC Prize; configured Kaggle feeds/local files were absent, while 16 accepted Kaggle observations and 18 accepted Terminal-Bench observations came from the versioned manual-results registry. Another 51 Kaggle rows remain review-only and were excluded from ingest. Those source conditions remain visible in the capture report and must not be interpreted as zero benchmark performance. The committed snapshot records a successful local pipeline publication only; this historical run predates the GitHub Pages deployment described above. Unknown in-scope names continue to flow to the deterministic, human-reviewable `data/manual/unmapped.yaml`, and future publication remains gated by the checks in [docs/methodology.md](docs/methodology.md).

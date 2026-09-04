@@ -1,0 +1,17 @@
+id: mimo-v2-omni-0327
+name: MiMo-V2-Omni 0327
+organization: Xiaomi
+family: MiMo
+release_date: 2026-03-27
+open_weights: false
+license: Proprietary
+aliases: []
+reasoning: true
+context_length: 256000
+modality: multimodal
+source_url: https://mimo.xiaomi.com/mimo-v2-omni
+metadata_sources:
+  - https://mimo.xiaomi.com/mimo-v2-omni
+  - https://artificialanalysis.ai/models/mimo-v2-omni-0327
+status: active
+notes: March 27 API revision, kept separate from the initial March 19 release.

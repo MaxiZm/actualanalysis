@@ -1,0 +1,19 @@
+id: nex-n2-pro
+name: Nex-N2-Pro
+organization: Nex AGI
+family: Nex-N2-Pro
+release_date: 2026-06-02
+open_weights: true
+license: Apache-2.0
+aliases:
+  - Nex-N2-Pro
+  - nex-agi/nex-n2-pro:free
+  - nex-n2-pro
+reasoning: true
+context_length: 262000
+modality: multimodal
+source_url: https://huggingface.co/nex-agi/Nex-N2-Pro
+metadata_sources:
+  - https://huggingface.co/nex-agi/Nex-N2-Pro
+  - https://artificialanalysis.ai/models/nex-n2-pro
+status: active

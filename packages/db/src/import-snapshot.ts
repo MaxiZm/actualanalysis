@@ -97,7 +97,7 @@ export const PublicSnapshotSchema = z.object({
     flags: z.array(z.unknown()), provisional: z.boolean(), pairwise: z.record(z.string(), z.number()),
     systemId: z.string().optional(), profile: z.string().nullable().optional(), tier: z.string().nullable().optional(),
     rankCdf: z.array(z.number()).optional(), topK: z.record(z.string(), z.number()).optional(),
-    evidence: z.record(z.string(), z.number()).optional(),
+    evidence: z.record(z.string(), z.number().nullable()).optional(),
   })),
   benchmark_params: z.array(z.object({
     runId: z.string().uuid(), benchmarkId: z.string(), difficulty: z.number(), slope: z.number(), weight: z.number(),

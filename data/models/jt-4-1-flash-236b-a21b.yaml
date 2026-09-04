@@ -1,0 +1,22 @@
+id: jt-4-1-flash-236b-a21b
+name: JT-4.1 Flash 236B A21B
+organization: China Mobile
+family: JT-4.1
+release_date: 2026-07-09
+open_weights: false
+license: Proprietary
+aliases:
+  - JT-4.1 Flash 236B A21B
+  - jt-4-1-flash-236b-a21b
+reasoning: false
+context_length: 256000
+modality: multimodal
+source_url: https://artificialanalysis.ai/models/jt-4-1-flash-236b-a21b
+metadata_sources:
+  - https://artificialanalysis.ai/models/jt-4-1-flash-236b-a21b
+  - https://artificialanalysis.ai/models/jt-4-1-flash-236b-a21b
+status: active
+notes: Identity, release date and 256K context are documented by the independent
+  Artificial Analysis evaluation catalog. A publisher model card and public
+  weight download were not found; no unsupported architecture or license details
+  are inferred.

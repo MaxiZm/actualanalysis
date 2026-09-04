@@ -8,3 +8,13 @@ license: Proprietary
 source_url: https://openai.com/index/introducing-gpt-5-5/
 status: active
 
+default_effort_tier: high
+max_effort_tier: xhigh
+effort_tier_order: [medium, high, xhigh]
+reasoning: true
+reasoning_config:
+  control: categorical
+  parameter: reasoning.effort
+metadata_sources:
+  - https://developers.openai.com/api/docs/models/gpt-5.5-pro
+notes: OpenAI documents high as the default reasoning effort and xhigh as the highest exposed effort; medium is also available. Distinct effort settings must not be pooled as a fixed-effort system.

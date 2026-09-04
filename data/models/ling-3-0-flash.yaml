@@ -1,0 +1,21 @@
+id: ling-3-0-flash
+name: Ling 3.0 Flash
+organization: InclusionAI
+family: Ling
+release_date: 2026-08-04
+open_weights: true
+license: MIT
+aliases:
+  - Ling 3.0 Flash
+  - ling-3-0-flash
+reasoning: true
+context_length: 262144
+modality: text
+source_url: https://huggingface.co/inclusionAI/Ling-3.0-flash
+metadata_sources:
+  - https://huggingface.co/inclusionAI/Ling-3.0-flash
+  - https://artificialanalysis.ai/models/ling-3-0-flash
+status: active
+max_output: 32768
+params_total_b: 124
+params_active_b: 5.1

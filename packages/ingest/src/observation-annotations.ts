@@ -1,3 +1,4 @@
+import { harmonizeObservationLineages } from "./lib/lineage.js";
 import type { Model, Registry, SourceProtocol } from "@actualanalysis/shared";
 import { RawResultSchema, type RawBenchmarkResult, type RawResult } from "./types.js";
 
@@ -235,7 +236,7 @@ function resolveEffort(rule: EffortRule, model: Model | undefined): { effortTier
 export function annotateObservationMetadata(records: readonly RawResult[], registry: Pick<Registry, "models"> & Partial<Pick<Registry, "sources">>): RawResult[] {
   const models = new Map(registry.models.map((model) => [model.id, model]));
   const sources = new Map((registry.sources ?? []).map((source) => [source.id, source]));
-  return records.map((record): RawResult => {
+  return harmonizeObservationLineages(records.map((record): RawResult => {
     if (record.record_type !== "benchmark_result") return record;
     const matchingProtocols = sources.get(record.source_id)?.protocols?.filter((protocol) => protocolMatches(record, protocol)) ?? [];
     const protocol = matchingProtocols.length === 1 ? matchingProtocols[0] : undefined;
@@ -347,5 +348,5 @@ export function annotateObservationMetadata(records: readonly RawResult[], regis
       metadata_incomplete: metadataIncomplete,
       metadata: { ...record.metadata, aci12_observation_annotation: annotation },
     });
-  });
+  }));
 }

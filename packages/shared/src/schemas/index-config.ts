@@ -27,10 +27,11 @@ const TierSchema = z.object({
   min_safe_cells: z.number().int().nonnegative(),
   max_family_share: z.number().gt(0).lte(1),
   min_own_data_reduction: z.number().min(0).max(1).default(0.5),
+  max_concentration: z.number().gt(0).lte(1).optional(),
 }).strict();
 
 export const IndexConfigSchema = z.object({
-  method_version: z.literal("1.2.2"),
+  method_version: z.string().regex(/^1\.[23]\.\d+$/, "expected a 1.2.x or 1.3.x method version"),
   method_name: NonEmptyStringSchema,
   taxonomy_edition: NonEmptyStringSchema,
   calibration_edition: NonEmptyStringSchema,
@@ -64,6 +65,9 @@ export const IndexConfigSchema = z.object({
     effort_gain_sd: z.number().positive().optional(),
     effort_domain_gain_sd: z.number().positive().optional(),
     trait_spread_sd: z.number().positive().optional(),
+    trait_spread_lognormal_sd: z.number().nonnegative().optional(),
+    trait_spread_lognormal_median_log: z.number().finite().optional(),
+    panel_pin_sd: z.number().nonnegative().optional(),
     sigma_a_indep: z.number().positive().optional(),
     sigma_a_self: z.number().positive().optional(),
     sigma_xi: z.number().positive().optional(),
@@ -88,6 +92,7 @@ export const IndexConfigSchema = z.object({
     verified: TierSchema,
     ranked: TierSchema,
     domain_max_width: z.number().positive(),
+    domain_min_own_data_reduction: z.number().min(0).max(1).default(0.5),
     profile_domain_weight_gate: z.number().gt(0).lt(1),
     practical_margin: z.number().positive().default(1),
   }).strict(),

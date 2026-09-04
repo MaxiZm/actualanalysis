@@ -1,0 +1,19 @@
+id: inkling-small
+name: Inkling Small
+organization: Thinking Machines
+family: Inkling
+release_date: 2026-07-30
+open_weights: true
+license: Apache-2.0
+aliases:
+  - Inkling-Small
+  - Inkling Small
+  - inkling-small
+reasoning: true
+context_length: 1000000
+modality: multimodal
+source_url: https://huggingface.co/thinkingmachines/Inkling-Small
+metadata_sources:
+  - https://huggingface.co/thinkingmachines/Inkling-Small
+  - https://artificialanalysis.ai/models/inkling-small
+status: active

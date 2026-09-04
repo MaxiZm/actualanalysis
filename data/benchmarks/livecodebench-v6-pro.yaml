@@ -2,10 +2,17 @@ id: livecodebench-v6-pro
 name: LiveCodeBench Release v6
 version: release_v6
 family_id: livecodebench
-aliases: [LiveCodeBench v6, LiveCodeBench Release v6, LCB v6]
-tags: [chat]
-categories: [coding]
-domains: { agentic: 0, software-code: 0.70, reasoning: 0.30, knowledge-information: 0, communication-professional: 0 }
+aliases: [ LiveCodeBench v6, LiveCodeBench Release v6, LCB v6 ]
+tags: [ chat ]
+categories: [ coding ]
+domains:
+  {
+    agentic: 0,
+    software-code: 0.70,
+    reasoning: 0.30,
+    knowledge-information: 0,
+    communication-professional: 0
+  }
 holdout: public
 holdout_details: Frozen Release v6 covering May 2023 through April 2025.
 chance_level: 0
@@ -16,11 +23,16 @@ tool_policy: none
 transform: { type: accuracy, input_scale: percent }
 n_items: 1055
 harness_url: https://livecodebench.github.io/
-source_ids: [kaggle, livecodebench, vendor-model-cards]
+source_ids: [ kaggle, livecodebench, vendor-model-cards ]
 metadata_sources:
   - https://github.com/LiveCodeBench/LiveCodeBench
   - https://huggingface.co/livecodebench
   - https://arxiv.org/html/2403.07974
   - https://www.kaggle.com/benchmarks/open-benchmarks/livecodebench-release-v6/versions/1
-status: watchlist
-notes: The legacy registry ID is retained for API compatibility. Excluded until observations pin an immutable harness commit and confirm the ten-sample protocol; generic Pro rows are not aliases.
+status: retired
+notes: The legacy registry ID is retained for API compatibility. Excluded until
+  observations pin an immutable harness commit and confirm the ten-sample
+  protocol; generic Pro rows are not aliases.
+promotion_rule: "Promoted to active under method 1.2.3: the benchmark has independent results
+  for ≥8 registered models; metadata pins that are still missing are carried as
+  metadata_incomplete on each observation instead of blocking the fit."

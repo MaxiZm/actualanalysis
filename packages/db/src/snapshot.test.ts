@@ -4,6 +4,7 @@ import path from "node:path";
 import { afterEach, describe, expect, it } from "vitest";
 
 import {
+  excludeRetiredBenchmarks,
   publishSnapshotFilesAtomically,
   selectSnapshotRuns,
   serializeSnapshotCsv,
@@ -138,5 +139,45 @@ describe("exact snapshot run selection", () => {
     expect(() => selectSnapshotRuns(exactRuns, { ...exactIds, chat: exactIds.mixed })).toThrow(
       "must be distinct",
     );
+  });
+
+  it("archives an existing dated directory when replaceExisting is requested", async () => {
+    const root = await mkdtemp(path.join(os.tmpdir(), "snapshot-replace-"));
+    const output = path.join(root, "2026-09-04");
+    await publishSnapshotFilesAtomically(output, snapshotFiles("old\n"));
+    await publishSnapshotFilesAtomically(output, snapshotFiles("new\n"), { replaceExisting: true });
+    expect(await readFile(path.join(output, "snapshot.json"), "utf8")).toBe("new\n");
+    const archived = await readdir(path.join(root, ".archive"));
+    expect(archived).toHaveLength(1);
+    expect(archived[0]).toMatch(/^2026-09-04-/);
+  });
+});
+
+it("removes retired benchmark metadata and all dependent exported rows together", () => {
+  const live = { benchmarkId: "matharena-composite" };
+  const retired = { benchmarkId: "swe-bench-pro-public" };
+  const watchlist = { benchmarkId: "arc-agi-3" };
+  const output = excludeRetiredBenchmarks({
+    benchmarks: [{ id: live.benchmarkId, status: "active" }, { id: retired.benchmarkId, status: "retired" }, { id: watchlist.benchmarkId, status: "watchlist" }],
+    results: [live, retired, watchlist], params: [retired, live], cells: [live, retired],
+  });
+  expect(output.benchmarks.map((b) => b.id)).toEqual([live.benchmarkId, watchlist.benchmarkId]);
+  expect(output.results).toEqual([live, watchlist]);
+  expect(output.params).toEqual([live]);
+  expect(output.cells).toEqual([live]);
+});
+
+describe("current publication evidence", () => {
+  it("excludes stale corrected rows without deleting the stored historical input", async () => {
+    const { selectCurrentEvidence } = await import("./snapshot.js");
+    const history = [{ observationKey: "wrong-v1" }, { observationKey: "valid-v2" }, { observationKey: "old-copy" }];
+    const runs = [{ params: { current_evidence_observation_keys: ["valid-v2"] } }];
+    expect(selectCurrentEvidence(history, runs)).toEqual([{ observationKey: "valid-v2" }]);
+    expect(history).toHaveLength(3);
+  });
+  it("keeps legacy exports compatible when no exact observation inventory exists", async () => {
+    const { selectCurrentEvidence } = await import("./snapshot.js");
+    const rows = [{ observationKey: "legacy" }];
+    expect(selectCurrentEvidence(rows, [{ params: {} }])).toEqual(rows);
   });
 });

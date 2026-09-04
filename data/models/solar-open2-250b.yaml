@@ -1,0 +1,19 @@
+id: solar-open2-250b
+name: Solar Open2 250B
+organization: Upstage
+family: Solar
+release_date: 2026-08-12
+open_weights: true
+license: upstage-solar-license
+aliases:
+  - Solar-Open2-250B
+  - Solar Open2 250B
+  - solar-open2-250b
+reasoning: true
+context_length: 1048576
+modality: text
+source_url: https://huggingface.co/upstage/Solar-Open2-250B
+metadata_sources:
+  - https://huggingface.co/upstage/Solar-Open2-250B
+  - https://artificialanalysis.ai/models/solar-open2-250b
+status: active

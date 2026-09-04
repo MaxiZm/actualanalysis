@@ -6,6 +6,21 @@ const sourcePriority: Record<ResultRecord["sourceKind"], number> = {
   "self-reported": 1,
 };
 
+function effortPriority(result: ResultRecord): number {
+  const value = result.config.reasoning_effort ?? result.config.effort_tier ?? result.config.evaluation_profile;
+  if (typeof value !== "string") return -1;
+  const tier = value.toLowerCase().replace(/[\s_-]+/g, "").trim();
+  const ranks: Record<string, number> = { none: 0, minimal: 1, low: 2, medium: 3, high: 4, xhigh: 5, max: 6 };
+  return ranks[tier] ?? -1;
+}
+
+function compareEvidence(left: ResultRecord, right: ResultRecord): number {
+  return sourcePriority[right.sourceKind] - sourcePriority[left.sourceKind]
+    || effortPriority(right) - effortPriority(left)
+    || (right.observedOn ?? "").localeCompare(left.observedOn ?? "")
+    || left.id.localeCompare(right.id);
+}
+
 /**
  * Comparison charts operate on fitted model/benchmark cells, while the public
  * result list retains every accepted source/configuration row. Collapse those
@@ -23,15 +38,9 @@ export function uniqueUsedResultPairs(results: ResultRecord[]): ResultRecord[] {
       continue;
     }
 
-    const preferred = sourcePriority[result.sourceKind] > sourcePriority[current.sourceKind]
-      ? result
-      : current;
-    const standardErrors = [current.standardError, result.standardError]
-      .filter((value): value is number => value !== null && Number.isFinite(value));
-    pairs.set(key, {
-      ...preferred,
-      standardError: standardErrors.length ? Math.min(...standardErrors) : null,
-    });
+    // Keep the complete chosen measurement. Borrowing a smaller SE from another
+    // configuration incorrectly narrows its uncertainty.
+    pairs.set(key, compareEvidence(result, current) < 0 ? result : current);
   }
 
   return [...pairs.values()];

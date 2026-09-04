@@ -19,7 +19,8 @@
     "score": "npm run cli --workspace @actualanalysis/scoring --",
     "snapshot": "npm run snapshot --workspace @actualanalysis/db --",
     "pipeline": "tsx scripts/pipeline.ts",
-    "verify:db": "tsx scripts/verify-db-roundtrip.ts"
+    "verify:db": "tsx scripts/verify-db-roundtrip.ts",
+    "build:pages": "tsx scripts/build-pages.ts"
   },
   "engines": {
     "node": ">=20.0.0",

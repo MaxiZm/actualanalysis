@@ -1,6 +1,10 @@
+> **1.3.0 implementation note:** the current contract is [methodology.md](methodology.md). Mixed, Agentic and Chat are panel-standardized weighted trait composites. Benchmark display parameters are calibrated location −β/α and slope along the panel projection. Basket utilities are separate and utility-gated. Historical equations below describe earlier design stages where they differ.
+
 # ACI scoring math
 
-Method **1.2.2** replaces method 1.2.1 in full. The normative formulas and publication rules are maintained in [methodology.md](./methodology.md); executable constants are in `data/index-config.yaml`.
+Deviations of the running 1.2.3 implementation from the normative 1.2.2 text are listed in [spec-aci-1.2.2-deviations.md](./spec-aci-1.2.2-deviations.md).
+
+Method **1.2.3** replaces methods 1.2.1 and 1.2.2 in full (1.2.2 never produced an accepted run). The normative formulas and publication rules are maintained in [methodology.md](./methodology.md); executable constants are in `data/index-config.yaml`.
 
 The implementation is split intentionally:
 
@@ -15,4 +19,4 @@ The implementation is split intentionally:
 
 The legacy Huber, benchmark-weight, anchor, canonical-configuration, and hierarchical-bootstrap modules remain only to reproduce historical pre-1.2 runs. `runScoring` rejects a 1.2 method version so those modules cannot accidentally publish a run under the new label.
 
-In 1.2.2, reference benchmark pinning is eliminated; identification is achieved through the calibration panel. The pipeline audits that every panel system has $\ge 2$ independent cells in every domain and writes a metadata unblock table upon failure.
+In 1.2.x, reference benchmark pinning is eliminated; identification is achieved through the calibration panel. The pipeline audits that every panel system has $\ge 2$ independent cells in every domain and writes a metadata unblock table upon failure.

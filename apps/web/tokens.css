@@ -6,6 +6,8 @@
 :root {
   color-scheme: light;
 
+  --color-brand: #0758ce;
+  --color-brand-ink: #ffffff;
   --color-paper: oklch(98.5% 0.004 250);
   --color-paper-2: oklch(96% 0.008 250);
   --color-paper-3: oklch(92% 0.01 250);
@@ -96,9 +98,32 @@
   --measure: 65ch;
   --control-height: 2.75rem;
   --control-height-compact: 2.125rem;
+
+  /* shadcn/ui & cult-ui variables */
+  --background: var(--color-paper);
+  --foreground: var(--color-ink-2);
+  --card: var(--color-paper-2);
+  --card-foreground: var(--color-ink);
+  --popover: var(--color-paper);
+  --popover-foreground: var(--color-ink);
+  --primary: var(--color-accent);
+  --primary-foreground: var(--color-accent-ink);
+  --secondary: var(--color-paper-3);
+  --secondary-foreground: var(--color-ink-2);
+  --muted: var(--color-paper-2);
+  --muted-foreground: var(--color-muted);
+  --accent: var(--color-accent);
+  --accent-foreground: var(--color-accent-ink);
+  --destructive: oklch(55% 0.2 25);
+  --destructive-foreground: oklch(98% 0.006 250);
+  --border: var(--color-rule);
+  --input: var(--color-rule-strong);
+  --ring: var(--color-focus);
+  --radius: var(--radius-sm);
 }
 
-[data-theme="dark"] {
+[data-theme="dark"],
+.dark {
   color-scheme: dark;
   --color-paper: oklch(16% 0.015 258);
   --color-paper-2: oklch(20% 0.018 258);
@@ -125,4 +150,65 @@
   --color-on-graphite-muted: oklch(74% 0.016 252);
   --color-overlay: oklch(5% 0.015 258 / 0.74);
   --color-shadow: oklch(5% 0.015 258 / 0.28);
+
+  /* shadcn/ui & cult-ui dark variables */
+  --background: var(--color-paper);
+  --foreground: var(--color-ink-2);
+  --card: var(--color-paper-2);
+  --card-foreground: var(--color-ink);
+  --popover: var(--color-paper);
+  --popover-foreground: var(--color-ink);
+  --primary: var(--color-accent);
+  --primary-foreground: var(--color-accent-ink);
+  --secondary: var(--color-paper-3);
+  --secondary-foreground: var(--color-ink-2);
+  --muted: var(--color-paper-2);
+  --muted-foreground: var(--color-muted);
+  --accent: var(--color-accent);
+  --accent-foreground: var(--color-accent-ink);
+  --destructive: oklch(65% 0.2 25);
+  --destructive-foreground: oklch(17% 0.02 258);
+  --border: var(--color-rule);
+  --input: var(--color-rule-strong);
+  --ring: var(--color-focus);
+}
+
+/*
+ * Registered as `@theme` (not `@theme inline`) intentionally: the color tokens below are
+ * NOT re-declared here (unlike an earlier draft of this block). Redeclaring --color-paper
+ * etc. with literal values here would compile to a `:root, :host { ... }` rule that lands,
+ * in source order, after `[data-theme="dark"], .dark` above; with equal specificity the
+ * later rule wins and silently pins the app to light mode regardless of `data-theme`. Those
+ * tokens are already themed via the `:root` / `[data-theme="dark"]` blocks above and are
+ * consumed directly as `var(--color-paper)` etc. (see components/ui/*), so they don't need
+ * a Tailwind theme-key mapping here.
+ */
+@theme {
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --spacing-3xs: 0.25rem;
+  --spacing-2xs: 0.5rem;
+  --spacing-xs: 0.75rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.25rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-DEFAULT: var(--radius);
 }

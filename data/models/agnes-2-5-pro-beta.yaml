@@ -1,0 +1,18 @@
+id: agnes-2-5-pro-beta
+name: Agnes 2.5 Pro Beta
+organization: Sapiens AI
+family: Agnes
+release_date: 2026-08-26
+open_weights: false
+license: Proprietary
+aliases:
+  - Agnes 2.5 Pro Beta
+  - agnes-2-5-pro-beta
+reasoning: true
+context_length: 1000000
+modality: multimodal
+source_url: https://beta.agnes-ai.com/
+metadata_sources:
+  - https://beta.agnes-ai.com/
+  - https://artificialanalysis.ai/models/agnes-2-5-pro-beta
+status: preview

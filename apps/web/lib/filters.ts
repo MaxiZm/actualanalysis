@@ -25,7 +25,7 @@ export const DEFAULT_FILTERS: ExplorerFilters = {
   release: "all",
   maxPrice: null,
   priceBasis: "blended",
-  provisional: false,
+  provisional: true,
   benchmarks: [],
   highlight: [],
 };
@@ -44,7 +44,7 @@ export function parseFilters(params: URLSearchParams): ExplorerFilters {
     release: params.get("release") || "all",
     maxPrice: Number.isFinite(maxPriceValue) && maxPriceValue > 0 ? maxPriceValue : null,
     priceBasis: params.get("price") === "input" || params.get("price") === "output" ? params.get("price") as "input" | "output" : "blended",
-    provisional: params.get("provisional") === "1",
+    provisional: true,
     benchmarks: params.getAll("benchmark").filter(Boolean),
     highlight: params.getAll("highlight").filter(Boolean).slice(0, 8),
   };
@@ -61,7 +61,6 @@ export function serializeFilters(filters: ExplorerFilters): URLSearchParams {
   if (filters.release !== "all") params.set("release", filters.release);
   if (filters.maxPrice !== null) params.set("maxPrice", String(filters.maxPrice));
   if (filters.priceBasis !== "blended") params.set("price", filters.priceBasis);
-  if (filters.provisional) params.set("provisional", "1");
   for (const benchmark of filters.benchmarks) params.append("benchmark", benchmark);
   for (const slug of filters.highlight.slice(0, 8)) params.append("highlight", slug);
   return params;
@@ -69,9 +68,7 @@ export function serializeFilters(filters: ExplorerFilters): URLSearchParams {
 
 export function matchesFilters(model: ModelRecord, filters: ExplorerFilters, price: number | null): boolean {
   const cutoff = filters.release === "all" ? null : Date.parse(`${filters.release}-01-01T00:00:00Z`);
-  return Boolean(model.indexes[filters.index])
-    && (filters.provisional || model.indexes[filters.index]?.provisional !== true)
-    && (!filters.organizations.length || filters.organizations.includes(model.organization))
+  return (!filters.organizations.length || filters.organizations.includes(model.organization))
     && (!filters.openWeights || model.openWeights)
     && (filters.reasoning === "all" || model.reasoning === filters.reasoning)
     && (filters.sizeClass === "all" || model.sizeClass === filters.sizeClass)

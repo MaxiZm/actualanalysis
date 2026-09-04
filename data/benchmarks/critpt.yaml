@@ -1,15 +1,29 @@
 id: critpt
 name: CritPt
-version: current
-aliases: [Crit Pt, Critical Point benchmark]
+version: challenge-70-2025-11-21
+grader_version: CritPt official grading server; server revision not published
+family_id: critpt
+aliases: [Crit Pt, Critical Point benchmark, Complex Research using Integrated Thinking - Physics Test]
 tags: [chat]
 categories: [reasoning]
-holdout: private
-holdout_details: Problems are unpublished.
+domains: { agentic: 0, software-code: 0, reasoning: 0.85, knowledge-information: 0.15, communication-professional: 0 }
+holdout: public
+holdout_details: The 70 challenge prompts are public; reference answers and the official grading service are private. One example challenge and the 190 checkpoint tasks are excluded from the scored challenge set.
 chance_level: 0
+obs_type: count
+public_release_date: 2025-11-21
+default_k: 1
+tool_policy: none
 transform: { type: accuracy, input_scale: percent }
-n_items: null
-harness_url: https://epoch.ai/benchmarks
-source_ids: [epoch]
+n_items: 70
+harness_url: https://github.com/CritPt-Benchmark/CritPt/tree/17c2545c302762d2f2d644d923ea4c301605cb08
+source_ids: [critpt, aa-benchmarks-manual]
+metadata_sources:
+  - https://critpt.com/
+  - https://arxiv.org/abs/2509.26574
+  - https://github.com/CritPt-Benchmark/CritPt/tree/17c2545c302762d2f2d644d923ea4c301605cb08
+  - https://artificialanalysis.ai/evaluations/critpt
+  - https://artificialanalysis.ai/methodology/intelligence-benchmarking
 status: watchlist
-notes: Excluded until an immutable benchmark version, item count, grader, tool policy, domain shares, and source metadata are declared.
+promotion_rule: Promote after compatible, reproducible no-tool observations are available for fitting, including grading revision and uncertainty that respects repeated questions.
+notes: Research-level physics challenge accuracy. Artificial Analysis reports mean pass@1 over five repeats of 70 questions, using a reasoning step followed by answer formatting for the official grader. These are 70 distinct questions, not 350 independent items. Current attributed AA results are displayed from the isolated non-redistributable overlay and are not fitted into the public index. Domain shares are the project’s declared interpretation of scientific reasoning and physics knowledge.

@@ -1,0 +1,24 @@
+id: qwen3.8-flash-next
+name: Qwen3.8-Flash-Next
+organization: Alibaba
+family: Qwen3
+release_date: 2026-08-26
+open_weights: true
+license: qwen-community-1.0
+aliases:
+  - Qwen3.8-Flash-Next
+  - qwen3-8-flash-next
+reasoning: true
+context_length: 256000
+modality: multimodal
+source_url: https://huggingface.co/Qwen/Qwen3.8-Flash-Next
+metadata_sources:
+  - https://huggingface.co/Qwen/Qwen3.8-Flash-Next
+  - https://artificialanalysis.ai/models/qwen3-8-flash-next
+status: active
+default_effort_tier: xhigh
+max_effort_tier: xhigh
+effort_tier_order:
+  - low
+  - medium
+  - xhigh

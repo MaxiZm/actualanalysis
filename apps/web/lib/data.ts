@@ -2,6 +2,64 @@ export const INDEX_KINDS = ["mixed", "agentic", "chat"] as const;
 
 export type IndexKind = (typeof INDEX_KINDS)[number];
 export type SourceKind = "independent" | "mirror" | "self-reported";
+export type EvidenceTier = "verified" | "ranked" | "provisional";
+export const EVIDENCE_TIERS: readonly EvidenceTier[] = ["verified", "ranked", "provisional"];
+
+export const ACI_DOMAINS = [
+  "agentic",
+  "software-code",
+  "reasoning",
+  "knowledge-information",
+  "communication-professional",
+] as const;
+export type AciDomain = (typeof ACI_DOMAINS)[number];
+export const ACI_BASKETS = ["general", "coding", "research", "agentic", "chat"] as const;
+export type AciBasket = (typeof ACI_BASKETS)[number];
+
+/** Publication evidence behind a tier decision (§6). Null means not computed in this method version. */
+export interface EvidenceSummary {
+  fittedCells: number | null;
+  domains: number | null;
+  safeIndependentCells: number | null;
+  maxBenchmarkShare: number | null;
+  maxFamilyShare: number | null;
+  ownDataReduction: number | null;
+  concentration: number | null;
+  looMaxDelta: number | null;
+  exposureGap: number | null;
+  adversarialShift: number | null;
+}
+
+export interface IntervalEstimate {
+  median: number;
+  low: number;
+  high: number;
+  sd: number | null;
+  width: number | null;
+}
+
+export interface DomainScore extends IntervalEstimate {
+  published: boolean;
+  extrapolated: boolean;
+  ownDataReduction: number | null;
+  fittedCells: number | null;
+}
+
+export interface BasketScore extends IntervalEstimate {
+  published: boolean;
+  missingBenchmarks: string[];
+}
+
+/** The scored system (model × runtime profile) that the published indexes describe. */
+export interface SystemSummary {
+  id: string;
+  profile: string;
+  tier: EvidenceTier;
+  aciG: IntervalEstimate | null;
+  domains: Partial<Record<AciDomain, DomainScore>>;
+  baskets: Partial<Record<AciBasket, BasketScore>>;
+  evidence: EvidenceSummary | null;
+}
 
 export interface IndexScore {
   score: number | null;
@@ -11,8 +69,15 @@ export interface IndexScore {
   rankLow: number | null;
   rankHigh: number | null;
   coverage: number;
+  /** Distinct benchmarks with a used fitted cell for this system in the run. */
+  coverageCount: number | null;
+  /** Benchmarks fitted in the run. */
+  coverageTotal: number | null;
   robustScore: number;
   provisional: boolean;
+  tier: EvidenceTier | null;
+  systemId: string | null;
+  profile: string | null;
   flags: string[];
   /** P(this model's capability > keyed model) over joint valid draws. */
   pairwise: Record<string, number>;
@@ -26,12 +91,25 @@ export interface PriceRecord {
 }
 
 export interface SpeedRecord {
+  configuration?: string;
   provider: string;
-  tokensPerSecond: number;
-  ttftSeconds: number;
+  tokensPerSecond: number | null;
+  ttftSeconds: number | null;
   workload: string;
   observedOn?: string;
   sourceUrl?: string;
+  redistributable: false;
+}
+
+export interface CostPerTaskRecord {
+  usdPerTask: number;
+  provider: string;
+  configuration: string;
+  workload: string;
+  observedOn: string;
+  sourceUrl: string;
+  definition: string;
+  methodologyUrl: string;
   redistributable: false;
 }
 
@@ -54,18 +132,14 @@ export interface ModelRecord {
   modality?: string;
   sizeClass?: string;
   indexes: Partial<Record<IndexKind, IndexScore>>;
+  system: SystemSummary | null;
   pricing: PriceRecord[];
   speed: SpeedRecord | null;
-}
-
-export interface WeightFactors {
-  discrimination: number | null;
-  saturation: number | null;
-  source: number | null;
-  holdout: number | null;
+  costPerTask?: CostPerTaskRecord | null;
 }
 
 export interface BenchmarkRecord {
+  status?: string;
   id: string;
   slug: string;
   name: string;
@@ -74,26 +148,34 @@ export interface BenchmarkRecord {
   categories: string[];
   holdout: "public" | "semi-private" | "private" | "rolling";
   nItems: number | null;
+  /** Fitted location on the latent scale (β). */
   difficulty: number | null;
+  /** Fitted discrimination (α). */
   slope: number | null;
-  weight: number | null;
-  saturation: number | null;
-  weightFactors: WeightFactors;
-  categoryShares?: Record<string, number>;
+  /** Cell-misfit standard deviation (√ residual variance) from the newest run. */
+  misfitSd: number | null;
   transform: string;
   harnessUrl: string | null;
   sourceNames: string[];
   description: string;
 }
 
+export type ScoreUnit = "fraction" | "percent" | "elo" | "minutes" | "hours" | "currency" | "raw";
+
 export interface ResultRecord {
   id: string;
   modelSlug: string;
   benchmarkSlug: string;
   rawScore: number;
+  /** Chart scale: fraction for accuracy benchmarks, logistic of the fitted logit otherwise. */
   score: number;
-  scoreUnit: "fraction" | "percent" | "elo" | "minutes" | "hours" | "currency" | "raw";
+  scoreUnit: ScoreUnit;
+  /** Chart-scale prediction matching `score`. */
   predicted: number | null;
+  /** Prediction converted back through the benchmark transform, in `scoreUnit`. */
+  predictedNative: number | null;
+  observedLogit: number | null;
+  predictedLogit: number | null;
   standardError: number | null;
   residualZ: number | null;
   sourceKind: SourceKind;
@@ -161,15 +243,20 @@ const score = (
   provisional = false,
   flags: string[] = [],
 ): IndexScore => ({
-  score: value,
+  score: provisional ? null : value,
   ciLow: value - spread,
   ciHigh: value + spread,
-  rank,
-  rankLow: Math.max(1, rank - 1),
-  rankHigh: Math.min(5, rank + 1),
+  rank: provisional ? null : rank,
+  rankLow: provisional ? null : Math.max(1, rank - 1),
+  rankHigh: provisional ? null : Math.min(5, rank + 1),
   coverage,
+  coverageCount: Math.round(coverage * 6),
+  coverageTotal: 6,
   robustScore: value - 0.8,
   provisional,
+  tier: provisional ? "provisional" : coverage >= 0.85 ? "verified" : "ranked",
+  systemId: null,
+  profile: null,
   flags,
   pairwise: {},
 });
@@ -193,6 +280,7 @@ export const MODELS: ModelRecord[] = [
       agentic: score(121.7, 1, 0.91, 2.8),
       chat: score(114.2, 2, 0.82, 2.7),
     },
+    system: null,
     pricing: [
       { provider: "Demo Cloud", inputPerMillion: 4.2, outputPerMillion: 16.8, cacheReadPerMillion: 0.42 },
       { provider: "Example Gateway", inputPerMillion: 4.5, outputPerMillion: 17.1, cacheReadPerMillion: null },
@@ -217,6 +305,7 @@ export const MODELS: ModelRecord[] = [
       agentic: score(116.3, 2, 0.84, 3.4),
       chat: score(113.8, 3, 0.75, 3.0),
     },
+    system: null,
     pricing: [{ provider: "Demo Host", inputPerMillion: 0.9, outputPerMillion: 3.6, cacheReadPerMillion: 0.18 }],
     speed: { provider: "Manual fixture", tokensPerSecond: 118, ttftSeconds: 0.41, workload: "10k input", redistributable: false },
   },
@@ -238,6 +327,7 @@ export const MODELS: ModelRecord[] = [
       agentic: score(108.9, 4, 0.82, 3.1),
       chat: score(119.6, 1, 0.93, 2.2),
     },
+    system: null,
     pricing: [{ provider: "Demo Cloud", inputPerMillion: 2.1, outputPerMillion: 10.5, cacheReadPerMillion: 0.21 }],
     speed: { provider: "Manual fixture", tokensPerSecond: 92, ttftSeconds: 0.52, workload: "10k input", redistributable: false },
   },
@@ -259,6 +349,7 @@ export const MODELS: ModelRecord[] = [
       agentic: score(112.5, 3, 0.78, 3.9),
       chat: score(104.1, 5, 0.67, 3.8),
     },
+    system: null,
     pricing: [{ provider: "Demo Host", inputPerMillion: 0.28, outputPerMillion: 1.1, cacheReadPerMillion: null }],
     speed: { provider: "Manual fixture", tokensPerSecond: 164, ttftSeconds: 0.28, workload: "10k input", redistributable: false },
   },
@@ -280,6 +371,7 @@ export const MODELS: ModelRecord[] = [
       agentic: score(101.2, 5, 0.39, 8.4, true, ["provisional coverage"]),
       chat: score(105.4, 4, 0.48, 6.8, true, ["provisional coverage"]),
     },
+    system: null,
     pricing: [{ provider: "Demo Host", inputPerMillion: 0.08, outputPerMillion: 0.32, cacheReadPerMillion: null }],
     speed: null,
   },
@@ -297,9 +389,7 @@ export const BENCHMARKS: BenchmarkRecord[] = [
     nItems: 66,
     difficulty: 0,
     slope: 1,
-    weight: 0.42,
-    saturation: 0.21,
-    weightFactors: { discrimination: 0.68, saturation: 0.79, source: 0.67, holdout: 0.7 },
+    misfitSd: 0.3,
     transform: "Chance correction → clipped logit",
     harnessUrl: null,
     sourceNames: ["Fixture independent runner", "Fixture mirror"],
@@ -316,9 +406,7 @@ export const BENCHMARKS: BenchmarkRecord[] = [
     nItems: 300,
     difficulty: 0.44,
     slope: 1.36,
-    weight: 0.83,
-    saturation: 0.08,
-    weightFactors: { discrimination: 0.82, saturation: 0.92, source: 0.67, holdout: 1 },
+    misfitSd: 0.3,
     transform: "Chance correction → clipped logit",
     harnessUrl: null,
     sourceNames: ["Fixture independent runner"],
@@ -335,9 +423,7 @@ export const BENCHMARKS: BenchmarkRecord[] = [
     nItems: 369,
     difficulty: 0.82,
     slope: 1.18,
-    weight: 0.51,
-    saturation: 0.17,
-    weightFactors: { discrimination: 0.74, saturation: 0.83, source: 1, holdout: 0.7 },
+    misfitSd: 0.3,
     transform: "Chance correction → clipped logit",
     harnessUrl: null,
     sourceNames: ["Fixture mirror"],
@@ -354,9 +440,7 @@ export const BENCHMARKS: BenchmarkRecord[] = [
     nItems: 120,
     difficulty: 1.74,
     slope: 1.62,
-    weight: 0.96,
-    saturation: 0.03,
-    weightFactors: { discrimination: 0.95, saturation: 0.97, source: 1, holdout: 1 },
+    misfitSd: 0.3,
     transform: "Chance correction → clipped logit",
     harnessUrl: null,
     sourceNames: ["Fixture independent runner"],
@@ -373,9 +457,7 @@ export const BENCHMARKS: BenchmarkRecord[] = [
     nItems: 2_500,
     difficulty: 1.21,
     slope: 1.48,
-    weight: 0.89,
-    saturation: 0.05,
-    weightFactors: { discrimination: 0.91, saturation: 0.95, source: 1, holdout: 1 },
+    misfitSd: 0.3,
     transform: "Chance correction → clipped logit",
     harnessUrl: null,
     sourceNames: ["Fixture independent runner", "Fixture mirror"],
@@ -392,9 +474,7 @@ export const BENCHMARKS: BenchmarkRecord[] = [
     nItems: 180,
     difficulty: 0.96,
     slope: 1.25,
-    weight: 0.76,
-    saturation: 0.1,
-    weightFactors: { discrimination: 0.78, saturation: 0.9, source: 1, holdout: 1 },
+    misfitSd: 0.3,
     transform: "Expected performance → clipped logit",
     harnessUrl: null,
     sourceNames: ["Fixture self-report", "Fixture independent runner"],
@@ -430,6 +510,9 @@ export const RESULTS: ResultRecord[] = resultSeeds.map((seed, index) => ({
   score: seed[2],
   scoreUnit: "fraction",
   predicted: seed[3],
+  predictedNative: seed[3],
+  observedLogit: Math.log(seed[2] / (1 - seed[2])),
+  predictedLogit: Math.log(seed[3] / (1 - seed[3])),
   standardError: seed[4],
   residualZ: seed[5],
   sourceKind: seed[6],
@@ -494,13 +577,18 @@ export function compareIndexRank(left: ModelRecord, right: ModelRecord, kind: In
   const rightIndex = right.indexes[kind];
   if (!leftIndex) return rightIndex ? 1 : 0;
   if (!rightIndex) return -1;
-  return (leftIndex.rank ?? Number.MAX_SAFE_INTEGER)
-    - (rightIndex.rank ?? Number.MAX_SAFE_INTEGER)
-    || (rightIndex.score ?? Number.NEGATIVE_INFINITY) - (leftIndex.score ?? Number.NEGATIVE_INFINITY);
+  return (rightIndex.score ?? rightIndex.robustScore) - (leftIndex.score ?? leftIndex.robustScore);
+}
+
+/** Interval midpoint used to order interval-only (provisional) rows; -∞ when no interval exists. */
+export function intervalMidpoint(index: Pick<IndexScore, "score" | "ciLow" | "ciHigh">): number {
+  if (index.score !== null) return index.score;
+  if (index.ciLow === null || index.ciHigh === null) return Number.NEGATIVE_INFINITY;
+  return (index.ciLow + index.ciHigh) / 2;
 }
 
 export function getLeaderboard(kind: IndexKind, models: readonly ModelRecord[] = MODELS): ModelRecord[] {
-  return models.filter((model) => model.indexes[kind] !== undefined)
+  return [...models]
     .sort((left, right) => compareIndexRank(left, right, kind));
 }
 

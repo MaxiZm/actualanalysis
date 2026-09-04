@@ -145,6 +145,7 @@ export interface CalibrationPanelCoverageAudit {
 }
 
 export interface MetadataUnblockRow {
+  note?: string;
   missing_field: "post_training_freeze" | "item_release_date" | "network_policy";
   entity: string;
   cells_unlocked: number;
@@ -153,6 +154,10 @@ export interface MetadataUnblockRow {
 }
 
 export interface CalibrationPanelPerDomainCoverageAudit {
+  rule: { minCellsPerDomain: number; minDomainsWithTwo: number };
+  /** Every fitted system that satisfies the panel coverage rule, sorted by total independent cells. */
+  candidateSystemIds: string[];
+  allSystemCounts: Record<string, Record<Domain, number>>;
   minimumSize: number;
   editionClass: string;
   configuredSystemIds: string[];
@@ -254,31 +259,82 @@ export function normalizedTier(value: string | undefined): string | null {
   return value.trim().toLocaleLowerCase("en-US").replace(/[\s_-]+/gu, " ");
 }
 
-function profileFor(observation: AciObservation, system: AciSystemDefinition, benchmark: AciBenchmarkDefinition): { systemClass: "std-common" | "max-common"; profile: SystemProfile; systemId: string } | null {
-  const observedTier = normalizedTier(observation.effortTier);
-  if (!observedTier) return null;
-  const fixed = isFixedEffort(system);
-  
-  const matchesDefault = system.defaultEffortTier && observedTier === normalizedTier(system.defaultEffortTier);
-  const matchesMax = system.maxEffortTier && observedTier === normalizedTier(system.maxEffortTier);
+const EFFORT_RANK = ["none", "minimal", "low", "medium", "high", "xhigh", "max"] as const;
+const EFFORT_SYNONYMS: Record<string, string> = {
+  default: "default", standard: "default", base: "default", std: "default",
+  off: "none", disabled: "none", none: "none",
+  minimal: "minimal", min: "minimal", low: "low", medium: "medium", med: "medium", mid: "medium",
+  high: "high", xhigh: "xhigh", "x-high": "xhigh", extra: "xhigh", "extra-high": "xhigh",
+  max: "max", maximum: "max", ultra: "max",
+  think: "high", thinking: "high", enabled: "high", extended: "high", reasoning: "high",
+};
 
-  if (fixed) {
-    if (matchesDefault || matchesMax) {
-      if (benchmark.primaryDomain === "agentic" && observation.harnessClass === "native") return null;
-      // Fixed effort represents both classes with delta_m = 0. Canonical id uses max-common.
-      return { systemClass: "max-common", profile: "max-common", systemId: `${system.modelSnapshotId}@max-common` };
+/** Canonical effort tier: first token of the normalized string mapped through synonyms; null when absent. */
+export function canonicalEffortTier(value: string | undefined): string | null {
+  const normalized = normalizedTier(value);
+  if (!normalized) return null;
+  const first = normalized.split(" ")[0]!;
+  return EFFORT_SYNONYMS[first] ?? first;
+}
+
+function effortRank(tier: string | null): number | null {
+  if (tier === null) return null;
+  const index = (EFFORT_RANK as readonly string[]).indexOf(tier);
+  return index === -1 ? null : index;
+}
+
+export interface ProfileAssignment {
+  systemClass: "std-common" | "max-common";
+  profile: SystemProfile;
+  systemId: string;
+  /** True when the observation's effort tier was absent or did not name the declared default/max tier exactly. */
+  approximate: boolean;
+}
+
+/**
+ * Assign an observation to a system class. Observations are never rejected for
+ * an unknown or intermediate effort tier: a fixed-effort system (no declared
+ * dial) takes every observation, a variable-effort system maps the observed
+ * tier to the nearer of its default/max tiers. Approximate assignments are
+ * flagged so the fit inflates their run noise (metadata_incomplete).
+ */
+function profileFor(observation: AciObservation, system: AciSystemDefinition, benchmark: AciBenchmarkDefinition): ProfileAssignment | null {
+  const observedTier = canonicalEffortTier(observation.effortTier);
+  const nativeAgentic = benchmark.primaryDomain === "agentic" && observation.harnessClass === "native";
+  if (isFixedEffort(system)) {
+    if (nativeAgentic) return null;
+    // Fixed effort represents both classes with delta_m = 0. Canonical id uses max-common.
+    return { systemClass: "max-common", profile: "max-common", systemId: `${system.modelSnapshotId}@max-common`, approximate: observedTier === null };
+  }
+  const defaultTier = canonicalEffortTier(system.defaultEffortTier);
+  const maxTier = canonicalEffortTier(system.maxEffortTier);
+  let systemClass: "std-common" | "max-common";
+  let approximate = false;
+  if (observedTier === null) {
+    systemClass = "std-common";
+    approximate = true;
+  } else if (observedTier === "default" || observedTier === defaultTier) {
+    systemClass = "std-common";
+  } else if (observedTier === maxTier) {
+    systemClass = "max-common";
+  } else {
+    const observed = effortRank(observedTier);
+    const low = effortRank(defaultTier);
+    const high = effortRank(maxTier);
+    if (observed !== null && low !== null && high !== null) {
+      if (observed <= low) systemClass = "std-common";
+      else if (observed >= high) systemClass = "max-common";
+      else {
+        systemClass = high - observed <= observed - low ? "max-common" : "std-common";
+        approximate = true;
+      }
+    } else {
+      systemClass = "max-common";
+      approximate = true;
     }
-    return null;
   }
-
-  if (matchesDefault) {
-    if (benchmark.primaryDomain === "agentic" && observation.harnessClass === "native") return null;
-    return { systemClass: "std-common", profile: "std-common", systemId: `${system.modelSnapshotId}@std-common` };
-  }
-  if (matchesMax) {
-    return { systemClass: "max-common", profile: "max-common", systemId: `${system.modelSnapshotId}@max-common` };
-  }
-  return null;
+  if (systemClass === "std-common" && nativeAgentic) return null;
+  return { systemClass, profile: systemClass, systemId: `${system.modelSnapshotId}@${systemClass}`, approximate };
 }
 
 export function evaluateContaminationState(
@@ -426,7 +482,11 @@ function prepareLikelihood(
     if (observation.perTaskCounts?.length && observation.perTaskCounts.length === n) {
       return { likelihood: "a_exact", x: observation.perTaskCounts.reduce((sum, value) => sum + value, 0), totalTrials: n * k, rho: benchmark.defaultRho ?? (benchmark.primaryDomain === "agentic" ? config.likelihood.agentic_default_rho : config.likelihood.other_default_rho), defaultVarianceUsed: false };
     }
-    if (n !== undefined) {
+    // A task-set size is not a run denominator. Preserve a reported SE for
+    // aggregate means instead of inventing successes by rounding score * n.
+    // Exact source counts still take precedence over an approximate SE.
+    const reportedSe = uncertaintySe(observation);
+    if (n !== undefined && (observation.xCorrect !== undefined || reportedSe === null || reportedSe <= 0)) {
       const totalTrials = n * k;
       const x = observation.xCorrect ?? Math.round(fraction * totalTrials);
       return { likelihood: k > 1 ? "a_total" : "a_single", x, totalTrials, rho: benchmark.defaultRho ?? (benchmark.primaryDomain === "agentic" ? config.likelihood.agentic_default_rho : config.likelihood.other_default_rho), defaultVarianceUsed: false };
@@ -444,10 +504,16 @@ function prepareLikelihood(
   }
   if (benchmark.obsType === "money") {
     const runs = observation.runValues ?? [];
-    if ((observation.nRuns ?? runs.length) < 3 || runs.length < 3) {
-      return { observationId: observation.observationId, reason: "too_few_runs", detail: "Money benchmarks require at least three run balances." };
-    }
     const baseline = config.likelihood.money_human_baseline;
+    if ((observation.nRuns ?? runs.length) < 3 || runs.length < 3) {
+      // No per-run balances: fall back to the reported mean balance and its SE
+      // (delta method on log2), which is what public leaderboards expose.
+      const se = uncertaintySe(observation);
+      if (se === null || !(observation.score > 0)) {
+        return { observationId: observation.observationId, reason: "too_few_runs", detail: "Money benchmarks require at least three run balances or a reported mean balance with a standard error." };
+      }
+      return { likelihood: "normal", y: Math.log2(observation.score / baseline), variance: (se / (observation.score * Math.LN2)) ** 2, defaultVarianceUsed: false };
+    }
     return { likelihood: "normal", y: Math.log2(Math.max(median(runs), Number.EPSILON) / baseline), variance: bootstrapMoneyVariance(runs, baseline), defaultVarianceUsed: false };
   }
   let y: number;
@@ -540,6 +606,7 @@ export function prepareAci12(
       continue;
     }
     const metadataIncomplete = observation.metadataIncomplete === true
+      || assigned.approximate
       || observation.versionInferred === true
       || !observation.benchmarkVersion
       || !observation.graderVersion
@@ -680,6 +747,7 @@ export function auditCalibrationPanelPerDomainCoverage(
   systems: readonly AciSystemDefinition[],
   editionClass = "max-common",
   minimumSize = 12,
+  rule: { minCellsPerDomain: number; minDomainsWithTwo: number } = { minCellsPerDomain: 1, minDomainsWithTwo: 3 },
 ): CalibrationPanelPerDomainCoverageAudit {
   const systemMap = new Map(systems.map((s) => [s.modelSnapshotId, s]));
   const independentCells = new Map<string, Map<Domain, Set<string>>>();
@@ -698,46 +766,61 @@ export function auditCalibrationPanelPerDomainCoverage(
     }
   }
 
+  const countsFor = (sysId: string): Record<Domain, number> => {
+    const domainMap = independentCells.get(sysId);
+    return Object.fromEntries(ACI_DOMAINS.map((d) => [d, domainMap?.get(d)?.size ?? 0])) as Record<Domain, number>;
+  };
+  // Calibration panel rule (method 1.2.3): every domain has at least one
+  // independent cell and at least `minDomainsWithTwo` domains have two or more,
+  // so the panel pins location and scale in every trait direction without
+  // requiring dense coverage that only the newest models have.
+  const satisfies = (counts: Record<Domain, number>): boolean =>
+    ACI_DOMAINS.every((d) => counts[d] >= rule.minCellsPerDomain)
+    && ACI_DOMAINS.filter((d) => counts[d] >= 2).length >= rule.minDomainsWithTwo;
+
+  const allSystemCounts: Record<string, Record<Domain, number>> = {};
+  for (const sysId of independentCells.keys()) allSystemCounts[sysId] = countsFor(sysId);
+  const candidateSystemIds = Object.entries(allSystemCounts)
+    .filter(([, counts]) => satisfies(counts))
+    .sort((a, b) => Object.values(b[1]).reduce((x, y) => x + y, 0) - Object.values(a[1]).reduce((x, y) => x + y, 0) || a[0].localeCompare(b[0]))
+    .map(([id]) => id);
+
   const perDomainCellCounts: Record<string, Record<Domain, number>> = {};
   const failingSystemIds: string[] = [];
   const eligibleSystemIds: string[] = [];
-
   for (const sysId of panelSystemIds) {
-    const domainMap = independentCells.get(sysId);
-    const counts: Record<Domain, number> = {} as any;
-    let satisfiesAll = true;
-    for (const d of ACI_DOMAINS) {
-      const count = domainMap?.get(d)?.size ?? 0;
-      counts[d] = count;
-      if (count < 2) satisfiesAll = false;
-    }
+    const counts = countsFor(sysId);
     perDomainCellCounts[sysId] = counts;
-    if (!satisfiesAll) {
-      failingSystemIds.push(sysId);
-    } else {
-      eligibleSystemIds.push(sysId);
-    }
+    if (satisfies(counts)) eligibleSystemIds.push(sysId);
+    else failingSystemIds.push(sysId);
   }
 
-  // Metadata unblock table
+  // Metadata unblock table: which fields would let a failing panel system's
+  // cells count as contamination-safe (does not change the coverage rule).
   const unblockTable: MetadataUnblockRow[] = [];
   for (const sysId of failingSystemIds) {
     const modelId = sysId.split("@")[0]!;
     const model = systemMap.get(modelId);
+    const counts = perDomainCellCounts[sysId]!;
+    const shortfall = ACI_DOMAINS.filter((d) => counts[d] < rule.minCellsPerDomain).length;
     if (!model?.postTrainingFreeze && !model?.trainingCutoff) {
       unblockTable.push({
         missing_field: "post_training_freeze",
         entity: modelId,
-        cells_unlocked: 5,
-        panel_systems_unlocked: 1,
-        potential_safe_cells_unlocked: 4,
-      });
+        cells_unlocked: 0,
+        panel_systems_unlocked: 0,
+        potential_safe_cells_unlocked: Object.values(counts).reduce((x, y) => x + y, 0),
+        ...(shortfall ? { note: `${shortfall} domain(s) below ${rule.minCellsPerDomain} independent cells; needs more independent results, not metadata` } : {}),
+      } as MetadataUnblockRow);
     }
   }
 
   return {
     minimumSize,
     editionClass,
+    rule,
+    candidateSystemIds,
+    allSystemCounts,
     configuredSystemIds: [...panelSystemIds],
     passed: failingSystemIds.length === 0 && eligibleSystemIds.length >= minimumSize,
     perDomainCellCounts,

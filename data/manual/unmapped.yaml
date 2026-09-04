@@ -77,17 +77,9 @@ entries:
     source_id: epoch
     occurrences: 36
   - kind: benchmark
-    value: FrontierMath-Tier-4-2025-07-01-Private
-    source_id: epoch
-    occurrences: 27
-  - kind: benchmark
     value: GeoBench
     source_id: epoch
     occurrences: 26
-  - kind: benchmark
-    value: GPQA diamond
-    source_id: epoch
-    occurrences: 178
   - kind: benchmark
     value: GSM8K
     source_id: epoch
@@ -197,31 +189,223 @@ entries:
     source_id: epoch
     occurrences: 63
   - kind: model
+    value: ARChitects
+    source_id: arcprize
+    occurrences: 1
+  - kind: model
+    value: Claude 4.7
+    source_id: arcprize
+    occurrences: 4
+  - kind: model
+    value: Codex Mini (Latest)
+    source_id: arcprize
+    occurrences: 1
+  - kind: model
+    value: Deepseek R1
+    source_id: arcprize
+    occurrences: 1
+  - kind: model
+    value: Deepseek R1 (05/28)
+    source_id: arcprize
+    occurrences: 1
+  - kind: model
+    value: DeepSeek V4 Flash 0731
+    source_id: arcprize
+    occurrences: 4
+  - kind: model
+    value: DeepSeek V4 Pro 0813
+    source_id: arcprize
+    occurrences: 4
+  - kind: model
+    value: Gemini 2.0 Flash
+    source_id: arcprize
+    occurrences: 1
+  - kind: model
+    value: Gemini 2.5 Flash (Preview)
+    source_id: arcprize
+    occurrences: 5
+  - kind: model
+    value: Gemini 3 Deep Think (2/26)
+    source_id: arcprize
+    occurrences: 1
+  - kind: model
+    value: Gemini 3 Deep Think (Preview) ²
+    source_id: arcprize
+    occurrences: 1
+  - kind: model
+    value: Gemini 3.5 Flash
+    source_id: arcprize
+    occurrences: 2
+  - kind: model
+    value: Gemini 3.5 Flash-Lite
+    source_id: arcprize
+    occurrences: 4
+  - kind: model
+    value: Gemini 3.6 Flash
+    source_id: arcprize
+    occurrences: 4
+  - kind: model
+    value: GPT-4o
+    source_id: arcprize
+    occurrences: 1
+  - kind: model
+    value: GPT-4o-mini
+    source_id: arcprize
+    occurrences: 1
+  - kind: model
+    value: GPT-5.4 Mini
+    source_id: arcprize
+    occurrences: 4
+  - kind: model
+    value: GPT-5.4 Nano
+    source_id: arcprize
+    occurrences: 4
+  - kind: model
+    value: GPT-5.6 Luna 2026-07-30
+    source_id: arcprize
+    occurrences: 6
+  - kind: model
+    value: Grok 3
+    source_id: arcprize
+    occurrences: 1
+  - kind: model
+    value: Grok 3 Mini
+    source_id: arcprize
+    occurrences: 1
+  - kind: model
+    value: Human Panel
+    source_id: arcprize
+    occurrences: 1
+  - kind: model
+    value: Icecuber
+    source_id: arcprize
+    occurrences: 1
+  - kind: model
+    value: Inkling Small
+    source_id: arcprize
+    occurrences: 6
+  - kind: model
+    value: Llama 4 Scout
+    source_id: arcprize
+    occurrences: 1
+  - kind: model
+    value: Magistral Medium
+    source_id: arcprize
+    occurrences: 2
+  - kind: model
+    value: Magistral Small
+    source_id: arcprize
+    occurrences: 1
+  - kind: model
+    value: Minimax M2.5
+    source_id: arcprize
+    occurrences: 1
+  - kind: model
+    value: NVARC
+    source_id: arcprize
+    occurrences: 1
+  - kind: model
+    value: o1-mini
+    source_id: arcprize
+    occurrences: 1
+  - kind: model
+    value: Tiny Recursion Model (TRM)
+    source_id: arcprize
+    occurrences: 1
+  - kind: model
+    value: Claude 2
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Claude 2.1
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Claude 3 Haiku
+    source_id: epoch
+    occurrences: 1
+  - kind: model
     value: Claude 3 Opus
+    source_id: epoch
+    occurrences: 2
+  - kind: model
+    value: Claude 3 Sonnet
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Claude 3.5 Haiku
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: DeepSeek LLM 67B
     source_id: epoch
     occurrences: 1
   - kind: model
     value: DeepSeek V4 Flash 0731
     source_id: epoch
-    occurrences: 4
+    occurrences: 5
   - kind: model
     value: DeepSeek V4 Pro 0813
     source_id: epoch
-    occurrences: 4
+    occurrences: 5
   - kind: model
     value: DeepSeek-R1
     source_id: epoch
-    occurrences: 1
+    occurrences: 2
   - kind: model
     value: DeepSeek-R1 (May 2025)
+    source_id: epoch
+    occurrences: 2
+  - kind: model
+    value: DeepSeek-R1-Distill-Qwen-14B
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: DeepSeek-R1-Distill-Qwen-32B
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: DeepSeek-V3
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: DeepSeek-V3 (Mar 2025)
     source_id: epoch
     occurrences: 1
   - kind: model
     value: DeepSeek-V4-Pro
     source_id: epoch
-    occurrences: 3
+    occurrences: 4
+  - kind: model
+    value: Gemini 1.0 Pro
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Gemini 1.5 Flash (May 2024)
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Gemini 1.5 Flash (Sep 2024)
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Gemini 1.5 Pro (May 2024)
+    source_id: epoch
+    occurrences: 1
   - kind: model
     value: Gemini 2.0 Flash (Feb 2025)
+    source_id: epoch
+    occurrences: 2
+  - kind: model
+    value: Gemini 2.0 Pro
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Gemini 2.5 Flash (Apr 2025)
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Gemini 2.5 Flash (Jun 2025)
     source_id: epoch
     occurrences: 1
   - kind: model
@@ -231,89 +415,185 @@ entries:
   - kind: model
     value: Gemini 3.1 Flash-Lite
     source_id: epoch
-    occurrences: 2
+    occurrences: 3
   - kind: model
     value: Gemini 3.5 Flash
     source_id: epoch
-    occurrences: 5
+    occurrences: 6
   - kind: model
     value: Gemini 3.5 Flash-Lite
     source_id: epoch
-    occurrences: 3
+    occurrences: 4
   - kind: model
     value: Gemini 3.6 Flash
     source_id: epoch
-    occurrences: 5
+    occurrences: 6
+  - kind: model
+    value: Gemma 2 27B
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Gemma 2 9B
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Gemma 3 12B
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Gemma 3 27B
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Gemma 3 4B
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Gemma 4 26B A4B
+    source_id: epoch
+    occurrences: 1
   - kind: model
     value: Gemma 4 31B IT
     source_id: epoch
-    occurrences: 1
+    occurrences: 2
   - kind: model
     value: GLM-4.7
     source_id: epoch
-    occurrences: 1
+    occurrences: 3
   - kind: model
     value: GLM-5.1
     source_id: epoch
-    occurrences: 2
+    occurrences: 4
   - kind: model
     value: GLM-5.3-Flash
     source_id: epoch
-    occurrences: 3
+    occurrences: 4
   - kind: model
     value: GPT-3.5 Turbo (Jan 2024)
+    source_id: epoch
+    occurrences: 2
+  - kind: model
+    value: GPT-3.5 Turbo (Nov 2023)
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: GPT-4 (Jun 2023)
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: GPT-4 (Mar 2023)
     source_id: epoch
     occurrences: 1
   - kind: model
     value: GPT-4 Turbo (Apr 2024)
     source_id: epoch
+    occurrences: 2
+  - kind: model
+    value: GPT-4 Turbo (Nov 2023)
+    source_id: epoch
     occurrences: 1
   - kind: model
     value: GPT-4o (Aug 2024)
     source_id: epoch
-    occurrences: 2
+    occurrences: 3
+  - kind: model
+    value: GPT-4o (May 2024)
+    source_id: epoch
+    occurrences: 1
   - kind: model
     value: GPT-4o mini
     source_id: epoch
-    occurrences: 3
+    occurrences: 4
   - kind: model
     value: GPT-5.4 Mini
     source_id: epoch
-    occurrences: 4
+    occurrences: 5
   - kind: model
     value: GPT-5.4 Nano
     source_id: epoch
-    occurrences: 4
+    occurrences: 5
+  - kind: model
+    value: gpt-oss-20b
+    source_id: epoch
+    occurrences: 1
   - kind: model
     value: Grok 3
     source_id: epoch
-    occurrences: 1
+    occurrences: 3
   - kind: model
     value: Grok 4.3 Beta
     source_id: epoch
-    occurrences: 3
+    occurrences: 4
+  - kind: model
+    value: Grok-2 (Dec 2024)
+    source_id: epoch
+    occurrences: 1
   - kind: model
     value: Grok-3 mini
     source_id: epoch
-    occurrences: 1
+    occurrences: 2
   - kind: model
     value: Inkling-Small
     source_id: epoch
-    occurrences: 4
+    occurrences: 5
+  - kind: model
+    value: Kimi K2 Thinking
+    source_id: epoch
+    occurrences: 2
   - kind: model
     value: Kimi K2.6
     source_id: epoch
-    occurrences: 4
+    occurrences: 5
   - kind: model
     value: Kimi K2.7 Code
     source_id: epoch
-    occurrences: 4
+    occurrences: 5
   - kind: model
-    value: Llama 4 Scout
+    value: Llama 2-70B
     source_id: epoch
     occurrences: 1
   - kind: model
+    value: Llama 3-70B
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Llama 3-8B
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Llama 3.1-405B
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Llama 3.1-70B
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Llama 3.1-8B
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Llama 3.2 1B
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Llama 3.2 90B
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Llama 3.3 70B
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Llama 4 Scout
+    source_id: epoch
+    occurrences: 2
+  - kind: model
     value: Magistral Small 1.0
+    source_id: epoch
+    occurrences: 2
+  - kind: model
+    value: Magistral Small 1.2
     source_id: epoch
     occurrences: 1
   - kind: model
@@ -323,59 +603,1591 @@ entries:
   - kind: model
     value: MiniMax-M3
     source_id: epoch
+    occurrences: 2
+  - kind: model
+    value: Ministral 3B
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Mistral 7B v0.3
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Mistral Large
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Mistral Large 2 (Jul 2024)
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Mistral Large 2 (Nov 2024)
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Mistral NeMo
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Mistral Small 3
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Mistral Small 3.1
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Mistral Small 3.2
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Mixtral 8x22B
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Mixtral 8x7B
+    source_id: epoch
     occurrences: 1
   - kind: model
     value: Muse Spark 1.2
     source_id: epoch
     occurrences: 2
   - kind: model
+    value: Nemotron 3 Ultra
+    source_id: epoch
+    occurrences: 1
+  - kind: model
     value: o1-mini
+    source_id: epoch
+    occurrences: 2
+  - kind: model
+    value: o1-preview
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: phi-3-medium 14B
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Phi-4
     source_id: epoch
     occurrences: 1
   - kind: model
     value: Qwen 3.5 Flash (hosted 35B-A3B)
     source_id: epoch
-    occurrences: 2
+    occurrences: 4
   - kind: model
     value: Qwen 3.5 Plus (hosted 397B-A17B)
     source_id: epoch
-    occurrences: 1
+    occurrences: 3
   - kind: model
     value: Qwen 3.6 35B-A3B
     source_id: epoch
-    occurrences: 1
+    occurrences: 2
   - kind: model
     value: Qwen 3.6 Flash
     source_id: epoch
-    occurrences: 2
+    occurrences: 4
   - kind: model
     value: Qwen 3.6 Max (Preview)
     source_id: epoch
-    occurrences: 1
+    occurrences: 3
   - kind: model
     value: Qwen 3.6 Plus
     source_id: epoch
-    occurrences: 2
+    occurrences: 4
+  - kind: model
+    value: Qwen2-72B
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Qwen2.5-32B
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Qwen2.5-72B
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Qwen2.5-7B
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Qwen2.5-Max
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Qwen3-14B
+    source_id: epoch
+    occurrences: 1
   - kind: model
     value: Qwen3-235B-A22B-Thinking (Jul 2025)
+    source_id: epoch
+    occurrences: 3
+  - kind: model
+    value: Qwen3-30B-A3B
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Qwen3-30B-A3B-Instruct (Jul 2025)
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Qwen3-30B-A3B-Thinking (Jul 2025)
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Qwen3-32B
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Qwen3-8B
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Qwen3.5-35B-A3B
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Qwen3.5-9B
     source_id: epoch
     occurrences: 1
   - kind: model
     value: Qwen3.6 27B
     source_id: epoch
-    occurrences: 1
+    occurrences: 2
   - kind: model
     value: Qwen3.7 Flash
     source_id: epoch
-    occurrences: 1
+    occurrences: 2
   - kind: model
     value: Qwen3.7-Max
     source_id: epoch
-    occurrences: 3
+    occurrences: 4
   - kind: model
     value: Qwen3.7-Plus
     source_id: epoch
-    occurrences: 2
+    occurrences: 3
+  - kind: model
+    value: QwQ-32B
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Yi-34B
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: alpaca-13b
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: amazon-nova-experimental-chat-10-09
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: amazon-nova-experimental-chat-10-20
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: amazon-nova-experimental-chat-11-10
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: amazon-nova-experimental-chat-12-10
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: amazon-nova-experimental-chat-26-01-10
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: amazon-nova-experimental-chat-26-02-10
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: amazon-nova-lite-v1.0
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: amazon-nova-micro-v1.0
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: amazon-nova-pro-v1.0
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: athene-70b-0725
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: athene-v2-chat
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: c4ai-aya-expanse-32b
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: c4ai-aya-expanse-8b
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: chatglm-6b
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: chatglm2-6b
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: chatglm3-6b
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: chatgpt-4o-latest-20250326
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: claude-3-5-haiku-20241022
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: claude-3-7-sonnet-20250219-thinking-32k
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: claude-3-haiku-20240307
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: claude-3-opus-20240229
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: claude-3-sonnet-20240229
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: claude-haiku-4-5-20251001
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: claude-opus-4-1-20250805-thinking-16k
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: claude-opus-4-20250514
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: claude-opus-4-20250514-thinking-16k
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: claude-opus-4-5-20251101-high-32k
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: claude-opus-4-6-high
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: claude-opus-4-7-high
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: claude-opus-4-8-high
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: claude-opus-5-high
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: claude-opus-5-max
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: claude-sonnet-4-20250514-thinking-32k
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: claude-sonnet-4-5-20250929-high-32k
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: claude-sonnet-5-high
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: codellama-34b-instruct
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: codellama-70b-instruct
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: command-a-03-2025
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: command-r
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: command-r-08-2024
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: command-r-plus
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: command-r-plus-08-2024
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: dbrx-instruct-preview
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: deepseek-coder-v2
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: deepseek-llm-67b-chat
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: deepseek-r1
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: deepseek-r1-0528
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: deepseek-v2.5
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: deepseek-v2.5-1210
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: deepseek-v3
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: deepseek-v3-0324
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: deepseek-v3.1
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: deepseek-v3.1-terminus
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: deepseek-v3.1-terminus-thinking
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: deepseek-v3.1-thinking
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: deepseek-v3.2-exp
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: deepseek-v3.2-exp-thinking
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: deepseek-v3.2-thinking
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: deepseek-v4-flash
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: deepseek-v4-flash-high-preview
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: deepseek-v4-pro
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: deepseek-v4-pro-high-20260813
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: deepseek-v4-pro-high-preview
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: dola-seed-2.0-pro
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: dolly-v2-12b
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: dolphin-2.2.1-mistral-7b
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: ernie-5.0-0110
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: ernie-5.0-preview-1022
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: ernie-5.0-preview-1203
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: ernie-5.1
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: falcon-180b-chat
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: fastchat-t5-3b
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gemini-1.5-flash-001
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gemini-1.5-flash-002
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gemini-1.5-flash-8b-001
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gemini-1.5-pro-001
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gemini-2.0-flash-001
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gemini-2.0-flash-lite-preview-02-05
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gemini-2.5-flash-lite-preview-06-17-thinking
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gemini-2.5-flash-lite-preview-09-2025-no-thinking
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gemini-2.5-flash-preview-09-2025
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gemini-3-flash (thinking-minimal)
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gemini-3.1-flash-lite-preview
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gemini-3.5-flash-high
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gemini-3.5-flash-lite
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gemini-3.5-flash-medium
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gemini-3.6-flash-high
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gemini-3.7-flash-high
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gemini-advanced-0514
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gemini-pro
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gemini-pro-dev-api
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gemma-1.1-2b-it
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gemma-1.1-7b-it
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gemma-2-27b-it
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gemma-2-2b-it
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gemma-2-9b-it
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gemma-2-9b-it-simpo
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gemma-2b-it
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gemma-3-12b-it
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gemma-3-27b-it
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gemma-3-4b-it
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gemma-3n-e4b-it
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gemma-4-26b-a4b
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gemma-4-31b
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gemma-7b-it
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: glm-4-0520
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: glm-4-plus
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: glm-4-plus-0111
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: glm-4.5-air
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: glm-4.5v
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: glm-4.6v
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: glm-4.7
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: glm-4.7-flash
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: glm-5.1
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: glm-5.2-max
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: glm-5.3-flash
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: glm-5.3-max
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: glm-5v-turbo
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gpt-3.5-turbo-0125
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gpt-3.5-turbo-1106
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gpt-4-0125-preview
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gpt-4-0314
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gpt-4-0613
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gpt-4-1106-preview
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gpt-4-turbo-2024-04-09
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gpt-4.5-preview-2025-02-27
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gpt-4o-2024-05-13
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gpt-4o-2024-08-06
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gpt-4o-mini-2024-07-18
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gpt-5-chat
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gpt-5-high
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gpt-5-mini-high
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gpt-5-nano-high
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gpt-5.1-high
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gpt-5.2-chat-latest-20260210
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gpt-5.2-high
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gpt-5.3-chat-latest
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gpt-5.4-high
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gpt-5.4-mini-high
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gpt-5.4-nano-high
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gpt-5.5-high
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gpt-5.6-luna-xhigh
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gpt-5.6-sol-xhigh
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gpt-5.6-terra-xhigh
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gpt-oss-20b
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: gpt4all-13b-snoozy
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: granite-3.0-2b-instruct
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: granite-3.0-8b-instruct
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: granite-3.1-2b-instruct
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: granite-3.1-8b-instruct
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: granite-4.1-8b
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: granite-4.2-30b
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: granite-4.2-3b
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: granite-4.2-8b
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: grok-2-2024-08-13
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: grok-2-mini-2024-08-13
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: grok-3-mini-beta
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: grok-3-mini-high
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: grok-3-preview-02-24
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: grok-4-1-fast-reasoning
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: grok-4-fast-chat
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: grok-4-fast-reasoning
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: grok-4.1
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: grok-4.1-thinking
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: grok-4.20-beta-0309-reasoning
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: grok-4.20-beta1
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: grok-4.20-multi-agent-beta-0309
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: grok-4.3
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: grok-4.6-high
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: guanaco-33b
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: hunyuan-hy3-preview
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: hunyuan-large-2025-02-10
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: hunyuan-large-vision
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: hunyuan-standard-2025-02-10
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: hunyuan-standard-256k
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: hunyuan-t1-20250711
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: hunyuan-turbo-0110
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: hunyuan-turbos-20250226
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: hunyuan-turbos-20250416
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: hunyuan-vision-1.5-thinking
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: hy3
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: ibm-granite-h-small
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: Inkling Small
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: intellect-3
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: internlm2_5-20b-chat
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: jamba-1.5-large
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: jamba-1.5-mini
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: kimi-k2-0905-preview
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: kimi-k2-thinking-turbo
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: kimi-k2.5-instant
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: kimi-k2.5-thinking
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: kimi-k2.6
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: kimi-k3-max
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: koala-13b
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: ling-flash-2.0
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: llama-13b
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: llama-2-13b-chat
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: llama-2-70b-chat
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: llama-2-7b-chat
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: llama-3-70b-instruct
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: llama-3-8b-instruct
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: llama-3.1-405b-instruct-bf16
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: llama-3.1-405b-instruct-fp8
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: llama-3.1-70b-instruct
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: llama-3.1-8b-instruct
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: llama-3.1-nemotron-51b-instruct
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: llama-3.1-nemotron-70b-instruct
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: llama-3.1-nemotron-ultra-253b-v1
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: llama-3.1-tulu-3-70b
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: llama-3.1-tulu-3-8b
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: llama-3.2-1b-instruct
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: llama-3.2-3b-instruct
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: llama-3.3-70b-instruct
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: llama-3.3-nemotron-49b-super-v1
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: llama-4-maverick-17b-128e-instruct
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: llama-4-scout-17b-16e-instruct
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: llama2-70b-steerlm-chat
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: longcat-flash-chat
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: longcat-flash-chat-2602-exp
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: magistral-medium-2506
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: mercury
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: mercury-2
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: mimo-v2-flash (non-thinking)
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: mimo-v2-flash (thinking)
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: mimo-v2-omni
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: mimo-v2-pro
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: mimo-v2.5
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: mimo-v2.5-pro
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: minimax-m1
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: minimax-m2
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: minimax-m2.1-preview
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: minimax-m2.5
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: minimax-m2.7
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: minimax-m3
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: ministral-8b-2410
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: mistral-7b-instruct
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: mistral-7b-instruct-v0.2
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: mistral-large-2402
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: mistral-large-2407
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: mistral-large-2411
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: mistral-large-3
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: mistral-medium
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: mistral-medium-2505
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: mistral-medium-2508
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: mistral-medium-3.5
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: mistral-small-24b-instruct-2501
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: mistral-small-2506
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: mistral-small-3.1-24b-instruct-2503
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: mixtral-8x22b-instruct-v0.1
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: mixtral-8x7b-instruct-v0.1
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: molmo-2-8b
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: mpt-30b-chat
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: mpt-7b-chat
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: muse-glimmer
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: muse-spark-1.2 (xHigh)
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: nemotron-4-340b-instruct
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: nous-hermes-2-mixtral-8x7b-dpo
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: nova-2-lite
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: nvidia-llama-3.3-nemotron-super-49b-v1.5
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: nvidia-nemotron-3-nano-30b-a3b-bf16
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: nvidia-nemotron-3-super-120b-a12b
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: nvidia-nemotron-3-ultra-550b-a55b-nvfp4
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: nvidia-nemotron-3.5-lightning-30b-a3b-nvfp4
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: o1-2024-12-17
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: o1-mini
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: o1-preview
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: o3-mini-high
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: oasst-pythia-12b
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: olmo-2-0325-32b-instruct
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: olmo-3-32b-think
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: olmo-3.1-32b-instruct
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: olmo-3.1-32b-think
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: olmo-7b-instruct
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: openchat-3.5
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: openchat-3.5-0106
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: openhermes-2.5-mistral-7b
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: palm-2
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: phi-3-medium-4k-instruct
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: phi-3-mini-128k-instruct
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: phi-3-mini-4k-instruct
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: phi-3-mini-4k-instruct-june-2024
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: phi-3-small-8k-instruct
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: phi-4
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: qwen-14b-chat
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: qwen-max-0919
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: qwen-plus-0125
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: qwen1.5-110b-chat
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: qwen1.5-14b-chat
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: qwen1.5-32b-chat
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: qwen1.5-4b-chat
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: qwen1.5-72b-chat
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: qwen1.5-7b-chat
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: qwen2-72b-instruct
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: qwen2.5-72b-instruct
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: qwen2.5-coder-32b-instruct
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: qwen2.5-max
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: qwen2.5-plus-1127
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: qwen3-235b-a22b-no-thinking
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: qwen3-235b-a22b-thinking-2507
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: qwen3-30b-a3b
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: qwen3-30b-a3b-instruct-2507
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: qwen3-32b
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: qwen3-max-2025-09-23
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: qwen3-next-80b-a3b-instruct
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: qwen3-next-80b-a3b-thinking
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: qwen3-vl-235b-a22b-instruct
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: qwen3-vl-235b-a22b-thinking
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: qwen3.5-122b-a10b
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: qwen3.5-27b
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: qwen3.5-35b-a3b
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: qwen3.5-flash
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: qwen3.5-max-preview
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: qwen3.6-max-preview
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: qwen3.6-plus
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: qwen3.7-max-preview
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: qwen3.7-plus
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: qwen3.8-27b
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: qwen3.8-max
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: qwq-32b
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: qwq-32b-preview
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: reka-core-20240904
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: reka-flash-20240904
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: reka-flash-21b-20240226
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: reka-flash-21b-20240226-online
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: ring-flash-2.0
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: RWKV-4-Raven-14B
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: smollm2-1.7b-instruct
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: snowflake-arctic-instruct
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: solar-10.7b-instruct-v1.0
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: solar-pro4
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: stablelm-tuned-alpha-7b
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: starling-lm-7b-alpha
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: starling-lm-7b-beta
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: step-1o-turbo-202506
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: step-2-16k-exp-202412
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: step-3
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: step-3.5-flash
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: stripedhyena-nous-7b
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: trinity-large-preview
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: trinity-large-thinking
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: tulu-2-dpo-70b
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: vicuna-13b
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: vicuna-33b
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: vicuna-7b
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: wizardlm-13b
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: wizardlm-70b
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: yi-1.5-34b-chat
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: yi-34b-chat
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: yi-lightning
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: zephyr-7b-alpha
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: zephyr-7b-beta
+    source_id: lmarena
+    occurrences: 1
+  - kind: model
+    value: zephyr-orpo-141b-A35b-v0.1
+    source_id: lmarena
+    occurrences: 1
   - kind: model
     value: deepseek-v3.1
     source_id: mcpmark
@@ -437,7 +2249,15 @@ entries:
     source_id: scale
     occurrences: 1
   - kind: model
+    value: Gemini 2.5 Flash (April 2025)
+    source_id: scale
+    occurrences: 1
+  - kind: model
     value: Gemini 2.5 Flash Preview (May 2025)
+    source_id: scale
+    occurrences: 1
+  - kind: model
+    value: gemini-2.5-pro-preview-06-05
     source_id: scale
     occurrences: 1
   - kind: model

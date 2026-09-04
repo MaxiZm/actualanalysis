@@ -1,0 +1,19 @@
+id: muse-glimmer
+name: Muse Glimmer
+organization: Meta AI
+family: Muse
+release_date: 2026-08-10
+open_weights: true
+license: Apache-2.0
+aliases:
+  - Muse-Glimmer-30B
+  - Muse Glimmer
+  - muse-glimmer
+reasoning: true
+context_length: 131072
+modality: multimodal
+source_url: https://huggingface.co/meta-models/Muse-Glimmer-30B
+metadata_sources:
+  - https://huggingface.co/meta-models/Muse-Glimmer-30B
+  - https://artificialanalysis.ai/models/muse-glimmer
+status: active

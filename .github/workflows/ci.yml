@@ -14,6 +14,10 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - name: Restore optional display measurements
+        run: node scripts/restore-display-data.mjs
+        env:
+          AA_DISPLAY_DATA_GZIP_BASE64: ${{ secrets.AA_DISPLAY_DATA_GZIP_BASE64 }}
       - run: npm run typecheck
       - run: npm run lint
       - run: npm test

@@ -1,0 +1,20 @@
+id: quasar-438b
+name: Quasar 438B
+organization: Multiverse Computing
+family: Quasar
+release_date: 2026-08-10
+open_weights: false
+license: Proprietary
+aliases:
+  - Quasar 438B
+  - quasar-438b
+reasoning: true
+context_length: 1000000
+modality: text
+source_url: https://multiversecomputing.com/resources/introducing-quasar-438b-europe-s-leading-ai-model
+metadata_sources:
+  - https://multiversecomputing.com/resources/introducing-quasar-438b-europe-s-leading-ai-model
+  - https://artificialanalysis.ai/models/quasar-438b
+status: active
+notes: Compressed and specialized derivative of GLM-5.2. Kept as a separate
+  model; results are not inherited from GLM-5.2.

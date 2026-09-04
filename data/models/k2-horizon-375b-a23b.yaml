@@ -1,0 +1,19 @@
+id: k2-horizon-375b-a23b
+name: K2 Horizon 375B A23B
+organization: MBZUAI Institute of Foundation Models
+family: K2
+release_date: 2026-09-03
+open_weights: true
+license: Apache-2.0
+aliases:
+  - K2-Horizon-375B-A23B
+  - K2 Horizon 375B A23B
+  - k2-horizon-375b-a23b
+reasoning: true
+context_length: 524288
+modality: text
+source_url: https://huggingface.co/IFM/K2-Horizon-375B-A23B
+metadata_sources:
+  - https://huggingface.co/IFM/K2-Horizon-375B-A23B
+  - https://artificialanalysis.ai/models/k2-horizon-375b-a23b
+status: active

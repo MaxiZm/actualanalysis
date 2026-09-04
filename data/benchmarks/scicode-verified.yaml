@@ -1,15 +1,28 @@
 id: scicode-verified
 name: SciCode Verified
 version: verified
-aliases: [SciCode-Verified]
-tags: [chat, agentic]
-categories: [coding, science]
+aliases: [ SciCode-Verified ]
+tags: [ chat, agentic ]
+categories: [ coding, science ]
 holdout: public
 chance_level: 0
 transform: { type: accuracy, input_scale: percent }
-n_items: null
+n_items: 338
 harness_url: https://scicode-bench.github.io/
-source_ids: [kaggle, epoch, vendor-model-cards]
-status: watchlist
-promotion_rule: Active after reaching at least eight model configurations; demote if comparable coverage falls below that threshold.
-notes: Generic or revision-unknown SciCode results are not aliases and remain review-only.
+source_ids: [ kaggle, epoch, vendor-model-cards ]
+status: active
+promotion_rule: "Promoted to active under method 1.2.3: the benchmark has
+  independent results for ≥8 registered models; metadata pins that are still
+  missing are carried as metadata_incomplete on each observation instead of
+  blocking the fit."
+notes: Generic or revision-unknown SciCode results are not aliases and remain
+  review-only.
+obs_type: count
+domains:
+  agentic: 0
+  software-code: 0.6
+  reasoning: 0.4
+  knowledge-information: 0
+  communication-professional: 0
+default_k: 1
+family_id: scicode-verified

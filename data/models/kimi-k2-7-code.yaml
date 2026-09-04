@@ -1,0 +1,20 @@
+id: kimi-k2-7-code
+name: Kimi K2.7 Code
+organization: Moonshot AI
+family: Kimi
+release_date: 2026-06-12
+open_weights: true
+license: modified-mit
+aliases:
+  - Kimi-K2.7-Code
+  - moonshotai/kimi-k2.7-code
+  - Kimi K2.7 Code
+  - kimi-k2-7-code
+reasoning: true
+context_length: 256000
+modality: multimodal
+source_url: https://huggingface.co/moonshotai/Kimi-K2.7-Code
+metadata_sources:
+  - https://huggingface.co/moonshotai/Kimi-K2.7-Code
+  - https://artificialanalysis.ai/models/kimi-k2-7-code
+status: active
