@@ -1,0 +1,10 @@
+id: grok-4.20
+name: Grok 4.20
+organization: xAI
+family: Grok 4
+release_date: 2026-02-17
+open_weights: false
+license: Proprietary
+source_url: https://docs.x.ai/developers/models
+status: active
+

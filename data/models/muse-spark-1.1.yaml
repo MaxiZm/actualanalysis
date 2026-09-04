@@ -1,0 +1,10 @@
+id: muse-spark-1.1
+name: Muse Spark 1.1
+organization: Meta AI
+family: Muse Spark
+release_date: 2026-07-09
+open_weights: false
+license: Proprietary
+source_url: https://ai.meta.com/blog/introducing-muse-spark-meta-model-api/
+status: active
+

@@ -1,0 +1,26 @@
+id: mcpmark
+name: MCPMark
+version: "1.2.0"
+grader_version: v1.2.0 verify.py task graders
+family_id: mcpmark
+aliases: [MCP Mark]
+tags: [agentic]
+categories: [tool-use]
+domains: { agentic: 0.75, software-code: 0.05, reasoning: 0.05, knowledge-information: 0.05, communication-professional: 0.10 }
+holdout: public
+chance_level: 0
+obs_type: count
+public_release_date: 2025-09-20
+default_k: 4
+tool_policy: mcp-tools
+transform: { type: accuracy, input_scale: percent }
+n_items: 127
+harness_url: https://mcpmark.ai/
+source_ids: [mcpmark, vendor-model-cards]
+metadata_sources:
+  - https://github.com/eval-sys/mcpmark/releases/tag/v1.2.0
+  - https://raw.githubusercontent.com/eval-sys/mcpmark/v1.2.0/README.md
+  - https://raw.githubusercontent.com/eval-sys/mcpmark/v1.2.0/pipeline.py
+  - https://arxiv.org/abs/2509.24002
+status: active
+promotion_rule: Active after reaching at least eight model configurations; demote if comparable coverage falls below that threshold.

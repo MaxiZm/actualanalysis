@@ -1,0 +1,10 @@
+id: muse-spark
+name: Muse Spark
+organization: Meta AI
+family: Muse Spark
+release_date: 2026-04-08
+open_weights: false
+license: Proprietary
+source_url: https://ai.meta.com/blog/introducing-muse-spark-msl/
+status: active
+

@@ -1,0 +1,14 @@
+id: tau3-bench-banking
+name: tau3-bench Banking
+version: tau3
+aliases: [tau3 Banking, τ³-bench Banking, tau^3-bench banking]
+tags: [agentic]
+categories: [customer-service, tool-use]
+holdout: public
+chance_level: 0
+transform: { type: accuracy, input_scale: percent }
+n_items: 97
+harness_url: https://taubench.com/
+source_ids: [taubench, vendor-model-cards]
+status: watchlist
+notes: The benchmark is currently mutable and has documented task fixes. Excluded until a commit, retrieval configuration, evaluator version, and per-task trial outcomes are pinned.

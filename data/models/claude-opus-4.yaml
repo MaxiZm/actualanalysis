@@ -1,0 +1,10 @@
+id: claude-opus-4
+name: Claude Opus 4
+organization: Anthropic
+family: Claude 4
+release_date: 2025-05-22
+open_weights: false
+license: Proprietary
+source_url: https://www.anthropic.com/news/claude-4
+status: active
+

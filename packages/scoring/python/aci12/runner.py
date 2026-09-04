@@ -1,0 +1,175 @@
+from __future__ import annotations
+
+import argparse
+import json
+from pathlib import Path
+from time import monotonic
+
+import jax
+import numpy as np
+from numpyro.diagnostics import effective_sample_size, summary
+from numpyro.infer import MCMC, NUTS
+from numpyro.infer.initialization import init_to_median
+
+from .model import aci_model
+from .summarize import build_posterior_summary
+
+
+DECLARED_PARAMETERS = {
+    "Z",
+    "beta",
+    "difficulty",
+    "discrimination",
+    "effort_mean",
+    "effort_sd",
+    "Omega",
+    "cell_sigma",
+}
+
+
+def _diagnostics(samples: dict, extra: dict, chains: int) -> dict:
+    shaped = {name: np.asarray(value) for name, value in samples.items() if np.asarray(value).ndim >= 2}
+    table = summary(shaped, prob=0.9, group_by_chain=True)
+    tracked = {}
+    for name, values in table.items():
+        if name not in DECLARED_PARAMETERS:
+            continue
+        rhat = np.asarray(values["r_hat"], dtype=float)
+        ess = np.asarray(values["n_eff"], dtype=float)
+        parameter = np.asarray(shaped[name], dtype=float)
+        chain_draws = parameter.reshape((parameter.shape[0], parameter.shape[1], -1))
+        flat = chain_draws.reshape((-1, chain_draws.shape[-1]))
+        variance = np.nanvar(flat, axis=0)
+        active = np.isfinite(variance) & (variance > 1e-12)
+        if not np.any(active):
+            continue
+        lower = np.quantile(flat[:, active], 0.05, axis=0)
+        upper = np.quantile(flat[:, active], 0.95, axis=0)
+        active_draws = chain_draws[:, :, active]
+        lower_tail = (active_draws <= lower).astype(float)
+        upper_tail = (active_draws >= upper).astype(float)
+        rhat = rhat.reshape(-1)[active]
+        ess = ess.reshape(-1)[active]
+        try:
+            with np.errstate(all="ignore"):
+                lower_ess = np.asarray(effective_sample_size(lower_tail), dtype=float)
+                upper_ess = np.asarray(effective_sample_size(upper_tail), dtype=float)
+            finite_tail = np.concatenate([lower_ess[np.isfinite(lower_ess)], upper_ess[np.isfinite(upper_ess)]])
+            tail_ess = float(np.min(finite_tail)) if finite_tail.size else 0.0
+        except (ValueError, FloatingPointError):
+            tail_ess = 0.0
+
+        rhat_value = float(np.nanmax(rhat)) if not np.isnan(rhat).all() else None
+        bulk_value = float(np.nanmin(ess)) if np.isfinite(ess).any() else 0.0
+        tail_value = float(tail_ess) if np.isfinite(tail_ess) else 0.0
+        tracked[name] = {
+            "rhat": rhat_value if rhat_value is None or np.isfinite(rhat_value) else None,
+            "ess_bulk": bulk_value if np.isfinite(bulk_value) else 0.0,
+            "ess_tail": tail_value,
+        }
+    divergences = int(np.asarray(extra.get("diverging", [])).sum())
+    potential = np.asarray(extra.get("potential_energy", []))
+    ebfmi = []
+    if potential.size and potential.ndim == 2:
+        for chain in potential:
+            denominator = np.var(chain)
+            ebfmi.append(float(np.mean(np.diff(chain) ** 2) / denominator) if denominator > 0 else 0.0)
+    return {
+        "parameters": tracked,
+        "divergences": divergences,
+        "divergence_fraction": divergences / max(1, potential.size),
+        "ebfmi": ebfmi or [0.0] * chains,
+    }
+
+
+def run(input_path: Path, output_path: Path, posterior_path: Path, summary_path: Path) -> None:
+    data = json.loads(input_path.read_text())
+    inference = data["inference"]
+    jax.config.update("jax_enable_x64", True)
+
+    dense_sites = [
+        "varsigma",
+        "effort_mean",
+        "effort_sd",
+        "beta",
+        "log_alpha",
+        "family_sd",
+        "cell_sigma",
+        "scale_a_indep",
+        "scale_a_self",
+        "mu_self",
+        "omega_bar",
+    ]
+    if not data.get("one_trait_baseline", False):
+        dense_sites.append("L_Omega")
+
+    kernel = NUTS(
+        aci_model,
+        target_accept_prob=float(inference.get("target_accept", 0.90)),
+        dense_mass=[tuple(dense_sites)],
+        init_strategy=init_to_median(),
+    )
+    mcmc = MCMC(
+        kernel,
+        num_warmup=int(inference.get("warmup", 2000)),
+        num_samples=int(inference.get("samples", 2000)),
+        num_chains=int(inference.get("chains", 4)),
+        chain_method="parallel" if jax.local_device_count() >= int(inference.get("chains", 4)) else "sequential",
+        progress_bar=bool(data.get("progress_bar", False)),
+    )
+    started = monotonic()
+    mcmc.run(jax.random.PRNGKey(int(data.get("seed", 20260904))), data=data, extra_fields=("diverging", "potential_energy"))
+    elapsed = monotonic() - started
+    chain_samples = mcmc.get_samples(group_by_chain=True)
+    flat_samples = mcmc.get_samples(group_by_chain=False)
+
+    retained = int(inference.get("retained_draws", 8000))
+    first_key = next(iter(flat_samples.values()))
+    if first_key.shape[0] > retained:
+        indices = np.linspace(0, first_key.shape[0] - 1, retained, dtype=int)
+        flat_samples = {name: np.asarray(value)[indices] for name, value in flat_samples.items()}
+
+    np.savez_compressed(posterior_path, **{name: np.asarray(value) for name, value in flat_samples.items()})
+    posterior_summary = build_posterior_summary(data, {name: np.asarray(value) for name, value in flat_samples.items()})
+    summary_path.write_text(json.dumps(posterior_summary, indent=2) + "\n")
+
+    diagnostics = _diagnostics(chain_samples, mcmc.get_extra_fields(group_by_chain=True), int(inference.get("chains", 4)))
+    diagnostics["elapsed_seconds"] = elapsed
+    diagnostics["posterior_draws"] = int(next(iter(flat_samples.values())).shape[0])
+
+    issues = []
+    for name, values in diagnostics["parameters"].items():
+        if values["rhat"] is None or values["rhat"] > float(inference.get("max_rhat", 1.01)):
+            r = values["rhat"]; issues.append(f"{name}: rhat {r}")
+        if values["ess_bulk"] < float(inference.get("min_ess", 400)):
+            b = values["ess_bulk"]; issues.append(f"{name}: bulk ESS {b}")
+        if values["ess_tail"] < float(inference.get("min_ess", 400)):
+            t = values["ess_tail"]; issues.append(f"{name}: tail ESS {t}")
+    # 1.2.2 zero divergences gate (§6)
+    div = diagnostics["divergences"]
+    div_frac = diagnostics["divergence_fraction"]
+    ebfmi_min = min(diagnostics["ebfmi"])
+    if div > 0 and float(inference.get("max_divergence_fraction", 0.0)) == 0.0:
+        issues.append(f"divergences: {div} (1.2.2 requires zero)")
+    elif div_frac > float(inference.get("max_divergence_fraction", 0.0)):
+        issues.append(f"divergence fraction {div_frac}")
+    if ebfmi_min < float(inference.get("min_ebfmi", 0.3)):
+        issues.append(f"E-BFMI {ebfmi_min}")
+
+    diagnostics["accepted"] = not issues
+    diagnostics["issues"] = issues
+    output_path.write_text(json.dumps(diagnostics, indent=2) + "\n")
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Run the ACI 1.2.2 NumPyro model")
+    parser.add_argument("--input", required=True, type=Path)
+    parser.add_argument("--output", required=True, type=Path)
+    parser.add_argument("--posterior", required=True, type=Path)
+    parser.add_argument("--summary", required=True, type=Path)
+    arguments = parser.parse_args()
+    run(arguments.input, arguments.output, arguments.posterior, arguments.summary)
+
+
+if __name__ == "__main__":
+    main()

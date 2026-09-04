@@ -1,0 +1,9 @@
+id: swe-rebench
+name: Nebius SWE-rebench leaderboard
+url: https://swe-rebench.com/leaderboard
+data_url: https://huggingface.co/datasets/nebius/SWE-rebench-leaderboard
+license: CC-BY-4.0
+kind: runner
+redistributable: true
+redistributable_benchmark_ids: [swe-rebench]
+attribution: Nebius AI

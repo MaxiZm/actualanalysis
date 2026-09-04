@@ -1,0 +1,11 @@
+id: grok-code-fast-1
+name: Grok Code Fast 1
+organization: xAI
+family: Grok
+release_date: 2025-08-28
+open_weights: false
+license: Proprietary
+aliases: [grok-code-fast-1]
+source_url: https://data.x.ai/2025-08-26-grok-code-fast-1-model-card.pdf
+status: active
+

@@ -1,0 +1,26 @@
+id: terminal-bench-4.0
+name: Terminal-Bench 4.0
+version: "4.0.0"
+grader_version: terminal-bench/terminal-bench@4.0.0
+family_id: terminal-bench
+aliases: [TerminalBench 4, TB 4.0, terminal-bench@4.0, Terminal-Bench 4.0]
+tags: [agentic]
+categories: [terminal-use]
+domains: { agentic: 0.55, software-code: 0.30, reasoning: 0.10, knowledge-information: 0.05, communication-professional: 0 }
+holdout: public
+holdout_details: Fresh public task set; do not compare scores directly with 3.0 or earlier.
+chance_level: 0
+obs_type: count
+public_release_date: 2026-08-26
+default_k: 5
+tool_policy: terminal-shell
+transform: { type: accuracy, input_scale: percent }
+n_items: 66
+harness_url: https://www.tbench.ai/
+source_ids: [tbench, snorkel, epoch, vendor-model-cards]
+metadata_sources:
+  - https://github.com/harbor-framework/terminal-bench/releases/tag/v4.0.0
+  - https://www.tbench.ai/news/terminal-bench-4-0
+  - https://hub.harborframework.com/datasets/terminal-bench/terminal-bench/latest?leaderboard=4-0-0&tab=leaderboard
+status: active
+notes: Version is part of the benchmark identity to prevent accidental historical joins.

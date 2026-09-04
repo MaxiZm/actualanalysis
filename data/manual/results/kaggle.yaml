@@ -1,0 +1,838 @@
+results:
+  # ============================================================
+  # SimpleQA Verified — https://www.kaggle.com/benchmarks/deepmind/simpleqa-verified
+  # Kaggle "Score" column = F1-score (per the SimpleQA Verified paper, arXiv:2509.07968).
+  # Leaderboard shows "Last updated 27 August 2026". n_items=1000 per benchmark spec.
+  # ============================================================
+  - model_id: gemini-3.1-pro
+    benchmark_id: simpleqa-verified
+    sample_only: true
+    source_id: kaggle
+    score: 77.5
+    score_unit: percent
+    n_items: 1000
+    config: { metric: "F1" }
+    observed_on: 2026-08-27
+    url: https://www.kaggle.com/benchmarks/deepmind/simpleqa-verified
+    provenance: independent
+    notes: Kaggle row "Gemini 3.1 Pro Preview". Rank 1 of 47 scored models.
+
+  - model_id: gemini-3.7-flash
+    benchmark_id: simpleqa-verified
+    sample_only: true
+    source_id: kaggle
+    score: 73.2
+    score_unit: percent
+    n_items: 1000
+    config: { metric: "F1" }
+    observed_on: 2026-08-27
+    url: https://www.kaggle.com/benchmarks/deepmind/simpleqa-verified
+    provenance: independent
+
+  - model_id: gemini-3-pro
+    benchmark_id: simpleqa-verified
+    sample_only: true
+    source_id: kaggle
+    score: 72.1
+    score_unit: percent
+    n_items: 1000
+    config: { metric: "F1" }
+    observed_on: 2026-08-27
+    url: https://www.kaggle.com/benchmarks/deepmind/simpleqa-verified
+    provenance: independent
+    notes: Kaggle row "Gemini 3 Pro Preview".
+
+  - model_id: gpt-5.6-sol
+    benchmark_id: simpleqa-verified
+    sample_only: true
+    source_id: kaggle
+    score: 69.2
+    score_unit: percent
+    n_items: 1000
+    config: { metric: "F1" }
+    observed_on: 2026-08-27
+    url: https://www.kaggle.com/benchmarks/deepmind/simpleqa-verified
+    provenance: independent
+
+  - model_id: claude-opus-5
+    benchmark_id: simpleqa-verified
+    sample_only: true
+    source_id: kaggle
+    score: 63.3
+    score_unit: percent
+    n_items: 1000
+    config: { metric: "F1" }
+    observed_on: 2026-08-27
+    url: https://www.kaggle.com/benchmarks/deepmind/simpleqa-verified
+    provenance: independent
+
+  - model_id: grok-4.5
+    benchmark_id: simpleqa-verified
+    sample_only: true
+    source_id: kaggle
+    score: 53.8
+    score_unit: percent
+    n_items: 1000
+    config: { metric: "F1" }
+    observed_on: 2026-08-27
+    url: https://www.kaggle.com/benchmarks/deepmind/simpleqa-verified
+    provenance: independent
+
+  - model_id: qwen3-235b-a22b
+    benchmark_id: simpleqa-verified
+    sample_only: true
+    source_id: kaggle
+    score: 53.7
+    score_unit: percent
+    n_items: 1000
+    config: { metric: "F1", variant: "thinking" }
+    observed_on: 2026-08-27
+    url: https://www.kaggle.com/benchmarks/deepmind/simpleqa-verified
+    provenance: independent
+    notes: Kaggle row "Qwen 3 235B A22B Thinking" (organization QwenLM); mapped to qwen3-235b-a22b since no separate thinking-variant id exists in the registry.
+
+  - model_id: o3
+    benchmark_id: simpleqa-verified
+    sample_only: true
+    source_id: kaggle
+    score: 52.3
+    score_unit: percent
+    n_items: 1000
+    config: { metric: "F1" }
+    observed_on: 2026-08-27
+    url: https://www.kaggle.com/benchmarks/deepmind/simpleqa-verified
+    provenance: independent
+
+  - model_id: grok-4
+    benchmark_id: simpleqa-verified
+    sample_only: true
+    source_id: kaggle
+    score: 51.9
+    score_unit: percent
+    n_items: 1000
+    config: { metric: "F1" }
+    observed_on: 2026-08-27
+    url: https://www.kaggle.com/benchmarks/deepmind/simpleqa-verified
+    provenance: independent
+
+  - model_id: claude-opus-4.6
+    benchmark_id: simpleqa-verified
+    sample_only: true
+    source_id: kaggle
+    score: 45.2
+    score_unit: percent
+    n_items: 1000
+    config: { metric: "F1" }
+    observed_on: 2026-08-27
+    url: https://www.kaggle.com/benchmarks/deepmind/simpleqa-verified
+    provenance: independent
+
+  - model_id: claude-opus-4.8
+    benchmark_id: simpleqa-verified
+    sample_only: true
+    source_id: kaggle
+    score: 44.5
+    score_unit: percent
+    n_items: 1000
+    config: { metric: "F1" }
+    observed_on: 2026-08-27
+    url: https://www.kaggle.com/benchmarks/deepmind/simpleqa-verified
+    provenance: independent
+
+  - model_id: gpt-5.6-terra
+    benchmark_id: simpleqa-verified
+    sample_only: true
+    source_id: kaggle
+    score: 41.5
+    score_unit: percent
+    n_items: 1000
+    config: { metric: "F1" }
+    observed_on: 2026-08-27
+    url: https://www.kaggle.com/benchmarks/deepmind/simpleqa-verified
+    provenance: independent
+
+  - model_id: gpt-5.6-luna
+    benchmark_id: simpleqa-verified
+    sample_only: true
+    source_id: kaggle
+    score: 39.1
+    score_unit: percent
+    n_items: 1000
+    config: { metric: "F1" }
+    observed_on: 2026-08-27
+    url: https://www.kaggle.com/benchmarks/deepmind/simpleqa-verified
+    provenance: independent
+
+  - model_id: claude-opus-4.5
+    benchmark_id: simpleqa-verified
+    sample_only: true
+    source_id: kaggle
+    score: 39.0
+    score_unit: percent
+    n_items: 1000
+    config: { metric: "F1" }
+    observed_on: 2026-08-27
+    url: https://www.kaggle.com/benchmarks/deepmind/simpleqa-verified
+    provenance: independent
+
+  - model_id: gpt-5.1
+    benchmark_id: simpleqa-verified
+    sample_only: true
+    source_id: kaggle
+    score: 34.9
+    score_unit: percent
+    n_items: 1000
+    config: { metric: "F1" }
+    observed_on: 2026-08-27
+    url: https://www.kaggle.com/benchmarks/deepmind/simpleqa-verified
+    provenance: independent
+
+  - model_id: claude-sonnet-5
+    benchmark_id: simpleqa-verified
+    sample_only: true
+    source_id: kaggle
+    score: 32.1
+    score_unit: percent
+    n_items: 1000
+    config: { metric: "F1" }
+    observed_on: 2026-08-27
+    url: https://www.kaggle.com/benchmarks/deepmind/simpleqa-verified
+    provenance: independent
+
+  - model_id: claude-opus-4.1
+    benchmark_id: simpleqa-verified
+    sample_only: true
+    source_id: kaggle
+    score: 31.0
+    score_unit: percent
+    n_items: 1000
+    config: { metric: "F1" }
+    observed_on: 2026-08-27
+    url: https://www.kaggle.com/benchmarks/deepmind/simpleqa-verified
+    provenance: independent
+
+  - model_id: claude-sonnet-4.6
+    benchmark_id: simpleqa-verified
+    sample_only: true
+    source_id: kaggle
+    score: 30.9
+    score_unit: percent
+    n_items: 1000
+    config: { metric: "F1" }
+    observed_on: 2026-08-27
+    url: https://www.kaggle.com/benchmarks/deepmind/simpleqa-verified
+    provenance: independent
+
+  - model_id: gpt-5.4
+    benchmark_id: simpleqa-verified
+    sample_only: true
+    source_id: kaggle
+    score: 30.5
+    score_unit: percent
+    n_items: 1000
+    config: { metric: "F1" }
+    observed_on: 2026-08-27
+    url: https://www.kaggle.com/benchmarks/deepmind/simpleqa-verified
+    provenance: independent
+
+  - model_id: claude-sonnet-4.5
+    benchmark_id: simpleqa-verified
+    sample_only: true
+    source_id: kaggle
+    score: 29.2
+    score_unit: percent
+    n_items: 1000
+    config: { metric: "F1", variant: "thinking" }
+    observed_on: 2026-08-27
+    url: https://www.kaggle.com/benchmarks/deepmind/simpleqa-verified
+    provenance: independent
+    notes: Kaggle row "Claude Sonnet 4.5 (thinking)" — extended-thinking variant; distinct leaderboard row from the non-thinking "Claude Sonnet 4.5" entry (19.3%) below.
+
+  - model_id: gemini-2.5-flash
+    benchmark_id: simpleqa-verified
+    sample_only: true
+    source_id: kaggle
+    score: 28.1
+    score_unit: percent
+    n_items: 1000
+    config: { metric: "F1" }
+    observed_on: 2026-08-27
+    url: https://www.kaggle.com/benchmarks/deepmind/simpleqa-verified
+    provenance: independent
+
+  - model_id: o4-mini
+    benchmark_id: simpleqa-verified
+    sample_only: true
+    source_id: kaggle
+    score: 21.2
+    score_unit: percent
+    n_items: 1000
+    config: { metric: "F1" }
+    observed_on: 2026-08-27
+    url: https://www.kaggle.com/benchmarks/deepmind/simpleqa-verified
+    provenance: independent
+
+  - model_id: grok-4-fast
+    benchmark_id: simpleqa-verified
+    sample_only: true
+    source_id: kaggle
+    score: 19.7
+    score_unit: percent
+    n_items: 1000
+    config: { metric: "F1", variant: "reasoning" }
+    observed_on: 2026-08-27
+    url: https://www.kaggle.com/benchmarks/deepmind/simpleqa-verified
+    provenance: independent
+    notes: Kaggle row "Grok 4 Fast Reasoning".
+
+  - model_id: claude-sonnet-4.5
+    benchmark_id: simpleqa-verified
+    sample_only: true
+    source_id: kaggle
+    score: 19.3
+    score_unit: percent
+    n_items: 1000
+    config: { metric: "F1" }
+    observed_on: 2026-08-27
+    url: https://www.kaggle.com/benchmarks/deepmind/simpleqa-verified
+    provenance: independent
+    notes: Non-thinking variant; see also the "(thinking)" row for the same model_id at 29.2%.
+
+  - model_id: gpt-oss-120b
+    benchmark_id: simpleqa-verified
+    sample_only: true
+    source_id: kaggle
+    score: 13.1
+    score_unit: percent
+    n_items: 1000
+    config: { metric: "F1" }
+    observed_on: 2026-08-27
+    url: https://www.kaggle.com/benchmarks/deepmind/simpleqa-verified
+    provenance: independent
+
+  # ============================================================
+  # LiveCodeBench (Release v6) — https://www.kaggle.com/benchmarks/open-benchmarks/livecodebench-release-v6
+  # This is the specific sub-leaderboard page (1055 problems, May 2023–Apr 2025 window)
+  # inside the "LiveCodeBench" benchmark suite at
+  # https://www.kaggle.com/benchmarks/open-benchmarks/livecodebench (which only previews
+  # the top 3 rows). Kaggle's column is labeled "Score"; the standard LiveCodeBench
+  # code-generation metric is pass@1, recorded here as config.metric.
+  # Leaderboard shows "Last updated 13 November 2025".
+  # ============================================================
+  - model_id: gemini-3-pro
+    benchmark_id: livecodebench-v6-pro
+    source_id: kaggle
+    score: 91.5
+    score_unit: percent
+    n_items: 1055
+    config: { metric: "pass@1" }
+    observed_on: 2025-11-13
+    url: https://www.kaggle.com/benchmarks/open-benchmarks/livecodebench-release-v6
+    provenance: independent
+    notes: Kaggle row "Gemini 3 Pro Preview". LiveCodeBench Release v6 (problems released May 2023–Apr 2025, 1055 problems); sub-leaderboard of the LiveCodeBench suite (https://www.kaggle.com/benchmarks/open-benchmarks/livecodebench).
+
+  - model_id: gpt-5-2025-08-07
+    benchmark_id: livecodebench-v6-pro
+    source_id: kaggle
+    score: 89.6
+    score_unit: percent
+    n_items: 1055
+    config: { metric: "pass@1", temperature: 1.0 }
+    observed_on: 2025-11-13
+    url: https://www.kaggle.com/benchmarks/open-benchmarks/livecodebench-release-v6
+    provenance: independent
+    notes: Kaggle disclaimer on this page states gpt-5-2025-08-07 was run at temperature 1.0 while all other models were run at temperature 0.2, because GPT-5 does not accept other temperature settings. LiveCodeBench Release v6 window (May 2023–Apr 2025, 1055 problems).
+
+  - model_id: o3
+    benchmark_id: livecodebench-v6-pro
+    source_id: kaggle
+    score: 85.5
+    score_unit: percent
+    n_items: 1055
+    config: { metric: "pass@1" }
+    observed_on: 2025-11-13
+    url: https://www.kaggle.com/benchmarks/open-benchmarks/livecodebench-release-v6
+    provenance: independent
+    notes: LiveCodeBench Release v6 window (May 2023–Apr 2025, 1055 problems).
+
+  - model_id: o4-mini
+    benchmark_id: livecodebench-v6-pro
+    source_id: kaggle
+    score: 82.6
+    score_unit: percent
+    n_items: 1055
+    config: { metric: "pass@1" }
+    observed_on: 2025-11-13
+    url: https://www.kaggle.com/benchmarks/open-benchmarks/livecodebench-release-v6
+    provenance: independent
+    notes: LiveCodeBench Release v6 window (May 2023–Apr 2025, 1055 problems).
+
+  - model_id: gemini-2.5-pro
+    benchmark_id: livecodebench-v6-pro
+    sample_only: true
+    source_id: kaggle
+    score: 80.1
+    score_unit: percent
+    n_items: 1055
+    config: { metric: "pass@1" }
+    observed_on: 2025-11-13
+    url: https://www.kaggle.com/benchmarks/open-benchmarks/livecodebench-release-v6
+    provenance: independent
+    notes: Kaggle row "Gemini 2.5 Pro Preview" (no specific snapshot date given); mapped to generic gemini-2.5-pro id. LiveCodeBench Release v6 window (May 2023–Apr 2025, 1055 problems).
+
+  - model_id: gpt-oss-120b
+    benchmark_id: livecodebench-v6-pro
+    source_id: kaggle
+    score: 78.6
+    score_unit: percent
+    n_items: 1055
+    config: { metric: "pass@1" }
+    observed_on: 2025-11-13
+    url: https://www.kaggle.com/benchmarks/open-benchmarks/livecodebench-release-v6
+    provenance: independent
+    notes: LiveCodeBench Release v6 window (May 2023–Apr 2025, 1055 problems).
+
+  - model_id: o1
+    benchmark_id: livecodebench-v6-pro
+    source_id: kaggle
+    score: 76.6
+    score_unit: percent
+    n_items: 1055
+    config: { metric: "pass@1" }
+    observed_on: 2025-11-13
+    url: https://www.kaggle.com/benchmarks/open-benchmarks/livecodebench-release-v6
+    provenance: independent
+    notes: LiveCodeBench Release v6 window (May 2023–Apr 2025, 1055 problems).
+
+  - model_id: o3-mini
+    benchmark_id: livecodebench-v6-pro
+    source_id: kaggle
+    score: 76.4
+    score_unit: percent
+    n_items: 1055
+    config: { metric: "pass@1" }
+    observed_on: 2025-11-13
+    url: https://www.kaggle.com/benchmarks/open-benchmarks/livecodebench-release-v6
+    provenance: independent
+    notes: LiveCodeBench Release v6 window (May 2023–Apr 2025, 1055 problems).
+
+  - model_id: claude-opus-4.8
+    benchmark_id: livecodebench-v6-pro
+    source_id: kaggle
+    score: 74.2
+    score_unit: percent
+    n_items: 1055
+    config: { metric: "pass@1" }
+    observed_on: 2025-11-13
+    url: https://www.kaggle.com/benchmarks/open-benchmarks/livecodebench-release-v6
+    provenance: independent
+    notes: LiveCodeBench Release v6 window (May 2023–Apr 2025, 1055 problems).
+
+  - model_id: gemini-2.5-flash
+    benchmark_id: livecodebench-v6-pro
+    sample_only: true
+    source_id: kaggle
+    score: 70.7
+    score_unit: percent
+    n_items: 1055
+    config: { metric: "pass@1" }
+    observed_on: 2025-11-13
+    url: https://www.kaggle.com/benchmarks/open-benchmarks/livecodebench-release-v6
+    provenance: independent
+    notes: Kaggle row "Gemini 2.5 Flash Preview". LiveCodeBench Release v6 window (May 2023–Apr 2025, 1055 problems).
+
+  - model_id: claude-opus-4.1
+    benchmark_id: livecodebench-v6-pro
+    source_id: kaggle
+    score: 62.8
+    score_unit: percent
+    n_items: 1055
+    config: { metric: "pass@1" }
+    observed_on: 2025-11-13
+    url: https://www.kaggle.com/benchmarks/open-benchmarks/livecodebench-release-v6
+    provenance: independent
+    notes: LiveCodeBench Release v6 window (May 2023–Apr 2025, 1055 problems).
+
+  - model_id: claude-opus-4
+    benchmark_id: livecodebench-v6-pro
+    source_id: kaggle
+    score: 60.3
+    score_unit: percent
+    n_items: 1055
+    config: { metric: "pass@1" }
+    observed_on: 2025-11-13
+    url: https://www.kaggle.com/benchmarks/open-benchmarks/livecodebench-release-v6
+    provenance: independent
+    notes: LiveCodeBench Release v6 window (May 2023–Apr 2025, 1055 problems).
+
+  - model_id: claude-sonnet-4
+    benchmark_id: livecodebench-v6-pro
+    source_id: kaggle
+    score: 58.1
+    score_unit: percent
+    n_items: 1055
+    config: { metric: "pass@1" }
+    observed_on: 2025-11-13
+    url: https://www.kaggle.com/benchmarks/open-benchmarks/livecodebench-release-v6
+    provenance: independent
+    notes: LiveCodeBench Release v6 window (May 2023–Apr 2025, 1055 problems).
+
+  - model_id: claude-3.7-sonnet
+    benchmark_id: livecodebench-v6-pro
+    source_id: kaggle
+    score: 51.5
+    score_unit: percent
+    n_items: 1055
+    config: { metric: "pass@1" }
+    observed_on: 2025-11-13
+    url: https://www.kaggle.com/benchmarks/open-benchmarks/livecodebench-release-v6
+    provenance: independent
+    notes: LiveCodeBench Release v6 window (May 2023–Apr 2025, 1055 problems).
+
+  - model_id: gpt-4.1
+    benchmark_id: livecodebench-v6-pro
+    source_id: kaggle
+    score: 51.2
+    score_unit: percent
+    n_items: 1055
+    config: { metric: "pass@1" }
+    observed_on: 2025-11-13
+    url: https://www.kaggle.com/benchmarks/open-benchmarks/livecodebench-release-v6
+    provenance: independent
+    notes: LiveCodeBench Release v6 window (May 2023–Apr 2025, 1055 problems).
+
+  - model_id: claude-3.5-sonnet
+    benchmark_id: livecodebench-v6-pro
+    source_id: kaggle
+    score: 46.7
+    score_unit: percent
+    n_items: 1055
+    config: { metric: "pass@1" }
+    observed_on: 2025-11-13
+    url: https://www.kaggle.com/benchmarks/open-benchmarks/livecodebench-release-v6
+    provenance: independent
+    notes: LiveCodeBench Release v6 window (May 2023–Apr 2025, 1055 problems).
+
+  - model_id: gemini-1.5-pro
+    benchmark_id: livecodebench-v6-pro
+    source_id: kaggle
+    score: 38.9
+    score_unit: percent
+    n_items: 1055
+    config: { metric: "pass@1" }
+    observed_on: 2025-11-13
+    url: https://www.kaggle.com/benchmarks/open-benchmarks/livecodebench-release-v6
+    provenance: independent
+    notes: LiveCodeBench Release v6 window (May 2023–Apr 2025, 1055 problems).
+
+  - model_id: qwen3-235b-a22b
+    benchmark_id: livecodebench-v6-pro
+    source_id: kaggle
+    score: 10.4
+    score_unit: percent
+    n_items: 1055
+    config: { metric: "pass@1", variant: "thinking" }
+    observed_on: 2025-11-13
+    url: https://www.kaggle.com/benchmarks/open-benchmarks/livecodebench-release-v6
+    provenance: independent
+    notes: Kaggle row "Qwen 3 235B A22B Thinking" (organization QwenLM); mapped to qwen3-235b-a22b. LiveCodeBench Release v6 window (May 2023–Apr 2025, 1055 problems).
+
+  # ============================================================
+  # SciCode — "Subproblem Standard" leaderboard
+  # https://www.kaggle.com/benchmarks/open-benchmarks/scicode-subproblem-standard
+  # Sub-leaderboard of the SciCode suite (https://www.kaggle.com/benchmarks/open-benchmarks/scicode).
+  # "Standard" = no supplementary background information given (as opposed to the
+  # "With Background" variant); this is the closest analog on Kaggle to the registry's
+  # scicode-verified id. Kaggle does NOT use the term "Verified" anywhere on these pages,
+  # so this is a best-effort mapping, not a confirmed match to a distinct verified revision.
+  # 338 subproblems total, decomposed from 80 main problems across 16 scientific subfields.
+  # Leaderboard shows "Last updated 28 August 2026".
+  # ============================================================
+  - model_id: gemini-3.7-flash
+    benchmark_id: scicode-verified
+    source_id: kaggle
+    sample_only: true
+    score: 43.0
+    score_unit: percent
+    n_items: 338
+    observed_on: 2026-08-28
+    url: https://www.kaggle.com/benchmarks/open-benchmarks/scicode-subproblem-standard
+    provenance: independent
+    notes: SciCode "Subproblem Standard" (no background info) leaderboard; Kaggle does not label this "Verified" — see file-level note. Subproblem-level accuracy, 338 subproblems.
+
+  - model_id: gpt-5.6-sol
+    benchmark_id: scicode-verified
+    source_id: kaggle
+    sample_only: true
+    score: 42.6
+    score_unit: percent
+    n_items: 338
+    observed_on: 2026-08-28
+    url: https://www.kaggle.com/benchmarks/open-benchmarks/scicode-subproblem-standard
+    provenance: independent
+    notes: SciCode "Subproblem Standard" (no background info) leaderboard, 338 subproblems.
+
+  - model_id: claude-opus-5
+    benchmark_id: scicode-verified
+    source_id: kaggle
+    sample_only: true
+    score: 42.6
+    score_unit: percent
+    n_items: 338
+    observed_on: 2026-08-28
+    url: https://www.kaggle.com/benchmarks/open-benchmarks/scicode-subproblem-standard
+    provenance: independent
+    notes: SciCode "Subproblem Standard" (no background info) leaderboard, 338 subproblems. Tied rank 2 with gpt-5.6-sol.
+
+  - model_id: grok-4.5
+    benchmark_id: scicode-verified
+    source_id: kaggle
+    sample_only: true
+    score: 41.9
+    score_unit: percent
+    n_items: 338
+    observed_on: 2026-08-28
+    url: https://www.kaggle.com/benchmarks/open-benchmarks/scicode-subproblem-standard
+    provenance: independent
+    notes: SciCode "Subproblem Standard" (no background info) leaderboard, 338 subproblems.
+
+  - model_id: gemini-3-pro
+    benchmark_id: scicode-verified
+    source_id: kaggle
+    sample_only: true
+    score: 39.4
+    score_unit: percent
+    n_items: 338
+    observed_on: 2026-08-28
+    url: https://www.kaggle.com/benchmarks/open-benchmarks/scicode-subproblem-standard
+    provenance: independent
+    notes: Kaggle row "Gemini 3 Pro Preview". SciCode "Subproblem Standard" leaderboard, 338 subproblems.
+
+  - model_id: gpt-5.6-terra
+    benchmark_id: scicode-verified
+    source_id: kaggle
+    sample_only: true
+    score: 39.2
+    score_unit: percent
+    n_items: 338
+    observed_on: 2026-08-28
+    url: https://www.kaggle.com/benchmarks/open-benchmarks/scicode-subproblem-standard
+    provenance: independent
+    notes: SciCode "Subproblem Standard" (no background info) leaderboard, 338 subproblems.
+
+  - model_id: claude-opus-4.8
+    benchmark_id: scicode-verified
+    source_id: kaggle
+    sample_only: true
+    score: 38.1
+    score_unit: percent
+    n_items: 338
+    observed_on: 2026-08-28
+    url: https://www.kaggle.com/benchmarks/open-benchmarks/scicode-subproblem-standard
+    provenance: independent
+    notes: SciCode "Subproblem Standard" (no background info) leaderboard, 338 subproblems.
+
+  - model_id: o3
+    benchmark_id: scicode-verified
+    source_id: kaggle
+    sample_only: true
+    score: 36.4
+    score_unit: percent
+    n_items: 338
+    observed_on: 2026-08-28
+    url: https://www.kaggle.com/benchmarks/open-benchmarks/scicode-subproblem-standard
+    provenance: independent
+    notes: SciCode "Subproblem Standard" (no background info) leaderboard, 338 subproblems.
+
+  - model_id: o4-mini
+    benchmark_id: scicode-verified
+    source_id: kaggle
+    sample_only: true
+    score: 36.1
+    score_unit: percent
+    n_items: 338
+    observed_on: 2026-08-28
+    url: https://www.kaggle.com/benchmarks/open-benchmarks/scicode-subproblem-standard
+    provenance: independent
+    notes: SciCode "Subproblem Standard" (no background info) leaderboard, 338 subproblems.
+
+  - model_id: o3-mini
+    benchmark_id: scicode-verified
+    source_id: kaggle
+    sample_only: true
+    score: 34.7
+    score_unit: percent
+    n_items: 338
+    observed_on: 2026-08-28
+    url: https://www.kaggle.com/benchmarks/open-benchmarks/scicode-subproblem-standard
+    provenance: independent
+    notes: SciCode "Subproblem Standard" (no background info) leaderboard, 338 subproblems.
+
+  - model_id: gpt-5.6-luna
+    benchmark_id: scicode-verified
+    source_id: kaggle
+    sample_only: true
+    score: 34.4
+    score_unit: percent
+    n_items: 338
+    observed_on: 2026-08-28
+    url: https://www.kaggle.com/benchmarks/open-benchmarks/scicode-subproblem-standard
+    provenance: independent
+    notes: SciCode "Subproblem Standard" (no background info) leaderboard, 338 subproblems.
+
+  - model_id: gpt-5-2025-08-07
+    benchmark_id: scicode-verified
+    source_id: kaggle
+    sample_only: true
+    score: 33.3
+    score_unit: percent
+    n_items: 338
+    observed_on: 2026-08-28
+    url: https://www.kaggle.com/benchmarks/open-benchmarks/scicode-subproblem-standard
+    provenance: independent
+    notes: SciCode "Subproblem Standard" (no background info) leaderboard, 338 subproblems.
+
+  - model_id: claude-sonnet-4
+    benchmark_id: scicode-verified
+    source_id: kaggle
+    sample_only: true
+    score: 31.3
+    score_unit: percent
+    n_items: 338
+    observed_on: 2026-08-28
+    url: https://www.kaggle.com/benchmarks/open-benchmarks/scicode-subproblem-standard
+    provenance: independent
+    notes: SciCode "Subproblem Standard" (no background info) leaderboard, 338 subproblems.
+
+  - model_id: gemini-2.5-flash
+    benchmark_id: scicode-verified
+    source_id: kaggle
+    sample_only: true
+    score: 30.9
+    score_unit: percent
+    n_items: 338
+    observed_on: 2026-08-28
+    url: https://www.kaggle.com/benchmarks/open-benchmarks/scicode-subproblem-standard
+    provenance: independent
+    notes: Kaggle row "Gemini 2.5 Flash Preview". SciCode "Subproblem Standard" leaderboard, 338 subproblems. Tied rank 17 with gpt-4.1 and gemini-2.5-pro.
+
+  - model_id: gpt-4.1
+    benchmark_id: scicode-verified
+    source_id: kaggle
+    sample_only: true
+    score: 30.9
+    score_unit: percent
+    n_items: 338
+    observed_on: 2026-08-28
+    url: https://www.kaggle.com/benchmarks/open-benchmarks/scicode-subproblem-standard
+    provenance: independent
+    notes: SciCode "Subproblem Standard" (no background info) leaderboard, 338 subproblems. Tied rank 17.
+
+  - model_id: gemini-2.5-pro
+    benchmark_id: scicode-verified
+    source_id: kaggle
+    sample_only: true
+    score: 30.9
+    score_unit: percent
+    n_items: 338
+    observed_on: 2026-08-28
+    url: https://www.kaggle.com/benchmarks/open-benchmarks/scicode-subproblem-standard
+    provenance: independent
+    notes: Kaggle row "Gemini 2.5 Pro Preview" (no specific snapshot date given); mapped to generic gemini-2.5-pro id. SciCode "Subproblem Standard" leaderboard, 338 subproblems. Tied rank 17.
+
+  - model_id: claude-3.7-sonnet
+    benchmark_id: scicode-verified
+    source_id: kaggle
+    sample_only: true
+    score: 30.6
+    score_unit: percent
+    n_items: 338
+    observed_on: 2026-08-28
+    url: https://www.kaggle.com/benchmarks/open-benchmarks/scicode-subproblem-standard
+    provenance: independent
+    notes: SciCode "Subproblem Standard" (no background info) leaderboard, 338 subproblems.
+
+  - model_id: claude-opus-4
+    benchmark_id: scicode-verified
+    source_id: kaggle
+    sample_only: true
+    score: 30.6
+    score_unit: percent
+    n_items: 338
+    observed_on: 2026-08-28
+    url: https://www.kaggle.com/benchmarks/open-benchmarks/scicode-subproblem-standard
+    provenance: independent
+    notes: SciCode "Subproblem Standard" (no background info) leaderboard, 338 subproblems. Tied rank 20 with claude-3.7-sonnet.
+
+  - model_id: o1
+    benchmark_id: scicode-verified
+    source_id: kaggle
+    sample_only: true
+    score: 29.2
+    score_unit: percent
+    n_items: 338
+    observed_on: 2026-08-28
+    url: https://www.kaggle.com/benchmarks/open-benchmarks/scicode-subproblem-standard
+    provenance: independent
+    notes: SciCode "Subproblem Standard" (no background info) leaderboard, 338 subproblems.
+
+  - model_id: gemini-1.5-pro
+    benchmark_id: scicode-verified
+    source_id: kaggle
+    sample_only: true
+    score: 28.5
+    score_unit: percent
+    n_items: 338
+    observed_on: 2026-08-28
+    url: https://www.kaggle.com/benchmarks/open-benchmarks/scicode-subproblem-standard
+    provenance: independent
+    notes: SciCode "Subproblem Standard" (no background info) leaderboard, 338 subproblems.
+
+  - model_id: gpt-oss-120b
+    benchmark_id: scicode-verified
+    source_id: kaggle
+    sample_only: true
+    score: 27.5
+    score_unit: percent
+    n_items: 338
+    observed_on: 2026-08-28
+    url: https://www.kaggle.com/benchmarks/open-benchmarks/scicode-subproblem-standard
+    provenance: independent
+    notes: SciCode "Subproblem Standard" (no background info) leaderboard, 338 subproblems.
+
+  - model_id: claude-opus-4.1
+    benchmark_id: scicode-verified
+    source_id: kaggle
+    sample_only: true
+    score: 27.1
+    score_unit: percent
+    n_items: 338
+    observed_on: 2026-08-28
+    url: https://www.kaggle.com/benchmarks/open-benchmarks/scicode-subproblem-standard
+    provenance: independent
+    notes: SciCode "Subproblem Standard" (no background info) leaderboard, 338 subproblems.
+
+  - model_id: qwen3-235b-a22b
+    benchmark_id: scicode-verified
+    source_id: kaggle
+    sample_only: true
+    score: 25.1
+    score_unit: percent
+    n_items: 338
+    config: { variant: "instruct" }
+    observed_on: 2026-08-28
+    url: https://www.kaggle.com/benchmarks/open-benchmarks/scicode-subproblem-standard
+    provenance: independent
+    notes: Kaggle row "Qwen 3 235B A22B Instruct" (organization QwenLM); mapped to qwen3-235b-a22b. SciCode "Subproblem Standard" leaderboard, 338 subproblems.
+
+  - model_id: claude-3.5-sonnet
+    benchmark_id: scicode-verified
+    source_id: kaggle
+    sample_only: true
+    score: 24.1
+    score_unit: percent
+    n_items: 338
+    observed_on: 2026-08-28
+    url: https://www.kaggle.com/benchmarks/open-benchmarks/scicode-subproblem-standard
+    provenance: independent
+    notes: SciCode "Subproblem Standard" (no background info) leaderboard, 338 subproblems. Tied rank 34 with GPT-4o (not in allowed model list — see missing-models file).

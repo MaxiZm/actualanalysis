@@ -1,0 +1,18 @@
+id: vending-bench-2
+name: Vending-Bench 2
+version: "2"
+aliases: [Vending Bench 2, VendingBench2]
+tags: [agentic]
+categories: [long-horizon]
+holdout: private
+chance_level: 0
+transform:
+  type: log_relative
+  reference_value: 63000
+  base: 2
+  scale: 1
+n_items: null
+harness_url: https://andonlabs.com/evals/vending-bench-2
+source_ids: [andonlabs, epoch, vendor-model-cards]
+status: watchlist
+notes: The money likelihood requires at least three run balances. Upstream publishes only aggregate mean, SEM, and n, so current rows remain visible but are not fitted.

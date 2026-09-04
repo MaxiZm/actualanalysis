@@ -1,0 +1,11 @@
+id: gemini-3.8-flash
+name: Gemini 3.8 Flash
+organization: Google DeepMind
+family: Gemini 3.8
+release_date: 2026-09-02
+open_weights: false
+license: Proprietary
+aliases: [gemini-3.8, gemini3.8, "Gemini 3.8", gemini-3.8-flash]
+source_url: https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash
+status: active
+

@@ -1,0 +1,25 @@
+id: simpleqa-verified
+name: SimpleQA Verified
+version: paper-v2
+grader_version: Appendix-A prompted autorater; production judge revision unresolved
+family_id: simpleqa
+aliases: [SimpleQA-Verified, Simple QA Verified]
+tags: [chat]
+categories: [factuality]
+domains: { agentic: 0, software-code: 0, reasoning: 0, knowledge-information: 0.95, communication-professional: 0.05 }
+holdout: public
+chance_level: 0
+obs_type: judge
+public_release_date: 2025-09-09
+default_k: 1
+tool_policy: none
+transform: { type: accuracy, input_scale: percent }
+n_items: 1000
+harness_url: https://www.kaggle.com/benchmarks/deepmind/simpleqa-verified
+source_ids: [kaggle, epoch, vendor-model-cards]
+metadata_sources:
+  - https://arxiv.org/html/2509.07968
+  - https://www.kaggle.com/benchmarks/deepmind/simpleqa-verified
+status: watchlist
+promotion_rule: Active after reaching at least eight model configurations; demote if comparable coverage falls below that threshold.
+notes: The headline metric is abstention-aware F1, not counted accuracy. Excluded until a validated likelihood and immutable judge revision are available.

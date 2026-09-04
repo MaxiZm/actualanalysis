@@ -1,0 +1,10 @@
+id: gpt-oss-120b
+name: gpt-oss-120b
+organization: OpenAI
+family: gpt-oss
+release_date: 2025-08-05
+open_weights: true
+license: Apache-2.0
+source_url: https://cdn.openai.com/pdf/419b6906-9da6-406c-a19d-1bb078ac7637/oai_gpt-oss_model_card.pdf
+status: active
+

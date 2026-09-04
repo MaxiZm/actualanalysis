@@ -1,0 +1,10 @@
+id: o3-mini
+name: o3-mini
+organization: OpenAI
+family: o-series
+release_date: 2025-01-31
+open_weights: false
+license: Proprietary
+source_url: https://openai.com/index/openai-o3-mini/
+status: active
+

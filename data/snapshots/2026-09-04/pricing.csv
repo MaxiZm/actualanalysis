@@ -1,0 +1,7 @@
+modelId,sourceId,provider,inputPerM,outputPerM,cacheReadPerM,cacheWritePerM,contextLength,maxOutput,fetchedAt
+qwen3-235b-a22b,openrouter,openrouter,0.455,1.82,,,131072,8192,2026-09-04T01:31:47.815Z
+gpt-5.6-sol,openrouter,openrouter,2,10,0.2,2.5,1050000,128000,2026-09-04T01:31:47.810Z
+claude-opus-4.1,openrouter,openrouter,15,75,1.5,18.75,200000,32000,2026-09-04T01:31:47.815Z
+gemini-2.5-pro,openrouter,openrouter,1.25,10,0.125,0.375,1048576,65536,2026-09-04T01:31:47.815Z
+claude-sonnet-4.5,openrouter,openrouter,3,15,0.3,3.75,1000000,64000,2026-09-04T01:31:47.813Z
+gpt-5-2025-08-07,openrouter,openrouter,1.25,10,0.125,,400000,128000,2026-09-04T01:31:47.814Z

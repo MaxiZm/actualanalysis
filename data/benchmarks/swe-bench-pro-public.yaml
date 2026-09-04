@@ -1,0 +1,26 @@
+id: swe-bench-pro-public
+name: SWE-bench Pro public
+version: public-731
+grader_version: scaleapi/SWE-bench_Pro-os@190335a486d5cfd7c05379287a5c146901544f8e
+family_id: swe-bench
+aliases: [SWE Bench Pro Public, SWE-bench Pro (Public), SWE-bench Pro Public]
+tags: [agentic]
+categories: [software-engineering]
+domains: { agentic: 0.50, software-code: 0.45, reasoning: 0.05, knowledge-information: 0, communication-professional: 0 }
+holdout: public
+holdout_details: Public 731-task set; a separate private set exists.
+chance_level: 0
+obs_type: count
+public_release_date: 2025-09-25
+default_k: 1
+tool_policy: repository-tools
+transform: { type: accuracy, input_scale: percent }
+n_items: 731
+harness_url: https://labs.scale.com/leaderboard/swe_bench_pro_public
+source_ids: [scale, vendor-model-cards]
+metadata_sources:
+  - https://github.com/scaleapi/SWE-bench_Pro-os
+  - https://github.com/scaleapi/SWE-bench_Pro-os/commit/190335a486d5cfd7c05379287a5c146901544f8e
+  - https://huggingface.co/datasets/ScaleAI/SWE-bench_Pro
+  - https://arxiv.org/html/2509.16941
+status: active

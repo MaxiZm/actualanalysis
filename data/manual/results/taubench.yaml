@@ -1,0 +1,384 @@
+results:
+  - model_id: claude-fable-5
+    benchmark_id: tau3-bench-banking
+    source_id: taubench
+    score: 39.69
+    score_unit: percent
+    n_items: 97
+    k_trials: 4
+    config: { reasoning_effort: "max", retrieval_config: "alltools" }
+    harness: "tau2-bench v1.0.1"
+    observed_on: 2026-08-04
+    url: https://taubench.com/leaderboard?benchmark=knowledge
+    provenance: independent
+    notes: "Sierra-run submission on the τ³-Banking (knowledge-retrieval) leaderboard at taubench.com; pass^1 shown (pass^2..pass^4 also reported for k=2..4). Retrieval config: alltools. Banking_knowledge evaluation with AllTools retrieval, GPT-5.2 low-reasoning user simulation, four trials, and seed 300. Provenance independent: this run was evaluated and submitted by Sierra itself, not the model vendor."
+
+  - model_id: claude-opus-4.5
+    benchmark_id: tau3-bench-banking
+    source_id: taubench
+    score: 24.74
+    score_unit: percent
+    n_items: 97
+    k_trials: 4
+    config: { reasoning_effort: "high", retrieval_config: "alltools" }
+    harness: "tau2-bench v1.0.1"
+    observed_on: 2026-02-26
+    url: https://taubench.com/leaderboard?benchmark=knowledge
+    provenance: independent
+    notes: "Sierra-run submission on the τ³-Banking (knowledge-retrieval) leaderboard at taubench.com; pass^1 shown (pass^2..pass^4 also reported for k=2..4). Retrieval config: alltools. Evaluated using AllTools retrieval (BM25 + dense OpenAI text-embedding-3-large + sandboxed shell). User simulator: gpt-5.2 with reasoning_effort: low. 4 trials. Seed: 300. Banking_knowledge domain only — other domains intentionally excluded from this comparison; the AllTools setting standardizes retrieval across models. banking_knowledge re-graded under tau2-bench v1.0.1 grading fixes on 2026-07-15 (extra-read logging #329, numeric-argument normalization #397, T077-T086 gold trajectories #402); scores prior to v1.0.1 are not comparable. Provenance independent: this run was evaluated and submitted by Sierra itself, not the model vendor."
+
+  - model_id: claude-opus-4.6
+    benchmark_id: tau3-bench-banking
+    source_id: taubench
+    score: 27.32
+    score_unit: percent
+    n_items: 97
+    k_trials: 4
+    config: { reasoning_effort: "max", retrieval_config: "alltools" }
+    harness: "tau2-bench v1.0.1"
+    observed_on: 2026-05-05
+    url: https://taubench.com/leaderboard?benchmark=knowledge
+    provenance: independent
+    notes: "Sierra-run submission on the τ³-Banking (knowledge-retrieval) leaderboard at taubench.com; pass^1 shown (pass^2..pass^4 also reported for k=2..4). Retrieval config: alltools. Evaluated with reasoning_effort 'max' (the highest effort level this model supports). Retrieval: AllTools (BM25 + dense OpenAI text-embedding-3-large + sandboxed shell). User simulator: gpt-5.2 with reasoning_effort: low. 4 trials. Seed: 300. Banking_knowledge domain only — other domains intentionally excluded from this comparison; the AllTools setting standardizes retrieval across models. banking_knowledge re-graded under tau2-bench v1.0.1 grading fixes on 2026-07-15 (extra-read logging #329, numeric-argument normalization #397, T077-T086 gold trajectories #402); scores prior to v1.0.1 are not comparable. Provenance independent: this run was evaluated and submitted by Sierra itself, not the model vendor."
+
+  - model_id: claude-opus-4.7
+    benchmark_id: tau3-bench-banking
+    source_id: taubench
+    score: 40.21
+    score_unit: percent
+    n_items: 97
+    k_trials: 4
+    config: { reasoning_effort: "max", retrieval_config: "alltools" }
+    harness: "tau2-bench v1.0.1"
+    observed_on: 2026-05-05
+    url: https://taubench.com/leaderboard?benchmark=knowledge
+    provenance: independent
+    notes: "Sierra-run submission on the τ³-Banking (knowledge-retrieval) leaderboard at taubench.com; pass^1 shown (pass^2..pass^4 also reported for k=2..4). Retrieval config: alltools. Banking_knowledge evaluation with AllTools retrieval, GPT-5.2 low-reasoning user simulation, four trials, and seed 300. Provenance independent: this run was evaluated and submitted by Sierra itself, not the model vendor."
+
+  - model_id: claude-opus-4.8
+    benchmark_id: tau3-bench-banking
+    source_id: taubench
+    score: 39.69
+    score_unit: percent
+    n_items: 97
+    k_trials: 4
+    config: { reasoning_effort: "max", retrieval_config: "alltools" }
+    harness: "tau2-bench v1.0.1"
+    observed_on: 2026-08-04
+    url: https://taubench.com/leaderboard?benchmark=knowledge
+    provenance: independent
+    notes: "Sierra-run submission on the τ³-Banking (knowledge-retrieval) leaderboard at taubench.com; pass^1 shown (pass^2..pass^4 also reported for k=2..4). Retrieval config: alltools. Banking_knowledge evaluation with AllTools retrieval, GPT-5.2 low-reasoning user simulation, four trials, and seed 300. Provenance independent: this run was evaluated and submitted by Sierra itself, not the model vendor."
+
+  - model_id: claude-opus-5
+    benchmark_id: tau3-bench-banking
+    source_id: taubench
+    score: 48.71
+    score_unit: percent
+    n_items: 97
+    k_trials: 4
+    config: { reasoning_effort: "max", retrieval_config: "alltools" }
+    harness: "tau2-bench v1.0.1"
+    observed_on: 2026-08-04
+    url: https://taubench.com/leaderboard?benchmark=knowledge
+    provenance: independent
+    notes: "Sierra-run submission on the τ³-Banking (knowledge-retrieval) leaderboard at taubench.com; pass^1 shown (pass^2..pass^4 also reported for k=2..4). Retrieval config: alltools. Banking_knowledge evaluation with AllTools retrieval, GPT-5.2 low-reasoning user simulation, four trials, and seed 300. Provenance independent: this run was evaluated and submitted by Sierra itself, not the model vendor."
+
+  - model_id: claude-sonnet-4.5
+    benchmark_id: tau3-bench-banking
+    sample_only: true
+    source_id: taubench
+    score: 25.26
+    score_unit: percent
+    n_items: 97
+    k_trials: 4
+    config: { reasoning_effort: "enabled", retrieval_config: "terminal" }
+    harness: "tau2-bench v1.0.1"
+    observed_on: 2026-02-26
+    url: https://taubench.com/leaderboard?benchmark=knowledge
+    provenance: independent
+    notes: "Sierra-run submission on the τ³-Banking (knowledge-retrieval) leaderboard at taubench.com; pass^1 shown (pass^2..pass^4 also reported for k=2..4). Retrieval config: terminal. Evaluated using Claude Sonnet 4.5 (claude-sonnet-4-5-20250929) with extended thinking enabled. User simulator: gpt-5.2 with reasoning_effort: low. 4 trials. Seed: 300. Banking domain evaluated with terminal-based agentic search retrieval. banking_knowledge re-graded under tau2-bench v1.0.1 grading fixes on 2026-07-15 (extra-read logging #329, numeric-argument normalization #397, T077-T086 gold trajectories #402); scores prior to v1.0.1 are not comparable. Provenance independent: this run was evaluated and submitted by Sierra itself, not the model vendor."
+
+  - model_id: gemini-2.5-pro
+    benchmark_id: tau3-bench-banking
+    source_id: taubench
+    score: 13.66
+    score_unit: percent
+    n_items: 97
+    k_trials: 4
+    config: { reasoning_effort: "high", retrieval_config: "alltools" }
+    harness: "tau2-bench v1.0.1"
+    observed_on: 2026-05-05
+    url: https://taubench.com/leaderboard?benchmark=knowledge
+    provenance: independent
+    notes: "Sierra-run submission on the τ³-Banking (knowledge-retrieval) leaderboard at taubench.com; pass^1 shown (pass^2..pass^4 also reported for k=2..4). Retrieval config: alltools. Evaluated using AllTools retrieval (BM25 + dense OpenAI text-embedding-3-large + sandboxed shell). User simulator: gpt-5.2 with reasoning_effort: low. 4 trials. Seed: 300. Banking_knowledge domain only — other domains intentionally excluded from this comparison; the AllTools setting standardizes retrieval across models. banking_knowledge re-graded under tau2-bench v1.0.1 grading fixes on 2026-07-15 (extra-read logging #329, numeric-argument normalization #397, T077-T086 gold trajectories #402); scores prior to v1.0.1 are not comparable. Provenance independent: this run was evaluated and submitted by Sierra itself, not the model vendor."
+
+  - model_id: gemini-3-flash
+    benchmark_id: tau3-bench-banking
+    sample_only: true
+    source_id: taubench
+    score: 27.32
+    score_unit: percent
+    n_items: 97
+    k_trials: 4
+    config: { reasoning_effort: "high", retrieval_config: "terminal" }
+    harness: "tau2-bench v1.0.1"
+    observed_on: 2026-03-02
+    url: https://taubench.com/leaderboard?benchmark=knowledge
+    provenance: independent
+    notes: "Sierra-run submission on the τ³-Banking (knowledge-retrieval) leaderboard at taubench.com; pass^1 shown (pass^2..pass^4 also reported for k=2..4). Retrieval config: terminal. Evaluated using vertex_ai/gemini-3-flash-preview with reasoning_effort: high. User simulator: gpt-5.2 with reasoning_effort: low. 4 trials. Seed: 123. Telecom domain had 20 simulations terminated due to too_many_errors (all scored as 0). Banking domain had 52 simulations terminated due to max_steps (all scored as 0). Banking domain evaluated with terminal-based agentic search retrieval (terminal_use). banking_knowledge re-graded under tau2-bench v1.0.1 grading fixes on 2026-07-15 (extra-read logging #329, numeric-argument normalization #397, T077-T086 gold trajectories #402); scores prior to v1.0.1 are not comparable. Provenance independent: this run was evaluated and submitted by Sierra itself, not the model vendor."
+
+  - model_id: gemini-3-pro
+    benchmark_id: tau3-bench-banking
+    sample_only: true
+    source_id: taubench
+    score: 18.04
+    score_unit: percent
+    n_items: 97
+    k_trials: 4
+    config: { reasoning_effort: "high", retrieval_config: "terminal" }
+    harness: "tau2-bench v1.0.1"
+    observed_on: 2026-03-02
+    url: https://taubench.com/leaderboard?benchmark=knowledge
+    provenance: independent
+    notes: "Sierra-run submission on the τ³-Banking (knowledge-retrieval) leaderboard at taubench.com; pass^1 shown (pass^2..pass^4 also reported for k=2..4). Retrieval config: terminal. Evaluated using vertex_ai/gemini-3-pro-preview with reasoning_effort: high. User simulator: gpt-5.2 with reasoning_effort: low. 4 trials. Infrastructure errors treated as failures (reward 0): 3 in airline, 20 in retail, 2 in telecom. Banking domain had 42 simulations terminated due to max_steps (all scored as 0). Banking domain evaluated with terminal-based agentic search retrieval (terminal_use). banking_knowledge re-graded under tau2-bench v1.0.1 grading fixes on 2026-07-15 (extra-read logging #329, numeric-argument normalization #397, T077-T086 gold trajectories #402); scores prior to v1.0.1 are not comparable. Provenance independent: this run was evaluated and submitted by Sierra itself, not the model vendor."
+
+  - model_id: gemini-3.1-pro
+    benchmark_id: tau3-bench-banking
+    source_id: taubench
+    score: 26.03
+    score_unit: percent
+    n_items: 97
+    k_trials: 4
+    config: { reasoning_effort: "high", retrieval_config: "alltools" }
+    harness: "tau2-bench v1.0.1"
+    observed_on: 2026-05-05
+    url: https://taubench.com/leaderboard?benchmark=knowledge
+    provenance: independent
+    notes: "Sierra-run submission on the τ³-Banking (knowledge-retrieval) leaderboard at taubench.com; pass^1 shown (pass^2..pass^4 also reported for k=2..4). Retrieval config: alltools. Evaluated using AllTools retrieval (BM25 + dense OpenAI text-embedding-3-large + sandboxed shell). User simulator: gpt-5.2 with reasoning_effort: low. 4 trials. Seed: 300. Banking_knowledge domain only — other domains intentionally excluded from this comparison; the AllTools setting standardizes retrieval across models. banking_knowledge re-graded under tau2-bench v1.0.1 grading fixes on 2026-07-15 (extra-read logging #329, numeric-argument normalization #397, T077-T086 gold trajectories #402); scores prior to v1.0.1 are not comparable. Provenance independent: this run was evaluated and submitted by Sierra itself, not the model vendor."
+
+  - model_id: glm-5
+    benchmark_id: tau3-bench-banking
+    sample_only: true
+    source_id: taubench
+    score: 9.79
+    score_unit: percent
+    n_items: 97
+    k_trials: 4
+    config: { reasoning_effort: "enabled", retrieval_config: "text-emb-3-large" }
+    harness: "tau2-bench v1.0.1"
+    observed_on: 2026-03-02
+    url: https://taubench.com/leaderboard?benchmark=knowledge
+    provenance: independent
+    notes: "Sierra-run submission on the τ³-Banking (knowledge-retrieval) leaderboard at taubench.com; pass^1 shown (pass^2..pass^4 also reported for k=2..4). Retrieval config: text-emb-3-large. Evaluated using GLM-5 with thinking enabled. User simulator: gpt-5.2 with reasoning_effort: low. 4 trials. Seed: 300. Temperature: 1.0, top_p: 0.95. Infrastructure errors treated as failures. banking_knowledge re-graded under tau2-bench v1.0.1 grading fixes on 2026-07-15 (extra-read logging #329, numeric-argument normalization #397, T077-T086 gold trajectories #402); scores prior to v1.0.1 are not comparable. Provenance independent: this run was evaluated and submitted by Sierra itself, not the model vendor."
+
+  - model_id: glm-5.2
+    benchmark_id: tau3-bench-banking
+    source_id: taubench
+    score: 37.11
+    score_unit: percent
+    n_items: 97
+    k_trials: 4
+    config: { reasoning_effort: "xhigh", retrieval_config: "alltools" }
+    harness: "tau2-bench v1.0.1"
+    observed_on: 2026-08-04
+    url: https://taubench.com/leaderboard?benchmark=knowledge
+    provenance: independent
+    notes: "Sierra-run submission on the τ³-Banking (knowledge-retrieval) leaderboard at taubench.com; pass^1 shown (pass^2..pass^4 also reported for k=2..4). Retrieval config: alltools. Banking_knowledge evaluation with AllTools retrieval, GPT-5.2 low-reasoning user simulation, four trials, and seed 300. Provenance independent: this run was evaluated and submitted by Sierra itself, not the model vendor."
+
+  - model_id: gpt-5.2
+    benchmark_id: tau3-bench-banking
+    source_id: taubench
+    score: 32.22
+    score_unit: percent
+    n_items: 97
+    k_trials: 4
+    config: { reasoning_effort: "high", retrieval_config: "alltools" }
+    harness: "tau2-bench v1.0.1"
+    observed_on: 2026-02-26
+    url: https://taubench.com/leaderboard?benchmark=knowledge
+    provenance: independent
+    notes: "Sierra-run submission on the τ³-Banking (knowledge-retrieval) leaderboard at taubench.com; pass^1 shown (pass^2..pass^4 also reported for k=2..4). Retrieval config: alltools. Evaluated using AllTools retrieval (BM25 + dense OpenAI text-embedding-3-large + sandboxed shell). User simulator: gpt-5.2 with reasoning_effort: low. 4 trials. Seed: 300. Banking_knowledge domain only — other domains intentionally excluded from this comparison; the AllTools setting standardizes retrieval across models. banking_knowledge re-graded under tau2-bench v1.0.1 grading fixes on 2026-07-15 (extra-read logging #329, numeric-argument normalization #397, T077-T086 gold trajectories #402); scores prior to v1.0.1 are not comparable. Provenance independent: this run was evaluated and submitted by Sierra itself, not the model vendor."
+
+  - model_id: gpt-5.2
+    benchmark_id: tau3-bench-banking
+    source_id: taubench
+    score: 12.63
+    sample_only: true
+    score_unit: percent
+    n_items: 97
+    k_trials: 4
+    config: { reasoning_effort: "none", retrieval_config: "qwen_embeddings" }
+    harness: "tau2-bench v1.0.1"
+    observed_on: 2026-02-26
+    url: https://taubench.com/leaderboard?benchmark=knowledge
+    provenance: independent
+    notes: "Sierra-run submission on the τ³-Banking (knowledge-retrieval) leaderboard at taubench.com; pass^1 shown (pass^2..pass^4 also reported for k=2..4). Retrieval config: qwen_embeddings. Evaluated using GPT-5.2 with reasoning_effort: none. User simulator: gpt-5.2 with reasoning_effort: low. 4 trials. Seed: 300. Banking domain evaluated with retrieval_config: qwen_embeddings. banking_knowledge re-graded under tau2-bench v1.0.1 grading fixes on 2026-07-15 (extra-read logging #329, numeric-argument normalization #397, T077-T086 gold trajectories #402); scores prior to v1.0.1 are not comparable. Provenance independent: this run was evaluated and submitted by Sierra itself, not the model vendor."
+
+  - model_id: gpt-5.4
+    benchmark_id: tau3-bench-banking
+    source_id: taubench
+    score: 39.43
+    score_unit: percent
+    n_items: 97
+    k_trials: 4
+    config: { reasoning_effort: "xhigh", retrieval_config: "alltools" }
+    harness: "tau2-bench v1.0.1"
+    observed_on: 2026-03-25
+    url: https://taubench.com/leaderboard?benchmark=knowledge
+    provenance: independent
+    notes: "Sierra-run submission on the τ³-Banking (knowledge-retrieval) leaderboard at taubench.com; pass^1 shown (pass^2..pass^4 also reported for k=2..4). Retrieval config: alltools. Evaluated with reasoning_effort 'xhigh' (the highest effort level this model supports). Retrieval: AllTools (BM25 + dense OpenAI text-embedding-3-large + sandboxed shell). User simulator: gpt-5.2 with reasoning_effort: low. 4 trials. Seed: 300. Banking_knowledge domain only — other domains intentionally excluded from this comparison; the AllTools setting standardizes retrieval across models. banking_knowledge re-graded under tau2-bench v1.0.1 grading fixes on 2026-07-15 (extra-read logging #329, numeric-argument normalization #397, T077-T086 gold trajectories #402); scores prior to v1.0.1 are not comparable. Provenance independent: this run was evaluated and submitted by Sierra itself, not the model vendor."
+
+  - model_id: gpt-5.5
+    benchmark_id: tau3-bench-banking
+    source_id: taubench
+    score: 44.59
+    score_unit: percent
+    n_items: 97
+    k_trials: 4
+    config: { reasoning_effort: "xhigh", retrieval_config: "alltools" }
+    harness: "tau2-bench v1.0.1"
+    observed_on: 2026-05-05
+    url: https://taubench.com/leaderboard?benchmark=knowledge
+    provenance: independent
+    notes: "Sierra-run submission on the τ³-Banking (knowledge-retrieval) leaderboard at taubench.com; pass^1 shown (pass^2..pass^4 also reported for k=2..4). Retrieval config: alltools. Banking_knowledge evaluation with AllTools retrieval, GPT-5.2 low-reasoning user simulation, four trials, and seed 300. Provenance independent: this run was evaluated and submitted by Sierra itself, not the model vendor."
+
+  - model_id: gpt-5.6-sol
+    benchmark_id: tau3-bench-banking
+    source_id: taubench
+    score: 46.91
+    score_unit: percent
+    n_items: 97
+    k_trials: 4
+    config: { reasoning_effort: "xhigh", retrieval_config: "alltools" }
+    harness: "tau2-bench v1.0.1"
+    observed_on: 2026-08-04
+    url: https://taubench.com/leaderboard?benchmark=knowledge
+    provenance: independent
+    notes: "Sierra-run submission on the τ³-Banking (knowledge-retrieval) leaderboard at taubench.com; pass^1 shown (pass^2..pass^4 also reported for k=2..4). Retrieval config: alltools. Banking_knowledge evaluation with AllTools retrieval, GPT-5.2 low-reasoning user simulation, four trials, and seed 300. Provenance independent: this run was evaluated and submitted by Sierra itself, not the model vendor."
+
+  - model_id: grok-4-fast
+    benchmark_id: tau3-bench-banking
+    source_id: taubench
+    score: 15.72
+    score_unit: percent
+    n_items: 97
+    k_trials: 4
+    config: { reasoning_effort: "high", retrieval_config: "alltools" }
+    harness: "tau2-bench v1.0.1"
+    observed_on: 2026-05-05
+    url: https://taubench.com/leaderboard?benchmark=knowledge
+    provenance: independent
+    notes: "Sierra-run submission on the τ³-Banking (knowledge-retrieval) leaderboard at taubench.com; pass^1 shown (pass^2..pass^4 also reported for k=2..4). Retrieval config: alltools. Evaluated using AllTools retrieval (BM25 + dense OpenAI text-embedding-3-large + sandboxed shell). User simulator: gpt-5.2 with reasoning_effort: low. 4 trials. Seed: 300. Banking_knowledge domain only — other domains intentionally excluded from this comparison; the AllTools setting standardizes retrieval across models. banking_knowledge re-graded under tau2-bench v1.0.1 grading fixes on 2026-07-15 (extra-read logging #329, numeric-argument normalization #397, T077-T086 gold trajectories #402); scores prior to v1.0.1 are not comparable. Provenance independent: this run was evaluated and submitted by Sierra itself, not the model vendor."
+
+  - model_id: grok-4.1-fast
+    benchmark_id: tau3-bench-banking
+    source_id: taubench
+    score: 13.14
+    score_unit: percent
+    n_items: 97
+    k_trials: 4
+    config: { reasoning_effort: "high", retrieval_config: "alltools" }
+    harness: "tau2-bench v1.0.1"
+    observed_on: 2026-05-05
+    url: https://taubench.com/leaderboard?benchmark=knowledge
+    provenance: independent
+    notes: "Sierra-run submission on the τ³-Banking (knowledge-retrieval) leaderboard at taubench.com; pass^1 shown (pass^2..pass^4 also reported for k=2..4). Retrieval config: alltools. Evaluated using AllTools retrieval (BM25 + dense OpenAI text-embedding-3-large + sandboxed shell). User simulator: gpt-5.2 with reasoning_effort: low. 4 trials. Seed: 300. Banking_knowledge domain only — other domains intentionally excluded from this comparison; the AllTools setting standardizes retrieval across models. xAI's `-reasoning` model variant (always-on chain-of-thought); launched with `temperature: 0.0` since reasoning is gated by model name on this provider, not by an `effort` parameter. banking_knowledge re-graded under tau2-bench v1.0.1 grading fixes on 2026-07-15 (extra-read logging #329, numeric-argument normalization #397, T077-T086 gold trajectories #402); scores prior to v1.0.1 are not comparable. Provenance independent: this run was evaluated and submitted by Sierra itself, not the model vendor."
+
+  - model_id: grok-4.5
+    benchmark_id: tau3-bench-banking
+    source_id: taubench
+    score: 47.94
+    score_unit: percent
+    n_items: 97
+    k_trials: 4
+    config: { reasoning_effort: "high", retrieval_config: "alltools" }
+    harness: "tau2-bench v1.0.1"
+    observed_on: 2026-08-04
+    url: https://taubench.com/leaderboard?benchmark=knowledge
+    provenance: independent
+    notes: "Sierra-run submission on the τ³-Banking (knowledge-retrieval) leaderboard at taubench.com; pass^1 shown (pass^2..pass^4 also reported for k=2..4). Retrieval config: alltools. Banking_knowledge evaluation with AllTools retrieval, GPT-5.2 low-reasoning user simulation, four trials, and seed 300. Provenance independent: this run was evaluated and submitted by Sierra itself, not the model vendor."
+
+  - model_id: inkling
+    benchmark_id: tau3-bench-banking
+    source_id: taubench
+    score: 25.0
+    score_unit: percent
+    n_items: 97
+    k_trials: 4
+    config: { reasoning_effort: "max", retrieval_config: "alltools" }
+    harness: "tau2-bench v1.0.1"
+    observed_on: 2026-08-04
+    url: https://taubench.com/leaderboard?benchmark=knowledge
+    provenance: independent
+    notes: "Sierra-run submission on the τ³-Banking (knowledge-retrieval) leaderboard at taubench.com; pass^1 shown (pass^2..pass^4 also reported for k=2..4). Retrieval config: alltools. Banking_knowledge evaluation with AllTools retrieval, GPT-5.2 low-reasoning user simulation, four trials, and seed 300. Provenance independent: this run was evaluated and submitted by Sierra itself, not the model vendor."
+
+  - model_id: kimi-k3
+    benchmark_id: tau3-bench-banking
+    source_id: taubench
+    score: 37.11
+    score_unit: percent
+    n_items: 97
+    k_trials: 4
+    config: { reasoning_effort: "max", retrieval_config: "alltools" }
+    harness: "tau2-bench v1.0.1"
+    observed_on: 2026-08-04
+    url: https://taubench.com/leaderboard?benchmark=knowledge
+    provenance: independent
+    notes: "Sierra-run submission on the τ³-Banking (knowledge-retrieval) leaderboard at taubench.com; pass^1 shown (pass^2..pass^4 also reported for k=2..4). Retrieval config: alltools. Banking_knowledge evaluation with AllTools retrieval, GPT-5.2 low-reasoning user simulation, four trials, and seed 300. Provenance independent: this run was evaluated and submitted by Sierra itself, not the model vendor."
+
+  - model_id: muse-spark-1.1
+    benchmark_id: tau3-bench-banking
+    source_id: taubench
+    score: 40.46
+    score_unit: percent
+    n_items: 97
+    k_trials: 4
+    config: { reasoning_effort: "xhigh", retrieval_config: "alltools" }
+    harness: "tau2-bench v1.0.1"
+    observed_on: 2026-08-04
+    url: https://taubench.com/leaderboard?benchmark=knowledge
+    provenance: independent
+    notes: "Sierra-run submission on the τ³-Banking (knowledge-retrieval) leaderboard at taubench.com; pass^1 shown (pass^2..pass^4 also reported for k=2..4). Retrieval config: alltools. Banking_knowledge evaluation with AllTools retrieval, GPT-5.2 low-reasoning user simulation, four trials, and seed 300. Provenance independent: this run was evaluated and submitted by Sierra itself, not the model vendor."
+
+  - model_id: qwen-3.8-max
+    benchmark_id: tau3-bench-banking
+    source_id: taubench
+    score: 55.15
+    score_unit: percent
+    n_items: 97
+    k_trials: 4
+    config: { reasoning_effort: "xhigh", retrieval_config: "alltools" }
+    harness: "tau2-bench v1.0.1"
+    observed_on: 2026-08-04
+    url: https://taubench.com/leaderboard?benchmark=knowledge
+    provenance: independent
+    notes: "Sierra-run submission on the τ³-Banking (knowledge-retrieval) leaderboard at taubench.com; pass^1 shown (pass^2..pass^4 also reported for k=2..4). Retrieval config: alltools. Banking_knowledge evaluation with AllTools retrieval, GPT-5.2 low-reasoning user simulation, four trials, and seed 300. Provenance independent: this run was evaluated and submitted by Sierra itself, not the model vendor."
+
+  - model_id: qwen3.5-397b-a17b
+    benchmark_id: tau3-bench-banking
+    sample_only: true
+    source_id: taubench
+    score: 9.79
+    score_unit: percent
+    n_items: 97
+    k_trials: 4
+    config: { reasoning_effort: "enabled", retrieval_config: "text-emb-3-large" }
+    harness: "tau2-bench v1.0.1"
+    observed_on: 2026-03-02
+    url: https://taubench.com/leaderboard?benchmark=knowledge
+    provenance: independent
+    notes: "Sierra-run submission on the τ³-Banking (knowledge-retrieval) leaderboard at taubench.com; pass^1 shown (pass^2..pass^4 also reported for k=2..4). Retrieval config: text-emb-3-large. Evaluated using Qwen3.5-397B-A17B with thinking enabled. User simulator: gpt-5.2 with reasoning_effort: low. 4 trials. Seed: 300. Temperature: 1.0, top_p: 0.95. Self-hosted via vLLM. banking_knowledge re-graded under tau2-bench v1.0.1 grading fixes on 2026-07-15 (extra-read logging #329, numeric-argument normalization #397, T077-T086 gold trajectories #402); scores prior to v1.0.1 are not comparable. Provenance independent: this run was evaluated and submitted by Sierra itself, not the model vendor."
+
+  - model_id: grok-4.20
+    benchmark_id: tau3-bench-banking
+    source_id: taubench
+    score: 18.04
+    score_unit: percent
+    n_items: 97
+    k_trials: 4
+    config: { reasoning_effort: "high", retrieval_config: "alltools" }
+    harness: "tau2-bench v1.0.1"
+    observed_on: 2026-09-04
+    url: https://taubench.com/leaderboard?benchmark=knowledge
+    provenance: independent
+    notes: "Sierra-run submission on the τ³-Banking leaderboard for Grok 4.20 (Sierra independent run)."

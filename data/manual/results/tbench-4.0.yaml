@@ -1,0 +1,329 @@
+results:
+  - model_id: gpt-6-astra
+    benchmark_id: terminal-bench-4.0
+    source_id: tbench
+    score: 58.18
+    score_unit: percent
+    se: 1.42
+    n_items: 66
+    k_trials: 5
+    config: { reasoning_effort: "max", agent: "Codex" }
+    harness: Codex
+    observed_on: 2026-09-03
+    url: https://www.tbench.ai/leaderboard/terminal-bench/4.0
+    provenance: independent
+    notes: >-
+      Rank 1. From tbench.ai's embedded leaderboard JSON (Next.js __next_f
+      payload); page's rendered HTML did not expose row data via WebFetch, so
+      raw HTML was fetched and the dehydrated react-query state parsed
+      directly. se derived from displayed 95% CI half-width (2.79) / 1.96 per
+      brief rule 8. n_trials=330 = n_items(66) x k_trials(5). Marked
+      independent: full per-run token/cost/duration telemetry indicates the
+      Terminal-Bench team ran this themselves on their own harness/package
+      (terminal-bench/terminal-bench), not a vendor self-report.
+
+  - model_id: claude-fable-5.1
+    benchmark_id: terminal-bench-4.0
+    source_id: tbench
+    score: 57.88
+    score_unit: percent
+    se: 1.92
+    n_items: 66
+    k_trials: 5
+    config: { reasoning_effort: "max", agent: "Claude Code" }
+    harness: Claude Code
+    observed_on: 2026-09-03
+    url: https://www.tbench.ai/leaderboard/terminal-bench/4.0
+    provenance: independent
+    notes: >-
+      Rank 2 (tied). se from 95% CI half-width (3.76) / 1.96. n_trials=330 =
+      66 x 5. Model release date shown on board is 2026-09-01; observed_on
+      uses the leaderboard row's created_at (2026-09-03), i.e. when TB
+      published this result. Independent: token/cost/duration telemetry
+      indicates a TB-run eval, not vendor self-report.
+
+  - model_id: gpt-6-astra
+    benchmark_id: terminal-bench-4.0
+    source_id: tbench
+    score: 57.88
+    score_unit: percent
+    se: 1.39
+    n_items: 66
+    k_trials: 5
+    config: { reasoning_effort: "xhigh", agent: "Codex" }
+    harness: Codex
+    observed_on: 2026-09-03
+    url: https://www.tbench.ai/leaderboard/terminal-bench/4.0
+    provenance: independent
+    notes: >-
+      Rank 2 (tied). se from 95% CI half-width (2.72) / 1.96. n_trials=330 =
+      66 x 5. Independent per telemetry (see notes above).
+
+  - model_id: gpt-6-astra
+    benchmark_id: terminal-bench-4.0
+    source_id: tbench
+    score: 57.88
+    score_unit: percent
+    se: 1.52
+    n_items: 66
+    k_trials: 5
+    config: { reasoning_effort: "high", agent: "Codex" }
+    harness: Codex
+    observed_on: 2026-09-03
+    url: https://www.tbench.ai/leaderboard/terminal-bench/4.0
+    provenance: independent
+    notes: >-
+      Rank 2 (tied). se from 95% CI half-width (2.97) / 1.96. n_trials=330 =
+      66 x 5. Independent per telemetry (see notes above).
+
+  - model_id: gpt-6-astra
+    benchmark_id: terminal-bench-4.0
+    source_id: tbench
+    score: 54.24
+    score_unit: percent
+    se: 1.36
+    n_items: 66
+    k_trials: 5
+    config: { reasoning_effort: "medium", agent: "Codex" }
+    harness: Codex
+    observed_on: 2026-09-03
+    url: https://www.tbench.ai/leaderboard/terminal-bench/4.0
+    provenance: independent
+    notes: >-
+      Rank 5. se from 95% CI half-width (2.66) / 1.96. n_trials=330 = 66 x 5.
+      Independent per telemetry (see notes above).
+
+  - model_id: claude-opus-5
+    benchmark_id: terminal-bench-4.0
+    source_id: tbench
+    score: 51.82
+    score_unit: percent
+    se: 1.73
+    n_items: 66
+    k_trials: 5
+    config: { reasoning_effort: "max", agent: "Claude Code" }
+    harness: Claude Code
+    observed_on: 2026-08-27
+    url: https://www.tbench.ai/leaderboard/terminal-bench/4.0
+    provenance: independent
+    notes: >-
+      Rank 6. se from 95% CI half-width (3.39) / 1.96. n_trials=330 = 66 x 5.
+      Model release date shown on board is 2026-07-24; observed_on uses the
+      leaderboard row's created_at (2026-08-27). Independent per telemetry.
+
+  - model_id: gpt-6-astra
+    benchmark_id: terminal-bench-4.0
+    source_id: tbench
+    score: 50.61
+    score_unit: percent
+    se: 1.40
+    n_items: 66
+    k_trials: 5
+    config: { reasoning_effort: "low", agent: "Codex" }
+    harness: Codex
+    observed_on: 2026-09-03
+    url: https://www.tbench.ai/leaderboard/terminal-bench/4.0
+    provenance: independent
+    notes: >-
+      Rank 7. se from 95% CI half-width (2.75) / 1.96. n_trials=330 = 66 x 5.
+      Independent per telemetry (see notes above).
+
+  - model_id: claude-fable-5
+    benchmark_id: terminal-bench-4.0
+    source_id: tbench
+    score: 44.55
+    score_unit: percent
+    se: 1.96
+    n_items: 66
+    k_trials: 5
+    config: { reasoning_effort: "max", agent: "Claude Code" }
+    harness: Claude Code
+    observed_on: 2026-08-27
+    url: https://www.tbench.ai/leaderboard/terminal-bench/4.0
+    provenance: independent
+    notes: >-
+      Rank 8. se from 95% CI half-width (3.85) / 1.96. n_trials=330 = 66 x 5.
+      Model release date shown on board is 2026-06-09; observed_on uses the
+      leaderboard row's created_at (2026-08-27). Independent per telemetry.
+
+  - model_id: glm-5.3
+    benchmark_id: terminal-bench-4.0
+    source_id: tbench
+    score: 41.82
+    score_unit: percent
+    se: 1.65
+    n_items: 66
+    k_trials: 5
+    config: { reasoning_effort: "max", agent: "Claude Code" }
+    harness: Claude Code
+    observed_on: 2026-08-27
+    url: https://www.tbench.ai/leaderboard/terminal-bench/4.0
+    provenance: independent
+    notes: >-
+      Rank 9. GLM-5.3 run through the Claude Code harness. se from 95% CI
+      half-width (3.23) / 1.96. n_trials=330 = 66 x 5. Independent per
+      telemetry (see notes above).
+
+  - model_id: gpt-5.6-sol
+    benchmark_id: terminal-bench-4.0
+    source_id: tbench
+    score: 37.27
+    score_unit: percent
+    se: 1.93
+    n_items: 66
+    k_trials: 5
+    config: { reasoning_effort: "max", agent: "Codex" }
+    harness: Codex
+    observed_on: 2026-08-27
+    url: https://www.tbench.ai/leaderboard/terminal-bench/4.0
+    provenance: independent
+    notes: >-
+      Rank 10. se from 95% CI half-width (3.78) / 1.96. n_trials=330 = 66 x 5.
+      Model release date shown on board is 2026-06-26; observed_on uses the
+      leaderboard row's created_at (2026-08-27). Independent per telemetry.
+
+  - model_id: claude-opus-4.8
+    benchmark_id: terminal-bench-4.0
+    source_id: tbench
+    score: 23.64
+    score_unit: percent
+    se: 1.82
+    n_items: 66
+    k_trials: 5
+    config: { reasoning_effort: "max", agent: "Claude Code" }
+    harness: Claude Code
+    observed_on: 2026-08-27
+    url: https://www.tbench.ai/leaderboard/terminal-bench/4.0
+    provenance: independent
+    notes: >-
+      Rank 11. se from 95% CI half-width (3.56) / 1.96. n_trials=330 = 66 x 5.
+      Model release date shown on board is 2026-05-28; observed_on uses the
+      leaderboard row's created_at (2026-08-27). Independent per telemetry.
+
+  - model_id: gpt-5.6-terra
+    benchmark_id: terminal-bench-4.0
+    source_id: tbench
+    score: 21.52
+    score_unit: percent
+    se: 1.66
+    n_items: 66
+    k_trials: 5
+    config: { reasoning_effort: "max", agent: "Codex" }
+    harness: Codex
+    observed_on: 2026-08-27
+    url: https://www.tbench.ai/leaderboard/terminal-bench/4.0
+    provenance: independent
+    notes: >-
+      Rank 12. se from 95% CI half-width (3.25) / 1.96. n_trials=330 = 66 x 5.
+      Model release date shown on board is 2026-06-26; observed_on uses the
+      leaderboard row's created_at (2026-08-27). Independent per telemetry.
+
+  - model_id: grok-4.6
+    benchmark_id: terminal-bench-4.0
+    source_id: tbench
+    score: 20.3
+    score_unit: percent
+    se: 1.58
+    n_items: 66
+    k_trials: 5
+    config: { reasoning_effort: "high", agent: "Grok Build" }
+    harness: Grok Build
+    observed_on: 2026-08-27
+    url: https://www.tbench.ai/leaderboard/terminal-bench/4.0
+    provenance: independent
+    notes: >-
+      Rank 13. Run through xAI's "Grok Build" agentic harness. se from 95% CI
+      half-width (3.09) / 1.96. n_trials=330 = 66 x 5. Model release date
+      shown on board is 2026-08-12; observed_on uses the leaderboard row's
+      created_at (2026-08-27). Independent per telemetry.
+
+  - model_id: gemini-3.8-flash
+    benchmark_id: terminal-bench-4.0
+    source_id: tbench
+    score: 19.09
+    score_unit: percent
+    se: 1.71
+    n_items: 66
+    k_trials: 5
+    config: { reasoning_effort: "high", agent: "mini-SWE-agent" }
+    harness: mini-SWE-agent
+    observed_on: 2026-09-03
+    url: https://www.tbench.ai/leaderboard/terminal-bench/4.0
+    provenance: independent
+    notes: >-
+      Rank 14. Run through SWE-agent's "mini-SWE-agent" harness. se from 95%
+      CI half-width (3.36) / 1.96. n_trials=330 = 66 x 5. Independent per
+      telemetry (see notes above).
+
+  - model_id: gpt-5.6-luna
+    benchmark_id: terminal-bench-4.0
+    source_id: tbench
+    score: 17.27
+    score_unit: percent
+    se: 1.45
+    n_items: 66
+    k_trials: 5
+    config: { reasoning_effort: "max", agent: "Codex" }
+    harness: Codex
+    observed_on: 2026-08-27
+    url: https://www.tbench.ai/leaderboard/terminal-bench/4.0
+    provenance: independent
+    notes: >-
+      Rank 15. se from 95% CI half-width (2.85) / 1.96. n_trials=330 = 66 x 5.
+      Model release date shown on board is 2026-06-26; observed_on uses the
+      leaderboard row's created_at (2026-08-27). Independent per telemetry.
+
+  - model_id: grok-4.5
+    benchmark_id: terminal-bench-4.0
+    source_id: tbench
+    score: 12.42
+    score_unit: percent
+    se: 1.34
+    n_items: 66
+    k_trials: 5
+    config: { reasoning_effort: "high", agent: "Grok Build" }
+    harness: Grok Build
+    observed_on: 2026-08-27
+    url: https://www.tbench.ai/leaderboard/terminal-bench/4.0
+    provenance: independent
+    notes: >-
+      Rank 16 (tied). se from 95% CI half-width (2.62) / 1.96. n_trials=330 =
+      66 x 5. Model release date shown on board is 2026-07-16; observed_on
+      uses the leaderboard row's created_at (2026-08-27). Independent per
+      telemetry.
+
+  - model_id: claude-sonnet-5
+    benchmark_id: terminal-bench-4.0
+    source_id: tbench
+    score: 12.42
+    score_unit: percent
+    se: 1.56
+    n_items: 66
+    k_trials: 5
+    config: { reasoning_effort: "max", agent: "Claude Code" }
+    harness: Claude Code
+    observed_on: 2026-08-27
+    url: https://www.tbench.ai/leaderboard/terminal-bench/4.0
+    provenance: independent
+    notes: >-
+      Rank 16 (tied). se from 95% CI half-width (3.06) / 1.96. n_trials=330 =
+      66 x 5. Model release date shown on board is 2026-06-30; observed_on
+      uses the leaderboard row's created_at (2026-08-27). Independent per
+      telemetry.
+
+  - model_id: gemini-3.7-flash
+    benchmark_id: terminal-bench-4.0
+    source_id: tbench
+    score: 11.21
+    score_unit: percent
+    se: 1.25
+    n_items: 66
+    k_trials: 5
+    config: { reasoning_effort: "high", agent: "mini-SWE-agent" }
+    harness: mini-SWE-agent
+    observed_on: 2026-09-03
+    url: https://www.tbench.ai/leaderboard/terminal-bench/4.0
+    provenance: independent
+    notes: >-
+      Rank 18. se from 95% CI half-width (2.45) / 1.96. n_trials=330 = 66 x 5.
+      Independent per telemetry (see notes above).

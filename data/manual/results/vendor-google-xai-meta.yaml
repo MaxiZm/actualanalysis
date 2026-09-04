@@ -1,0 +1,469 @@
+results:
+  # ---------- Google DeepMind: Gemini 3 Pro ----------
+  - model_id: gemini-3-pro
+    benchmark_id: hle-no-tools
+    source_id: vendor-model-cards
+    score: 37.5
+    score_unit: percent
+    config: { reasoning_effort: "high" }
+    observed_on: 2025-11-01
+    url: https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Pro-Model-Card.pdf
+    provenance: self_report
+    notes: >-
+      Model card states results "as of November 2025"; exact publish day not stated, using
+      first of month.
+  - model_id: gemini-3-pro
+    benchmark_id: arc-agi-2-semi-private
+    source_id: vendor-model-cards
+    score: 31.1
+    score_unit: percent
+    observed_on: 2025-11-01
+    url: https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Pro-Model-Card.pdf
+    provenance: self_report
+    notes: >-
+      Reported as "ARC Prize Verified", which uses the semi-private evaluation set per ARC
+      Prize's standard verification methodology. Results as of November 2025; exact day not stated.
+  - model_id: gemini-3-pro
+    benchmark_id: simpleqa-verified
+    sample_only: true
+    source_id: vendor-model-cards
+    score: 72.1
+    score_unit: percent
+    observed_on: 2025-11-01
+    url: https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Pro-Model-Card.pdf
+    provenance: self_report
+    notes: Results as of November 2025 per model card; exact publish day not stated.
+  - model_id: gemini-3-pro
+    benchmark_id: mrcr-v2-1m-8-needle
+    source_id: vendor-model-cards
+    score: 26.3
+    score_unit: percent
+    config: { context_length: "1M", needles: 8 }
+    observed_on: 2025-11-01
+    url: https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Pro-Model-Card.pdf
+    provenance: self_report
+    notes: 128k-context average was 77.0% (not recorded here). Exact publish day not stated.
+  - model_id: gemini-3-pro
+    benchmark_id: vending-bench-2
+    source_id: vendor-model-cards
+    score: 5478.16
+    score_unit: currency
+    observed_on: 2025-11-01
+    url: https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Pro-Model-Card.pdf
+    provenance: self_report
+    notes: Net worth in USD. Exact publish day not stated.
+  - model_id: gemini-3-pro
+    benchmark_id: swe-bench-pro-public
+    source_id: vendor-model-cards
+    score: 43.3
+    score_unit: percent
+    config: { attempts: "single" }
+    observed_on: 2026-02-19
+    url: https://storage.googleapis.com/deepmind-media/gemini/gemini_3-1_pro_model_evaluation.pdf
+    provenance: self_report
+    notes: >-
+      Not present in Gemini 3 Pro's own Nov 2025 model card; figure cited as a comparison-table
+      column in Google's Gemini 3.1 Pro evaluation methodology document (blog.google announced
+      Feb 19, 2026).
+
+  # ---------- Google DeepMind: Gemini 3.1 Pro ----------
+  - model_id: gemini-3.1-pro
+    benchmark_id: hle-no-tools
+    source_id: vendor-model-cards
+    score: 44.4
+    score_unit: percent
+    config: { reasoning_effort: "high" }
+    observed_on: 2026-02-19
+    url: https://storage.googleapis.com/deepmind-media/gemini/gemini_3-1_pro_model_evaluation.pdf
+    provenance: self_report
+    notes: With search+code tools enabled score was 51.4%; excluded here (tools:false only per scope).
+  - model_id: gemini-3.1-pro
+    benchmark_id: arc-agi-2-semi-private
+    source_id: vendor-model-cards
+    score: 77.1
+    score_unit: percent
+    observed_on: 2026-02-19
+    url: https://storage.googleapis.com/deepmind-media/gemini/gemini_3-1_pro_model_evaluation.pdf
+    provenance: self_report
+    notes: Explicitly labeled "ARC Prize Verified, semi-private set" in Google's evaluation methodology.
+  - model_id: gemini-3.1-pro
+    benchmark_id: swe-bench-pro-public
+    source_id: vendor-model-cards
+    score: 54.2
+    score_unit: percent
+    config: { attempts: "single" }
+    observed_on: 2026-02-19
+    url: https://storage.googleapis.com/deepmind-media/gemini/gemini_3-1_pro_model_evaluation.pdf
+    provenance: self_report
+  - model_id: gemini-3.1-pro
+    benchmark_id: mrcr-v2-1m-8-needle
+    source_id: vendor-model-cards
+    score: 26.3
+    score_unit: percent
+    config: { context_length: "1M", needles: 8 }
+    observed_on: 2026-02-19
+    url: https://storage.googleapis.com/deepmind-media/gemini/gemini_3-1_pro_model_evaluation.pdf
+    provenance: self_report
+    notes: 128k-context average was 84.9% (not recorded here).
+
+  # ---------- Google DeepMind: Gemini 3 Flash ----------
+  - model_id: gemini-3-flash
+    benchmark_id: hle-no-tools
+    source_id: vendor-model-cards
+    score: 33.7
+    score_unit: percent
+    observed_on: 2025-12-01
+    url: https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Flash-Model-Card.pdf
+    provenance: self_report
+    notes: >-
+      With search+code tools enabled score was 43.5%, excluded per scope. Card published
+      Dec 2025; exact day not stated.
+  - model_id: gemini-3-flash
+    benchmark_id: arc-agi-2-semi-private
+    source_id: vendor-model-cards
+    score: 33.6
+    score_unit: percent
+    observed_on: 2025-12-01
+    url: https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Flash-Model-Card.pdf
+    provenance: self_report
+    notes: "ARC Prize Verified (semi-private eval set). Exact publish day not stated."
+  - model_id: gemini-3-flash
+    benchmark_id: simpleqa-verified
+    sample_only: true
+    source_id: vendor-model-cards
+    score: 68.7
+    score_unit: percent
+    observed_on: 2025-12-01
+    url: https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Flash-Model-Card.pdf
+    provenance: self_report
+    notes: Exact publish day not stated, using first of month.
+  - model_id: gemini-3-flash
+    benchmark_id: mrcr-v2-1m-8-needle
+    source_id: vendor-model-cards
+    score: 22.1
+    score_unit: percent
+    config: { context_length: "1M", needles: 8 }
+    observed_on: 2025-12-01
+    url: https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Flash-Model-Card.pdf
+    provenance: self_report
+    notes: 128k-context average was 67.2% (not recorded here).
+  - model_id: gemini-3-flash
+    benchmark_id: vending-bench-2
+    source_id: vendor-model-cards
+    score: 3635
+    score_unit: currency
+    observed_on: 2025-12-01
+    url: https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Flash-Model-Card.pdf
+    provenance: self_report
+    notes: Net worth in USD. Exact publish day not stated.
+
+  # ---------- Google DeepMind: Gemini 3.7 Flash ----------
+  - model_id: gemini-3.7-flash
+    benchmark_id: terminal-bench-4.0
+    source_id: vendor-model-cards
+    score: 11.2
+    score_unit: percent
+    observed_on: 2026-09-02
+    url: https://storage.googleapis.com/deepmind-media/gemini/gemini_3-8_flash_model_evaluation.pdf
+    provenance: self_report
+    notes: >-
+      Only appears as a comparison-table figure in Google's Gemini 3.8 Flash evaluation report
+      (published alongside the Sept 2, 2026 blog.google announcement); absent from Gemini 3.7
+      Flash's own August 2026 evaluation report — Terminal-Bench 4.0 appears to have been added
+      to Google's suite between the two publications.
+  - model_id: gemini-3.7-flash
+    benchmark_id: osworld-2.0
+    sample_only: true
+    source_id: vendor-model-cards
+    score: 50.6
+    score_unit: percent
+    observed_on: 2026-09-02
+    url: https://storage.googleapis.com/deepmind-media/gemini/gemini_3-8_flash_model_evaluation.pdf
+    provenance: self_report
+    notes: >-
+      Using the more recent figure per "prefer most recent number" rule. Gemini 3.7 Flash's own
+      August 2026 evaluation report (gemini_3-7_flash_model_evaluation.pdf) separately reported
+      47.9% for this same benchmark; the discrepancy between the two Google-published figures is
+      unexplained (possibly a scoring-methodology revision) — flagging for review.
+
+  # ---------- Google DeepMind: Gemini 3.8 Flash ----------
+  - model_id: gemini-3.8-flash
+    benchmark_id: terminal-bench-4.0
+    source_id: vendor-model-cards
+    score: 19.1
+    score_unit: percent
+    observed_on: 2026-09-02
+    url: https://storage.googleapis.com/deepmind-media/gemini/gemini_3-8_flash_model_evaluation.pdf
+    provenance: self_report
+    notes: Google labels this the highest-scoring configuration among tested thinking levels.
+  - model_id: gemini-3.8-flash
+    benchmark_id: osworld-2.0
+    sample_only: true
+    source_id: vendor-model-cards
+    score: 59.0
+    score_unit: percent
+    config: { tool: "batch GUI actions enabled", attempts: "best of 3, single attempt reported" }
+    observed_on: 2026-09-02
+    url: https://storage.googleapis.com/deepmind-media/gemini/gemini_3-8_flash_model_evaluation.pdf
+    provenance: self_report
+
+  # ---------- Google: Gemini 2.5 Pro ----------
+  - model_id: gemini-2.5-pro
+    benchmark_id: hle-no-tools
+    source_id: vendor-model-cards
+    score: 21.6
+    score_unit: percent
+    observed_on: 2025-06-27
+    url: https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Pro-Model-Card.pdf
+    provenance: self_report
+    notes: >-
+      Model card last updated June 27, 2025. Cross-validated as "No tools" in Google's Gemini 3
+      Pro comparison table (Nov 2025).
+  - model_id: gemini-2.5-pro
+    benchmark_id: mrcr-v2-1m-8-needle
+    source_id: vendor-model-cards
+    score: 16.4
+    score_unit: percent
+    config: { context_length: "1M", needles: 8 }
+    observed_on: 2025-06-27
+    url: https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Pro-Model-Card.pdf
+    provenance: self_report
+    notes: 128k-context average was 58.0% (not recorded here).
+  - model_id: gemini-2.5-pro
+    benchmark_id: arc-agi-2-semi-private
+    sample_only: true
+    source_id: vendor-model-cards
+    score: 4.9
+    score_unit: percent
+    observed_on: 2025-11-01
+    url: https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Pro-Model-Card.pdf
+    provenance: self_report
+    notes: >-
+      Only found as a comparison-table figure in Google's Gemini 3 Pro model card (Nov 2025);
+      absent from Gemini 2.5 Pro's own June 2025 card.
+  - model_id: gemini-2.5-pro
+    benchmark_id: simpleqa-verified
+    sample_only: true
+    source_id: vendor-model-cards
+    score: 63.4
+    score_unit: percent
+    observed_on: 2025-12-01
+    url: https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Flash-Model-Card.pdf
+    provenance: self_report
+    notes: >-
+      Labeled "SimpleQA Verified" only in Google's Gemini 3 Flash comparison table (Dec 2025);
+      Gemini 2.5 Pro's own June 2025 card reports a different, non-"Verified" SimpleQA figure
+      (54.0%), excluded here as a different benchmark variant.
+  - model_id: gemini-2.5-pro
+    benchmark_id: vending-bench-2
+    source_id: vendor-model-cards
+    score: 574
+    score_unit: currency
+    observed_on: 2025-12-01
+    url: https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Flash-Model-Card.pdf
+    provenance: self_report
+    notes: Comparison-table figure only; not present in Gemini 2.5 Pro's own card.
+
+  # ---------- Google: Gemini 2.5 Flash ----------
+  - model_id: gemini-2.5-flash
+    benchmark_id: hle-no-tools
+    source_id: vendor-model-cards
+    score: 11.0
+    score_unit: percent
+    config: { variant: "GA" }
+    observed_on: 2025-12-01
+    url: https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Flash-Model-Card.pdf
+    provenance: self_report
+    notes: Card covers both the GA and "Preview 09-2025" variants; this row is the GA figure.
+  - model_id: gemini-2.5-flash
+    benchmark_id: hle-no-tools
+    source_id: vendor-model-cards
+    score: 13.2
+    score_unit: percent
+    config: { variant: "Preview 09-2025" }
+    observed_on: 2025-12-01
+    url: https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Flash-Model-Card.pdf
+    provenance: self_report
+  - model_id: gemini-2.5-flash
+    benchmark_id: simpleqa-verified
+    sample_only: true
+    source_id: vendor-model-cards
+    score: 27.8
+    score_unit: percent
+    config: { variant: "Preview 09-2025" }
+    observed_on: 2025-12-01
+    url: https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Flash-Model-Card.pdf
+    provenance: self_report
+  - model_id: gemini-2.5-flash
+    benchmark_id: mrcr-v2-1m-8-needle
+    source_id: vendor-model-cards
+    score: 16.3
+    score_unit: percent
+    config: { variant: "Preview 09-2025", context_length: "1M", needles: 8 }
+    observed_on: 2025-12-01
+    url: https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Flash-Model-Card.pdf
+    provenance: self_report
+    notes: 128k-context average was 52.4% (not recorded here).
+  - model_id: gemini-2.5-flash
+    benchmark_id: arc-agi-2-semi-private
+    sample_only: true
+    source_id: vendor-model-cards
+    score: 2.5
+    score_unit: percent
+    observed_on: 2025-12-01
+    url: https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Flash-Model-Card.pdf
+    provenance: self_report
+    notes: Comparison-table figure; variant (GA vs Preview) not specified by Google.
+  - model_id: gemini-2.5-flash
+    benchmark_id: vending-bench-2
+    source_id: vendor-model-cards
+    score: 549
+    score_unit: currency
+    observed_on: 2025-12-01
+    url: https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Flash-Model-Card.pdf
+    provenance: self_report
+    notes: Comparison-table figure; variant not specified.
+
+  # ---------- xAI ----------
+  - model_id: grok-4
+    benchmark_id: hle-no-tools
+    source_id: vendor-model-cards
+    score: 25.4
+    score_unit: percent
+    observed_on: 2025-09-19
+    url: https://x.ai/news/grok-4-fast
+    provenance: self_report
+    notes: >-
+      Grok 4's own July 2025 announcement (x.ai/news/grok-4) does not report this figure;
+      sourced from the "HLE (no tools)" comparison chart on xAI's Grok 4 Fast announcement
+      (Sept 19, 2025), where it is shown as Grok 4's own score.
+  - model_id: grok-4-fast
+    benchmark_id: hle-no-tools
+    source_id: vendor-model-cards
+    score: 20.0
+    score_unit: percent
+    observed_on: 2025-09-19
+    url: https://x.ai/news/grok-4-fast
+    provenance: self_report
+    notes: Labeled "HLE (no tools)", Pass@1 on xAI's own announcement page.
+
+  # ---------- Meta: Muse Spark (1.0) ----------
+  - model_id: muse-spark
+    benchmark_id: hle-no-tools
+    source_id: vendor-model-cards
+    score: 42.8
+    score_unit: percent
+    observed_on: 2026-07-09
+    url: https://ai.meta.com/static-resource/muse-spark-1-1-evaluation-report/
+    provenance: self_report
+    notes: >-
+      Muse Spark (1.0) figure appears as a comparison column in Meta's Muse Spark 1.1
+      Evaluation Report (published July 9, 2026); no general-capability benchmark table
+      exists in Muse Spark's own April 2026 announcement or May 2026 safety report.
+  - model_id: muse-spark
+    benchmark_id: swe-bench-pro-public
+    source_id: vendor-model-cards
+    score: 55.0
+    score_unit: percent
+    config: { harness: "mini-swe-agent" }
+    n_items: 731
+    observed_on: 2026-07-09
+    url: https://ai.meta.com/static-resource/muse-spark-1-1-evaluation-report/
+    provenance: self_report
+    notes: >-
+      Meta describes SWE-Bench Pro as "731 diverse and complex agentic coding tasks" (Scale AI);
+      treated as the public split (731 matches the commonly-cited public-set size) though Meta's
+      report does not use the word "public" verbatim — flag for confirmation.
+
+  # ---------- Meta: Muse Spark 1.1 ----------
+  - model_id: muse-spark-1.1
+    benchmark_id: hle-no-tools
+    source_id: vendor-model-cards
+    score: 52.2
+    score_unit: percent
+    config: { reasoning_effort: "xhigh", api: "Meta Model API" }
+    n_items: 2500
+    observed_on: 2026-07-09
+    url: https://ai.meta.com/static-resource/muse-spark-1-1-evaluation-report/
+    provenance: self_report
+    notes: Full 2,500-question HLE dataset, GPT o3-mini as LLM judge, per Meta's stated methodology.
+  - model_id: muse-spark-1.1
+    benchmark_id: mrcr-v2-1m-8-needle
+    source_id: vendor-model-cards
+    score: 54.1
+    score_unit: percent
+    config: { reasoning_effort: "xhigh", context_length: "1M", needles: 8 }
+    observed_on: 2026-07-09
+    url: https://ai.meta.com/static-resource/muse-spark-1-1-evaluation-report/
+    provenance: self_report
+    notes: >-
+      Metric is mean sequence-matcher ratio (OpenAI MRCR v2 data, re-binned by token count,
+      8-needle variant at 1M context), reported by Meta as a percentage-like figure.
+  - model_id: muse-spark-1.1
+    benchmark_id: swe-bench-pro-public
+    source_id: vendor-model-cards
+    score: 61.5
+    score_unit: percent
+    config: { reasoning_effort: "xhigh", harness: "mini-swe-agent" }
+    n_items: 731
+    observed_on: 2026-07-09
+    url: https://ai.meta.com/static-resource/muse-spark-1-1-evaluation-report/
+    provenance: self_report
+    notes: Same public-split caveat as the Muse Spark (1.0) SWE-Bench Pro entry above.
+  - model_id: muse-spark-1.1
+    benchmark_id: osworld-2.0
+    source_id: vendor-model-cards
+    score: 14.2
+    score_unit: percent
+    config: { reasoning_effort: "xhigh", metric: "binary completion" }
+    n_items: 108
+    observed_on: 2026-07-09
+    url: https://ai.meta.com/static-resource/muse-spark-1-1-evaluation-report/
+    provenance: self_report
+    notes: >-
+      Meta reports both strict binary completion and partial-credit mean reward as "primary
+      metrics"; this row is the binary completion rate over 108 long-horizon workflows.
+  - model_id: muse-spark-1.1
+    benchmark_id: osworld-2.0
+    source_id: vendor-model-cards
+    score: 47.3
+    sample_only: true
+    score_unit: percent
+    config: { reasoning_effort: "xhigh", metric: "partial score (mean per-task reward)" }
+    n_items: 108
+    observed_on: 2026-07-09
+    url: https://ai.meta.com/static-resource/muse-spark-1-1-evaluation-report/
+    provenance: self_report
+    notes: Companion partial-credit metric to the binary-completion row above.
+
+  # ---------- Thinking Machines: Inkling ----------
+  - model_id: inkling
+    benchmark_id: swe-bench-pro-public
+    source_id: vendor-model-cards
+    score: 54.3
+    score_unit: percent
+    config: { reasoning_effort: 0.99, temperature: 1.0 }
+    observed_on: 2026-07-15
+    url: https://thinkingmachines.ai/model-card/inkling/
+    provenance: self_report
+    notes: Labeled "SWEBench ProPublic" on the model card.
+  - model_id: inkling
+    benchmark_id: tau3-bench-banking
+    source_id: vendor-model-cards
+    score: 23.7
+    score_unit: percent
+    config: { reasoning_effort: 0.99, temperature: 1.0 }
+    observed_on: 2026-07-15
+    url: https://thinkingmachines.ai/model-card/inkling/
+    provenance: self_report
+    notes: Labeled "Tau 3 Banking" on the model card.
+  - model_id: inkling
+    benchmark_id: simpleqa-verified
+    sample_only: true
+    source_id: vendor-model-cards
+    score: 43.9
+    score_unit: percent
+    config: { reasoning_effort: 0.99, temperature: 1.0 }
+    observed_on: 2026-07-15
+    url: https://thinkingmachines.ai/model-card/inkling/
+    provenance: self_report

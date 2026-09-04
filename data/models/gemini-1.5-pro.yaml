@@ -1,0 +1,11 @@
+id: gemini-1.5-pro
+name: Gemini 1.5 Pro
+organization: Google DeepMind
+family: Gemini 1.5
+release_date: 2024-02-15
+open_weights: false
+license: Proprietary
+aliases: [Gemini-1.5-Pro-002, Gemini 1.5 Pro (Sept 2024)]
+source_url: https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf
+status: active
+

@@ -1,0 +1,17 @@
+id: tbench
+name: Terminal-Bench official leaderboard
+url: https://www.tbench.ai/leaderboard
+license: Upstream site terms; benchmark harness is Apache-2.0
+kind: scrape
+redistributable: false
+protocols:
+  - protocol_id: terminal-bench-4.0-leaderboard
+    benchmark_ids: [terminal-bench-4.0]
+    provenance: independent
+    effort_tier_rule: highest_exposed
+    harness_class: native
+    tool_policy: terminal-shell
+    benchmark_versions: { terminal-bench-4.0: "4.0.0" }
+    grader_versions: { terminal-bench-4.0: terminal-bench/terminal-bench@4.0.0 }
+    valid_from: 2026-08-26
+    methodology_url: https://www.tbench.ai/news/terminal-bench-4-0

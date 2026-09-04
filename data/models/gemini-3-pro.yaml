@@ -1,0 +1,11 @@
+id: gemini-3-pro
+name: Gemini 3 Pro
+organization: Google DeepMind
+family: Gemini 3
+release_date: 2025-11-18
+open_weights: false
+license: Proprietary
+aliases: [gemini-3-pro-preview]
+source_url: https://blog.google/products/gemini/gemini-3/
+status: active
+

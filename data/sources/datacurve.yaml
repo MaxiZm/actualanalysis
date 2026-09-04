@@ -1,0 +1,7 @@
+id: datacurve
+name: Datacurve DeepSWE
+url: https://deepswe.datacurve.ai/
+license: See upstream terms
+kind: runner
+redistributable: false
+

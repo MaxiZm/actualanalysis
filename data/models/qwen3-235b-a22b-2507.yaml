@@ -1,0 +1,25 @@
+id: qwen3-235b-a22b-2507
+name: Qwen3 235B A22B (July 2025)
+organization: Alibaba
+family: Qwen3
+release_date: 2025-07-21
+weights_date: 2025-07-21
+default_effort_tier: non-thinking
+effort_tier_order: [non-thinking]
+open_weights: true
+license: Apache-2.0
+aliases:
+  - Qwen3-235B-A22B (Jul 2025)
+  - Qwen3-235B-A22B-Instruct (Jul 2025)
+  - Qwen3-235b-a22b Instruct (25/07)
+  - qwen3-235b-a22b-instruct-2507
+  - Qwen/Qwen3-235B-A22B-Instruct-2507
+reasoning: false
+reasoning_config:
+  control: fixed_non_thinking
+source_url: https://huggingface.co/Qwen/Qwen3-235B-A22B-Instruct-2507
+metadata_sources:
+  - https://huggingface.co/Qwen/Qwen3-235B-A22B-Instruct-2507
+  - https://huggingface.co/api/models/Qwen/Qwen3-235B-A22B-Instruct-2507
+status: active
+notes: Exact open-weights release Qwen/Qwen3-235B-A22B-Instruct-2507. The official model card says it supports only non-thinking mode, so no max_effort_tier is declared. The date is the official repository creation timestamp; no separate launch date was found.

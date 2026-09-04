@@ -1,0 +1,11 @@
+id: grok-4-fast
+name: Grok 4 Fast
+organization: xAI
+family: Grok 4
+release_date: 2025-09-19
+open_weights: false
+license: Proprietary
+aliases: [Grok 4 fast, grok-4-fast]
+source_url: https://x.ai/news/grok-4-fast
+status: active
+

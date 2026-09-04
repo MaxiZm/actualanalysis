@@ -1,0 +1,10 @@
+id: gpt-5.3-codex
+name: GPT-5.3 Codex
+organization: OpenAI
+family: GPT-5
+release_date: 2026-02-05
+open_weights: false
+license: Proprietary
+source_url: https://openai.com/index/introducing-gpt-5-3-codex/
+status: active
+

@@ -1,0 +1,31 @@
+id: metr-time-horizon-1.1
+name: METR Time Horizon 1.1
+version: "1.1"
+grader_version: METR Time Horizon 1.1 Inspect evaluation and public analysis pipeline
+family_id: metr-time-horizon
+aliases: [METR Horizon 1.1, METR p50 time horizon, METR Time Horizons]
+tags: [agentic]
+categories: [long-horizon]
+domains: { agentic: 1, software-code: 0, reasoning: 0, knowledge-information: 0, communication-professional: 0 }
+holdout: rolling
+holdout_details: Mixed public/private real-world task suite maintained by METR.
+chance_level: 0
+obs_type: horizon
+public_release_date: 2026-01-29
+tool_policy: coding-agent-tools
+transform:
+  type: metr_horizon
+  input_unit: minutes
+  midpoint_log2_minutes: 8
+  scale: 2
+  quantile: p50
+n_items: null
+harness_url: https://metr.org/time-horizons/
+source_ids: [metr]
+metadata_sources:
+  - https://metr.org/time-horizons/
+  - https://metr.org/blog/2026-1-29-time-horizon-1-1/
+  - https://github.com/METR/eval-analysis-public
+  - https://metr.org/assets/benchmark_results_1_1.yaml
+status: active
+notes: Continuous p50 horizon input is not accuracy. Row-level task-set commit, scaffold list, and reported confidence interval are required.

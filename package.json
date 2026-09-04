@@ -1,0 +1,42 @@
+{
+  "name": "actualanalysis",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace @actualanalysis/web",
+    "build": "npm run build --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "typecheck": "tsc --noEmit -p tsconfig.json && npm run typecheck --workspaces --if-present",
+    "test": "vitest run scripts && npm run test --workspaces --if-present",
+    "test:coverage": "npm run test:coverage --workspaces --if-present",
+    "test:e2e": "playwright test",
+    "ingest": "npm run cli --workspace @actualanalysis/ingest --",
+    "score": "npm run cli --workspace @actualanalysis/scoring --",
+    "snapshot": "npm run snapshot --workspace @actualanalysis/db --",
+    "pipeline": "tsx scripts/pipeline.ts",
+    "verify:db": "tsx scripts/verify-db-roundtrip.ts"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
+  "overrides": {
+    "esbuild": "^0.25.9",
+    "@esbuild-kit/core-utils": {
+      "esbuild": "^0.25.9"
+    },
+    "postcss": "^8.5.24"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.0",
+    "@types/node": "^22.15.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.8.0",
+    "vitest": "^3.2.0"
+  }
+}

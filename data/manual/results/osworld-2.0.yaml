@@ -1,0 +1,684 @@
+results:
+- model_id: claude-opus-5
+  benchmark_id: osworld-2.0
+  source_id: osworld
+  score: 22.32
+  score_unit: percent
+  n_items: 108
+  config:
+    reasoning_effort: low
+    tool_setting: batch tool
+    step_budget: 500
+    dataset_scope: full
+    release_version: v2026.08.08
+  harness: OSWorld reference agent
+  observed_on: '2026-09-03'
+  url: https://osworld-v2.xlang.ai/
+  provenance: independent
+  notes: 'Official OSWorld 2.0 leaderboard result (official=true, verified/run by the OSWorld team). Binary
+    accuracy (task success rate) at 500-step budget, full dataset scope (108 tasks), release v2026.08.08,
+    tool setting ''batch tool'', reasoning ''low''. Partial (weighted checkpoint) score: 54.89%. Source
+    data pulled from the leaderboard''s JSON feed at https://osworld-v2.xlang.ai/static/data/leaderboard/official-results.json
+    (data updated 2026-09-03).'
+- model_id: claude-opus-5
+  benchmark_id: osworld-2.0
+  source_id: osworld
+  score: 25.33
+  score_unit: percent
+  n_items: 108
+  config:
+    reasoning_effort: medium
+    tool_setting: batch tool
+    step_budget: 500
+    dataset_scope: full
+    release_version: v2026.08.08
+  harness: OSWorld reference agent
+  observed_on: '2026-09-03'
+  url: https://osworld-v2.xlang.ai/
+  provenance: independent
+  notes: 'Official OSWorld 2.0 leaderboard result (official=true, verified/run by the OSWorld team). Binary
+    accuracy (task success rate) at 500-step budget, full dataset scope (108 tasks), release v2026.08.08,
+    tool setting ''batch tool'', reasoning ''medium''. Partial (weighted checkpoint) score: 60.49%. Source
+    data pulled from the leaderboard''s JSON feed at https://osworld-v2.xlang.ai/static/data/leaderboard/official-results.json
+    (data updated 2026-09-03).'
+- model_id: claude-opus-5
+  benchmark_id: osworld-2.0
+  source_id: osworld
+  score: 28.98
+  score_unit: percent
+  n_items: 108
+  config:
+    reasoning_effort: high
+    tool_setting: batch tool
+    step_budget: 500
+    dataset_scope: full
+    release_version: v2026.08.08
+  harness: OSWorld reference agent
+  observed_on: '2026-09-03'
+  url: https://osworld-v2.xlang.ai/
+  provenance: independent
+  notes: 'Official OSWorld 2.0 leaderboard result (official=true, verified/run by the OSWorld team). Binary
+    accuracy (task success rate) at 500-step budget, full dataset scope (108 tasks), release v2026.08.08,
+    tool setting ''batch tool'', reasoning ''high''. Partial (weighted checkpoint) score: 63.79%. Source
+    data pulled from the leaderboard''s JSON feed at https://osworld-v2.xlang.ai/static/data/leaderboard/official-results.json
+    (data updated 2026-09-03).'
+- model_id: claude-opus-5
+  benchmark_id: osworld-2.0
+  source_id: osworld
+  score: 30.21
+  score_unit: percent
+  n_items: 108
+  config:
+    reasoning_effort: xhigh
+    tool_setting: batch tool
+    step_budget: 500
+    dataset_scope: full
+    release_version: v2026.08.08
+  harness: OSWorld reference agent
+  observed_on: '2026-09-03'
+  url: https://osworld-v2.xlang.ai/
+  provenance: independent
+  notes: 'Official OSWorld 2.0 leaderboard result (official=true, verified/run by the OSWorld team). Binary
+    accuracy (task success rate) at 500-step budget, full dataset scope (108 tasks), release v2026.08.08,
+    tool setting ''batch tool'', reasoning ''xhigh''. Partial (weighted checkpoint) score: 67.67%. Source
+    data pulled from the leaderboard''s JSON feed at https://osworld-v2.xlang.ai/static/data/leaderboard/official-results.json
+    (data updated 2026-09-03).'
+- model_id: claude-opus-5
+  benchmark_id: osworld-2.0
+  source_id: osworld
+  score: 31.43
+  score_unit: percent
+  n_items: 108
+  config:
+    reasoning_effort: max
+    tool_setting: batch tool
+    step_budget: 500
+    dataset_scope: full
+    release_version: v2026.08.08
+  harness: OSWorld reference agent
+  observed_on: '2026-09-03'
+  url: https://osworld-v2.xlang.ai/
+  provenance: independent
+  notes: 'Official OSWorld 2.0 leaderboard result (official=true, verified/run by the OSWorld team). Binary
+    accuracy (task success rate) at 500-step budget, full dataset scope (108 tasks), release v2026.08.08,
+    tool setting ''batch tool'', reasoning ''max''. Partial (weighted checkpoint) score: 68.31%. Source
+    data pulled from the leaderboard''s JSON feed at https://osworld-v2.xlang.ai/static/data/leaderboard/official-results.json
+    (data updated 2026-09-03).'
+- model_id: gpt-5.6-sol
+  benchmark_id: osworld-2.0
+  source_id: osworld
+  score: 27.34
+  score_unit: percent
+  n_items: 108
+  config:
+    reasoning_effort: max
+    tool_setting: batch tool
+    step_budget: 500
+    dataset_scope: full
+    release_version: v2026.08.08
+  harness: OSWorld reference agent
+  observed_on: '2026-09-03'
+  url: https://osworld-v2.xlang.ai/
+  provenance: independent
+  notes: 'Official OSWorld 2.0 leaderboard result (official=true, verified/run by the OSWorld team). Binary
+    accuracy (task success rate) at 500-step budget, full dataset scope (108 tasks), release v2026.08.08,
+    tool setting ''batch tool'', reasoning ''max''. Partial (weighted checkpoint) score: 62.72%. Source
+    data pulled from the leaderboard''s JSON feed at https://osworld-v2.xlang.ai/static/data/leaderboard/official-results.json
+    (data updated 2026-09-03).'
+- model_id: claude-opus-5
+  benchmark_id: osworld-2.0
+  source_id: osworld
+  score: 24.61
+  score_unit: percent
+  n_items: 82
+  sample_only: true
+  config:
+    reasoning_effort: low
+    tool_setting: batch tool
+    step_budget: 500
+    dataset_scope: offline
+    release_version: v2026.08.08
+  harness: OSWorld reference agent
+  observed_on: '2026-09-03'
+  url: https://osworld-v2.xlang.ai/
+  provenance: independent
+  notes: 'Official OSWorld 2.0 leaderboard result (official=true, verified/run by the OSWorld team). Binary
+    accuracy (task success rate) at 500-step budget, offline dataset scope (82 tasks), release v2026.08.08,
+    tool setting ''batch tool'', reasoning ''low''. Partial (weighted checkpoint) score: 55.22%. Source
+    data pulled from the leaderboard''s JSON feed at https://osworld-v2.xlang.ai/static/data/leaderboard/official-results.json
+    (data updated 2026-09-03).'
+- model_id: claude-opus-5
+  benchmark_id: osworld-2.0
+  source_id: osworld
+  score: 27.13
+  score_unit: percent
+  n_items: 82
+  sample_only: true
+  config:
+    reasoning_effort: medium
+    tool_setting: batch tool
+    step_budget: 500
+    dataset_scope: offline
+    release_version: v2026.08.08
+  harness: OSWorld reference agent
+  observed_on: '2026-09-03'
+  url: https://osworld-v2.xlang.ai/
+  provenance: independent
+  notes: 'Official OSWorld 2.0 leaderboard result (official=true, verified/run by the OSWorld team). Binary
+    accuracy (task success rate) at 500-step budget, offline dataset scope (82 tasks), release v2026.08.08,
+    tool setting ''batch tool'', reasoning ''medium''. Partial (weighted checkpoint) score: 60.26%. Source
+    data pulled from the leaderboard''s JSON feed at https://osworld-v2.xlang.ai/static/data/leaderboard/official-results.json
+    (data updated 2026-09-03).'
+- model_id: claude-opus-5
+  benchmark_id: osworld-2.0
+  source_id: osworld
+  score: 32.69
+  score_unit: percent
+  n_items: 82
+  sample_only: true
+  config:
+    reasoning_effort: high
+    tool_setting: batch tool
+    step_budget: 500
+    dataset_scope: offline
+    release_version: v2026.08.08
+  harness: OSWorld reference agent
+  observed_on: '2026-09-03'
+  url: https://osworld-v2.xlang.ai/
+  provenance: independent
+  notes: 'Official OSWorld 2.0 leaderboard result (official=true, verified/run by the OSWorld team). Binary
+    accuracy (task success rate) at 500-step budget, offline dataset scope (82 tasks), release v2026.08.08,
+    tool setting ''batch tool'', reasoning ''high''. Partial (weighted checkpoint) score: 65.92%. Source
+    data pulled from the leaderboard''s JSON feed at https://osworld-v2.xlang.ai/static/data/leaderboard/official-results.json
+    (data updated 2026-09-03).'
+- model_id: claude-opus-5
+  benchmark_id: osworld-2.0
+  source_id: osworld
+  score: 33.38
+  score_unit: percent
+  n_items: 82
+  sample_only: true
+  config:
+    reasoning_effort: xhigh
+    tool_setting: batch tool
+    step_budget: 500
+    dataset_scope: offline
+    release_version: v2026.08.08
+  harness: OSWorld reference agent
+  observed_on: '2026-09-03'
+  url: https://osworld-v2.xlang.ai/
+  provenance: independent
+  notes: 'Official OSWorld 2.0 leaderboard result (official=true, verified/run by the OSWorld team). Binary
+    accuracy (task success rate) at 500-step budget, offline dataset scope (82 tasks), release v2026.08.08,
+    tool setting ''batch tool'', reasoning ''xhigh''. Partial (weighted checkpoint) score: 70.14%. Source
+    data pulled from the leaderboard''s JSON feed at https://osworld-v2.xlang.ai/static/data/leaderboard/official-results.json
+    (data updated 2026-09-03).'
+- model_id: claude-opus-5
+  benchmark_id: osworld-2.0
+  source_id: osworld
+  score: 34.72
+  score_unit: percent
+  n_items: 82
+  sample_only: true
+  config:
+    reasoning_effort: max
+    tool_setting: batch tool
+    step_budget: 500
+    dataset_scope: offline
+    release_version: v2026.08.08
+  harness: OSWorld reference agent
+  observed_on: '2026-09-03'
+  url: https://osworld-v2.xlang.ai/
+  provenance: independent
+  notes: 'Official OSWorld 2.0 leaderboard result (official=true, verified/run by the OSWorld team). Binary
+    accuracy (task success rate) at 500-step budget, offline dataset scope (82 tasks), release v2026.08.08,
+    tool setting ''batch tool'', reasoning ''max''. Partial (weighted checkpoint) score: 70.19%. Source
+    data pulled from the leaderboard''s JSON feed at https://osworld-v2.xlang.ai/static/data/leaderboard/official-results.json
+    (data updated 2026-09-03).'
+- model_id: gpt-5.6-sol
+  benchmark_id: osworld-2.0
+  source_id: osworld
+  score: 3.41
+  score_unit: percent
+  n_items: 82
+  sample_only: true
+  config:
+    reasoning_effort: none
+    tool_setting: batch tool
+    step_budget: 500
+    dataset_scope: offline
+    release_version: v2026.08.08
+  harness: OSWorld reference agent
+  observed_on: '2026-09-03'
+  url: https://osworld-v2.xlang.ai/
+  provenance: independent
+  notes: 'Official OSWorld 2.0 leaderboard result (official=true, verified/run by the OSWorld team). Binary
+    accuracy (task success rate) at 500-step budget, offline dataset scope (82 tasks), release v2026.08.08,
+    tool setting ''batch tool'', reasoning ''none''. Partial (weighted checkpoint) score: 16.43%. Estimated
+    total cost across the run: $96.12. Source data pulled from the leaderboard''s JSON feed at https://osworld-v2.xlang.ai/static/data/leaderboard/official-results.json
+    (data updated 2026-09-03).'
+- model_id: gpt-5.6-sol
+  benchmark_id: osworld-2.0
+  source_id: osworld
+  score: 7.32
+  score_unit: percent
+  n_items: 82
+  sample_only: true
+  config:
+    reasoning_effort: low
+    tool_setting: batch tool
+    step_budget: 500
+    dataset_scope: offline
+    release_version: v2026.08.08
+  harness: OSWorld reference agent
+  observed_on: '2026-09-03'
+  url: https://osworld-v2.xlang.ai/
+  provenance: independent
+  notes: 'Official OSWorld 2.0 leaderboard result (official=true, verified/run by the OSWorld team). Binary
+    accuracy (task success rate) at 500-step budget, offline dataset scope (82 tasks), release v2026.08.08,
+    tool setting ''batch tool'', reasoning ''low''. Partial (weighted checkpoint) score: 29.63%. Estimated
+    total cost across the run: $189. Source data pulled from the leaderboard''s JSON feed at https://osworld-v2.xlang.ai/static/data/leaderboard/official-results.json
+    (data updated 2026-09-03).'
+- model_id: gpt-5.6-sol
+  benchmark_id: osworld-2.0
+  source_id: osworld
+  score: 17.56
+  score_unit: percent
+  n_items: 82
+  sample_only: true
+  config:
+    reasoning_effort: medium
+    tool_setting: batch tool
+    step_budget: 500
+    dataset_scope: offline
+    release_version: v2026.08.08
+  harness: OSWorld reference agent
+  observed_on: '2026-09-03'
+  url: https://osworld-v2.xlang.ai/
+  provenance: independent
+  notes: 'Official OSWorld 2.0 leaderboard result (official=true, verified/run by the OSWorld team). Binary
+    accuracy (task success rate) at 500-step budget, offline dataset scope (82 tasks), release v2026.08.08,
+    tool setting ''batch tool'', reasoning ''medium''. Partial (weighted checkpoint) score: 49.01%. Estimated
+    total cost across the run: $379.08. Source data pulled from the leaderboard''s JSON feed at https://osworld-v2.xlang.ai/static/data/leaderboard/official-results.json
+    (data updated 2026-09-03).'
+- model_id: gpt-5.6-sol
+  benchmark_id: osworld-2.0
+  source_id: osworld
+  score: 20
+  score_unit: percent
+  n_items: 82
+  sample_only: true
+  config:
+    reasoning_effort: high
+    tool_setting: batch tool
+    step_budget: 500
+    dataset_scope: offline
+    release_version: v2026.08.08
+  harness: OSWorld reference agent
+  observed_on: '2026-09-03'
+  url: https://osworld-v2.xlang.ai/
+  provenance: independent
+  notes: 'Official OSWorld 2.0 leaderboard result (official=true, verified/run by the OSWorld team). Binary
+    accuracy (task success rate) at 500-step budget, offline dataset scope (82 tasks), release v2026.08.08,
+    tool setting ''batch tool'', reasoning ''high''. Partial (weighted checkpoint) score: 56.03%. Estimated
+    total cost across the run: $679.32. Source data pulled from the leaderboard''s JSON feed at https://osworld-v2.xlang.ai/static/data/leaderboard/official-results.json
+    (data updated 2026-09-03).'
+- model_id: gpt-5.6-sol
+  benchmark_id: osworld-2.0
+  source_id: osworld
+  score: 24.63
+  score_unit: percent
+  n_items: 82
+  sample_only: true
+  config:
+    reasoning_effort: xhigh
+    tool_setting: batch tool
+    step_budget: 500
+    dataset_scope: offline
+    release_version: v2026.08.08
+  harness: OSWorld reference agent
+  observed_on: '2026-09-03'
+  url: https://osworld-v2.xlang.ai/
+  provenance: independent
+  notes: 'Official OSWorld 2.0 leaderboard result (official=true, verified/run by the OSWorld team). Binary
+    accuracy (task success rate) at 500-step budget, offline dataset scope (82 tasks), release v2026.08.08,
+    tool setting ''batch tool'', reasoning ''xhigh''. Partial (weighted checkpoint) score: 60.6%. Estimated
+    total cost across the run: $849.96. Source data pulled from the leaderboard''s JSON feed at https://osworld-v2.xlang.ai/static/data/leaderboard/official-results.json
+    (data updated 2026-09-03).'
+- model_id: gpt-5.6-sol
+  benchmark_id: osworld-2.0
+  source_id: osworld
+  score: 28.1
+  score_unit: percent
+  n_items: 82
+  sample_only: true
+  config:
+    reasoning_effort: max
+    tool_setting: batch tool
+    step_budget: 500
+    dataset_scope: offline
+    release_version: v2026.08.08
+  harness: OSWorld reference agent
+  observed_on: '2026-09-03'
+  url: https://osworld-v2.xlang.ai/
+  provenance: independent
+  notes: 'Official OSWorld 2.0 leaderboard result (official=true, verified/run by the OSWorld team). Binary
+    accuracy (task success rate) at 500-step budget, offline dataset scope (82 tasks), release v2026.08.08,
+    tool setting ''batch tool'', reasoning ''max''. Partial (weighted checkpoint) score: 64.13%. Estimated
+    total cost across the run: $1116.72. Source data pulled from the leaderboard''s JSON feed at https://osworld-v2.xlang.ai/static/data/leaderboard/official-results.json
+    (data updated 2026-09-03).'
+- model_id: claude-opus-4.8
+  benchmark_id: osworld-2.0
+  source_id: osworld
+  score: 20.6
+  score_unit: percent
+  n_items: 108
+  config:
+    reasoning_effort: max
+    tool_setting: batched tool
+    step_budget: 500
+    dataset_scope: full
+    release_version: v2026.06.24
+  harness: OSWorld reference agent
+  observed_on: '2026-09-03'
+  url: https://osworld-v2.xlang.ai/
+  provenance: independent
+  notes: 'Official OSWorld 2.0 leaderboard result (official=true, verified/run by the OSWorld team). Binary
+    accuracy (task success rate) at 500-step budget, full dataset scope (108 tasks), release v2026.06.24,
+    tool setting ''batched tool'', reasoning ''max''. Partial (weighted checkpoint) score: 54.8%. Source
+    data pulled from the leaderboard''s JSON feed at https://osworld-v2.xlang.ai/static/data/leaderboard/official-results.json
+    (data updated 2026-09-03).'
+- model_id: claude-opus-4.8
+  benchmark_id: osworld-2.0
+  source_id: osworld
+  score: 18.52
+  score_unit: percent
+  n_items: 108
+  config:
+    reasoning_effort: max
+    tool_setting: standard
+    step_budget: 500
+    dataset_scope: full
+    release_version: v2026.06.24
+  harness: OSWorld reference agent
+  observed_on: '2026-09-03'
+  url: https://osworld-v2.xlang.ai/
+  provenance: independent
+  notes: 'Official OSWorld 2.0 leaderboard result (official=true, verified/run by the OSWorld team). Binary
+    accuracy (task success rate) at 500-step budget, full dataset scope (108 tasks), release v2026.06.24,
+    tool setting ''standard'', reasoning ''max''. Partial (weighted checkpoint) score: 49.33%. Source
+    data pulled from the leaderboard''s JSON feed at https://osworld-v2.xlang.ai/static/data/leaderboard/official-results.json
+    (data updated 2026-09-03).'
+- model_id: claude-opus-4.7
+  benchmark_id: osworld-2.0
+  source_id: osworld
+  score: 18.2
+  score_unit: percent
+  n_items: 108
+  config:
+    reasoning_effort: max
+    tool_setting: batched tool
+    step_budget: 500
+    dataset_scope: full
+    release_version: v2026.06.24
+  harness: OSWorld reference agent
+  observed_on: '2026-09-03'
+  url: https://osworld-v2.xlang.ai/
+  provenance: independent
+  notes: 'Official OSWorld 2.0 leaderboard result (official=true, verified/run by the OSWorld team). Binary
+    accuracy (task success rate) at 500-step budget, full dataset scope (108 tasks), release v2026.06.24,
+    tool setting ''batched tool'', reasoning ''max''. Partial (weighted checkpoint) score: 48.91%. Source
+    data pulled from the leaderboard''s JSON feed at https://osworld-v2.xlang.ai/static/data/leaderboard/official-results.json
+    (data updated 2026-09-03).'
+- model_id: claude-opus-4.7
+  benchmark_id: osworld-2.0
+  source_id: osworld
+  score: 4.6
+  score_unit: percent
+  n_items: 108
+  config:
+    reasoning_effort: max
+    tool_setting: standard
+    step_budget: 150
+    dataset_scope: full
+    release_version: v2026.06.24
+  harness: OSWorld reference agent
+  observed_on: '2026-09-03'
+  url: https://osworld-v2.xlang.ai/
+  provenance: independent
+  notes: 'Official OSWorld 2.0 leaderboard result (official=true, verified/run by the OSWorld team). Binary
+    accuracy (task success rate) at 150-step budget, full dataset scope (108 tasks), release v2026.06.24,
+    tool setting ''standard'', reasoning ''max''. Partial (weighted checkpoint) score: 20.3%. Estimated
+    total cost across the run: $1030. Source data pulled from the leaderboard''s JSON feed at https://osworld-v2.xlang.ai/static/data/leaderboard/official-results.json
+    (data updated 2026-09-03).'
+- model_id: claude-opus-4.7
+  benchmark_id: osworld-2.0
+  source_id: osworld
+  score: 13.0
+  score_unit: percent
+  n_items: 108
+  config:
+    reasoning_effort: max
+    tool_setting: standard
+    step_budget: 300
+    dataset_scope: full
+    release_version: v2026.06.24
+  harness: OSWorld reference agent
+  observed_on: '2026-09-03'
+  url: https://osworld-v2.xlang.ai/
+  provenance: independent
+  notes: 'Official OSWorld 2.0 leaderboard result (official=true, verified/run by the OSWorld team). Binary
+    accuracy (task success rate) at 300-step budget, full dataset scope (108 tasks), release v2026.06.24,
+    tool setting ''standard'', reasoning ''max''. Partial (weighted checkpoint) score: 39.8%. Estimated
+    total cost across the run: $2470. Source data pulled from the leaderboard''s JSON feed at https://osworld-v2.xlang.ai/static/data/leaderboard/official-results.json
+    (data updated 2026-09-03).'
+- model_id: claude-opus-4.7
+  benchmark_id: osworld-2.0
+  source_id: osworld
+  score: 13.9
+  score_unit: percent
+  n_items: 108
+  config:
+    reasoning_effort: max
+    tool_setting: standard
+    step_budget: 500
+    dataset_scope: full
+    release_version: v2026.06.24
+  harness: OSWorld reference agent
+  observed_on: '2026-09-03'
+  url: https://osworld-v2.xlang.ai/
+  provenance: independent
+  notes: 'Official OSWorld 2.0 leaderboard result (official=true, verified/run by the OSWorld team). Binary
+    accuracy (task success rate) at 500-step budget, full dataset scope (108 tasks), release v2026.06.24,
+    tool setting ''standard'', reasoning ''max''. Partial (weighted checkpoint) score: 49.1%. Estimated
+    total cost across the run: $3870. Source data pulled from the leaderboard''s JSON feed at https://osworld-v2.xlang.ai/static/data/leaderboard/official-results.json
+    (data updated 2026-09-03).'
+- model_id: claude-sonnet-4.6
+  benchmark_id: osworld-2.0
+  source_id: osworld
+  score: 4.6
+  score_unit: percent
+  n_items: 108
+  config:
+    reasoning_effort: medium
+    tool_setting: standard
+    step_budget: 150
+    dataset_scope: full
+    release_version: v2026.06.24
+  harness: OSWorld reference agent
+  observed_on: '2026-09-03'
+  url: https://osworld-v2.xlang.ai/
+  provenance: independent
+  notes: 'Official OSWorld 2.0 leaderboard result (official=true, verified/run by the OSWorld team). Binary
+    accuracy (task success rate) at 150-step budget, full dataset scope (108 tasks), release v2026.06.24,
+    tool setting ''standard'', reasoning ''medium''. Partial (weighted checkpoint) score: 14.2%. Estimated
+    total cost across the run: $410. Source data pulled from the leaderboard''s JSON feed at https://osworld-v2.xlang.ai/static/data/leaderboard/official-results.json
+    (data updated 2026-09-03).'
+- model_id: claude-sonnet-4.6
+  benchmark_id: osworld-2.0
+  source_id: osworld
+  score: 8.3
+  score_unit: percent
+  n_items: 108
+  config:
+    reasoning_effort: medium
+    tool_setting: standard
+    step_budget: 300
+    dataset_scope: full
+    release_version: v2026.06.24
+  harness: OSWorld reference agent
+  observed_on: '2026-09-03'
+  url: https://osworld-v2.xlang.ai/
+  provenance: independent
+  notes: 'Official OSWorld 2.0 leaderboard result (official=true, verified/run by the OSWorld team). Binary
+    accuracy (task success rate) at 300-step budget, full dataset scope (108 tasks), release v2026.06.24,
+    tool setting ''standard'', reasoning ''medium''. Partial (weighted checkpoint) score: 29.4%. Estimated
+    total cost across the run: $990. Source data pulled from the leaderboard''s JSON feed at https://osworld-v2.xlang.ai/static/data/leaderboard/official-results.json
+    (data updated 2026-09-03).'
+- model_id: claude-sonnet-4.6
+  benchmark_id: osworld-2.0
+  source_id: osworld
+  score: 9.3
+  score_unit: percent
+  n_items: 108
+  config:
+    reasoning_effort: medium
+    tool_setting: standard
+    step_budget: 500
+    dataset_scope: full
+    release_version: v2026.06.24
+  harness: OSWorld reference agent
+  observed_on: '2026-09-03'
+  url: https://osworld-v2.xlang.ai/
+  provenance: independent
+  notes: 'Official OSWorld 2.0 leaderboard result (official=true, verified/run by the OSWorld team). Binary
+    accuracy (task success rate) at 500-step budget, full dataset scope (108 tasks), release v2026.06.24,
+    tool setting ''standard'', reasoning ''medium''. Partial (weighted checkpoint) score: 33.9%. Estimated
+    total cost across the run: $1550. Source data pulled from the leaderboard''s JSON feed at https://osworld-v2.xlang.ai/static/data/leaderboard/official-results.json
+    (data updated 2026-09-03).'
+- model_id: claude-sonnet-4.6
+  benchmark_id: osworld-2.0
+  source_id: osworld
+  score: 4.6
+  score_unit: percent
+  n_items: 108
+  config:
+    reasoning_effort: max
+    tool_setting: standard
+    step_budget: 150
+    dataset_scope: full
+    release_version: v2026.06.24
+  harness: OSWorld reference agent
+  observed_on: '2026-09-03'
+  url: https://osworld-v2.xlang.ai/
+  provenance: independent
+  notes: 'Official OSWorld 2.0 leaderboard result (official=true, verified/run by the OSWorld team). Binary
+    accuracy (task success rate) at 150-step budget, full dataset scope (108 tasks), release v2026.06.24,
+    tool setting ''standard'', reasoning ''max''. Partial (weighted checkpoint) score: 20.0%. Estimated
+    total cost across the run: $800. Source data pulled from the leaderboard''s JSON feed at https://osworld-v2.xlang.ai/static/data/leaderboard/official-results.json
+    (data updated 2026-09-03).'
+- model_id: claude-sonnet-4.6
+  benchmark_id: osworld-2.0
+  source_id: osworld
+  score: 6.5
+  score_unit: percent
+  n_items: 108
+  config:
+    reasoning_effort: max
+    tool_setting: standard
+    step_budget: 300
+    dataset_scope: full
+    release_version: v2026.06.24
+  harness: OSWorld reference agent
+  observed_on: '2026-09-03'
+  url: https://osworld-v2.xlang.ai/
+  provenance: independent
+  notes: 'Official OSWorld 2.0 leaderboard result (official=true, verified/run by the OSWorld team). Binary
+    accuracy (task success rate) at 300-step budget, full dataset scope (108 tasks), release v2026.06.24,
+    tool setting ''standard'', reasoning ''max''. Partial (weighted checkpoint) score: 35.8%. Estimated
+    total cost across the run: $1720. Source data pulled from the leaderboard''s JSON feed at https://osworld-v2.xlang.ai/static/data/leaderboard/official-results.json
+    (data updated 2026-09-03).'
+- model_id: claude-sonnet-4.6
+  benchmark_id: osworld-2.0
+  source_id: osworld
+  score: 8.3
+  score_unit: percent
+  n_items: 108
+  config:
+    reasoning_effort: max
+    tool_setting: standard
+    step_budget: 500
+    dataset_scope: full
+    release_version: v2026.06.24
+  harness: OSWorld reference agent
+  observed_on: '2026-09-03'
+  url: https://osworld-v2.xlang.ai/
+  provenance: independent
+  notes: 'Official OSWorld 2.0 leaderboard result (official=true, verified/run by the OSWorld team). Binary
+    accuracy (task success rate) at 500-step budget, full dataset scope (108 tasks), release v2026.06.24,
+    tool setting ''standard'', reasoning ''max''. Partial (weighted checkpoint) score: 41.5%. Estimated
+    total cost across the run: $2410. Source data pulled from the leaderboard''s JSON feed at https://osworld-v2.xlang.ai/static/data/leaderboard/official-results.json
+    (data updated 2026-09-03).'
+- model_id: gpt-5.5
+  benchmark_id: osworld-2.0
+  source_id: osworld
+  score: 13.0
+  score_unit: percent
+  n_items: 108
+  config:
+    reasoning_effort: xhigh
+    tool_setting: batch tool
+    step_budget: 150
+    dataset_scope: full
+    release_version: v2026.06.24
+  harness: OSWorld reference agent
+  observed_on: '2026-09-03'
+  url: https://osworld-v2.xlang.ai/
+  provenance: independent
+  notes: 'Official OSWorld 2.0 leaderboard result (official=true, verified/run by the OSWorld team). Binary
+    accuracy (task success rate) at 150-step budget, full dataset scope (108 tasks), release v2026.06.24,
+    tool setting ''batch tool'', reasoning ''xhigh''. Partial (weighted checkpoint) score: 46.7%. Estimated
+    total cost across the run: $1875. Source data pulled from the leaderboard''s JSON feed at https://osworld-v2.xlang.ai/static/data/leaderboard/official-results.json
+    (data updated 2026-09-03).'
+- model_id: gpt-5.5
+  benchmark_id: osworld-2.0
+  source_id: osworld
+  score: 13.0
+  score_unit: percent
+  n_items: 108
+  config:
+    reasoning_effort: xhigh
+    tool_setting: batch tool
+    step_budget: 300
+    dataset_scope: full
+    release_version: v2026.06.24
+  harness: OSWorld reference agent
+  observed_on: '2026-09-03'
+  url: https://osworld-v2.xlang.ai/
+  provenance: independent
+  notes: 'Official OSWorld 2.0 leaderboard result (official=true, verified/run by the OSWorld team). Binary
+    accuracy (task success rate) at 300-step budget, full dataset scope (108 tasks), release v2026.06.24,
+    tool setting ''batch tool'', reasoning ''xhigh''. Partial (weighted checkpoint) score: 49.5%. Estimated
+    total cost across the run: $2750. Source data pulled from the leaderboard''s JSON feed at https://osworld-v2.xlang.ai/static/data/leaderboard/official-results.json
+    (data updated 2026-09-03).'
+- model_id: gpt-5.5
+  benchmark_id: osworld-2.0
+  source_id: osworld
+  score: 13.0
+  score_unit: percent
+  n_items: 108
+  config:
+    reasoning_effort: xhigh
+    tool_setting: batch tool
+    step_budget: 500
+    dataset_scope: full
+    release_version: v2026.06.24
+  harness: OSWorld reference agent
+  observed_on: '2026-09-03'
+  url: https://osworld-v2.xlang.ai/
+  provenance: independent
+  notes: 'Official OSWorld 2.0 leaderboard result (official=true, verified/run by the OSWorld team). Binary
+    accuracy (task success rate) at 500-step budget, full dataset scope (108 tasks), release v2026.06.24,
+    tool setting ''batch tool'', reasoning ''xhigh''. Partial (weighted checkpoint) score: 49.5%. Estimated
+    total cost across the run: $2750. Source data pulled from the leaderboard''s JSON feed at https://osworld-v2.xlang.ai/static/data/leaderboard/official-results.json
+    (data updated 2026-09-03).'

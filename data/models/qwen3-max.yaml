@@ -1,0 +1,11 @@
+id: qwen3-max
+name: Qwen3-Max
+organization: Alibaba
+family: Qwen3
+release_date: 2025-09-05
+open_weights: false
+license: Proprietary
+aliases: [qwen3-max-preview]
+source_url: https://qwen.ai/blog?id=87dc93fc8a590dc718c77e1f6e84c07b474f6c5a&from=home.latest-research-list
+status: active
+

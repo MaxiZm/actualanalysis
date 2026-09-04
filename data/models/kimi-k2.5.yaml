@@ -1,0 +1,9 @@
+id: kimi-k2.5
+name: Kimi K2.5
+organization: Moonshot AI
+family: Kimi K2
+release_date: 2026-02-02
+open_weights: true
+source_url: https://arxiv.org/abs/2602.02276
+status: active
+

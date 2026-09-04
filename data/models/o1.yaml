@@ -1,0 +1,11 @@
+id: o1
+name: o1
+organization: OpenAI
+family: o-series
+release_date: 2024-12-05
+open_weights: false
+license: Proprietary
+aliases: [o1 (December 2024)]
+source_url: https://openai.com/index/introducing-chatgpt-pro/
+status: active
+

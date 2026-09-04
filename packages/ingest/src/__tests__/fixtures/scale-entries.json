@@ -1,0 +1,13 @@
+{
+  "entries": [
+    {
+      "model": "GPT-5.6 Sol (high)*",
+      "score": 59.1,
+      "confidenceInterval_upper": 3.56,
+      "company": "OpenAI",
+      "rank": 1,
+      "createdAt": "2026-08-14T00:00:00.000Z",
+      "deprecated": false
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+id: deepseek-v3.2
+name: DeepSeek-V3.2
+organization: DeepSeek
+family: DeepSeek V3
+release_date: 2025-12-01
+open_weights: true
+aliases: [Deepseek V3.2, deepseek-v3p2, deepseek-v3.2-chat, deepseek-v3.2-reasoner]
+source_url: https://api-docs.deepseek.com/news/news251201
+status: active
+

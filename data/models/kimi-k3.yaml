@@ -1,0 +1,10 @@
+id: kimi-k3
+name: Kimi K3
+organization: Moonshot AI
+family: Kimi K3
+release_date: 2026-07-16
+open_weights: true
+license: Modified MIT
+source_url: https://huggingface.co/moonshotai/Kimi-K3
+status: active
+

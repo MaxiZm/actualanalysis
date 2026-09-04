@@ -1,0 +1,26 @@
+id: claude-sonnet-4
+name: Claude Sonnet 4
+organization: Anthropic
+family: Claude 4
+release_date: 2025-05-22
+weights_date: 2025-05-14
+default_effort_tier: standard
+effort_tier_order: [standard, extended-thinking]
+open_weights: false
+license: Proprietary
+aliases: [claude-sonnet-4-20250514, claude-4-Sonnet]
+reasoning: true
+reasoning_config:
+  control: numeric_token_budget
+  parameter: thinking.budget_tokens
+  default: omitted
+  minimum: 1024
+source_url: https://www.anthropic.com/news/claude-4
+metadata_sources:
+  - https://platform.claude.com/docs/en/about-claude/model-deprecations
+  - https://platform.claude.com/docs/en/build-with-claude/extended-thinking
+  - https://www.anthropic.com/news/claude-4
+  - https://www-cdn.anthropic.com/4263b940cabb546aa0e3283f35b686f4f3b2ff47.pdf
+  - https://platform.claude.com/docs/en/release-notes/system-prompts/claude-sonnet-4
+status: active
+notes: Exact API snapshot claude-sonnet-4-20250514. Anthropic reports a March 2025 training cutoff and January 2025 reliable knowledge cutoff. No max_effort_tier is declared because the provider exposes a numeric budget without a single universal maximum for this snapshot.

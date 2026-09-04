@@ -1,0 +1,26 @@
+id: arc-agi-2-semi-private
+name: ARC-AGI-2 semi-private
+version: semi-private-120
+grader_version: ARC-AGI-2 pass@2 semi-private evaluation
+family_id: arc-agi
+aliases: [ARC AGI 2, ARC-AGI-2]
+tags: [chat]
+categories: [abstract-reasoning]
+domains: { agentic: 0, software-code: 0, reasoning: 1, knowledge-information: 0, communication-professional: 0 }
+holdout: semi_private
+holdout_details: Calibrated 120-task semi-private set used by the ARC Prize leaderboard; tasks may have limited API exposure.
+chance_level: 0
+obs_type: count
+public_release_date: 2025-03-24
+default_k: 1
+tool_policy: arc-grid-pass-at-2
+is_reference: true
+transform: { type: accuracy, input_scale: percent }
+n_items: 120
+harness_url: https://arcprize.org/arc-agi/2/
+source_ids: [arcprize, vendor-model-cards]
+metadata_sources:
+  - https://arcprize.org/arc-agi/2
+  - https://arcprize.org/blog/announcing-arc-agi-2-and-arc-prize-2025
+status: active
+notes: Coverage-selected ACI 1.2.1 reference for calibration edition 2026a. Each task outcome is pass/fail after at most two guesses, so the published pass@2 result is one counted outcome per task rather than two repeated trials.

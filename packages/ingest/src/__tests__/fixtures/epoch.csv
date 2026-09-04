@@ -1,0 +1,4 @@
+model_id,benchmark_id,model,benchmark,performance,source,observed_on
+epoch-gpt5,terminal-bench-4-0,"GPT-5",Terminal-Bench 4.0,0.42,Terminal-Bench,2026-08-31
+epoch-sonnet,hle,"Claude Sonnet 4.5","Humanity's Last Exam (no tools)",37.5,Scale,2026-08-31
+epoch-gpt5,metr,GPT-5,METR Time Horizons,0.696,METR,2026-08-31

@@ -1,0 +1,10 @@
+id: kimi-k2
+name: Kimi K2
+organization: Moonshot AI
+family: Kimi K2
+release_date: 2025-07-11
+open_weights: true
+aliases: [Kimi K2 (Jul 2025), kimi-k2-0711-preview, kimi-k2-instruct]
+source_url: https://moonshotai.github.io/Kimi-K2/
+status: active
+

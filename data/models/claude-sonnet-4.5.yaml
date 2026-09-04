@@ -1,0 +1,14 @@
+id: claude-sonnet-4.5
+name: Claude Sonnet 4.5
+organization: Anthropic
+family: Claude 4.5
+release_date: 2025-09-29
+open_weights: false
+license: Proprietary
+aliases:
+  - Claude 4.5 Sonnet
+  - claude-sonnet-4-5
+  - claude-sonnet-4-5-20250929
+  - claude-sonnet-4-5-20250929-thinking
+  - anthropic/claude-sonnet-4.5
+source_url: https://www.anthropic.com/news/claude-sonnet-4-5

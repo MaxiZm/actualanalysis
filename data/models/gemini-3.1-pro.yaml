@@ -1,0 +1,11 @@
+id: gemini-3.1-pro
+name: Gemini 3.1 Pro
+organization: Google DeepMind
+family: Gemini 3.1
+release_date: 2026-02-19
+open_weights: false
+license: Proprietary
+aliases: [Gemini 3.1 Pro Preview, Gemini 3.1 Pro (Preview), gemini-3.1-pro-preview]
+source_url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/
+status: active
+

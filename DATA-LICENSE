@@ -1,0 +1,20 @@
+ActualAnalysis redistributable data is licensed under the
+Creative Commons Attribution 4.0 International License (CC BY 4.0).
+
+Copyright (c) 2026 ActualAnalysis contributors.
+
+You are free to share and adapt the material for any purpose, including
+commercially, provided that you give appropriate credit, provide a link to the
+license, and indicate whether changes were made. You may not apply legal terms
+or technological measures that legally restrict others from doing anything the
+license permits.
+
+Full legal code: https://creativecommons.org/licenses/by/4.0/legalcode
+Human-readable summary: https://creativecommons.org/licenses/by/4.0/
+
+This license applies to redistributable registries and files under `data/` and
+to generated public snapshots unless a file states otherwise. It does NOT apply
+to `data/manual/speed-aa.yaml` or any other file explicitly marked
+`redistributable: false`. Third-party source material remains subject to its own
+license and terms; attribution metadata must be preserved.
+

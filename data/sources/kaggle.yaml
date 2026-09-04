@@ -1,0 +1,7 @@
+id: kaggle
+name: Kaggle benchmark result datasets
+url: https://www.kaggle.com/datasets
+license: Dataset-specific; verify before export
+kind: mirror
+redistributable: false
+

@@ -1,0 +1,10 @@
+id: gpt-6-astra
+name: GPT-6 Astra
+organization: OpenAI
+family: GPT-6
+release_date: 2026-09-03
+open_weights: false
+license: Proprietary
+status: active
+notes: Release metadata sourced from Epoch AI; no stable first-party release URL was present in the source row.
+

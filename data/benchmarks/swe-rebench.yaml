@@ -1,0 +1,25 @@
+id: swe-rebench
+name: SWE-rebench
+version: rolling
+family_id: swe-rebench
+aliases: [SWE Rebench, SWE-rebench leaderboard]
+tags: [agentic]
+categories: [software-engineering]
+domains: { agentic: 0.50, software-code: 0.45, reasoning: 0.05, knowledge-information: 0, communication-professional: 0 }
+holdout: rolling
+holdout_details: Continuously refreshed, decontaminated software-engineering tasks.
+chance_level: 0
+obs_type: count
+public_release_date: 2025-05-28
+default_k: 5
+tool_policy: Fixed ReAct agent with repository terminal, edit, and test tools; each result must pin its monthly task window and scaffold.
+transform: { type: accuracy, input_scale: percent }
+n_items: null
+harness_url: https://swe-rebench.com/
+source_ids: [swe-rebench]
+metadata_sources:
+  - https://arxiv.org/html/2505.20411
+  - https://github.com/SWE-rebench/SWE-rebench-V2
+  - https://swe-rebench.com/leaderboard
+status: watchlist
+notes: Excluded from ACI until each row identifies an immutable monthly task window, task count, harness commit, and whether it is V1 or V2.

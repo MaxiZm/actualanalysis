@@ -1,0 +1,16 @@
+{
+  "data": [
+    {
+      "name": "gpt-5-6-sol-high",
+      "actualModelName": "GPT-5.6 Sol",
+      "rank": 1,
+      "totalTasks": 127,
+      "avgSuccessRate": 0.72,
+      "passAtOne": { "avg": 0.72, "std": 0.04 },
+      "passAtFour": 0.91,
+      "passHatFour": 0.88,
+      "avgExecutionTime": 18.2,
+      "perRunCost": 1.25
+    }
+  ]
+}

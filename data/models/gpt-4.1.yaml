@@ -1,0 +1,20 @@
+id: gpt-4.1
+name: GPT-4.1
+organization: OpenAI
+family: GPT-4.1
+release_date: 2025-04-14
+weights_date: 2025-04-14
+default_effort_tier: default
+effort_tier_order: [default]
+open_weights: false
+license: Proprietary
+aliases: [gpt-4.1-2025-04-14]
+reasoning: false
+reasoning_config:
+  control: none
+source_url: https://openai.com/index/gpt-4-1/
+metadata_sources:
+  - https://developers.openai.com/api/docs/models/gpt-4.1
+  - https://openai.com/index/gpt-4-1/
+status: active
+notes: Exact API snapshot gpt-4.1-2025-04-14. Provider documents a June 2024 knowledge cutoff, not a training-data cutoff.

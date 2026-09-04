@@ -1,0 +1,31 @@
+id: arcprize
+name: ARC Prize leaderboard
+url: https://arcprize.org/leaderboard
+license: See upstream terms
+kind: scrape
+redistributable: false
+protocols:
+  - protocol_id: arcprize-arc2-standard-2025
+    benchmark_ids: [arc-agi-2-semi-private]
+    provenance: independent
+    effort_tier_rule: provider_default
+    harness_id: arc-prize-standard
+    harness_class: common
+    tool_policy: arc-grid-pass-at-2
+    benchmark_versions: { arc-agi-2-semi-private: semi-private-120 }
+    grader_versions: { arc-agi-2-semi-private: ARC-AGI-2 pass@2 semi-private evaluation }
+    config_match: { provider_adapter: false, data_subset: v2_Semi_Private }
+    valid_from: 2025-03-24
+    methodology_url: https://arcprize.org/arc-agi/2
+  - protocol_id: arcprize-arc2-provider-adapter-2025
+    benchmark_ids: [arc-agi-2-semi-private]
+    provenance: independent
+    effort_tier_rule: provider_default
+    harness_id: arc-prize-provider-adapter
+    harness_class: native
+    tool_policy: arc-grid-pass-at-2
+    benchmark_versions: { arc-agi-2-semi-private: semi-private-120 }
+    grader_versions: { arc-agi-2-semi-private: ARC-AGI-2 pass@2 semi-private evaluation }
+    config_match: { provider_adapter: true, data_subset: v2_Semi_Private }
+    valid_from: 2025-03-24
+    methodology_url: https://arcprize.org/arc-agi/2

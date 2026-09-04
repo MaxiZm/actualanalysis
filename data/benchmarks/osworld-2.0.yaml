@@ -1,0 +1,25 @@
+id: osworld-2.0
+name: OSWorld 2.0
+version: osworld-v2-2026.08.08
+grader_version: v2026.08.08 release plus osworld-v2-2026.08.08 manifest
+family_id: osworld
+aliases: [OSWorld v2, OSWorld2]
+tags: [agentic]
+categories: [computer-use]
+domains: { agentic: 0.75, software-code: 0.05, reasoning: 0.05, knowledge-information: 0.05, communication-professional: 0.10 }
+holdout: semi_private
+holdout_details: Official gated task assets and evaluators from the immutable 2026-08-08 release.
+chance_level: 0
+obs_type: count
+public_release_date: 2026-06-26
+tool_policy: osworld-v2-computer-use
+transform: { type: accuracy, input_scale: percent }
+n_items: 108
+harness_url: https://osworld-v2.xlang.ai/
+source_ids: [osworld, epoch, vendor-model-cards]
+metadata_sources:
+  - https://github.com/xlang-ai/OSWorld-V2
+  - https://github.com/xlang-ai/OSWorld-V2/releases/tag/v2026.08.08
+  - https://raw.githubusercontent.com/xlang-ai/OSWorld-V2/v2026.08.08/benchmark_releases/osworld-v2-2026.08.08.json
+status: watchlist
+notes: Kept separate from earlier versions. Excluded until an official repeat-count policy and row-level evaluation identity are available.

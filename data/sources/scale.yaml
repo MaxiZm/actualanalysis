@@ -1,0 +1,27 @@
+id: scale
+name: Scale Labs leaderboards
+url: https://labs.scale.com/leaderboard/humanitys_last_exam
+license: See upstream terms
+kind: scrape
+redistributable: false
+protocols:
+  - protocol_id: scale-hle-leaderboard-2025
+    benchmark_ids: [hle-no-tools]
+    provenance: independent
+    effort_tier_rule: provider_default
+    harness_id: scale-hle-leaderboard
+    harness_class: common
+    tool_policy: none
+    valid_from: 2025-01-23
+    methodology_url: https://labs.scale.com/leaderboard/humanitys_last_exam
+  - protocol_id: scale-swe-pro-public-2025
+    benchmark_ids: [swe-bench-pro-public]
+    provenance: independent
+    effort_tier_rule: provider_default
+    harness_id: scale-swe-pro-public
+    harness_class: unknown
+    tool_policy: repository-tools
+    benchmark_versions: { swe-bench-pro-public: public-731 }
+    grader_versions: { swe-bench-pro-public: scaleapi/SWE-bench_Pro-os@190335a486d5cfd7c05379287a5c146901544f8e }
+    valid_from: 2025-09-25
+    methodology_url: https://labs.scale.com/leaderboard/swe_bench_pro_public

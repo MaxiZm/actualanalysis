@@ -1,0 +1,10 @@
+id: mistral-medium-3
+name: Mistral Medium 3
+organization: Mistral AI
+family: Mistral Medium
+release_date: 2025-05-07
+open_weights: false
+license: Proprietary
+source_url: https://mistral.ai/news/mistral-medium-3
+status: active
+

@@ -1,0 +1,15 @@
+benchmark_name: METR-Horizon-v1.1
+long_tasks_version: 799cc9c4b4483a93fc3445623a49ea1bd74fdeb2
+results:
+  - model_id: GPT-5
+    benchmark_name: METR-Horizon-v1.1
+    release_date: 2025-08-07
+    p50_horizon_length:
+      estimate: 512
+      ci_low: 256
+      ci_high: 1024
+      is_sota: true
+    scaffolds:
+      - metr_agents/react
+  - model_id: missing-horizon
+    benchmark_name: METR-Horizon-v1.1

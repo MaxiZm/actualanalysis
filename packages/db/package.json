@@ -1,0 +1,29 @@
+{
+  "name": "@actualanalysis/db",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": "./src/index.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "generate": "drizzle-kit generate",
+    "migrate": "drizzle-kit migrate",
+    "seed": "tsx src/seed.ts",
+    "import-run": "tsx src/import-run.ts",
+    "import-snapshot": "tsx src/import-snapshot.ts",
+    "snapshot": "tsx src/snapshot.ts"
+  },
+  "dependencies": {
+    "@actualanalysis/ingest": "*",
+    "@actualanalysis/shared": "*",
+    "drizzle-orm": "1.0.0-beta.22",
+    "postgres": "^3.4.0",
+    "yaml": "^2.8.0",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "drizzle-kit": "1.0.0-beta.22"
+  }
+}

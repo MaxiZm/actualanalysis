@@ -1,0 +1,20 @@
+id: metr
+name: METR public benchmark results
+url: https://metr.org/time-horizons/
+data_url: https://metr.org/assets/benchmark_results_1_1.yaml
+license: See METR dataset terms
+kind: runner
+redistributable: false
+attribution: METR
+protocols:
+  - protocol_id: metr-time-horizon-1.1
+    benchmark_ids: [metr-time-horizon-1.1]
+    provenance: independent
+    effort_tier_rule: provider_default
+    harness_id: metr-time-horizon-1.1
+    harness_class: common
+    tool_policy: coding-agent-tools
+    benchmark_versions: { metr-time-horizon-1.1: "1.1" }
+    grader_versions: { metr-time-horizon-1.1: METR Time Horizon 1.1 Inspect evaluation and public analysis pipeline }
+    valid_from: 2026-01-29
+    methodology_url: https://metr.org/time-horizons/

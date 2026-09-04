@@ -1,0 +1,15 @@
+id: critpt
+name: CritPt
+version: current
+aliases: [Crit Pt, Critical Point benchmark]
+tags: [chat]
+categories: [reasoning]
+holdout: private
+holdout_details: Problems are unpublished.
+chance_level: 0
+transform: { type: accuracy, input_scale: percent }
+n_items: null
+harness_url: https://epoch.ai/benchmarks
+source_ids: [epoch]
+status: watchlist
+notes: Excluded until an immutable benchmark version, item count, grader, tool policy, domain shares, and source metadata are declared.

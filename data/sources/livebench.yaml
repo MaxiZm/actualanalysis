@@ -1,0 +1,7 @@
+id: livebench
+name: LiveBench
+url: https://livebench.ai/
+license: See upstream terms
+kind: runner
+redistributable: false
+

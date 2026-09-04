@@ -1,0 +1,21 @@
+id: llama-4-maverick
+name: Llama 4 Maverick
+organization: Meta AI
+family: Llama 4
+release_date: 2025-04-05
+weights_date: 2025-04-05
+default_effort_tier: default
+effort_tier_order: [default]
+open_weights: true
+license: Llama 4 Community License
+aliases: [llama4-maverick-17b-instruct, meta-llama/Llama-4-Maverick-17B-128E-Instruct]
+reasoning: false
+reasoning_config:
+  control: none
+source_url: https://huggingface.co/meta-llama/Llama-4-Maverick-17B-128E-Instruct
+metadata_sources:
+  - https://huggingface.co/meta-llama/Llama-4-Maverick-17B-128E-Instruct
+  - https://github.com/meta-llama/llama-models
+  - https://ai.meta.com/blog/llama-4-multimodal-intelligence/
+status: active
+notes: Exact open-weights release meta-llama/Llama-4-Maverick-17B-128E-Instruct. Meta documents an August 2024 pretraining cutoff; the month-only value is not coerced into an exact date.

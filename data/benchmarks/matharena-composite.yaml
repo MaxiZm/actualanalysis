@@ -1,0 +1,15 @@
+id: matharena-composite
+name: MathArena composite
+version: rolling-expected-performance
+aliases: [MathArena expected performance, Math Arena composite]
+tags: [chat]
+categories: [mathematics]
+holdout: rolling
+holdout_details: Composite of fresh mathematical competitions.
+chance_level: 0
+transform: { type: accuracy, input_scale: percent }
+n_items: null
+harness_url: https://matharena.ai/
+source_ids: [matharena]
+status: watchlist
+notes: Excluded until the rolling component manifest is frozen and the heterogeneous expected-performance composite has a validated likelihood.

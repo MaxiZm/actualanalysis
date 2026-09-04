@@ -1,0 +1,18 @@
+id: mcpmark
+name: MCPMark leaderboard
+url: https://mcpmark.ai/leaderboard
+license: See upstream terms
+kind: scrape
+redistributable: false
+protocols:
+  - protocol_id: mcpmark-1.2.0-leaderboard
+    benchmark_ids: [mcpmark]
+    provenance: independent
+    effort_tier_rule: highest_exposed
+    harness_id: mcpmark-1.2.0
+    harness_class: common
+    tool_policy: mcp-tools
+    benchmark_versions: { mcpmark: "1.2.0" }
+    grader_versions: { mcpmark: v1.2.0 verify.py task graders }
+    valid_from: 2025-09-20
+    methodology_url: https://github.com/eval-sys/mcpmark/releases/tag/v1.2.0

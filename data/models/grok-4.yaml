@@ -1,0 +1,11 @@
+id: grok-4
+name: Grok 4
+organization: xAI
+family: Grok 4
+release_date: 2025-07-09
+open_weights: false
+license: Proprietary
+aliases: [grok-4-0709]
+source_url: https://x.ai/news/grok-4
+status: active
+

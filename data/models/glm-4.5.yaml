@@ -1,0 +1,9 @@
+id: glm-4.5
+name: GLM-4.5
+organization: Z.ai
+family: GLM-4
+release_date: 2025-07-28
+open_weights: true
+source_url: https://arxiv.org/abs/2508.06471
+status: active
+

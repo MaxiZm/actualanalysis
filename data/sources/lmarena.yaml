@@ -1,0 +1,8 @@
+id: lmarena
+name: LMArena leaderboard dataset
+url: https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset
+license: CC-BY-4.0
+kind: runner
+redistributable: true
+redistributable_benchmark_ids: [lmarena-text-style-controlled]
+attribution: LMSYS Org / LMArena

@@ -1,0 +1,29 @@
+id: lmarena-text-style-controlled
+name: LMArena text, style-controlled
+version: rolling
+grader_version: Contextual Bradley-Terry style-control analysis; observation must pin the FastChat commit
+family_id: lmarena-text
+aliases: [Chatbot Arena style controlled, Arena text style control, text_style_control]
+tags: [chat]
+categories: [human-preference]
+domains: { agentic: 0.05, software-code: 0.05, reasoning: 0.10, knowledge-information: 0.15, communication-professional: 0.65 }
+holdout: rolling
+holdout_details: Live pairwise human preferences.
+chance_level: 0
+obs_type: elo
+public_release_date: 2024-08-29
+tool_policy: none
+transform:
+  type: elo
+  reference_model: gpt-5-2025-08-07
+  reference_elo: 1400
+  scale: 173.7178
+n_items: null
+harness_url: https://lmarena.ai/leaderboard/text
+source_ids: [lmarena]
+metadata_sources:
+  - https://arena.ai/blog/style-control
+  - https://github.com/lm-sys/FastChat/blob/main/fastchat/serve/monitor/elo_analysis.py
+  - https://arxiv.org/abs/2403.04132
+status: watchlist
+notes: The 1400 reference point is an internal ACI anchor. Excluded until one exact snapshot/filter/analysis commit is selected for a run and every row retains bootstrap uncertainty.

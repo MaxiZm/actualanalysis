@@ -1,0 +1,27 @@
+id: gdpval
+name: GDPval
+version: openai
+grader_version: Blind human-expert pairwise evaluation; evaluator panel and protocol are result metadata
+family_id: gdpval
+aliases: [GDPval OpenAI, GDP val]
+tags: [agentic]
+categories: [professional-tasks]
+domains: { agentic: 0.15, software-code: 0.05, reasoning: 0.05, knowledge-information: 0.20, communication-professional: 0.55 }
+holdout: private
+holdout_details: 220 gold examples are public and the current full 1,320-task evaluation is private.
+chance_level: 0
+obs_type: judge
+public_release_date: 2025-09-25
+default_k: 1
+tool_policy: One-shot digital deliverable production; file-generation tools and scaffolds must be declared per result.
+transform: { type: accuracy, input_scale: percent }
+n_items: 1320
+harness_url: https://openai.com/index/gdpval/
+source_ids: [epoch, openai-evals, vendor-model-cards]
+metadata_sources:
+  - https://openai.com/index/gdpval/
+  - https://arxiv.org/html/2510.04374
+  - https://evals.openai.com/
+status: watchlist
+promotion_rule: Active after reaching at least eight model configurations; demote if comparable coverage falls below that threshold.
+notes: The registry currently conflates public Gold-220 and private Full-1320 and the metric is human pairwise judgment, not accuracy. Excluded until identities and configurations are split. Never ingest GDPval-AA.

@@ -1,0 +1,53 @@
+name: Daily data pipeline
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "23 3 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: actualanalysis-data-pipeline
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    env:
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run migrate --workspace @actualanalysis/db
+      - run: npm run pipeline -- --all --commit-snapshot
+      - name: Commit public data and alias-review queue
+        id: snapshot
+        run: |
+          git config user.name "actualanalysis-bot"
+          git config user.email "actualanalysis-bot@users.noreply.github.com"
+          git add data/snapshots data/manual/unmapped.yaml
+          if git diff --cached --quiet; then
+            echo "commit_changed=false" >> "$GITHUB_OUTPUT"
+            echo "snapshot_changed=false" >> "$GITHUB_OUTPUT"
+            echo "No snapshot or alias-review change; leaving the repository untouched."
+            exit 0
+          fi
+          if git diff --cached --quiet -- data/snapshots; then
+            echo "snapshot_changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "snapshot_changed=true" >> "$GITHUB_OUTPUT"
+          fi
+          git commit -m "data: refresh public data"
+          git push
+          echo "commit_changed=true" >> "$GITHUB_OUTPUT"
+      - name: Trigger optional Vercel deployment
+        env:
+          VERCEL_DEPLOY_HOOK_URL: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
+        if: ${{ env.VERCEL_DEPLOY_HOOK_URL != '' && steps.snapshot.outputs.snapshot_changed == 'true' }}
+        run: curl --fail --silent --show-error --request POST "$VERCEL_DEPLOY_HOOK_URL"

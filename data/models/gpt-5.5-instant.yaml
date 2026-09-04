@@ -1,0 +1,10 @@
+id: gpt-5.5-instant
+name: GPT-5.5 Instant
+organization: OpenAI
+family: GPT-5
+release_date: 2026-05-05
+open_weights: false
+license: Proprietary
+source_url: https://openai.com/index/gpt-5-5-instant/
+status: active
+

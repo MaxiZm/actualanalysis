@@ -1,0 +1,10 @@
+id: glm-5
+name: GLM-5
+organization: Z.ai
+family: GLM-5
+release_date: 2026-02-12
+open_weights: true
+license: MIT
+source_url: https://z.ai/blog/glm-5
+status: active
+

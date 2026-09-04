@@ -1,0 +1,24 @@
+id: mrcr-v2-1m-8-needle
+name: MRCR v2 (1M, 8-needle bin)
+version: v2-1m-8
+family_id: mrcr
+aliases: [MRCR v2 1M 8 needle, MRCR 1M]
+tags: [chat]
+categories: [long-context]
+domains: { agentic: 0, software-code: 0, reasoning: 0.20, knowledge-information: 0.80, communication-professional: 0 }
+holdout: public
+chance_level: 0
+obs_type: judge
+public_release_date: 2025-12-05
+default_k: 1
+tool_policy: none
+transform: { type: accuracy, input_scale: percent }
+n_items: 100
+harness_url: https://huggingface.co/datasets/openai/mrcr
+source_ids: [vendor-model-cards]
+metadata_sources:
+  - https://huggingface.co/datasets/openai/mrcr
+  - https://github.com/google-deepmind/eval_hub/blob/master/eval_hub/mrcr_v2/README.md
+  - https://arxiv.org/abs/2409.12640
+status: watchlist
+notes: The evaluator emits a continuous sequence-match ratio, not binary accuracy. Excluded until an evaluator commit and reported uncertainty or audited default variance are pinned.

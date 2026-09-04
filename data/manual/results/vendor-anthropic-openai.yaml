@@ -1,0 +1,1111 @@
+results:
+  # ===================== Claude Fable 5.1 / Mythos 5.1 =====================
+  - model_id: claude-fable-5.1
+    benchmark_id: terminal-bench-4.0
+    source_id: vendor-model-cards
+    score: 55.8
+    score_unit: percent
+    config: { reasoning_effort: "high (Claude Code default)" }
+    harness: Claude Code
+    observed_on: 2026-09-01
+    url: https://www.anthropic.com/claude-fable-and-mythos-5-1
+    provenance: self_report
+    notes: System Card Table 8.1.A corroborates at a rounded 56%. Claude Mythos 5.1 (same weights, fewer safeguards) scored 60.9% on the same table but is not a registered model_id; logged in missing-models file.
+
+  - model_id: claude-fable-5.1
+    benchmark_id: swe-bench-pro-public
+    sample_only: true
+    source_id: vendor-model-cards
+    score: 81.2
+    score_unit: percent
+    config: { reasoning_effort: "max" }
+    observed_on: 2026-09-01
+    url: https://www-cdn.anthropic.com/0339e6a7c5c7b87f5c07798616dc32c215d14235/Claude%20Fable%205.1%20&%20Claude%20Mythos%205.1%20System%20Card.pdf
+    provenance: self_report
+    notes: System Card section 8.2 does not explicitly state public vs. private split; assumed to be the public 731-task set, consistent with how OpenAI explicitly labels its own self-reported "SWE-Bench Pro (Public)" figures for the same generation of models.
+
+  - model_id: claude-fable-5.1
+    benchmark_id: hle-no-tools
+    source_id: vendor-model-cards
+    score: 60.9
+    score_unit: percent
+    config: { reasoning_effort: "max", tools: false }
+    observed_on: 2026-09-01
+    url: https://www.anthropic.com/claude-fable-and-mythos-5-1
+    provenance: self_report
+
+  - model_id: claude-fable-5.1
+    benchmark_id: osworld-2.0
+    source_id: vendor-model-cards
+    sample_only: true
+    score: 77.9
+    score_unit: percent
+    config: { scoring: partial, task_release: "2026-08", reasoning_effort: max }
+    observed_on: 2026-09-01
+    url: https://www-cdn.anthropic.com/0339e6a7c5c7b87f5c07798616dc32c215d14235/Claude%20Fable%205.1%20&%20Claude%20Mythos%205.1%20System%20Card.pdf
+    provenance: self_report
+    notes: 108-task set, matches benchmark n_items. Anthropic reports both "partial" (mean per-task checkpoint credit) and "strict" (all-checkpoints) scoring; this is the partial score. Production safety classifiers were enabled; tasks where they intervened scored zero, likely depressing the result somewhat.
+
+  - model_id: claude-fable-5.1
+    benchmark_id: osworld-2.0
+    source_id: vendor-model-cards
+    score: 41.7
+    score_unit: percent
+    config: { scoring: strict, task_release: "2026-08", reasoning_effort: max }
+    observed_on: 2026-09-01
+    url: https://www-cdn.anthropic.com/0339e6a7c5c7b87f5c07798616dc32c215d14235/Claude%20Fable%205.1%20&%20Claude%20Mythos%205.1%20System%20Card.pdf
+    provenance: self_report
+    notes: Strict (all-checkpoints) pass rate counterpart to the partial-score result above.
+
+  - model_id: claude-fable-5.1
+    benchmark_id: arc-agi-2-semi-private
+    source_id: vendor-model-cards
+    score: 90.0
+    score_unit: percent
+    config: { reasoning_effort: max }
+    observed_on: 2026-09-01
+    url: https://www-cdn.anthropic.com/0339e6a7c5c7b87f5c07798616dc32c215d14235/Claude%20Fable%205.1%20&%20Claude%20Mythos%205.1%20System%20Card.pdf
+    provenance: self_report
+    notes: "Verified score reported by the ARC Prize Foundation on their semi-private validation set, per System Card section 8.16."
+
+  # ===================== Claude Fable 5 / Mythos 5 (comparison figures from the Fable 5.1 System Card) =====================
+  - model_id: claude-fable-5
+    benchmark_id: swe-bench-pro-public
+    sample_only: true
+    source_id: vendor-model-cards
+    score: 80
+    score_unit: percent
+    config: { reasoning_effort: max }
+    observed_on: 2026-09-01
+    url: https://www-cdn.anthropic.com/0339e6a7c5c7b87f5c07798616dc32c215d14235/Claude%20Fable%205.1%20&%20Claude%20Mythos%205.1%20System%20Card.pdf
+    provenance: self_report
+    notes: Comparison figure for Claude Fable 5, published in the Claude Fable 5.1 System Card (self-report by Anthropic about their own earlier model). Cross-validated against an identical 79.2%/80% split figure in the Claude Opus 5 System Card.
+
+  - model_id: claude-fable-5
+    benchmark_id: terminal-bench-4.0
+    source_id: vendor-model-cards
+    score: 42
+    score_unit: percent
+    config: { reasoning_effort: max }
+    observed_on: 2026-09-01
+    url: https://www-cdn.anthropic.com/0339e6a7c5c7b87f5c07798616dc32c215d14235/Claude%20Fable%205.1%20&%20Claude%20Mythos%205.1%20System%20Card.pdf
+    provenance: self_report
+    notes: Comparison figure for Claude Fable 5, published in the Claude Fable 5.1 System Card / announcement page.
+
+  - model_id: claude-fable-5
+    benchmark_id: hle-no-tools
+    source_id: vendor-model-cards
+    score: 57.8
+    score_unit: percent
+    config: { reasoning_effort: max, tools: false }
+    observed_on: 2026-09-01
+    url: https://www-cdn.anthropic.com/0339e6a7c5c7b87f5c07798616dc32c215d14235/Claude%20Fable%205.1%20&%20Claude%20Mythos%205.1%20System%20Card.pdf
+    provenance: self_report
+    notes: Comparison figure for Claude Fable 5, published in the Claude Fable 5.1 System Card.
+
+  - model_id: claude-fable-5
+    benchmark_id: osworld-2.0
+    source_id: vendor-model-cards
+    sample_only: true
+    score: 72.9
+    score_unit: percent
+    config: { scoring: partial, task_release: "2026-08", reasoning_effort: max }
+    observed_on: 2026-09-01
+    url: https://www-cdn.anthropic.com/0339e6a7c5c7b87f5c07798616dc32c215d14235/Claude%20Fable%205.1%20&%20Claude%20Mythos%205.1%20System%20Card.pdf
+    provenance: self_report
+    notes: Fable 5 re-run under the Fable 5.1 System Card's August-2026 task release for direct comparability.
+
+  - model_id: claude-fable-5
+    benchmark_id: osworld-2.0
+    source_id: vendor-model-cards
+    score: 36.1
+    score_unit: percent
+    config: { scoring: strict, task_release: "2026-08", reasoning_effort: max }
+    observed_on: 2026-09-01
+    url: https://www-cdn.anthropic.com/0339e6a7c5c7b87f5c07798616dc32c215d14235/Claude%20Fable%205.1%20&%20Claude%20Mythos%205.1%20System%20Card.pdf
+    provenance: self_report
+
+  - model_id: claude-fable-5
+    benchmark_id: arc-agi-2-semi-private
+    source_id: vendor-model-cards
+    score: 89.2
+    score_unit: percent
+    config: { reasoning_effort: max }
+    observed_on: 2026-09-01
+    url: https://www-cdn.anthropic.com/0339e6a7c5c7b87f5c07798616dc32c215d14235/Claude%20Fable%205.1%20&%20Claude%20Mythos%205.1%20System%20Card.pdf
+    provenance: self_report
+
+  # ===================== Claude Opus 5 =====================
+  - model_id: claude-opus-5
+    benchmark_id: swe-bench-pro-public
+    sample_only: true
+    source_id: vendor-model-cards
+    score: 79.2
+    score_unit: percent
+    config: { reasoning_effort: max }
+    observed_on: 2026-07-24
+    url: https://www-cdn.anthropic.com/b514064af1408018e64b1ad24e7d5e75850b4ffd/Claude%20Opus%205%20System%20Card.pdf
+    provenance: self_report
+    notes: System Card section 8.2 does not explicitly state public vs. private split; assumed to be the public 731-task set (see note on the Fable 5.1 entry).
+
+  - model_id: claude-opus-5
+    benchmark_id: hle-no-tools
+    source_id: vendor-model-cards
+    score: 56.3
+    score_unit: percent
+    config: { reasoning_effort: auto, tools: false }
+    observed_on: 2026-07-24
+    url: https://www-cdn.anthropic.com/b514064af1408018e64b1ad24e7d5e75850b4ffd/Claude%20Opus%205%20System%20Card.pdf
+    provenance: self_report
+
+  - model_id: claude-opus-5
+    benchmark_id: osworld-2.0
+    source_id: vendor-model-cards
+    sample_only: true
+    score: 75.4
+    score_unit: percent
+    config: { scoring: partial, task_release: "2026-08", reasoning_effort: max }
+    observed_on: 2026-09-01
+    url: https://www-cdn.anthropic.com/0339e6a7c5c7b87f5c07798616dc32c215d14235/Claude%20Fable%205.1%20&%20Claude%20Mythos%205.1%20System%20Card.pdf
+    provenance: self_report
+    notes: Anthropic re-ran Opus 5 under the August-2026 OSWorld 2.0 task release used for the Fable 5.1 System Card; this figure explicitly supersedes the 70.6% (70.57%) figure originally published in the Claude Opus 5 System Card, which used an earlier task file.
+    superseded_by: null
+
+  - model_id: claude-opus-5
+    benchmark_id: osworld-2.0
+    source_id: vendor-model-cards
+    score: 39.6
+    score_unit: percent
+    config: { scoring: strict, task_release: "2026-08", reasoning_effort: max }
+    observed_on: 2026-09-01
+    url: https://www-cdn.anthropic.com/0339e6a7c5c7b87f5c07798616dc32c215d14235/Claude%20Fable%205.1%20&%20Claude%20Mythos%205.1%20System%20Card.pdf
+    provenance: self_report
+
+  - model_id: claude-opus-5
+    benchmark_id: arc-agi-2-semi-private
+    source_id: vendor-model-cards
+    score: 90.42
+    score_unit: percent
+    config: { reasoning_effort: max }
+    observed_on: 2026-07-24
+    url: https://www-cdn.anthropic.com/b514064af1408018e64b1ad24e7d5e75850b4ffd/Claude%20Opus%205%20System%20Card.pdf
+    provenance: self_report
+    notes: "Verified score reported by the ARC Prize Foundation on their semi-private validation set."
+
+  - model_id: claude-opus-5
+    benchmark_id: arc-agi-3
+    source_id: vendor-model-cards
+    score: 30.16
+    score_unit: percent
+    config: { reasoning_effort: high }
+    observed_on: 2026-07-24
+    url: https://www-cdn.anthropic.com/b514064af1408018e64b1ad24e7d5e75850b4ffd/Claude%20Opus%205%20System%20Card.pdf
+    provenance: self_report
+    notes: "Verified score (Relative Human Action Efficiency) reported by the ARC Prize Foundation on the semi-private evaluation set. Result at max effort was not available at time of release."
+
+  # ===================== Claude Sonnet 5 =====================
+  - model_id: claude-sonnet-5
+    benchmark_id: swe-bench-pro-public
+    sample_only: true
+    source_id: vendor-model-cards
+    score: 63.2
+    score_unit: percent
+    config: { reasoning_effort: max }
+    observed_on: 2026-06-30
+    url: https://www-cdn.anthropic.com/480e0bb54327b9622282e9c39a83a4f490ed377e/Claude%20Sonnet%205%20System%20Card.pdf
+    provenance: self_report
+    notes: Assumed public 731-task set (see note on Fable 5.1 entry); Sonnet 5's own card does not report ARC-AGI, OSWorld 2.0, Terminal-Bench 4.0, FrontierMath, MRCR, SimpleQA, tau-bench, or Vending-Bench.
+
+  - model_id: claude-sonnet-5
+    benchmark_id: hle-no-tools
+    source_id: vendor-model-cards
+    score: 43.2
+    score_unit: percent
+    config: { reasoning_effort: max, tools: false }
+    observed_on: 2026-06-30
+    url: https://www-cdn.anthropic.com/480e0bb54327b9622282e9c39a83a4f490ed377e/Claude%20Sonnet%205%20System%20Card.pdf
+    provenance: self_report
+
+  # ===================== Claude Opus 4.8 =====================
+  - model_id: claude-opus-4.8
+    benchmark_id: swe-bench-pro-public
+    sample_only: true
+    source_id: vendor-model-cards
+    score: 69.2
+    score_unit: percent
+    config: { reasoning_effort: max }
+    observed_on: 2026-05-28
+    url: https://www-cdn.anthropic.com/0b4915911bb0d19eca5b5ee635c80fef830a37ea.pdf
+    provenance: self_report
+    notes: Assumed public 731-task set (see note on Fable 5.1 entry).
+
+  - model_id: claude-opus-4.8
+    benchmark_id: hle-no-tools
+    source_id: vendor-model-cards
+    score: 49.8
+    score_unit: percent
+    config: { reasoning_effort: max, tools: false }
+    observed_on: 2026-05-28
+    url: https://www-cdn.anthropic.com/0b4915911bb0d19eca5b5ee635c80fef830a37ea.pdf
+    provenance: self_report
+
+  - model_id: claude-opus-4.8
+    benchmark_id: vending-bench-2
+    source_id: vendor-model-cards
+    score: 2992.34
+    score_unit: currency
+    config: { reasoning_effort: max }
+    observed_on: 2026-05-28
+    url: https://www-cdn.anthropic.com/0b4915911bb0d19eca5b5ee635c80fef830a37ea.pdf
+    provenance: self_report
+    notes: Final simulated bank balance after one year, $500 starting balance. Unusually, the High-effort run outperformed Max effort (see next entry) - Anthropic's card does not fully explain the inversion.
+
+  - model_id: claude-opus-4.8
+    benchmark_id: vending-bench-2
+    source_id: vendor-model-cards
+    score: 5787.43
+    score_unit: currency
+    config: { reasoning_effort: high }
+    observed_on: 2026-05-28
+    url: https://www-cdn.anthropic.com/0b4915911bb0d19eca5b5ee635c80fef830a37ea.pdf
+    provenance: self_report
+    notes: Final simulated bank balance after one year, $500 starting balance; higher than the Max-effort run above.
+
+  - model_id: claude-opus-4.8
+    benchmark_id: arc-agi-3
+    source_id: vendor-model-cards
+    score: 1.52
+    score_unit: percent
+    config: { reasoning_effort: high }
+    observed_on: 2026-07-24
+    url: https://www-cdn.anthropic.com/b514064af1408018e64b1ad24e7d5e75850b4ffd/Claude%20Opus%205%20System%20Card.pdf
+    provenance: self_report
+    notes: Comparison figure for Claude Opus 4.8, published in the Claude Opus 5 System Card section 8.14.2. Run at high (not max) effort, the only published ARC-AGI-3 result for this model at the time.
+
+  # ===================== Claude Opus 4.7 =====================
+  - model_id: claude-opus-4.7
+    benchmark_id: swe-bench-pro-public
+    sample_only: true
+    source_id: vendor-model-cards
+    score: 64.3
+    score_unit: percent
+    config: { reasoning_effort: max }
+    observed_on: 2026-04-16
+    url: https://www-cdn.anthropic.com/037f06850df7fbe871e206dad004c3db5fd50340.pdf
+    provenance: self_report
+    notes: Assumed public 731-task set (see note on Fable 5.1 entry). Cross-validated by an identical 64.3% figure OpenAI cites for Claude Opus 4.7 on its GPT-5.5 announcement page.
+
+  - model_id: claude-opus-4.7
+    benchmark_id: hle-no-tools
+    source_id: vendor-model-cards
+    score: 46.9
+    score_unit: percent
+    config: { reasoning_effort: max, tools: false }
+    observed_on: 2026-04-16
+    url: https://www-cdn.anthropic.com/037f06850df7fbe871e206dad004c3db5fd50340.pdf
+    provenance: self_report
+
+  - model_id: claude-opus-4.7
+    benchmark_id: arc-agi-2-semi-private
+    sample_only: true
+    source_id: vendor-model-cards
+    score: 75.83
+    score_unit: percent
+    config: { reasoning_effort: max }
+    observed_on: 2026-04-16
+    url: https://www-cdn.anthropic.com/037f06850df7fbe871e206dad004c3db5fd50340.pdf
+    provenance: self_report
+    notes: "System Card section 8.11 describes the test set as a private validation set; treated as equivalent to the ARC Prize Foundation's semi-private held-out set used for verified scores (same terminology pattern as the Opus 4.6 and 4.5 cards)."
+
+  - model_id: claude-opus-4.7
+    benchmark_id: vending-bench-2
+    source_id: vendor-model-cards
+    score: 10937
+    score_unit: currency
+    config: { reasoning_effort: max }
+    observed_on: 2026-04-16
+    url: https://www-cdn.anthropic.com/037f06850df7fbe871e206dad004c3db5fd50340.pdf
+    provenance: self_report
+    notes: Final simulated bank balance after one year, $500 starting balance; a then-SOTA result.
+
+  - model_id: claude-opus-4.7
+    benchmark_id: vending-bench-2
+    source_id: vendor-model-cards
+    score: 7971
+    score_unit: currency
+    config: { reasoning_effort: high }
+    observed_on: 2026-04-16
+    url: https://www-cdn.anthropic.com/037f06850df7fbe871e206dad004c3db5fd50340.pdf
+    provenance: self_report
+
+  # ===================== Claude Opus 4.6 =====================
+  - model_id: claude-opus-4.6
+    benchmark_id: arc-agi-2-semi-private
+    sample_only: true
+    source_id: vendor-model-cards
+    score: 69.17
+    score_unit: percent
+    config: { reasoning_effort: high, thinking_budget: "120k" }
+    observed_on: 2026-02-06
+    url: https://www-cdn.anthropic.com/14e4fb01875d2a69f646fa5e574dea2b1c0ff7b5.pdf
+    provenance: self_report
+    notes: "System Card describes the test set as private validation set (see note on Opus 4.7). The card's own summary table elsewhere shows a rounded 68.8% for the same evaluation; using the more detailed methodology figure (120k thinking tokens, High effort) from the dedicated ARC-AGI section."
+
+  - model_id: claude-opus-4.6
+    benchmark_id: mrcr-v2-1m-8-needle
+    source_id: vendor-model-cards
+    score: 78.3
+    score_unit: percent
+    config: { thinking_budget: "64k", context_length: "1M (524k-1024k bin)", needle_count: 8 }
+    observed_on: 2026-02-06
+    url: https://www-cdn.anthropic.com/14e4fb01875d2a69f646fa5e574dea2b1c0ff7b5.pdf
+    provenance: self_report
+    notes: OpenAI MRCR v2, 8-needle, 1M bin (524k,1024k] tokens, Mean Match Ratio. Not reproducible via the public API since some problems exceed the 1M context limit; performance on the reproducible <1M subset is within 1pp.
+
+  - model_id: claude-opus-4.6
+    benchmark_id: mrcr-v2-1m-8-needle
+    source_id: vendor-model-cards
+    score: 76.0
+    score_unit: percent
+    config: { thinking_budget: max, adaptive_thinking: true, context_length: "1M (524k-1024k bin)", needle_count: 8 }
+    observed_on: 2026-02-06
+    url: https://www-cdn.anthropic.com/14e4fb01875d2a69f646fa5e574dea2b1c0ff7b5.pdf
+    provenance: self_report
+    notes: Same evaluation as above, at max effort with adaptive thinking enabled instead of a fixed 64k thinking budget.
+
+  # ===================== Claude Opus 4.5 =====================
+  - model_id: claude-opus-4.5
+    benchmark_id: arc-agi-2-semi-private
+    sample_only: true
+    source_id: vendor-model-cards
+    score: 37.6
+    score_unit: percent
+    config: { thinking_budget: "64k" }
+    observed_on: 2025-11-24
+    url: https://assets.anthropic.com/m/64823ba7485345a7/Claude-Opus-4-5-System-Card.pdf
+    provenance: self_report
+    notes: "System Card describes the test set as a private validation set (see note on Opus 4.7 entry)."
+
+  - model_id: claude-opus-4.5
+    benchmark_id: swe-bench-pro-public
+    sample_only: true
+    source_id: vendor-model-cards
+    score: 51.6
+    score_unit: percent
+    config: { thinking_budget: "64k" }
+    observed_on: 2025-11-24
+    url: https://assets.anthropic.com/m/64823ba7485345a7/Claude-Opus-4-5-System-Card.pdf
+    provenance: self_report
+    notes: "Card describes SWE-bench Pro (developed by Scale AI) as a 1,865-problem set without stating public/private split; assumed public (see note on Fable 5.1 entry). A no-thinking configuration scored 52.0%."
+
+  # ===================== Claude Sonnet 4.6 =====================
+  - model_id: claude-sonnet-4.6
+    benchmark_id: arc-agi-2-semi-private
+    sample_only: true
+    source_id: vendor-model-cards
+    score: 60.42
+    score_unit: percent
+    config: { reasoning_effort: high, thinking_budget: "120k" }
+    observed_on: 2026-02-17
+    url: https://www-cdn.anthropic.com/78073f739564e986ff3e28522761a7a0b4484f84.pdf
+    provenance: self_report
+    notes: "System Card describes the test set as a private validation set (see note on Opus 4.7 entry). The card's own summary table elsewhere shows a rounded 58.3% (different config); using the more detailed methodology figure from the dedicated ARC-AGI section."
+
+  - model_id: claude-sonnet-4.6
+    benchmark_id: vending-bench-2
+    source_id: vendor-model-cards
+    score: 7204.14
+    score_unit: currency
+    config: { reasoning_effort: max }
+    observed_on: 2026-02-17
+    url: https://www-cdn.anthropic.com/78073f739564e986ff3e28522761a7a0b4484f84.pdf
+    provenance: self_report
+    notes: Final simulated bank balance after one year, $500 starting balance.
+
+  - model_id: claude-sonnet-4.6
+    benchmark_id: vending-bench-2
+    source_id: vendor-model-cards
+    score: 6625.10
+    score_unit: currency
+    config: { reasoning_effort: high }
+    observed_on: 2026-02-17
+    url: https://www-cdn.anthropic.com/78073f739564e986ff3e28522761a7a0b4484f84.pdf
+    provenance: self_report
+
+  - model_id: claude-sonnet-4.6
+    benchmark_id: mrcr-v2-1m-8-needle
+    source_id: vendor-model-cards
+    score: 65.1
+    score_unit: percent
+    config: { thinking_budget: "64k", context_length: "1M (524k-1024k bin)", needle_count: 8 }
+    observed_on: 2026-02-17
+    url: https://www-cdn.anthropic.com/78073f739564e986ff3e28522761a7a0b4484f84.pdf
+    provenance: self_report
+    notes: OpenAI MRCR v2, 8-needle, 1M bin (524k,1024k] tokens, Mean Match Ratio.
+
+  - model_id: claude-sonnet-4.6
+    benchmark_id: mrcr-v2-1m-8-needle
+    source_id: vendor-model-cards
+    score: 65.8
+    score_unit: percent
+    config: { thinking_budget: max, context_length: "1M (524k-1024k bin)", needle_count: 8 }
+    observed_on: 2026-02-17
+    url: https://www-cdn.anthropic.com/78073f739564e986ff3e28522761a7a0b4484f84.pdf
+    provenance: self_report
+
+  # ===================== GPT-6 Astra =====================
+  - model_id: gpt-6-astra
+    benchmark_id: terminal-bench-4.0
+    source_id: vendor-model-cards
+    score: 57.9
+    score_unit: percent
+    config: { agent: Codex, note: "score is the max across effort levels per page methodology" }
+    harness: Codex
+    observed_on: 2026-09-03
+    url: https://openai.com/index/gpt-6-astra/
+    provenance: self_report
+
+  - model_id: gpt-6-astra
+    benchmark_id: frontiermath-v2-tier-4
+    source_id: vendor-model-cards
+    score: 97.6
+    score_unit: percent
+    config: { note: "score is the max across effort levels per page methodology" }
+    observed_on: 2026-09-03
+    url: https://openai.com/index/gpt-6-astra/
+    provenance: self_report
+    notes: Intro text rounds this to "98%, saturating the benchmark"; table value (97.6%) used as displayed.
+
+  - model_id: gpt-6-astra
+    benchmark_id: arc-agi-2-semi-private
+    source_id: vendor-model-cards
+    score: 95.0
+    score_unit: percent
+    config: { note: "score is the max across effort levels per page methodology" }
+    observed_on: 2026-09-03
+    url: https://openai.com/index/gpt-6-astra/
+    provenance: self_report
+
+  - model_id: gpt-6-astra
+    benchmark_id: arc-agi-3
+    source_id: vendor-model-cards
+    score: 99.9
+    score_unit: percent
+    config: { harness: "OpenAI Responses API harness with two settings changed vs. default (per footnote 1)", tier_note: "[T7]" }
+    observed_on: 2026-09-03
+    url: https://openai.com/index/gpt-6-astra/
+    provenance: self_report
+    notes: OpenAI states the harness changes "do not specifically target ARC-AGI-3." The "[T7]" annotation's meaning is not explained on the page.
+
+  - model_id: gpt-6-astra
+    benchmark_id: mrcr-v2-1m-8-needle
+    source_id: vendor-model-cards
+    score: 96.3
+    score_unit: percent
+    config: { context_bin: "512K-1M", needle_count: 8 }
+    observed_on: 2026-09-03
+    url: https://openai.com/index/gpt-6-astra/
+    provenance: self_report
+    notes: OpenAI reports this bin as "OpenAI MRCR v2 8-needle 512K-1M"; used here as the best available match for the registry's 1M/8-needle configuration.
+
+  # ===================== GPT-5.6 Sol / Terra / Luna =====================
+  - model_id: gpt-5.6-sol
+    benchmark_id: swe-bench-pro-public
+    source_id: vendor-model-cards
+    score: 64.6
+    score_unit: percent
+    observed_on: 2026-07-09
+    url: https://openai.com/index/gpt-5-6/
+    provenance: self_report
+
+  - model_id: gpt-5.6-sol
+    benchmark_id: osworld-2.0
+    sample_only: true
+    source_id: vendor-model-cards
+    score: 62.6
+    score_unit: percent
+    observed_on: 2026-07-09
+    url: https://openai.com/index/gpt-5-6/
+    provenance: self_report
+
+  - model_id: gpt-5.6-sol
+    benchmark_id: frontiermath-v2-tiers-1-3
+    source_id: vendor-model-cards
+    score: 89
+    score_unit: percent
+    observed_on: 2026-07-09
+    url: https://openai.com/index/gpt-5-6/
+    provenance: self_report
+
+  - model_id: gpt-5.6-sol
+    benchmark_id: frontiermath-v2-tier-4
+    source_id: vendor-model-cards
+    score: 83
+    score_unit: percent
+    observed_on: 2026-07-09
+    url: https://openai.com/index/gpt-5-6/
+    provenance: self_report
+
+  - model_id: gpt-5.6-sol
+    benchmark_id: arc-agi-3
+    source_id: vendor-model-cards
+    score: 7.78
+    score_unit: percent
+    config: { reasoning_effort: max }
+    observed_on: 2026-07-09
+    url: https://openai.com/index/gpt-5-6/
+    provenance: self_report
+
+  - model_id: gpt-5.6-sol
+    benchmark_id: mrcr-v2-1m-8-needle
+    source_id: vendor-model-cards
+    score: 73.8
+    score_unit: percent
+    config: { context_bin: "512K-1M", needle_count: 8 }
+    observed_on: 2026-07-09
+    url: https://openai.com/index/gpt-5-6/
+    provenance: self_report
+
+  - model_id: gpt-5.6-terra
+    benchmark_id: swe-bench-pro-public
+    source_id: vendor-model-cards
+    score: 63.4
+    score_unit: percent
+    observed_on: 2026-07-09
+    url: https://openai.com/index/gpt-5-6/
+    provenance: self_report
+
+  - model_id: gpt-5.6-terra
+    benchmark_id: osworld-2.0
+    sample_only: true
+    source_id: vendor-model-cards
+    score: 50.2
+    score_unit: percent
+    observed_on: 2026-07-09
+    url: https://openai.com/index/gpt-5-6/
+    provenance: self_report
+
+  - model_id: gpt-5.6-terra
+    benchmark_id: frontiermath-v2-tiers-1-3
+    source_id: vendor-model-cards
+    score: 84.9
+    score_unit: percent
+    observed_on: 2026-07-09
+    url: https://openai.com/index/gpt-5-6/
+    provenance: self_report
+
+  - model_id: gpt-5.6-terra
+    benchmark_id: frontiermath-v2-tier-4
+    source_id: vendor-model-cards
+    score: 68.3
+    score_unit: percent
+    observed_on: 2026-07-09
+    url: https://openai.com/index/gpt-5-6/
+    provenance: self_report
+
+  - model_id: gpt-5.6-terra
+    benchmark_id: arc-agi-3
+    source_id: vendor-model-cards
+    score: 0.8
+    score_unit: percent
+    observed_on: 2026-07-09
+    url: https://openai.com/index/gpt-5-6/
+    provenance: self_report
+
+  - model_id: gpt-5.6-terra
+    benchmark_id: mrcr-v2-1m-8-needle
+    source_id: vendor-model-cards
+    score: 72.5
+    score_unit: percent
+    config: { context_bin: "512K-1M", needle_count: 8 }
+    observed_on: 2026-07-09
+    url: https://openai.com/index/gpt-5-6/
+    provenance: self_report
+
+  - model_id: gpt-5.6-luna
+    benchmark_id: swe-bench-pro-public
+    source_id: vendor-model-cards
+    score: 62.7
+    score_unit: percent
+    observed_on: 2026-07-09
+    url: https://openai.com/index/gpt-5-6/
+    provenance: self_report
+
+  - model_id: gpt-5.6-luna
+    benchmark_id: osworld-2.0
+    sample_only: true
+    source_id: vendor-model-cards
+    score: 45.6
+    score_unit: percent
+    observed_on: 2026-07-09
+    url: https://openai.com/index/gpt-5-6/
+    provenance: self_report
+
+  - model_id: gpt-5.6-luna
+    benchmark_id: frontiermath-v2-tiers-1-3
+    source_id: vendor-model-cards
+    score: 78.6
+    score_unit: percent
+    observed_on: 2026-07-09
+    url: https://openai.com/index/gpt-5-6/
+    provenance: self_report
+
+  - model_id: gpt-5.6-luna
+    benchmark_id: frontiermath-v2-tier-4
+    source_id: vendor-model-cards
+    score: 58.5
+    score_unit: percent
+    observed_on: 2026-07-09
+    url: https://openai.com/index/gpt-5-6/
+    provenance: self_report
+
+  - model_id: gpt-5.6-luna
+    benchmark_id: arc-agi-3
+    source_id: vendor-model-cards
+    score: 0.18
+    score_unit: percent
+    observed_on: 2026-07-09
+    url: https://openai.com/index/gpt-5-6/
+    provenance: self_report
+
+  - model_id: gpt-5.6-luna
+    benchmark_id: mrcr-v2-1m-8-needle
+    source_id: vendor-model-cards
+    score: 41.3
+    score_unit: percent
+    config: { context_bin: "512K-1M", needle_count: 8 }
+    observed_on: 2026-07-09
+    url: https://openai.com/index/gpt-5-6/
+    provenance: self_report
+
+  # ===================== GPT-5.5 / GPT-5.5 Pro =====================
+  - model_id: gpt-5.5
+    benchmark_id: swe-bench-pro-public
+    source_id: vendor-model-cards
+    score: 58.6
+    score_unit: percent
+    config: { reasoning_effort: xhigh }
+    observed_on: 2026-04-23
+    url: https://openai.com/index/introducing-gpt-5-5/
+    provenance: self_report
+    notes: Page explicitly labels this row "SWE-Bench Pro (Public)" and flags noted memorization/contamination evidence on this eval.
+
+  - model_id: gpt-5.5
+    benchmark_id: gdpval
+    sample_only: true
+    source_id: vendor-model-cards
+    score: 84.9
+    score_unit: percent
+    config: { reasoning_effort: xhigh, metric: "wins or ties vs. human professionals" }
+    observed_on: 2026-04-23
+    url: https://openai.com/index/introducing-gpt-5-5/
+    provenance: self_report
+
+  - model_id: gpt-5.5
+    benchmark_id: frontiermath-v2-tiers-1-3
+    source_id: vendor-model-cards
+    score: 51.7
+    score_unit: percent
+    config: { reasoning_effort: xhigh }
+    observed_on: 2026-04-23
+    url: https://openai.com/index/introducing-gpt-5-5/
+    provenance: self_report
+
+  - model_id: gpt-5.5
+    benchmark_id: frontiermath-v2-tier-4
+    source_id: vendor-model-cards
+    score: 35.4
+    score_unit: percent
+    config: { reasoning_effort: xhigh }
+    observed_on: 2026-04-23
+    url: https://openai.com/index/introducing-gpt-5-5/
+    provenance: self_report
+
+  - model_id: gpt-5.5
+    benchmark_id: hle-no-tools
+    source_id: vendor-model-cards
+    score: 41.4
+    score_unit: percent
+    config: { reasoning_effort: xhigh, tools: false }
+    observed_on: 2026-04-23
+    url: https://openai.com/index/introducing-gpt-5-5/
+    provenance: self_report
+
+  - model_id: gpt-5.5
+    benchmark_id: mrcr-v2-1m-8-needle
+    source_id: vendor-model-cards
+    score: 74.0
+    score_unit: percent
+    config: { reasoning_effort: xhigh, context_bin: "512K-1M", needle_count: 8 }
+    observed_on: 2026-04-23
+    url: https://openai.com/index/introducing-gpt-5-5/
+    provenance: self_report
+
+  - model_id: gpt-5.5
+    benchmark_id: arc-agi-2-semi-private
+    source_id: vendor-model-cards
+    score: 85.0
+    score_unit: percent
+    config: { reasoning_effort: xhigh }
+    observed_on: 2026-04-23
+    url: https://openai.com/index/introducing-gpt-5-5/
+    provenance: self_report
+    notes: "Page labels this row \"ARC-AGI-2 (Verified)\"."
+
+  - model_id: gpt-5.5-pro
+    benchmark_id: gdpval
+    sample_only: true
+    source_id: vendor-model-cards
+    score: 82.3
+    score_unit: percent
+    config: { metric: "wins or ties vs. human professionals" }
+    observed_on: 2026-04-23
+    url: https://openai.com/index/introducing-gpt-5-5/
+    provenance: self_report
+
+  - model_id: gpt-5.5-pro
+    benchmark_id: frontiermath-v2-tiers-1-3
+    source_id: vendor-model-cards
+    score: 52.4
+    score_unit: percent
+    observed_on: 2026-04-23
+    url: https://openai.com/index/introducing-gpt-5-5/
+    provenance: self_report
+
+  - model_id: gpt-5.5-pro
+    benchmark_id: frontiermath-v2-tier-4
+    source_id: vendor-model-cards
+    score: 39.6
+    score_unit: percent
+    observed_on: 2026-04-23
+    url: https://openai.com/index/introducing-gpt-5-5/
+    provenance: self_report
+
+  - model_id: gpt-5.5-pro
+    benchmark_id: hle-no-tools
+    source_id: vendor-model-cards
+    score: 43.1
+    score_unit: percent
+    config: { tools: false }
+    observed_on: 2026-04-23
+    url: https://openai.com/index/introducing-gpt-5-5/
+    provenance: self_report
+
+  # ===================== GPT-5.4 / GPT-5.4 Pro (comparison figures on the GPT-5.5 announcement) =====================
+  - model_id: gpt-5.4
+    benchmark_id: swe-bench-pro-public
+    source_id: vendor-model-cards
+    score: 57.7
+    score_unit: percent
+    observed_on: 2026-04-23
+    url: https://openai.com/index/introducing-gpt-5-5/
+    provenance: self_report
+    notes: 'Page explicitly labels this row "SWE-Bench Pro (Public)".'
+
+  - model_id: gpt-5.4
+    benchmark_id: gdpval
+    sample_only: true
+    source_id: vendor-model-cards
+    score: 83.0
+    score_unit: percent
+    config: { metric: "wins or ties vs. human professionals" }
+    observed_on: 2026-04-23
+    url: https://openai.com/index/introducing-gpt-5-5/
+    provenance: self_report
+
+  - model_id: gpt-5.4
+    benchmark_id: frontiermath-v2-tiers-1-3
+    source_id: vendor-model-cards
+    score: 47.6
+    score_unit: percent
+    observed_on: 2026-04-23
+    url: https://openai.com/index/introducing-gpt-5-5/
+    provenance: self_report
+
+  - model_id: gpt-5.4
+    benchmark_id: frontiermath-v2-tier-4
+    source_id: vendor-model-cards
+    score: 27.1
+    score_unit: percent
+    observed_on: 2026-04-23
+    url: https://openai.com/index/introducing-gpt-5-5/
+    provenance: self_report
+
+  - model_id: gpt-5.4
+    benchmark_id: hle-no-tools
+    source_id: vendor-model-cards
+    score: 39.8
+    score_unit: percent
+    config: { tools: false }
+    observed_on: 2026-04-23
+    url: https://openai.com/index/introducing-gpt-5-5/
+    provenance: self_report
+
+  - model_id: gpt-5.4
+    benchmark_id: mrcr-v2-1m-8-needle
+    source_id: vendor-model-cards
+    score: 36.6
+    score_unit: percent
+    config: { context_bin: "512K-1M", needle_count: 8 }
+    observed_on: 2026-04-23
+    url: https://openai.com/index/introducing-gpt-5-5/
+    provenance: self_report
+
+  - model_id: gpt-5.4
+    benchmark_id: arc-agi-2-semi-private
+    source_id: vendor-model-cards
+    score: 73.3
+    score_unit: percent
+    observed_on: 2026-04-23
+    url: https://openai.com/index/introducing-gpt-5-5/
+    provenance: self_report
+    notes: 'Page labels this row "ARC-AGI-2 (Verified)".'
+
+  - model_id: gpt-5.4-pro
+    benchmark_id: gdpval
+    sample_only: true
+    source_id: vendor-model-cards
+    score: 82.0
+    score_unit: percent
+    config: { metric: "wins or ties vs. human professionals" }
+    observed_on: 2026-04-23
+    url: https://openai.com/index/introducing-gpt-5-5/
+    provenance: self_report
+
+  - model_id: gpt-5.4-pro
+    benchmark_id: frontiermath-v2-tiers-1-3
+    source_id: vendor-model-cards
+    score: 50.0
+    score_unit: percent
+    observed_on: 2026-04-23
+    url: https://openai.com/index/introducing-gpt-5-5/
+    provenance: self_report
+
+  - model_id: gpt-5.4-pro
+    benchmark_id: frontiermath-v2-tier-4
+    source_id: vendor-model-cards
+    score: 38.0
+    score_unit: percent
+    observed_on: 2026-04-23
+    url: https://openai.com/index/introducing-gpt-5-5/
+    provenance: self_report
+
+  - model_id: gpt-5.4-pro
+    benchmark_id: hle-no-tools
+    source_id: vendor-model-cards
+    score: 42.7
+    score_unit: percent
+    config: { tools: false }
+    observed_on: 2026-04-23
+    url: https://openai.com/index/introducing-gpt-5-5/
+    provenance: self_report
+
+  - model_id: gpt-5.4-pro
+    benchmark_id: arc-agi-2-semi-private
+    source_id: vendor-model-cards
+    score: 83.3
+    score_unit: percent
+    observed_on: 2026-04-23
+    url: https://openai.com/index/introducing-gpt-5-5/
+    provenance: self_report
+    notes: 'Page labels this row "ARC-AGI-2 (Verified)".'
+
+  # ===================== GPT-5.3-Codex / GPT-5.2-Codex =====================
+  - model_id: gpt-5.3-codex
+    benchmark_id: swe-bench-pro-public
+    source_id: vendor-model-cards
+    score: 56.8
+    score_unit: percent
+    config: { reasoning_effort: xhigh }
+    harness: Codex
+    observed_on: 2026-02-05
+    url: https://openai.com/index/introducing-gpt-5-3-codex/
+    provenance: self_report
+    notes: 'Page labels this row "SWE-Bench Pro (Public)".'
+
+  - model_id: gpt-5.3-codex
+    benchmark_id: gdpval
+    sample_only: true
+    source_id: vendor-model-cards
+    score: 70.9
+    score_unit: percent
+    config: { reasoning_effort: xhigh, metric: "wins or ties vs. human professionals" }
+    harness: Codex
+    observed_on: 2026-02-05
+    url: https://openai.com/index/introducing-gpt-5-3-codex/
+    provenance: self_report
+
+  - model_id: gpt-5.2-codex
+    benchmark_id: swe-bench-pro-public
+    source_id: vendor-model-cards
+    score: 56.4
+    score_unit: percent
+    config: { reasoning_effort: xhigh }
+    harness: Codex
+    observed_on: 2026-02-05
+    url: https://openai.com/index/introducing-gpt-5-3-codex/
+    provenance: self_report
+    notes: Comparison figure for GPT-5.2-Codex, published on the GPT-5.3-Codex announcement page (self-report by OpenAI about their own earlier model). Page labels this row "SWE-Bench Pro (Public)".
+
+  # ===================== GPT-5.2 / GPT-5.2 Pro / GPT-5.1 / GPT-5 =====================
+  - model_id: gpt-5.2
+    benchmark_id: gdpval
+    sample_only: true
+    source_id: vendor-model-cards
+    score: 70.9
+    score_unit: percent
+    config: { reasoning_effort: xhigh, metric: "wins or ties vs. human professionals" }
+    observed_on: 2025-12-11
+    url: https://openai.com/index/introducing-gpt-5-2/
+    provenance: self_report
+
+  - model_id: gpt-5.2
+    benchmark_id: swe-bench-pro-public
+    source_id: vendor-model-cards
+    score: 55.6
+    score_unit: percent
+    config: { reasoning_effort: xhigh }
+    observed_on: 2025-12-11
+    url: https://openai.com/index/introducing-gpt-5-2/
+    provenance: self_report
+    notes: 'Page labels this row "SWE-Bench Pro, Public". Cross-validated by an identical 55.6% figure on the GPT-5.3-Codex announcement page.'
+
+  - model_id: gpt-5.2
+    benchmark_id: hle-no-tools
+    source_id: vendor-model-cards
+    score: 34.5
+    score_unit: percent
+    config: { reasoning_effort: xhigh, tools: false }
+    observed_on: 2025-12-11
+    url: https://openai.com/index/introducing-gpt-5-2/
+    provenance: self_report
+
+  - model_id: gpt-5.2
+    benchmark_id: frontiermath-v2-tiers-1-3
+    source_id: vendor-model-cards
+    score: 40.3
+    score_unit: percent
+    config: { reasoning_effort: xhigh }
+    observed_on: 2025-12-11
+    url: https://openai.com/index/introducing-gpt-5-2/
+    provenance: self_report
+
+  - model_id: gpt-5.2
+    benchmark_id: frontiermath-v2-tier-4
+    source_id: vendor-model-cards
+    score: 14.6
+    score_unit: percent
+    config: { reasoning_effort: xhigh }
+    observed_on: 2025-12-11
+    url: https://openai.com/index/introducing-gpt-5-2/
+    provenance: self_report
+
+  - model_id: gpt-5.2
+    benchmark_id: arc-agi-2-semi-private
+    source_id: vendor-model-cards
+    score: 52.9
+    score_unit: percent
+    config: { reasoning_effort: xhigh }
+    observed_on: 2025-12-11
+    url: https://openai.com/index/introducing-gpt-5-2/
+    provenance: self_report
+    notes: 'Page labels this row "ARC-AGI-2 (Verified)".'
+
+  - model_id: gpt-5.2-pro
+    benchmark_id: gdpval
+    sample_only: true
+    source_id: vendor-model-cards
+    score: 74.1
+    score_unit: percent
+    config: { metric: "wins or ties vs. human professionals" }
+    observed_on: 2025-12-11
+    url: https://openai.com/index/introducing-gpt-5-2/
+    provenance: self_report
+
+  - model_id: gpt-5.2-pro
+    benchmark_id: hle-no-tools
+    source_id: vendor-model-cards
+    score: 36.6
+    score_unit: percent
+    config: { tools: false }
+    observed_on: 2025-12-11
+    url: https://openai.com/index/introducing-gpt-5-2/
+    provenance: self_report
+
+  - model_id: gpt-5.2-pro
+    benchmark_id: arc-agi-2-semi-private
+    source_id: vendor-model-cards
+    score: 54.2
+    score_unit: percent
+    config: { reasoning_effort: high }
+    observed_on: 2025-12-11
+    url: https://openai.com/index/introducing-gpt-5-2/
+    provenance: self_report
+    notes: 'Page labels this row "ARC-AGI-2 (Verified)"; run at high effort per footnote.'
+
+  - model_id: gpt-5.1
+    benchmark_id: swe-bench-pro-public
+    source_id: vendor-model-cards
+    score: 50.8
+    score_unit: percent
+    config: { reasoning_effort: high }
+    observed_on: 2025-12-11
+    url: https://openai.com/index/introducing-gpt-5-2/
+    provenance: self_report
+    notes: Comparison figure for GPT-5.1, published on the GPT-5.2 announcement page (self-report by OpenAI about their own earlier model). Page labels this row "SWE-Bench Pro, Public".
+
+  - model_id: gpt-5.1
+    benchmark_id: hle-no-tools
+    source_id: vendor-model-cards
+    score: 25.7
+    score_unit: percent
+    config: { reasoning_effort: high, tools: false }
+    observed_on: 2025-12-11
+    url: https://openai.com/index/introducing-gpt-5-2/
+    provenance: self_report
+    notes: Comparison figure for GPT-5.1, published on the GPT-5.2 announcement page.
+
+  - model_id: gpt-5.1
+    benchmark_id: frontiermath-v2-tiers-1-3
+    source_id: vendor-model-cards
+    score: 31.0
+    score_unit: percent
+    config: { reasoning_effort: high }
+    observed_on: 2025-12-11
+    url: https://openai.com/index/introducing-gpt-5-2/
+    provenance: self_report
+    notes: Comparison figure for GPT-5.1, published on the GPT-5.2 announcement page.
+
+  - model_id: gpt-5.1
+    benchmark_id: frontiermath-v2-tier-4
+    source_id: vendor-model-cards
+    score: 12.5
+    score_unit: percent
+    config: { reasoning_effort: high }
+    observed_on: 2025-12-11
+    url: https://openai.com/index/introducing-gpt-5-2/
+    provenance: self_report
+    notes: Comparison figure for GPT-5.1, published on the GPT-5.2 announcement page.
+
+  - model_id: gpt-5.1
+    benchmark_id: arc-agi-2-semi-private
+    source_id: vendor-model-cards
+    score: 17.6
+    score_unit: percent
+    config: { reasoning_effort: high }
+    observed_on: 2025-12-11
+    url: https://openai.com/index/introducing-gpt-5-2/
+    provenance: self_report
+    notes: Comparison figure for GPT-5.1, published on the GPT-5.2 announcement page. Page labels this row "ARC-AGI-2 (Verified)".
+
+  - model_id: gpt-5-2025-08-07
+    benchmark_id: gdpval
+    sample_only: true
+    source_id: vendor-model-cards
+    score: 38.8
+    score_unit: percent
+    config: { metric: "wins or ties vs. human professionals" }
+    observed_on: 2025-12-11
+    url: https://openai.com/index/introducing-gpt-5-2/
+    provenance: self_report
+    notes: Comparison figure for GPT-5, explicitly annotated "(GPT-5)" in the GPT-5.2 announcement's appendix table (used in place of a GPT-5.1 figure for this specific metric).

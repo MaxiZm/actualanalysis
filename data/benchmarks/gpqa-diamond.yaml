@@ -1,0 +1,26 @@
+id: gpqa-diamond
+name: GPQA Diamond
+version: diamond-198
+grader_version: GPQA Diamond answer key
+family_id: gpqa
+aliases: [GPQA diamond, GPQA-Diamond]
+tags: [chat]
+categories: [knowledge, reasoning]
+domains: { agentic: 0, software-code: 0, reasoning: 0.70, knowledge-information: 0.30, communication-professional: 0 }
+holdout: public
+holdout_details: Public, license-gated dataset; not a private holdout.
+chance_level: 0.25
+obs_type: count
+public_release_date: 2023-11-20
+default_k: 1
+tool_policy: none
+transform: { type: accuracy, input_scale: percent }
+n_items: 198
+harness_url: https://epoch.ai/data/gpqa
+source_ids: [epoch, vendor-model-cards]
+metadata_sources:
+  - https://github.com/idavidrein/gpqa
+  - https://arxiv.org/abs/2311.12022
+status: watchlist
+promotion_rule: Active after reaching at least eight model configurations; demote if comparable coverage falls below that threshold.
+notes: Identity is pinned, but the current snapshot has no mapped independent observations; held until ACI promotion criteria are met.

@@ -1,0 +1,11 @@
+id: claude-opus-5
+name: Claude Opus 5
+organization: Anthropic
+family: Claude 5
+release_date: 2026-07-24
+open_weights: false
+license: Proprietary
+aliases: [Opus 5, Claude-Opus-5]
+source_url: https://www.anthropic.com/news/claude-opus-5
+status: active
+

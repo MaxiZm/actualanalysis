@@ -1,0 +1,9 @@
+id: inkling
+name: Inkling
+organization: Thinking Machines
+family: Inkling
+release_date: 2026-07-15
+open_weights: true
+source_url: https://thinkingmachines.ai/news/introducing-inkling/
+status: active
+

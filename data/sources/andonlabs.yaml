@@ -1,0 +1,8 @@
+id: andonlabs
+name: Andon Labs
+url: https://andonlabs.com/evals/vending-bench-2
+license: No explicit dataset redistribution license identified
+kind: runner
+redistributable: false
+attribution: Andon Labs
+notes: Public Vending-Bench 2 leaderboard observations are ingestible with attribution but excluded from the CC-BY snapshot unless Andon Labs publishes an explicit redistribution grant.

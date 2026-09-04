@@ -1,0 +1,11 @@
+id: claude-fable-5
+name: Claude Fable 5
+organization: Anthropic
+family: Claude 5
+release_date: 2026-06-09
+open_weights: false
+license: Proprietary
+aliases: [Fable 5]
+source_url: https://www.anthropic.com/news/claude-fable-5-mythos-5
+status: active
+

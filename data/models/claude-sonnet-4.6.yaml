@@ -1,0 +1,10 @@
+id: claude-sonnet-4.6
+name: Claude Sonnet 4.6
+organization: Anthropic
+family: Claude 4.6
+release_date: 2026-02-17
+open_weights: false
+license: Proprietary
+source_url: https://www.anthropic.com/news/claude-sonnet-4-6
+status: active
+

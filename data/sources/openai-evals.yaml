@@ -1,0 +1,7 @@
+id: openai-evals
+name: OpenAI evaluations
+url: https://openai.com/index/gdpval/
+license: See upstream publication terms
+kind: runner
+redistributable: false
+

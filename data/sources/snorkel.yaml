@@ -1,0 +1,7 @@
+id: snorkel
+name: Snorkel Terminal-Bench mirror
+url: https://snorkel.ai/
+license: See upstream terms
+kind: mirror
+redistributable: false
+

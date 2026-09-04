@@ -1,0 +1,62 @@
+{
+  "n_models": 2,
+  "n_systems": 2,
+  "n_benchmarks": 2,
+  "n_families": 2,
+  "system_ids": ["model-a@max", "model-b@max"],
+  "benchmark_ids": ["hle-no-tools", "code-benchmark"],
+  "domains": ["agentic", "software-code", "reasoning", "knowledge-information", "communication-professional"],
+  "calibration_panel_system_ids": ["model-a@max", "model-b@max"],
+  "system_training_cutoff": [null, null],
+  "benchmark_family_ids": ["hle", "code"],
+  "benchmark_holdout": ["private", "private"],
+  "benchmark_public_release_date": [null, null],
+  "tiers": {
+    "verified": {"max_width": 1000, "min_domains": 1, "min_safe_cells": 1, "max_family_share": 1},
+    "ranked": {"max_width": 1000, "min_domains": 1, "min_safe_cells": 1, "max_family_share": 1},
+    "domain_max_width": 1000,
+    "profile_domain_weight_gate": 0.15
+  },
+  "profiles": {
+    "chat": {
+      "weights": {"agentic": 0, "software-code": 0.5, "reasoning": 0.5, "knowledge-information": 0, "communication-professional": 0},
+      "baskets": {"agentic": [], "software-code": ["code-benchmark"], "reasoning": ["hle-no-tools"], "knowledge-information": [], "communication-professional": []}
+    }
+  },
+  "system_model_index": [0, 1],
+  "system_profile_index": [1, 1],
+  "benchmark_family_index": [0, 1],
+  "benchmark_domains": [[0, 0, 1, 0, 0], [0, 1, 0, 0, 0]],
+  "reference_benchmark_index": 0,
+  "cell_system_index": [0, 0, 1, 1],
+  "cell_benchmark_index": [0, 1, 0, 1],
+  "benchmark_default_rho": [0, 0],
+  "benchmark_estimate_rho": [false, false],
+  "n_harness_effects": 0,
+  "observations": [
+    {"cell_index": 0, "system_index": 0, "benchmark_index": 0, "provenance_index": 0, "domain_index": 2, "likelihood": "normal", "y": -0.5, "variance": 0.1},
+    {"cell_index": 1, "system_index": 0, "benchmark_index": 1, "provenance_index": 0, "domain_index": 1, "likelihood": "normal", "y": -0.2, "variance": 0.1},
+    {"cell_index": 2, "system_index": 1, "benchmark_index": 0, "provenance_index": 0, "domain_index": 2, "likelihood": "normal", "y": 0.5, "variance": 0.1},
+    {"cell_index": 3, "system_index": 1, "benchmark_index": 1, "provenance_index": 1, "domain_index": 1, "likelihood": "normal", "y": 0.8, "variance": 0.1}
+  ],
+  "priors": {
+    "capability_sd": 3,
+    "difficulty_sd": 3,
+    "log_discrimination_sd": 0.6,
+    "domain_sd": 0.5,
+    "family_sd": 0.25,
+    "cell_misfit_sd": 0.35,
+    "cell_df": 4,
+    "self_report_mean": 0.15,
+    "self_report_sd": 0.15,
+    "run_noise_sd": 0.3,
+    "harness_sd": 0.25,
+    "effort_gain_mean": 0.3,
+    "effort_gain_sd": 0.3,
+    "effort_domain_gain_sd": 0.2
+  },
+  "inference": {"chains": 1, "warmup": 5, "samples": 5, "retained_draws": 5, "target_accept": 0.8},
+  "seed": 7,
+  "progress_bar": false
+  ,"metadata_incomplete_multiplier": 1.5
+}

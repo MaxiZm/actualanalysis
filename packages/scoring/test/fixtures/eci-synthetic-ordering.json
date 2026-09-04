@@ -1,0 +1,379 @@
+{
+  "fixture_kind": "synthetic_eci_compatibility",
+  "description": "Deterministic synthetic ordering gate for the ECI-compatible squared-loss path. This is not an export from eci-public and makes no real-data equivalence claim.",
+  "reference_benchmark_id": "eci-ref",
+  "reference_capabilities": {
+    "eci-synth-a": -2,
+    "eci-synth-b": -1.5,
+    "eci-synth-c": -1,
+    "eci-synth-d": -0.5,
+    "eci-synth-e": 0,
+    "eci-synth-f": 0.5,
+    "eci-synth-g": 1,
+    "eci-synth-h": 1.5,
+    "eci-synth-i": 2,
+    "eci-synth-j": 2.5
+  },
+  "cells": [
+    {
+      "model_id": "eci-synth-a",
+      "benchmark_id": "eci-ref",
+      "y": -2.01126481,
+      "tau": 0.08
+    },
+    {
+      "model_id": "eci-synth-a",
+      "benchmark_id": "eci-reasoning",
+      "y": -3.38198528,
+      "tau": 0.09
+    },
+    {
+      "model_id": "eci-synth-a",
+      "benchmark_id": "eci-coding",
+      "y": -1.0317286,
+      "tau": 0.1
+    },
+    {
+      "model_id": "eci-synth-a",
+      "benchmark_id": "eci-agents",
+      "y": -5.25554307,
+      "tau": 0.08
+    },
+    {
+      "model_id": "eci-synth-a",
+      "benchmark_id": "eci-math",
+      "y": -0.97647317,
+      "tau": 0.09
+    },
+    {
+      "model_id": "eci-synth-a",
+      "benchmark_id": "eci-preference",
+      "y": -2.40906112,
+      "tau": 0.1
+    },
+    {
+      "model_id": "eci-synth-b",
+      "benchmark_id": "eci-ref",
+      "y": -1.50995451,
+      "tau": 0.09
+    },
+    {
+      "model_id": "eci-synth-b",
+      "benchmark_id": "eci-reasoning",
+      "y": -2.74487668,
+      "tau": 0.1
+    },
+    {
+      "model_id": "eci-synth-b",
+      "benchmark_id": "eci-coding",
+      "y": -0.65247662,
+      "tau": 0.08
+    },
+    {
+      "model_id": "eci-synth-b",
+      "benchmark_id": "eci-agents",
+      "y": -4.42393562,
+      "tau": 0.09
+    },
+    {
+      "model_id": "eci-synth-b",
+      "benchmark_id": "eci-math",
+      "y": -0.70845753,
+      "tau": 0.1
+    },
+    {
+      "model_id": "eci-synth-b",
+      "benchmark_id": "eci-preference",
+      "y": -1.87619961,
+      "tau": 0.08
+    },
+    {
+      "model_id": "eci-synth-c",
+      "benchmark_id": "eci-ref",
+      "y": -0.9888233,
+      "tau": 0.1
+    },
+    {
+      "model_id": "eci-synth-c",
+      "benchmark_id": "eci-reasoning",
+      "y": -2.0781464,
+      "tau": 0.08
+    },
+    {
+      "model_id": "eci-synth-c",
+      "benchmark_id": "eci-coding",
+      "y": -0.24838184,
+      "tau": 0.09
+    },
+    {
+      "model_id": "eci-synth-c",
+      "benchmark_id": "eci-agents",
+      "y": -3.58449177,
+      "tau": 0.1
+    },
+    {
+      "model_id": "eci-synth-c",
+      "benchmark_id": "eci-math",
+      "y": -0.45346892,
+      "tau": 0.08
+    },
+    {
+      "model_id": "eci-synth-c",
+      "benchmark_id": "eci-preference",
+      "y": -1.37081672,
+      "tau": 0.09
+    },
+    {
+      "model_id": "eci-synth-d",
+      "benchmark_id": "eci-ref",
+      "y": -0.48994656,
+      "tau": 0.08
+    },
+    {
+      "model_id": "eci-synth-d",
+      "benchmark_id": "eci-reasoning",
+      "y": -1.41510691,
+      "tau": 0.09
+    },
+    {
+      "model_id": "eci-synth-d",
+      "benchmark_id": "eci-coding",
+      "y": 0.17240243,
+      "tau": 0.1
+    },
+    {
+      "model_id": "eci-synth-d",
+      "benchmark_id": "eci-agents",
+      "y": -2.71619265,
+      "tau": 0.08
+    },
+    {
+      "model_id": "eci-synth-d",
+      "benchmark_id": "eci-math",
+      "y": -0.17166169,
+      "tau": 0.09
+    },
+    {
+      "model_id": "eci-synth-d",
+      "benchmark_id": "eci-preference",
+      "y": -0.85385188,
+      "tau": 0.1
+    },
+    {
+      "model_id": "eci-synth-e",
+      "benchmark_id": "eci-ref",
+      "y": -0.01108771,
+      "tau": 0.09
+    },
+    {
+      "model_id": "eci-synth-e",
+      "benchmark_id": "eci-reasoning",
+      "y": -0.78172177,
+      "tau": 0.1
+    },
+    {
+      "model_id": "eci-synth-e",
+      "benchmark_id": "eci-coding",
+      "y": 0.56849161,
+      "tau": 0.08
+    },
+    {
+      "model_id": "eci-synth-e",
+      "benchmark_id": "eci-agents",
+      "y": -1.85547453,
+      "tau": 0.09
+    },
+    {
+      "model_id": "eci-synth-e",
+      "benchmark_id": "eci-math",
+      "y": 0.12340995,
+      "tau": 0.1
+    },
+    {
+      "model_id": "eci-synth-e",
+      "benchmark_id": "eci-preference",
+      "y": -0.30930588,
+      "tau": 0.08
+    },
+    {
+      "model_id": "eci-synth-f",
+      "benchmark_id": "eci-ref",
+      "y": 0.48984842,
+      "tau": 0.1
+    },
+    {
+      "model_id": "eci-synth-f",
+      "benchmark_id": "eci-reasoning",
+      "y": -0.14490833,
+      "tau": 0.08
+    },
+    {
+      "model_id": "eci-synth-f",
+      "benchmark_id": "eci-coding",
+      "y": 0.94767273,
+      "tau": 0.09
+    },
+    {
+      "model_id": "eci-synth-f",
+      "benchmark_id": "eci-agents",
+      "y": -1.02367878,
+      "tau": 0.1
+    },
+    {
+      "model_id": "eci-synth-f",
+      "benchmark_id": "eci-math",
+      "y": 0.39178039,
+      "tau": 0.08
+    },
+    {
+      "model_id": "eci-synth-f",
+      "benchmark_id": "eci-preference",
+      "y": 0.22390228,
+      "tau": 0.09
+    },
+    {
+      "model_id": "eci-synth-g",
+      "benchmark_id": "eci-ref",
+      "y": 1.01099785,
+      "tau": 0.08
+    },
+    {
+      "model_id": "eci-synth-g",
+      "benchmark_id": "eci-reasoning",
+      "y": 0.52158981,
+      "tau": 0.09
+    },
+    {
+      "model_id": "eci-synth-g",
+      "benchmark_id": "eci-coding",
+      "y": 1.35139927,
+      "tau": 0.1
+    },
+    {
+      "model_id": "eci-synth-g",
+      "benchmark_id": "eci-agents",
+      "y": -0.18455803,
+      "tau": 0.08
+    },
+    {
+      "model_id": "eci-synth-g",
+      "benchmark_id": "eci-math",
+      "y": 0.64665007,
+      "tau": 0.09
+    },
+    {
+      "model_id": "eci-synth-g",
+      "benchmark_id": "eci-preference",
+      "y": 0.72942894,
+      "tau": 0.1
+    },
+    {
+      "model_id": "eci-synth-h",
+      "benchmark_id": "eci-ref",
+      "y": 1.51024893,
+      "tau": 0.09
+    },
+    {
+      "model_id": "eci-synth-h",
+      "benchmark_id": "eci-reasoning",
+      "y": 1.1849224,
+      "tau": 0.1
+    },
+    {
+      "model_id": "eci-synth-h",
+      "benchmark_id": "eci-coding",
+      "y": 1.77225114,
+      "tau": 0.08
+    },
+    {
+      "model_id": "eci-synth-h",
+      "benchmark_id": "eci-agents",
+      "y": 0.68354992,
+      "tau": 0.09
+    },
+    {
+      "model_id": "eci-synth-h",
+      "benchmark_id": "eci-math",
+      "y": 0.92810145,
+      "tau": 0.1
+    },
+    {
+      "model_id": "eci-synth-h",
+      "benchmark_id": "eci-preference",
+      "y": 1.24604841,
+      "tau": 0.08
+    },
+    {
+      "model_id": "eci-synth-i",
+      "benchmark_id": "eci-ref",
+      "y": 1.98909286,
+      "tau": 0.1
+    },
+    {
+      "model_id": "eci-synth-i",
+      "benchmark_id": "eci-reasoning",
+      "y": 1.81854227,
+      "tau": 0.08
+    },
+    {
+      "model_id": "eci-synth-i",
+      "benchmark_id": "eci-coding",
+      "y": 2.16870917,
+      "tau": 0.09
+    },
+    {
+      "model_id": "eci-synth-i",
+      "benchmark_id": "eci-agents",
+      "y": 1.54458945,
+      "tau": 0.1
+    },
+    {
+      "model_id": "eci-synth-i",
+      "benchmark_id": "eci-math",
+      "y": 1.22328887,
+      "tau": 0.08
+    },
+    {
+      "model_id": "eci-synth-i",
+      "benchmark_id": "eci-preference",
+      "y": 1.79044757,
+      "tau": 0.09
+    },
+    {
+      "model_id": "eci-synth-j",
+      "benchmark_id": "eci-ref",
+      "y": 2.48965453,
+      "tau": 0.08
+    },
+    {
+      "model_id": "eci-synth-j",
+      "benchmark_id": "eci-reasoning",
+      "y": 2.4550647,
+      "tau": 0.09
+    },
+    {
+      "model_id": "eci-synth-j",
+      "benchmark_id": "eci-coding",
+      "y": 2.54782595,
+      "tau": 0.1
+    },
+    {
+      "model_id": "eci-synth-j",
+      "benchmark_id": "eci-agents",
+      "y": 2.37657922,
+      "tau": 0.08
+    },
+    {
+      "model_id": "eci-synth-j",
+      "benchmark_id": "eci-math",
+      "y": 1.49201618,
+      "tau": 0.09
+    },
+    {
+      "model_id": "eci-synth-j",
+      "benchmark_id": "eci-preference",
+      "y": 2.32399981,
+      "tau": 0.1
+    }
+  ]
+}

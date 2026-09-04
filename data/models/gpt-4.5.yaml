@@ -1,0 +1,11 @@
+id: gpt-4.5
+name: GPT-4.5
+organization: OpenAI
+family: GPT-4
+release_date: 2025-02-27
+open_weights: false
+license: Proprietary
+aliases: [GPT 4.5 Preview]
+source_url: https://openai.com/index/introducing-gpt-4-5/
+status: active
+

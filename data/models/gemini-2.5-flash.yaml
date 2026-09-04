@@ -1,0 +1,26 @@
+id: gemini-2.5-flash
+name: Gemini 2.5 Flash
+organization: Google DeepMind
+family: Gemini 2.5
+release_date: 2025-06-17
+default_effort_tier: "thinkingBudget=-1"
+max_effort_tier: "thinkingBudget=24576"
+open_weights: false
+license: Proprietary
+aliases:
+  - gemini-2.5-flash
+reasoning: true
+reasoning_config:
+  control: numeric_token_budget
+  parameter: thinkingBudget
+  default: -1
+  minimum: 0
+  maximum: 24576
+  thinking_can_be_disabled: true
+source_url: https://ai.google.dev/gemini-api/docs/models/gemini-2.5-flash
+metadata_sources:
+  - https://ai.google.dev/gemini-api/docs/models/gemini-2.5-flash
+  - https://ai.google.dev/gemini-api/docs/generate-content/thinking
+  - https://blog.google/products-and-platforms/products/gemini/gemini-2-5-model-family-expands/
+status: active
+notes: Exact stable API model ID gemini-2.5-flash. The provider documents a January 2025 knowledge cutoff, not a training-data cutoff. Dynamic thinking (-1) is not an ordinal tier, so effort_tier_order is intentionally omitted.

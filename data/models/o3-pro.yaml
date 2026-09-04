@@ -1,0 +1,10 @@
+id: o3-pro
+name: o3-pro
+organization: OpenAI
+family: o-series
+release_date: 2025-06-10
+open_weights: false
+license: Proprietary
+status: active
+notes: Release metadata sourced from Epoch AI; no stable first-party release URL was present in the source row.
+

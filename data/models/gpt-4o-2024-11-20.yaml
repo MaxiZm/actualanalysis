@@ -1,0 +1,20 @@
+id: gpt-4o-2024-11-20
+name: GPT-4o (Nov 2024)
+organization: OpenAI
+family: GPT-4o
+release_date: 2024-11-20
+weights_date: 2024-11-20
+default_effort_tier: default
+effort_tier_order: [default]
+open_weights: false
+license: Proprietary
+aliases: [GPT-4o (November 2024)]
+reasoning: false
+reasoning_config:
+  control: none
+source_url: https://help.openai.com/en/articles/9624314-model-release-notes
+metadata_sources:
+  - https://developers.openai.com/api/docs/models/gpt-4o
+  - https://help.openai.com/en/articles/9624314-model-release-notes
+status: active
+notes: Exact API snapshot gpt-4o-2024-11-20. Provider documents an October 2023 knowledge cutoff, not a training-data cutoff.

@@ -1,0 +1,538 @@
+note: Add aliases to data/models or data/benchmarks, then rerun ingestion.
+entries:
+  - kind: benchmark
+    value: Aider polyglot
+    source_id: epoch
+    occurrences: 45
+  - kind: benchmark
+    value: ANLI
+    source_id: epoch
+    occurrences: 9
+  - kind: benchmark
+    value: APEX-Agents
+    source_id: epoch
+    occurrences: 48
+  - kind: benchmark
+    value: ARC AI2
+    source_id: epoch
+    occurrences: 66
+  - kind: benchmark
+    value: ARC-AGI
+    source_id: epoch
+    occurrences: 75
+  - kind: benchmark
+    value: Balrog
+    source_id: epoch
+    occurrences: 27
+  - kind: benchmark
+    value: BBH
+    source_id: epoch
+    occurrences: 41
+  - kind: benchmark
+    value: CadEval
+    source_id: epoch
+    occurrences: 14
+  - kind: benchmark
+    value: Chess Puzzles
+    source_id: epoch
+    occurrences: 120
+  - kind: benchmark
+    value: CL-bench
+    source_id: epoch
+    occurrences: 19
+  - kind: benchmark
+    value: CL-bench Life
+    source_id: epoch
+    occurrences: 13
+  - kind: benchmark
+    value: Cybench
+    source_id: epoch
+    occurrences: 19
+  - kind: benchmark
+    value: DeepResearch Bench
+    source_id: epoch
+    occurrences: 24
+  - kind: benchmark
+    value: DTBench
+    source_id: epoch
+    occurrences: 145
+  - kind: benchmark
+    value: EBR-bench
+    source_id: epoch
+    occurrences: 20
+  - kind: benchmark
+    value: ExploitBench
+    source_id: epoch
+    occurrences: 8
+  - kind: benchmark
+    value: Fiction.LiveBench
+    source_id: epoch
+    occurrences: 50
+  - kind: benchmark
+    value: FrontierCode
+    source_id: epoch
+    occurrences: 26
+  - kind: benchmark
+    value: FrontierMath-2025-02-28-Private
+    source_id: epoch
+    occurrences: 36
+  - kind: benchmark
+    value: FrontierMath-Tier-4-2025-07-01-Private
+    source_id: epoch
+    occurrences: 27
+  - kind: benchmark
+    value: GeoBench
+    source_id: epoch
+    occurrences: 26
+  - kind: benchmark
+    value: GPQA diamond
+    source_id: epoch
+    occurrences: 178
+  - kind: benchmark
+    value: GSM8K
+    source_id: epoch
+    occurrences: 56
+  - kind: benchmark
+    value: GSO-Bench
+    source_id: epoch
+    occurrences: 24
+  - kind: benchmark
+    value: HellaSwag
+    source_id: epoch
+    occurrences: 52
+  - kind: benchmark
+    value: LAMBADA
+    source_id: epoch
+    occurrences: 20
+  - kind: benchmark
+    value: Lech Mazur Writing
+    source_id: epoch
+    occurrences: 43
+  - kind: benchmark
+    value: LMCA
+    source_id: epoch
+    occurrences: 114
+  - kind: benchmark
+    value: MATH level 5
+    source_id: epoch
+    occurrences: 85
+  - kind: benchmark
+    value: MirrorCode
+    source_id: epoch
+    occurrences: 7
+  - kind: benchmark
+    value: MMLU
+    source_id: epoch
+    occurrences: 102
+  - kind: benchmark
+    value: Mystery Game Puzzles
+    source_id: epoch
+    occurrences: 65
+  - kind: benchmark
+    value: OpenBookQA
+    source_id: epoch
+    occurrences: 32
+  - kind: benchmark
+    value: OSWorld
+    source_id: epoch
+    occurrences: 8
+  - kind: benchmark
+    value: OTIS Mock AIME 2024-2025
+    source_id: epoch
+    occurrences: 167
+  - kind: benchmark
+    value: PIQA
+    source_id: epoch
+    occurrences: 43
+  - kind: benchmark
+    value: PostTrainBench
+    source_id: epoch
+    occurrences: 11
+  - kind: benchmark
+    value: ProofBench
+    source_id: epoch
+    occurrences: 56
+  - kind: benchmark
+    value: Remote Labor Index
+    source_id: epoch
+    occurrences: 11
+  - kind: benchmark
+    value: ScienceQA
+    source_id: epoch
+    occurrences: 6
+  - kind: benchmark
+    value: SimpleBench
+    source_id: epoch
+    occurrences: 80
+  - kind: benchmark
+    value: Surface Evolver Bench
+    source_id: epoch
+    occurrences: 20
+  - kind: benchmark
+    value: SWE-Bench verified
+    source_id: epoch
+    occurrences: 32
+  - kind: benchmark
+    value: Terminal Bench
+    source_id: epoch
+    occurrences: 5
+  - kind: benchmark
+    value: The Agent Company
+    source_id: epoch
+    occurrences: 14
+  - kind: benchmark
+    value: TriviaQA
+    source_id: epoch
+    occurrences: 32
+  - kind: benchmark
+    value: VPCT
+    source_id: epoch
+    occurrences: 26
+  - kind: benchmark
+    value: WeirdML
+    source_id: epoch
+    occurrences: 117
+  - kind: benchmark
+    value: Winogrande
+    source_id: epoch
+    occurrences: 63
+  - kind: model
+    value: Claude 3 Opus
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: DeepSeek V4 Flash 0731
+    source_id: epoch
+    occurrences: 4
+  - kind: model
+    value: DeepSeek V4 Pro 0813
+    source_id: epoch
+    occurrences: 4
+  - kind: model
+    value: DeepSeek-R1
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: DeepSeek-R1 (May 2025)
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: DeepSeek-V4-Pro
+    source_id: epoch
+    occurrences: 3
+  - kind: model
+    value: Gemini 2.0 Flash (Feb 2025)
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Gemini 2.5 Flash (May 2025)
+    source_id: epoch
+    occurrences: 2
+  - kind: model
+    value: Gemini 3.1 Flash-Lite
+    source_id: epoch
+    occurrences: 2
+  - kind: model
+    value: Gemini 3.5 Flash
+    source_id: epoch
+    occurrences: 5
+  - kind: model
+    value: Gemini 3.5 Flash-Lite
+    source_id: epoch
+    occurrences: 3
+  - kind: model
+    value: Gemini 3.6 Flash
+    source_id: epoch
+    occurrences: 5
+  - kind: model
+    value: Gemma 4 31B IT
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: GLM-4.7
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: GLM-5.1
+    source_id: epoch
+    occurrences: 2
+  - kind: model
+    value: GLM-5.3-Flash
+    source_id: epoch
+    occurrences: 3
+  - kind: model
+    value: GPT-3.5 Turbo (Jan 2024)
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: GPT-4 Turbo (Apr 2024)
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: GPT-4o (Aug 2024)
+    source_id: epoch
+    occurrences: 2
+  - kind: model
+    value: GPT-4o mini
+    source_id: epoch
+    occurrences: 3
+  - kind: model
+    value: GPT-5.4 Mini
+    source_id: epoch
+    occurrences: 4
+  - kind: model
+    value: GPT-5.4 Nano
+    source_id: epoch
+    occurrences: 4
+  - kind: model
+    value: Grok 3
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Grok 4.3 Beta
+    source_id: epoch
+    occurrences: 3
+  - kind: model
+    value: Grok-3 mini
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Inkling-Small
+    source_id: epoch
+    occurrences: 4
+  - kind: model
+    value: Kimi K2.6
+    source_id: epoch
+    occurrences: 4
+  - kind: model
+    value: Kimi K2.7 Code
+    source_id: epoch
+    occurrences: 4
+  - kind: model
+    value: Llama 4 Scout
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Magistral Small 1.0
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: MiniMax-M2.5
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: MiniMax-M3
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Muse Spark 1.2
+    source_id: epoch
+    occurrences: 2
+  - kind: model
+    value: o1-mini
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Qwen 3.5 Flash (hosted 35B-A3B)
+    source_id: epoch
+    occurrences: 2
+  - kind: model
+    value: Qwen 3.5 Plus (hosted 397B-A17B)
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Qwen 3.6 35B-A3B
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Qwen 3.6 Flash
+    source_id: epoch
+    occurrences: 2
+  - kind: model
+    value: Qwen 3.6 Max (Preview)
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Qwen 3.6 Plus
+    source_id: epoch
+    occurrences: 2
+  - kind: model
+    value: Qwen3-235B-A22B-Thinking (Jul 2025)
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Qwen3.6 27B
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Qwen3.7 Flash
+    source_id: epoch
+    occurrences: 1
+  - kind: model
+    value: Qwen3.7-Max
+    source_id: epoch
+    occurrences: 3
+  - kind: model
+    value: Qwen3.7-Plus
+    source_id: epoch
+    occurrences: 2
+  - kind: model
+    value: deepseek-v3.1
+    source_id: mcpmark
+    occurrences: 1
+  - kind: model
+    value: deepseek-v3.1-terminus
+    source_id: mcpmark
+    occurrences: 2
+  - kind: model
+    value: kimi-k2-0905-preview
+    source_id: mcpmark
+    occurrences: 1
+  - kind: model
+    value: Claude Opus 3
+    source_id: metr
+    occurrences: 1
+  - kind: model
+    value: Claude Sonnet 3.7
+    source_id: metr
+    occurrences: 1
+  - kind: model
+    value: claude-mythos-preview-early
+    source_id: metr
+    occurrences: 1
+  - kind: model
+    value: davinci-002
+    source_id: metr
+    occurrences: 1
+  - kind: model
+    value: gpt-3-5-turbo-instruct
+    source_id: metr
+    occurrences: 1
+  - kind: model
+    value: gpt-4
+    source_id: metr
+    occurrences: 1
+  - kind: model
+    value: gpt-4-1106
+    source_id: metr
+    occurrences: 1
+  - kind: model
+    value: gpt-4-turbo
+    source_id: metr
+    occurrences: 1
+  - kind: model
+    value: gpt-4o
+    source_id: metr
+    occurrences: 1
+  - kind: model
+    value: gpt2
+    source_id: metr
+    occurrences: 1
+  - kind: model
+    value: o1-preview
+    source_id: metr
+    occurrences: 1
+  - kind: model
+    value: codestral-2405
+    source_id: scale
+    occurrences: 1
+  - kind: model
+    value: Gemini 2.5 Flash Preview (May 2025)
+    source_id: scale
+    occurrences: 1
+  - kind: model
+    value: gemini-3.1-flash-lite-preview
+    source_id: scale
+    occurrences: 1
+  - kind: model
+    value: gemma-3-27b-it
+    source_id: scale
+    occurrences: 1
+  - kind: model
+    value: glm-4p5
+    source_id: scale
+    occurrences: 1
+  - kind: model
+    value: glm-4p5-air
+    source_id: scale
+    occurrences: 1
+  - kind: model
+    value: llama3-1-405b-instruct
+    source_id: scale
+    occurrences: 1
+  - kind: model
+    value: minimax-2.1
+    source_id: scale
+    occurrences: 1
+  - kind: model
+    value: Anthropic Claude Code Agent
+    source_id: swe-rebench
+    occurrences: 1
+  - kind: model
+    value: Anthropic Fable 5 [high] Model
+    source_id: swe-rebench
+    occurrences: 1
+  - kind: model
+    value: Anthropic Opus 5 [high] Model
+    source_id: swe-rebench
+    occurrences: 1
+  - kind: model
+    value: Anthropic Sonnet 5 [high] Model
+    source_id: swe-rebench
+    occurrences: 1
+  - kind: model
+    value: Cursor Cursor Agent
+    source_id: swe-rebench
+    occurrences: 1
+  - kind: model
+    value: DeepSeek DeepSeek-V4 Pro [high] Model
+    source_id: swe-rebench
+    occurrences: 1
+  - kind: model
+    value: Grok Grok 4.5 [high] Model
+    source_id: swe-rebench
+    occurrences: 1
+  - kind: model
+    value: Junie Junie Agent
+    source_id: swe-rebench
+    occurrences: 1
+  - kind: model
+    value: Minimax MiniMax M3 Model
+    source_id: swe-rebench
+    occurrences: 1
+  - kind: model
+    value: OpenAI Codex Agent
+    source_id: swe-rebench
+    occurrences: 1
+  - kind: model
+    value: OpenAI GPT-5.6 Luna [medium] Model
+    source_id: swe-rebench
+    occurrences: 1
+  - kind: model
+    value: OpenAI GPT-5.6 Sol [medium] Model
+    source_id: swe-rebench
+    occurrences: 1
+  - kind: model
+    value: Qwen Qwen3.5-35B-A3B Model
+    source_id: swe-rebench
+    occurrences: 1
+  - kind: model
+    value: Qwen Qwen3.6-27B Model
+    source_id: swe-rebench
+    occurrences: 1
+  - kind: model
+    value: Qwen Qwen3.6-35B-A3B Model
+    source_id: swe-rebench
+    occurrences: 1
+  - kind: model
+    value: XiaomiMiMo MiMo V2.5 Pro Model
+    source_id: swe-rebench
+    occurrences: 1
+  - kind: model
+    value: Z.ai GLM-5.2 [high] Model
+    source_id: swe-rebench
+    occurrences: 1
+  - kind: model
+    value: Grok 4.2
+    source_id: taubench
+    occurrences: 1

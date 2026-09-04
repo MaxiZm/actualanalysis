@@ -1,0 +1,22 @@
+id,name,url,license,attribution,kind,redistributable,redistributableBenchmarkIds
+aa-speed-manual,Artificial Analysis speed observations (manual isolation),https://artificialanalysis.ai/,Non-redistributable; use may conflict with Artificial Analysis Data Platform Terms,,manual,false,[]
+andonlabs,Andon Labs,https://andonlabs.com/evals/vending-bench-2,No explicit dataset redistribution license identified,Andon Labs,runner,false,[]
+arcprize,ARC Prize leaderboard,https://arcprize.org/leaderboard,See upstream terms,,scrape,false,[]
+datacurve,Datacurve DeepSWE,https://deepswe.datacurve.ai/,See upstream terms,,runner,false,[]
+epoch,Epoch AI benchmark hub,https://epoch.ai/data/eci_benchmarks.csv,CC-BY-4.0 (dataset; verify per linked benchmark),Epoch AI,mirror,true,"[""frontiermath-v2-tier-4"",""frontiermath-v2-tiers-1-3""]"
+kaggle,Kaggle benchmark result datasets,https://www.kaggle.com/datasets,Dataset-specific; verify before export,,mirror,false,[]
+livebench,LiveBench,https://livebench.ai/,See upstream terms,,runner,false,[]
+livecodebench,LiveCodeBench,https://livecodebench.github.io/,See upstream terms,,runner,false,[]
+lmarena,LMArena leaderboard dataset,https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset,CC-BY-4.0,LMSYS Org / LMArena,runner,true,"[""lmarena-text-style-controlled""]"
+matharena,MathArena,https://matharena.ai/,See upstream dataset or competition terms,,runner,false,[]
+mcpmark,MCPMark leaderboard,https://mcpmark.ai/leaderboard,See upstream terms,,scrape,false,[]
+metr,METR public benchmark results,https://metr.org/time-horizons/,See METR dataset terms,METR,runner,false,[]
+openai-evals,OpenAI evaluations,https://openai.com/index/gdpval/,See upstream publication terms,,runner,false,[]
+openrouter,OpenRouter public models API,https://openrouter.ai/docs/api/api-reference/models/get-models,OpenRouter API terms,,runner,false,[]
+osworld,OSWorld official leaderboard,https://osworld-v2.xlang.ai/,See upstream terms,,runner,false,[]
+scale,Scale Labs leaderboards,https://labs.scale.com/leaderboard/humanitys_last_exam,See upstream terms,,scrape,false,[]
+snorkel,Snorkel Terminal-Bench mirror,https://snorkel.ai/,See upstream terms,,mirror,false,[]
+swe-rebench,Nebius SWE-rebench leaderboard,https://swe-rebench.com/leaderboard,CC-BY-4.0,Nebius AI,runner,true,"[""swe-rebench""]"
+taubench,tau-bench leaderboard,https://taubench.com/,See upstream terms,,self_report,false,[]
+tbench,Terminal-Bench official leaderboard,https://www.tbench.ai/leaderboard,Upstream site terms; benchmark harness is Apache-2.0,,scrape,false,[]
+vendor-model-cards,Vendor model cards,https://huggingface.co/docs/hub/model-cards,Source-specific; factual score citations only,,self_report,false,[]

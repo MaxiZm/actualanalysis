@@ -1,0 +1,11 @@
+id: qwen3-235b-a22b
+name: Qwen3 235B A22B
+organization: Alibaba
+family: Qwen3
+release_date: 2025-04-29
+open_weights: true
+license: Apache-2.0
+aliases:
+  - Qwen3-235B-A22B
+  - qwen/qwen3-235b-a22b
+source_url: https://huggingface.co/Qwen/Qwen3-235B-A22B

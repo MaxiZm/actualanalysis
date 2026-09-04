@@ -1,0 +1,7 @@
+id: vendor-model-cards
+name: Vendor model cards
+url: https://huggingface.co/docs/hub/model-cards
+license: Source-specific; factual score citations only
+kind: self_report
+redistributable: false
+notes: This registry entry describes a source category; every observation must link its exact vendor page and is superseded by an independent result.

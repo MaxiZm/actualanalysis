@@ -1,0 +1,21 @@
+id: gpt-5.2
+name: GPT-5.2
+organization: OpenAI
+family: GPT-5
+release_date: 2025-12-11
+open_weights: false
+license: Proprietary
+aliases: [gpt-5.2-2025-12-11]
+default_effort_tier: none
+max_effort_tier: xhigh
+effort_tier_order: [none, low, medium, high, xhigh]
+reasoning: true
+reasoning_config:
+  control: categorical
+  parameter: reasoning.effort
+source_url: https://openai.com/index/introducing-gpt-5-2/
+metadata_sources:
+  - https://developers.openai.com/api/docs/models/gpt-5.2
+  - https://openai.com/index/introducing-gpt-5-2/
+notes: Exact GPT-5.2 API snapshot; OpenAI documents none as the default reasoning effort and xhigh as the highest exposed effort.
+status: active

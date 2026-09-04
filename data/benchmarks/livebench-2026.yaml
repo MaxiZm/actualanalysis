@@ -1,0 +1,28 @@
+id: livebench-2026
+name: LiveBench 2026
+version: 2026-06-25
+grader_version: LiveBench release artifacts 2026-06-25 plus harness commit 8a40796ec88fc7c9e65796e499c8d59ef0aa82a0
+family_id: livebench
+aliases: [LiveBench, Live Bench 2026]
+tags: [chat]
+categories: [knowledge, reasoning]
+domains: { agentic: 0.10, software-code: 0.20, reasoning: 0.30, knowledge-information: 0.15, communication-professional: 0.25 }
+holdout: rolling
+chance_level: 0
+obs_type: judge
+public_release_date: 2026-06-25
+default_k: 1
+transform: { type: accuracy, input_scale: percent }
+n_items: 1270
+harness_url: https://livebench.ai/
+source_ids: [livebench]
+metadata_sources:
+  - https://livebench.ai/
+  - https://livebench.ai/table_2026_06_25.csv
+  - https://livebench.ai/categories_2026_06_25.json
+  - https://livebench.ai/cost_2026_06_25.csv
+  - https://github.com/LiveBench/LiveBench/commit/8a40796ec88fc7c9e65796e499c8d59ef0aa82a0
+  - https://arxiv.org/abs/2406.19314
+status: watchlist
+promotion_rule: Active after reaching at least eight model configurations; demote if comparable coverage falls below that threshold.
+notes: Overall score is an equal-category heterogeneous composite, not a pooled count, and component tool policies differ. Excluded until represented as compatible component observations with uncertainty.

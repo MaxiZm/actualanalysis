@@ -1,0 +1,11 @@
+id: claude-opus-4.8
+name: Claude Opus 4.8
+organization: Anthropic
+family: Claude 4.8
+release_date: 2026-05-28
+open_weights: false
+license: Proprietary
+aliases: [Opus 4.8]
+source_url: https://www.anthropic.com/news/claude-opus-4-8
+status: active
+

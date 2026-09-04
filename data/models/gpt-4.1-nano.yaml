@@ -1,0 +1,11 @@
+id: gpt-4.1-nano
+name: GPT-4.1 nano
+organization: OpenAI
+family: GPT-4.1
+release_date: 2025-04-14
+open_weights: false
+license: Proprietary
+aliases: [gpt-4.1-nano-2025-04-14]
+source_url: https://openai.com/index/gpt-4-1/
+status: active
+

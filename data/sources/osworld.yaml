@@ -1,0 +1,7 @@
+id: osworld
+name: OSWorld official leaderboard
+url: https://osworld-v2.xlang.ai/
+license: See upstream terms
+kind: runner
+redistributable: false
+

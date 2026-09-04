@@ -1,0 +1,24 @@
+id: o4-mini
+name: o4-mini
+organization: OpenAI
+family: o-series
+release_date: 2025-04-16
+weights_date: 2025-04-16
+default_effort_tier: medium
+max_effort_tier: high
+effort_tier_order: [low, medium, high]
+open_weights: false
+license: Proprietary
+aliases: [o4-mini-2025-04-16]
+reasoning: true
+reasoning_config:
+  control: categorical
+  parameter: reasoning.effort
+source_url: https://openai.com/index/introducing-o3-and-o4-mini/
+metadata_sources:
+  - https://developers.openai.com/api/docs/models/o4-mini
+  - https://developers.openai.com/api/docs/guides/latest-model?model=gpt-5.2
+  - https://platform.openai.com/docs/api-reference/responses/create
+  - https://openai.com/index/introducing-o3-and-o4-mini/
+status: active
+notes: Exact API snapshot o4-mini-2025-04-16. Provider documents a June 2024 knowledge cutoff, not a training-data cutoff.

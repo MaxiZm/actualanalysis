@@ -1,0 +1,11 @@
+id: claude-sonnet-5
+name: Claude Sonnet 5
+organization: Anthropic
+family: Claude 5
+release_date: 2026-06-30
+open_weights: false
+license: Proprietary
+aliases: [Sonnet 5]
+source_url: https://www.anthropic.com/news/claude-sonnet-5
+status: active
+

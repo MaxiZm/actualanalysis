@@ -1,0 +1,7 @@
+id: matharena
+name: MathArena
+url: https://matharena.ai/
+license: See upstream dataset or competition terms
+kind: runner
+redistributable: false
+

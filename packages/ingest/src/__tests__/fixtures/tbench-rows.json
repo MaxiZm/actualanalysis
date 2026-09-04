@@ -1,0 +1,21 @@
+{
+  "rows": [
+    {
+      "id": "tb4-gpt-5-6-sol-high",
+      "updated_at": "2026-08-20T10:30:00.000Z",
+      "metadata": {
+        "model_display": { "label": "GPT-5.6 Sol" },
+        "agent_display": { "label": "Terminus 2" },
+        "reasoning_effort": "high"
+      },
+      "metrics": {
+        "accuracy": 37.27,
+        "accuracy_stderr": 2.65,
+        "accuracy_ci95_half_width": 5.2,
+        "n_trials": 330,
+        "total_cost_usd": 66,
+        "avg_trial_duration_sec": 123.4
+      }
+    }
+  ]
+}

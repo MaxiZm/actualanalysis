@@ -1,0 +1,11 @@
+id: gpt-5-pro
+name: GPT-5 Pro
+organization: OpenAI
+family: GPT-5
+release_date: 2025-10-07
+open_weights: false
+license: Proprietary
+aliases: [gpt-5-pro-2025-10-06]
+source_url: https://cdn.openai.com/gpt-5-system-card.pdf
+status: active
+

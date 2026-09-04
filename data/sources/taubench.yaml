@@ -1,0 +1,8 @@
+id: taubench
+name: tau-bench leaderboard
+url: https://taubench.com/
+license: See upstream terms
+kind: self_report
+redistributable: false
+notes: Leaderboard entries are treated as self-reported unless an independent run is linked.
+

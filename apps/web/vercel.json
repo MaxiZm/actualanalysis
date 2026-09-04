@@ -1,0 +1,4 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "ignoreCommand": "git diff --quiet HEAD^ HEAD -- ':(top)apps/web' ':(top)packages' ':(top)data/snapshots' ':(top)data/manual/speed-aa.yaml' ':(top)docs/methodology.md' ':(top)package.json' ':(top)package-lock.json' ':(top)tsconfig.base.json'"
+}

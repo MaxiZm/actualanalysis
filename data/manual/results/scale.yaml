@@ -1,0 +1,814 @@
+results:
+  - model_id: claude-fable-5.1
+    benchmark_id: hle-no-tools
+    source_id: scale
+    score: 46.5
+    score_unit: percent
+    se: 1.02
+    n_items: 2500
+    config: {reasoning_effort: xhigh, tools: false}
+    observed_on: '2026-09-03'
+    url: https://labs.scale.com/leaderboard/humanitys_last_exam
+    provenance: independent
+    notes: se = confidenceInterval_upper/1.96 (Scale states lower-bound uses a 95% CI); score/date from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04.
+  - model_id: gemini-3.1-pro
+    benchmark_id: hle-no-tools
+    source_id: scale
+    score: 46.44
+    score_unit: percent
+    se: 1.0
+    n_items: 2500
+    config: {reasoning_effort: high, thinking: true, tools: false}
+    observed_on: '2026-04-10'
+    url: https://labs.scale.com/leaderboard/humanitys_last_exam
+    provenance: independent
+    notes: se = confidenceInterval_upper/1.96 (Scale states lower-bound uses a 95% CI); score/date from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04.
+  - model_id: gpt-5.4-pro
+    benchmark_id: hle-no-tools
+    source_id: scale
+    score: 44.32
+    score_unit: percent
+    se: 0.995
+    n_items: 2500
+    config: {tools: false}
+    observed_on: '2026-03-23'
+    url: https://labs.scale.com/leaderboard/humanitys_last_exam
+    provenance: independent
+    notes: se = confidenceInterval_upper/1.96 (Scale states lower-bound uses a 95% CI); score/date from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04.
+  - model_id: muse-spark
+    benchmark_id: hle-no-tools
+    source_id: scale
+    score: 40.56
+    score_unit: percent
+    se: 0.98
+    n_items: 2500
+    config: {tools: false}
+    observed_on: '2026-04-08'
+    url: https://labs.scale.com/leaderboard/humanitys_last_exam
+    provenance: independent
+    notes: se = confidenceInterval_upper/1.96 (Scale states lower-bound uses a 95% CI); score/date from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04.
+  - model_id: gemini-3-pro
+    benchmark_id: hle-no-tools
+    source_id: scale
+    score: 37.52
+    score_unit: percent
+    se: 0.969
+    n_items: 2500
+    config: {tools: false}
+    observed_on: '2025-11-19'
+    url: https://labs.scale.com/leaderboard/humanitys_last_exam
+    provenance: independent
+    notes: se = confidenceInterval_upper/1.96 (Scale states lower-bound uses a 95% CI); score/date from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04.
+  - model_id: gpt-5.4
+    benchmark_id: hle-no-tools
+    source_id: scale
+    score: 36.24
+    score_unit: percent
+    se: 0.959
+    n_items: 2500
+    config: {reasoning_effort: xhigh, thinking: true, tools: false}
+    observed_on: '2026-03-10'
+    url: https://labs.scale.com/leaderboard/humanitys_last_exam
+    provenance: independent
+    notes: se = confidenceInterval_upper/1.96 (Scale states lower-bound uses a 95% CI); score/date from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04.
+  - model_id: claude-opus-4.7
+    benchmark_id: hle-no-tools
+    source_id: scale
+    score: 36.2
+    score_unit: percent
+    se: 0.959
+    n_items: 2500
+    config: {tools: false}
+    observed_on: '2026-04-22'
+    url: https://labs.scale.com/leaderboard/humanitys_last_exam
+    provenance: independent
+    notes: se = confidenceInterval_upper/1.96 (Scale states lower-bound uses a 95% CI); score/date from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04.
+  - model_id: claude-opus-4.6
+    benchmark_id: hle-no-tools
+    source_id: scale
+    score: 34.44
+    score_unit: percent
+    se: 0.949
+    n_items: 2500
+    config: {reasoning_effort: max, thinking: true, tools: false}
+    observed_on: '2026-02-17'
+    url: https://labs.scale.com/leaderboard/humanitys_last_exam
+    provenance: independent
+    notes: se = confidenceInterval_upper/1.96 (Scale states lower-bound uses a 95% CI); score/date from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04.
+  - model_id: gpt-5-pro
+    benchmark_id: hle-no-tools
+    source_id: scale
+    score: 31.64
+    score_unit: percent
+    se: 0.929
+    n_items: 2500
+    config: {tools: false}
+    observed_on: '2025-11-06'
+    url: https://labs.scale.com/leaderboard/humanitys_last_exam
+    provenance: independent
+    notes: se = confidenceInterval_upper/1.96 (Scale states lower-bound uses a 95% CI); score/date from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04.
+  - model_id: gpt-5.2
+    benchmark_id: hle-no-tools
+    source_id: scale
+    score: 27.8
+    score_unit: percent
+    se: 0.898
+    n_items: 2500
+    config: {tools: false}
+    observed_on: '2025-12-15'
+    url: https://labs.scale.com/leaderboard/humanitys_last_exam
+    provenance: independent
+    notes: se = confidenceInterval_upper/1.96 (Scale states lower-bound uses a 95% CI); score/date from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04.
+  - model_id: gpt-5-2025-08-07
+    benchmark_id: hle-no-tools
+    source_id: scale
+    score: 25.32
+    score_unit: percent
+    se: 0.867
+    n_items: 2500
+    config: {tools: false}
+    observed_on: '2025-08-07'
+    url: https://labs.scale.com/leaderboard/humanitys_last_exam
+    provenance: independent
+    notes: se = confidenceInterval_upper/1.96 (Scale states lower-bound uses a 95% CI); score/date from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04.
+  - model_id: claude-opus-4.5
+    benchmark_id: hle-no-tools
+    source_id: scale
+    score: 25.2
+    score_unit: percent
+    se: 0.867
+    n_items: 2500
+    config: {thinking: true, tools: false}
+    observed_on: '2025-11-26'
+    url: https://labs.scale.com/leaderboard/humanitys_last_exam
+    provenance: independent
+    notes: se = confidenceInterval_upper/1.96 (Scale states lower-bound uses a 95% CI); score/date from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04.
+  - model_id: kimi-k2.5
+    benchmark_id: hle-no-tools
+    source_id: scale
+    score: 24.37
+    score_unit: percent
+    se: 0.923
+    n_items: 2500
+    config: {tools: false}
+    observed_on: '2026-02-13'
+    url: https://labs.scale.com/leaderboard/humanitys_last_exam
+    provenance: independent
+    notes: se = confidenceInterval_upper/1.96 (Scale states lower-bound uses a 95% CI); score/date from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04.
+  - model_id: gpt-5.1
+    benchmark_id: hle-no-tools
+    source_id: scale
+    score: 23.68
+    score_unit: percent
+    se: 0.852
+    n_items: 2500
+    config: {thinking: true, tools: false}
+    observed_on: '2025-11-26'
+    url: https://labs.scale.com/leaderboard/humanitys_last_exam
+    provenance: independent
+    notes: se = confidenceInterval_upper/1.96 (Scale states lower-bound uses a 95% CI); score/date from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04.
+  - model_id: o3
+    benchmark_id: hle-no-tools
+    source_id: scale
+    score: 20.32
+    score_unit: percent
+    se: 0.806
+    n_items: 2500
+    config: {reasoning_effort: high, tools: false}
+    observed_on: '2025-04-16'
+    url: https://labs.scale.com/leaderboard/humanitys_last_exam
+    provenance: independent
+    notes: se = confidenceInterval_upper/1.96 (Scale states lower-bound uses a 95% CI); score/date from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04.
+  - model_id: gpt-5-mini
+    benchmark_id: hle-no-tools
+    source_id: scale
+    score: 19.44
+    score_unit: percent
+    se: 0.791
+    n_items: 2500
+    config: {tools: false}
+    observed_on: '2025-08-22'
+    url: https://labs.scale.com/leaderboard/humanitys_last_exam
+    provenance: independent
+    notes: se = confidenceInterval_upper/1.96 (Scale states lower-bound uses a 95% CI); score/date from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04.
+  - model_id: o3
+    benchmark_id: hle-no-tools
+    source_id: scale
+    score: 19.2
+    score_unit: percent
+    se: 0.786
+    n_items: 2500
+    config: {reasoning_effort: medium, tools: false}
+    observed_on: '2025-04-16'
+    url: https://labs.scale.com/leaderboard/humanitys_last_exam
+    provenance: independent
+    notes: se = confidenceInterval_upper/1.96 (Scale states lower-bound uses a 95% CI); score/date from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04.
+  - model_id: claude-opus-4.6
+    benchmark_id: hle-no-tools
+    source_id: scale
+    score: 19
+    score_unit: percent
+    se: 0.786
+    n_items: 2500
+    config: {thinking: false, tools: false}
+    observed_on: '2026-02-17'
+    url: https://labs.scale.com/leaderboard/humanitys_last_exam
+    provenance: independent
+    notes: se = confidenceInterval_upper/1.96 (Scale states lower-bound uses a 95% CI); score/date from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04.
+  - model_id: gemini-2.5-pro-20250325
+    benchmark_id: hle-no-tools
+    source_id: scale
+    score: 18.16
+    score_unit: percent
+    se: 0.77
+    n_items: 2500
+    config: {tools: false}
+    observed_on: '2025-04-10'
+    url: https://labs.scale.com/leaderboard/humanitys_last_exam
+    provenance: independent
+    notes: se = confidenceInterval_upper/1.96 (Scale states lower-bound uses a 95% CI); score/date from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04.
+  - model_id: o4-mini
+    benchmark_id: hle-no-tools
+    source_id: scale
+    score: 18.08
+    score_unit: percent
+    se: 0.77
+    n_items: 2500
+    config: {reasoning_effort: high, tools: false}
+    observed_on: '2025-04-16'
+    url: https://labs.scale.com/leaderboard/humanitys_last_exam
+    provenance: independent
+    notes: se = confidenceInterval_upper/1.96 (Scale states lower-bound uses a 95% CI); score/date from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04.
+  - model_id: gemini-2.5-pro-20250506
+    benchmark_id: hle-no-tools
+    source_id: scale
+    score: 17.8
+    score_unit: percent
+    se: 0.765
+    n_items: 2500
+    config: {tools: false}
+    observed_on: '2025-05-06'
+    url: https://labs.scale.com/leaderboard/humanitys_last_exam
+    provenance: independent
+    notes: se = confidenceInterval_upper/1.96 (Scale states lower-bound uses a 95% CI); score/date from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04.
+  - model_id: o4-mini
+    benchmark_id: hle-no-tools
+    source_id: scale
+    score: 14.28
+    score_unit: percent
+    se: 0.699
+    n_items: 2500
+    config: {reasoning_effort: medium, tools: false}
+    observed_on: '2025-04-16'
+    url: https://labs.scale.com/leaderboard/humanitys_last_exam
+    provenance: independent
+    notes: se = confidenceInterval_upper/1.96 (Scale states lower-bound uses a 95% CI); score/date from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04.
+  - model_id: claude-opus-4.5
+    benchmark_id: hle-no-tools
+    source_id: scale
+    score: 14.16
+    score_unit: percent
+    se: 0.699
+    n_items: 2500
+    config: {thinking: false, tools: false}
+    observed_on: '2025-11-26'
+    url: https://labs.scale.com/leaderboard/humanitys_last_exam
+    provenance: independent
+    notes: se = confidenceInterval_upper/1.96 (Scale states lower-bound uses a 95% CI); score/date from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04.
+  - model_id: claude-sonnet-4.5
+    benchmark_id: hle-no-tools
+    source_id: scale
+    score: 13.72
+    score_unit: percent
+    se: 0.689
+    n_items: 2500
+    config: {thinking: true, tools: false}
+    observed_on: '2025-10-02'
+    url: https://labs.scale.com/leaderboard/humanitys_last_exam
+    provenance: independent
+    notes: se = confidenceInterval_upper/1.96 (Scale states lower-bound uses a 95% CI); score/date from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04.
+  - model_id: gemini-2.5-flash
+    benchmark_id: hle-no-tools
+    source_id: scale
+    score: 12.08
+    score_unit: percent
+    se: 0.653
+    n_items: 2500
+    config: {snapshot: '2025-04-17', tools: false}
+    observed_on: '2025-04-17'
+    url: https://labs.scale.com/leaderboard/humanitys_last_exam
+    provenance: independent
+    notes: se = confidenceInterval_upper/1.96 (Scale states lower-bound uses a 95% CI); score/date from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04.
+  - model_id: claude-opus-4.1
+    benchmark_id: hle-no-tools
+    source_id: scale
+    score: 11.52
+    score_unit: percent
+    se: 0.638
+    n_items: 2500
+    config: {thinking: true, tools: false}
+    observed_on: '2025-08-08'
+    url: https://labs.scale.com/leaderboard/humanitys_last_exam
+    provenance: independent
+    notes: se = confidenceInterval_upper/1.96 (Scale states lower-bound uses a 95% CI); score/date from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04.
+  - model_id: gemini-2.5-flash
+    benchmark_id: hle-no-tools
+    source_id: scale
+    score: 10.96
+    score_unit: percent
+    se: 0.622
+    n_items: 2500
+    config: {snapshot: '2025-05-20', tools: false}
+    observed_on: '2025-05-20'
+    url: https://labs.scale.com/leaderboard/humanitys_last_exam
+    provenance: independent
+    notes: se = confidenceInterval_upper/1.96 (Scale states lower-bound uses a 95% CI); score/date from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04.
+  - model_id: claude-opus-4
+    benchmark_id: hle-no-tools
+    source_id: scale
+    score: 10.72
+    score_unit: percent
+    se: 0.617
+    n_items: 2500
+    config: {thinking: true, tools: false}
+    observed_on: '2025-05-24'
+    url: https://labs.scale.com/leaderboard/humanitys_last_exam
+    provenance: independent
+    notes: se = confidenceInterval_upper/1.96 (Scale states lower-bound uses a 95% CI); score/date from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04.
+  - model_id: glm-4.5
+    benchmark_id: hle-no-tools
+    source_id: scale
+    score: 8.32
+    score_unit: percent
+    se: 0.551
+    n_items: 2500
+    config: {tools: false}
+    observed_on: '2025-08-13'
+    url: https://labs.scale.com/leaderboard/humanitys_last_exam
+    provenance: independent
+    notes: se = confidenceInterval_upper/1.96 (Scale states lower-bound uses a 95% CI); score/date from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04.
+  - model_id: o1-pro
+    benchmark_id: hle-no-tools
+    source_id: scale
+    score: 8.12
+    score_unit: percent
+    se: 0.546
+    n_items: 2500
+    config: {tools: false}
+    observed_on: '2025-04-10'
+    url: https://labs.scale.com/leaderboard/humanitys_last_exam
+    provenance: independent
+    notes: se = confidenceInterval_upper/1.96 (Scale states lower-bound uses a 95% CI); score/date from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04.
+  - model_id: claude-3.7-sonnet
+    benchmark_id: hle-no-tools
+    source_id: scale
+    score: 8.04
+    score_unit: percent
+    se: 0.546
+    n_items: 2500
+    config: {thinking: true, tools: false}
+    observed_on: '2025-04-10'
+    url: https://labs.scale.com/leaderboard/humanitys_last_exam
+    provenance: independent
+    notes: se = confidenceInterval_upper/1.96 (Scale states lower-bound uses a 95% CI); score/date from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04.
+  - model_id: o1
+    benchmark_id: hle-no-tools
+    source_id: scale
+    score: 7.96
+    score_unit: percent
+    se: 0.541
+    n_items: 2500
+    config: {tools: false}
+    observed_on: '2025-04-10'
+    url: https://labs.scale.com/leaderboard/humanitys_last_exam
+    provenance: independent
+    notes: se = confidenceInterval_upper/1.96 (Scale states lower-bound uses a 95% CI); score/date from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04.
+  - model_id: claude-opus-4.1
+    benchmark_id: hle-no-tools
+    source_id: scale
+    score: 7.92
+    score_unit: percent
+    se: 0.541
+    n_items: 2500
+    config: {thinking: false, tools: false}
+    observed_on: '2025-08-08'
+    url: https://labs.scale.com/leaderboard/humanitys_last_exam
+    provenance: independent
+    notes: se = confidenceInterval_upper/1.96 (Scale states lower-bound uses a 95% CI); score/date from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04.
+  - model_id: claude-sonnet-4
+    benchmark_id: hle-no-tools
+    source_id: scale
+    score: 7.76
+    score_unit: percent
+    se: 0.536
+    n_items: 2500
+    config: {thinking: true, tools: false}
+    observed_on: '2025-05-23'
+    url: https://labs.scale.com/leaderboard/humanitys_last_exam
+    provenance: independent
+    notes: se = confidenceInterval_upper/1.96 (Scale states lower-bound uses a 95% CI); score/date from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04.
+  - model_id: claude-sonnet-4.5
+    benchmark_id: hle-no-tools
+    source_id: scale
+    score: 7.52
+    score_unit: percent
+    se: 0.526
+    n_items: 2500
+    config: {thinking: false, tools: false}
+    observed_on: '2025-10-02'
+    url: https://labs.scale.com/leaderboard/humanitys_last_exam
+    provenance: independent
+    notes: se = confidenceInterval_upper/1.96 (Scale states lower-bound uses a 95% CI); score/date from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04.
+  - model_id: claude-opus-4
+    benchmark_id: hle-no-tools
+    source_id: scale
+    score: 6.68
+    score_unit: percent
+    se: 0.5
+    n_items: 2500
+    config: {thinking: false, tools: false}
+    observed_on: '2025-05-23'
+    url: https://labs.scale.com/leaderboard/humanitys_last_exam
+    provenance: independent
+    notes: se = confidenceInterval_upper/1.96 (Scale states lower-bound uses a 95% CI); score/date from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04.
+  - model_id: gemini-2.0-flash-thinking
+    benchmark_id: hle-no-tools
+    sample_only: true
+    source_id: scale
+    score: 6.56
+    score_unit: percent
+    se: 0.495
+    n_items: 2500
+    config: {tools: false}
+    observed_on: '2025-04-10'
+    url: https://labs.scale.com/leaderboard/humanitys_last_exam
+    provenance: independent
+    notes: se = confidenceInterval_upper/1.96 (Scale states lower-bound uses a 95% CI); score/date from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04.
+  - model_id: llama-4-maverick
+    benchmark_id: hle-no-tools
+    source_id: scale
+    score: 5.68
+    score_unit: percent
+    se: 0.464
+    n_items: 2500
+    config: {tools: false}
+    observed_on: '2025-04-10'
+    url: https://labs.scale.com/leaderboard/humanitys_last_exam
+    provenance: independent
+    notes: se = confidenceInterval_upper/1.96 (Scale states lower-bound uses a 95% CI); score/date from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04.
+  - model_id: claude-sonnet-4
+    benchmark_id: hle-no-tools
+    source_id: scale
+    score: 5.52
+    score_unit: percent
+    se: 0.459
+    n_items: 2500
+    config: {thinking: false, tools: false}
+    observed_on: '2025-05-23'
+    url: https://labs.scale.com/leaderboard/humanitys_last_exam
+    provenance: independent
+    notes: se = confidenceInterval_upper/1.96 (Scale states lower-bound uses a 95% CI); score/date from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04.
+  - model_id: gpt-4.5
+    benchmark_id: hle-no-tools
+    source_id: scale
+    score: 5.44
+    score_unit: percent
+    se: 0.454
+    n_items: 2500
+    config: {tools: false}
+    observed_on: '2025-04-10'
+    url: https://labs.scale.com/leaderboard/humanitys_last_exam
+    provenance: independent
+    notes: se = confidenceInterval_upper/1.96 (Scale states lower-bound uses a 95% CI); score/date from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04.
+  - model_id: gpt-4.1
+    benchmark_id: hle-no-tools
+    source_id: scale
+    score: 5.4
+    score_unit: percent
+    se: 0.454
+    n_items: 2500
+    config: {tools: false}
+    observed_on: '2025-04-14'
+    url: https://labs.scale.com/leaderboard/humanitys_last_exam
+    provenance: independent
+    notes: se = confidenceInterval_upper/1.96 (Scale states lower-bound uses a 95% CI); score/date from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04.
+  - model_id: gemini-1.5-pro
+    benchmark_id: hle-no-tools
+    source_id: scale
+    score: 4.6
+    score_unit: percent
+    se: 0.418
+    n_items: 2500
+    config: {tools: false}
+    observed_on: '2025-04-10'
+    url: https://labs.scale.com/leaderboard/humanitys_last_exam
+    provenance: independent
+    notes: se = confidenceInterval_upper/1.96 (Scale states lower-bound uses a 95% CI); score/date from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04.
+  - model_id: mistral-medium-3
+    benchmark_id: hle-no-tools
+    source_id: scale
+    score: 4.52
+    score_unit: percent
+    se: 0.413
+    n_items: 2500
+    config: {tools: false}
+    observed_on: '2025-05-13'
+    url: https://labs.scale.com/leaderboard/humanitys_last_exam
+    provenance: independent
+    notes: se = confidenceInterval_upper/1.96 (Scale states lower-bound uses a 95% CI); score/date from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04.
+  - model_id: nova-pro
+    benchmark_id: hle-no-tools
+    source_id: scale
+    score: 4.4
+    score_unit: percent
+    se: 0.408
+    n_items: 2500
+    config: {tools: false}
+    observed_on: '2025-04-10'
+    url: https://labs.scale.com/leaderboard/humanitys_last_exam
+    provenance: independent
+    notes: se = confidenceInterval_upper/1.96 (Scale states lower-bound uses a 95% CI); score/date from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04.
+  - model_id: claude-3.5-sonnet-20241022
+    benchmark_id: hle-no-tools
+    source_id: scale
+    score: 4.08
+    score_unit: percent
+    se: 0.398
+    n_items: 2500
+    config: {tools: false}
+    observed_on: '2025-04-10'
+    url: https://labs.scale.com/leaderboard/humanitys_last_exam
+    provenance: independent
+    notes: se = confidenceInterval_upper/1.96 (Scale states lower-bound uses a 95% CI); score/date from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04.
+  - model_id: nova-lite
+    benchmark_id: hle-no-tools
+    source_id: scale
+    score: 3.64
+    score_unit: percent
+    se: 0.372
+    n_items: 2500
+    config: {tools: false}
+    observed_on: '2025-04-10'
+    url: https://labs.scale.com/leaderboard/humanitys_last_exam
+    provenance: independent
+    notes: se = confidenceInterval_upper/1.96 (Scale states lower-bound uses a 95% CI); score/date from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04.
+  - model_id: gpt-4o-2024-11-20
+    benchmark_id: hle-no-tools
+    source_id: scale
+    score: 2.72
+    score_unit: percent
+    se: 0.327
+    n_items: 2500
+    config: {tools: false}
+    observed_on: '2025-04-10'
+    url: https://labs.scale.com/leaderboard/humanitys_last_exam
+    provenance: independent
+    notes: se = confidenceInterval_upper/1.96 (Scale states lower-bound uses a 95% CI); score/date from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04.
+  - model_id: muse-spark-1.1
+    benchmark_id: swe-bench-pro-public
+    source_id: scale
+    score: 61.5
+    score_unit: percent
+    n_items: 731
+    config: {}
+    harness: mini-swe-agent
+    observed_on: '2026-07-09'
+    url: https://labs.scale.com/leaderboard/swe_bench_pro_public
+    provenance: independent
+    notes: Score, date, and exact n_items come from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04. The displayed interval is retained only at the source because this page does not state its confidence level; scoring derives a binomial SE from n_items.
+  - model_id: gpt-5.4
+    benchmark_id: swe-bench-pro-public
+    source_id: scale
+    score: 59.1
+    score_unit: percent
+    n_items: 731
+    config: {reasoning_effort: xhigh}
+    harness: mini-swe-agent
+    observed_on: '2026-04-08'
+    url: https://labs.scale.com/leaderboard/swe_bench_pro_public
+    provenance: independent
+    notes: Score, date, and exact n_items come from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04. The displayed interval is retained only at the source because this page does not state its confidence level; scoring derives a binomial SE from n_items.
+  - model_id: muse-spark
+    benchmark_id: swe-bench-pro-public
+    source_id: scale
+    score: 55
+    score_unit: percent
+    n_items: 731
+    config: {}
+    harness: mini-swe-agent
+    observed_on: '2026-04-08'
+    url: https://labs.scale.com/leaderboard/swe_bench_pro_public
+    provenance: independent
+    notes: Score, date, and exact n_items come from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04. The displayed interval is retained only at the source because this page does not state its confidence level; scoring derives a binomial SE from n_items.
+  - model_id: claude-opus-4.6
+    benchmark_id: swe-bench-pro-public
+    source_id: scale
+    score: 51.9
+    score_unit: percent
+    n_items: 731
+    config: {thinking: true}
+    harness: mini-swe-agent
+    observed_on: '2026-04-08'
+    url: https://labs.scale.com/leaderboard/swe_bench_pro_public
+    provenance: independent
+    notes: Score, date, and exact n_items come from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04. The displayed interval is retained only at the source because this page does not state its confidence level; scoring derives a binomial SE from n_items.
+  - model_id: gemini-3.1-pro
+    benchmark_id: swe-bench-pro-public
+    source_id: scale
+    score: 46.1
+    score_unit: percent
+    n_items: 731
+    config: {thinking: true}
+    harness: mini-swe-agent
+    observed_on: '2026-04-08'
+    url: https://labs.scale.com/leaderboard/swe_bench_pro_public
+    provenance: independent
+    notes: Score, date, and exact n_items come from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04. The displayed interval is retained only at the source because this page does not state its confidence level; scoring derives a binomial SE from n_items.
+  - model_id: claude-opus-4.5
+    benchmark_id: swe-bench-pro-public
+    source_id: scale
+    score: 45.89
+    score_unit: percent
+    n_items: 731
+    config: {scaffold_mode: uncapped, turn_limit: 250}
+    observed_on: '2025-12-11'
+    url: https://labs.scale.com/leaderboard/swe_bench_pro_public
+    provenance: independent
+    notes: Score, date, and exact n_items come from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04. The displayed interval is retained only at the source because this page does not state its confidence level; scoring derives a binomial SE from n_items.
+  - model_id: claude-sonnet-4.5
+    benchmark_id: swe-bench-pro-public
+    source_id: scale
+    score: 43.6
+    score_unit: percent
+    n_items: 731
+    config: {scaffold_mode: uncapped, turn_limit: 250}
+    observed_on: '2025-09-19'
+    url: https://labs.scale.com/leaderboard/swe_bench_pro_public
+    provenance: independent
+    notes: Score, date, and exact n_items come from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04. The displayed interval is retained only at the source because this page does not state its confidence level; scoring derives a binomial SE from n_items.
+  - model_id: gemini-3-pro
+    benchmark_id: swe-bench-pro-public
+    source_id: scale
+    score: 43.3
+    score_unit: percent
+    n_items: 731
+    config: {scaffold_mode: uncapped, turn_limit: 250}
+    observed_on: '2025-11-26'
+    url: https://labs.scale.com/leaderboard/swe_bench_pro_public
+    provenance: independent
+    notes: Score, date, and exact n_items come from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04. The displayed interval is retained only at the source because this page does not state its confidence level; scoring derives a binomial SE from n_items.
+  - model_id: claude-sonnet-4
+    benchmark_id: swe-bench-pro-public
+    source_id: scale
+    score: 42.7
+    score_unit: percent
+    n_items: 731
+    config: {scaffold_mode: uncapped, turn_limit: 250}
+    observed_on: '2025-09-19'
+    url: https://labs.scale.com/leaderboard/swe_bench_pro_public
+    provenance: independent
+    notes: Score, date, and exact n_items come from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04. The displayed interval is retained only at the source because this page does not state its confidence level; scoring derives a binomial SE from n_items.
+  - model_id: gpt-5-2025-08-07
+    benchmark_id: swe-bench-pro-public
+    source_id: scale
+    score: 41.78
+    score_unit: percent
+    n_items: 731
+    config: {reasoning_effort: high, scaffold_mode: uncapped, turn_limit: 250}
+    observed_on: '2025-11-26'
+    url: https://labs.scale.com/leaderboard/swe_bench_pro_public
+    provenance: independent
+    notes: Score, date, and exact n_items come from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04. The displayed interval is retained only at the source because this page does not state its confidence level; scoring derives a binomial SE from n_items.
+  - model_id: gpt-5.2-codex
+    benchmark_id: swe-bench-pro-public
+    source_id: scale
+    score: 41.04
+    score_unit: percent
+    n_items: 731
+    config: {scaffold_mode: uncapped, turn_limit: 250}
+    observed_on: '2026-01-27'
+    url: https://labs.scale.com/leaderboard/swe_bench_pro_public
+    provenance: independent
+    notes: Score, date, and exact n_items come from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04. The displayed interval is retained only at the source because this page does not state its confidence level; scoring derives a binomial SE from n_items.
+  - model_id: claude-haiku-4.5
+    benchmark_id: swe-bench-pro-public
+    source_id: scale
+    score: 39.45
+    score_unit: percent
+    n_items: 731
+    config: {scaffold_mode: uncapped, turn_limit: 250}
+    observed_on: '2025-09-19'
+    url: https://labs.scale.com/leaderboard/swe_bench_pro_public
+    provenance: independent
+    notes: Score, date, and exact n_items come from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04. The displayed interval is retained only at the source because this page does not state its confidence level; scoring derives a binomial SE from n_items.
+  - model_id: qwen3-coder-480b-a35b
+    benchmark_id: swe-bench-pro-public
+    source_id: scale
+    score: 38.7
+    score_unit: percent
+    n_items: 731
+    config: {scaffold_mode: uncapped, turn_limit: 250}
+    observed_on: '2026-01-27'
+    url: https://labs.scale.com/leaderboard/swe_bench_pro_public
+    provenance: independent
+    notes: Score, date, and exact n_items come from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04. The displayed interval is retained only at the source because this page does not state its confidence level; scoring derives a binomial SE from n_items.
+  - model_id: gemini-3-flash
+    benchmark_id: swe-bench-pro-public
+    source_id: scale
+    score: 34.63
+    score_unit: percent
+    n_items: 731
+    config: {scaffold_mode: uncapped, turn_limit: 250}
+    observed_on: '2026-01-12'
+    url: https://labs.scale.com/leaderboard/swe_bench_pro_public
+    provenance: independent
+    notes: Score, date, and exact n_items come from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04. The displayed interval is retained only at the source because this page does not state its confidence level; scoring derives a binomial SE from n_items.
+  - model_id: gpt-5.2
+    benchmark_id: swe-bench-pro-public
+    source_id: scale
+    score: 29.94
+    score_unit: percent
+    n_items: 731
+    config: {scaffold_mode: uncapped, turn_limit: 250}
+    observed_on: '2026-01-27'
+    url: https://labs.scale.com/leaderboard/swe_bench_pro_public
+    provenance: independent
+    notes: Score, date, and exact n_items come from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04. The displayed interval is retained only at the source because this page does not state its confidence level; scoring derives a binomial SE from n_items.
+  - model_id: kimi-k2
+    benchmark_id: swe-bench-pro-public
+    source_id: scale
+    score: 27.67
+    score_unit: percent
+    n_items: 731
+    config: {scaffold_mode: uncapped, turn_limit: 250}
+    observed_on: '2025-09-19'
+    url: https://labs.scale.com/leaderboard/swe_bench_pro_public
+    provenance: independent
+    notes: Score, date, and exact n_items come from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04. The displayed interval is retained only at the source because this page does not state its confidence level; scoring derives a binomial SE from n_items.
+  - model_id: qwen3-235b-a22b
+    benchmark_id: swe-bench-pro-public
+    source_id: scale
+    score: 21.41
+    score_unit: percent
+    n_items: 731
+    config: {scaffold_mode: uncapped, turn_limit: 250}
+    observed_on: '2026-01-27'
+    url: https://labs.scale.com/leaderboard/swe_bench_pro_public
+    provenance: independent
+    notes: Score, date, and exact n_items come from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04. The displayed interval is retained only at the source because this page does not state its confidence level; scoring derives a binomial SE from n_items.
+  - model_id: gpt-oss-120b
+    benchmark_id: swe-bench-pro-public
+    source_id: scale
+    score: 16.2
+    score_unit: percent
+    n_items: 731
+    config: {scaffold_mode: uncapped, turn_limit: 250}
+    observed_on: '2026-01-27'
+    url: https://labs.scale.com/leaderboard/swe_bench_pro_public
+    provenance: independent
+    notes: Score, date, and exact n_items come from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04. The displayed interval is retained only at the source because this page does not state its confidence level; scoring derives a binomial SE from n_items.
+  - model_id: deepseek-v3.2
+    benchmark_id: swe-bench-pro-public
+    source_id: scale
+    score: 15.56
+    score_unit: percent
+    n_items: 731
+    config: {scaffold_mode: uncapped, turn_limit: 250}
+    observed_on: '2026-01-27'
+    url: https://labs.scale.com/leaderboard/swe_bench_pro_public
+    provenance: independent
+    notes: Score, date, and exact n_items come from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04. The displayed interval is retained only at the source because this page does not state its confidence level; scoring derives a binomial SE from n_items.
+  - model_id: glm-4.6
+    benchmark_id: swe-bench-pro-public
+    source_id: scale
+    score: 9.67
+    score_unit: percent
+    n_items: 731
+    config: {scaffold_mode: uncapped, turn_limit: 250}
+    observed_on: '2026-01-27'
+    url: https://labs.scale.com/leaderboard/swe_bench_pro_public
+    provenance: independent
+    notes: Score, date, and exact n_items come from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04. The displayed interval is retained only at the source because this page does not state its confidence level; scoring derives a binomial SE from n_items.
+  - model_id: llama-4-maverick
+    benchmark_id: swe-bench-pro-public
+    source_id: scale
+    score: 5.24
+    score_unit: percent
+    n_items: 731
+    config: {scaffold_mode: uncapped, turn_limit: 250}
+    observed_on: '2026-01-27'
+    url: https://labs.scale.com/leaderboard/swe_bench_pro_public
+    provenance: independent
+    notes: Score, date, and exact n_items come from Scale's embedded leaderboard JSON (Next.js __next_f payload) as of 2026-09-04. The displayed interval is retained only at the source because this page does not state its confidence level; scoring derives a binomial SE from n_items.
+
+  - model_id: gpt-5.1
+    benchmark_id: hle-no-tools
+    source_id: scale
+    score: 6.8
+    score_unit: percent
+    n_items: 2500
+    config: { reasoning_effort: "none", tools: false }
+    observed_on: '2026-09-04'
+    url: https://labs.scale.com/leaderboard/humanitys_last_exam
+    provenance: independent
+    notes: Reported as gpt-5.1-instant on Scale HLE leaderboard (GPT-5.1 non-thinking mode).

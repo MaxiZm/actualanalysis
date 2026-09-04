@@ -1,0 +1,89 @@
+id,slug,name,org,family,releaseDate,openWeights,license,reasoningConfig,aliases,contextLength,maxOutput,sourceUrl,status,paramsTotalB,paramsActiveB,modality,sizeClass
+claude-3.7-sonnet,claude-3.7-sonnet,Claude 3.7 Sonnet,Anthropic,Claude 3.7,2025-02-24,false,Proprietary,{},"[""Claude 3.7""]",,,https://www.anthropic.com/news/claude-3-7-sonnet,active,,,text,unknown
+claude-fable-5.1,claude-fable-5.1,Claude Fable 5.1,Anthropic,Claude 5,2026-09-01,false,Proprietary,{},"[""Fable 5.1""]",,,https://www.anthropic.com/claude-fable-and-mythos-5-1,active,,,text,unknown
+claude-fable-5,claude-fable-5,Claude Fable 5,Anthropic,Claude 5,2026-06-09,false,Proprietary,{},"[""Fable 5""]",,,https://www.anthropic.com/news/claude-fable-5-mythos-5,active,,,text,unknown
+claude-opus-4.5,claude-opus-4.5,Claude Opus 4.5,Anthropic,Claude 4.5,2025-11-24,false,Proprietary,{},"[""Opus 4.5"",""claude-opus-4-5-20251101""]",,,https://www.anthropic.com/news/claude-opus-4-5,active,,,text,unknown
+claude-opus-4.6,claude-opus-4.6,Claude Opus 4.6,Anthropic,Claude 4.6,2026-02-05,false,Proprietary,{},"[""Anthropic Opus 4.6"",""claude-opus-4-6""]",,,https://www.anthropic.com/news/claude-opus-4-6,active,,,text,unknown
+claude-opus-4.7,claude-opus-4.7,Claude Opus 4.7,Anthropic,Claude 4.7,2026-04-16,false,Proprietary,{},"[""Opus 4.7""]",,,https://www.anthropic.com/news/claude-opus-4-7,active,,,text,unknown
+claude-opus-4.8,claude-opus-4.8,Claude Opus 4.8,Anthropic,Claude 4.8,2026-05-28,false,Proprietary,{},"[""Opus 4.8""]",,,https://www.anthropic.com/news/claude-opus-4-8,active,,,text,unknown
+claude-opus-4,claude-opus-4,Claude Opus 4,Anthropic,Claude 4,2025-05-22,false,Proprietary,{},[],,,https://www.anthropic.com/news/claude-4,active,,,text,unknown
+claude-sonnet-4.6,claude-sonnet-4.6,Claude Sonnet 4.6,Anthropic,Claude 4.6,2026-02-17,false,Proprietary,{},[],,,https://www.anthropic.com/news/claude-sonnet-4-6,active,,,text,unknown
+claude-sonnet-4,claude-sonnet-4,Claude Sonnet 4,Anthropic,Claude 4,2025-05-22,false,Proprietary,{},"[""claude-sonnet-4-20250514"",""claude-4-Sonnet""]",,,https://www.anthropic.com/news/claude-4,active,,,text,unknown
+claude-sonnet-5,claude-sonnet-5,Claude Sonnet 5,Anthropic,Claude 5,2026-06-30,false,Proprietary,{},"[""Sonnet 5""]",,,https://www.anthropic.com/news/claude-sonnet-5,active,,,text,unknown
+deepseek-v3.2,deepseek-v3.2,DeepSeek-V3.2,DeepSeek,DeepSeek V3,2025-12-01,true,,{},"[""Deepseek V3.2"",""deepseek-v3p2"",""deepseek-v3.2-chat"",""deepseek-v3.2-reasoner""]",,,https://api-docs.deepseek.com/news/news251201,active,,,text,unknown
+gemini-2.0-flash-thinking,gemini-2.0-flash-thinking,Gemini 2.0 Flash Thinking,Google DeepMind,Gemini 2.0,2024-12-19,false,Proprietary,{},"[""Gemini 2.0 Flash Thinking (Jan 2025)"",""Gemini 2.0 Flash Thinking (January 2025)""]",,,https://deepmind.google/technologies/gemini/flash-thinking/,active,,,text,unknown
+gemini-2.5-flash,gemini-2.5-flash,Gemini 2.5 Flash,Google DeepMind,Gemini 2.5,2025-04-17,false,Proprietary,{},"[""Gemini 2.5 Flash (April 2025)"",""Gemini 2.5 Flash (Apr 2025)"",""gemini-2.5-flash""]",,,https://deepmind.google/models/gemini/flash/,active,,,text,unknown
+gemini-2.5-pro-20250506,gemini-2.5-pro-20250506,Gemini 2.5 Pro (May 2025),Google DeepMind,Gemini 2.5,2025-05-06,false,Proprietary,{},"[""Gemini 2.5 Pro Preview (May 06 2025)""]",,,https://blog.google/technology/google-deepmind/gemini-model-thinking-updates-march-2025/#gemini-2-5-thinking,active,,,text,unknown
+gemini-3-flash,gemini-3-flash,Gemini 3 Flash,Google DeepMind,Gemini 3,2025-12-17,false,Proprietary,{},"[""Gemini 3 Flash Preview"",""gemini-3-flash""]",,,,active,,,text,unknown
+gemini-3-pro,gemini-3-pro,Gemini 3 Pro,Google DeepMind,Gemini 3,2025-11-18,false,Proprietary,{},"[""gemini-3-pro-preview""]",,,https://blog.google/products/gemini/gemini-3/,active,,,text,unknown
+gemini-3.1-pro,gemini-3.1-pro,Gemini 3.1 Pro,Google DeepMind,Gemini 3.1,2026-02-19,false,Proprietary,{},"[""Gemini 3.1 Pro Preview"",""Gemini 3.1 Pro (Preview)"",""gemini-3.1-pro-preview""]",,,https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/,active,,,text,unknown
+gemini-3.7-flash,gemini-3.7-flash,Gemini 3.7 Flash,Google DeepMind,Gemini 3.7,2026-08-13,false,Proprietary,{},[],,,https://ai.google.dev/gemini-api/docs/models/gemini-3.7-flash,active,,,text,unknown
+glm-4.5,glm-4.5,GLM-4.5,Z.ai,GLM-4,2025-07-28,true,,{},[],,,https://arxiv.org/abs/2508.06471,active,,,text,unknown
+glm-4.6,glm-4.6,GLM-4.6,Z.ai,GLM-4,2025-09-30,true,,{},[],,,https://z.ai/blog/glm-4.6,active,,,text,unknown
+glm-5.2,glm-5.2,GLM-5.2,Z.ai,GLM-5,2026-06-16,true,MIT,{},[],,,https://z.ai/blog/glm-5.2,active,,,text,unknown
+glm-5.3,glm-5.3,GLM-5.3,Z.ai,GLM-5,2026-08-14,false,Proprietary,{},[],,,https://z.ai/blog/glm-5.3,active,,,text,unknown
+glm-5,glm-5,GLM-5,Z.ai,GLM-5,2026-02-12,true,MIT,{},[],,,https://z.ai/blog/glm-5,active,,,text,unknown
+gpt-4.1-nano,gpt-4.1-nano,GPT-4.1 nano,OpenAI,GPT-4.1,2025-04-14,false,Proprietary,{},"[""gpt-4.1-nano-2025-04-14""]",,,https://openai.com/index/gpt-4-1/,active,,,text,unknown
+gpt-4.5,gpt-4.5,GPT-4.5,OpenAI,GPT-4,2025-02-27,false,Proprietary,{},"[""GPT 4.5 Preview""]",,,https://openai.com/index/introducing-gpt-4-5/,active,,,text,unknown
+gpt-5-2025-08-07,gpt-5-2025-08-07,GPT-5 (2025-08-07),OpenAI,GPT-5,2025-08-07,false,Proprietary,{},"[""GPT-5"",""gpt-5"",""openai/gpt-5"",""openai/gpt-5-2025-08-07""]",,,https://openai.com/index/introducing-gpt-5/,active,,,text,unknown
+gpt-5-mini,gpt-5-mini,GPT-5 mini,OpenAI,GPT-5,2025-08-07,false,Proprietary,{},"[""gpt-5-mini-2025-08-07""]",,,https://cdn.openai.com/gpt-5-system-card.pdf,active,,,text,unknown
+gpt-5-pro,gpt-5-pro,GPT-5 Pro,OpenAI,GPT-5,2025-10-07,false,Proprietary,{},"[""gpt-5-pro-2025-10-06""]",,,https://cdn.openai.com/gpt-5-system-card.pdf,active,,,text,unknown
+gpt-5.1-codex-max,gpt-5.1-codex-max,GPT-5.1-Codex-Max,OpenAI,GPT-5,2025-11-19,false,Proprietary,{},[],,,https://openai.com/index/gpt-5-1-codex-max/,active,,,text,unknown
+gpt-5.2-codex,gpt-5.2-codex,GPT-5.2 Codex,OpenAI,GPT-5,2025-12-18,false,Proprietary,{},[],,,https://openai.com/index/introducing-gpt-5-2-codex/,active,,,text,unknown
+gpt-5.2-pro,gpt-5.2-pro,GPT-5.2 Pro,OpenAI,GPT-5,2025-12-11,false,Proprietary,{},[],,,https://openai.com/index/introducing-gpt-5-2/,active,,,text,unknown
+gpt-5.3-codex,gpt-5.3-codex,GPT-5.3 Codex,OpenAI,GPT-5,2026-02-05,false,Proprietary,{},[],,,https://openai.com/index/introducing-gpt-5-3-codex/,active,,,text,unknown
+gpt-5.4,gpt-5.4,GPT-5.4,OpenAI,GPT-5,2026-03-05,false,Proprietary,{},"[""gpt-5.4-2026-03-05""]",,,https://openai.com/index/introducing-gpt-5-4/,active,,,text,unknown
+gpt-5.5-instant,gpt-5.5-instant,GPT-5.5 Instant,OpenAI,GPT-5,2026-05-05,false,Proprietary,{},[],,,https://openai.com/index/gpt-5-5-instant/,active,,,text,unknown
+gpt-5.5,gpt-5.5,GPT-5.5,OpenAI,GPT-5,2026-04-23,false,Proprietary,{},[],,,https://openai.com/index/introducing-gpt-5-5/,active,,,text,unknown
+claude-3.5-sonnet-20241022,claude-3.5-sonnet-20241022,Claude 3.5 Sonnet (October 2024),Anthropic,Claude 3.5,2024-10-22,false,Proprietary,{},"[""claude-3-5-sonnet-20241022""]",,,,active,,,text,unknown
+claude-3.5-sonnet,claude-3.5-sonnet,Claude 3.5 Sonnet,Anthropic,Claude 3.5,2024-06-20,false,Proprietary,{},"[""claude-3-5-sonnet-20240620""]",,,https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf,active,,,text,unknown
+claude-haiku-4.5,claude-haiku-4.5,Claude Haiku 4.5,Anthropic,Claude 4.5,2025-10-15,false,Proprietary,{},"[""claude-4-5-haiku""]",,,https://www.anthropic.com/news/claude-haiku-4-5,active,,,text,unknown
+claude-opus-4.1,claude-opus-4.1,Claude Opus 4.1,Anthropic,Claude 4,2025-08-05,false,Proprietary,{},"[""claude-opus-4-1"",""claude-opus-4-1-20250805"",""claude-opus-4-1-20250805-thinking"",""anthropic/claude-opus-4.1""]",,,https://www.anthropic.com/news/claude-opus-4-1,active,,,text,unknown
+claude-opus-5,claude-opus-5,Claude Opus 5,Anthropic,Claude 5,2026-07-24,false,Proprietary,{},"[""Opus 5"",""Claude-Opus-5""]",,,https://www.anthropic.com/news/claude-opus-5,active,,,text,unknown
+claude-sonnet-4.5,claude-sonnet-4.5,Claude Sonnet 4.5,Anthropic,Claude 4.5,2025-09-29,false,Proprietary,{},"[""Claude 4.5 Sonnet"",""claude-sonnet-4-5"",""claude-sonnet-4-5-20250929"",""claude-sonnet-4-5-20250929-thinking"",""anthropic/claude-sonnet-4.5""]",,,https://www.anthropic.com/news/claude-sonnet-4-5,active,,,text,unknown
+gemini-1.5-pro,gemini-1.5-pro,Gemini 1.5 Pro,Google DeepMind,Gemini 1.5,2024-02-15,false,Proprietary,{},"[""Gemini-1.5-Pro-002"",""Gemini 1.5 Pro (Sept 2024)""]",,,https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf,active,,,text,unknown
+gemini-2.5-pro-20250325,gemini-2.5-pro-20250325,Gemini 2.5 Pro (Mar 2025),Google DeepMind,Gemini 2.5,2025-03-25,false,Proprietary,{},"[""Gemini 2.5 Pro Experimental (March 2025)""]",,,https://blog.google/technology/google-deepmind/gemini-model-thinking-updates-march-2025/#gemini-2-5-thinking,active,,,text,unknown
+gemini-2.5-pro,gemini-2.5-pro,Gemini 2.5 Pro,Google,Gemini 2.5,2025-06-17,false,Proprietary,{},"[""gemini-2.5-pro-preview"",""gemini-2.5-pro-preview-06-05"",""Gemini 2.5 Pro (Jun 2025)"",""google/gemini-2.5-pro""]",,,https://blog.google/technology/google-deepmind/gemini-model-thinking-updates-march-2025/,active,,,text,unknown
+gemini-3.8-flash,gemini-3.8-flash,Gemini 3.8 Flash,Google DeepMind,Gemini 3.8,2026-09-02,false,Proprietary,{},"[""gemini-3.8"", ""gemini3.8"", ""Gemini 3.8"", ""gemini-3.8-flash""]",,,https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash,active,,,text,unknown
+gpt-4.1-mini,gpt-4.1-mini,GPT-4.1 mini,OpenAI,GPT-4.1,2025-04-14,false,Proprietary,{},"[""gpt-4.1-mini-2025-04-14""]",,,https://openai.com/index/gpt-4-1/,active,,,text,unknown
+gpt-4.1,gpt-4.1,GPT-4.1,OpenAI,GPT-4.1,2025-04-14,false,Proprietary,{},"[""gpt-4.1-2025-04-14""]",,,https://openai.com/index/gpt-4-1/,active,,,text,unknown
+gpt-4o-2024-11-20,gpt-4o-2024-11-20,GPT-4o (Nov 2024),OpenAI,GPT-4o,2024-11-20,false,Proprietary,{},"[""GPT-4o (November 2024)""]",,,https://help.openai.com/en/articles/9624314-model-release-notes,active,,,text,unknown
+gpt-5-nano,gpt-5-nano,GPT-5 nano,OpenAI,GPT-5,2025-08-07,false,Proprietary,{},"[""gpt-5-nano-2025-08-07""]",,,https://cdn.openai.com/gpt-5-system-card.pdf,active,,,text,unknown
+gpt-5.1,gpt-5.1,GPT-5.1,OpenAI,GPT-5,2025-11-13,false,Proprietary,{},"[""gpt-5.1-instant"",""gpt-5.1-thinking""]",,,https://openai.com/index/gpt-5-1/,active,,,text,unknown
+gpt-5.6-terra,gpt-5.6-terra,GPT-5.6 Terra,OpenAI,GPT-5.6,2026-07-09,false,Proprietary,{},[],,,https://openai.com/index/gpt-5-6/,active,,,text,unknown
+gpt-6-astra,gpt-6-astra,GPT-6 Astra,OpenAI,GPT-6,2026-09-03,false,Proprietary,{},[],,,,active,,,text,unknown
+grok-4-fast,grok-4-fast,Grok 4 Fast,xAI,Grok 4,2025-09-19,false,Proprietary,{},"[""Grok 4 fast"",""grok-4-fast""]",,,https://x.ai/news/grok-4-fast,active,,,text,unknown
+grok-4.1-fast,grok-4.1-fast,Grok 4.1 Fast,xAI,Grok 4,2025-11-19,false,Proprietary,{},[],,,https://x.ai/news/grok-4-1-fast,active,,,text,unknown
+grok-4.5,grok-4.5,Grok 4.5,xAI,Grok 4,2026-07-08,false,Proprietary,{},[],,,https://x.ai/news/grok-4-5,active,,,text,unknown
+grok-4.6,grok-4.6,Grok 4.6,xAI,Grok 4,2026-08-12,false,Proprietary,{},[],,,https://x.ai/news/grok-4-6,active,,,text,unknown
+grok-code-fast-1,grok-code-fast-1,Grok Code Fast 1,xAI,Grok,2025-08-28,false,Proprietary,{},"[""grok-code-fast-1""]",,,https://data.x.ai/2025-08-26-grok-code-fast-1-model-card.pdf,active,,,text,unknown
+kimi-k2.5,kimi-k2.5,Kimi K2.5,Moonshot AI,Kimi K2,2026-02-02,true,,{},[],,,https://arxiv.org/abs/2602.02276,active,,,text,unknown
+kimi-k3,kimi-k3,Kimi K3,Moonshot AI,Kimi K3,2026-07-16,true,Modified MIT,{},[],,,https://huggingface.co/moonshotai/Kimi-K3,active,,,text,unknown
+llama-4-maverick,llama-4-maverick,Llama 4 Maverick,Meta AI,Llama 4,2025-04-05,true,Llama 4 Community License,{},"[""llama4-maverick-17b-instruct""]",,,https://ai.meta.com/blog/llama-4-multimodal-intelligence/,active,,,text,unknown
+muse-spark-1.1,muse-spark-1.1,Muse Spark 1.1,Meta AI,Muse Spark,2026-07-09,false,Proprietary,{},[],,,https://ai.meta.com/blog/introducing-muse-spark-meta-model-api/,active,,,text,unknown
+muse-spark,muse-spark,Muse Spark,Meta AI,Muse Spark,2026-04-08,false,Proprietary,{},[],,,https://ai.meta.com/blog/introducing-muse-spark-msl/,active,,,text,unknown
+nova-pro,nova-pro,Amazon Nova Pro,Amazon,Nova,2024-12-03,false,Proprietary,{},"[""Nova Pro""]",,,https://assets.amazon.science/96/7d/0d3e59514abf8fdcfafcdc574300/nova-tech-report-20250317-0810.pdf,active,,,text,unknown
+o1,o1,o1,OpenAI,o-series,2024-12-05,false,Proprietary,{},"[""o1 (December 2024)""]",,,https://openai.com/index/introducing-chatgpt-pro/,active,,,text,unknown
+o3-pro,o3-pro,o3-pro,OpenAI,o-series,2025-06-10,false,Proprietary,{},[],,,,active,,,text,unknown
+o3,o3,o3,OpenAI,o-series,2024-12-20,false,Proprietary,{},"[""o3-2025-04-16""]",,,https://openai.com/index/introducing-o3-and-o4-mini/,active,,,text,unknown
+qwen-3.8-max,qwen-3.8-max,Qwen 3.8 Max,Alibaba,Qwen 3.8,2026-07-19,false,Proprietary,{},[],,,https://qwen.ai/blog?id=qwen3.8,active,,,text,unknown
+qwen3-235b-a22b,qwen3-235b-a22b,Qwen3 235B A22B,Alibaba,Qwen3,2025-04-29,true,Apache-2.0,{},"[""Qwen3-235B-A22B"",""qwen/qwen3-235b-a22b""]",,,https://huggingface.co/Qwen/Qwen3-235B-A22B,active,,,text,unknown
+qwen3-coder-480b-a35b,qwen3-coder-480b-a35b,Qwen3-Coder-480B-A35B,Alibaba,Qwen3,2025-07-22,true,Apache-2.0,{},"[""qwen3-coder-480b-a35b-instruct""]",,,https://qwenlm.github.io/blog/qwen3-coder/,active,,,text,unknown
+qwen3-max,qwen3-max,Qwen3-Max,Alibaba,Qwen3,2025-09-05,false,Proprietary,{},"[""qwen3-max-preview""]",,,https://qwen.ai/blog?id=87dc93fc8a590dc718c77e1f6e84c07b474f6c5a&from=home.latest-research-list,active,,,text,unknown
+qwen3.5-397b-a17b,qwen3.5-397b-a17b,Qwen3.5 397B-A17B,Alibaba,Qwen3.5,2026-02-15,true,,{},[],,,https://qwen.ai/blog?id=qwen3.5,active,,,text,unknown
+gpt-5.2,gpt-5.2,GPT-5.2,OpenAI,GPT-5,2025-12-11,false,Proprietary,{},"[""gpt-5.2-2025-12-11""]",,,,active,,,text,unknown
+gpt-5.4-pro,gpt-5.4-pro,GPT-5.4 Pro,OpenAI,GPT-5,2026-03-05,false,Proprietary,{},"[""gpt-5.4-pro-2026-03-05""]",,,https://openai.com/index/introducing-gpt-5-4/,active,,,text,unknown
+gpt-5.5-pro,gpt-5.5-pro,GPT-5.5 Pro,OpenAI,GPT-5,2026-04-23,false,Proprietary,{},[],,,https://openai.com/index/introducing-gpt-5-5/,active,,,text,unknown
+gpt-5.6-luna,gpt-5.6-luna,GPT-5.6 Luna,OpenAI,GPT-5.6,2026-07-09,false,Proprietary,{},[],,,https://openai.com/index/gpt-5-6/,active,,,text,unknown
+gpt-5.6-sol,gpt-5.6-sol,GPT-5.6 Sol,OpenAI,GPT-5.6,2026-07-09,false,Proprietary,{},"[""GPT-5.6-Sol"",""openai-gpt-5-6-sol""]",,,https://openai.com/index/gpt-5-6/,active,,,text,unknown
+gpt-oss-120b,gpt-oss-120b,gpt-oss-120b,OpenAI,gpt-oss,2025-08-05,true,Apache-2.0,{},[],,,https://cdn.openai.com/pdf/419b6906-9da6-406c-a19d-1bb078ac7637/oai_gpt-oss_model_card.pdf,active,,,text,unknown
+grok-4.20,grok-4.20,Grok 4.20,xAI,Grok 4,2026-02-17,false,Proprietary,{},[],,,https://docs.x.ai/developers/models,active,,,text,unknown
+grok-4,grok-4,Grok 4,xAI,Grok 4,2025-07-09,false,Proprietary,{},"[""grok-4-0709""]",,,https://x.ai/news/grok-4,active,,,text,unknown
+inkling,inkling,Inkling,Thinking Machines,Inkling,2026-07-15,true,,{},[],,,https://thinkingmachines.ai/news/introducing-inkling/,active,,,text,unknown
+kimi-k2,kimi-k2,Kimi K2,Moonshot AI,Kimi K2,2025-07-11,true,,{},"[""Kimi K2 (Jul 2025)"",""kimi-k2-0711-preview"",""kimi-k2-instruct""]",,,https://moonshotai.github.io/Kimi-K2/,active,,,text,unknown
+mistral-medium-3,mistral-medium-3,Mistral Medium 3,Mistral AI,Mistral Medium,2025-05-07,false,Proprietary,{},[],,,https://mistral.ai/news/mistral-medium-3,active,,,text,unknown
+nova-lite,nova-lite,Amazon Nova Lite,Amazon,Nova,2024-12-03,false,Proprietary,{},"[""Nova Lite""]",,,https://assets.amazon.science/96/7d/0d3e59514abf8fdcfafcdc574300/nova-tech-report-20250317-0810.pdf,active,,,text,unknown
+o1-pro,o1-pro,o1 Pro,OpenAI,o-series,2025-03-19,false,Proprietary,{},[],,,https://openai.com/index/introducing-chatgpt-pro/,active,,,text,unknown
+o3-mini,o3-mini,o3-mini,OpenAI,o-series,2025-01-31,false,Proprietary,{},[],,,https://openai.com/index/openai-o3-mini/,active,,,text,unknown
+o4-mini,o4-mini,o4-mini,OpenAI,o-series,2025-04-16,false,Proprietary,{},"[""o4-mini-2025-04-16""]",,,https://openai.com/index/introducing-o3-and-o4-mini/,active,,,text,unknown
+qwen3-235b-a22b-2507,qwen3-235b-a22b-2507,Qwen3 235B A22B (July 2025),Alibaba,Qwen3,2025-07-25,true,Apache-2.0,{},"[""Qwen3-235B-A22B (Jul 2025)"",""Qwen3-235B-A22B-Instruct (Jul 2025)"",""Qwen3-235b-a22b Instruct (25/07)"",""qwen3-235b-a22b-instruct-2507""]",,,https://qwenlm.github.io/blog/qwen3/,active,,,text,unknown

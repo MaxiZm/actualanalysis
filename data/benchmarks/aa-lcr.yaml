@@ -1,0 +1,15 @@
+id: aa-lcr
+name: AA-LCR
+version: public
+aliases: [Artificial Analysis LCR, Long Context Reasoning]
+tags: [chat]
+categories: [long-context]
+holdout: public
+chance_level: 0
+transform: { type: accuracy, input_scale: percent }
+n_items: null
+harness_url: https://huggingface.co/datasets/artificial-analysis/AA-LCR
+source_ids: [vendor-model-cards]
+status: shadow
+promotion_rule: Include only when independent or explicitly attributed third-party results exist.
+notes: Artificial Analysis scores themselves are prohibited; this entry permits only non-AA runs of the public dataset.

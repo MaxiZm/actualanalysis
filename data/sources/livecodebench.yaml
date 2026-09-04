@@ -1,0 +1,7 @@
+id: livecodebench
+name: LiveCodeBench
+url: https://livecodebench.github.io/
+license: See upstream terms
+kind: runner
+redistributable: false
+

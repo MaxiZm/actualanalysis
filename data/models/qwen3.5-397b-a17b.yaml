@@ -1,0 +1,9 @@
+id: qwen3.5-397b-a17b
+name: Qwen3.5 397B-A17B
+organization: Alibaba
+family: Qwen3.5
+release_date: 2026-02-15
+open_weights: true
+source_url: https://qwen.ai/blog?id=qwen3.5
+status: active
+

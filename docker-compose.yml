@@ -1,0 +1,20 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: actualanalysis
+      POSTGRES_USER: actualanalysis
+      POSTGRES_PASSWORD: actualanalysis
+    ports:
+      - "5432:5432"
+    volumes:
+      - actualanalysis_pg:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U actualanalysis"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  actualanalysis_pg:
+

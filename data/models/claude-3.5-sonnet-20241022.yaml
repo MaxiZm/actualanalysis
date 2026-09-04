@@ -1,0 +1,21 @@
+id: claude-3.5-sonnet-20241022
+name: Claude 3.5 Sonnet (October 2024)
+organization: Anthropic
+family: Claude 3.5
+release_date: 2024-10-22
+weights_date: 2024-10-22
+default_effort_tier: default
+effort_tier_order: [default]
+open_weights: false
+license: Proprietary
+aliases: [claude-3-5-sonnet-20241022]
+reasoning: false
+reasoning_config:
+  control: none
+source_url: https://www.anthropic.com/news/3-5-models-and-computer-use
+metadata_sources:
+  - https://www.anthropic.com/news/3-5-models-and-computer-use
+  - https://platform.claude.com/docs/en/about-claude/model-deprecations
+  - https://assets.anthropic.com/m/1cd9d098ac3e6467/original/Claude-3-Model-Card-October-Addendum.pdf
+status: active
+notes: Exact API snapshot claude-3-5-sonnet-20241022. The model card documents an April 2024 knowledge cutoff; extended thinking was not exposed for this snapshot.

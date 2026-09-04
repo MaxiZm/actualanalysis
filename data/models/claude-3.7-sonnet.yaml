@@ -1,0 +1,27 @@
+id: claude-3.7-sonnet
+name: Claude 3.7 Sonnet
+organization: Anthropic
+family: Claude 3.7
+release_date: 2025-02-24
+weights_date: 2025-02-19
+default_effort_tier: standard
+max_effort_tier: "thinking.budget_tokens=128K"
+effort_tier_order: [standard, "thinking.budget_tokens=128K"]
+open_weights: false
+license: Proprietary
+aliases: [Claude 3.7, claude-3-7-sonnet-20250219]
+reasoning: true
+reasoning_config:
+  control: numeric_token_budget
+  parameter: thinking.budget_tokens
+  default: omitted
+  minimum: 1024
+  maximum: 128K
+source_url: https://www.anthropic.com/news/claude-3-7-sonnet
+metadata_sources:
+  - https://www.anthropic.com/news/claude-3-7-sonnet
+  - https://platform.claude.com/docs/en/about-claude/model-deprecations
+  - https://platform.claude.com/docs/en/build-with-claude/extended-thinking
+  - https://www-cdn.anthropic.com/9ff93dfa8f445c932415d335c88852ef47f1201e.pdf
+status: active
+notes: Exact API snapshot claude-3-7-sonnet-20250219. The system card reports a November 2024 training cutoff and October 2024 reliable knowledge cutoff; month-only values are not coerced into exact dates.
