@@ -1,20 +1,30 @@
 id: matharena-composite
 name: MathArena composite
 version: rolling-expected-performance
-aliases: [ MathArena expected performance, Math Arena composite ]
-tags: [ chat ]
-categories: [ mathematics ]
+aliases:
+  - MathArena expected performance
+  - Math Arena composite
+tags:
+  - chat
+categories:
+  - mathematics
 holdout: rolling
 holdout_details: Composite of fresh mathematical competitions.
 chance_level: 0
-transform: { type: accuracy, input_scale: percent }
+transform:
+  type: accuracy
+  input_scale: percent
 n_items: null
 harness_url: https://matharena.ai/
-source_ids: [ matharena ]
+source_ids:
+  - matharena
 status: active
-notes: Excluded until the rolling component manifest is frozen and the
-  heterogeneous expected-performance composite has a validated likelihood.
-obs_type: count
+notes: Continuous IRT expected-performance composite, not a pooled binary count.
+  A capture freezes the complete component manifest and source table. Use only
+  the reported parametric-bootstrap 95% interval; no artificial item denominator
+  or repeat count. MathArena may include AIME within its composite; no
+  standalone AIME observation is admitted.
+obs_type: judge
 domains:
   agentic: 0
   software-code: 0
@@ -25,5 +35,7 @@ promotion_rule: "Promoted to active under method 1.2.3: the benchmark has
   independent results for ≥8 registered models; metadata pins that are still
   missing are carried as metadata_incomplete on each observation instead of
   blocking the fit."
-default_k: 1
 family_id: matharena-composite
+metadata_sources:
+  - https://matharena.ai/models
+  - https://matharena.ai/competitions

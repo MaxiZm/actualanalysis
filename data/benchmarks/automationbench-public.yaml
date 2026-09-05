@@ -26,9 +26,10 @@ harness_url: https://github.com/zapier/AutomationBench
 source_ids:
   - automationbench
   - vendor-model-cards
-status: active
+status: retired
 metadata_sources:
   - https://github.com/zapier/AutomationBench
-notes: Strict task completion on 600 public business workflows. Separate from
-  the harder private leaderboard and partial-credit reward. July 2026 classifier
-  revision.
+notes: "Retired after 2026-09-05 source audit: the eight observations labeled
+  July public were copies of the pinned v1.0.6 public table. Use
+  automationbench-public-1.0.6 for those measurements; later public-v3 and
+  vendor-unspecified conditions remain separate."

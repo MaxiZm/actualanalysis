@@ -1,0 +1,6 @@
+id: scicode-verified
+name: SciCode-Verified independent re-evaluation
+url: https://github.com/flyingwagner/scicode-verified
+kind: runner
+license: Apache-2.0 benchmark; factual paper score citations
+redistributable: false

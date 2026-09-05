@@ -1,0 +1,41 @@
+id: osworld-2.0-2026.06.24-full
+name: OSWorld 2.0 · June 24 full
+version: osworld-v2-2026.06.24
+family_id: osworld
+tags:
+  - agentic
+categories:
+  - computer-use
+domains:
+  agentic: 0.75
+  software-code: 0.05
+  reasoning: 0.05
+  knowledge-information: 0.05
+  communication-professional: 0.1
+holdout: semi_private
+holdout_details: June 24 full task set. The official results JSON assigns rows
+  without an explicit releaseVersion to v2026.06.24 and missing datasetScope
+  to full; the website's current release selection is not a row version.
+chance_level: 0
+obs_type: judge
+public_release_date: 2026-06-26
+tool_policy: osworld-v2-computer-use
+transform:
+  type: accuracy
+  input_scale: percent
+n_items: 108
+harness_url: https://osworld-v2.xlang.ai/
+source_ids:
+  - osworld
+metadata_sources:
+  - https://github.com/xlang-ai/OSWorld-V2
+  - https://raw.githubusercontent.com/xlang-ai/OSWorld-V2/main/README.md
+  - https://osworld-v2.xlang.ai/static/data/leaderboard/official-results.json
+  - https://osworld-v2.xlang.ai/
+status: watchlist
+notes: 23 official rows default to June-24 full dataset. Preserve
+  binaryAccuracy, step budget, tool setting and reasoning. They are not
+  observations of the registered Aug-08 release. Source gives no repeated-run
+  count or uncertainty. The nominal 108 tasks do not establish the observed
+  per-run denominator.
+default_k: 1

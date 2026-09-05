@@ -2,36 +2,38 @@ id: mrcr-v2-1m-8-needle
 name: MRCR v2 (1M, 8-needle bin)
 version: v2-1m-8
 family_id: mrcr
-aliases: [ MRCR v2 1M 8 needle, MRCR 1M ]
-tags: [ chat ]
-categories: [ long-context ]
+aliases:
+  - MRCR v2 1M 8 needle
+  - MRCR 1M
+tags:
+  - chat
+categories:
+  - long-context
 domains:
-  {
-    agentic: 0,
-    software-code: 0,
-    reasoning: 0.20,
-    knowledge-information: 0.80,
-    communication-professional: 0
-  }
+  agentic: 0
+  software-code: 0
+  reasoning: 0.2
+  knowledge-information: 0.8
+  communication-professional: 0
 holdout: public
 chance_level: 0
-obs_type: count
+obs_type: judge
 public_release_date: 2025-12-05
-default_k: 1
 tool_policy: none
-transform: { type: accuracy, input_scale: percent }
-n_items: 100
+transform:
+  type: accuracy
+  input_scale: percent
+n_items: null
 harness_url: https://huggingface.co/datasets/openai/mrcr
-source_ids: [ vendor-model-cards ]
+source_ids:
+  - vendor-model-cards
 metadata_sources:
   - https://huggingface.co/datasets/openai/mrcr
   - https://github.com/google-deepmind/eval_hub/blob/master/eval_hub/mrcr_v2/README.md
   - https://arxiv.org/abs/2409.12640
-status: active
-notes: The evaluator emits a continuous sequence-match ratio, not binary
+status: watchlist
+notes: "The evaluator emits a continuous sequence-match ratio, not binary
   accuracy. Excluded until an evaluator commit and reported uncertainty or
-  audited default variance are pinned.
-promotion_rule: "Promoted to active under method 1.2.3: the benchmark has
-  independent results for ≥8 registered models; metadata pins that are still
-  missing are carried as metadata_incomplete on each observation instead of
-  blocking the fit."
+  audited default variance are pinned. Audit 2026-09-05: retained as
+  observed-only; no binary denominator or sampling error is inferred from
+  nominal task-set size."

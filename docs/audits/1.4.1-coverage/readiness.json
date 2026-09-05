@@ -1,0 +1,36 @@
+{
+  "scope": "Read-only numeric and known-copy validity check after final GPQA integration; not new predictive validation or a claim of complete source certainty.",
+  "merged_sha256": "9f2f65f47d73c1d6a791d69b3d3de6edacd4fdcde3ee140b269aadbe9008b81c",
+  "preparation_sha256": "ed732d42bfedd6e278dc810c9488fc6c2a856fddf4d678592d0591be391ab2f2",
+  "admitted_observations": 881,
+  "admitted_systems": 126,
+  "admitted_models": 108,
+  "checks": {
+    "all_admitted_conditions_active": true,
+    "no_invalid_or_nonfinite_variance": true,
+    "no_invalid_counts": true,
+    "no_default_variance": true,
+    "no_gpqa_fitted": true,
+    "no_inactive_old_or_composite_count_conditions_fitted": true,
+    "matharena_continuous_native_se": true,
+    "simpleqa_revisions_retained": true,
+    "simpleqa_no_fabricated_counts": true,
+    "deepswe11_native_se_version": true,
+    "scicode64_single_run": true,
+    "no_normalized_hle_gpqa_projections_in_merged": true,
+    "no_generic_simpleqa_in_merged": true,
+    "no_promax_admitted": true,
+    "fixed_calibration_panel_passes": true,
+    "no_duplicate_explicit_lineages": true,
+    "native_se_logit_propagation_exact": true,
+    "scicode_count_unique_at_published_precision": true
+  },
+  "all_checks_passed": true,
+  "numeric_blockers": [],
+  "known_limitations": [
+    "Distinct ARC native effort profiles with tied scores remain independent configurations.",
+    "Equal cross-source vendor/ARC scores alone do not prove shared evaluation lineage; unresolved coincidences remain.",
+    "SciCode exact reasoning effort is unknown and carries incomplete metadata; source mean and unique 64-problem count are preserved.",
+    "Production fit convergence and predictive calibration are outside this read-only preparation check."
+  ]
+}

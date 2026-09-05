@@ -5,10 +5,13 @@ family: Llama 4
 release_date: 2025-04-05
 weights_date: 2025-04-05
 default_effort_tier: default
-effort_tier_order: [default]
+effort_tier_order: [ default ]
 open_weights: true
 license: Llama 4 Community License
-aliases: [llama4-maverick-17b-instruct, meta-llama/Llama-4-Maverick-17B-128E-Instruct]
+aliases:
+  - llama4-maverick-17b-instruct
+  - meta-llama/Llama-4-Maverick-17B-128E-Instruct
+  - llama-4-maverick-17b-128e-instruct
 reasoning: false
 reasoning_config:
   control: none
@@ -17,5 +20,8 @@ metadata_sources:
   - https://huggingface.co/meta-llama/Llama-4-Maverick-17B-128E-Instruct
   - https://github.com/meta-llama/llama-models
   - https://ai.meta.com/blog/llama-4-multimodal-intelligence/
+  - https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset
 status: active
-notes: Exact open-weights release meta-llama/Llama-4-Maverick-17B-128E-Instruct. Meta documents an August 2024 pretraining cutoff; the month-only value is not coerced into an exact date.
+notes: Exact open-weights release meta-llama/Llama-4-Maverick-17B-128E-Instruct.
+  Meta documents an August 2024 pretraining cutoff; the month-only value is not
+  coerced into an exact date.

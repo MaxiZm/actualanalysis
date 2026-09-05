@@ -5,7 +5,10 @@ family: Nova
 release_date: 2024-12-03
 open_weights: false
 license: Proprietary
-aliases: [Nova Pro]
+aliases:
+  - Nova Pro
+  - amazon-nova-pro-v1.0
 source_url: https://assets.amazon.science/96/7d/0d3e59514abf8fdcfafcdc574300/nova-tech-report-20250317-0810.pdf
 status: active
-
+metadata_sources:
+  - https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset

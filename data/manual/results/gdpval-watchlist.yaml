@@ -11,7 +11,15 @@ results:
     observed_on: 2025-09-25
     url: https://openai.com/index/gdpval/
     provenance: self_report
-    notes: "GDPval win-or-tie rate vs. industry experts (Wins+Ties, blind expert grading), from the original OpenAI GDPval blog post (published 2025-09-25), n=220 gold-set tasks (the full private GDPval set is 1,100 tasks; this chart used only the 220-task gold set). Values read from the page's embedded Vega-Lite chart spec (exact underlying data, not OCR/estimate). se derived from the chart's displayed CI half-width / 1.96 (95% CI assumed; not stated by source). Source display name: 'GPT-4o'. OpenAI’s own model, evaluated by OpenAI: provenance recorded as self_report per brief."
+    notes: "GDPval win-or-tie rate vs. industry experts (Wins+Ties, blind expert
+      grading), from the original OpenAI GDPval blog post (published
+      2025-09-25), n=220 gold-set tasks (the full private GDPval set is 1,100
+      tasks; this chart used only the 220-task gold set). Values read from the
+      page's embedded Vega-Lite chart spec (exact underlying data, not
+      OCR/estimate). se derived from the chart's displayed CI half-width / 1.96
+      (95% CI assumed; not stated by source). Source display name: 'GPT-4o'.
+      OpenAI’s own model, evaluated by OpenAI: provenance recorded as
+      self_report per brief."
 
   - model_id: o4-mini
     benchmark_id: gdpval
@@ -25,7 +33,15 @@ results:
     observed_on: 2025-09-25
     url: https://openai.com/index/gdpval/
     provenance: self_report
-    notes: "GDPval win-or-tie rate vs. industry experts (Wins+Ties, blind expert grading), from the original OpenAI GDPval blog post (published 2025-09-25), n=220 gold-set tasks (the full private GDPval set is 1,100 tasks; this chart used only the 220-task gold set). Values read from the page's embedded Vega-Lite chart spec (exact underlying data, not OCR/estimate). se derived from the chart's displayed CI half-width / 1.96 (95% CI assumed; not stated by source). Source display name: 'o4-mini high'. OpenAI’s own model, evaluated by OpenAI: provenance recorded as self_report per brief."
+    notes: "GDPval win-or-tie rate vs. industry experts (Wins+Ties, blind expert
+      grading), from the original OpenAI GDPval blog post (published
+      2025-09-25), n=220 gold-set tasks (the full private GDPval set is 1,100
+      tasks; this chart used only the 220-task gold set). Values read from the
+      page's embedded Vega-Lite chart spec (exact underlying data, not
+      OCR/estimate). se derived from the chart's displayed CI half-width / 1.96
+      (95% CI assumed; not stated by source). Source display name: 'o4-mini
+      high'. OpenAI’s own model, evaluated by OpenAI: provenance recorded as
+      self_report per brief."
 
   - model_id: o3
     benchmark_id: gdpval
@@ -39,7 +55,15 @@ results:
     observed_on: 2025-09-25
     url: https://openai.com/index/gdpval/
     provenance: self_report
-    notes: "GDPval win-or-tie rate vs. industry experts (Wins+Ties, blind expert grading), from the original OpenAI GDPval blog post (published 2025-09-25), n=220 gold-set tasks (the full private GDPval set is 1,100 tasks; this chart used only the 220-task gold set). Values read from the page's embedded Vega-Lite chart spec (exact underlying data, not OCR/estimate). se derived from the chart's displayed CI half-width / 1.96 (95% CI assumed; not stated by source). Source display name: 'o3 high'. OpenAI’s own model, evaluated by OpenAI: provenance recorded as self_report per brief."
+    notes: "GDPval win-or-tie rate vs. industry experts (Wins+Ties, blind expert
+      grading), from the original OpenAI GDPval blog post (published
+      2025-09-25), n=220 gold-set tasks (the full private GDPval set is 1,100
+      tasks; this chart used only the 220-task gold set). Values read from the
+      page's embedded Vega-Lite chart spec (exact underlying data, not
+      OCR/estimate). se derived from the chart's displayed CI half-width / 1.96
+      (95% CI assumed; not stated by source). Source display name: 'o3 high'.
+      OpenAI’s own model, evaluated by OpenAI: provenance recorded as
+      self_report per brief."
 
   - model_id: gpt-5-2025-08-07
     benchmark_id: gdpval
@@ -53,7 +77,15 @@ results:
     observed_on: 2025-09-25
     url: https://openai.com/index/gdpval/
     provenance: self_report
-    notes: "GDPval win-or-tie rate vs. industry experts (Wins+Ties, blind expert grading), from the original OpenAI GDPval blog post (published 2025-09-25), n=220 gold-set tasks (the full private GDPval set is 1,100 tasks; this chart used only the 220-task gold set). Values read from the page's embedded Vega-Lite chart spec (exact underlying data, not OCR/estimate). se derived from the chart's displayed CI half-width / 1.96 (95% CI assumed; not stated by source). Source display name: 'GPT-5 high'. OpenAI’s own model, evaluated by OpenAI: provenance recorded as self_report per brief."
+    notes: "GDPval win-or-tie rate vs. industry experts (Wins+Ties, blind expert
+      grading), from the original OpenAI GDPval blog post (published
+      2025-09-25), n=220 gold-set tasks (the full private GDPval set is 1,100
+      tasks; this chart used only the 220-task gold set). Values read from the
+      page's embedded Vega-Lite chart spec (exact underlying data, not
+      OCR/estimate). se derived from the chart's displayed CI half-width / 1.96
+      (95% CI assumed; not stated by source). Source display name: 'GPT-5 high'.
+      OpenAI’s own model, evaluated by OpenAI: provenance recorded as
+      self_report per brief."
 
   - model_id: gemini-2.5-pro
     benchmark_id: gdpval
@@ -67,7 +99,16 @@ results:
     observed_on: 2025-09-25
     url: https://openai.com/index/gdpval/
     provenance: independent
-    notes: "GDPval win-or-tie rate vs. industry experts (Wins+Ties, blind expert grading), from the original OpenAI GDPval blog post (published 2025-09-25), n=220 gold-set tasks (the full private GDPval set is 1,100 tasks; this chart used only the 220-task gold set). Values read from the page's embedded Vega-Lite chart spec (exact underlying data, not OCR/estimate). se derived from the chart's displayed CI half-width / 1.96 (95% CI assumed; not stated by source). Source display name: 'Gemini 2.5 Pro'. Non-OpenAI model evaluated by OpenAI (a third party) under the same blind grading protocol as the OpenAI models: provenance recorded as independent per brief."
+    notes: "GDPval win-or-tie rate vs. industry experts (Wins+Ties, blind expert
+      grading), from the original OpenAI GDPval blog post (published
+      2025-09-25), n=220 gold-set tasks (the full private GDPval set is 1,100
+      tasks; this chart used only the 220-task gold set). Values read from the
+      page's embedded Vega-Lite chart spec (exact underlying data, not
+      OCR/estimate). se derived from the chart's displayed CI half-width / 1.96
+      (95% CI assumed; not stated by source). Source display name: 'Gemini 2.5
+      Pro'. Non-OpenAI model evaluated by OpenAI (a third party) under the same
+      blind grading protocol as the OpenAI models: provenance recorded as
+      independent per brief."
 
   - model_id: claude-opus-4.1
     benchmark_id: gdpval
@@ -81,7 +122,16 @@ results:
     observed_on: 2025-09-25
     url: https://openai.com/index/gdpval/
     provenance: independent
-    notes: "GDPval win-or-tie rate vs. industry experts (Wins+Ties, blind expert grading), from the original OpenAI GDPval blog post (published 2025-09-25), n=220 gold-set tasks (the full private GDPval set is 1,100 tasks; this chart used only the 220-task gold set). Values read from the page's embedded Vega-Lite chart spec (exact underlying data, not OCR/estimate). se derived from the chart's displayed CI half-width / 1.96 (95% CI assumed; not stated by source). Source display name: 'Claude Opus 4.1'. Non-OpenAI model evaluated by OpenAI (a third party) under the same blind grading protocol as the OpenAI models: provenance recorded as independent per brief."
+    notes: "GDPval win-or-tie rate vs. industry experts (Wins+Ties, blind expert
+      grading), from the original OpenAI GDPval blog post (published
+      2025-09-25), n=220 gold-set tasks (the full private GDPval set is 1,100
+      tasks; this chart used only the 220-task gold set). Values read from the
+      page's embedded Vega-Lite chart spec (exact underlying data, not
+      OCR/estimate). se derived from the chart's displayed CI half-width / 1.96
+      (95% CI assumed; not stated by source). Source display name: 'Claude Opus
+      4.1'. Non-OpenAI model evaluated by OpenAI (a third party) under the same
+      blind grading protocol as the OpenAI models: provenance recorded as
+      independent per brief."
 
   - model_id: grok-4
     benchmark_id: gdpval
@@ -95,7 +145,16 @@ results:
     observed_on: 2025-09-25
     url: https://openai.com/index/gdpval/
     provenance: independent
-    notes: "GDPval win-or-tie rate vs. industry experts (Wins+Ties, blind expert grading), from the original OpenAI GDPval blog post (published 2025-09-25), n=220 gold-set tasks (the full private GDPval set is 1,100 tasks; this chart used only the 220-task gold set). Values read from the page's embedded Vega-Lite chart spec (exact underlying data, not OCR/estimate). se derived from the chart's displayed CI half-width / 1.96 (95% CI assumed; not stated by source). Source display name: 'Grok 4'. Non-OpenAI model evaluated by OpenAI (a third party) under the same blind grading protocol as the OpenAI models: provenance recorded as independent per brief."
+    notes: "GDPval win-or-tie rate vs. industry experts (Wins+Ties, blind expert
+      grading), from the original OpenAI GDPval blog post (published
+      2025-09-25), n=220 gold-set tasks (the full private GDPval set is 1,100
+      tasks; this chart used only the 220-task gold set). Values read from the
+      page's embedded Vega-Lite chart spec (exact underlying data, not
+      OCR/estimate). se derived from the chart's displayed CI half-width / 1.96
+      (95% CI assumed; not stated by source). Source display name: 'Grok 4'.
+      Non-OpenAI model evaluated by OpenAI (a third party) under the same blind
+      grading protocol as the OpenAI models: provenance recorded as independent
+      per brief."
 
   - model_id: gpt-5.2
     benchmark_id: mcpmark
@@ -110,7 +169,12 @@ results:
     observed_on: 2025-12-15
     url: https://mcpmark.ai/leaderboard
     provenance: independent
-    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion, playwright, postgres), generated_at 2025-12-15T06:36:08Z, task_set=standard, k=4 (pass^4 shown in config where available). std reported by source used directly as se (not derived from a stated CI). MCPMark model key: gpt-5-2-high; source reports underlying checkpoint gpt-5.2-2025-12-11."
+    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion,
+      playwright, postgres), generated_at 2025-12-15T06:36:08Z,
+      task_set=standard, k=4 (pass^4 shown in config where available). std
+      reported by source used directly as se (not derived from a stated CI).
+      MCPMark model key: gpt-5-2-high; source reports underlying checkpoint
+      gpt-5.2-2025-12-11."
 
   - model_id: gemini-3-pro
     benchmark_id: mcpmark
@@ -125,7 +189,12 @@ results:
     observed_on: 2025-12-15
     url: https://mcpmark.ai/leaderboard
     provenance: independent
-    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion, playwright, postgres), generated_at 2025-12-15T06:36:08Z, task_set=standard, k=4 (pass^4 shown in config where available). std reported by source used directly as se (not derived from a stated CI). MCPMark model key: gemini-3-pro-high; source reports underlying checkpoint gemini-3-pro."
+    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion,
+      playwright, postgres), generated_at 2025-12-15T06:36:08Z,
+      task_set=standard, k=4 (pass^4 shown in config where available). std
+      reported by source used directly as se (not derived from a stated CI).
+      MCPMark model key: gemini-3-pro-high; source reports underlying checkpoint
+      gemini-3-pro."
 
   - model_id: gpt-5-2025-08-07
     benchmark_id: mcpmark
@@ -140,7 +209,12 @@ results:
     observed_on: 2025-12-15
     url: https://mcpmark.ai/leaderboard
     provenance: independent
-    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion, playwright, postgres), generated_at 2025-12-15T06:36:08Z, task_set=standard, k=4 (pass^4 shown in config where available). std reported by source used directly as se (not derived from a stated CI). MCPMark model key: gpt-5-medium; source reports underlying checkpoint gpt-5-2025-08-07."
+    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion,
+      playwright, postgres), generated_at 2025-12-15T06:36:08Z,
+      task_set=standard, k=4 (pass^4 shown in config where available). std
+      reported by source used directly as se (not derived from a stated CI).
+      MCPMark model key: gpt-5-medium; source reports underlying checkpoint
+      gpt-5-2025-08-07."
 
   - model_id: gpt-5-2025-08-07
     benchmark_id: mcpmark
@@ -155,7 +229,12 @@ results:
     observed_on: 2025-12-15
     url: https://mcpmark.ai/leaderboard
     provenance: independent
-    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion, playwright, postgres), generated_at 2025-12-15T06:36:08Z, task_set=standard, k=4 (pass^4 shown in config where available). std reported by source used directly as se (not derived from a stated CI). MCPMark model key: gpt-5-high; source reports underlying checkpoint gpt-5-2025-08-07."
+    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion,
+      playwright, postgres), generated_at 2025-12-15T06:36:08Z,
+      task_set=standard, k=4 (pass^4 shown in config where available). std
+      reported by source used directly as se (not derived from a stated CI).
+      MCPMark model key: gpt-5-high; source reports underlying checkpoint
+      gpt-5-2025-08-07."
 
   - model_id: gemini-3-pro
     benchmark_id: mcpmark
@@ -170,7 +249,12 @@ results:
     observed_on: 2025-12-15
     url: https://mcpmark.ai/leaderboard
     provenance: independent
-    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion, playwright, postgres), generated_at 2025-12-15T06:36:08Z, task_set=standard, k=4 (pass^4 shown in config where available). std reported by source used directly as se (not derived from a stated CI). MCPMark model key: gemini-3-pro-low; source reports underlying checkpoint gemini-3-pro."
+    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion,
+      playwright, postgres), generated_at 2025-12-15T06:36:08Z,
+      task_set=standard, k=4 (pass^4 shown in config where available). std
+      reported by source used directly as se (not derived from a stated CI).
+      MCPMark model key: gemini-3-pro-low; source reports underlying checkpoint
+      gemini-3-pro."
 
   - model_id: gpt-5-2025-08-07
     benchmark_id: mcpmark
@@ -185,7 +269,12 @@ results:
     observed_on: 2025-12-15
     url: https://mcpmark.ai/leaderboard
     provenance: independent
-    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion, playwright, postgres), generated_at 2025-12-15T06:36:08Z, task_set=standard, k=4 (pass^4 shown in config where available). std reported by source used directly as se (not derived from a stated CI). MCPMark model key: gpt-5-low; source reports underlying checkpoint gpt-5-2025-08-07."
+    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion,
+      playwright, postgres), generated_at 2025-12-15T06:36:08Z,
+      task_set=standard, k=4 (pass^4 shown in config where available). std
+      reported by source used directly as se (not derived from a stated CI).
+      MCPMark model key: gpt-5-low; source reports underlying checkpoint
+      gpt-5-2025-08-07."
 
   - model_id: claude-opus-4.5
     benchmark_id: mcpmark
@@ -200,7 +289,12 @@ results:
     observed_on: 2025-12-15
     url: https://mcpmark.ai/leaderboard
     provenance: independent
-    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion, playwright, postgres), generated_at 2025-12-15T06:36:08Z, task_set=standard, k=4 (pass^4 shown in config where available). std reported by source used directly as se (not derived from a stated CI). MCPMark model key: claude-opus-4-5-high; source reports underlying checkpoint claude-opus-4-5-20251101."
+    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion,
+      playwright, postgres), generated_at 2025-12-15T06:36:08Z,
+      task_set=standard, k=4 (pass^4 shown in config where available). std
+      reported by source used directly as se (not derived from a stated CI).
+      MCPMark model key: claude-opus-4-5-high; source reports underlying
+      checkpoint claude-opus-4-5-20251101."
 
   - model_id: deepseek-v3.2
     benchmark_id: mcpmark
@@ -215,7 +309,12 @@ results:
     observed_on: 2025-12-15
     url: https://mcpmark.ai/leaderboard
     provenance: independent
-    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion, playwright, postgres), generated_at 2025-12-15T06:36:08Z, task_set=standard, k=4 (pass^4 shown in config where available). std reported by source used directly as se (not derived from a stated CI). MCPMark model key: deepseek-v3-2-thinking; source reports underlying checkpoint deepseek-v3.2-reasoner."
+    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion,
+      playwright, postgres), generated_at 2025-12-15T06:36:08Z,
+      task_set=standard, k=4 (pass^4 shown in config where available). std
+      reported by source used directly as se (not derived from a stated CI).
+      MCPMark model key: deepseek-v3-2-thinking; source reports underlying
+      checkpoint deepseek-v3.2-reasoner."
 
   - model_id: claude-sonnet-4.5
     benchmark_id: mcpmark
@@ -230,7 +329,12 @@ results:
     observed_on: 2025-12-15
     url: https://mcpmark.ai/leaderboard
     provenance: independent
-    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion, playwright, postgres), generated_at 2025-12-15T06:36:08Z, task_set=standard, k=4 (pass^4 shown in config where available). std reported by source used directly as se (not derived from a stated CI). MCPMark model key: claude-sonnet-4-5; source reports underlying checkpoint claude-sonnet-4-5-20250929."
+    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion,
+      playwright, postgres), generated_at 2025-12-15T06:36:08Z,
+      task_set=standard, k=4 (pass^4 shown in config where available). std
+      reported by source used directly as se (not derived from a stated CI).
+      MCPMark model key: claude-sonnet-4-5; source reports underlying checkpoint
+      claude-sonnet-4-5-20250929."
 
   - model_id: grok-4
     benchmark_id: mcpmark
@@ -245,7 +349,12 @@ results:
     observed_on: 2025-12-15
     url: https://mcpmark.ai/leaderboard
     provenance: independent
-    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion, playwright, postgres), generated_at 2025-12-15T06:36:08Z, task_set=standard, k=4 (pass^4 shown in config where available). std reported by source used directly as se (not derived from a stated CI). MCPMark model key: grok-4; source reports underlying checkpoint grok-4-0709."
+    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion,
+      playwright, postgres), generated_at 2025-12-15T06:36:08Z,
+      task_set=standard, k=4 (pass^4 shown in config where available). std
+      reported by source used directly as se (not derived from a stated CI).
+      MCPMark model key: grok-4; source reports underlying checkpoint
+      grok-4-0709."
 
   - model_id: gpt-5-mini
     benchmark_id: mcpmark
@@ -260,7 +369,12 @@ results:
     observed_on: 2025-12-15
     url: https://mcpmark.ai/leaderboard
     provenance: independent
-    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion, playwright, postgres), generated_at 2025-12-15T06:36:08Z, task_set=standard, k=4 (pass^4 shown in config where available). std reported by source used directly as se (not derived from a stated CI). MCPMark model key: gpt-5-mini-high; source reports underlying checkpoint gpt-5-mini-2025-08-07."
+    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion,
+      playwright, postgres), generated_at 2025-12-15T06:36:08Z,
+      task_set=standard, k=4 (pass^4 shown in config where available). std
+      reported by source used directly as se (not derived from a stated CI).
+      MCPMark model key: gpt-5-mini-high; source reports underlying checkpoint
+      gpt-5-mini-2025-08-07."
 
   - model_id: claude-opus-4.1
     benchmark_id: mcpmark
@@ -274,7 +388,13 @@ results:
     observed_on: 2025-12-15
     url: https://mcpmark.ai/leaderboard
     provenance: independent
-    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion, playwright, postgres), generated_at 2025-12-15T06:36:08Z, task_set=standard, k=4 (pass^4 shown in config where available). std reported by source used directly as se (not derived from a stated CI). MCPMark model key: claude-opus-4-1; source reports underlying checkpoint claude-opus-4-1-20250805. Source reported std=0 for this model (likely a single run, not a meaningful zero-variance estimate); se omitted."
+    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion,
+      playwright, postgres), generated_at 2025-12-15T06:36:08Z,
+      task_set=standard, k=4 (pass^4 shown in config where available). std
+      reported by source used directly as se (not derived from a stated CI).
+      MCPMark model key: claude-opus-4-1; source reports underlying checkpoint
+      claude-opus-4-1-20250805. Source reported std=0 for this model (likely a
+      single run, not a meaningful zero-variance estimate); se omitted."
 
   - model_id: deepseek-v3.2
     benchmark_id: mcpmark
@@ -289,7 +409,12 @@ results:
     observed_on: 2025-12-15
     url: https://mcpmark.ai/leaderboard
     provenance: independent
-    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion, playwright, postgres), generated_at 2025-12-15T06:36:08Z, task_set=standard, k=4 (pass^4 shown in config where available). std reported by source used directly as se (not derived from a stated CI). MCPMark model key: deepseek-v3-2-chat; source reports underlying checkpoint deepseek-v3.2-chat."
+    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion,
+      playwright, postgres), generated_at 2025-12-15T06:36:08Z,
+      task_set=standard, k=4 (pass^4 shown in config where available). std
+      reported by source used directly as se (not derived from a stated CI).
+      MCPMark model key: deepseek-v3-2-chat; source reports underlying
+      checkpoint deepseek-v3.2-chat."
 
   - model_id: claude-sonnet-4
     benchmark_id: mcpmark
@@ -304,7 +429,12 @@ results:
     observed_on: 2025-12-15
     url: https://mcpmark.ai/leaderboard
     provenance: independent
-    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion, playwright, postgres), generated_at 2025-12-15T06:36:08Z, task_set=standard, k=4 (pass^4 shown in config where available). std reported by source used directly as se (not derived from a stated CI). MCPMark model key: claude-sonnet-4-high; source reports underlying checkpoint claude-sonnet-4-20250514."
+    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion,
+      playwright, postgres), generated_at 2025-12-15T06:36:08Z,
+      task_set=standard, k=4 (pass^4 shown in config where available). std
+      reported by source used directly as se (not derived from a stated CI).
+      MCPMark model key: claude-sonnet-4-high; source reports underlying
+      checkpoint claude-sonnet-4-20250514."
 
   - model_id: claude-sonnet-4
     benchmark_id: mcpmark
@@ -319,7 +449,12 @@ results:
     observed_on: 2025-12-15
     url: https://mcpmark.ai/leaderboard
     provenance: independent
-    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion, playwright, postgres), generated_at 2025-12-15T06:36:08Z, task_set=standard, k=4 (pass^4 shown in config where available). std reported by source used directly as se (not derived from a stated CI). MCPMark model key: claude-sonnet-4; source reports underlying checkpoint claude-sonnet-4-20250514."
+    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion,
+      playwright, postgres), generated_at 2025-12-15T06:36:08Z,
+      task_set=standard, k=4 (pass^4 shown in config where available). std
+      reported by source used directly as se (not derived from a stated CI).
+      MCPMark model key: claude-sonnet-4; source reports underlying checkpoint
+      claude-sonnet-4-20250514."
 
   - model_id: gpt-5-mini
     benchmark_id: mcpmark
@@ -334,7 +469,12 @@ results:
     observed_on: 2025-12-15
     url: https://mcpmark.ai/leaderboard
     provenance: independent
-    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion, playwright, postgres), generated_at 2025-12-15T06:36:08Z, task_set=standard, k=4 (pass^4 shown in config where available). std reported by source used directly as se (not derived from a stated CI). MCPMark model key: gpt-5-mini-medium; source reports underlying checkpoint gpt-5-mini-2025-08-07."
+    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion,
+      playwright, postgres), generated_at 2025-12-15T06:36:08Z,
+      task_set=standard, k=4 (pass^4 shown in config where available). std
+      reported by source used directly as se (not derived from a stated CI).
+      MCPMark model key: gpt-5-mini-medium; source reports underlying checkpoint
+      gpt-5-mini-2025-08-07."
 
   - model_id: claude-sonnet-4
     benchmark_id: mcpmark
@@ -349,7 +489,12 @@ results:
     observed_on: 2025-12-15
     url: https://mcpmark.ai/leaderboard
     provenance: independent
-    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion, playwright, postgres), generated_at 2025-12-15T06:36:08Z, task_set=standard, k=4 (pass^4 shown in config where available). std reported by source used directly as se (not derived from a stated CI). MCPMark model key: claude-sonnet-4-low; source reports underlying checkpoint claude-sonnet-4-20250514."
+    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion,
+      playwright, postgres), generated_at 2025-12-15T06:36:08Z,
+      task_set=standard, k=4 (pass^4 shown in config where available). std
+      reported by source used directly as se (not derived from a stated CI).
+      MCPMark model key: claude-sonnet-4-low; source reports underlying
+      checkpoint claude-sonnet-4-20250514."
 
   - model_id: o3
     benchmark_id: mcpmark
@@ -364,7 +509,12 @@ results:
     observed_on: 2025-12-15
     url: https://mcpmark.ai/leaderboard
     provenance: independent
-    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion, playwright, postgres), generated_at 2025-12-15T06:36:08Z, task_set=standard, k=4 (pass^4 shown in config where available). std reported by source used directly as se (not derived from a stated CI). MCPMark model key: o3; source reports underlying checkpoint o3-2025-04-16."
+    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion,
+      playwright, postgres), generated_at 2025-12-15T06:36:08Z,
+      task_set=standard, k=4 (pass^4 shown in config where available). std
+      reported by source used directly as se (not derived from a stated CI).
+      MCPMark model key: o3; source reports underlying checkpoint
+      o3-2025-04-16."
 
   - model_id: qwen3-coder-480b-a35b
     benchmark_id: mcpmark
@@ -379,7 +529,12 @@ results:
     observed_on: 2025-12-15
     url: https://mcpmark.ai/leaderboard
     provenance: independent
-    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion, playwright, postgres), generated_at 2025-12-15T06:36:08Z, task_set=standard, k=4 (pass^4 shown in config where available). std reported by source used directly as se (not derived from a stated CI). MCPMark model key: qwen-3-coder-plus; source reports underlying checkpoint qwen3-coder-480b-a35b-instruct."
+    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion,
+      playwright, postgres), generated_at 2025-12-15T06:36:08Z,
+      task_set=standard, k=4 (pass^4 shown in config where available). std
+      reported by source used directly as se (not derived from a stated CI).
+      MCPMark model key: qwen-3-coder-plus; source reports underlying checkpoint
+      qwen3-coder-480b-a35b-instruct."
 
   - model_id: grok-4-fast
     benchmark_id: mcpmark
@@ -394,7 +549,12 @@ results:
     observed_on: 2025-12-15
     url: https://mcpmark.ai/leaderboard
     provenance: independent
-    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion, playwright, postgres), generated_at 2025-12-15T06:36:08Z, task_set=standard, k=4 (pass^4 shown in config where available). std reported by source used directly as se (not derived from a stated CI). MCPMark model key: grok-4-fast; source reports underlying checkpoint grok-4-fast."
+    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion,
+      playwright, postgres), generated_at 2025-12-15T06:36:08Z,
+      task_set=standard, k=4 (pass^4 shown in config where available). std
+      reported by source used directly as se (not derived from a stated CI).
+      MCPMark model key: grok-4-fast; source reports underlying checkpoint
+      grok-4-fast."
 
   - model_id: kimi-k2
     benchmark_id: mcpmark
@@ -409,7 +569,12 @@ results:
     observed_on: 2025-12-15
     url: https://mcpmark.ai/leaderboard
     provenance: independent
-    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion, playwright, postgres), generated_at 2025-12-15T06:36:08Z, task_set=standard, k=4 (pass^4 shown in config where available). std reported by source used directly as se (not derived from a stated CI). MCPMark model key: kimi-k2-0905; source reports underlying checkpoint kimi-k2-0905-preview."
+    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion,
+      playwright, postgres), generated_at 2025-12-15T06:36:08Z,
+      task_set=standard, k=4 (pass^4 shown in config where available). std
+      reported by source used directly as se (not derived from a stated CI).
+      MCPMark model key: kimi-k2-0905; source reports underlying checkpoint
+      kimi-k2-0905-preview."
 
   - model_id: grok-code-fast-1
     benchmark_id: mcpmark
@@ -424,7 +589,12 @@ results:
     observed_on: 2025-12-15
     url: https://mcpmark.ai/leaderboard
     provenance: independent
-    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion, playwright, postgres), generated_at 2025-12-15T06:36:08Z, task_set=standard, k=4 (pass^4 shown in config where available). std reported by source used directly as se (not derived from a stated CI). MCPMark model key: grok-code-fast-1; source reports underlying checkpoint grok-code-fast-1."
+    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion,
+      playwright, postgres), generated_at 2025-12-15T06:36:08Z,
+      task_set=standard, k=4 (pass^4 shown in config where available). std
+      reported by source used directly as se (not derived from a stated CI).
+      MCPMark model key: grok-code-fast-1; source reports underlying checkpoint
+      grok-code-fast-1."
 
   - model_id: kimi-k2
     benchmark_id: mcpmark
@@ -439,7 +609,12 @@ results:
     observed_on: 2025-12-15
     url: https://mcpmark.ai/leaderboard
     provenance: independent
-    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion, playwright, postgres), generated_at 2025-12-15T06:36:08Z, task_set=standard, k=4 (pass^4 shown in config where available). std reported by source used directly as se (not derived from a stated CI). MCPMark model key: kimi-k2-0711; source reports underlying checkpoint kimi-k2-0711-preview."
+    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion,
+      playwright, postgres), generated_at 2025-12-15T06:36:08Z,
+      task_set=standard, k=4 (pass^4 shown in config where available). std
+      reported by source used directly as se (not derived from a stated CI).
+      MCPMark model key: kimi-k2-0711; source reports underlying checkpoint
+      kimi-k2-0711-preview."
 
   - model_id: qwen3-max
     benchmark_id: mcpmark
@@ -454,7 +629,12 @@ results:
     observed_on: 2025-12-15
     url: https://mcpmark.ai/leaderboard
     provenance: independent
-    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion, playwright, postgres), generated_at 2025-12-15T06:36:08Z, task_set=standard, k=4 (pass^4 shown in config where available). std reported by source used directly as se (not derived from a stated CI). MCPMark model key: qwen-3-max; source reports underlying checkpoint qwen3-max-preview."
+    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion,
+      playwright, postgres), generated_at 2025-12-15T06:36:08Z,
+      task_set=standard, k=4 (pass^4 shown in config where available). std
+      reported by source used directly as se (not derived from a stated CI).
+      MCPMark model key: qwen-3-max; source reports underlying checkpoint
+      qwen3-max-preview."
 
   - model_id: o4-mini
     benchmark_id: mcpmark
@@ -469,7 +649,12 @@ results:
     observed_on: 2025-12-15
     url: https://mcpmark.ai/leaderboard
     provenance: independent
-    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion, playwright, postgres), generated_at 2025-12-15T06:36:08Z, task_set=standard, k=4 (pass^4 shown in config where available). std reported by source used directly as se (not derived from a stated CI). MCPMark model key: o4-mini; source reports underlying checkpoint o4-mini-2025-04-16."
+    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion,
+      playwright, postgres), generated_at 2025-12-15T06:36:08Z,
+      task_set=standard, k=4 (pass^4 shown in config where available). std
+      reported by source used directly as se (not derived from a stated CI).
+      MCPMark model key: o4-mini; source reports underlying checkpoint
+      o4-mini-2025-04-16."
 
   - model_id: gemini-2.5-pro
     benchmark_id: mcpmark
@@ -484,7 +669,12 @@ results:
     observed_on: 2025-12-15
     url: https://mcpmark.ai/leaderboard
     provenance: independent
-    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion, playwright, postgres), generated_at 2025-12-15T06:36:08Z, task_set=standard, k=4 (pass^4 shown in config where available). std reported by source used directly as se (not derived from a stated CI). MCPMark model key: gemini-2-5-pro; source reports underlying checkpoint gemini-2.5-pro."
+    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion,
+      playwright, postgres), generated_at 2025-12-15T06:36:08Z,
+      task_set=standard, k=4 (pass^4 shown in config where available). std
+      reported by source used directly as se (not derived from a stated CI).
+      MCPMark model key: gemini-2-5-pro; source reports underlying checkpoint
+      gemini-2.5-pro."
 
   - model_id: glm-4.5
     benchmark_id: mcpmark
@@ -499,7 +689,11 @@ results:
     observed_on: 2025-12-15
     url: https://mcpmark.ai/leaderboard
     provenance: independent
-    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion, playwright, postgres), generated_at 2025-12-15T06:36:08Z, task_set=standard, k=4 (pass^4 shown in config where available). std reported by source used directly as se (not derived from a stated CI). MCPMark model key: glm-4-5; source reports underlying checkpoint glm-4.5."
+    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion,
+      playwright, postgres), generated_at 2025-12-15T06:36:08Z,
+      task_set=standard, k=4 (pass^4 shown in config where available). std
+      reported by source used directly as se (not derived from a stated CI).
+      MCPMark model key: glm-4-5; source reports underlying checkpoint glm-4.5."
 
   - model_id: gemini-2.5-flash
     benchmark_id: mcpmark
@@ -514,7 +708,12 @@ results:
     observed_on: 2025-12-15
     url: https://mcpmark.ai/leaderboard
     provenance: independent
-    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion, playwright, postgres), generated_at 2025-12-15T06:36:08Z, task_set=standard, k=4 (pass^4 shown in config where available). std reported by source used directly as se (not derived from a stated CI). MCPMark model key: gemini-2-5-flash; source reports underlying checkpoint gemini-2.5-flash."
+    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion,
+      playwright, postgres), generated_at 2025-12-15T06:36:08Z,
+      task_set=standard, k=4 (pass^4 shown in config where available). std
+      reported by source used directly as se (not derived from a stated CI).
+      MCPMark model key: gemini-2-5-flash; source reports underlying checkpoint
+      gemini-2.5-flash."
 
   - model_id: gpt-5-mini
     benchmark_id: mcpmark
@@ -529,7 +728,12 @@ results:
     observed_on: 2025-12-15
     url: https://mcpmark.ai/leaderboard
     provenance: independent
-    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion, playwright, postgres), generated_at 2025-12-15T06:36:08Z, task_set=standard, k=4 (pass^4 shown in config where available). std reported by source used directly as se (not derived from a stated CI). MCPMark model key: gpt-5-mini-low; source reports underlying checkpoint gpt-5-mini-2025-08-07."
+    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion,
+      playwright, postgres), generated_at 2025-12-15T06:36:08Z,
+      task_set=standard, k=4 (pass^4 shown in config where available). std
+      reported by source used directly as se (not derived from a stated CI).
+      MCPMark model key: gpt-5-mini-low; source reports underlying checkpoint
+      gpt-5-mini-2025-08-07."
 
   - model_id: gpt-4.1
     benchmark_id: mcpmark
@@ -544,7 +748,12 @@ results:
     observed_on: 2025-12-15
     url: https://mcpmark.ai/leaderboard
     provenance: independent
-    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion, playwright, postgres), generated_at 2025-12-15T06:36:08Z, task_set=standard, k=4 (pass^4 shown in config where available). std reported by source used directly as se (not derived from a stated CI). MCPMark model key: gpt-4-1; source reports underlying checkpoint gpt-4.1-2025-04-14."
+    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion,
+      playwright, postgres), generated_at 2025-12-15T06:36:08Z,
+      task_set=standard, k=4 (pass^4 shown in config where available). std
+      reported by source used directly as se (not derived from a stated CI).
+      MCPMark model key: gpt-4-1; source reports underlying checkpoint
+      gpt-4.1-2025-04-14."
 
   - model_id: gpt-5-nano
     benchmark_id: mcpmark
@@ -559,7 +768,12 @@ results:
     observed_on: 2025-12-15
     url: https://mcpmark.ai/leaderboard
     provenance: independent
-    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion, playwright, postgres), generated_at 2025-12-15T06:36:08Z, task_set=standard, k=4 (pass^4 shown in config where available). std reported by source used directly as se (not derived from a stated CI). MCPMark model key: gpt-5-nano-medium; source reports underlying checkpoint gpt-5-nano-2025-08-07."
+    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion,
+      playwright, postgres), generated_at 2025-12-15T06:36:08Z,
+      task_set=standard, k=4 (pass^4 shown in config where available). std
+      reported by source used directly as se (not derived from a stated CI).
+      MCPMark model key: gpt-5-nano-medium; source reports underlying checkpoint
+      gpt-5-nano-2025-08-07."
 
   - model_id: gpt-5-nano
     benchmark_id: mcpmark
@@ -574,7 +788,12 @@ results:
     observed_on: 2025-12-15
     url: https://mcpmark.ai/leaderboard
     provenance: independent
-    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion, playwright, postgres), generated_at 2025-12-15T06:36:08Z, task_set=standard, k=4 (pass^4 shown in config where available). std reported by source used directly as se (not derived from a stated CI). MCPMark model key: gpt-5-nano-high; source reports underlying checkpoint gpt-5-nano-2025-08-07."
+    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion,
+      playwright, postgres), generated_at 2025-12-15T06:36:08Z,
+      task_set=standard, k=4 (pass^4 shown in config where available). std
+      reported by source used directly as se (not derived from a stated CI).
+      MCPMark model key: gpt-5-nano-high; source reports underlying checkpoint
+      gpt-5-nano-2025-08-07."
 
   - model_id: gpt-oss-120b
     benchmark_id: mcpmark
@@ -589,7 +808,12 @@ results:
     observed_on: 2025-12-15
     url: https://mcpmark.ai/leaderboard
     provenance: independent
-    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion, playwright, postgres), generated_at 2025-12-15T06:36:08Z, task_set=standard, k=4 (pass^4 shown in config where available). std reported by source used directly as se (not derived from a stated CI). MCPMark model key: gpt-oss-120b; source reports underlying checkpoint gpt-oss-120b."
+    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion,
+      playwright, postgres), generated_at 2025-12-15T06:36:08Z,
+      task_set=standard, k=4 (pass^4 shown in config where available). std
+      reported by source used directly as se (not derived from a stated CI).
+      MCPMark model key: gpt-oss-120b; source reports underlying checkpoint
+      gpt-oss-120b."
 
   - model_id: gpt-5-nano
     benchmark_id: mcpmark
@@ -604,7 +828,12 @@ results:
     observed_on: 2025-12-15
     url: https://mcpmark.ai/leaderboard
     provenance: independent
-    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion, playwright, postgres), generated_at 2025-12-15T06:36:08Z, task_set=standard, k=4 (pass^4 shown in config where available). std reported by source used directly as se (not derived from a stated CI). MCPMark model key: gpt-5-nano-low; source reports underlying checkpoint gpt-5-nano-2025-08-07."
+    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion,
+      playwright, postgres), generated_at 2025-12-15T06:36:08Z,
+      task_set=standard, k=4 (pass^4 shown in config where available). std
+      reported by source used directly as se (not derived from a stated CI).
+      MCPMark model key: gpt-5-nano-low; source reports underlying checkpoint
+      gpt-5-nano-2025-08-07."
 
   - model_id: gpt-4.1-mini
     benchmark_id: mcpmark
@@ -619,7 +848,12 @@ results:
     observed_on: 2025-12-15
     url: https://mcpmark.ai/leaderboard
     provenance: independent
-    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion, playwright, postgres), generated_at 2025-12-15T06:36:08Z, task_set=standard, k=4 (pass^4 shown in config where available). std reported by source used directly as se (not derived from a stated CI). MCPMark model key: gpt-4-1-mini; source reports underlying checkpoint gpt-4.1-mini-2025-04-14."
+    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion,
+      playwright, postgres), generated_at 2025-12-15T06:36:08Z,
+      task_set=standard, k=4 (pass^4 shown in config where available). std
+      reported by source used directly as se (not derived from a stated CI).
+      MCPMark model key: gpt-4-1-mini; source reports underlying checkpoint
+      gpt-4.1-mini-2025-04-14."
 
   - model_id: gpt-4.1-nano
     benchmark_id: mcpmark
@@ -633,7 +867,13 @@ results:
     observed_on: 2025-12-15
     url: https://mcpmark.ai/leaderboard
     provenance: independent
-    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion, playwright, postgres), generated_at 2025-12-15T06:36:08Z, task_set=standard, k=4 (pass^4 shown in config where available). std reported by source used directly as se (not derived from a stated CI). MCPMark model key: gpt-4-1-nano; source reports underlying checkpoint gpt-4.1-nano-2025-04-14. Source reported std=0 for this model (likely a single run, not a meaningful zero-variance estimate); se omitted."
+    notes: "MCPMark overall leaderboard (5 MCP servers: filesystem, github, notion,
+      playwright, postgres), generated_at 2025-12-15T06:36:08Z,
+      task_set=standard, k=4 (pass^4 shown in config where available). std
+      reported by source used directly as se (not derived from a stated CI).
+      MCPMark model key: gpt-4-1-nano; source reports underlying checkpoint
+      gpt-4.1-nano-2025-04-14. Source reported std=0 for this model (likely a
+      single run, not a meaningful zero-variance estimate); se omitted."
 
   - model_id: gpt-6-astra
     benchmark_id: deepswe
@@ -646,7 +886,14 @@ results:
     observed_on: 2026-09-03
     url: https://deepswe.datacurve.ai/
     provenance: independent
-    notes: "DeepSWE 'Best' leaderboard view (best config per model), 113 tasks, all runs on mini-swe-agent via Pier on Modal, updated September 3, 2026. The displayed +/- is not converted because DeepSWE does not state its interval level; scoring derives a binomial SE from the exact n_items instead. Source display name: 'GPT-6 Astra [xhigh]'."
+    notes: "DeepSWE 'Best' leaderboard view (best config per model), 113 tasks, all
+      runs on mini-swe-agent via Pier on Modal, updated September 3, 2026. The
+      displayed +/- is not converted because DeepSWE does not state its interval
+      level; scoring derives a binomial SE from the exact n_items instead.
+      Source display name: 'GPT-6 Astra [xhigh]'. Superseded by the 2026-09-05
+      coverage audit: Score matches native DeepSWE v1.1, not registered v1;
+      retain only under a separate v1.1 condition."
+    sample_only: true
 
   - model_id: gemini-3.8-flash
     benchmark_id: deepswe
@@ -659,7 +906,14 @@ results:
     observed_on: 2026-09-03
     url: https://deepswe.datacurve.ai/
     provenance: independent
-    notes: "DeepSWE 'Best' leaderboard view (best config per model), 113 tasks, all runs on mini-swe-agent via Pier on Modal, updated September 3, 2026. The displayed +/- is not converted because DeepSWE does not state its interval level; scoring derives a binomial SE from the exact n_items instead. Source display name: 'gemini-3.8-flash [high]'."
+    notes: "DeepSWE 'Best' leaderboard view (best config per model), 113 tasks, all
+      runs on mini-swe-agent via Pier on Modal, updated September 3, 2026. The
+      displayed +/- is not converted because DeepSWE does not state its interval
+      level; scoring derives a binomial SE from the exact n_items instead.
+      Source display name: 'gemini-3.8-flash [high]'. Superseded by the
+      2026-09-05 coverage audit: Score matches native DeepSWE v1.1, not
+      registered v1; retain only under a separate v1.1 condition."
+    sample_only: true
 
   - model_id: claude-opus-5
     benchmark_id: deepswe
@@ -672,7 +926,14 @@ results:
     observed_on: 2026-09-03
     url: https://deepswe.datacurve.ai/
     provenance: independent
-    notes: "DeepSWE 'Best' leaderboard view (best config per model), 113 tasks, all runs on mini-swe-agent via Pier on Modal, updated September 3, 2026. The displayed +/- is not converted because DeepSWE does not state its interval level; scoring derives a binomial SE from the exact n_items instead. Source display name: 'claude-opus-5 [max]'."
+    notes: "DeepSWE 'Best' leaderboard view (best config per model), 113 tasks, all
+      runs on mini-swe-agent via Pier on Modal, updated September 3, 2026. The
+      displayed +/- is not converted because DeepSWE does not state its interval
+      level; scoring derives a binomial SE from the exact n_items instead.
+      Source display name: 'claude-opus-5 [max]'. Superseded by the 2026-09-05
+      coverage audit: Score matches native DeepSWE v1.1, not registered v1;
+      retain only under a separate v1.1 condition."
+    sample_only: true
 
   - model_id: gpt-5.6-sol
     benchmark_id: deepswe
@@ -685,7 +946,14 @@ results:
     observed_on: 2026-09-03
     url: https://deepswe.datacurve.ai/
     provenance: independent
-    notes: "DeepSWE 'Best' leaderboard view (best config per model), 113 tasks, all runs on mini-swe-agent via Pier on Modal, updated September 3, 2026. The displayed +/- is not converted because DeepSWE does not state its interval level; scoring derives a binomial SE from the exact n_items instead. Source display name: 'gpt-5.6-sol [max]'."
+    notes: "DeepSWE 'Best' leaderboard view (best config per model), 113 tasks, all
+      runs on mini-swe-agent via Pier on Modal, updated September 3, 2026. The
+      displayed +/- is not converted because DeepSWE does not state its interval
+      level; scoring derives a binomial SE from the exact n_items instead.
+      Source display name: 'gpt-5.6-sol [max]'. Superseded by the 2026-09-05
+      coverage audit: Score matches native DeepSWE v1.1, not registered v1;
+      retain only under a separate v1.1 condition."
+    sample_only: true
 
   - model_id: claude-fable-5
     benchmark_id: deepswe
@@ -698,7 +966,14 @@ results:
     observed_on: 2026-09-03
     url: https://deepswe.datacurve.ai/
     provenance: independent
-    notes: "DeepSWE 'Best' leaderboard view (best config per model), 113 tasks, all runs on mini-swe-agent via Pier on Modal, updated September 3, 2026. The displayed +/- is not converted because DeepSWE does not state its interval level; scoring derives a binomial SE from the exact n_items instead. Source display name: 'claude-fable-5 [xhigh]'."
+    notes: "DeepSWE 'Best' leaderboard view (best config per model), 113 tasks, all
+      runs on mini-swe-agent via Pier on Modal, updated September 3, 2026. The
+      displayed +/- is not converted because DeepSWE does not state its interval
+      level; scoring derives a binomial SE from the exact n_items instead.
+      Source display name: 'claude-fable-5 [xhigh]'. Superseded by the
+      2026-09-05 coverage audit: Score matches native DeepSWE v1.1, not
+      registered v1; retain only under a separate v1.1 condition."
+    sample_only: true
 
   - model_id: glm-5.3
     benchmark_id: deepswe
@@ -711,7 +986,14 @@ results:
     observed_on: 2026-09-03
     url: https://deepswe.datacurve.ai/
     provenance: independent
-    notes: "DeepSWE 'Best' leaderboard view (best config per model), 113 tasks, all runs on mini-swe-agent via Pier on Modal, updated September 3, 2026. The displayed +/- is not converted because DeepSWE does not state its interval level; scoring derives a binomial SE from the exact n_items instead. Source display name: 'glm-5.3 [max]'."
+    notes: "DeepSWE 'Best' leaderboard view (best config per model), 113 tasks, all
+      runs on mini-swe-agent via Pier on Modal, updated September 3, 2026. The
+      displayed +/- is not converted because DeepSWE does not state its interval
+      level; scoring derives a binomial SE from the exact n_items instead.
+      Source display name: 'glm-5.3 [max]'. Superseded by the 2026-09-05
+      coverage audit: Score matches native DeepSWE v1.1, not registered v1;
+      retain only under a separate v1.1 condition."
+    sample_only: true
 
   - model_id: kimi-k3
     benchmark_id: deepswe
@@ -724,7 +1006,14 @@ results:
     observed_on: 2026-09-03
     url: https://deepswe.datacurve.ai/
     provenance: independent
-    notes: "DeepSWE 'Best' leaderboard view (best config per model), 113 tasks, all runs on mini-swe-agent via Pier on Modal, updated September 3, 2026. The displayed +/- is not converted because DeepSWE does not state its interval level; scoring derives a binomial SE from the exact n_items instead. Source display name: 'kimi-k3 [max]'."
+    notes: "DeepSWE 'Best' leaderboard view (best config per model), 113 tasks, all
+      runs on mini-swe-agent via Pier on Modal, updated September 3, 2026. The
+      displayed +/- is not converted because DeepSWE does not state its interval
+      level; scoring derives a binomial SE from the exact n_items instead.
+      Source display name: 'kimi-k3 [max]'. Superseded by the 2026-09-05
+      coverage audit: Score matches native DeepSWE v1.1, not registered v1;
+      retain only under a separate v1.1 condition."
+    sample_only: true
 
   - model_id: grok-4.6
     benchmark_id: deepswe
@@ -737,7 +1026,14 @@ results:
     observed_on: 2026-09-03
     url: https://deepswe.datacurve.ai/
     provenance: independent
-    notes: "DeepSWE 'Best' leaderboard view (best config per model), 113 tasks, all runs on mini-swe-agent via Pier on Modal, updated September 3, 2026. The displayed +/- is not converted because DeepSWE does not state its interval level; scoring derives a binomial SE from the exact n_items instead. Source display name: 'grok-4.6 [medium]'."
+    notes: "DeepSWE 'Best' leaderboard view (best config per model), 113 tasks, all
+      runs on mini-swe-agent via Pier on Modal, updated September 3, 2026. The
+      displayed +/- is not converted because DeepSWE does not state its interval
+      level; scoring derives a binomial SE from the exact n_items instead.
+      Source display name: 'grok-4.6 [medium]'. Superseded by the 2026-09-05
+      coverage audit: Score matches native DeepSWE v1.1, not registered v1;
+      retain only under a separate v1.1 condition."
+    sample_only: true
 
   - model_id: gpt-5.6-luna
     benchmark_id: deepswe
@@ -750,7 +1046,14 @@ results:
     observed_on: 2026-09-03
     url: https://deepswe.datacurve.ai/
     provenance: independent
-    notes: "DeepSWE 'Best' leaderboard view (best config per model), 113 tasks, all runs on mini-swe-agent via Pier on Modal, updated September 3, 2026. The displayed +/- is not converted because DeepSWE does not state its interval level; scoring derives a binomial SE from the exact n_items instead. Source display name: 'gpt-5.6-luna [max]'."
+    notes: "DeepSWE 'Best' leaderboard view (best config per model), 113 tasks, all
+      runs on mini-swe-agent via Pier on Modal, updated September 3, 2026. The
+      displayed +/- is not converted because DeepSWE does not state its interval
+      level; scoring derives a binomial SE from the exact n_items instead.
+      Source display name: 'gpt-5.6-luna [max]'. Superseded by the 2026-09-05
+      coverage audit: Score matches native DeepSWE v1.1, not registered v1;
+      retain only under a separate v1.1 condition."
+    sample_only: true
 
   - model_id: gpt-5.5
     benchmark_id: deepswe
@@ -763,7 +1066,14 @@ results:
     observed_on: 2026-09-03
     url: https://deepswe.datacurve.ai/
     provenance: independent
-    notes: "DeepSWE 'Best' leaderboard view (best config per model), 113 tasks, all runs on mini-swe-agent via Pier on Modal, updated September 3, 2026. The displayed +/- is not converted because DeepSWE does not state its interval level; scoring derives a binomial SE from the exact n_items instead. Source display name: 'gpt-5.5 [xhigh]'."
+    notes: "DeepSWE 'Best' leaderboard view (best config per model), 113 tasks, all
+      runs on mini-swe-agent via Pier on Modal, updated September 3, 2026. The
+      displayed +/- is not converted because DeepSWE does not state its interval
+      level; scoring derives a binomial SE from the exact n_items instead.
+      Source display name: 'gpt-5.5 [xhigh]'. Superseded by the 2026-09-05
+      coverage audit: Score matches native DeepSWE v1.1, not registered v1;
+      retain only under a separate v1.1 condition."
+    sample_only: true
 
   - model_id: gemini-3.7-flash
     benchmark_id: deepswe
@@ -776,7 +1086,14 @@ results:
     observed_on: 2026-09-03
     url: https://deepswe.datacurve.ai/
     provenance: independent
-    notes: "DeepSWE 'Best' leaderboard view (best config per model), 113 tasks, all runs on mini-swe-agent via Pier on Modal, updated September 3, 2026. The displayed +/- is not converted because DeepSWE does not state its interval level; scoring derives a binomial SE from the exact n_items instead. Source display name: 'gemini-3.7-flash [medium]'."
+    notes: "DeepSWE 'Best' leaderboard view (best config per model), 113 tasks, all
+      runs on mini-swe-agent via Pier on Modal, updated September 3, 2026. The
+      displayed +/- is not converted because DeepSWE does not state its interval
+      level; scoring derives a binomial SE from the exact n_items instead.
+      Source display name: 'gemini-3.7-flash [medium]'. Superseded by the
+      2026-09-05 coverage audit: Score matches native DeepSWE v1.1, not
+      registered v1; retain only under a separate v1.1 condition."
+    sample_only: true
 
   - model_id: claude-opus-4.8
     benchmark_id: deepswe
@@ -789,7 +1106,14 @@ results:
     observed_on: 2026-09-03
     url: https://deepswe.datacurve.ai/
     provenance: independent
-    notes: "DeepSWE 'Best' leaderboard view (best config per model), 113 tasks, all runs on mini-swe-agent via Pier on Modal, updated September 3, 2026. The displayed +/- is not converted because DeepSWE does not state its interval level; scoring derives a binomial SE from the exact n_items instead. Source display name: 'claude-opus-4.8 [max]'."
+    notes: "DeepSWE 'Best' leaderboard view (best config per model), 113 tasks, all
+      runs on mini-swe-agent via Pier on Modal, updated September 3, 2026. The
+      displayed +/- is not converted because DeepSWE does not state its interval
+      level; scoring derives a binomial SE from the exact n_items instead.
+      Source display name: 'claude-opus-4.8 [max]'. Superseded by the 2026-09-05
+      coverage audit: Score matches native DeepSWE v1.1, not registered v1;
+      retain only under a separate v1.1 condition."
+    sample_only: true
 
   - model_id: qwen-3.8-max
     benchmark_id: deepswe
@@ -802,7 +1126,14 @@ results:
     observed_on: 2026-09-03
     url: https://deepswe.datacurve.ai/
     provenance: independent
-    notes: "DeepSWE 'Best' leaderboard view (best config per model), 113 tasks, all runs on mini-swe-agent via Pier on Modal, updated September 3, 2026. The displayed +/- is not converted because DeepSWE does not state its interval level; scoring derives a binomial SE from the exact n_items instead. Source display name: 'qwen3.8-max [xhigh]'."
+    notes: "DeepSWE 'Best' leaderboard view (best config per model), 113 tasks, all
+      runs on mini-swe-agent via Pier on Modal, updated September 3, 2026. The
+      displayed +/- is not converted because DeepSWE does not state its interval
+      level; scoring derives a binomial SE from the exact n_items instead.
+      Source display name: 'qwen3.8-max [xhigh]'. Superseded by the 2026-09-05
+      coverage audit: Score matches native DeepSWE v1.1, not registered v1;
+      retain only under a separate v1.1 condition."
+    sample_only: true
 
   - model_id: claude-sonnet-5
     benchmark_id: deepswe
@@ -815,7 +1146,14 @@ results:
     observed_on: 2026-09-03
     url: https://deepswe.datacurve.ai/
     provenance: independent
-    notes: "DeepSWE 'Best' leaderboard view (best config per model), 113 tasks, all runs on mini-swe-agent via Pier on Modal, updated September 3, 2026. The displayed +/- is not converted because DeepSWE does not state its interval level; scoring derives a binomial SE from the exact n_items instead. Source display name: 'claude-sonnet-5 [max]'."
+    notes: "DeepSWE 'Best' leaderboard view (best config per model), 113 tasks, all
+      runs on mini-swe-agent via Pier on Modal, updated September 3, 2026. The
+      displayed +/- is not converted because DeepSWE does not state its interval
+      level; scoring derives a binomial SE from the exact n_items instead.
+      Source display name: 'claude-sonnet-5 [max]'. Superseded by the 2026-09-05
+      coverage audit: Score matches native DeepSWE v1.1, not registered v1;
+      retain only under a separate v1.1 condition."
+    sample_only: true
 
   - model_id: glm-5.2
     benchmark_id: deepswe
@@ -828,7 +1166,14 @@ results:
     observed_on: 2026-09-03
     url: https://deepswe.datacurve.ai/
     provenance: independent
-    notes: "DeepSWE 'Best' leaderboard view (best config per model), 113 tasks, all runs on mini-swe-agent via Pier on Modal, updated September 3, 2026. The displayed +/- is not converted because DeepSWE does not state its interval level; scoring derives a binomial SE from the exact n_items instead. Source display name: 'glm-5.2 [max]'."
+    notes: "DeepSWE 'Best' leaderboard view (best config per model), 113 tasks, all
+      runs on mini-swe-agent via Pier on Modal, updated September 3, 2026. The
+      displayed +/- is not converted because DeepSWE does not state its interval
+      level; scoring derives a binomial SE from the exact n_items instead.
+      Source display name: 'glm-5.2 [max]'. Superseded by the 2026-09-05
+      coverage audit: Score matches native DeepSWE v1.1, not registered v1;
+      retain only under a separate v1.1 condition."
+    sample_only: true
 
   - model_id: claude-fable-5.1
     benchmark_id: livebench-2026
@@ -839,7 +1184,14 @@ results:
     observed_on: 2026-09-04
     url: https://livebench.ai/
     provenance: independent
-    notes: "LiveBench-2026-06-25 release ('latest', rolling/live leaderboard), overall = mean of the 7 category averages across 23 objective tasks. Scraped from the live-rendered leaderboard table on 2026-09-04; the site does not report se/n_items/CIs for this table so none are recorded. Source display name: 'Claude Fable 5.1 Max Effort'."
+    notes: "LiveBench-2026-06-25 release ('latest', rolling/live leaderboard),
+      overall = mean of the 7 category averages across 23 objective tasks.
+      Scraped from the live-rendered leaderboard table on 2026-09-04; the site
+      does not report se/n_items/CIs for this table so none are recorded. Source
+      display name: 'Claude Fable 5.1 Max Effort'. Superseded by the 2026-09-05
+      coverage audit: Replace rounded table with full exact equal-category
+      composite and native configuration."
+    sample_only: true
 
   - model_id: claude-fable-5
     benchmark_id: livebench-2026
@@ -850,7 +1202,14 @@ results:
     observed_on: 2026-09-04
     url: https://livebench.ai/
     provenance: independent
-    notes: "LiveBench-2026-06-25 release ('latest', rolling/live leaderboard), overall = mean of the 7 category averages across 23 objective tasks. Scraped from the live-rendered leaderboard table on 2026-09-04; the site does not report se/n_items/CIs for this table so none are recorded. Source display name: 'Claude Fable 5 Max Effort'."
+    notes: "LiveBench-2026-06-25 release ('latest', rolling/live leaderboard),
+      overall = mean of the 7 category averages across 23 objective tasks.
+      Scraped from the live-rendered leaderboard table on 2026-09-04; the site
+      does not report se/n_items/CIs for this table so none are recorded. Source
+      display name: 'Claude Fable 5 Max Effort'. Superseded by the 2026-09-05
+      coverage audit: Replace rounded table with full exact equal-category
+      composite and native configuration."
+    sample_only: true
 
   - model_id: gpt-5.6-sol
     benchmark_id: livebench-2026
@@ -861,7 +1220,14 @@ results:
     observed_on: 2026-09-04
     url: https://livebench.ai/
     provenance: independent
-    notes: "LiveBench-2026-06-25 release ('latest', rolling/live leaderboard), overall = mean of the 7 category averages across 23 objective tasks. Scraped from the live-rendered leaderboard table on 2026-09-04; the site does not report se/n_items/CIs for this table so none are recorded. Source display name: 'GPT-5.6 Sol Max Effort'."
+    notes: "LiveBench-2026-06-25 release ('latest', rolling/live leaderboard),
+      overall = mean of the 7 category averages across 23 objective tasks.
+      Scraped from the live-rendered leaderboard table on 2026-09-04; the site
+      does not report se/n_items/CIs for this table so none are recorded. Source
+      display name: 'GPT-5.6 Sol Max Effort'. Superseded by the 2026-09-05
+      coverage audit: Replace rounded table with full exact equal-category
+      composite and native configuration."
+    sample_only: true
 
   - model_id: gpt-5.5
     benchmark_id: livebench-2026
@@ -872,7 +1238,14 @@ results:
     observed_on: 2026-09-04
     url: https://livebench.ai/
     provenance: independent
-    notes: "LiveBench-2026-06-25 release ('latest', rolling/live leaderboard), overall = mean of the 7 category averages across 23 objective tasks. Scraped from the live-rendered leaderboard table on 2026-09-04; the site does not report se/n_items/CIs for this table so none are recorded. Source display name: 'GPT-5.5 Thinking xHigh Effort'."
+    notes: "LiveBench-2026-06-25 release ('latest', rolling/live leaderboard),
+      overall = mean of the 7 category averages across 23 objective tasks.
+      Scraped from the live-rendered leaderboard table on 2026-09-04; the site
+      does not report se/n_items/CIs for this table so none are recorded. Source
+      display name: 'GPT-5.5 Thinking xHigh Effort'. Superseded by the
+      2026-09-05 coverage audit: Replace rounded table with full exact
+      equal-category composite and native configuration."
+    sample_only: true
 
   - model_id: claude-opus-5
     benchmark_id: livebench-2026
@@ -883,7 +1256,14 @@ results:
     observed_on: 2026-09-04
     url: https://livebench.ai/
     provenance: independent
-    notes: "LiveBench-2026-06-25 release ('latest', rolling/live leaderboard), overall = mean of the 7 category averages across 23 objective tasks. Scraped from the live-rendered leaderboard table on 2026-09-04; the site does not report se/n_items/CIs for this table so none are recorded. Source display name: 'Claude 5 Opus Thinking Max Effort'."
+    notes: "LiveBench-2026-06-25 release ('latest', rolling/live leaderboard),
+      overall = mean of the 7 category averages across 23 objective tasks.
+      Scraped from the live-rendered leaderboard table on 2026-09-04; the site
+      does not report se/n_items/CIs for this table so none are recorded. Source
+      display name: 'Claude 5 Opus Thinking Max Effort'. Superseded by the
+      2026-09-05 coverage audit: Replace rounded table with full exact
+      equal-category composite and native configuration."
+    sample_only: true
 
   - model_id: kimi-k3
     benchmark_id: livebench-2026
@@ -894,7 +1274,14 @@ results:
     observed_on: 2026-09-04
     url: https://livebench.ai/
     provenance: independent
-    notes: "LiveBench-2026-06-25 release ('latest', rolling/live leaderboard), overall = mean of the 7 category averages across 23 objective tasks. Scraped from the live-rendered leaderboard table on 2026-09-04; the site does not report se/n_items/CIs for this table so none are recorded. Source display name: 'Kimi K3'."
+    notes: "LiveBench-2026-06-25 release ('latest', rolling/live leaderboard),
+      overall = mean of the 7 category averages across 23 objective tasks.
+      Scraped from the live-rendered leaderboard table on 2026-09-04; the site
+      does not report se/n_items/CIs for this table so none are recorded. Source
+      display name: 'Kimi K3'. Superseded by the 2026-09-05 coverage audit:
+      Replace rounded table with full exact equal-category composite and native
+      configuration."
+    sample_only: true
 
   - model_id: gemini-3.7-flash
     benchmark_id: livebench-2026
@@ -905,7 +1292,14 @@ results:
     observed_on: 2026-09-04
     url: https://livebench.ai/
     provenance: independent
-    notes: "LiveBench-2026-06-25 release ('latest', rolling/live leaderboard), overall = mean of the 7 category averages across 23 objective tasks. Scraped from the live-rendered leaderboard table on 2026-09-04; the site does not report se/n_items/CIs for this table so none are recorded. Source display name: 'Gemini 3.7 Flash High'."
+    notes: "LiveBench-2026-06-25 release ('latest', rolling/live leaderboard),
+      overall = mean of the 7 category averages across 23 objective tasks.
+      Scraped from the live-rendered leaderboard table on 2026-09-04; the site
+      does not report se/n_items/CIs for this table so none are recorded. Source
+      display name: 'Gemini 3.7 Flash High'. Superseded by the 2026-09-05
+      coverage audit: Replace rounded table with full exact equal-category
+      composite and native configuration."
+    sample_only: true
 
   - model_id: qwen-3.8-max
     benchmark_id: livebench-2026
@@ -916,7 +1310,14 @@ results:
     observed_on: 2026-09-04
     url: https://livebench.ai/
     provenance: independent
-    notes: "LiveBench-2026-06-25 release ('latest', rolling/live leaderboard), overall = mean of the 7 category averages across 23 objective tasks. Scraped from the live-rendered leaderboard table on 2026-09-04; the site does not report se/n_items/CIs for this table so none are recorded. Source display name: 'Qwen 3.8 Max'."
+    notes: "LiveBench-2026-06-25 release ('latest', rolling/live leaderboard),
+      overall = mean of the 7 category averages across 23 objective tasks.
+      Scraped from the live-rendered leaderboard table on 2026-09-04; the site
+      does not report se/n_items/CIs for this table so none are recorded. Source
+      display name: 'Qwen 3.8 Max'. Superseded by the 2026-09-05 coverage audit:
+      Replace rounded table with full exact equal-category composite and native
+      configuration."
+    sample_only: true
 
   - model_id: grok-4.6
     benchmark_id: livebench-2026
@@ -927,7 +1328,14 @@ results:
     observed_on: 2026-09-04
     url: https://livebench.ai/
     provenance: independent
-    notes: "LiveBench-2026-06-25 release ('latest', rolling/live leaderboard), overall = mean of the 7 category averages across 23 objective tasks. Scraped from the live-rendered leaderboard table on 2026-09-04; the site does not report se/n_items/CIs for this table so none are recorded. Source display name: 'Grok 4.6'."
+    notes: "LiveBench-2026-06-25 release ('latest', rolling/live leaderboard),
+      overall = mean of the 7 category averages across 23 objective tasks.
+      Scraped from the live-rendered leaderboard table on 2026-09-04; the site
+      does not report se/n_items/CIs for this table so none are recorded. Source
+      display name: 'Grok 4.6'. Superseded by the 2026-09-05 coverage audit:
+      Replace rounded table with full exact equal-category composite and native
+      configuration."
+    sample_only: true
 
   - model_id: gpt-5.4
     benchmark_id: livebench-2026
@@ -938,7 +1346,14 @@ results:
     observed_on: 2026-09-04
     url: https://livebench.ai/
     provenance: independent
-    notes: "LiveBench-2026-06-25 release ('latest', rolling/live leaderboard), overall = mean of the 7 category averages across 23 objective tasks. Scraped from the live-rendered leaderboard table on 2026-09-04; the site does not report se/n_items/CIs for this table so none are recorded. Source display name: 'GPT-5.4 Thinking xHigh Effort'."
+    notes: "LiveBench-2026-06-25 release ('latest', rolling/live leaderboard),
+      overall = mean of the 7 category averages across 23 objective tasks.
+      Scraped from the live-rendered leaderboard table on 2026-09-04; the site
+      does not report se/n_items/CIs for this table so none are recorded. Source
+      display name: 'GPT-5.4 Thinking xHigh Effort'. Superseded by the
+      2026-09-05 coverage audit: Replace rounded table with full exact
+      equal-category composite and native configuration."
+    sample_only: true
 
   - model_id: gpt-5.6-terra
     benchmark_id: livebench-2026
@@ -949,7 +1364,14 @@ results:
     observed_on: 2026-09-04
     url: https://livebench.ai/
     provenance: independent
-    notes: "LiveBench-2026-06-25 release ('latest', rolling/live leaderboard), overall = mean of the 7 category averages across 23 objective tasks. Scraped from the live-rendered leaderboard table on 2026-09-04; the site does not report se/n_items/CIs for this table so none are recorded. Source display name: 'GPT-5.6 Terra Max Effort'."
+    notes: "LiveBench-2026-06-25 release ('latest', rolling/live leaderboard),
+      overall = mean of the 7 category averages across 23 objective tasks.
+      Scraped from the live-rendered leaderboard table on 2026-09-04; the site
+      does not report se/n_items/CIs for this table so none are recorded. Source
+      display name: 'GPT-5.6 Terra Max Effort'. Superseded by the 2026-09-05
+      coverage audit: Replace rounded table with full exact equal-category
+      composite and native configuration."
+    sample_only: true
 
   - model_id: gemini-3.1-pro
     benchmark_id: livebench-2026
@@ -960,7 +1382,16 @@ results:
     observed_on: 2026-09-04
     url: https://livebench.ai/
     provenance: independent
-    notes: "LiveBench-2026-06-25 release ('latest', rolling/live leaderboard), overall = mean of the 7 category averages across 23 objective tasks. Scraped from the live-rendered leaderboard table on 2026-09-04; the site does not report se/n_items/CIs for this table so none are recorded. Source display name: 'Gemini 3.1 Pro Preview High'. Row was labeled 'Preview' on the source; mapped to gemini-3.1-pro (no separate preview id in the allowed list)."
+    notes: "LiveBench-2026-06-25 release ('latest', rolling/live leaderboard),
+      overall = mean of the 7 category averages across 23 objective tasks.
+      Scraped from the live-rendered leaderboard table on 2026-09-04; the site
+      does not report se/n_items/CIs for this table so none are recorded. Source
+      display name: 'Gemini 3.1 Pro Preview High'. Row was labeled 'Preview' on
+      the source; mapped to gemini-3.1-pro (no separate preview id in the
+      allowed list). Superseded by the 2026-09-05 coverage audit: Replace
+      rounded table with full exact equal-category composite and native
+      configuration."
+    sample_only: true
 
   - model_id: claude-opus-4.7
     benchmark_id: livebench-2026
@@ -971,7 +1402,14 @@ results:
     observed_on: 2026-09-04
     url: https://livebench.ai/
     provenance: independent
-    notes: "LiveBench-2026-06-25 release ('latest', rolling/live leaderboard), overall = mean of the 7 category averages across 23 objective tasks. Scraped from the live-rendered leaderboard table on 2026-09-04; the site does not report se/n_items/CIs for this table so none are recorded. Source display name: 'Claude 4.7 Opus Thinking xHigh Effort'."
+    notes: "LiveBench-2026-06-25 release ('latest', rolling/live leaderboard),
+      overall = mean of the 7 category averages across 23 objective tasks.
+      Scraped from the live-rendered leaderboard table on 2026-09-04; the site
+      does not report se/n_items/CIs for this table so none are recorded. Source
+      display name: 'Claude 4.7 Opus Thinking xHigh Effort'. Superseded by the
+      2026-09-05 coverage audit: Replace rounded table with full exact
+      equal-category composite and native configuration."
+    sample_only: true
 
   - model_id: claude-opus-4.8
     benchmark_id: livebench-2026
@@ -982,7 +1420,14 @@ results:
     observed_on: 2026-09-04
     url: https://livebench.ai/
     provenance: independent
-    notes: "LiveBench-2026-06-25 release ('latest', rolling/live leaderboard), overall = mean of the 7 category averages across 23 objective tasks. Scraped from the live-rendered leaderboard table on 2026-09-04; the site does not report se/n_items/CIs for this table so none are recorded. Source display name: 'Claude 4.8 Opus Thinking Max Effort'."
+    notes: "LiveBench-2026-06-25 release ('latest', rolling/live leaderboard),
+      overall = mean of the 7 category averages across 23 objective tasks.
+      Scraped from the live-rendered leaderboard table on 2026-09-04; the site
+      does not report se/n_items/CIs for this table so none are recorded. Source
+      display name: 'Claude 4.8 Opus Thinking Max Effort'. Superseded by the
+      2026-09-05 coverage audit: Replace rounded table with full exact
+      equal-category composite and native configuration."
+    sample_only: true
 
   - model_id: glm-5.3
     benchmark_id: livebench-2026
@@ -993,7 +1438,14 @@ results:
     observed_on: 2026-09-04
     url: https://livebench.ai/
     provenance: independent
-    notes: "LiveBench-2026-06-25 release ('latest', rolling/live leaderboard), overall = mean of the 7 category averages across 23 objective tasks. Scraped from the live-rendered leaderboard table on 2026-09-04; the site does not report se/n_items/CIs for this table so none are recorded. Source display name: 'GLM-5.3'."
+    notes: "LiveBench-2026-06-25 release ('latest', rolling/live leaderboard),
+      overall = mean of the 7 category averages across 23 objective tasks.
+      Scraped from the live-rendered leaderboard table on 2026-09-04; the site
+      does not report se/n_items/CIs for this table so none are recorded. Source
+      display name: 'GLM-5.3'. Superseded by the 2026-09-05 coverage audit:
+      Replace rounded table with full exact equal-category composite and native
+      configuration."
+    sample_only: true
 
   - model_id: claude-sonnet-5
     benchmark_id: livebench-2026
@@ -1004,7 +1456,14 @@ results:
     observed_on: 2026-09-04
     url: https://livebench.ai/
     provenance: independent
-    notes: "LiveBench-2026-06-25 release ('latest', rolling/live leaderboard), overall = mean of the 7 category averages across 23 objective tasks. Scraped from the live-rendered leaderboard table on 2026-09-04; the site does not report se/n_items/CIs for this table so none are recorded. Source display name: 'Claude Sonnet 5 xHigh Effort'."
+    notes: "LiveBench-2026-06-25 release ('latest', rolling/live leaderboard),
+      overall = mean of the 7 category averages across 23 objective tasks.
+      Scraped from the live-rendered leaderboard table on 2026-09-04; the site
+      does not report se/n_items/CIs for this table so none are recorded. Source
+      display name: 'Claude Sonnet 5 xHigh Effort'. Superseded by the 2026-09-05
+      coverage audit: Replace rounded table with full exact equal-category
+      composite and native configuration."
+    sample_only: true
 
   - model_id: gemini-3.8-flash
     benchmark_id: livebench-2026
@@ -1015,7 +1474,14 @@ results:
     observed_on: 2026-09-04
     url: https://livebench.ai/
     provenance: independent
-    notes: "LiveBench-2026-06-25 release ('latest', rolling/live leaderboard), overall = mean of the 7 category averages across 23 objective tasks. Scraped from the live-rendered leaderboard table on 2026-09-04; the site does not report se/n_items/CIs for this table so none are recorded. Source display name: 'Gemini 3.8 Flash High'."
+    notes: "LiveBench-2026-06-25 release ('latest', rolling/live leaderboard),
+      overall = mean of the 7 category averages across 23 objective tasks.
+      Scraped from the live-rendered leaderboard table on 2026-09-04; the site
+      does not report se/n_items/CIs for this table so none are recorded. Source
+      display name: 'Gemini 3.8 Flash High'. Superseded by the 2026-09-05
+      coverage audit: Replace rounded table with full exact equal-category
+      composite and native configuration."
+    sample_only: true
 
   - model_id: grok-4.5
     benchmark_id: livebench-2026
@@ -1026,7 +1492,14 @@ results:
     observed_on: 2026-09-04
     url: https://livebench.ai/
     provenance: independent
-    notes: "LiveBench-2026-06-25 release ('latest', rolling/live leaderboard), overall = mean of the 7 category averages across 23 objective tasks. Scraped from the live-rendered leaderboard table on 2026-09-04; the site does not report se/n_items/CIs for this table so none are recorded. Source display name: 'Grok 4.5'."
+    notes: "LiveBench-2026-06-25 release ('latest', rolling/live leaderboard),
+      overall = mean of the 7 category averages across 23 objective tasks.
+      Scraped from the live-rendered leaderboard table on 2026-09-04; the site
+      does not report se/n_items/CIs for this table so none are recorded. Source
+      display name: 'Grok 4.5'. Superseded by the 2026-09-05 coverage audit:
+      Replace rounded table with full exact equal-category composite and native
+      configuration."
+    sample_only: true
 
   - model_id: muse-spark-1.1
     benchmark_id: livebench-2026
@@ -1037,7 +1510,14 @@ results:
     observed_on: 2026-09-04
     url: https://livebench.ai/
     provenance: independent
-    notes: "LiveBench-2026-06-25 release ('latest', rolling/live leaderboard), overall = mean of the 7 category averages across 23 objective tasks. Scraped from the live-rendered leaderboard table on 2026-09-04; the site does not report se/n_items/CIs for this table so none are recorded. Source display name: 'Muse Spark 1.1 xHigh Effort'."
+    notes: "LiveBench-2026-06-25 release ('latest', rolling/live leaderboard),
+      overall = mean of the 7 category averages across 23 objective tasks.
+      Scraped from the live-rendered leaderboard table on 2026-09-04; the site
+      does not report se/n_items/CIs for this table so none are recorded. Source
+      display name: 'Muse Spark 1.1 xHigh Effort'. Superseded by the 2026-09-05
+      coverage audit: Replace rounded table with full exact equal-category
+      composite and native configuration."
+    sample_only: true
 
   - model_id: gpt-5.2
     benchmark_id: livebench-2026
@@ -1048,7 +1528,14 @@ results:
     observed_on: 2026-09-04
     url: https://livebench.ai/
     provenance: independent
-    notes: "LiveBench-2026-06-25 release ('latest', rolling/live leaderboard), overall = mean of the 7 category averages across 23 objective tasks. Scraped from the live-rendered leaderboard table on 2026-09-04; the site does not report se/n_items/CIs for this table so none are recorded. Source display name: 'GPT-5.2 High'."
+    notes: "LiveBench-2026-06-25 release ('latest', rolling/live leaderboard),
+      overall = mean of the 7 category averages across 23 objective tasks.
+      Scraped from the live-rendered leaderboard table on 2026-09-04; the site
+      does not report se/n_items/CIs for this table so none are recorded. Source
+      display name: 'GPT-5.2 High'. Superseded by the 2026-09-05 coverage audit:
+      Replace rounded table with full exact equal-category composite and native
+      configuration."
+    sample_only: true
 
   - model_id: claude-opus-4.6
     benchmark_id: livebench-2026
@@ -1059,7 +1546,14 @@ results:
     observed_on: 2026-09-04
     url: https://livebench.ai/
     provenance: independent
-    notes: "LiveBench-2026-06-25 release ('latest', rolling/live leaderboard), overall = mean of the 7 category averages across 23 objective tasks. Scraped from the live-rendered leaderboard table on 2026-09-04; the site does not report se/n_items/CIs for this table so none are recorded. Source display name: 'Claude 4.6 Opus Thinking High Effort'."
+    notes: "LiveBench-2026-06-25 release ('latest', rolling/live leaderboard),
+      overall = mean of the 7 category averages across 23 objective tasks.
+      Scraped from the live-rendered leaderboard table on 2026-09-04; the site
+      does not report se/n_items/CIs for this table so none are recorded. Source
+      display name: 'Claude 4.6 Opus Thinking High Effort'. Superseded by the
+      2026-09-05 coverage audit: Replace rounded table with full exact
+      equal-category composite and native configuration."
+    sample_only: true
 
   - model_id: gpt-5.2-codex
     benchmark_id: livebench-2026
@@ -1070,7 +1564,14 @@ results:
     observed_on: 2026-09-04
     url: https://livebench.ai/
     provenance: independent
-    notes: "LiveBench-2026-06-25 release ('latest', rolling/live leaderboard), overall = mean of the 7 category averages across 23 objective tasks. Scraped from the live-rendered leaderboard table on 2026-09-04; the site does not report se/n_items/CIs for this table so none are recorded. Source display name: 'GPT-5.2 Codex'."
+    notes: "LiveBench-2026-06-25 release ('latest', rolling/live leaderboard),
+      overall = mean of the 7 category averages across 23 objective tasks.
+      Scraped from the live-rendered leaderboard table on 2026-09-04; the site
+      does not report se/n_items/CIs for this table so none are recorded. Source
+      display name: 'GPT-5.2 Codex'. Superseded by the 2026-09-05 coverage
+      audit: Replace rounded table with full exact equal-category composite and
+      native configuration."
+    sample_only: true
 
   - model_id: gpt-5.6-luna
     benchmark_id: livebench-2026
@@ -1081,7 +1582,14 @@ results:
     observed_on: 2026-09-04
     url: https://livebench.ai/
     provenance: independent
-    notes: "LiveBench-2026-06-25 release ('latest', rolling/live leaderboard), overall = mean of the 7 category averages across 23 objective tasks. Scraped from the live-rendered leaderboard table on 2026-09-04; the site does not report se/n_items/CIs for this table so none are recorded. Source display name: 'GPT-5.6 Luna Max Effort'."
+    notes: "LiveBench-2026-06-25 release ('latest', rolling/live leaderboard),
+      overall = mean of the 7 category averages across 23 objective tasks.
+      Scraped from the live-rendered leaderboard table on 2026-09-04; the site
+      does not report se/n_items/CIs for this table so none are recorded. Source
+      display name: 'GPT-5.6 Luna Max Effort'. Superseded by the 2026-09-05
+      coverage audit: Replace rounded table with full exact equal-category
+      composite and native configuration."
+    sample_only: true
 
   - model_id: glm-5.2
     benchmark_id: livebench-2026
@@ -1092,7 +1600,14 @@ results:
     observed_on: 2026-09-04
     url: https://livebench.ai/
     provenance: independent
-    notes: "LiveBench-2026-06-25 release ('latest', rolling/live leaderboard), overall = mean of the 7 category averages across 23 objective tasks. Scraped from the live-rendered leaderboard table on 2026-09-04; the site does not report se/n_items/CIs for this table so none are recorded. Source display name: 'GLM-5.2'."
+    notes: "LiveBench-2026-06-25 release ('latest', rolling/live leaderboard),
+      overall = mean of the 7 category averages across 23 objective tasks.
+      Scraped from the live-rendered leaderboard table on 2026-09-04; the site
+      does not report se/n_items/CIs for this table so none are recorded. Source
+      display name: 'GLM-5.2'. Superseded by the 2026-09-05 coverage audit:
+      Replace rounded table with full exact equal-category composite and native
+      configuration."
+    sample_only: true
 
   - model_id: claude-sonnet-4.6
     benchmark_id: livebench-2026
@@ -1103,7 +1618,14 @@ results:
     observed_on: 2026-09-04
     url: https://livebench.ai/
     provenance: independent
-    notes: "LiveBench-2026-06-25 release ('latest', rolling/live leaderboard), overall = mean of the 7 category averages across 23 objective tasks. Scraped from the live-rendered leaderboard table on 2026-09-04; the site does not report se/n_items/CIs for this table so none are recorded. Source display name: 'Claude 4.6 Sonnet Thinking Medium Effort'."
+    notes: "LiveBench-2026-06-25 release ('latest', rolling/live leaderboard),
+      overall = mean of the 7 category averages across 23 objective tasks.
+      Scraped from the live-rendered leaderboard table on 2026-09-04; the site
+      does not report se/n_items/CIs for this table so none are recorded. Source
+      display name: 'Claude 4.6 Sonnet Thinking Medium Effort'. Superseded by
+      the 2026-09-05 coverage audit: Replace rounded table with full exact
+      equal-category composite and native configuration."
+    sample_only: true
 
   - model_id: claude-opus-4.5
     benchmark_id: livebench-2026
@@ -1114,7 +1636,14 @@ results:
     observed_on: 2026-09-04
     url: https://livebench.ai/
     provenance: independent
-    notes: "LiveBench-2026-06-25 release ('latest', rolling/live leaderboard), overall = mean of the 7 category averages across 23 objective tasks. Scraped from the live-rendered leaderboard table on 2026-09-04; the site does not report se/n_items/CIs for this table so none are recorded. Source display name: 'Claude 4.5 Opus Thinking High Effort'."
+    notes: "LiveBench-2026-06-25 release ('latest', rolling/live leaderboard),
+      overall = mean of the 7 category averages across 23 objective tasks.
+      Scraped from the live-rendered leaderboard table on 2026-09-04; the site
+      does not report se/n_items/CIs for this table so none are recorded. Source
+      display name: 'Claude 4.5 Opus Thinking High Effort'. Superseded by the
+      2026-09-05 coverage audit: Replace rounded table with full exact
+      equal-category composite and native configuration."
+    sample_only: true
 
   - model_id: inkling
     benchmark_id: livebench-2026
@@ -1125,4 +1654,11 @@ results:
     observed_on: 2026-09-04
     url: https://livebench.ai/
     provenance: independent
-    notes: "LiveBench-2026-06-25 release ('latest', rolling/live leaderboard), overall = mean of the 7 category averages across 23 objective tasks. Scraped from the live-rendered leaderboard table on 2026-09-04; the site does not report se/n_items/CIs for this table so none are recorded. Source display name: 'Inkling xHigh Effort'."
+    notes: "LiveBench-2026-06-25 release ('latest', rolling/live leaderboard),
+      overall = mean of the 7 category averages across 23 objective tasks.
+      Scraped from the live-rendered leaderboard table on 2026-09-04; the site
+      does not report se/n_items/CIs for this table so none are recorded. Source
+      display name: 'Inkling xHigh Effort'. Superseded by the 2026-09-05
+      coverage audit: Replace rounded table with full exact equal-category
+      composite and native configuration."
+    sample_only: true

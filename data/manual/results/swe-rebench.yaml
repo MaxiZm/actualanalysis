@@ -12,17 +12,19 @@ results:
     observed_on: 2026-09-04
     url: https://swe-rebench.com/leaderboard
     provenance: independent
-    notes: >
+    notes: >-
       Row "Fable 5 [high]" on the live leaderboard. Problem window 2026-05-15 to
-      2026-07-01 (111 problems, 65 repositories) — the most recent window for which
-      this model has decontaminated data, per the site's own displayed window. Read
-      from the leaderboard page's embedded JSON (rangeStats.all, cumulative range
-      keyed 1778803200000:1782864000000). se is the site's own reported "sem" value
-      used as-is (not derived from a CI). pass_at_5 in config is the site's reported
-      pass@5 percentage for the same window. Reasoning effort "high" taken from the
-      "[high]" bracket suffix in the row label. Exact agent scaffold name is not
-      stated on the page beyond an internal "tools" tag, so harness is described
-      generically.
+      2026-07-01 (111 problems, 65 repositories) — the most recent window for
+      which this model has decontaminated data, per the site's own displayed
+      window. Read from the leaderboard page's embedded JSON (rangeStats.all,
+      cumulative range keyed 1778803200000:1782864000000). se is the site's own
+      reported "sem" value used as-is (not derived from a CI). pass_at_5 in
+      config is the site's reported pass@5 percentage for the same window.
+      Reasoning effort "high" taken from the "[high]" bracket suffix in the row
+      label. Exact agent scaffold name is not stated on the page beyond an
+      internal "tools" tag, so harness is described generically.
+       Superseded by the 2026-09-05 coverage audit: Replace company-prefixed/rounded HTML alias with native model identity and exact same 111-task window, effort, SEM and scaffold.
+    sample_only: true
 
   - model_id: grok-4.5
     benchmark_id: swe-rebench
@@ -37,11 +39,14 @@ results:
     observed_on: 2026-09-04
     url: https://swe-rebench.com/leaderboard
     provenance: independent
-    notes: >
-      Row "Grok 4.5 [high]". Problem window 2026-05-15 to 2026-07-01 (111 problems,
-      65 repositories). Read from the leaderboard page's embedded JSON (rangeStats.all,
-      range keyed 1778803200000:1782864000000). se is the site's own "sem" value used
-      as-is. pass_at_5 in config is the site's reported pass@5 for the same window.
+    notes: >-
+      Row "Grok 4.5 [high]". Problem window 2026-05-15 to 2026-07-01 (111
+      problems, 65 repositories). Read from the leaderboard page's embedded JSON
+      (rangeStats.all, range keyed 1778803200000:1782864000000). se is the
+      site's own "sem" value used as-is. pass_at_5 in config is the site's
+      reported pass@5 for the same window.
+       Superseded by the 2026-09-05 coverage audit: Replace company-prefixed/rounded HTML alias with native model identity and exact same 111-task window, effort, SEM and scaffold.
+    sample_only: true
 
   - model_id: claude-opus-5
     benchmark_id: swe-rebench
@@ -56,11 +61,14 @@ results:
     observed_on: 2026-09-04
     url: https://swe-rebench.com/leaderboard
     provenance: independent
-    notes: >
-      Row "Opus 5 [high]". Problem window 2026-05-15 to 2026-07-01 (111 problems,
-      65 repositories). Read from the leaderboard page's embedded JSON (rangeStats.all,
-      range keyed 1778803200000:1782864000000). se is the site's own "sem" value used
-      as-is. pass_at_5 in config is the site's reported pass@5 for the same window.
+    notes: >-
+      Row "Opus 5 [high]". Problem window 2026-05-15 to 2026-07-01 (111
+      problems, 65 repositories). Read from the leaderboard page's embedded JSON
+      (rangeStats.all, range keyed 1778803200000:1782864000000). se is the
+      site's own "sem" value used as-is. pass_at_5 in config is the site's
+      reported pass@5 for the same window.
+       Superseded by the 2026-09-05 coverage audit: Replace company-prefixed/rounded HTML alias with native model identity and exact same 111-task window, effort, SEM and scaffold.
+    sample_only: true
 
   - model_id: gpt-5.6-sol
     benchmark_id: swe-rebench
@@ -75,12 +83,14 @@ results:
     observed_on: 2026-09-04
     url: https://swe-rebench.com/leaderboard
     provenance: independent
-    notes: >
+    notes: >-
       Row "GPT-5.6 Sol [medium]". Problem window 2026-05-15 to 2026-07-01 (111
       problems, 65 repositories). Read from the leaderboard page's embedded JSON
-      (rangeStats.all, range keyed 1778803200000:1782864000000). se is the site's own
-      "sem" value used as-is. pass_at_5 in config is the site's reported pass@5 for
-      the same window.
+      (rangeStats.all, range keyed 1778803200000:1782864000000). se is the
+      site's own "sem" value used as-is. pass_at_5 in config is the site's
+      reported pass@5 for the same window.
+       Superseded by the 2026-09-05 coverage audit: Replace company-prefixed/rounded HTML alias with native model identity and exact same 111-task window, effort, SEM and scaffold.
+    sample_only: true
 
   - model_id: claude-sonnet-5
     benchmark_id: swe-rebench
@@ -95,11 +105,14 @@ results:
     observed_on: 2026-09-04
     url: https://swe-rebench.com/leaderboard
     provenance: independent
-    notes: >
-      Row "Sonnet 5 [high]". Problem window 2026-05-15 to 2026-07-01 (111 problems,
-      65 repositories). Read from the leaderboard page's embedded JSON (rangeStats.all,
-      range keyed 1778803200000:1782864000000). se is the site's own "sem" value used
-      as-is. pass_at_5 in config is the site's reported pass@5 for the same window.
+    notes: >-
+      Row "Sonnet 5 [high]". Problem window 2026-05-15 to 2026-07-01 (111
+      problems, 65 repositories). Read from the leaderboard page's embedded JSON
+      (rangeStats.all, range keyed 1778803200000:1782864000000). se is the
+      site's own "sem" value used as-is. pass_at_5 in config is the site's
+      reported pass@5 for the same window.
+       Superseded by the 2026-09-05 coverage audit: Replace company-prefixed/rounded HTML alias with native model identity and exact same 111-task window, effort, SEM and scaffold.
+    sample_only: true
 
   - model_id: gpt-5.6-luna
     benchmark_id: swe-rebench
@@ -114,12 +127,14 @@ results:
     observed_on: 2026-09-04
     url: https://swe-rebench.com/leaderboard
     provenance: independent
-    notes: >
+    notes: >-
       Row "GPT-5.6 Luna [medium]". Problem window 2026-05-15 to 2026-07-01 (111
       problems, 65 repositories). Read from the leaderboard page's embedded JSON
-      (rangeStats.all, range keyed 1778803200000:1782864000000). se is the site's own
-      "sem" value used as-is. pass_at_5 in config is the site's reported pass@5 for
-      the same window.
+      (rangeStats.all, range keyed 1778803200000:1782864000000). se is the
+      site's own "sem" value used as-is. pass_at_5 in config is the site's
+      reported pass@5 for the same window.
+       Superseded by the 2026-09-05 coverage audit: Replace company-prefixed/rounded HTML alias with native model identity and exact same 111-task window, effort, SEM and scaffold.
+    sample_only: true
 
   - model_id: glm-5.2
     benchmark_id: swe-rebench
@@ -136,10 +151,11 @@ results:
     url: https://swe-rebench.com/leaderboard
     provenance: independent
     notes: >
-      Row "GLM-5.2 [high]". This model's decontaminated task window is wider than the
-      other rows above (its knowledge cutoff is earlier), so its most-recent cumulative
-      window is 2026-03-01 to 2026-07-01 (221 problems) rather than the narrower
-      2026-05-15 to 2026-07-01 window used for models released closer to the board's
-      cutoff. Read from the leaderboard page's embedded JSON (rangeStats.all, range
-      keyed 1772323200000:1782864000000). se is the site's own "sem" value used as-is.
-      pass_at_5 in config is the site's reported pass@5 for the same window.
+      Row "GLM-5.2 [high]". This model's decontaminated task window is wider
+      than the other rows above (its knowledge cutoff is earlier), so its
+      most-recent cumulative window is 2026-03-01 to 2026-07-01 (221 problems)
+      rather than the narrower 2026-05-15 to 2026-07-01 window used for models
+      released closer to the board's cutoff. Read from the leaderboard page's
+      embedded JSON (rangeStats.all, range keyed 1772323200000:1782864000000).
+      se is the site's own "sem" value used as-is. pass_at_5 in config is the
+      site's reported pass@5 for the same window.

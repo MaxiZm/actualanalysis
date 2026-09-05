@@ -1,0 +1,509 @@
+[
+  {
+    "model_id": "gpt-5.6-sol",
+    "action": "update",
+    "old_values": {
+      "context_length": null,
+      "max_output": null,
+      "modality": null
+    },
+    "set": {
+      "context_length": 1050000,
+      "max_output": 128000,
+      "modality": "multimodal"
+    },
+    "evidence": [
+      "https://developers.openai.com/api/docs/models/gpt-5.6-sol"
+    ],
+    "reason": "Exact numeric API limits, with text+image input and text-only output. Preserve previously corrected effort policy; Astra default remains unreported.",
+    "limits": []
+  },
+  {
+    "model_id": "gpt-5.6-terra",
+    "action": "update",
+    "old_values": {
+      "context_length": null,
+      "max_output": null,
+      "modality": null
+    },
+    "set": {
+      "context_length": 1050000,
+      "max_output": 128000,
+      "modality": "multimodal"
+    },
+    "evidence": [
+      "https://developers.openai.com/api/docs/models/gpt-5.6-terra"
+    ],
+    "reason": "Exact numeric API limits, with text+image input and text-only output. Preserve previously corrected effort policy; Astra default remains unreported.",
+    "limits": []
+  },
+  {
+    "model_id": "gpt-5.6-luna",
+    "action": "update",
+    "old_values": {
+      "context_length": null,
+      "max_output": null,
+      "modality": null
+    },
+    "set": {
+      "context_length": 1050000,
+      "max_output": 128000,
+      "modality": "multimodal"
+    },
+    "evidence": [
+      "https://developers.openai.com/api/docs/models/gpt-5.6-luna"
+    ],
+    "reason": "Exact numeric API limits, with text+image input and text-only output. Preserve previously corrected effort policy; Astra default remains unreported.",
+    "limits": []
+  },
+  {
+    "model_id": "gpt-6-astra",
+    "action": "update",
+    "old_values": {
+      "context_length": null,
+      "max_output": null,
+      "modality": null
+    },
+    "set": {
+      "context_length": 1050000,
+      "max_output": 128000,
+      "modality": "multimodal"
+    },
+    "evidence": [
+      "https://developers.openai.com/api/docs/models/gpt-6-astra"
+    ],
+    "reason": "Exact numeric API limits, with text+image input and text-only output. Preserve previously corrected effort policy; Astra default remains unreported.",
+    "limits": []
+  },
+  {
+    "model_id": "kimi-k3",
+    "action": "update",
+    "old_values": {
+      "context_length": null,
+      "params_total_b": null,
+      "params_active_b": null,
+      "modality": null,
+      "reasoning": null,
+      "default_effort_tier": null,
+      "max_effort_tier": null,
+      "effort_tier_order": null,
+      "reasoning_config": null
+    },
+    "set": {
+      "context_length": 1048576,
+      "params_total_b": 2800,
+      "params_active_b": 104,
+      "modality": "multimodal",
+      "reasoning": true,
+      "default_effort_tier": "max",
+      "max_effort_tier": "max",
+      "effort_tier_order": [
+        "low",
+        "high",
+        "max"
+      ],
+      "reasoning_config": {
+        "control": "categorical",
+        "parameter": "reasoning_effort"
+      }
+    },
+    "evidence": [
+      "https://huggingface.co/moonshotai/Kimi-K3"
+    ],
+    "reason": "Model-card architecture table and API guide in same README explicitly state exact context/parameter counts, native vision and always-on thinking; low/high/max with max default.",
+    "limits": [
+      "No hard maximum output limit stated in reviewed source."
+    ]
+  },
+  {
+    "model_id": "kimi-k2-7-code",
+    "action": "update",
+    "old_values": {
+      "context_length": 256000,
+      "params_total_b": null,
+      "params_active_b": null
+    },
+    "set": {
+      "context_length": 262144,
+      "params_total_b": 1000,
+      "params_active_b": 32
+    },
+    "evidence": [
+      "https://huggingface.co/moonshotai/Kimi-K2.7-Code"
+    ],
+    "reason": "README architecture table plus evaluation footnotes give exact 262,144 context; 1T total/32B active. Thinking and preserve_thinking forced true; do not invent configurable effort tiers.",
+    "limits": []
+  },
+  {
+    "model_id": "qwen3.8-27b",
+    "action": "update",
+    "old_values": {
+      "context_length": 256000
+    },
+    "set": {
+      "context_length": 262144
+    },
+    "evidence": [
+      "https://huggingface.co/Qwen/Qwen3.8-27B"
+    ],
+    "reason": "Native context is explicitly262,144, not rounded256,000. Extended1M requires deployment RoPE/YaRN configuration.",
+    "limits": [
+      "Separate recommended reasoning262,144 and final-response131,072 budgets are not an unconditional combined hard output maximum."
+    ]
+  },
+  {
+    "model_id": "qwen3.8-flash-next",
+    "action": "update",
+    "old_values": {
+      "context_length": 256000
+    },
+    "set": {
+      "context_length": 262144
+    },
+    "evidence": [
+      "https://huggingface.co/Qwen/Qwen3.8-Flash-Next"
+    ],
+    "reason": "Native context is explicitly262,144, not rounded256,000. Extended1M requires deployment RoPE/YaRN configuration.",
+    "limits": [
+      "Separate recommended reasoning262,144 and final-response131,072 budgets are not an unconditional combined hard output maximum."
+    ]
+  },
+  {
+    "model_id": "qwen3.8-flash-next",
+    "action": "update",
+    "old_values": {
+      "params_active_b": null
+    },
+    "set": {
+      "params_active_b": 6
+    },
+    "evidence": [
+      "https://huggingface.co/Qwen/Qwen3.8-Flash-Next"
+    ],
+    "reason": "125B language-model parameters/6B activated; source separately reports51B n-gram embedding and4B MTP.",
+    "limits": [
+      "Do not interpret125B as including the separate embedding/MTP counts; retain a note in registry."
+    ]
+  },
+  {
+    "model_id": "qwen3.8-2.4t-a95b",
+    "action": "verified_no_change",
+    "old_values": {
+      "context_length": 262144,
+      "params_total_b": 2400,
+      "params_active_b": 95
+    },
+    "set": {},
+    "evidence": [
+      "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B"
+    ],
+    "reason": "Existing exact metadata verified. Hosted Max benchmark column does not describe open checkpoint; no benchmark score transfer.",
+    "limits": []
+  },
+  {
+    "model_id": "qwen-3.8-max",
+    "action": "update",
+    "old_values": {
+      "reasoning": null,
+      "modality": null,
+      "params_total_b": null
+    },
+    "set": {
+      "reasoning": true,
+      "modality": "multimodal",
+      "params_total_b": 2400
+    },
+    "evidence": [
+      "https://www.qwencloud.com/models/qwen3.8-max"
+    ],
+    "reason": "Official hosted product supports text/image/video input, text output, thinking and nonthinking.",
+    "limits": [
+      "Source UI rounds context1M, final output131K and max reasoning262K; exact integers not asserted from rounded display.",
+      "Qwen hosted API is separate from open2.4T checkpoint."
+    ]
+  },
+  {
+    "model_id": "grok-4.6",
+    "action": "update",
+    "old_values": {
+      "context_length": null,
+      "modality": null,
+      "reasoning": null,
+      "default_effort_tier": null,
+      "max_effort_tier": null,
+      "effort_tier_order": null,
+      "reasoning_config": null
+    },
+    "set": {
+      "context_length": 500000,
+      "modality": "multimodal",
+      "reasoning": true,
+      "default_effort_tier": "high",
+      "max_effort_tier": "xhigh",
+      "effort_tier_order": [
+        "low",
+        "medium",
+        "high",
+        "xhigh"
+      ],
+      "reasoning_config": {
+        "control": "categorical",
+        "parameter": "reasoning_effort"
+      }
+    },
+    "evidence": [
+      "https://docs.x.ai/developers/grok-4-6",
+      "https://docs.x.ai/developers/models/grok-4.6"
+    ],
+    "reason": "Official API overview explicitly lists500,000 context, text+image, low/medium/high(default)/xhigh.",
+    "limits": [
+      "Official source says no separate text output limit; omit max_output instead of inventing a finite cap."
+    ]
+  },
+  {
+    "model_id": "glm-5.3-flash",
+    "action": "verified_no_change",
+    "old_values": {
+      "reasoning": true,
+      "default_effort_tier": "max",
+      "max_effort_tier": "max",
+      "effort_tier_order": [
+        "low",
+        "high",
+        "max"
+      ]
+    },
+    "set": {},
+    "evidence": [
+      "https://huggingface.co/zai-org/GLM-5.3-Flash"
+    ],
+    "reason": "README explicitly gives low/high/max with max fallback/default and benchmark reproduction at max.",
+    "limits": [
+      "clear_thinking defaultsfalse; chat clients explicitly settrue.",
+      "README evaluation maxgeneration163,840 exceeds current registrymax_output131,072 but is an evaluation setting, not proof of API hardlimit; review API separately."
+    ]
+  },
+  {
+    "model_id": "gemini-3.8-flash",
+    "action": "verified_no_change",
+    "old_values": {
+      "context_length": 1048576,
+      "max_output": 65536
+    },
+    "set": {},
+    "evidence": [
+      "https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash",
+      "https://deepmind.google/models/model-cards/gemini-3-8-flash/"
+    ],
+    "reason": "Exact Gemini API context/output limits verified.",
+    "limits": [
+      "Google modelcard says March2026 knowledge cutoff with some domains still January2025."
+    ]
+  },
+  {
+    "model_id": "muse-spark-1.2",
+    "action": "review_only",
+    "set": {},
+    "evidence": [
+      "https://research.meta.ai/static/muse-spark-1-3-multimodal-evaluation-methodology"
+    ],
+    "reason": "Evaluation configuration is xhigh; this verifies result effort, not the full supported API effort list or API default.",
+    "limits": [
+      "Do not convert a benchmark configuration into model default/max metadata. Full API list/default not verified in accessible source."
+    ]
+  },
+  {
+    "model_id": "muse-spark-1.3",
+    "action": "review_only",
+    "set": {},
+    "evidence": [
+      "https://research.meta.ai/static/muse-spark-1-3-multimodal-evaluation-methodology"
+    ],
+    "reason": "Evaluation configuration is max; this verifies result effort, not the full supported API effort list or API default.",
+    "limits": [
+      "Do not convert a benchmark configuration into model default/max metadata. Full API list/default not verified in accessible source."
+    ]
+  },
+  {
+    "model_id": "glm-5.3",
+    "action": "update",
+    "old_values": {
+      "reasoning": null,
+      "default_effort_tier": null,
+      "max_effort_tier": null,
+      "effort_tier_order": null,
+      "reasoning_config": null
+    },
+    "set": {
+      "reasoning": true,
+      "default_effort_tier": "max",
+      "max_effort_tier": "max",
+      "effort_tier_order": [
+        "low",
+        "high",
+        "max"
+      ],
+      "reasoning_config": {
+        "control": "categorical",
+        "parameter": "reasoning_effort"
+      }
+    },
+    "evidence": [
+      "https://huggingface.co/zai-org/GLM-5.3"
+    ],
+    "reason": "Full model README Note section explicitly gives low/high/max with defaultmax; keepmax for benchmark reproduction.",
+    "limits": []
+  },
+  {
+    "model_id": "claude-fable-5.1",
+    "action": "update",
+    "old_values": {
+      "reasoning": null,
+      "modality": null,
+      "default_effort_tier": null,
+      "max_effort_tier": null,
+      "effort_tier_order": null,
+      "reasoning_config": null
+    },
+    "set": {
+      "reasoning": true,
+      "modality": "multimodal",
+      "default_effort_tier": "high",
+      "max_effort_tier": "max",
+      "effort_tier_order": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "reasoning_config": {
+        "control": "categorical",
+        "parameter": "output_config.effort"
+      }
+    },
+    "evidence": [
+      "https://platform.claude.com/docs/en/build-with-claude/effort",
+      "https://platform.claude.com/docs/en/models/overview"
+    ],
+    "reason": "Official effort page explicitly lists all five efforts for these models; API defaultHigh. Fable5.1 always-on adaptive thinking.",
+    "limits": [
+      "Product defaults can differ: Fable5.1 Cowork/Claude.ai useMedium; do not infer observed run effort from API or product defaults.",
+      "Model pages round limits to1M/128K; exact unrounded integers not added from rounded UI."
+    ]
+  },
+  {
+    "model_id": "claude-fable-5",
+    "action": "update",
+    "old_values": {
+      "reasoning": null,
+      "modality": null,
+      "default_effort_tier": null,
+      "max_effort_tier": null,
+      "effort_tier_order": null,
+      "reasoning_config": null
+    },
+    "set": {
+      "reasoning": true,
+      "modality": "multimodal",
+      "default_effort_tier": "high",
+      "max_effort_tier": "max",
+      "effort_tier_order": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "reasoning_config": {
+        "control": "categorical",
+        "parameter": "output_config.effort"
+      }
+    },
+    "evidence": [
+      "https://platform.claude.com/docs/en/build-with-claude/effort",
+      "https://platform.claude.com/docs/en/models/overview"
+    ],
+    "reason": "Official effort page explicitly lists all five efforts for these models; API defaultHigh. Fable5.1 always-on adaptive thinking.",
+    "limits": [
+      "Product defaults can differ: Fable5.1 Cowork/Claude.ai useMedium; do not infer observed run effort from API or product defaults.",
+      "Model pages round limits to1M/128K; exact unrounded integers not added from rounded UI."
+    ]
+  },
+  {
+    "model_id": "claude-opus-5",
+    "action": "update",
+    "old_values": {
+      "reasoning": null,
+      "modality": null,
+      "default_effort_tier": null,
+      "max_effort_tier": null,
+      "effort_tier_order": null,
+      "reasoning_config": null
+    },
+    "set": {
+      "reasoning": true,
+      "modality": "multimodal",
+      "default_effort_tier": "high",
+      "max_effort_tier": "max",
+      "effort_tier_order": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "reasoning_config": {
+        "control": "categorical",
+        "parameter": "output_config.effort"
+      }
+    },
+    "evidence": [
+      "https://platform.claude.com/docs/en/build-with-claude/effort",
+      "https://platform.claude.com/docs/en/models/overview"
+    ],
+    "reason": "Official effort page explicitly lists all five efforts for these models; API defaultHigh. Fable5.1 always-on adaptive thinking.",
+    "limits": [
+      "Product defaults can differ: Fable5.1 Cowork/Claude.ai useMedium; do not infer observed run effort from API or product defaults.",
+      "Model pages round limits to1M/128K; exact unrounded integers not added from rounded UI."
+    ]
+  },
+  {
+    "model_id": "claude-sonnet-5",
+    "action": "update",
+    "old_values": {
+      "reasoning": null,
+      "modality": null,
+      "default_effort_tier": null,
+      "max_effort_tier": null,
+      "effort_tier_order": null,
+      "reasoning_config": null
+    },
+    "set": {
+      "reasoning": true,
+      "modality": "multimodal",
+      "default_effort_tier": "high",
+      "max_effort_tier": "max",
+      "effort_tier_order": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "reasoning_config": {
+        "control": "categorical",
+        "parameter": "output_config.effort"
+      }
+    },
+    "evidence": [
+      "https://platform.claude.com/docs/en/build-with-claude/effort",
+      "https://platform.claude.com/docs/en/models/overview"
+    ],
+    "reason": "Official effort page explicitly lists all five efforts for these models; API defaultHigh. Fable5.1 always-on adaptive thinking.",
+    "limits": [
+      "Product defaults can differ: Fable5.1 Cowork/Claude.ai useMedium; do not infer observed run effort from API or product defaults.",
+      "Model pages round limits to1M/128K; exact unrounded integers not added from rounded UI."
+    ]
+  }
+]

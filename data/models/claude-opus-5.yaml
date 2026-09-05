@@ -5,7 +5,27 @@ family: Claude 5
 release_date: 2026-07-24
 open_weights: false
 license: Proprietary
-aliases: [Opus 5, Claude-Opus-5]
+aliases:
+  - Opus 5
+  - Claude-Opus-5
+  - claude-opus-5-high
+  - claude-opus-5-max
 source_url: https://www.anthropic.com/news/claude-opus-5
 status: active
-
+metadata_sources:
+  - https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset
+  - https://platform.claude.com/docs/en/build-with-claude/effort
+  - https://platform.claude.com/docs/en/models/overview
+reasoning: true
+modality: multimodal
+default_effort_tier: high
+max_effort_tier: max
+effort_tier_order:
+  - low
+  - medium
+  - high
+  - xhigh
+  - max
+reasoning_config:
+  control: categorical
+  parameter: output_config.effort

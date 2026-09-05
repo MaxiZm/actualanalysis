@@ -1,0 +1,28 @@
+id: frontiercode-1.1-main-score
+name: FrontierCode 1.1 Main (score)
+version: 1.1-main
+family_id: frontiercode-1.1-main-score
+tags:
+  - agentic
+categories:
+  - software-engineering
+domains:
+  software-code: 1
+holdout: public
+chance_level: 0
+obs_type: judge
+transform:
+  type: accuracy
+  input_scale: percent
+n_items: null
+harness_url: https://openai.com/index/gpt-6-astra/
+source_ids:
+  - vendor-model-cards
+metadata_sources:
+  - https://openai.com/index/gpt-6-astra/
+status: watchlist
+notes: "Reported metric: mean_score. Exact reported condition; not an alias of a
+  similarly named active benchmark. Source-specific evidence is shown for
+  inspection; missing evaluator, subset or uncertainty details are not imputed.
+  Nominal task count is descriptive and is never treated as a binary run
+  denominator."

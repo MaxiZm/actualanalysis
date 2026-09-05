@@ -7,6 +7,7 @@ open_weights: true
 license: MIT
 aliases:
   - DeepSeek-V4-Pro-0813
+  - deepseek-v4-pro-high-20260813
 reasoning: true
 context_length: 1000000
 modality: text
@@ -14,6 +15,7 @@ source_url: https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813
 metadata_sources:
   - https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813
   - https://artificialanalysis.ai/models/deepseek-v4-pro
+  - https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset
 status: active
 max_effort_tier: max
 default_effort_tier: max

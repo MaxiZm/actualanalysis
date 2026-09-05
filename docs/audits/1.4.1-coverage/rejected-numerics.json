@@ -1,0 +1,79 @@
+{
+  "parameters": {
+    "Agentic_cal": {
+      "rhat": 1.002072901024438,
+      "ess_bulk": 2855.3355288626103,
+      "ess_tail": 5936.471634444243
+    },
+    "Chat_cal": {
+      "rhat": 1.0007175164974935,
+      "ess_bulk": 5518.133706495381,
+      "ess_tail": 4555.598321048144
+    },
+    "G_cal": {
+      "rhat": 1.001117960721968,
+      "ess_bulk": 3443.0055492518854,
+      "ess_tail": 4512.578355493418
+    },
+    "Omega": {
+      "rhat": 1.0017523172201153,
+      "ess_bulk": 1560.4056656015002,
+      "ess_tail": 2485.142921859424
+    },
+    "Z_cal": {
+      "rhat": 1.0026741070206462,
+      "ess_bulk": 2204.1067822546993,
+      "ess_tail": 4335.284914516944
+    },
+    "cell_sigma": {
+      "rhat": 1.0037560060889124,
+      "ess_bulk": 1692.1336579545464,
+      "ess_tail": 1928.7698626689987
+    },
+    "effort_mean": {
+      "rhat": 1.0012684178877045,
+      "ess_bulk": 3422.154401516261,
+      "ess_tail": 5995.269722450276
+    },
+    "effort_sd": {
+      "rhat": 1.0007663755325187,
+      "ess_bulk": 3044.438779328442,
+      "ess_tail": 5136.959289414515
+    },
+    "run_noise": {
+      "rhat": 1.0022128397614414,
+      "ess_bulk": 1750.480748614724,
+      "ess_tail": 2231.843833281444
+    }
+  },
+  "divergences": 2,
+  "divergence_fraction": 0.00016666666666666666,
+  "ebfmi": [
+    0.8696111508426434,
+    0.8376975064787572,
+    0.8340582045984805,
+    0.8477521234222636
+  ],
+  "ebfmi_energy": "hamiltonian",
+  "elapsed_seconds": 295.5753530410584,
+  "posterior_draws": 8000,
+  "engine": "numpyro-nuts",
+  "inference": {
+    "chains": 4,
+    "warmup": 2000,
+    "samples": 3000,
+    "target_accept": 0.98
+  },
+  "devices": 4,
+  "mcse_display_points": {
+    "G_cal": 0.10449226810139774,
+    "Z_cal": 0.3170679120653467,
+    "Agentic_cal": 0.14352216798019846,
+    "Chat_cal": 0.09626450174299189
+  },
+  "accepted": false,
+  "issues": [
+    "Z_cal: MCSE 0.317 display points exceeds 0.3",
+    "divergences: 2 (method 1.2 requires zero)"
+  ]
+}

@@ -13,5 +13,33 @@ notes: Preserve the origin source named in each mirrored row.
 runner_benchmark_ids:
   - frontiermath-v2-tier-4
   - frontiermath-v2-tiers-1-3
-  - simpleqa-verified
   - gpqa-diamond
+  - simpleqa-verified-epoch-anti-abstention-v1-0-0
+  - simpleqa-verified-epoch-anti-abstention-v1-2-0
+protocols:
+  - protocol_id: epoch-simpleqa-anti-abstention-v1-0-0
+    benchmark_ids:
+      - simpleqa-verified-epoch-anti-abstention-v1-0-0
+    provenance: independent
+    harness_id: Epoch SimpleQA Verified native accuracy scorer
+    harness_class: common
+    tool_policy: none
+    benchmark_versions:
+      simpleqa-verified-epoch-anti-abstention-v1-0-0: epoch-anti-abstention-1.0.0
+    grader_versions: {}
+    config_match:
+      task_version: 1.0.0
+    methodology_url: https://epoch.ai/benchmarks/simple-qa-verified
+  - protocol_id: epoch-simpleqa-anti-abstention-v1-2-0
+    benchmark_ids:
+      - simpleqa-verified-epoch-anti-abstention-v1-2-0
+    provenance: independent
+    harness_id: Epoch SimpleQA Verified native accuracy scorer
+    harness_class: common
+    tool_policy: none
+    benchmark_versions:
+      simpleqa-verified-epoch-anti-abstention-v1-2-0: epoch-anti-abstention-1.2.0
+    grader_versions: {}
+    config_match:
+      task_version: 1.2.0
+    methodology_url: https://epoch.ai/benchmarks/simple-qa-verified

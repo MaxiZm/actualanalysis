@@ -20,6 +20,7 @@ import {
   ACI_DOMAINS,
   INDEX_KINDS,
   compareIndexRank,
+  costPerTaskSuiteLabel,
   type AciDomain,
   type BenchmarkRecord,
   type ModelRecord,
@@ -231,7 +232,13 @@ export function CompareWorkbench({
         runtimeDescending,
       ) || compareIndexRank(a, b, filters.index),
   );
-  const metricLabel = RUNTIME_METRICS.find(
+  const taskCostSuite = costPerTaskSuiteLabel(models);
+  const runtimeMetrics = RUNTIME_METRICS.map((item) =>
+    item.value === "taskCost"
+      ? { ...item, label: `${taskCostSuite} cost per task · USD` }
+      : item,
+  );
+  const metricLabel = runtimeMetrics.find(
     (item) => item.value === metric,
   )!.label;
   const sortRuntime = (key: "index" | RuntimeMetric) => {
@@ -455,7 +462,7 @@ export function CompareWorkbench({
                   label="Runtime metric"
                   value={metric}
                   onChange={(value) => setMetric(value as RuntimeMetric)}
-                  options={RUNTIME_METRICS}
+                  options={runtimeMetrics}
                 />
               </label>
               {metric === "price" ? (
@@ -482,7 +489,7 @@ export function CompareWorkbench({
                 </label>
               ) : null}
               <IndexScatter
-                title={`${titleCase(filters.index)} vs ${metric === "taskCost" ? "AA cost per task" : metric === "price" ? `${filters.priceBasis} price` : metric === "ttft" ? "first token" : metric}`}
+                title={`${titleCase(filters.index)} vs ${metric === "taskCost" ? `${taskCostSuite} cost per task` : metric === "price" ? `${filters.priceBasis} price` : metric === "ttft" ? "first token" : metric}`}
                 points={runtimePoints}
                 xLabel={
                   metric === "price"
@@ -499,7 +506,7 @@ export function CompareWorkbench({
                 this chart. All models remain in the table. Speed and latency
                 link to the measured configuration.
                 {metric === "taskCost"
-                  ? " AA cost is the weighted mean cost of one task in its Intelligence Index suite, including reasoning tokens; it is not the cost of our benchmark set."
+                  ? ` ${taskCostSuite} cost includes reasoning tokens and uses one shared Intelligence Index task suite.`
                   : ""}
               </p>
             </div>
@@ -520,7 +527,7 @@ export function CompareWorkbench({
                     <tr>
                       <th>Model</th>
                       {runtimeHeading("index", titleCase(filters.index))}
-                      {runtimeHeading("taskCost", "AA $/task")}
+                      {runtimeHeading("taskCost", `${taskCostSuite} $/task`)}
                       {runtimeHeading("price", "$/M")}
                       {runtimeHeading("speed", "tok/s")}
                       {runtimeHeading("ttft", "TTFT")}

@@ -16,7 +16,10 @@ export class LmArenaAdapter implements IngestAdapter {
       dataset: LMARENA_DATASET,
       config: context.env.ACTUALANALYSIS_LMARENA_CONFIG ?? "text_style_control",
       split: context.env.ACTUALANALYSIS_LMARENA_SPLIT ?? "latest",
-      maxRows: 2_000,
+      // The latest export includes >10,000 category rows. Read the full
+      // snapshot before selecting overall; category order is not a contract.
+      maxRows: 20_000,
+      pageDelayMs: 1_100,
     });
     const overallRows = rows.filter((row) => {
       const category = stringAt(row, ["category"]);
@@ -43,6 +46,7 @@ export class LmArenaAdapter implements IngestAdapter {
       const publishDate = row ? stringAt(row, ["leaderboard_publish_date"])?.slice(0, 10) : undefined;
       return {
         ...record,
+        config: { ...record.config, arena_model: record.model },
         ...(publishDate && /^\d{4}-\d{2}-\d{2}$/.test(publishDate)
           ? { evaluation_run_id: `text_style_control:${publishDate}` }
           : {}),

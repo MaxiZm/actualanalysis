@@ -11,10 +11,12 @@ aliases:
   - Kimi K2.7 Code
   - kimi-k2-7-code
 reasoning: true
-context_length: 256000
+context_length: 262144
 modality: multimodal
 source_url: https://huggingface.co/moonshotai/Kimi-K2.7-Code
 metadata_sources:
   - https://huggingface.co/moonshotai/Kimi-K2.7-Code
   - https://artificialanalysis.ai/models/kimi-k2-7-code
 status: active
+params_total_b: 1000
+params_active_b: 32

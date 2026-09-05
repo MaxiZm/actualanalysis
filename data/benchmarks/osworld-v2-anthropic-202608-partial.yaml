@@ -1,0 +1,28 @@
+id: osworld-v2-anthropic-202608-partial
+name: OSWorld 2.0 Anthropic August tasks (partial)
+version: anthropic-2026-08-modified
+family_id: osworld
+tags:
+  - agentic
+categories:
+  - tool-use
+domains:
+  agentic: 1
+holdout: public
+chance_level: 0
+obs_type: judge
+transform:
+  type: accuracy
+  input_scale: percent
+n_items: null
+harness_url: https://www.anthropic.com/claude-fable-and-mythos-5-1
+source_ids:
+  - vendor-model-cards
+metadata_sources:
+  - https://www.anthropic.com/claude-fable-and-mythos-5-1
+status: watchlist
+notes: "Reported metric: mean_partial_reward. Exact reported condition; not an
+  alias of a similarly named active benchmark. Source-specific evidence is shown
+  for inspection; missing evaluator, subset or uncertainty details are not
+  imputed. Nominal task count is descriptive and is never treated as a binary
+  run denominator."

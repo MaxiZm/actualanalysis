@@ -5,7 +5,11 @@ family: Claude 4.6
 release_date: 2026-02-05
 open_weights: false
 license: Proprietary
-aliases: [Anthropic Opus 4.6, claude-opus-4-6]
+aliases:
+  - Anthropic Opus 4.6
+  - claude-opus-4-6
+  - claude-opus-4-6-high
 source_url: https://www.anthropic.com/news/claude-opus-4-6
 status: active
-
+metadata_sources:
+  - https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset

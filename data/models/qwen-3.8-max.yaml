@@ -7,4 +7,11 @@ open_weights: false
 license: Proprietary
 source_url: https://qwen.ai/blog?id=qwen3.8
 status: active
-
+aliases:
+  - qwen3.8-max
+metadata_sources:
+  - https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset
+  - https://www.qwencloud.com/models/qwen3.8-max
+reasoning: true
+modality: multimodal
+params_total_b: 2400

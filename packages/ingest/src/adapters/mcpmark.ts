@@ -15,6 +15,12 @@ function modelIdentity(value: string): { model: string; evaluationProfile?: stri
   return { model: value.slice(0, suffix.index), evaluationProfile: suffix[1] };
 }
 
+function submissionEffort(value: string | undefined): string | undefined {
+  // The API model ID may be dated and unsuffixed while the leaderboard submission
+  // explicitly distinguishes configurations such as gpt-5-high and gpt-5-medium.
+  return value?.match(/-(xhigh|max|high|medium|low|minimal|none|thinking|non-think|chat|reasoner)$/i)?.[1]?.toLowerCase();
+}
+
 /** MCPMark publishes normalized leaderboard rows in its Next.js Flight data. */
 export class McpMarkAdapter implements IngestAdapter {
   readonly id = "mcpmark";
@@ -34,6 +40,8 @@ export class McpMarkAdapter implements IngestAdapter {
       const score = numberAt(passAtOne, ["avg"]) ?? numberAt(row, ["avgSuccessRate"]);
       if (!rawModel || score === undefined) continue;
       const identity = modelIdentity(rawModel);
+      const submission = stringAt(row, ["name", "key"]) ?? rawModel;
+      const effort = submissionEffort(submission) ?? identity.evaluationProfile;
       const reportedStd = numberAt(passAtOne, ["std"]);
       const totalTasks = numberAt(row, ["totalTasks", "total_tasks"]);
       const nItems = totalTasks !== undefined && Number.isInteger(totalTasks) && totalTasks > 0
@@ -58,9 +66,10 @@ export class McpMarkAdapter implements IngestAdapter {
         n_runs: MCPMARK_RUNS,
         ...(perRunCost !== undefined && perRunCost >= 0 ? { cost_per_task: perRunCost / nItems } : {}),
         ...(averageExecutionTime !== undefined && averageExecutionTime >= 0 ? { latency_s: averageExecutionTime } : {}),
-        ...(identity.evaluationProfile ? { effort_tier: identity.evaluationProfile } : {}),
+        ...(effort ? { effort_tier: effort } : {}),
         config: {
-          submission: stringAt(row, ["name", "key"]) ?? rawModel,
+          submission,
+          ...(effort ? { reasoning_effort: effort } : {}),
           evaluation_profile: identity.evaluationProfile ?? null,
         },
         harness: "MCPMark",

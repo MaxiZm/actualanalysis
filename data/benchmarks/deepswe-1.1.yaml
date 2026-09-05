@@ -1,0 +1,38 @@
+id: deepswe-1.1
+name: DeepSWE v1.1
+version: "1.1"
+tags:
+  - agentic
+categories:
+  - software-engineering
+holdout: public
+holdout_details: Original Datacurve software-engineering tasks.
+chance_level: 0
+transform:
+  type: accuracy
+  input_scale: percent
+n_items: 113
+harness_url: https://deepswe.datacurve.ai/artifacts/v1.1/leaderboard-live.json
+source_ids:
+  - datacurve
+  - vendor-model-cards
+status: active
+notes: 70 native configuration records, 68 map to registered model releases.
+  Pass@1 uses all scored attempts and excludes provider/verifier/network errors;
+  actual scored task/attempt counts vary by configuration. Reported CI is
+  run-to-run and per-run rates/attempt counts are captured. Distinct from
+  registered v1; admitted under its own condition. No maximum-score selection.
+obs_type: count
+domains:
+  agentic: 0.25
+  software-code: 0.7
+  reasoning: 0.05
+  knowledge-information: 0
+  communication-professional: 0
+default_k: 1
+family_id: deepswe
+metadata_sources:
+  - https://deepswe.datacurve.ai/artifacts/v1.1/leaderboard-live.json
+promotion_rule: "Audit 2026-09-05: independent native configuration records for
+  at least eight registered models; exact v1.1 condition and reported run-to-run
+  uncertainty. Missing metadata remains explicit."

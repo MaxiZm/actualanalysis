@@ -7,7 +7,7 @@ open_weights: false
 license: Proprietary
 source_url: https://openai.com/index/gpt-6-astra/
 max_effort_tier: max
-effort_tier_order: [low, medium, high, xhigh, max]
+effort_tier_order: [ low, medium, high, xhigh, max ]
 reasoning: true
 reasoning_config:
   control: categorical
@@ -17,4 +17,10 @@ metadata_sources:
   - https://developers.openai.com/api/docs/guides/latest-model?model=gpt-6-astra
   - https://openai.com/index/gpt-6-astra/
 status: active
-notes: OpenAI documents five single-model API reasoning efforts, from low through max, and explicitly excludes none. The reviewed model page and guide do not identify a default effort; it remains unspecified. Ultra is multi-agent orchestration, not a single-model effort tier.
+notes: OpenAI documents five single-model API reasoning efforts, from low
+  through max, and explicitly excludes none. The reviewed model page and guide
+  do not identify a default effort; it remains unspecified. Ultra is multi-agent
+  orchestration, not a single-model effort tier.
+context_length: 1050000
+max_output: 128000
+modality: multimodal

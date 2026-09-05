@@ -1,0 +1,39 @@
+id: simpleqa-verified-epoch-anti-abstention-v1-2-0
+name: SimpleQA Verified · Epoch 1.2.0
+version: epoch-anti-abstention-1.2.0
+family_id: simpleqa
+aliases: []
+tags:
+  - chat
+categories:
+  - factuality
+domains:
+  agentic: 0
+  software-code: 0
+  reasoning: 0
+  knowledge-information: 0.95
+  communication-professional: 0.05
+holdout: public
+chance_level: 0
+obs_type: judge
+public_release_date: 2025-09-09
+tool_policy: none
+transform:
+  type: accuracy
+  input_scale: fraction
+n_items: null
+harness_url: https://epoch.ai/benchmarks/simple-qa-verified
+source_ids:
+  - epoch
+metadata_sources:
+  - https://epoch.ai/data/benchmarks.csv
+  - https://epoch.ai/benchmarks/simple-qa-verified
+status: active
+notes: Native Epoch mean accuracy with reported item standard error, run ID,
+  exact model configuration and native task version 1.2.0. Incorrect and
+  abstained responses score zero; this is not the Google/Kaggle F1 metric. The
+  current CSV labels these runs anti-abstention, but exact historical prompt
+  text and production judge revision are not pinned. Keep 1.0.0 and 1.2.0 as
+  separate conditions; the public description announces a prompt change on
+  2026-08-27. Use continuous measurement uncertainty; do not invent 1,000
+  evaluated items because some native runs are partial.

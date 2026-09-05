@@ -19,7 +19,7 @@ test.describe("ActualAnalysis public experience", () => {
       ).toHaveCount(1);
     }
     await expect(
-      page.getByRole("columnheader", { name: "AA $/task", exact: true }),
+      page.getByRole("columnheader", { name: "AA 4.2 $/task", exact: true }),
     ).toBeVisible();
     await page.goto("/compare");
     await page
@@ -28,11 +28,11 @@ test.describe("ActualAnalysis public experience", () => {
       .click();
     await expect(
       page.getByRole("combobox", { name: "Runtime metric" }),
-    ).toHaveText("AA cost per task · USD");
+    ).toHaveText("AA 4.2 cost per task · USD");
     if (existsSync(path.resolve("data/manual/cost-aa.yaml"))) {
       await expect(
         page.getByRole("img", {
-          name: "Mixed vs AA cost per task",
+          name: "Mixed vs AA 4.2 cost per task",
           exact: true,
         }),
       ).toBeVisible();
@@ -487,7 +487,7 @@ test.describe("ActualAnalysis public experience", () => {
       page.getByRole("heading", { level: 1, name: "How the index works" }),
     ).toBeVisible();
     await expect(
-      page.getByText("ActualAnalysis Capability Index · version 1.4.0", {
+      page.getByText("ActualAnalysis Capability Index · version 1.4.1", {
         exact: false,
       }),
     ).toBeVisible();

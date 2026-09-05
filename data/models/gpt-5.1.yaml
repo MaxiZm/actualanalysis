@@ -5,11 +5,14 @@ family: GPT-5
 release_date: 2025-11-13
 open_weights: false
 license: Proprietary
-aliases: [gpt-5.1-instant, gpt-5.1-thinking]
+aliases:
+  - gpt-5.1-instant
+  - gpt-5.1-thinking
+  - gpt-5.1-high
 source_url: https://openai.com/index/gpt-5-1/
 default_effort_tier: none
 max_effort_tier: high
-effort_tier_order: [none, low, medium, high]
+effort_tier_order: [ none, low, medium, high ]
 reasoning: true
 reasoning_config:
   control: categorical
@@ -17,5 +20,7 @@ reasoning_config:
 metadata_sources:
   - https://developers.openai.com/api/docs/models/gpt-5.1
   - https://openai.com/index/gpt-5-1-for-developers/
-notes: Exact GPT-5.1 API snapshot; OpenAI documents none as the default reasoning effort and high as the highest exposed effort.
+  - https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset
+notes: Exact GPT-5.1 API snapshot; OpenAI documents none as the default
+  reasoning effort and high as the highest exposed effort.
 status: active

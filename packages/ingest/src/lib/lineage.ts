@@ -47,7 +47,14 @@ function originMatches(copy: RawBenchmarkResult, origin: RawBenchmarkResult): bo
 
 function nativeLineage(row: RawBenchmarkResult): string {
   if (row.lineage_id) return row.lineage_id;
-  if (row.evaluation_run_id) return `${row.source_id}:${row.evaluation_run_id}`;
+  // Some publishers identify the entire leaderboard snapshot as one run.
+  // A batch ID cannot make different model/condition/configuration results copies.
+  if (row.evaluation_run_id) return `${row.source_id}:${digest({
+    run: row.evaluation_run_id,
+    model: row.model_id ?? row.model,
+    benchmark: row.benchmark_id ?? row.benchmark,
+    config: row.config,
+  })}`;
   // ARC's exact model ID already encodes effort. Do not collapse low/high rows
   // that happen to receive the same score.
   const sourceEvaluation = row.config.arc_model_id ?? row.metadata.arc_model_id;
@@ -91,7 +98,8 @@ export function harmonizeObservationLineages(records: readonly RawResult[]): Raw
 export function selectLineageObservations(records: readonly RawResult[]): { kept: RawResult[]; superseded: RawBenchmarkResult[] } {
   const groups = new Map<string, RawBenchmarkResult[]>();
   for (const row of records) if (row.record_type === "benchmark_result" && row.lineage_id) {
-    const group = groups.get(row.lineage_id) ?? []; group.push(row); groups.set(row.lineage_id, group);
+    const key = stableStringify([row.model_id ?? row.model, row.benchmark_id ?? row.benchmark, row.lineage_id]);
+    const group = groups.get(key) ?? []; group.push(row); groups.set(key, group);
   }
   const rejected = new Set<RawBenchmarkResult>();
   const priority = (r: RawBenchmarkResult) => Number(r.source_id === r.host_source)*4 + Number(!isManual(r))*2 + Number(r.provenance === "independent");

@@ -25,6 +25,16 @@ function row(model: string, sourceUrl = arenaUrl) {
 }
 
 describe("Arena named effort identity", () => {
+  it("preserves parenthesized and differently punctuated documented tiers", async () => {
+    const registry = await loadRegistry(dataDir);
+    const records = resolveRecordAliases([row("muse-spark-1.2 (xHigh)"), row("glm-5.3-max")], registry).records;
+    expect(records).toHaveLength(2);
+    expect(records).toEqual(expect.arrayContaining([
+      expect.objectContaining({ model_id: "muse-spark-1.2", effort_tier: "xhigh" }),
+      expect.objectContaining({ model_id: "glm-5.3", effort_tier: "max" }),
+    ]));
+  });
+
   it("resolves audited GPT aliases and preserves each explicitly reported effort", async () => {
     const registry = await loadRegistry(dataDir);
     const resolved = resolveRecordAliases([

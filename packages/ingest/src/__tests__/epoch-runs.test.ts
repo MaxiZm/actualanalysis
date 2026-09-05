@@ -17,6 +17,14 @@ describe("Epoch original FrontierMath runs", () => {
     expect(record?.n_items).toBeUndefined(); // Partial runs use source SE rather than a fabricated success count.
   });
 
+  it("does not silently turn a distinct promax system into ordinary max effort", () => {
+    const input = [header, row("promax", "FrontierMath-Tier-4-v2-Private", "2026-07-09", .8).replaceAll("gpt-5.5_xhigh", "gpt-5.6-sol_promax")].join("\n");
+    const [record] = parseEpochFrontierMathRuns(input);
+    expect(record?.effort_tier).toBeUndefined();
+    expect(record?.config.aci_fit_eligible).toBe(false);
+    expect(record?.config.epoch_model_version).toBe("gpt-5.6-sol_promax");
+  });
+
   it("never relabels v1 or the public subset as v2 private", () => {
     const records = parseEpochFrontierMathRuns([
       header,

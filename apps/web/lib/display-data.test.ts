@@ -1,6 +1,10 @@
 import { describe, expect, it } from "vitest";
 
-import { FIXTURE_SITE_DATA } from "./data";
+import {
+  FIXTURE_SITE_DATA,
+  costPerTaskSuiteLabel,
+  costPerTaskWorkloadLabel,
+} from "./data";
 import {
   withDisplaySpeed,
   withDisplayCost,
@@ -137,6 +141,75 @@ describe("source-backed display registries", () => {
     expect(data.models[0]?.costPerTask?.usdPerTask).toBe(0);
     expect(data.models[0]?.costPerTask?.redistributable).toBe(false);
     expect(FIXTURE_SITE_DATA.models[0]?.costPerTask).toBeUndefined();
+  });
+  it("compares only the selected task suite even when historical measurements are newer", () => {
+    const file = DisplayCostFileSchema.parse(load("cost-aa.yaml"));
+    const model = FIXTURE_SITE_DATA.models[0]!;
+    const current = {
+      ...file.observations[0]!,
+      model_id: model.id,
+      workload: "aa-intelligence-index-v4.2",
+      observed_on: "2026-09-04",
+      usd_per_task: 0.3,
+    };
+    const data = withDisplayCost(FIXTURE_SITE_DATA, {
+      ...file,
+      active_workload: current.workload,
+      metric: { ...file.metric, version: "4.2" },
+      observations: [
+        current,
+        {
+          ...current,
+          workload: "aa-intelligence-index-v4.1.1",
+          observed_on: "2026-09-05",
+          usd_per_task: 0.1,
+        },
+      ],
+    });
+    expect(data.models[0]?.costPerTask).toMatchObject({
+      usdPerTask: 0.3,
+      workload: "aa-intelligence-index-v4.2",
+      version: "4.2",
+    });
+    expect(costPerTaskSuiteLabel(data.models)).toBe("AA 4.2");
+  });
+  it("does not fill missing current-suite costs from historical rows or a prior overlay", () => {
+    const file = DisplayCostFileSchema.parse(load("cost-aa.yaml"));
+    const model = FIXTURE_SITE_DATA.models[0]!;
+    const historicalFile = {
+      ...file,
+      observations: [{ ...file.observations[0]!, model_id: model.id }],
+    };
+    const historical = withDisplayCost(FIXTURE_SITE_DATA, historicalFile);
+    expect(historical.models[0]?.costPerTask).toBeTruthy();
+    const current = withDisplayCost(historical, {
+      ...historicalFile,
+      active_workload: "aa-intelligence-index-v4.2",
+      metric: { ...file.metric, version: "4.2" },
+    });
+    expect(current.models[0]?.costPerTask).toBeNull();
+    expect(historical.models[0]?.costPerTask).toBeTruthy();
+  });
+  it("requires an explicit workload when an archive contains different task suites", () => {
+    const file = DisplayCostFileSchema.parse(load("cost-aa.yaml"));
+    const [first, second] = FIXTURE_SITE_DATA.models;
+    const data = withDisplayCost(FIXTURE_SITE_DATA, {
+      ...file,
+      observations: [
+        { ...file.observations[0]!, model_id: first!.id },
+        {
+          ...file.observations[0]!,
+          model_id: second!.id,
+          workload: "aa-intelligence-index-v4.2",
+        },
+      ],
+    });
+    expect(data.models.some((model) => model.costPerTask)).toBe(false);
+  });
+  it("labels legacy single-suite measurements with their actual version", () => {
+    expect(
+      costPerTaskWorkloadLabel({ workload: "aa-intelligence-index-v4.1.1" }),
+    ).toBe("AA 4.1.1");
   });
   it("converts AA percentages once, retains provenance, and supplies no fitted prediction", () => {
     const file = DisplayBenchmarkFileSchema.parse(load("benchmarks-aa.yaml"));

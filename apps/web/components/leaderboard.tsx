@@ -10,6 +10,7 @@ import { IndexScatter, RankedBars } from "@/components/charts";
 import {
   DATA_STATUS,
   MODELS,
+  costPerTaskSuiteLabel,
   type BenchmarkRecord,
   type DataStatus,
   type IndexScore,
@@ -142,6 +143,7 @@ export function Leaderboard({
       : [];
   });
   const indexLabel = `${filters.index[0]?.toUpperCase()}${filters.index.slice(1)} index`;
+  const taskCostSuite = costPerTaskSuiteLabel(models);
 
   return (
     <section className="workbench" aria-labelledby="leaderboard-heading">
@@ -194,9 +196,9 @@ export function Leaderboard({
                   variant="ghost"
                   size="sm"
                   onClick={() => sortBy("taskCost")}
-                  title="Artificial Analysis weighted cost per Intelligence Index task"
+                  title={`${taskCostSuite} weighted cost per Intelligence Index task`}
                 >
-                  AA $/task
+                  {taskCostSuite} $/task
                 </TextureButton>
               </th>
               <th aria-sort={sortState("price")}>
@@ -344,14 +346,14 @@ export function Leaderboard({
               value={chartCost}
               onChange={setChartCost}
               options={[
-                { value: "taskCost", label: "AA cost per task · USD" },
+                { value: "taskCost", label: `${taskCostSuite} cost per task · USD` },
                 { value: "price", label: "Token price · $/M" },
               ]}
             />
           </label>
           <p>
-            AA task cost includes reasoning tokens and follows its own
-            Intelligence Index task weights.
+            {taskCostSuite} task cost includes reasoning tokens. All cost
+            measurements use the same Intelligence Index task suite.
           </p>
         </div>
       ) : null}
@@ -368,12 +370,12 @@ export function Leaderboard({
           <IndexScatter
             title={
               chartCost === "taskCost"
-                ? "Capability vs AA cost per task"
+                ? `Capability vs ${taskCostSuite} cost per task`
                 : `Capability vs ${filters.priceBasis} price`
             }
             xLabel={
               chartCost === "taskCost"
-                ? "AA cost per task · USD"
+                ? `${taskCostSuite} cost per task · USD`
                 : `${filters.priceBasis} price · $/M`
             }
             points={chartPoints.filter((point) => point.x > 0)}

@@ -106,7 +106,7 @@ export class ScaleAdapter implements IngestAdapter {
             ...(identity.evaluationProfile ? { effort_tier: identity.evaluationProfile } : {}),
             config: {
               ...(identity.evaluationProfile ? { evaluation_profile: identity.evaluationProfile } : {}),
-              ...(!hleCompatibility.compatible ? {
+              ...(!hleCompatibility.compatible && !(ci95HalfWidth !== undefined && ci95HalfWidth > 0) ? {
                 aci_fit_eligible: false,
                 aci_exclusion_reason: hleCompatibility.reason,
               } : {}),
@@ -123,6 +123,9 @@ export class ScaleAdapter implements IngestAdapter {
               contamination_warning: contamination ?? null,
               exact_benchmark_revision_provided: false,
               aggregate_count_compatible: hleCompatibility.compatible,
+              ...(!hleCompatibility.compatible ? {
+                denominator_note: "Rounded score/interval does not establish an exact binary denominator. Preserve the published estimate and interval; a discrepancy from a nominal binomial interval is not proof of an invalid result.",
+              } : {}),
             },
           }));
         }

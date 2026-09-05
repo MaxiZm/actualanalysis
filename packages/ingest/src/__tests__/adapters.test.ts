@@ -37,8 +37,8 @@ function flightHtml(payload: string): string {
 describe("source adapters", () => {
   it("registers every v1 adapter", () => {
     expect([...createAdapters().keys()]).toEqual([
-      "epoch", "openrouter", "swe-rebench", "lmarena", "kaggle", "matharena", "metr",
-      "tbench", "scale", "arcprize", "taubench", "mcpmark", "manual",
+      "epoch", "openrouter", "swe-rebench", "osworld", "lmarena", "livebench", "kaggle", "matharena", "metr",
+      "tbench", "andonlabs", "scale", "arcprize", "taubench", "mcpmark", "manual",
     ]);
   });
 
@@ -171,8 +171,10 @@ describe("source adapters", () => {
     const flight = JSON.stringify([1, JSON.stringify({
       items: [{
         modelName: "GPT-5",
-        taskRangeTimestamp: { from: 1, to: 3 },
-        rangeStats: { all: { "1:3": { resolvedRate: 42, sem: 2 } } },
+        modelId: "GPT-5__tools",
+        agentVersion: "tools",
+        meta: { instance_type: "model" },
+        rangeStats: { all: { "1778803200000:1782864000000": { resolvedRate: 42, sem: 2 } } },
       }],
     })]);
     const html = `<!doctype html><script>self.__next_f.push(${flight})</script>`;
@@ -195,8 +197,9 @@ describe("source adapters", () => {
     });
     const hle = result.records.find((record) => record.record_type === "benchmark_result" && record.benchmark_id === "hle-no-tools");
     expect(hle).not.toHaveProperty("n_items");
+    expect(hle?.record_type === "benchmark_result" && hle.config.aci_fit_eligible).not.toBe(false);
     expect(hle).toMatchObject({
-      config: { aci_fit_eligible: false },
+      config: { evaluation_profile: "high" },
       metadata: { exact_benchmark_revision_provided: false, aggregate_count_compatible: false },
     });
   });
@@ -226,7 +229,6 @@ describe("source adapters", () => {
       score: 72.7,
       se: 2.7 / 1.96,
       effort_tier: "high",
-      n_runs: 4,
       cost_per_task: 4.37,
       observed_on: "2026-09-03",
       metadata: { model_release_date: "2026-07-09", reported_ci95_half_width: 2.7 },

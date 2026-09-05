@@ -16,8 +16,14 @@ results:
       reasoning_effort: max
     harness_class: common
     protocol_id: automationbench-public-2026-07
-    notes: Public 600-task strict pass rate from official README; highest reasoning
-      effort. Grader commit and run timestamps are not reported.
+    notes: "Public 600-task strict pass rate from official README; highest reasoning
+      effort. Grader commit and run timestamps are not reported. Superseded by
+      the 2026-09-05 coverage audit: Remove the unsupported public-2026-07
+      stamp. This model, effort and score exactly match the immutable native
+      AutomationBench v1.0.6 public README. Replace once with the supplied
+      1.0.6-public observed-only candidate; do not merge with latest v3 or the
+      existing July condition."
+    sample_only: true
   - model_id: kimi-k3
     benchmark_id: automationbench-public
     benchmark_version: public-2026-07
@@ -35,8 +41,14 @@ results:
       reasoning_effort: max
     harness_class: common
     protocol_id: automationbench-public-2026-07
-    notes: Public 600-task strict pass rate from official README; highest reasoning
-      effort. Grader commit and run timestamps are not reported.
+    notes: "Public 600-task strict pass rate from official README; highest reasoning
+      effort. Grader commit and run timestamps are not reported. Superseded by
+      the 2026-09-05 coverage audit: Remove the unsupported public-2026-07
+      stamp. This model, effort and score exactly match the immutable native
+      AutomationBench v1.0.6 public README. Replace once with the supplied
+      1.0.6-public observed-only candidate; do not merge with latest v3 or the
+      existing July condition."
+    sample_only: true
   - model_id: claude-fable-5
     benchmark_id: automationbench-public
     benchmark_version: public-2026-07
@@ -54,8 +66,14 @@ results:
       reasoning_effort: max
     harness_class: common
     protocol_id: automationbench-public-2026-07
-    notes: Public 600-task strict pass rate from official README; highest reasoning
-      effort. Grader commit and run timestamps are not reported.
+    notes: "Public 600-task strict pass rate from official README; highest reasoning
+      effort. Grader commit and run timestamps are not reported. Superseded by
+      the 2026-09-05 coverage audit: Remove the unsupported public-2026-07
+      stamp. This model, effort and score exactly match the immutable native
+      AutomationBench v1.0.6 public README. Replace once with the supplied
+      1.0.6-public observed-only candidate; do not merge with latest v3 or the
+      existing July condition."
+    sample_only: true
   - model_id: gpt-5.6-sol
     benchmark_id: automationbench-public
     benchmark_version: public-2026-07
@@ -73,8 +91,14 @@ results:
       reasoning_effort: max
     harness_class: common
     protocol_id: automationbench-public-2026-07
-    notes: Public 600-task strict pass rate from official README; highest reasoning
-      effort. Grader commit and run timestamps are not reported.
+    notes: "Public 600-task strict pass rate from official README; highest reasoning
+      effort. Grader commit and run timestamps are not reported. Superseded by
+      the 2026-09-05 coverage audit: Remove the unsupported public-2026-07
+      stamp. This model, effort and score exactly match the immutable native
+      AutomationBench v1.0.6 public README. Replace once with the supplied
+      1.0.6-public observed-only candidate; do not merge with latest v3 or the
+      existing July condition."
+    sample_only: true
   - model_id: claude-opus-4.8
     benchmark_id: automationbench-public
     benchmark_version: public-2026-07
@@ -92,8 +116,14 @@ results:
       reasoning_effort: max
     harness_class: common
     protocol_id: automationbench-public-2026-07
-    notes: Public 600-task strict pass rate from official README; highest reasoning
-      effort. Grader commit and run timestamps are not reported.
+    notes: "Public 600-task strict pass rate from official README; highest reasoning
+      effort. Grader commit and run timestamps are not reported. Superseded by
+      the 2026-09-05 coverage audit: Remove the unsupported public-2026-07
+      stamp. This model, effort and score exactly match the immutable native
+      AutomationBench v1.0.6 public README. Replace once with the supplied
+      1.0.6-public observed-only candidate; do not merge with latest v3 or the
+      existing July condition."
+    sample_only: true
   - model_id: gpt-5.6-terra
     benchmark_id: automationbench-public
     benchmark_version: public-2026-07
@@ -111,8 +141,14 @@ results:
       reasoning_effort: max
     harness_class: common
     protocol_id: automationbench-public-2026-07
-    notes: Public 600-task strict pass rate from official README; highest reasoning
-      effort. Grader commit and run timestamps are not reported.
+    notes: "Public 600-task strict pass rate from official README; highest reasoning
+      effort. Grader commit and run timestamps are not reported. Superseded by
+      the 2026-09-05 coverage audit: Remove the unsupported public-2026-07
+      stamp. This model, effort and score exactly match the immutable native
+      AutomationBench v1.0.6 public README. Replace once with the supplied
+      1.0.6-public observed-only candidate; do not merge with latest v3 or the
+      existing July condition."
+    sample_only: true
   - model_id: claude-sonnet-5
     benchmark_id: automationbench-public
     benchmark_version: public-2026-07
@@ -130,8 +166,14 @@ results:
       reasoning_effort: max
     harness_class: common
     protocol_id: automationbench-public-2026-07
-    notes: Public 600-task strict pass rate from official README; highest reasoning
-      effort. Grader commit and run timestamps are not reported.
+    notes: "Public 600-task strict pass rate from official README; highest reasoning
+      effort. Grader commit and run timestamps are not reported. Superseded by
+      the 2026-09-05 coverage audit: Remove the unsupported public-2026-07
+      stamp. This model, effort and score exactly match the immutable native
+      AutomationBench v1.0.6 public README. Replace once with the supplied
+      1.0.6-public observed-only candidate; do not merge with latest v3 or the
+      existing July condition."
+    sample_only: true
   - model_id: glm-5.2
     benchmark_id: automationbench-public
     benchmark_version: public-2026-07
@@ -149,8 +191,14 @@ results:
       reasoning_effort: max
     harness_class: common
     protocol_id: automationbench-public-2026-07
-    notes: Public 600-task strict pass rate from official README; highest reasoning
-      effort. Grader commit and run timestamps are not reported.
+    notes: "Public 600-task strict pass rate from official README; highest reasoning
+      effort. Grader commit and run timestamps are not reported. Superseded by
+      the 2026-09-05 coverage audit: Remove the unsupported public-2026-07
+      stamp. This model, effort and score exactly match the immutable native
+      AutomationBench v1.0.6 public README. Replace once with the supplied
+      1.0.6-public observed-only candidate; do not merge with latest v3 or the
+      existing July condition."
+    sample_only: true
   - model_id: claude-opus-5
     benchmark_id: terminal-bench-science-0.1
     benchmark_version: "0.1"
@@ -165,8 +213,11 @@ results:
     metadata_incomplete: true
     harness_class: native
     k_trials: 3
-    notes: Three independent trials on each of 70 tasks. Effort not stated in
-      announcement; do not infer it from model name.
+    notes: "Three independent trials on each of 70 tasks. Effort not stated in
+      announcement; do not infer it from model name. Superseded by the
+      2026-09-05 coverage audit: Recover full published pass@1 precision and
+      source configuration identifier; preserve unknown effort."
+    sample_only: true
   - model_id: gpt-5.6-sol
     benchmark_id: terminal-bench-science-0.1
     benchmark_version: "0.1"
@@ -181,8 +232,11 @@ results:
     metadata_incomplete: true
     harness_class: native
     k_trials: 3
-    notes: Three independent trials on each of 70 tasks. Effort not stated in
-      announcement; do not infer it from model name.
+    notes: "Three independent trials on each of 70 tasks. Effort not stated in
+      announcement; do not infer it from model name. Superseded by the
+      2026-09-05 coverage audit: Recover full published pass@1 precision and
+      source configuration identifier; preserve unknown effort."
+    sample_only: true
   - model_id: claude-fable-5
     benchmark_id: terminal-bench-science-0.1
     benchmark_version: "0.1"
@@ -197,8 +251,11 @@ results:
     metadata_incomplete: true
     harness_class: native
     k_trials: 3
-    notes: Three independent trials on each of 70 tasks. Effort not stated in
-      announcement; do not infer it from model name.
+    notes: "Three independent trials on each of 70 tasks. Effort not stated in
+      announcement; do not infer it from model name. Superseded by the
+      2026-09-05 coverage audit: Recover full published pass@1 precision and
+      source configuration identifier; preserve unknown effort."
+    sample_only: true
   - model_id: claude-opus-4.8
     benchmark_id: terminal-bench-science-0.1
     benchmark_version: "0.1"
@@ -213,8 +270,11 @@ results:
     metadata_incomplete: true
     harness_class: native
     k_trials: 3
-    notes: Three independent trials on each of 70 tasks. Effort not stated in
-      announcement; do not infer it from model name.
+    notes: "Three independent trials on each of 70 tasks. Effort not stated in
+      announcement; do not infer it from model name. Superseded by the
+      2026-09-05 coverage audit: Recover full published pass@1 precision and
+      source configuration identifier; preserve unknown effort."
+    sample_only: true
   - model_id: glm-5.3
     benchmark_id: terminal-bench-science-0.1
     benchmark_version: "0.1"
@@ -229,8 +289,11 @@ results:
     metadata_incomplete: true
     harness_class: native
     k_trials: 3
-    notes: Three independent trials on each of 70 tasks. Effort not stated in
-      announcement; do not infer it from model name.
+    notes: "Three independent trials on each of 70 tasks. Effort not stated in
+      announcement; do not infer it from model name. Superseded by the
+      2026-09-05 coverage audit: Recover full published pass@1 precision and
+      source configuration identifier; preserve unknown effort."
+    sample_only: true
   - model_id: gpt-5.6-luna
     benchmark_id: terminal-bench-science-0.1
     benchmark_version: "0.1"
@@ -245,8 +308,11 @@ results:
     metadata_incomplete: true
     harness_class: native
     k_trials: 3
-    notes: Three independent trials on each of 70 tasks. Effort not stated in
-      announcement; do not infer it from model name.
+    notes: "Three independent trials on each of 70 tasks. Effort not stated in
+      announcement; do not infer it from model name. Superseded by the
+      2026-09-05 coverage audit: Recover full published pass@1 precision and
+      source configuration identifier; preserve unknown effort."
+    sample_only: true
   - model_id: gpt-5-2025-08-07
     benchmark_id: healthbench-professional
     benchmark_version: 2026-length-adjusted
@@ -397,8 +463,13 @@ results:
     metadata_incomplete: true
     origin_provenance: self_report
     harness_class: native
-    notes: BenchCAD homepage cites vendor-reported agentic voxel IoU on 1,000 files,
-      not the full benchmark. Display only.
+    notes: "BenchCAD homepage cites vendor-reported agentic voxel IoU on 1,000
+      files, not the full benchmark. Display only. Superseded by the 2026-09-05
+      coverage audit: OpenAI Astra footnote5 explicitly says Claude BenchCAD
+      scores reflect three modifications in Fable5.1 system card. Already
+      self_report/display-only in baseline: retain that; add modified-protocol
+      annotation until detailed card can be inspected."
+    sample_only: true
   - model_id: claude-opus-5
     benchmark_id: benchcad
     benchmark_version: vision2code-agentic-1k
@@ -413,5 +484,10 @@ results:
     metadata_incomplete: true
     origin_provenance: self_report
     harness_class: native
-    notes: BenchCAD homepage cites vendor-reported agentic voxel IoU on 1,000 files,
-      not the full benchmark. Display only.
+    notes: "BenchCAD homepage cites vendor-reported agentic voxel IoU on 1,000
+      files, not the full benchmark. Display only. Superseded by the 2026-09-05
+      coverage audit: OpenAI Astra footnote5 explicitly says Claude BenchCAD
+      scores reflect three modifications in Fable5.1 system card. Already
+      self_report/display-only in baseline: retain that; add modified-protocol
+      annotation until detailed card can be inspected."
+    sample_only: true

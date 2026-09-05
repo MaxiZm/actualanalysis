@@ -1,0 +1,798 @@
+{
+  "source_url": "https://matharena.ai/competitions",
+  "capture_file": "captures/matharena-competitions.html",
+  "capture_sha256": "e6cd66e9806529a113d8dee797f401d9a04a16439f39529135d4898e5d2070da",
+  "retrieved_at": "2026-09-05T11:02:09.612Z",
+  "scope": "Complete publisher competition catalog frozen alongside full models catalog. Aggregate cards are not additional independent components. Publisher expected-performance fitting excludes deprecated components; exact task-level IRT weights and immutable individual-output revisions are not pinned by this catalog.",
+  "cards": [
+    {
+      "component_id": "arxivlean--march",
+      "title": "03/2026",
+      "deprecated": false,
+      "published_problem_count": 41,
+      "links": [
+        {
+          "url": "/?comp=arxivlean--march",
+          "label": "View scores"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/arxivlean-0326",
+          "label": "Dataset"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/arxivlean-0326_outputs",
+          "label": "Outputs"
+        }
+      ]
+    },
+    {
+      "component_id": "arxivlean--june",
+      "title": "06/2026",
+      "deprecated": false,
+      "published_problem_count": 48,
+      "links": [
+        {
+          "url": "/?comp=arxivlean--june",
+          "label": "View scores"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/arxivlean-0626",
+          "label": "Dataset"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/arxivlean-0626_outputs",
+          "label": "Outputs"
+        }
+      ]
+    },
+    {
+      "component_id": "overall--brokenarxiv",
+      "title": "Overall",
+      "deprecated": false,
+      "published_problem_count": null,
+      "links": [
+        {
+          "url": "/?comp=overall--brokenarxiv",
+          "label": "View scores"
+        }
+      ]
+    },
+    {
+      "component_id": "arxiv_false--february",
+      "title": "02/2026",
+      "deprecated": true,
+      "published_problem_count": 31,
+      "links": [
+        {
+          "url": "/?comp=arxiv_false--february",
+          "label": "View scores"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/brokenarxiv-0226",
+          "label": "Dataset"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/brokenarxiv-0226_outputs",
+          "label": "Outputs"
+        }
+      ]
+    },
+    {
+      "component_id": "arxiv_false--march",
+      "title": "03/2026",
+      "deprecated": true,
+      "published_problem_count": 56,
+      "links": [
+        {
+          "url": "/?comp=arxiv_false--march",
+          "label": "View scores"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/brokenarxiv-0326",
+          "label": "Dataset"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/brokenarxiv-0326_outputs",
+          "label": "Outputs"
+        }
+      ]
+    },
+    {
+      "component_id": "arxiv_false--april",
+      "title": "04/2026",
+      "deprecated": false,
+      "published_problem_count": 61,
+      "links": [
+        {
+          "url": "/?comp=arxiv_false--april",
+          "label": "View scores"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/brokenarxiv-0426",
+          "label": "Dataset"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/brokenarxiv-0426_outputs",
+          "label": "Outputs"
+        }
+      ]
+    },
+    {
+      "component_id": "arxiv_false--may",
+      "title": "05/2026",
+      "deprecated": false,
+      "published_problem_count": 50,
+      "links": [
+        {
+          "url": "/?comp=arxiv_false--may",
+          "label": "View scores"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/brokenarxiv-0526",
+          "label": "Dataset"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/brokenarxiv-0526_outputs",
+          "label": "Outputs"
+        }
+      ]
+    },
+    {
+      "component_id": "arxiv_false--june",
+      "title": "06/2026",
+      "deprecated": false,
+      "published_problem_count": 54,
+      "links": [
+        {
+          "url": "/?comp=arxiv_false--june",
+          "label": "View scores"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/brokenarxiv-0626",
+          "label": "Dataset"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/brokenarxiv-0626_outputs",
+          "label": "Outputs"
+        }
+      ]
+    },
+    {
+      "component_id": "overall--arxivmath",
+      "title": "Overall",
+      "deprecated": false,
+      "published_problem_count": null,
+      "links": [
+        {
+          "url": "/?comp=overall--arxivmath",
+          "label": "View scores"
+        }
+      ]
+    },
+    {
+      "component_id": "arxiv--december",
+      "title": "12/2025",
+      "deprecated": true,
+      "published_problem_count": 17,
+      "links": [
+        {
+          "url": "/?comp=arxiv--december",
+          "label": "View scores"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/arxivmath-1215",
+          "label": "Dataset"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/arxivmath-1225_outputs",
+          "label": "Outputs"
+        }
+      ]
+    },
+    {
+      "component_id": "arxiv--january",
+      "title": "01/2026",
+      "deprecated": true,
+      "published_problem_count": 23,
+      "links": [
+        {
+          "url": "/?comp=arxiv--january",
+          "label": "View scores"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/arxivmath-0126",
+          "label": "Dataset"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/arxivmath-0126_outputs",
+          "label": "Outputs"
+        }
+      ]
+    },
+    {
+      "component_id": "arxiv--february",
+      "title": "02/2026",
+      "deprecated": true,
+      "published_problem_count": 32,
+      "links": [
+        {
+          "url": "/?comp=arxiv--february",
+          "label": "View scores"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/arxivmath-0226",
+          "label": "Dataset"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/arxivmath-0226_outputs",
+          "label": "Outputs"
+        }
+      ]
+    },
+    {
+      "component_id": "arxiv--march",
+      "title": "03/2026",
+      "deprecated": true,
+      "published_problem_count": 30,
+      "links": [
+        {
+          "url": "/?comp=arxiv--march",
+          "label": "View scores"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/arxivmath-0326",
+          "label": "Dataset"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/arxivmath-0326_outputs",
+          "label": "Outputs"
+        }
+      ]
+    },
+    {
+      "component_id": "arxiv--april",
+      "title": "04/2026",
+      "deprecated": false,
+      "published_problem_count": 41,
+      "links": [
+        {
+          "url": "/?comp=arxiv--april",
+          "label": "View scores"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/arxivmath-0426",
+          "label": "Dataset"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/arxivmath-0426_outputs",
+          "label": "Outputs"
+        }
+      ]
+    },
+    {
+      "component_id": "arxiv--may",
+      "title": "05/2026",
+      "deprecated": false,
+      "published_problem_count": 40,
+      "links": [
+        {
+          "url": "/?comp=arxiv--may",
+          "label": "View scores"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/arxivmath-0526",
+          "label": "Dataset"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/arxivmath-0526_outputs",
+          "label": "Outputs"
+        }
+      ]
+    },
+    {
+      "component_id": "arxiv--june",
+      "title": "06/2026",
+      "deprecated": false,
+      "published_problem_count": 49,
+      "links": [
+        {
+          "url": "/?comp=arxiv--june",
+          "label": "View scores"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/arxivmath-0626",
+          "label": "Dataset"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/arxivmath-0626_outputs",
+          "label": "Outputs"
+        }
+      ]
+    },
+    {
+      "component_id": "overall--visual_math",
+      "title": "Overall",
+      "deprecated": true,
+      "published_problem_count": null,
+      "links": [
+        {
+          "url": "/?comp=overall--visual_math",
+          "label": "View scores"
+        }
+      ]
+    },
+    {
+      "component_id": "kangaroo--kangaroo_2025_1-2",
+      "title": "Kangaroo 2025 1-2",
+      "deprecated": true,
+      "published_problem_count": 24,
+      "links": [
+        {
+          "url": "/?comp=kangaroo--kangaroo_2025_1-2",
+          "label": "View scores"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/kangaroo_2025_1_2",
+          "label": "Dataset"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/kangaroo_2025_1-2_outputs",
+          "label": "Outputs"
+        }
+      ]
+    },
+    {
+      "component_id": "kangaroo--kangaroo_2025_3-4",
+      "title": "Kangaroo 2025 3-4",
+      "deprecated": true,
+      "published_problem_count": 24,
+      "links": [
+        {
+          "url": "/?comp=kangaroo--kangaroo_2025_3-4",
+          "label": "View scores"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/kangaroo_2025_3_4",
+          "label": "Dataset"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/kangaroo_2025_3-4_outputs",
+          "label": "Outputs"
+        }
+      ]
+    },
+    {
+      "component_id": "kangaroo--kangaroo_2025_5-6",
+      "title": "Kangaroo 2025 5-6",
+      "deprecated": true,
+      "published_problem_count": 30,
+      "links": [
+        {
+          "url": "/?comp=kangaroo--kangaroo_2025_5-6",
+          "label": "View scores"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/kangaroo_2025_5_6",
+          "label": "Dataset"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/kangaroo_2025_5-6_outputs",
+          "label": "Outputs"
+        }
+      ]
+    },
+    {
+      "component_id": "kangaroo--kangaroo_2025_7-8",
+      "title": "Kangaroo 2025 7-8",
+      "deprecated": true,
+      "published_problem_count": 30,
+      "links": [
+        {
+          "url": "/?comp=kangaroo--kangaroo_2025_7-8",
+          "label": "View scores"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/kangaroo_2025_7_8",
+          "label": "Dataset"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/kangaroo_2025_7-8_outputs",
+          "label": "Outputs"
+        }
+      ]
+    },
+    {
+      "component_id": "kangaroo--kangaroo_2025_9-10",
+      "title": "Kangaroo 2025 9-10",
+      "deprecated": true,
+      "published_problem_count": 30,
+      "links": [
+        {
+          "url": "/?comp=kangaroo--kangaroo_2025_9-10",
+          "label": "View scores"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/kangaroo_2025_9_10",
+          "label": "Dataset"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/kangaroo_2025_9-10_outputs",
+          "label": "Outputs"
+        }
+      ]
+    },
+    {
+      "component_id": "kangaroo--kangaroo_2025_11-12",
+      "title": "Kangaroo 2025 11-12",
+      "deprecated": true,
+      "published_problem_count": 30,
+      "links": [
+        {
+          "url": "/?comp=kangaroo--kangaroo_2025_11-12",
+          "label": "View scores"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/kangaroo_2025_11_12",
+          "label": "Dataset"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/kangaroo_2025_11-12_outputs",
+          "label": "Outputs"
+        }
+      ]
+    },
+    {
+      "component_id": "overall--final_answer_comps",
+      "title": "Overall",
+      "deprecated": true,
+      "published_problem_count": null,
+      "links": [
+        {
+          "url": "/?comp=overall--final_answer_comps",
+          "label": "View scores"
+        }
+      ]
+    },
+    {
+      "component_id": "aime--aime_2025",
+      "title": "AIME 2025",
+      "deprecated": true,
+      "published_problem_count": 30,
+      "links": [
+        {
+          "url": "/?comp=aime--aime_2025",
+          "label": "View scores"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/aime_2025",
+          "label": "Dataset"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/aime_2025_outputs",
+          "label": "Outputs"
+        }
+      ]
+    },
+    {
+      "component_id": "hmmt--hmmt_feb_2025",
+      "title": "HMMT Feb 2025",
+      "deprecated": true,
+      "published_problem_count": 30,
+      "links": [
+        {
+          "url": "/?comp=hmmt--hmmt_feb_2025",
+          "label": "View scores"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/hmmt_feb_2025",
+          "label": "Dataset"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/hmmt_feb_2025_outputs",
+          "label": "Outputs"
+        }
+      ]
+    },
+    {
+      "component_id": "brumo--brumo_2025",
+      "title": "BRUMO 2025",
+      "deprecated": true,
+      "published_problem_count": 30,
+      "links": [
+        {
+          "url": "/?comp=brumo--brumo_2025",
+          "label": "View scores"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/brumo_2025",
+          "label": "Dataset"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/brumo_2025_outputs",
+          "label": "Outputs"
+        }
+      ]
+    },
+    {
+      "component_id": "smt--smt_2025",
+      "title": "SMT 2025",
+      "deprecated": true,
+      "published_problem_count": 53,
+      "links": [
+        {
+          "url": "/?comp=smt--smt_2025",
+          "label": "View scores"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/smt_2025",
+          "label": "Dataset"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/smt_2025_outputs",
+          "label": "Outputs"
+        }
+      ]
+    },
+    {
+      "component_id": "cmimc--cmimc_2025",
+      "title": "CMIMC 2025",
+      "deprecated": true,
+      "published_problem_count": 40,
+      "links": [
+        {
+          "url": "/?comp=cmimc--cmimc_2025",
+          "label": "View scores"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/cmimc_2025",
+          "label": "Dataset"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/cmimc_2025_outputs",
+          "label": "Outputs"
+        }
+      ]
+    },
+    {
+      "component_id": "hmmt--hmmt_nov_2025",
+      "title": "HMMT Nov 2025",
+      "deprecated": true,
+      "published_problem_count": 30,
+      "links": [
+        {
+          "url": "/?comp=hmmt--hmmt_nov_2025",
+          "label": "View scores"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/hmmt_nov_2025",
+          "label": "Dataset"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/hmmt_nov_2025_outputs",
+          "label": "Outputs"
+        }
+      ]
+    },
+    {
+      "component_id": "aime--aime_2026",
+      "title": "AIME 2026",
+      "deprecated": true,
+      "published_problem_count": 30,
+      "links": [
+        {
+          "url": "/?comp=aime--aime_2026",
+          "label": "View scores"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/aime_2026",
+          "label": "Dataset"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/aime_2026_outputs",
+          "label": "Outputs"
+        }
+      ]
+    },
+    {
+      "component_id": "hmmt--hmmt_feb_2026",
+      "title": "HMMT Feb 2026",
+      "deprecated": true,
+      "published_problem_count": 33,
+      "links": [
+        {
+          "url": "/?comp=hmmt--hmmt_feb_2026",
+          "label": "View scores"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/hmmt_feb_2026",
+          "label": "Dataset"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/hmmt_feb_2026_outputs",
+          "label": "Outputs"
+        }
+      ]
+    },
+    {
+      "component_id": "apex--apex_2025",
+      "title": "Apex",
+      "deprecated": true,
+      "published_problem_count": 12,
+      "links": [
+        {
+          "url": "/?comp=apex--apex_2025",
+          "label": "View scores"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/apex_2025",
+          "label": "Dataset"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/apex_2025_outputs",
+          "label": "Outputs"
+        }
+      ]
+    },
+    {
+      "component_id": "apex--shortlist_2025",
+      "title": "Apex Shortlist",
+      "deprecated": true,
+      "published_problem_count": 47,
+      "links": [
+        {
+          "url": "/?comp=apex--shortlist_2025",
+          "label": "View scores"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/apex-shortlist",
+          "label": "Dataset"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/apex_shortlist_outputs",
+          "label": "Outputs"
+        }
+      ]
+    },
+    {
+      "component_id": "usamo--usamo_2025",
+      "title": "USAMO 2025",
+      "deprecated": true,
+      "published_problem_count": 6,
+      "links": [
+        {
+          "url": "/?comp=usamo--usamo_2025",
+          "label": "View scores"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/usamo_2025",
+          "label": "Dataset"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/usamo_2025_outputs",
+          "label": "Outputs"
+        }
+      ]
+    },
+    {
+      "component_id": "imo--imo_2025",
+      "title": "IMO 2025",
+      "deprecated": true,
+      "published_problem_count": 6,
+      "links": [
+        {
+          "url": "/?comp=imo--imo_2025",
+          "label": "View scores"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/imo_2025",
+          "label": "Dataset"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/imo_2025_outputs",
+          "label": "Outputs"
+        }
+      ]
+    },
+    {
+      "component_id": "imc--imc_2025",
+      "title": "IMC 2025",
+      "deprecated": true,
+      "published_problem_count": 10,
+      "links": [
+        {
+          "url": "/?comp=imc--imc_2025",
+          "label": "View scores"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/imc_2025",
+          "label": "Dataset"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/imc_2025_outputs",
+          "label": "Outputs"
+        }
+      ]
+    },
+    {
+      "component_id": "miklos--2025",
+      "title": "Mikl\u00f3s Schweitzer 2025",
+      "deprecated": true,
+      "published_problem_count": 10,
+      "links": [
+        {
+          "url": "/?comp=miklos--2025",
+          "label": "View scores"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/miklos_2025",
+          "label": "Dataset"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/miklos_2025_outputs",
+          "label": "Outputs"
+        }
+      ]
+    },
+    {
+      "component_id": "putnam--putnam_2025",
+      "title": "Putnam 2025",
+      "deprecated": true,
+      "published_problem_count": 12,
+      "links": [
+        {
+          "url": "/?comp=putnam--putnam_2025",
+          "label": "View scores"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/putnam_2025",
+          "label": "Dataset"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/putnam_2025_outputs",
+          "label": "Outputs"
+        }
+      ]
+    },
+    {
+      "component_id": "usamo--usamo_2026",
+      "title": "USAMO 2026",
+      "deprecated": true,
+      "published_problem_count": 6,
+      "links": [
+        {
+          "url": "/?comp=usamo--usamo_2026",
+          "label": "View scores"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/usamo_2026",
+          "label": "Dataset"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/usamo_2026_outputs",
+          "label": "Outputs"
+        }
+      ]
+    },
+    {
+      "component_id": "euler--euler",
+      "title": "Project Euler",
+      "deprecated": true,
+      "published_problem_count": 50,
+      "links": [
+        {
+          "url": "/?comp=euler--euler",
+          "label": "View scores"
+        },
+        {
+          "url": "https://huggingface.co/datasets/MathArena/project_euler",
+          "label": "Dataset"
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "cards": 41,
+    "deprecated": 31,
+    "active_non_aggregate": 8
+  }
+}

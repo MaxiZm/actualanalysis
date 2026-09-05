@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.4.1 — 2026-09-05
+
+- Audit independent benchmark feeds and first-party model cards in parallel. Integrate 887 reviewed additions and replacements, with exact configurations, original source links and explicit measurement boundaries. Newly documented evidence includes Muse Spark 1.3 and DeepSeek V4 Flash Vision Exp.
+- Recover complete source tables: Arena grows from 63 to 90 mapped configurations, LiveBench from 27 to 44 mapped models, and Vending-Bench from 10 to 49 mapped configurations. Preserve native effort labels, provider variants, actual repeat counts and source uncertainty.
+- Remove 37 normalized HLE projections and 178 normalized GPQA projections from raw-accuracy comparisons. Replace GPQA with 159 native display observations; remove verified duplicate copies and fix the source-batch lineage bug.
+- Separate DeepSWE v1/v1.1, native SimpleQA revisions, OSWorld releases/subsets and AutomationBench versions. Admit corrected SciCode-Verified v2 whole-problem results. Keep aggregates with unresolved sampling uncertainty observable without inventing counts.
+- Correct model context limits and documented reasoning controls. Refresh speed/TTFT for 85 models, recheck all 113 CritPt display observations, and show task costs from AA 4.2 consistently. Historical AA 4.1.1 costs remain separate.
+- Refit the existing correlated-domain method with the same priors, profile weights and calibration panel. Increase numerical sampling precision while retaining the existing acceptance checks. This data release does not claim a new validated capability formula.
+
+See the [coverage audit and executed checks](https://github.com/MaxiZm/actualanalysis/tree/main/docs/audits/1.4.1-coverage) for source scope, corrections, accepted inference and remaining gaps.
+
 ## 1.4.0 — 2026-09-05
 
 - Correct GPT-5.6 Sol, Terra and Luna reasoning metadata; restore their explicitly named Arena configurations and GPT-5.5 high before alias deduplication. Preserve every original measurement. Unknown defaults are not invented, and approximate effort assignments carry extra uncertainty.

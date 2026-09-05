@@ -1,0 +1,28 @@
+id: automationbench-public-v3
+name: AutomationBench public v3
+version: public-v3
+family_id: automationbench
+tags:
+  - agentic
+categories:
+  - tool-use
+domains:
+  agentic: 1
+holdout: public
+chance_level: 0
+obs_type: judge
+transform:
+  type: accuracy
+  input_scale: percent
+n_items: 600
+harness_url: https://research.meta.ai/blog/introducing-muse-spark-1-3
+source_ids:
+  - vendor-model-cards
+metadata_sources:
+  - https://research.meta.ai/blog/introducing-muse-spark-1-3
+status: watchlist
+notes: "Reported metric: pass_at_1. Exact reported condition; not an alias of a
+  similarly named active benchmark. Source-specific evidence is shown for
+  inspection; missing evaluator, subset or uncertainty details are not imputed.
+  Nominal task count is descriptive and is never treated as a binary run
+  denominator."

@@ -9,7 +9,7 @@ aliases:
   - Qwen3.8-Flash-Next
   - qwen3-8-flash-next
 reasoning: true
-context_length: 256000
+context_length: 262144
 modality: multimodal
 source_url: https://huggingface.co/Qwen/Qwen3.8-Flash-Next
 metadata_sources:
@@ -22,3 +22,4 @@ effort_tier_order:
   - low
   - medium
   - xhigh
+params_active_b: 6

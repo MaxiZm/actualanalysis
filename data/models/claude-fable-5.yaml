@@ -5,7 +5,22 @@ family: Claude 5
 release_date: 2026-06-09
 open_weights: false
 license: Proprietary
-aliases: [Fable 5]
+aliases: [ Fable 5 ]
 source_url: https://www.anthropic.com/news/claude-fable-5-mythos-5
 status: active
-
+reasoning: true
+modality: multimodal
+default_effort_tier: high
+max_effort_tier: max
+effort_tier_order:
+  - low
+  - medium
+  - high
+  - xhigh
+  - max
+reasoning_config:
+  control: categorical
+  parameter: output_config.effort
+metadata_sources:
+  - https://platform.claude.com/docs/en/build-with-claude/effort
+  - https://platform.claude.com/docs/en/models/overview

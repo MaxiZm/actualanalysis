@@ -5,7 +5,10 @@ family: o-series
 release_date: 2024-12-05
 open_weights: false
 license: Proprietary
-aliases: [o1 (December 2024)]
+aliases:
+  - o1 (December 2024)
+  - o1-2024-12-17
 source_url: https://openai.com/index/introducing-chatgpt-pro/
 status: active
-
+metadata_sources:
+  - https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset

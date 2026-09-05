@@ -5,7 +5,10 @@ family: Claude 4.7
 release_date: 2026-04-16
 open_weights: false
 license: Proprietary
-aliases: [Opus 4.7]
+aliases:
+  - Opus 4.7
+  - claude-opus-4-7-high
 source_url: https://www.anthropic.com/news/claude-opus-4-7
 status: active
-
+metadata_sources:
+  - https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset

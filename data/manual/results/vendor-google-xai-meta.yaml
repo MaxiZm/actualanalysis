@@ -10,8 +10,8 @@ results:
     url: https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Pro-Model-Card.pdf
     provenance: self_report
     notes: >-
-      Model card states results "as of November 2025"; exact publish day not stated, using
-      first of month.
+      Model card states results "as of November 2025"; exact publish day not
+      stated, using first of month.
   - model_id: gemini-3-pro
     benchmark_id: arc-agi-2-semi-private
     source_id: vendor-model-cards
@@ -21,8 +21,9 @@ results:
     url: https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Pro-Model-Card.pdf
     provenance: self_report
     notes: >-
-      Reported as "ARC Prize Verified", which uses the semi-private evaluation set per ARC
-      Prize's standard verification methodology. Results as of November 2025; exact day not stated.
+      Reported as "ARC Prize Verified", which uses the semi-private evaluation
+      set per ARC Prize's standard verification methodology. Results as of
+      November 2025; exact day not stated.
   - model_id: gemini-3-pro
     benchmark_id: simpleqa-verified
     sample_only: true
@@ -42,7 +43,8 @@ results:
     observed_on: 2025-11-01
     url: https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Pro-Model-Card.pdf
     provenance: self_report
-    notes: 128k-context average was 77.0% (not recorded here). Exact publish day not stated.
+    notes: 128k-context average was 77.0% (not recorded here). Exact publish day not
+      stated.
   - model_id: gemini-3-pro
     benchmark_id: vending-bench-2
     source_id: vendor-model-cards
@@ -51,7 +53,11 @@ results:
     observed_on: 2025-11-01
     url: https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Pro-Model-Card.pdf
     provenance: self_report
-    notes: Net worth in USD. Exact publish day not stated.
+    notes: "Net worth in USD. Exact publish day not stated. Superseded by the
+      2026-09-05 coverage audit: Recover native full precision and actual run
+      count; match same original Andon Labs measurement across native/Epoch
+      mirrors using common lineage."
+    sample_only: true
   - model_id: gemini-3-pro
     benchmark_id: swe-bench-pro-public
     source_id: vendor-model-cards
@@ -62,9 +68,9 @@ results:
     url: https://storage.googleapis.com/deepmind-media/gemini/gemini_3-1_pro_model_evaluation.pdf
     provenance: self_report
     notes: >-
-      Not present in Gemini 3 Pro's own Nov 2025 model card; figure cited as a comparison-table
-      column in Google's Gemini 3.1 Pro evaluation methodology document (blog.google announced
-      Feb 19, 2026).
+      Not present in Gemini 3 Pro's own Nov 2025 model card; figure cited as a
+      comparison-table column in Google's Gemini 3.1 Pro evaluation methodology
+      document (blog.google announced Feb 19, 2026).
 
   # ---------- Google DeepMind: Gemini 3.1 Pro ----------
   - model_id: gemini-3.1-pro
@@ -76,7 +82,8 @@ results:
     observed_on: 2026-02-19
     url: https://storage.googleapis.com/deepmind-media/gemini/gemini_3-1_pro_model_evaluation.pdf
     provenance: self_report
-    notes: With search+code tools enabled score was 51.4%; excluded here (tools:false only per scope).
+    notes: With search+code tools enabled score was 51.4%; excluded here
+      (tools:false only per scope).
   - model_id: gemini-3.1-pro
     benchmark_id: arc-agi-2-semi-private
     source_id: vendor-model-cards
@@ -85,7 +92,8 @@ results:
     observed_on: 2026-02-19
     url: https://storage.googleapis.com/deepmind-media/gemini/gemini_3-1_pro_model_evaluation.pdf
     provenance: self_report
-    notes: Explicitly labeled "ARC Prize Verified, semi-private set" in Google's evaluation methodology.
+    notes: Explicitly labeled "ARC Prize Verified, semi-private set" in Google's
+      evaluation methodology.
   - model_id: gemini-3.1-pro
     benchmark_id: swe-bench-pro-public
     source_id: vendor-model-cards
@@ -116,8 +124,8 @@ results:
     url: https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Flash-Model-Card.pdf
     provenance: self_report
     notes: >-
-      With search+code tools enabled score was 43.5%, excluded per scope. Card published
-      Dec 2025; exact day not stated.
+      With search+code tools enabled score was 43.5%, excluded per scope. Card
+      published Dec 2025; exact day not stated.
   - model_id: gemini-3-flash
     benchmark_id: arc-agi-2-semi-private
     source_id: vendor-model-cards
@@ -167,10 +175,11 @@ results:
     url: https://storage.googleapis.com/deepmind-media/gemini/gemini_3-8_flash_model_evaluation.pdf
     provenance: self_report
     notes: >-
-      Only appears as a comparison-table figure in Google's Gemini 3.8 Flash evaluation report
-      (published alongside the Sept 2, 2026 blog.google announcement); absent from Gemini 3.7
-      Flash's own August 2026 evaluation report — Terminal-Bench 4.0 appears to have been added
-      to Google's suite between the two publications.
+      Only appears as a comparison-table figure in Google's Gemini 3.8 Flash
+      evaluation report (published alongside the Sept 2, 2026 blog.google
+      announcement); absent from Gemini 3.7 Flash's own August 2026 evaluation
+      report — Terminal-Bench 4.0 appears to have been added to Google's suite
+      between the two publications.
   - model_id: gemini-3.7-flash
     benchmark_id: osworld-2.0
     sample_only: true
@@ -181,10 +190,12 @@ results:
     url: https://storage.googleapis.com/deepmind-media/gemini/gemini_3-8_flash_model_evaluation.pdf
     provenance: self_report
     notes: >-
-      Using the more recent figure per "prefer most recent number" rule. Gemini 3.7 Flash's own
-      August 2026 evaluation report (gemini_3-7_flash_model_evaluation.pdf) separately reported
-      47.9% for this same benchmark; the discrepancy between the two Google-published figures is
-      unexplained (possibly a scoring-methodology revision) — flagging for review.
+      Using the more recent figure per "prefer most recent number" rule. Gemini
+      3.7 Flash's own August 2026 evaluation report
+      (gemini_3-7_flash_model_evaluation.pdf) separately reported 47.9% for this
+      same benchmark; the discrepancy between the two Google-published figures
+      is unexplained (possibly a scoring-methodology revision) — flagging for
+      review.
 
   # ---------- Google DeepMind: Gemini 3.8 Flash ----------
   - model_id: gemini-3.8-flash
@@ -195,14 +206,19 @@ results:
     observed_on: 2026-09-02
     url: https://storage.googleapis.com/deepmind-media/gemini/gemini_3-8_flash_model_evaluation.pdf
     provenance: self_report
-    notes: Google labels this the highest-scoring configuration among tested thinking levels.
+    notes: Google labels this the highest-scoring configuration among tested
+      thinking levels.
   - model_id: gemini-3.8-flash
     benchmark_id: osworld-2.0
     sample_only: true
     source_id: vendor-model-cards
     score: 59.0
     score_unit: percent
-    config: { tool: "batch GUI actions enabled", attempts: "best of 3, single attempt reported" }
+    config:
+      {
+        tool: "batch GUI actions enabled",
+        attempts: "best of 3, single attempt reported"
+      }
     observed_on: 2026-09-02
     url: https://storage.googleapis.com/deepmind-media/gemini/gemini_3-8_flash_model_evaluation.pdf
     provenance: self_report
@@ -217,8 +233,8 @@ results:
     url: https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Pro-Model-Card.pdf
     provenance: self_report
     notes: >-
-      Model card last updated June 27, 2025. Cross-validated as "No tools" in Google's Gemini 3
-      Pro comparison table (Nov 2025).
+      Model card last updated June 27, 2025. Cross-validated as "No tools" in
+      Google's Gemini 3 Pro comparison table (Nov 2025).
   - model_id: gemini-2.5-pro
     benchmark_id: mrcr-v2-1m-8-needle
     source_id: vendor-model-cards
@@ -239,8 +255,8 @@ results:
     url: https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Pro-Model-Card.pdf
     provenance: self_report
     notes: >-
-      Only found as a comparison-table figure in Google's Gemini 3 Pro model card (Nov 2025);
-      absent from Gemini 2.5 Pro's own June 2025 card.
+      Only found as a comparison-table figure in Google's Gemini 3 Pro model
+      card (Nov 2025); absent from Gemini 2.5 Pro's own June 2025 card.
   - model_id: gemini-2.5-pro
     benchmark_id: simpleqa-verified
     sample_only: true
@@ -251,9 +267,10 @@ results:
     url: https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Flash-Model-Card.pdf
     provenance: self_report
     notes: >-
-      Labeled "SimpleQA Verified" only in Google's Gemini 3 Flash comparison table (Dec 2025);
-      Gemini 2.5 Pro's own June 2025 card reports a different, non-"Verified" SimpleQA figure
-      (54.0%), excluded here as a different benchmark variant.
+      Labeled "SimpleQA Verified" only in Google's Gemini 3 Flash comparison
+      table (Dec 2025); Gemini 2.5 Pro's own June 2025 card reports a different,
+      non-"Verified" SimpleQA figure (54.0%), excluded here as a different
+      benchmark variant.
   - model_id: gemini-2.5-pro
     benchmark_id: vending-bench-2
     source_id: vendor-model-cards
@@ -274,7 +291,8 @@ results:
     observed_on: 2025-12-01
     url: https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Flash-Model-Card.pdf
     provenance: self_report
-    notes: Card covers both the GA and "Preview 09-2025" variants; this row is the GA figure.
+    notes: Card covers both the GA and "Preview 09-2025" variants; this row is the
+      GA figure.
   - model_id: gemini-2.5-flash
     benchmark_id: hle-no-tools
     source_id: vendor-model-cards
@@ -334,9 +352,10 @@ results:
     url: https://x.ai/news/grok-4-fast
     provenance: self_report
     notes: >-
-      Grok 4's own July 2025 announcement (x.ai/news/grok-4) does not report this figure;
-      sourced from the "HLE (no tools)" comparison chart on xAI's Grok 4 Fast announcement
-      (Sept 19, 2025), where it is shown as Grok 4's own score.
+      Grok 4's own July 2025 announcement (x.ai/news/grok-4) does not report
+      this figure; sourced from the "HLE (no tools)" comparison chart on xAI's
+      Grok 4 Fast announcement (Sept 19, 2025), where it is shown as Grok 4's
+      own score.
   - model_id: grok-4-fast
     benchmark_id: hle-no-tools
     source_id: vendor-model-cards
@@ -357,9 +376,10 @@ results:
     url: https://ai.meta.com/static-resource/muse-spark-1-1-evaluation-report/
     provenance: self_report
     notes: >-
-      Muse Spark (1.0) figure appears as a comparison column in Meta's Muse Spark 1.1
-      Evaluation Report (published July 9, 2026); no general-capability benchmark table
-      exists in Muse Spark's own April 2026 announcement or May 2026 safety report.
+      Muse Spark (1.0) figure appears as a comparison column in Meta's Muse
+      Spark 1.1 Evaluation Report (published July 9, 2026); no
+      general-capability benchmark table exists in Muse Spark's own April 2026
+      announcement or May 2026 safety report.
   - model_id: muse-spark
     benchmark_id: swe-bench-pro-public
     source_id: vendor-model-cards
@@ -371,9 +391,10 @@ results:
     url: https://ai.meta.com/static-resource/muse-spark-1-1-evaluation-report/
     provenance: self_report
     notes: >-
-      Meta describes SWE-Bench Pro as "731 diverse and complex agentic coding tasks" (Scale AI);
-      treated as the public split (731 matches the commonly-cited public-set size) though Meta's
-      report does not use the word "public" verbatim — flag for confirmation.
+      Meta describes SWE-Bench Pro as "731 diverse and complex agentic coding
+      tasks" (Scale AI); treated as the public split (731 matches the
+      commonly-cited public-set size) though Meta's report does not use the word
+      "public" verbatim — flag for confirmation.
 
   # ---------- Meta: Muse Spark 1.1 ----------
   - model_id: muse-spark-1.1
@@ -386,7 +407,8 @@ results:
     observed_on: 2026-07-09
     url: https://ai.meta.com/static-resource/muse-spark-1-1-evaluation-report/
     provenance: self_report
-    notes: Full 2,500-question HLE dataset, GPT o3-mini as LLM judge, per Meta's stated methodology.
+    notes: Full 2,500-question HLE dataset, GPT o3-mini as LLM judge, per Meta's
+      stated methodology.
   - model_id: muse-spark-1.1
     benchmark_id: mrcr-v2-1m-8-needle
     source_id: vendor-model-cards
@@ -397,8 +419,9 @@ results:
     url: https://ai.meta.com/static-resource/muse-spark-1-1-evaluation-report/
     provenance: self_report
     notes: >-
-      Metric is mean sequence-matcher ratio (OpenAI MRCR v2 data, re-binned by token count,
-      8-needle variant at 1M context), reported by Meta as a percentage-like figure.
+      Metric is mean sequence-matcher ratio (OpenAI MRCR v2 data, re-binned by
+      token count, 8-needle variant at 1M context), reported by Meta as a
+      percentage-like figure.
   - model_id: muse-spark-1.1
     benchmark_id: swe-bench-pro-public
     source_id: vendor-model-cards
@@ -421,8 +444,18 @@ results:
     url: https://ai.meta.com/static-resource/muse-spark-1-1-evaluation-report/
     provenance: self_report
     notes: >-
-      Meta reports both strict binary completion and partial-credit mean reward as "primary
-      metrics"; this row is the binary completion rate over 108 long-horizon workflows.
+      Meta reports both strict binary completion and partial-credit mean reward
+      as "primary metrics"; this row is the binary completion rate over 108
+      long-horizon workflows. Superseded by the 2026-09-05 coverage audit: The
+      Muse Spark 1.1 evaluation report is dated July 9, 2026, and therefore
+      predates the registered August 8 OSWorld 2.0 task release. The report
+      describes 108 workflows, GUI-only use, 500 steps, batched actions, xhigh
+      reasoning and strict binary completion alongside partial reward, but does
+      not explicitly pin June 24 or a grader revision. Preserve the claimed
+      14.2% as unverified-version audit evidence; exclude it from the August
+      condition and from fitting. Do not infer a precise June release from the
+      report date.
+    sample_only: true
   - model_id: muse-spark-1.1
     benchmark_id: osworld-2.0
     source_id: vendor-model-cards

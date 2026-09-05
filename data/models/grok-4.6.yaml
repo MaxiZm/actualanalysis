@@ -7,4 +7,22 @@ open_weights: false
 license: Proprietary
 source_url: https://x.ai/news/grok-4-6
 status: active
-
+aliases:
+  - grok-4.6-high
+metadata_sources:
+  - https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset
+  - https://docs.x.ai/developers/grok-4-6
+  - https://docs.x.ai/developers/models/grok-4.6
+context_length: 500000
+modality: multimodal
+reasoning: true
+default_effort_tier: high
+max_effort_tier: xhigh
+effort_tier_order:
+  - low
+  - medium
+  - high
+  - xhigh
+reasoning_config:
+  control: categorical
+  parameter: reasoning_effort

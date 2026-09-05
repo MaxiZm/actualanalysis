@@ -1,0 +1,11 @@
+{
+  "baseline_rows": 4222,
+  "removed_unique_baseline_rows": 1003,
+  "added_or_replaced": 887,
+  "merged_rows": 4420,
+  "mapped_benchmark_rows": 1484,
+  "models_with_evidence": 115,
+  "distinct_model_benchmark_cells": 994,
+  "duplicate_lineages": 6,
+  "record_sha256": "90378f4e2b8b37f4b597301947731bbaa2119c13ee92eff0841d12ea3b2daf7a"
+}

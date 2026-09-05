@@ -24,9 +24,9 @@ results:
     provenance: independent
     notes: >-
       p50 time horizon from METR's live METR-Horizon-v1.1 results feed (key
-      claude_3_5_sonnet_20240620_inspect, release_date 2024-06-20). CI 22.384214/5.489734
-      (95%) converted to se via half-width/1.96. See https://metr.org/time-horizons/ for
-      the rendered chart.
+      claude_3_5_sonnet_20240620_inspect, release_date 2024-06-20). CI
+      22.384214/5.489734 (95%) converted to se via half-width/1.96. See
+      https://metr.org/time-horizons/ for the rendered chart.
 
   - model_id: claude-3.5-sonnet-20241022
     benchmark_id: metr-time-horizon-1.1
@@ -41,8 +41,9 @@ results:
     url: https://metr.org/assets/benchmark_results_1_1.yaml
     provenance: independent
     notes: >-
-      p50 time horizon (key claude_3_5_sonnet_20241022_inspect, release_date 2024-10-22).
-      CI 40.82028/10.144026 (95%) converted to se via half-width/1.96.
+      p50 time horizon (key claude_3_5_sonnet_20241022_inspect, release_date
+      2024-10-22). CI 40.82028/10.144026 (95%) converted to se via
+      half-width/1.96.
 
   - model_id: o1
     benchmark_id: metr-time-horizon-1.1
@@ -57,8 +58,8 @@ results:
     url: https://metr.org/assets/benchmark_results_1_1.yaml
     provenance: independent
     notes: >-
-      p50 time horizon (key o1_inspect, release_date 2024-12-05). CI 64.95249/21.164512
-      (95%) converted to se via half-width/1.96.
+      p50 time horizon (key o1_inspect, release_date 2024-12-05). CI
+      64.95249/21.164512 (95%) converted to se via half-width/1.96.
 
   - model_id: claude-3.7-sonnet
     benchmark_id: metr-time-horizon-1.1
@@ -73,8 +74,8 @@ results:
     url: https://metr.org/assets/benchmark_results_1_1.yaml
     provenance: independent
     notes: >-
-      p50 time horizon (key claude_3_7_sonnet_inspect, release_date 2025-02-24). CI
-      104.226017/33.006168 (95%) converted to se via half-width/1.96.
+      p50 time horizon (key claude_3_7_sonnet_inspect, release_date 2025-02-24).
+      CI 104.226017/33.006168 (95%) converted to se via half-width/1.96.
 
   - model_id: o3
     benchmark_id: metr-time-horizon-1.1
@@ -122,8 +123,8 @@ results:
     url: https://metr.org/assets/benchmark_results_1_1.yaml
     provenance: independent
     notes: >-
-      p50 time horizon (key claude_4_1_opus_inspect, release_date 2025-08-05). CI
-      159.451918/59.272391 (95%) converted to se via half-width/1.96.
+      p50 time horizon (key claude_4_1_opus_inspect, release_date 2025-08-05).
+      CI 159.451918/59.272391 (95%) converted to se via half-width/1.96.
 
   - model_id: gpt-5-2025-08-07
     benchmark_id: metr-time-horizon-1.1
@@ -138,8 +139,9 @@ results:
     url: https://metr.org/assets/benchmark_results_1_1.yaml
     provenance: independent
     notes: >-
-      p50 time horizon (key gpt_5_2025_08_07_inspect, release_date 2025-08-07, benchmark_name
-      label "GPT-5"). CI 405.551565/112.641357 (95%) converted to se via half-width/1.96.
+      p50 time horizon (key gpt_5_2025_08_07_inspect, release_date 2025-08-07,
+      benchmark_name label "GPT-5"). CI 405.551565/112.641357 (95%) converted to
+      se via half-width/1.96.
 
   - model_id: gemini-3-pro
     benchmark_id: metr-time-horizon-1.1
@@ -154,8 +156,8 @@ results:
     url: https://metr.org/assets/benchmark_results_1_1.yaml
     provenance: independent
     notes: >-
-      p50 time horizon (key gemini_3_pro, release_date 2025-11-18). CI 379.235434/139.565157
-      (95%) converted to se via half-width/1.96.
+      p50 time horizon (key gemini_3_pro, release_date 2025-11-18). CI
+      379.235434/139.565157 (95%) converted to se via half-width/1.96.
 
   - model_id: gpt-5.1-codex-max
     benchmark_id: metr-time-horizon-1.1
@@ -170,8 +172,8 @@ results:
     url: https://metr.org/assets/benchmark_results_1_1.yaml
     provenance: independent
     notes: >-
-      p50 time horizon (key gpt_5_1_codex_max_inspect, release_date 2025-11-19). CI
-      396.206723/134.31077 (95%) converted to se via half-width/1.96.
+      p50 time horizon (key gpt_5_1_codex_max_inspect, release_date 2025-11-19).
+      CI 396.206723/134.31077 (95%) converted to se via half-width/1.96.
 
   - model_id: claude-opus-4.5
     benchmark_id: metr-time-horizon-1.1
@@ -186,8 +188,8 @@ results:
     url: https://metr.org/assets/benchmark_results_1_1.yaml
     provenance: independent
     notes: >-
-      p50 time horizon (key claude_opus_4_5_inspect, release_date 2025-11-24). CI
-      623.704698/161.717714 (95%) converted to se via half-width/1.96.
+      p50 time horizon (key claude_opus_4_5_inspect, release_date 2025-11-24).
+      CI 623.704698/161.717714 (95%) converted to se via half-width/1.96.
 
   - model_id: gpt-5.2
     benchmark_id: metr-time-horizon-1.1
@@ -202,8 +204,8 @@ results:
     url: https://metr.org/assets/benchmark_results_1_1.yaml
     provenance: independent
     notes: >-
-      p50 time horizon (key gpt_5_2, release_date 2025-12-11). CI 815.177445/198.067494
-      (95%) converted to se via half-width/1.96.
+      p50 time horizon (key gpt_5_2, release_date 2025-12-11). CI
+      815.177445/198.067494 (95%) converted to se via half-width/1.96.
 
   - model_id: claude-opus-4.6
     benchmark_id: metr-time-horizon-1.1
@@ -218,10 +220,10 @@ results:
     url: https://metr.org/assets/benchmark_results_1_1.yaml
     provenance: independent
     notes: >-
-      p50 time horizon (key claude_opus_4_6_inspect, release_date 2026-02-05). CI is very
-      wide (316.685725/3633.786163, 95%) reflecting few long-duration task successes at this
-      capability level; se via half-width/1.96 is correspondingly large relative to the point
-      estimate.
+      p50 time horizon (key claude_opus_4_6_inspect, release_date 2026-02-05).
+      CI is very wide (316.685725/3633.786163, 95%) reflecting few long-duration
+      task successes at this capability level; se via half-width/1.96 is
+      correspondingly large relative to the point estimate.
 
   - model_id: gpt-5.3-codex
     benchmark_id: metr-time-horizon-1.1
@@ -268,8 +270,8 @@ results:
     url: https://metr.org/assets/benchmark_results_1_1.yaml
     provenance: independent
     notes: >-
-      p50 time horizon (key gpt_5_4, release_date 2026-03-05). CI 768.779526/186.581591
-      (95%) converted to se via half-width/1.96.
+      p50 time horizon (key gpt_5_4, release_date 2026-03-05). CI
+      768.779526/186.581591 (95%) converted to se via half-width/1.96.
 
   # --- Vending-Bench 2 (vending-bench-2) ---
   # Epoch AI's benchmark page (https://epoch.ai/benchmarks/vending-bench-2) states its
@@ -295,11 +297,16 @@ results:
     url: https://andonlabs.com/evals/vending-bench-2
     provenance: independent
     notes: >-
-      Rank 1 on Andon Labs' public Vending-Bench 2 "Frontier" leaderboard (final money
-      balance, USD, averaged across 6 runs; se is the page's own "standard error of the
-      mean" figure). Origin/benchmark creator: Andon Labs. The observation comes directly
-      from Andon Labs; Epoch AI's benchmark page corroborates that it uses the same public
-      leaderboard but does not originate or license this value.
+      Rank 1 on Andon Labs' public Vending-Bench 2 "Frontier" leaderboard (final
+      money balance, USD, averaged across 6 runs; se is the page's own "standard
+      error of the mean" figure). Origin/benchmark creator: Andon Labs. The
+      observation comes directly from Andon Labs; Epoch AI's benchmark page
+      corroborates that it uses the same public leaderboard but does not
+      originate or license this value. Superseded by the 2026-09-05 coverage
+      audit: Recover native full precision and actual run count; match same
+      original Andon Labs measurement across native/Epoch mirrors using common
+      lineage.
+    sample_only: true
 
   - model_id: claude-opus-4.7
     benchmark_id: vending-bench-2
@@ -312,10 +319,14 @@ results:
     url: https://andonlabs.com/evals/vending-bench-2
     provenance: independent
     notes: >-
-      Rank 2 on Andon Labs' public Vending-Bench 2 "Frontier" leaderboard (final money
-      balance, USD, averaged across 6 runs; se is the page's own "standard error of the
-      mean" figure). Origin: Andon Labs; mirrored per Epoch AI's stated methodology (see
-      note on claude-opus-5 row above).
+      Rank 2 on Andon Labs' public Vending-Bench 2 "Frontier" leaderboard (final
+      money balance, USD, averaged across 6 runs; se is the page's own "standard
+      error of the mean" figure). Origin: Andon Labs; mirrored per Epoch AI's
+      stated methodology (see note on claude-opus-5 row above). Superseded by
+      the 2026-09-05 coverage audit: Recover native full precision and actual
+      run count; match same original Andon Labs measurement across native/Epoch
+      mirrors using common lineage.
+    sample_only: true
 
   - model_id: gpt-5.6-sol
     benchmark_id: vending-bench-2
@@ -328,10 +339,14 @@ results:
     url: https://andonlabs.com/evals/vending-bench-2
     provenance: independent
     notes: >-
-      Rank 3 on Andon Labs' public Vending-Bench 2 "Frontier" leaderboard (final money
-      balance, USD, averaged across 5 runs; se is the page's own "standard error of the
-      mean" figure). Origin: Andon Labs; mirrored per Epoch AI's stated methodology (see
-      note on claude-opus-5 row above).
+      Rank 3 on Andon Labs' public Vending-Bench 2 "Frontier" leaderboard (final
+      money balance, USD, averaged across 5 runs; se is the page's own "standard
+      error of the mean" figure). Origin: Andon Labs; mirrored per Epoch AI's
+      stated methodology (see note on claude-opus-5 row above). Superseded by
+      the 2026-09-05 coverage audit: Recover native full precision and actual
+      run count; match same original Andon Labs measurement across native/Epoch
+      mirrors using common lineage.
+    sample_only: true
 
   - model_id: grok-4.6
     benchmark_id: vending-bench-2
@@ -344,10 +359,14 @@ results:
     url: https://andonlabs.com/evals/vending-bench-2
     provenance: independent
     notes: >-
-      Rank 4 on Andon Labs' public Vending-Bench 2 "Frontier" leaderboard (final money
-      balance, USD, averaged across 4 runs; se is the page's own "standard error of the
-      mean" figure). Origin: Andon Labs; mirrored per Epoch AI's stated methodology (see
-      note on claude-opus-5 row above).
+      Rank 4 on Andon Labs' public Vending-Bench 2 "Frontier" leaderboard (final
+      money balance, USD, averaged across 4 runs; se is the page's own "standard
+      error of the mean" figure). Origin: Andon Labs; mirrored per Epoch AI's
+      stated methodology (see note on claude-opus-5 row above). Superseded by
+      the 2026-09-05 coverage audit: Recover native full precision and actual
+      run count; match same original Andon Labs measurement across native/Epoch
+      mirrors using common lineage.
+    sample_only: true
 
   - model_id: glm-5.2
     benchmark_id: vending-bench-2
@@ -360,10 +379,14 @@ results:
     url: https://andonlabs.com/evals/vending-bench-2
     provenance: independent
     notes: >-
-      Rank 5 on Andon Labs' public Vending-Bench 2 "Frontier" leaderboard (final money
-      balance, USD, averaged across 6 runs; se is the page's own "standard error of the
-      mean" figure). Origin: Andon Labs; mirrored per Epoch AI's stated methodology (see
-      note on claude-opus-5 row above).
+      Rank 5 on Andon Labs' public Vending-Bench 2 "Frontier" leaderboard (final
+      money balance, USD, averaged across 6 runs; se is the page's own "standard
+      error of the mean" figure). Origin: Andon Labs; mirrored per Epoch AI's
+      stated methodology (see note on claude-opus-5 row above). Superseded by
+      the 2026-09-05 coverage audit: Recover native full precision and actual
+      run count; match same original Andon Labs measurement across native/Epoch
+      mirrors using common lineage.
+    sample_only: true
 
   - model_id: glm-5.3
     benchmark_id: vending-bench-2
@@ -376,10 +399,14 @@ results:
     url: https://andonlabs.com/evals/vending-bench-2
     provenance: independent
     notes: >-
-      Rank 6 on Andon Labs' public Vending-Bench 2 "Frontier" leaderboard (final money
-      balance, USD, averaged across 6 runs; se is the page's own "standard error of the
-      mean" figure). Origin: Andon Labs; mirrored per Epoch AI's stated methodology (see
-      note on claude-opus-5 row above).
+      Rank 6 on Andon Labs' public Vending-Bench 2 "Frontier" leaderboard (final
+      money balance, USD, averaged across 6 runs; se is the page's own "standard
+      error of the mean" figure). Origin: Andon Labs; mirrored per Epoch AI's
+      stated methodology (see note on claude-opus-5 row above). Superseded by
+      the 2026-09-05 coverage audit: Recover native full precision and actual
+      run count; match same original Andon Labs measurement across native/Epoch
+      mirrors using common lineage.
+    sample_only: true
 
   - model_id: claude-opus-4.6
     benchmark_id: vending-bench-2
@@ -392,10 +419,14 @@ results:
     url: https://andonlabs.com/evals/vending-bench-2
     provenance: independent
     notes: >-
-      Rank 7 on Andon Labs' public Vending-Bench 2 "Frontier" leaderboard (final money
-      balance, USD, averaged across 5 runs; se is the page's own "standard error of the
-      mean" figure). Origin: Andon Labs; mirrored per Epoch AI's stated methodology (see
-      note on claude-opus-5 row above).
+      Rank 7 on Andon Labs' public Vending-Bench 2 "Frontier" leaderboard (final
+      money balance, USD, averaged across 5 runs; se is the page's own "standard
+      error of the mean" figure). Origin: Andon Labs; mirrored per Epoch AI's
+      stated methodology (see note on claude-opus-5 row above). Superseded by
+      the 2026-09-05 coverage audit: Recover native full precision and actual
+      run count; match same original Andon Labs measurement across native/Epoch
+      mirrors using common lineage.
+    sample_only: true
 
   - model_id: gpt-5.5
     benchmark_id: vending-bench-2
@@ -408,10 +439,14 @@ results:
     url: https://andonlabs.com/evals/vending-bench-2
     provenance: independent
     notes: >-
-      Rank 8 on Andon Labs' public Vending-Bench 2 "Frontier" leaderboard (final money
-      balance, USD, averaged across 5 runs; se is the page's own "standard error of the
-      mean" figure). Origin: Andon Labs; mirrored per Epoch AI's stated methodology (see
-      note on claude-opus-5 row above).
+      Rank 8 on Andon Labs' public Vending-Bench 2 "Frontier" leaderboard (final
+      money balance, USD, averaged across 5 runs; se is the page's own "standard
+      error of the mean" figure). Origin: Andon Labs; mirrored per Epoch AI's
+      stated methodology (see note on claude-opus-5 row above). Superseded by
+      the 2026-09-05 coverage audit: Recover native full precision and actual
+      run count; match same original Andon Labs measurement across native/Epoch
+      mirrors using common lineage.
+    sample_only: true
 
   - model_id: gpt-5.6-terra
     benchmark_id: vending-bench-2
@@ -424,10 +459,14 @@ results:
     url: https://andonlabs.com/evals/vending-bench-2
     provenance: independent
     notes: >-
-      Rank 9 on Andon Labs' public Vending-Bench 2 "Frontier" leaderboard (final money
-      balance, USD, averaged across 5 runs; se is the page's own "standard error of the
-      mean" figure). Origin: Andon Labs; mirrored per Epoch AI's stated methodology (see
-      note on claude-opus-5 row above).
+      Rank 9 on Andon Labs' public Vending-Bench 2 "Frontier" leaderboard (final
+      money balance, USD, averaged across 5 runs; se is the page's own "standard
+      error of the mean" figure). Origin: Andon Labs; mirrored per Epoch AI's
+      stated methodology (see note on claude-opus-5 row above). Superseded by
+      the 2026-09-05 coverage audit: Recover native full precision and actual
+      run count; match same original Andon Labs measurement across native/Epoch
+      mirrors using common lineage.
+    sample_only: true
 
   - model_id: claude-sonnet-4.6
     benchmark_id: vending-bench-2
@@ -440,7 +479,11 @@ results:
     url: https://andonlabs.com/evals/vending-bench-2
     provenance: independent
     notes: >-
-      Rank 10 on Andon Labs' public Vending-Bench 2 "Frontier" leaderboard (final money
-      balance, USD, averaged across 5 runs; se is the page's own "standard error of the
-      mean" figure). Origin: Andon Labs; mirrored per Epoch AI's stated methodology (see
-      note on claude-opus-5 row above).
+      Rank 10 on Andon Labs' public Vending-Bench 2 "Frontier" leaderboard
+      (final money balance, USD, averaged across 5 runs; se is the page's own
+      "standard error of the mean" figure). Origin: Andon Labs; mirrored per
+      Epoch AI's stated methodology (see note on claude-opus-5 row above).
+      Superseded by the 2026-09-05 coverage audit: Recover native full precision
+      and actual run count; match same original Andon Labs measurement across
+      native/Epoch mirrors using common lineage.
+    sample_only: true

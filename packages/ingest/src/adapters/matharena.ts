@@ -6,10 +6,10 @@ import { stringAt } from "../lib/tabular.js";
 import { benchmarkResult, dateOnly, parseTabularPayload, sourceUrl } from "./helpers.js";
 import { metricEstimateAt } from "./row-results.js";
 
-export const MATHARENA_URL = "https://matharena.ai/";
+export const MATHARENA_URL = "https://matharena.ai/models";
 
 function modelIdentity(value: string): { model: string; evaluationProfile?: string } {
-  const suffix = /\s+\((think(?:ing)?|none|minimal|low|medium|high|xhigh|max)\)$/i.exec(value.trim());
+  const suffix = /\s+\((think(?:ing)?|reasoning|none|minimal|low|medium|high|xhigh|max)\)$/i.exec(value.trim());
   if (!suffix?.[1]) return { model: value.trim() };
   return {
     model: value.slice(0, suffix.index).trim(),
@@ -45,7 +45,6 @@ export class MathArenaAdapter implements IngestAdapter {
         // The page labels ± as a symmetric 95% parametric-bootstrap CI.
         ...(performance.uncertainty !== undefined ? { se: performance.uncertainty / 1.96 } : {}),
         ...(identity.evaluationProfile ? { effort_tier: identity.evaluationProfile } : {}),
-        n_runs: 4,
         ...(expectedCost && expectedCost.estimate >= 0 ? { cost_per_task: expectedCost.estimate } : {}),
         config: {
           aggregate: "non-deprecated competitions",
@@ -58,7 +57,7 @@ export class MathArenaAdapter implements IngestAdapter {
         metadata: {
           provider: stringAt(row, ["Provider", "organization"]) ?? null,
           reported_model_name: rawModel,
-          model_release_date: stringAt(row, ["Release date"])?.slice(0, 10) ?? null,
+          model_release_date: stringAt(row, ["Release date", "Date"])?.slice(0, 10) ?? null,
           reported_ci95_half_width: performance.uncertainty ?? null,
           uncertainty_method: "symmetric parametric bootstrap CI with full IRT refits",
         },

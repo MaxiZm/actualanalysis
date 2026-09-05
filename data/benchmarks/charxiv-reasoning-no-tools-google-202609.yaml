@@ -1,0 +1,28 @@
+id: charxiv-reasoning-no-tools-google-202609
+name: CharXiv Reasoning (no tools; Google Sep 2026)
+version: google-2026-09
+family_id: charxiv-reasoning-no-tools-google-202609
+tags:
+  - chat
+categories:
+  - reasoning
+domains:
+  reasoning: 1
+holdout: public
+chance_level: 0
+obs_type: judge
+transform:
+  type: accuracy
+  input_scale: percent
+n_items: null
+harness_url: https://deepmind.google/models/model-cards/gemini-3-8-flash/
+source_ids:
+  - vendor-model-cards
+metadata_sources:
+  - https://deepmind.google/models/model-cards/gemini-3-8-flash/
+status: watchlist
+notes: "Reported metric: reported_accuracy. Exact reported condition; not an
+  alias of a similarly named active benchmark. Source-specific evidence is shown
+  for inspection; missing evaluator, subset or uncertainty details are not
+  imputed. Nominal task count is descriptive and is never treated as a binary
+  run denominator."

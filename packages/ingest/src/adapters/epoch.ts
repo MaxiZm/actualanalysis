@@ -1,6 +1,6 @@
 import type { AdapterContext, AdapterWarning, IngestAdapter, RawResult } from "../types.js";
 import { output } from "../lib/adapter.js";
-import { EPOCH_RUNS_URL, isEpochFrontierMathTask, parseEpochFrontierMathRuns } from "./epoch-runs.js";
+import { EPOCH_RUNS_URL, isEpochFrontierMathTask, parseEpochFrontierMathRuns, parseEpochSimpleQaRuns, parseEpochGpqaRuns } from "./epoch-runs.js";
 import { fetchText } from "../lib/http.js";
 import { numberAt, stringAt, valueAt } from "../lib/tabular.js";
 import { benchmarkResult, dateOnly, parseTabularPayload, percentAwareScore, sourceUrl } from "./helpers.js";
@@ -9,7 +9,10 @@ export const EPOCH_ECI_URL = "https://epoch.ai/data/eci_benchmarks.csv";
 
 // ECI's export converts this duration metric onto a 0–1 fitting scale. The
 // dedicated METR adapter supplies the underlying minutes and uncertainty.
+// HLE is clipped/chance-normalized in ECI, not raw accuracy; use native Scale
+// scores and CI. See epoch.ai/data/eci-documentation/data (Preprocessing).
 const ECI_PREPROCESSED_NON_ACCURACY = new Set(["METR Time Horizons"]);
+const ECI_CHANCE_NORMALIZED_BENCHMARKS = new Set(["hle", "gpqa diamond"]);
 
 // Epoch's CritPt hub currently sources the public scores from the leaderboard
 // hosted by Artificial Analysis. The project policy forbids ingesting AA
@@ -36,15 +39,16 @@ export class EpochAdapter implements IngestAdapter {
     const rows = parseTabularPayload(text, url);
     const records: RawResult[] = [];
     // Default production ingestion replaces the lossy ECI FrontierMath aggregate
-    // with its original run, which retains the exact revision and effort tier.
+    // and SimpleQA projections with original runs that retain revision and effort.
     // Explicit custom feeds remain self-contained for offline fixture ingestion.
     let runsFetchWarning: AdapterWarning | undefined;
     if (url === EPOCH_ECI_URL) {
       try {
         const runsUrl = context.env.ACTUALANALYSIS_EPOCH_RUNS_URL ?? EPOCH_RUNS_URL;
-        records.push(...parseEpochFrontierMathRuns(await fetchText(context, runsUrl), runsUrl));
+        const nativeRuns = await fetchText(context, runsUrl);
+        records.push(...parseEpochFrontierMathRuns(nativeRuns, runsUrl), ...parseEpochSimpleQaRuns(nativeRuns, runsUrl), ...parseEpochGpqaRuns(nativeRuns, runsUrl));
       } catch (error) {
-        runsFetchWarning = { code: "fetch_failed", message: `Epoch run-level FrontierMath data unavailable: ${String(error)}`, url: EPOCH_RUNS_URL };
+        runsFetchWarning = { code: "fetch_failed", message: `Epoch run-level FrontierMath/SimpleQA/GPQA data unavailable: ${String(error)}`, url: EPOCH_RUNS_URL };
       }
     }
     let skippedPreprocessedMetrics = 0;
@@ -59,8 +63,8 @@ export class EpochAdapter implements IngestAdapter {
       if (!model || !benchmark || score === undefined) continue;
       // Never silently fall back to ECI's best-over-configurations aggregate for
       // a benchmark with a declared run-level source. A fetch failure is visible.
-      if (url === EPOCH_ECI_URL && isEpochFrontierMathTask(benchmark)) continue;
-      if (ECI_PREPROCESSED_NON_ACCURACY.has(benchmark)) {
+      if (url === EPOCH_ECI_URL && (isEpochFrontierMathTask(benchmark) || benchmark === "SimpleQA Verified")) continue;
+      if (ECI_PREPROCESSED_NON_ACCURACY.has(benchmark) || (url === EPOCH_ECI_URL && ECI_CHANCE_NORMALIZED_BENCHMARKS.has(benchmark.toLowerCase()))) {
         skippedPreprocessedMetrics += 1;
         continue;
       }

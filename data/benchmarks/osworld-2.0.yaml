@@ -18,7 +18,7 @@ holdout: semi_private
 holdout_details: Official gated task assets and evaluators from the immutable
   2026-08-08 release.
 chance_level: 0
-obs_type: count
+obs_type: judge
 public_release_date: 2026-06-26
 tool_policy: osworld-v2-computer-use
 transform: { type: accuracy, input_scale: percent }
@@ -29,11 +29,16 @@ metadata_sources:
   - https://github.com/xlang-ai/OSWorld-V2
   - https://github.com/xlang-ai/OSWorld-V2/releases/tag/v2026.08.08
   - https://raw.githubusercontent.com/xlang-ai/OSWorld-V2/v2026.08.08/benchmark_releases/osworld-v2-2026.08.08.json
-status: active
-notes: Kept separate from earlier versions. Excluded until an official
-  repeat-count policy and row-level evaluation identity are available.
-promotion_rule: "Promoted to active under method 1.2.3: the benchmark has
-  independent results for ≥8 registered models; metadata pins that are still
-  missing are carried as metadata_incomplete on each observation instead of
-  blocking the fit."
+  - https://osworld-v2.xlang.ai/static/data/leaderboard/official-results.json
+  - https://osworld-v2.xlang.ai/static/js/leaderboard.js?v=leaderboard-gpt56-cost-v1
+status: watchlist
+notes: August 8 full-set binary completion, separate from June 24 and the
+  offline subset. The official leaderboard reports averages of seven Claude
+  Opus 5 runs and two GPT-5.6 Sol runs, but does not publish per-run task
+  denominators, failure exclusions, or run SEM. The 108-task manifest size is
+  descriptive; these aggregate percentages are not exact binomial counts.
+  Preserve effort, tool setting, step budget and published means for display.
+promotion_rule: Promote when the official source supplies compatible run-level
+  denominators and uncertainty, or task-level outcomes sufficient to recover
+  uncertainty without treating repeated tasks as independent items.
 default_k: 1

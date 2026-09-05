@@ -7,4 +7,7 @@ open_weights: false
 license: Proprietary
 source_url: https://openai.com/index/openai-o3-mini/
 status: active
-
+aliases:
+  - o3-mini-high
+metadata_sources:
+  - https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset

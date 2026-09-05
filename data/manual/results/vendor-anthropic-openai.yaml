@@ -10,9 +10,14 @@ results:
     observed_on: 2026-09-01
     url: https://www.anthropic.com/claude-fable-and-mythos-5-1
     provenance: self_report
-    notes: System Card Table 8.1.A corroborates at a rounded 56%. Claude Mythos 5.1
+    notes: "System Card Table 8.1.A corroborates at a rounded 56%. Claude Mythos 5.1
       (same weights, fewer safeguards) scored 60.9% on the same table but is not
-      a registered model_id; logged in missing-models file.
+      a registered model_id; logged in missing-models file. Superseded by the
+      2026-09-05 coverage audit: Release text states Claude Code product default
+      is High; it does not assign this55.8 score to High. The benchmark chart
+      spans effort levels. Existing row encodes a product default as an observed
+      evaluation setting without source evidence."
+    sample_only: true
 
   - model_id: claude-fable-5.1
     benchmark_id: swe-bench-pro-public
@@ -64,8 +69,12 @@ results:
     observed_on: 2026-09-01
     url: https://www-cdn.anthropic.com/0339e6a7c5c7b87f5c07798616dc32c215d14235/Claude%20Fable%205.1%20&%20Claude%20Mythos%205.1%20System%20Card.pdf
     provenance: self_report
-    notes: Strict (all-checkpoints) pass rate counterpart to the partial-score
-      result above.
+    notes: "Strict (all-checkpoints) pass rate counterpart to the partial-score
+      result above. Superseded by the 2026-09-05 coverage audit: Anthropic
+      August task release uses modified tasks and grading per OpenAI Astra
+      footnote3, distinct from OSWorld official08.08; Anthropic expressly re-ran
+      Fable5/Opus5. Strict metric alone does not make conditions identical."
+    sample_only: true
 
   - model_id: claude-fable-5.1
     benchmark_id: arc-agi-2-semi-private
@@ -141,6 +150,11 @@ results:
     observed_on: 2026-09-01
     url: https://www-cdn.anthropic.com/0339e6a7c5c7b87f5c07798616dc32c215d14235/Claude%20Fable%205.1%20&%20Claude%20Mythos%205.1%20System%20Card.pdf
     provenance: self_report
+    sample_only: true
+    notes: "Superseded by the 2026-09-05 coverage audit: Anthropic August task
+      release uses modified tasks and grading per OpenAI Astra footnote3,
+      distinct from OSWorld official08.08; Anthropic expressly re-ran
+      Fable5/Opus5. Strict metric alone does not make conditions identical."
 
   - model_id: claude-fable-5
     benchmark_id: arc-agi-2-semi-private
@@ -202,6 +216,11 @@ results:
     observed_on: 2026-09-01
     url: https://www-cdn.anthropic.com/0339e6a7c5c7b87f5c07798616dc32c215d14235/Claude%20Fable%205.1%20&%20Claude%20Mythos%205.1%20System%20Card.pdf
     provenance: self_report
+    sample_only: true
+    notes: "Superseded by the 2026-09-05 coverage audit: Anthropic August task
+      release uses modified tasks and grading per OpenAI Astra footnote3,
+      distinct from OSWorld official08.08; Anthropic expressly re-ran
+      Fable5/Opus5. Strict metric alone does not make conditions identical."
 
   - model_id: claude-opus-5
     benchmark_id: arc-agi-2-semi-private
@@ -285,9 +304,13 @@ results:
     observed_on: 2026-05-28
     url: https://www-cdn.anthropic.com/0b4915911bb0d19eca5b5ee635c80fef830a37ea.pdf
     provenance: self_report
-    notes: Final simulated bank balance after one year, $500 starting balance.
+    notes: "Final simulated bank balance after one year, $500 starting balance.
       Unusually, the High-effort run outperformed Max effort (see next entry) -
-      Anthropic's card does not fully explain the inversion.
+      Anthropic's card does not fully explain the inversion. Superseded by the
+      2026-09-05 coverage audit: Recover native full precision and actual run
+      count; match same original Andon Labs measurement across native/Epoch
+      mirrors using common lineage."
+    sample_only: true
 
   - model_id: claude-opus-4.8
     benchmark_id: vending-bench-2
@@ -298,8 +321,12 @@ results:
     observed_on: 2026-05-28
     url: https://www-cdn.anthropic.com/0b4915911bb0d19eca5b5ee635c80fef830a37ea.pdf
     provenance: self_report
-    notes: Final simulated bank balance after one year, $500 starting balance;
-      higher than the Max-effort run above.
+    notes: "Final simulated bank balance after one year, $500 starting balance;
+      higher than the Max-effort run above. Superseded by the 2026-09-05
+      coverage audit: Recover native full precision and actual run count; match
+      same original Andon Labs measurement across native/Epoch mirrors using
+      common lineage."
+    sample_only: true
 
   - model_id: claude-opus-4.8
     benchmark_id: arc-agi-3
@@ -481,7 +508,11 @@ results:
     observed_on: 2026-02-17
     url: https://www-cdn.anthropic.com/78073f739564e986ff3e28522761a7a0b4484f84.pdf
     provenance: self_report
-    notes: Final simulated bank balance after one year, $500 starting balance.
+    notes: "Final simulated bank balance after one year, $500 starting balance.
+      Superseded by the 2026-09-05 coverage audit: Recover native full precision
+      and actual run count; match same original Andon Labs measurement across
+      native/Epoch mirrors using common lineage."
+    sample_only: true
 
   - model_id: claude-sonnet-4.6
     benchmark_id: vending-bench-2

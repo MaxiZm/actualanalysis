@@ -1,4 +1,4 @@
-method_version: 1.4.0
+method_version: 1.4.1
 trait_structure: correlated
 method_name: ActualAnalysis Capability Index
 taxonomy_edition: 2026a
@@ -17,41 +17,41 @@ profiles:
     weights: { agentic: 0.2, software-code: 0.2, reasoning: 0.2, knowledge-information: 0.2, communication-professional: 0.2 }
     baskets:
       agentic: [terminal-bench-4.0, osworld-2.0, mcpmark]
-      software-code: [swe-rebench, deepswe, scicode-verified]
+      software-code: [swe-rebench, deepswe-1.1, scicode-verified-v2-main-with-background]
       reasoning: [frontiermath-v2-tier-4, matharena-composite, arc-agi-3]
-      knowledge-information: [hle-no-tools, simpleqa-verified, mrcr-v2-1m-8-needle]
+      knowledge-information: [hle-no-tools, simpleqa-verified-epoch-anti-abstention-v1-2-0, mrcr-v2-1m-8-needle]
       communication-professional: [lmarena-text-style-controlled, gdpval, livebench-2026]
   coding:
     weights: { agentic: 0.2, software-code: 0.6, reasoning: 0.1, knowledge-information: 0.05, communication-professional: 0.05 }
     baskets: &profile_baskets
       agentic: [terminal-bench-4.0, osworld-2.0, mcpmark]
-      software-code: [swe-rebench, deepswe, scicode-verified]
+      software-code: [swe-rebench, deepswe-1.1, scicode-verified-v2-main-with-background]
       reasoning: [frontiermath-v2-tier-4, matharena-composite, arc-agi-3]
-      knowledge-information: [hle-no-tools, simpleqa-verified, mrcr-v2-1m-8-needle]
+      knowledge-information: [hle-no-tools, simpleqa-verified-epoch-anti-abstention-v1-2-0, mrcr-v2-1m-8-needle]
       communication-professional: [lmarena-text-style-controlled, gdpval, livebench-2026]
   research:
     weights: { agentic: 0.1, software-code: 0.15, reasoning: 0.3, knowledge-information: 0.35, communication-professional: 0.1 }
     baskets:
       agentic: [terminal-bench-4.0, osworld-2.0, mcpmark]
-      software-code: [swe-rebench, deepswe, scicode-verified]
+      software-code: [swe-rebench, deepswe-1.1, scicode-verified-v2-main-with-background]
       reasoning: [frontiermath-v2-tier-4, matharena-composite, arc-agi-3]
-      knowledge-information: [hle-no-tools, simpleqa-verified, mrcr-v2-1m-8-needle]
+      knowledge-information: [hle-no-tools, simpleqa-verified-epoch-anti-abstention-v1-2-0, mrcr-v2-1m-8-needle]
       communication-professional: [lmarena-text-style-controlled, gdpval, livebench-2026]
   agentic:
     weights: { agentic: 0.6, software-code: 0.3, reasoning: 0.1, knowledge-information: 0, communication-professional: 0 }
     baskets:
       agentic: [terminal-bench-4.0, osworld-2.0, mcpmark]
-      software-code: [swe-rebench, deepswe, scicode-verified]
+      software-code: [swe-rebench, deepswe-1.1, scicode-verified-v2-main-with-background]
       reasoning: [frontiermath-v2-tier-4, matharena-composite, arc-agi-3]
-      knowledge-information: [hle-no-tools, simpleqa-verified, mrcr-v2-1m-8-needle]
+      knowledge-information: [hle-no-tools, simpleqa-verified-epoch-anti-abstention-v1-2-0, mrcr-v2-1m-8-needle]
       communication-professional: [lmarena-text-style-controlled, gdpval, livebench-2026]
   chat:
     weights: { agentic: 0, software-code: 0.1, reasoning: 0.2, knowledge-information: 0.3, communication-professional: 0.4 }
     baskets:
       agentic: [terminal-bench-4.0, osworld-2.0, mcpmark]
-      software-code: [swe-rebench, deepswe, scicode-verified]
+      software-code: [swe-rebench, deepswe-1.1, scicode-verified-v2-main-with-background]
       reasoning: [frontiermath-v2-tier-4, matharena-composite, arc-agi-3]
-      knowledge-information: [hle-no-tools, simpleqa-verified, mrcr-v2-1m-8-needle]
+      knowledge-information: [hle-no-tools, simpleqa-verified-epoch-anti-abstention-v1-2-0, mrcr-v2-1m-8-needle]
       communication-professional: [lmarena-text-style-controlled, gdpval, livebench-2026]
 calibration_panel:
   - gpt-4.1@max-common
@@ -96,7 +96,7 @@ priors:
   effort_gain_mean: 0.30
   effort_gain_sd: 0.30
   effort_domain_gain_sd: 0.20
-inference: { engine: numpyro_nuts, chains: 4, warmup: 2000, samples: 3000, retained_draws: 8000, target_accept: 0.98, max_rhat: 1.01, min_ess: 400, max_divergence_fraction: 0.0, min_ebfmi: 0.3 }
+inference: { engine: numpyro_nuts, chains: 4, warmup: 3000, samples: 5000, retained_draws: 12000, target_accept: 0.995, max_rhat: 1.01, min_ess: 400, max_divergence_fraction: 0.0, min_ebfmi: 0.3 }
 tiers:
   # Widths are 90% intervals on the panel scale (sd 10). With 20 benchmarks the
   # median width of a well-covered system is ~14 points; thresholds below are set

@@ -7,4 +7,7 @@ open_weights: true
 license: MIT
 source_url: https://z.ai/blog/glm-5.2
 status: active
-
+aliases:
+  - glm-5.2-max
+metadata_sources:
+  - https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset

@@ -5,7 +5,10 @@ family: GPT-5
 release_date: 2025-08-07
 open_weights: false
 license: Proprietary
-aliases: [gpt-5-nano-2025-08-07]
+aliases:
+  - gpt-5-nano-2025-08-07
+  - gpt-5-nano-high
 source_url: https://cdn.openai.com/gpt-5-system-card.pdf
 status: active
-
+metadata_sources:
+  - https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset

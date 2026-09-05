@@ -1,4 +1,4 @@
-import type { CostPerTaskRecord } from "@/lib/data";
+import { costPerTaskWorkloadLabel, type CostPerTaskRecord } from "@/lib/data";
 import { Hint } from "@/components/ui/hint";
 
 export function formatTaskCost(value: number): string {
@@ -15,12 +15,14 @@ export function CostPerTaskValue({
   cost: CostPerTaskRecord | null | undefined;
 }) {
   if (!cost) return <span className="cell-note">Not measured</span>;
+  const workloadLabel = costPerTaskWorkloadLabel(cost);
   return (
     <Hint
-      text={`${cost.configuration}\n${cost.definition}\n${cost.workload} · checked ${cost.observedOn}`}
+      text={`${workloadLabel} cost per task\n${cost.configuration}\n${cost.definition}\n${cost.workload} · checked ${cost.observedOn}`}
     >
       <a
         className="runtime-value"
+        aria-label={`${formatTaskCost(cost.usdPerTask)} per task · ${workloadLabel}`}
         href={cost.sourceUrl}
         target="_blank"
         rel="noreferrer"

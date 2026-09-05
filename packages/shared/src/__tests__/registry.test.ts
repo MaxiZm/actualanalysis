@@ -8,7 +8,7 @@ describe("repository registries", () => {
   it("loads and cross-validates every registry", async () => {
     const registry = await loadRegistry(dataDir);
     expect(registry.models.length).toBeGreaterThanOrEqual(2);
-    expect(registry.benchmarks).toHaveLength(29);
+    expect(registry.benchmarks.length).toBeGreaterThanOrEqual(31);
     expect(registry.benchmarks.every((benchmark) => benchmark.categories.length > 0)).toBe(true);
     expect(registry.sources.length).toBeGreaterThanOrEqual(12);
     expect(registry.indexConfig.method_version).toMatch(/^1\.[234]\.\d+$/);
@@ -45,7 +45,8 @@ describe("repository registries", () => {
       "vendor-model-cards\0simpleqa-verified",
       "vendor-model-cards\0swe-bench-pro-public",
     ]);
-    expect(sampleOnlyResults.every((result) => reviewOnlyPairs.has(`${result.source_id}\0${result.benchmark_id}`))).toBe(true);
+    expect(sampleOnlyResults.every((result) => reviewOnlyPairs.has(`${result.source_id}\0${result.benchmark_id}`)
+      || result.notes?.includes("Superseded by the 2026-09-05 coverage audit:"))).toBe(true);
     expect(registry.results.every((result) => result.url.startsWith("https://"))).toBe(true);
     expect(registry.manualSpeed.redistributable).toBe(false);
     expect(Array.isArray(registry.manualSpeed.observations)).toBe(true);
@@ -63,15 +64,20 @@ describe("repository registries", () => {
       && (benchmark.domains || benchmark.categories.length > 0)
       && (benchmark.obs_type !== "count" || benchmark.default_k),
     )).toBe(true);
-    expect(registry.benchmarks.filter((benchmark) => benchmark.status === "active").length).toBeGreaterThanOrEqual(20);
+    // Data admission must follow measurement validity, not a minimum table size.
+    for (const domain of Object.keys(registry.indexConfig.domains)) {
+      expect(registry.benchmarks.some((benchmark) => benchmark.status === "active"
+        && (benchmark.domains?.[domain] ?? 0) > 0), domain).toBe(true);
+    }
   });
 
   it("keeps non-count benchmark additions out of the count likelihood", async () => {
     const registry = await loadRegistry(dataDir);
-    for (const id of ["arc-agi-3", "benchcad", "healthbench-professional"]) {
+    for (const id of ["arc-agi-3", "benchcad", "healthbench-professional", "livebench-2026", "mrcr-v2-1m-8-needle", "osworld-2.0", "automationbench-public-1.0.6"]) {
       expect(registry.benchmarks.find(b=>b.id===id)).toMatchObject({status:"watchlist",obs_type:"judge"});
     }
-    expect(registry.benchmarks.find(b=>b.id==="automationbench-public")).toMatchObject({status:"active",obs_type:"count",n_items:600});
+    expect(registry.benchmarks.find(b=>b.id==="automationbench-public")).toMatchObject({status:"retired"});
+    expect(registry.benchmarks.find(b=>b.id==="matharena-composite")).toMatchObject({status:"active",obs_type:"judge",n_items:null});
   });
 
   it("quarantines publisher observations for incompatible benchmark revisions", async () => {

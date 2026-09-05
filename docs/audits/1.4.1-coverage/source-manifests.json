@@ -1,0 +1,1100 @@
+[
+  {
+    "manifest": "work/coverage-swarm/reasoning/source-manifest.json",
+    "captures": [
+      {
+        "name": "epoch-benchmarks.csv",
+        "url": "https://epoch.ai/data/benchmarks.csv",
+        "retrieved_at": "2026-09-05T10:58:37.121Z",
+        "status": 200,
+        "bytes": 3719161,
+        "sha256": "9b6b2c7b4b1fb743cacf3358c782b2b5359c04821dcbd12ed7c5d159c5cd1712",
+        "last_modified": null,
+        "content_type": "text/csv"
+      },
+      {
+        "name": "epoch-eci.csv",
+        "url": "https://epoch.ai/data/eci_benchmarks.csv",
+        "retrieved_at": "2026-09-05T10:58:38.222Z",
+        "status": 200,
+        "bytes": 345532,
+        "sha256": "42e7fc2c369e6725eaaa34d74517acc09835b3f03f9262912998c812c2148ecd",
+        "last_modified": null,
+        "content_type": "text/csv"
+      },
+      {
+        "name": "matharena.html",
+        "url": "https://matharena.ai/",
+        "retrieved_at": "2026-09-05T10:58:37.058Z",
+        "status": 200,
+        "bytes": 173156,
+        "sha256": "414f1694247a73e20040473f47c3abfe22a0381763019407147ecfe337b03ec2",
+        "last_modified": null,
+        "content_type": "text/html; charset=utf-8"
+      },
+      {
+        "name": "matharena-models.html",
+        "url": "https://matharena.ai/models",
+        "retrieved_at": "2026-09-05T10:58:37.165Z",
+        "status": 200,
+        "bytes": 389725,
+        "sha256": "ffee781dab90b31fb44b452425d684b22bc662340a8d327c6eb9bd9b5389503c",
+        "last_modified": null,
+        "content_type": "text/html; charset=utf-8"
+      },
+      {
+        "name": "arc-models.json",
+        "url": "https://arcprize.org/media/data/models.json",
+        "retrieved_at": "2026-09-05T10:58:37.376Z",
+        "status": 200,
+        "bytes": 114533,
+        "sha256": "2a3ac802eeda90b7fa5e0d79466d2b16306f686b08dca7dd5380a1987ac27179",
+        "last_modified": "Fri, 04 Sep 2026 14:41:18 GMT",
+        "content_type": "application/json"
+      },
+      {
+        "name": "arc-evaluations.json",
+        "url": "https://arcprize.org/media/data/evaluations.json",
+        "retrieved_at": "2026-09-05T10:58:37.378Z",
+        "status": 200,
+        "bytes": 179164,
+        "sha256": "17b35f029522ca4ffee541e5dabecf9e311d81ee80a2b08e8912f2947d4ce334",
+        "last_modified": "Fri, 04 Sep 2026 14:41:18 GMT",
+        "content_type": "application/json"
+      },
+      {
+        "name": "arc-v2.json",
+        "url": "https://arcprize.org/media/data/leaderboard/v2.json",
+        "retrieved_at": "2026-09-05T10:58:37.376Z",
+        "status": 200,
+        "bytes": 122928,
+        "sha256": "b5cb5ec6e8c7547c4f11a4e61e5ed7e0f28a26208f87bd16c83d1703777a2627",
+        "last_modified": "Fri, 04 Sep 2026 14:41:18 GMT",
+        "content_type": "application/json"
+      },
+      {
+        "name": "arc-v3.json",
+        "url": "https://arcprize.org/media/data/leaderboard/v3.json",
+        "retrieved_at": "2026-09-05T10:58:37.567Z",
+        "status": 200,
+        "bytes": 21914,
+        "sha256": "d743d7a731ba6b9f102d3624d5fe82011630b90da4200ceb34bd56cf2b221e1c",
+        "last_modified": "Fri, 04 Sep 2026 14:41:18 GMT",
+        "content_type": "application/json"
+      },
+      {
+        "name": "epoch-simpleqa.html",
+        "url": "https://epoch.ai/benchmarks/simple-qa-verified",
+        "retrieved_at": "2026-09-05T10:58:37.469Z",
+        "status": 200,
+        "bytes": 84561,
+        "sha256": "d62216cb091efa663d189b6225f8923447fc4ee1b95be11c209599269e9580bf",
+        "last_modified": null,
+        "content_type": "text/html"
+      },
+      {
+        "name": "epoch-hle.html",
+        "url": "https://epoch.ai/benchmarks/humanitys-last-exam",
+        "retrieved_at": "2026-09-05T10:58:37.434Z",
+        "status": 404,
+        "bytes": 58172,
+        "sha256": "a43aad1528aa13fe97feb8d83689f87540efeefd09e5cda46de3bb17e23758a4",
+        "last_modified": null,
+        "content_type": "text/html"
+      },
+      {
+        "name": "matharena-competitions.html",
+        "url": "https://matharena.ai/competitions",
+        "status": 200,
+        "bytes": 67441,
+        "sha256": "e6cd66e9806529a113d8dee797f401d9a04a16439f39529135d4898e5d2070da",
+        "retrieved_at": "2026-09-05T11:02:09.612Z"
+      },
+      {
+        "name": "simpleqa-gist.json",
+        "url": "https://api.github.com/gists/27b929c0923a4c539b0655536cd220ea",
+        "status": 200,
+        "bytes": 21420,
+        "sha256": "147b2a6ea9454d97f66aaf47ad7c8029677878be6280074f543b1475840e48a3",
+        "retrieved_at": "2026-09-05T11:02:10.424Z"
+      },
+      {
+        "name": "scale-hle.html",
+        "url": "https://labs.scale.com/leaderboard/humanitys_last_exam",
+        "status": 200,
+        "bytes": 213294,
+        "sha256": "0e6f77d1f6a7e8f988ef38515a488f1d01d0db8f4608e1e4ca6ac3d0cf065b5c",
+        "retrieved_at": "2026-09-05T11:02:11.307Z"
+      },
+      {
+        "name": "arc-methodology.html",
+        "url": "https://docs.arcprize.org/methodology",
+        "status": 200,
+        "bytes": 258579,
+        "sha256": "66abf6df7a849cfb44cc0d807a0e52080afb582c267843a8f957b0f6d96439f3",
+        "retrieved_at": "2026-09-05T11:02:12.643Z"
+      },
+      {
+        "name": "arc-luna-price-update.html",
+        "url": "https://arcprize.org/results/openai-gpt-5-6-luna-2026-07-30",
+        "status": 200,
+        "bytes": 930443,
+        "sha256": "5fcf5af0019d9770b4148443aabedc3ce13c7ab37931dc065d88c5ad131aa4fb",
+        "retrieved_at": "2026-09-05T11:14:13.760Z"
+      },
+      {
+        "name": "matharena-grok4fast.html",
+        "url": "https://matharena.ai/models/xai_grok_4_fast_reasoning",
+        "status": 200,
+        "bytes": 114517,
+        "sha256": "33b50d41669ec3854674dafec39edd04e45b62d38a816527a21dc98292f319ef",
+        "retrieved_at": "2026-09-05T11:14:14.539Z"
+      },
+      {
+        "name": "matharena-euler.html",
+        "url": "https://matharena.ai/euler/",
+        "status": 200,
+        "bytes": 68656,
+        "sha256": "08ede64adf33dc98fd59abfb9dc74b517a420b615899e98f19403fb97514ee71",
+        "retrieved_at": "2026-09-05T11:14:14.725Z"
+      },
+      {
+        "name": "matharena-grok41fast.html",
+        "url": "https://matharena.ai/models/xai_grok_41_fast_reasoning",
+        "status": 200,
+        "bytes": 138544,
+        "sha256": "8e64fc17869b8c3a8506287727a6bd69b62cd21fe4829651e4acb064a7a221a4",
+        "retrieved_at": "2026-09-05T11:18:18.638Z"
+      },
+      {
+        "name": "arc-opus47-analysis.html",
+        "url": "https://arcprize.org/blog/arc-agi-3-gpt-5-5-opus-4-7-analysis",
+        "status": 200,
+        "bytes": 86513,
+        "sha256": "e65e29c56c7aa09e5f4056cccebc3886cff54c2010093778dcf645362f75f8c0",
+        "retrieved_at": "2026-09-05T11:18:19.649Z"
+      },
+      {
+        "name": "matharena-gemini25flash.html",
+        "url": "https://matharena.ai/models/gemini_gemini_flash_2_5",
+        "status": 200,
+        "bytes": 60867,
+        "sha256": "394d4b17119dddafe184ff0bd341bc00e32a3783b46729e033e22331c7892894",
+        "retrieved_at": "2026-09-05T11:22:46.997Z"
+      },
+      {
+        "name": "matharena-o1.html",
+        "url": "https://matharena.ai/models/openai_o1",
+        "status": 200,
+        "bytes": 46838,
+        "sha256": "9cef45d0b3919d11d4d1f6ca12a832914edebd40585df50ba651686f7c765c05",
+        "retrieved_at": "2026-09-05T11:22:47.155Z"
+      },
+      {
+        "name": "matharena-gemini20flashthinking.html",
+        "url": "https://matharena.ai/models/gemini_gemini_flash_thinking_2_0",
+        "status": 200,
+        "bytes": 51920,
+        "sha256": "6cbf8ae6ffedebc4d8ca37a9a9f307b5896cd00378bd4ae0d2c590bce08a2f50",
+        "retrieved_at": "2026-09-05T11:22:47.310Z"
+      },
+      {
+        "name": "matharena-claude35.html",
+        "url": "https://matharena.ai/models/anthropic_claude_35",
+        "status": 200,
+        "bytes": 45777,
+        "sha256": "28012b59cf5714f1430d7b277bc48fa83f3e2adcfc7cb463d0943b6bd3f028ad",
+        "retrieved_at": "2026-09-05T11:22:47.469Z"
+      },
+      {
+        "name": "epoch-eci-preprocessing.html",
+        "url": "https://epoch.ai/data/eci-documentation/data",
+        "status": 200,
+        "bytes": 80300,
+        "sha256": "5be140e69304ec8ac0df557989fb8291a399f27804236626d9ff1b22ecca5655",
+        "retrieved_at": "2026-09-05T17:19:12.567Z"
+      }
+    ]
+  },
+  {
+    "manifest": "work/coverage-swarm/vendors/capture-manifest.json",
+    "captures": [
+      {
+        "id": "deepseek-v4-pro-0813",
+        "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813/raw/main/README.md",
+        "path": "work/coverage-swarm/vendors/captures/deepseek-v4-pro-0813.md",
+        "bytes": 7522,
+        "sha256": "61755d88e95789fcd7a36f50892f97bba977a30fc99d0f2907ab787ed10b0e66",
+        "retrieved_on": "2026-09-05"
+      },
+      {
+        "id": "deepseek-v4-flash-0731",
+        "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731/raw/main/README.md",
+        "path": "work/coverage-swarm/vendors/captures/deepseek-v4-flash-0731.md",
+        "bytes": 7238,
+        "sha256": "252acafdc9204d0dba3fde1b0a93d71cd1664a4ceadfe222b60117ed0ccc56ff",
+        "retrieved_on": "2026-09-05"
+      },
+      {
+        "id": "deepseek-v4-flash-vision-exp",
+        "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-Vision-Exp/raw/main/README.md",
+        "path": "work/coverage-swarm/vendors/captures/deepseek-v4-flash-vision-exp.md",
+        "bytes": 6592,
+        "sha256": "5e120ab94b1f4c1c4a9096b666b1256e96331142fd2dc649c2a0ae5fc8482606",
+        "retrieved_on": "2026-09-05"
+      },
+      {
+        "id": "glm-5.3-flash",
+        "url": "https://huggingface.co/zai-org/GLM-5.3-Flash/raw/main/README.md",
+        "path": "work/coverage-swarm/vendors/captures/glm-5.3-flash.md",
+        "bytes": 8027,
+        "sha256": "e6c5d41400e28f5a89418a0d15b09b9c113314a7553d40d7d4a8a72fcdb87d02",
+        "retrieved_on": "2026-09-05"
+      },
+      {
+        "id": "kimi-k3",
+        "url": "https://huggingface.co/moonshotai/Kimi-K3/raw/main/README.md",
+        "path": "work/coverage-swarm/vendors/captures/kimi-k3.md",
+        "bytes": 45261,
+        "sha256": "57de265b5842dfa465c6e73b368b0e15a89b8793b5450528dad577da202cc6fe",
+        "retrieved_on": "2026-09-05"
+      },
+      {
+        "id": "kimi-k2-7-code",
+        "url": "https://huggingface.co/moonshotai/Kimi-K2.7-Code/raw/main/README.md",
+        "path": "work/coverage-swarm/vendors/captures/kimi-k2-7-code.md",
+        "bytes": 15061,
+        "sha256": "c78bbe5af19636b180eda956abf1f30a79027ec04d6642ebddc44edbc4470879",
+        "retrieved_on": "2026-09-05"
+      },
+      {
+        "id": "qwen3.8-27b",
+        "url": "https://huggingface.co/Qwen/Qwen3.8-27B/raw/main/README.md",
+        "path": "work/coverage-swarm/vendors/captures/qwen3.8-27b.md",
+        "bytes": 65012,
+        "sha256": "57e4bdb258ee1a7d2635c5174ebd4e56abe392505cdb5f8bbb356b0dc4293641",
+        "retrieved_on": "2026-09-05"
+      },
+      {
+        "id": "qwen3.8-2.4t-a95b",
+        "url": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B/raw/main/README.md",
+        "path": "work/coverage-swarm/vendors/captures/qwen3.8-2.4t-a95b.md",
+        "bytes": 35755,
+        "sha256": "7690c680c2d6eb284179ef5dd4db63260d248531cae9087b09b2c2200230f331",
+        "retrieved_on": "2026-09-05"
+      },
+      {
+        "id": "qwen3.8-flash-next",
+        "url": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next/raw/main/README.md",
+        "path": "work/coverage-swarm/vendors/captures/qwen3.8-flash-next.md",
+        "bytes": 65155,
+        "sha256": "35ca37ccc366f1ba478dab33841a2c0c18ce53fd62f291ca05341f7728b225b2",
+        "retrieved_on": "2026-09-05"
+      },
+      {
+        "id": "muse-spark-1.3-report",
+        "url": "https://research.meta.ai/static/muse-spark-1-3-multimodal-evaluation-methodology",
+        "path": "work/coverage-swarm/vendors/captures/muse-spark-1.3-report.pdf",
+        "bytes": 584759,
+        "sha256": "315a5d1de2932bf772caf1945aa2c7460a1e040c5df3d8b6bbfb53eddea864fe",
+        "retrieved_on": "2026-09-05"
+      },
+      {
+        "id": "fable-5.1-card",
+        "url": "https://www-cdn.anthropic.com/0339e6a7c5c7b87f5c07798616dc32c215d14235/Claude%20Fable%205.1%20%26%20Claude%20Mythos%205.1%20System%20Card.pdf",
+        "error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "id": "fable-5.1-release",
+        "url": "https://www.anthropic.com/claude-fable-and-mythos-5-1",
+        "error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "id": "muse-spark-1.3-release",
+        "url": "https://research.meta.ai/blog/introducing-muse-spark-1-3",
+        "path": "work/coverage-swarm/vendors/captures/muse-spark-1.3-release.html",
+        "bytes": 191944,
+        "sha256": "1e2d93782a4068ea157f90e59f15d78697af809b572cea8bcbe5094b0005cd0d",
+        "retrieved_on": "2026-09-05"
+      },
+      {
+        "id": "muse-spark-1.2-release",
+        "url": "https://research.meta.ai/blog/introducing-muse-code-and-muse-spark-1-2",
+        "path": "work/coverage-swarm/vendors/captures/muse-spark-1.2-release.html",
+        "bytes": 173537,
+        "sha256": "2f45619de5b34beb306ad90377331fe5436ccaf1a7b751453b3a2e7126663e84",
+        "retrieved_on": "2026-09-05"
+      },
+      {
+        "id": "gemini-3.8-flash-doc",
+        "url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash",
+        "path": "work/coverage-swarm/vendors/captures/gemini-3.8-flash-doc.html",
+        "bytes": 105661,
+        "sha256": "d97788467868b02c3b25ee6a2e34605e9eb578edc7237b3b3e8df7730e0aad18",
+        "retrieved_on": "2026-09-05"
+      },
+      {
+        "id": "grok-4.6-release",
+        "url": "https://x.ai/news/grok-4-6",
+        "path": "work/coverage-swarm/vendors/captures/grok-4.6-release.html",
+        "bytes": 245188,
+        "sha256": "8e398204b4fa6fb5525f2a1976558d21160af499f5c26391239cd7e7c4a17cd9",
+        "retrieved_on": "2026-09-05"
+      },
+      {
+        "id": "gpt-6-astra-release",
+        "url": "https://openai.com/index/gpt-6-astra/",
+        "error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "id": "gpt-5.6-release",
+        "url": "https://openai.com/index/gpt-5-6/",
+        "error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "id": "glm-5.3-release",
+        "url": "https://z.ai/blog/glm-5.3",
+        "path": "work/coverage-swarm/vendors/captures/glm-5.3-release.html",
+        "bytes": 598,
+        "sha256": "708bdd0017043e2bd3aa339beadc06777583863f0d09d7952c2d71af9dd30da3",
+        "retrieved_on": "2026-09-05"
+      },
+      {
+        "id": "glm-5.2-release",
+        "url": "https://z.ai/blog/glm-5.2",
+        "path": "work/coverage-swarm/vendors/captures/glm-5.2-release.html",
+        "bytes": 598,
+        "sha256": "a9e8c2b6f34717d69e3a0aa26bb117256a4d8c95bd299910c2a693000ee88fe8",
+        "retrieved_on": "2026-09-05"
+      },
+      {
+        "id": "qwen-3.8-max-doc",
+        "url": "https://www.qwencloud.com/models/qwen3.8-max",
+        "path": "work/coverage-swarm/vendors/captures/qwen-3.8-max-doc.html",
+        "bytes": 95634,
+        "sha256": "c264e40bc4ec2c0ab9cf8838eecf82c401bb67d6903bdc98aaeb97977b19dae4",
+        "retrieved_on": "2026-09-05"
+      },
+      {
+        "id": "glm-5.3",
+        "url": "https://huggingface.co/zai-org/GLM-5.3/raw/main/README.md",
+        "path": "work/coverage-swarm/vendors/captures/glm-5.3.md",
+        "bytes": 14209,
+        "sha256": "ed1c0a4563c437a32f8953d637a1db9bd831de1b24bd3062a5ace9e04340b1cf",
+        "retrieved_on": "2026-09-05"
+      },
+      {
+        "id": "glm-5.2",
+        "url": "https://huggingface.co/zai-org/GLM-5.2/raw/main/README.md",
+        "path": "work/coverage-swarm/vendors/captures/glm-5.2.md",
+        "bytes": 10939,
+        "sha256": "7ba22185651d8f69fbf6227ee718eb680fd834ec8e79ba78df6fa54896614b3d",
+        "retrieved_on": "2026-09-05"
+      },
+      {
+        "id": "grok-4.6-doc",
+        "url": "https://docs.x.ai/developers/grok-4-6",
+        "path": "work/coverage-swarm/vendors/captures/grok-4.6-doc.html",
+        "bytes": 436242,
+        "sha256": "91f41f56d7203041da91ca2d9ecf63c2bfa27cb38f863b8620e0cbbf1c9c3b1b",
+        "retrieved_on": "2026-09-05"
+      },
+      {
+        "id": "muse-spark-1.3-scorecard",
+        "url": "https://research.meta.ai/articles/introducing-muse-1-3/benchmarks/benchmark-scorecard-v6.webp",
+        "path": "work/coverage-swarm/vendors/captures/muse-spark-1.3-scorecard.webp",
+        "bytes": 59720,
+        "sha256": "f3ebe2a54d79082c9b5cfacfade4fda6f809ade61e86218fe74045fd76cce92a",
+        "retrieved_on": "2026-09-05"
+      },
+      {
+        "id": "glm-5.3-flash-benchmarks",
+        "url": "https://raw.githubusercontent.com/zai-org/GLM-5/refs/heads/main/resources/bench_53.png",
+        "path": "work/coverage-swarm/vendors/captures/glm-5.3-flash-benchmarks.png",
+        "bytes": 1127922,
+        "sha256": "ea9de7784afc1e3ce4d72fac927e683043823307042aa2f4ae616357074b372a",
+        "retrieved_on": "2026-09-05"
+      },
+      {
+        "id": "gemini-3.8-flash-methodology",
+        "url": "https://deepmind.com/models/evals-methodology/gemini-3-8-flash",
+        "path": "work/coverage-swarm/vendors/captures/gemini-3.8-flash-methodology.pdf",
+        "bytes": 635167,
+        "sha256": "6c9a1793455330efece88254fd0342d8d0680c560f506f67f982bbabc3eed07a",
+        "retrieved_on": "2026-09-05"
+      },
+      {
+        "id": "gemini-3.8-flash-scorecard",
+        "url": "https://lh3.googleusercontent.com/ES-vvqlBDa0t9xFWXlo8lZP6LvMJ_oR0gtL6mHpa93U-vGbTPUhaKJ2r4nMt8KCmk5lJBkpCvaUGnDlrgp5ouWmfda7ygt_IT_Ytu6ef1hK-Qa_NdeQ%3Dw1440",
+        "path": "work/coverage-swarm/vendors/captures/gemini-3.8-flash-scorecard.png",
+        "bytes": 309497,
+        "sha256": "f74728652ba60db52b7f712a6f82a854f3c128ba0fdbfb6769e6928f7c169ada",
+        "retrieved_on": "2026-09-05"
+      }
+    ]
+  },
+  {
+    "manifest": "work/coverage-swarm/agentic/captures/manifest-extra.json",
+    "captures": [
+      {
+        "name": "deepswe-blog.html",
+        "url": "https://deepswe.datacurve.ai/blog",
+        "final_url": "https://deepswe.datacurve.ai/blog",
+        "status": 200,
+        "bytes": 14223,
+        "sha256": "9edc01e38ededb27b97774c34279e134a91a351425ae80e8620647f7c8f4ee5e",
+        "fetched_at": "2026-09-05T11:01:03.135Z"
+      },
+      {
+        "name": "osworld-leaderboard.js",
+        "url": "https://osworld-v2.xlang.ai/static/js/leaderboard.js?v=leaderboard-gpt56-cost-v1",
+        "final_url": "https://osworld-v2.xlang.ai/static/js/leaderboard.js?v=leaderboard-gpt56-cost-v1",
+        "status": 200,
+        "bytes": 15936,
+        "sha256": "6d29f523d4e364700e0d93f5f553d603ffee18046b0c4a889dbf3be26ae342ed",
+        "fetched_at": "2026-09-05T11:01:03.137Z"
+      },
+      {
+        "name": "deepswe-live-v1.1.json",
+        "url": "https://deepswe.datacurve.ai/artifacts/v1.1/leaderboard-live.json",
+        "final_url": "https://deepswe.datacurve.ai/artifacts/v1.1/leaderboard-live.json",
+        "status": 200,
+        "bytes": 94738,
+        "sha256": "005cbedb49f988ba3f0d9636300862ad7ace93ce1992b37faf9945fe5b383415",
+        "fetched_at": "2026-09-05T11:01:03.137Z"
+      },
+      {
+        "name": "swe-about.html",
+        "url": "https://swe-rebench.com/about",
+        "final_url": "https://swe-rebench.com/about",
+        "status": 200,
+        "bytes": 181040,
+        "sha256": "cdfc6d3fbeb8af7a57d85ae65b9a257c1e3260e3e90b53cb4d3be6b6d2895f31",
+        "fetched_at": "2026-09-05T11:01:03.157Z"
+      },
+      {
+        "name": "osworld-sweep.js",
+        "url": "https://osworld-v2.xlang.ai/static/js/benchmarkSweep.js?v=benchmark-hide-full-gpt-plot-v1",
+        "final_url": "https://osworld-v2.xlang.ai/static/js/benchmarkSweep.js?v=benchmark-hide-full-gpt-plot-v1",
+        "status": 200,
+        "bytes": 60509,
+        "sha256": "e6cca6776559deb3185d7e617135a6d5fa84fd7f6e9a9e92479133800059259c",
+        "fetched_at": "2026-09-05T11:01:03.172Z"
+      },
+      {
+        "name": "deepswe-live-script.js",
+        "url": "https://deepswe.datacurve.ai/assets/live-leaderboard-BDQndJOj.js",
+        "final_url": "https://deepswe.datacurve.ai/assets/live-leaderboard-BDQndJOj.js",
+        "status": 200,
+        "bytes": 25152,
+        "sha256": "8e8ee67102516f4c1e3932a575b2ce5bd4817c4b211c0fa0a97ce598a30a927f",
+        "fetched_at": "2026-09-05T11:01:03.476Z"
+      },
+      {
+        "name": "automation-github-tree.json",
+        "url": "https://api.github.com/repos/zapier/AutomationBench/git/trees/main?recursive=1",
+        "final_url": "https://api.github.com/repos/zapier/AutomationBench/git/trees/main?recursive=1",
+        "status": 200,
+        "bytes": 165658,
+        "sha256": "d594845c7b12e28e6a29ed4d92ad99ad124cbbdd27a34f1d0b641f04e90cf747",
+        "fetched_at": "2026-09-05T11:01:03.543Z"
+      }
+    ]
+  },
+  {
+    "manifest": "work/coverage-swarm/agentic/captures/manifest-more.json",
+    "captures": [
+      {
+        "name": "deepswe-live-v1.json",
+        "url": "https://deepswe.datacurve.ai/artifacts/v1/leaderboard-live.json",
+        "final_url": "https://deepswe.datacurve.ai/artifacts/v1/leaderboard-live.json",
+        "status": 200,
+        "bytes": 36591,
+        "sha256": "6fc4a40007a7db1647b2661bed7f3c61f698ea08cb13d60de1707e108e9c2964",
+        "fetched_at": "2026-09-05T11:05:26.545Z"
+      },
+      {
+        "name": "scicode-readme.md",
+        "url": "https://raw.githubusercontent.com/flyingwagner/scicode-verified/main/README.md",
+        "final_url": "https://raw.githubusercontent.com/flyingwagner/scicode-verified/main/README.md",
+        "status": 200,
+        "bytes": 7527,
+        "sha256": "3c3e59ba7205115b3196f0664d6fdaf231392bc1f404ee57cde72dde95a2b02a",
+        "fetched_at": "2026-09-05T11:05:26.860Z"
+      },
+      {
+        "name": "scicode-tree.json",
+        "url": "https://api.github.com/repos/flyingwagner/scicode-verified/git/trees/main?recursive=1",
+        "final_url": "https://api.github.com/repos/flyingwagner/scicode-verified/git/trees/main?recursive=1",
+        "status": 200,
+        "bytes": 41952,
+        "sha256": "0029006697c2adbf5c579678ca123e18b554e806efe65d90c335e3e581508fd9",
+        "fetched_at": "2026-09-05T11:05:26.860Z"
+      },
+      {
+        "name": "osworld-results.json",
+        "url": "https://osworld-v2.xlang.ai/static/data/leaderboard/official-results.json",
+        "final_url": "https://osworld-v2.xlang.ai/static/data/leaderboard/official-results.json",
+        "status": 200,
+        "bytes": 12721,
+        "sha256": "94b07148b350183677c3415befbdf736ec37bbcf74c525cea668f5d98dafaa32",
+        "fetched_at": "2026-09-05T11:05:27.104Z"
+      },
+      {
+        "name": "science-home.html",
+        "url": "https://www.terminal-bench-science.ai/",
+        "final_url": "https://www.terminal-bench-science.ai/",
+        "status": 200,
+        "bytes": 44192,
+        "sha256": "885797592f8e69ddeb0dafa85a74a57371c025f8e618d533536ba2ce748afa52",
+        "fetched_at": "2026-09-05T11:05:27.385Z"
+      },
+      {
+        "name": "scicode-paper.html",
+        "url": "https://arxiv.org/html/2608.04975v1",
+        "final_url": "https://arxiv.org/html/2608.04975v1",
+        "status": 200,
+        "bytes": 577529,
+        "sha256": "00a0d9b6bfac61b3c0d1c0ffaf159b25d7a17d70ca447b049fdd8fdc3876d554",
+        "fetched_at": "2026-09-05T11:05:27.435Z"
+      }
+    ]
+  },
+  {
+    "manifest": "work/coverage-swarm/agentic/captures/manifest-pin.json",
+    "captures": [
+      {
+        "name": "automation-pinned-CHANGELOG.md",
+        "url": "https://raw.githubusercontent.com/zapier/AutomationBench/4a8e1061254004d9dac807054eed33fad7d1ff14/CHANGELOG.md",
+        "final_url": "https://raw.githubusercontent.com/zapier/AutomationBench/4a8e1061254004d9dac807054eed33fad7d1ff14/CHANGELOG.md",
+        "status": 200,
+        "bytes": 918,
+        "sha256": "76728984302e35177fae39a3486f6f24187d60b2f22e0f312a5d5e43576c850d",
+        "fetched_at": "2026-09-05T11:06:42.936Z"
+      },
+      {
+        "name": "automation-pinned-pyproject.toml",
+        "url": "https://raw.githubusercontent.com/zapier/AutomationBench/4a8e1061254004d9dac807054eed33fad7d1ff14/pyproject.toml",
+        "final_url": "https://raw.githubusercontent.com/zapier/AutomationBench/4a8e1061254004d9dac807054eed33fad7d1ff14/pyproject.toml",
+        "status": 200,
+        "bytes": 891,
+        "sha256": "924cc76d59fd1a7be1174b64548c02c0c8c7bbaec215a5091d7459245d6c0c40",
+        "fetched_at": "2026-09-05T11:06:43.007Z"
+      },
+      {
+        "name": "scicode-eval_clean-README.md",
+        "url": "https://raw.githubusercontent.com/flyingwagner/scicode-verified/ddab4a92f8d80a7113ab946628e994b52354d838/eval_clean/README.md",
+        "final_url": "https://raw.githubusercontent.com/flyingwagner/scicode-verified/ddab4a92f8d80a7113ab946628e994b52354d838/eval_clean/README.md",
+        "status": 200,
+        "bytes": 5309,
+        "sha256": "ffe5caf4504a41f5f97e88a7fd87aa69d81f30c0ebc7cc6c87c2a2029307c612",
+        "fetched_at": "2026-09-05T11:06:43.018Z"
+      },
+      {
+        "name": "scicode-eval_clean-run_deepseek_eval.py",
+        "url": "https://raw.githubusercontent.com/flyingwagner/scicode-verified/ddab4a92f8d80a7113ab946628e994b52354d838/eval_clean/run_deepseek_eval.py",
+        "final_url": "https://raw.githubusercontent.com/flyingwagner/scicode-verified/ddab4a92f8d80a7113ab946628e994b52354d838/eval_clean/run_deepseek_eval.py",
+        "status": 200,
+        "bytes": 35473,
+        "sha256": "7e4638ca05a0c8946834003abde4bcfc97f0419841470b372041751a3c3fc437",
+        "fetched_at": "2026-09-05T11:06:43.028Z"
+      },
+      {
+        "name": "scicode-analysis-regrade_summary.json",
+        "url": "https://raw.githubusercontent.com/flyingwagner/scicode-verified/ddab4a92f8d80a7113ab946628e994b52354d838/analysis/regrade_summary.json",
+        "final_url": "https://raw.githubusercontent.com/flyingwagner/scicode-verified/ddab4a92f8d80a7113ab946628e994b52354d838/analysis/regrade_summary.json",
+        "status": 200,
+        "bytes": 1549,
+        "sha256": "81a6d4fd0b723c36d088ab953dc644bb057e96fda8e6a6639d03a2fafbbd5b03",
+        "fetched_at": "2026-09-05T11:06:43.053Z"
+      },
+      {
+        "name": "scicode-scicode_verified-manifest.json",
+        "url": "https://raw.githubusercontent.com/flyingwagner/scicode-verified/ddab4a92f8d80a7113ab946628e994b52354d838/scicode_verified/manifest.json",
+        "final_url": "https://raw.githubusercontent.com/flyingwagner/scicode-verified/ddab4a92f8d80a7113ab946628e994b52354d838/scicode_verified/manifest.json",
+        "status": 200,
+        "bytes": 2667,
+        "sha256": "5e17afe722e127d120d6e48793cdf0379d430068eea8efb94a25503c6b3e83f9",
+        "fetched_at": "2026-09-05T11:06:43.089Z"
+      },
+      {
+        "name": "scicode-analysis-README.md",
+        "url": "https://raw.githubusercontent.com/flyingwagner/scicode-verified/ddab4a92f8d80a7113ab946628e994b52354d838/analysis/README.md",
+        "final_url": "https://raw.githubusercontent.com/flyingwagner/scicode-verified/ddab4a92f8d80a7113ab946628e994b52354d838/analysis/README.md",
+        "status": 200,
+        "bytes": 1654,
+        "sha256": "1b45c9c4ea5ea61d6e8abb0117133bc9ee4a8ee4de5c367e66305210b4dbdde4",
+        "fetched_at": "2026-09-05T11:06:43.125Z"
+      },
+      {
+        "name": "automation-pinned-README.md",
+        "url": "https://raw.githubusercontent.com/zapier/AutomationBench/4a8e1061254004d9dac807054eed33fad7d1ff14/README.md",
+        "final_url": "https://raw.githubusercontent.com/zapier/AutomationBench/4a8e1061254004d9dac807054eed33fad7d1ff14/README.md",
+        "status": 200,
+        "bytes": 9260,
+        "sha256": "4c5452dec0abe00ad4dd9e1543709817c563486c1f53088c0adc9fafb609093a",
+        "fetched_at": "2026-09-05T11:06:43.817Z"
+      }
+    ]
+  },
+  {
+    "manifest": "work/coverage-swarm/agentic/captures/manifest-tau-data.json",
+    "captures": [
+      {
+        "name": "tau-manifest.json",
+        "url": "https://sierra-tau-bench-public.s3.us-west-2.amazonaws.com/submissions/manifest.json",
+        "status": 200,
+        "bytes": 2780,
+        "sha256": "f3537987ce940cef9372f034dc55ca16565dce075b82c846a27500155d1d8c96",
+        "fetched_at": "2026-09-05T11:10:48.644Z"
+      },
+      {
+        "name": "benchcad.html",
+        "url": "https://benchcad.com/",
+        "status": 200,
+        "bytes": 42977,
+        "sha256": "6ded8b1b24931c13297842957c3275275541c2e4df89a645fe3aa8649da6f874",
+        "fetched_at": "2026-09-05T11:10:49.840Z"
+      }
+    ]
+  },
+  {
+    "manifest": "work/coverage-swarm/agentic/captures/manifest-tau-submissions.json",
+    "captures": [
+      {
+        "name": "tau-gemini-3-pro_sierra_2026-03-02.json",
+        "url": "https://sierra-tau-bench-public.s3.us-west-2.amazonaws.com/submissions/gemini-3-pro_sierra_2026-03-02/submission.json",
+        "status": 200,
+        "bytes": 2321,
+        "sha256": "f5c7b2d432d4efc6d6c1533f87e61ae1673336579df9f5f5cf986c277f0afd18",
+        "fetched_at": "2026-09-05T11:11:26.832Z"
+      },
+      {
+        "name": "tau-gpt-5-2_sierra_2026-02-26.json",
+        "url": "https://sierra-tau-bench-public.s3.us-west-2.amazonaws.com/submissions/gpt-5-2_sierra_2026-02-26/submission.json",
+        "status": 200,
+        "bytes": 2353,
+        "sha256": "343687b822edbcbff42a4d4632ecc6288a58d9817a7a02c8533081c5709c0ac6",
+        "fetched_at": "2026-09-05T11:11:26.833Z"
+      },
+      {
+        "name": "tau-claude-opus-4-5_sierra_2026-02-26.json",
+        "url": "https://sierra-tau-bench-public.s3.us-west-2.amazonaws.com/submissions/claude-opus-4-5_sierra_2026-02-26/submission.json",
+        "status": 200,
+        "bytes": 2404,
+        "sha256": "9c3b8b400e21d370cea27caec3643bfe6fd8385be9ed5135b585d0b976b6e34f",
+        "fetched_at": "2026-09-05T11:11:26.833Z"
+      },
+      {
+        "name": "tau-gemini-3-flash_sierra_2026-03-02.json",
+        "url": "https://sierra-tau-bench-public.s3.us-west-2.amazonaws.com/submissions/gemini-3-flash_sierra_2026-03-02/submission.json",
+        "status": 200,
+        "bytes": 2337,
+        "sha256": "d1b7d1fc5d789662fb6eeb4a5ec01948295db397d2313df42c43c7fd8caf3637",
+        "fetched_at": "2026-09-05T11:11:26.833Z"
+      },
+      {
+        "name": "tau-claude-sonnet-4-5_sierra_2026-02-26.json",
+        "url": "https://sierra-tau-bench-public.s3.us-west-2.amazonaws.com/submissions/claude-sonnet-4-5_sierra_2026-02-26/submission.json",
+        "status": 200,
+        "bytes": 2351,
+        "sha256": "e5ce9f12ab9e616db52e973e90b48144b7bafd29e35c4fd6c3e7fde573a9b8d8",
+        "fetched_at": "2026-09-05T11:11:27.048Z"
+      },
+      {
+        "name": "tau-gpt-5-2-none_sierra_2026-02-26.json",
+        "url": "https://sierra-tau-bench-public.s3.us-west-2.amazonaws.com/submissions/gpt-5-2-none_sierra_2026-02-26/submission.json",
+        "status": 200,
+        "bytes": 2374,
+        "sha256": "e1be4bac436e8115f9253697d68b71867f17cfcb2bef5dfa6a756c0a89a70dab",
+        "fetched_at": "2026-09-05T11:11:27.050Z"
+      },
+      {
+        "name": "tau-glm-5-think_sierra_2026-03-02.json",
+        "url": "https://sierra-tau-bench-public.s3.us-west-2.amazonaws.com/submissions/glm-5-think_sierra_2026-03-02/submission.json",
+        "status": 200,
+        "bytes": 2175,
+        "sha256": "fa27b9a1a7a4c8b15517ec1329ef21fcc700be2ca12f21659b60aeda99c7de8f",
+        "fetched_at": "2026-09-05T11:11:27.066Z"
+      },
+      {
+        "name": "tau-qwen3.5-397b-a17b-think_sierra_2026-03-02.json",
+        "url": "https://sierra-tau-bench-public.s3.us-west-2.amazonaws.com/submissions/qwen3.5-397b-a17b-think_sierra_2026-03-02/submission.json",
+        "status": 200,
+        "bytes": 2349,
+        "sha256": "2cfb2c7d2a46e9f22154fa153dcdf155d50dbd5bf86233ecf564eccca1e5913e",
+        "fetched_at": "2026-09-05T11:11:27.086Z"
+      },
+      {
+        "name": "tau-gemini-3-1-pro-preview_sierra_2026-05-05.json",
+        "url": "https://sierra-tau-bench-public.s3.us-west-2.amazonaws.com/submissions/gemini-3-1-pro-preview_sierra_2026-05-05/submission.json",
+        "status": 200,
+        "bytes": 1993,
+        "sha256": "16ada360be015c129cc704ab283535144305df1b1cb911750bb2ec6a2fde53ac",
+        "fetched_at": "2026-09-05T11:11:27.395Z"
+      },
+      {
+        "name": "tau-raft-30b-a3b_neu_2026-04-29.json",
+        "url": "https://sierra-tau-bench-public.s3.us-west-2.amazonaws.com/submissions/raft-30b-a3b_neu_2026-04-29/submission.json",
+        "status": 200,
+        "bytes": 1348,
+        "sha256": "ea8fff2d8386ff90b9f63aefda32a3f1afe5d01b087fdea9bf178919edc44fe6",
+        "fetched_at": "2026-09-05T11:11:27.395Z"
+      },
+      {
+        "name": "tau-distyl-buttonagent_distyl_2026-03-25.json",
+        "url": "https://sierra-tau-bench-public.s3.us-west-2.amazonaws.com/submissions/distyl-buttonagent_distyl_2026-03-25/submission.json",
+        "status": 200,
+        "bytes": 1727,
+        "sha256": "bb1984dd43557ac3e526f64eeaea0fd4467d924c69d38655d64dde0a45a2c522",
+        "fetched_at": "2026-09-05T11:11:27.395Z"
+      },
+      {
+        "name": "tau-gemini-2-5-pro_sierra_2026-05-05.json",
+        "url": "https://sierra-tau-bench-public.s3.us-west-2.amazonaws.com/submissions/gemini-2-5-pro_sierra_2026-05-05/submission.json",
+        "status": 200,
+        "bytes": 1985,
+        "sha256": "b14f65b54ac7b733550cb1e04b986d17b7ff877de6ff79e94e8e98998035de6f",
+        "fetched_at": "2026-09-05T11:11:27.395Z"
+      },
+      {
+        "name": "tau-claude-opus-4-7_sierra_2026-05-05.json",
+        "url": "https://sierra-tau-bench-public.s3.us-west-2.amazonaws.com/submissions/claude-opus-4-7_sierra_2026-05-05/submission.json",
+        "status": 200,
+        "bytes": 1348,
+        "sha256": "7ec10475f58a7d24c55548df9b8a04b6e6105dc25a6927f618c487185f28eca9",
+        "fetched_at": "2026-09-05T11:11:27.420Z"
+      },
+      {
+        "name": "tau-claude-opus-4-6_sierra_2026-05-05.json",
+        "url": "https://sierra-tau-bench-public.s3.us-west-2.amazonaws.com/submissions/claude-opus-4-6_sierra_2026-05-05/submission.json",
+        "status": 200,
+        "bytes": 1877,
+        "sha256": "880ea58f76664a0f0e06c3117c6a8b75c4007149d06cc3de04f852f62487f3f3",
+        "fetched_at": "2026-09-05T11:11:27.424Z"
+      },
+      {
+        "name": "tau-gpt-5-4_sierra_2026-03-25.json",
+        "url": "https://sierra-tau-bench-public.s3.us-west-2.amazonaws.com/submissions/gpt-5-4_sierra_2026-03-25/submission.json",
+        "status": 200,
+        "bytes": 2046,
+        "sha256": "47fa11691a745682b86ffc91e1a57aef6d6d7cebe60df66820ebb310b518b0ab",
+        "fetched_at": "2026-09-05T11:11:27.424Z"
+      },
+      {
+        "name": "tau-gpt-5-5_sierra_2026-05-05.json",
+        "url": "https://sierra-tau-bench-public.s3.us-west-2.amazonaws.com/submissions/gpt-5-5_sierra_2026-05-05/submission.json",
+        "status": 200,
+        "bytes": 1328,
+        "sha256": "24247d74b2a942da4c8f85503d0f8b95ba6e2d5df7158c2adf15049056d8b7f4",
+        "fetched_at": "2026-09-05T11:11:27.424Z"
+      },
+      {
+        "name": "tau-kimi-k3_sierra_2026-08-04.json",
+        "url": "https://sierra-tau-bench-public.s3.us-west-2.amazonaws.com/submissions/kimi-k3_sierra_2026-08-04/submission.json",
+        "status": 200,
+        "bytes": 1337,
+        "sha256": "71e1ac4413f59ceac04851843319f73b485280a756f3b69fb5f47836d65a52b6",
+        "fetched_at": "2026-09-05T11:11:27.722Z"
+      },
+      {
+        "name": "tau-grok-4-2_sierra_2026-05-05.json",
+        "url": "https://sierra-tau-bench-public.s3.us-west-2.amazonaws.com/submissions/grok-4-2_sierra_2026-05-05/submission.json",
+        "status": 200,
+        "bytes": 2060,
+        "sha256": "6187e4b645a9de92f40ba0d6b800c13200ef39c5bc95062d5ae8122251459fc6",
+        "fetched_at": "2026-09-05T11:11:27.726Z"
+      },
+      {
+        "name": "tau-muse-spark-1-1_sierra_2026-08-04.json",
+        "url": "https://sierra-tau-bench-public.s3.us-west-2.amazonaws.com/submissions/muse-spark-1-1_sierra_2026-08-04/submission.json",
+        "status": 200,
+        "bytes": 1358,
+        "sha256": "5ec4d2b119542bb40358374e3408515dccf5f0b3dace60de7936a20cb9bf13da",
+        "fetched_at": "2026-09-05T11:11:27.726Z"
+      },
+      {
+        "name": "tau-grok-4-fast_sierra_2026-05-05.json",
+        "url": "https://sierra-tau-bench-public.s3.us-west-2.amazonaws.com/submissions/grok-4-fast_sierra_2026-05-05/submission.json",
+        "status": 200,
+        "bytes": 1859,
+        "sha256": "e310d5fa844297cbb9b3ff0755f9784ddeae8daf99624f1003a8d0bdd973c237",
+        "fetched_at": "2026-09-05T11:11:27.726Z"
+      },
+      {
+        "name": "tau-grok-4-1-fast_sierra_2026-05-05.json",
+        "url": "https://sierra-tau-bench-public.s3.us-west-2.amazonaws.com/submissions/grok-4-1-fast_sierra_2026-05-05/submission.json",
+        "status": 200,
+        "bytes": 2070,
+        "sha256": "24efda601208398e37890ee127e37190b2080dc8eb34aa52fac0ee7f32ae1e08",
+        "fetched_at": "2026-09-05T11:11:27.750Z"
+      },
+      {
+        "name": "tau-gpt-5-6-sol_sierra_2026-08-04.json",
+        "url": "https://sierra-tau-bench-public.s3.us-west-2.amazonaws.com/submissions/gpt-5-6-sol_sierra_2026-08-04/submission.json",
+        "status": 200,
+        "bytes": 1363,
+        "sha256": "0394128dc04d58ff77846e404ce588d786988a5c2ffcb69a8af09f19c46c97a4",
+        "fetched_at": "2026-09-05T11:11:27.754Z"
+      },
+      {
+        "name": "tau-claude-fable-5_sierra_2026-08-04.json",
+        "url": "https://sierra-tau-bench-public.s3.us-west-2.amazonaws.com/submissions/claude-fable-5_sierra_2026-08-04/submission.json",
+        "status": 200,
+        "bytes": 1361,
+        "sha256": "f5cb61669a7f9665a006031ae1779b59230dcb4527cf763cfc3d2c771878166b",
+        "fetched_at": "2026-09-05T11:11:27.754Z"
+      },
+      {
+        "name": "tau-claude-opus-4-8_sierra_2026-08-04.json",
+        "url": "https://sierra-tau-bench-public.s3.us-west-2.amazonaws.com/submissions/claude-opus-4-8_sierra_2026-08-04/submission.json",
+        "status": 200,
+        "bytes": 1347,
+        "sha256": "13052291f58a74e601c4e577bce110a7fad93a126edaa87fb483e49df0823054",
+        "fetched_at": "2026-09-05T11:11:27.756Z"
+      },
+      {
+        "name": "tau-qwen3-8-max_sierra_2026-08-04.json",
+        "url": "https://sierra-tau-bench-public.s3.us-west-2.amazonaws.com/submissions/qwen3-8-max_sierra_2026-08-04/submission.json",
+        "status": 200,
+        "bytes": 1340,
+        "sha256": "afd5525e447a221f6997b6af8a6a72536acda81b0e7775fd7124836a13a9ad76",
+        "fetched_at": "2026-09-05T11:11:28.097Z"
+      },
+      {
+        "name": "tau-inkling_sierra_2026-08-04.json",
+        "url": "https://sierra-tau-bench-public.s3.us-west-2.amazonaws.com/submissions/inkling_sierra_2026-08-04/submission.json",
+        "status": 200,
+        "bytes": 1349,
+        "sha256": "f5d7b5fae9986619bc3258d1be25b3577f46d4e61a1b6c8853933710eb3169b9",
+        "fetched_at": "2026-09-05T11:11:28.097Z"
+      },
+      {
+        "name": "tau-grok-4-5_sierra_2026-08-04.json",
+        "url": "https://sierra-tau-bench-public.s3.us-west-2.amazonaws.com/submissions/grok-4-5_sierra_2026-08-04/submission.json",
+        "status": 200,
+        "bytes": 1307,
+        "sha256": "fb6414a4c05756d2ea00289684680f22fe3111a1ed69cf8d77c1071b1075bcb1",
+        "fetched_at": "2026-09-05T11:11:28.097Z"
+      },
+      {
+        "name": "tau-glm-5-2_sierra_2026-08-04.json",
+        "url": "https://sierra-tau-bench-public.s3.us-west-2.amazonaws.com/submissions/glm-5-2_sierra_2026-08-04/submission.json",
+        "status": 200,
+        "bytes": 1326,
+        "sha256": "58b36fd68b92eac5c9e72efce3952aa4004db2b7f6f520c2bcf2908c4845e801",
+        "fetched_at": "2026-09-05T11:11:28.099Z"
+      },
+      {
+        "name": "tau-claude-opus-5_sierra_2026-08-04.json",
+        "url": "https://sierra-tau-bench-public.s3.us-west-2.amazonaws.com/submissions/claude-opus-5_sierra_2026-08-04/submission.json",
+        "status": 200,
+        "bytes": 1340,
+        "sha256": "4ab17f3f2e77cae8b2b4e4ba13413f7e2168104a772f25afe9d071950ed24ba2",
+        "fetched_at": "2026-09-05T11:11:28.099Z"
+      }
+    ]
+  },
+  {
+    "manifest": "work/coverage-swarm/agentic/captures/manifest-tau.json",
+    "captures": [
+      {
+        "name": "tau-script.js",
+        "url": "https://taubench.com/assets/index-QtX8yEBE.js",
+        "status": 200,
+        "sha256": "ea1a5675ab12adf5fe73358e598747b1a05d6b633d54f44483e480aac9f8b995",
+        "fetched_at": "2026-09-05T11:09:28.787Z"
+      }
+    ]
+  },
+  {
+    "manifest": "work/coverage-swarm/agentic/captures/manifest-vending-data.json",
+    "captures": [
+      {
+        "url": "https://andonlabs.com/_app/immutable/chunks/BjWiPmQ5.js",
+        "status": 200,
+        "bytes": 609783,
+        "sha256": "050963419175d7e9aceef35605adf79fdd74f26d655032c201f862f529dfbe94",
+        "fetched_at": "2026-09-05T11:19:15.631Z"
+      }
+    ]
+  },
+  {
+    "manifest": "work/coverage-swarm/agentic/captures/manifest-vending-node.json",
+    "captures": [
+      {
+        "url": "https://andonlabs.com/_app/immutable/nodes/26.BBgo3lJ7.js",
+        "status": 200,
+        "bytes": 47459,
+        "sha256": "96cb872a41e45746545da4c379e81e3990c90a6b7f45d1f73e973d53f187b06b",
+        "fetched_at": "2026-09-05T11:19:00.634Z"
+      }
+    ]
+  },
+  {
+    "manifest": "work/coverage-swarm/agentic/captures/manifest-vending-script.json",
+    "captures": [
+      {
+        "name": "vending-app.js",
+        "url": "https://andonlabs.com/_app/immutable/entry/app.2wdkuUU-.js",
+        "status": 200,
+        "sha256": "bc3237cc95265a12c6c55abec756c2b55bdf080208b02e062dbfd3a13e69fabe",
+        "fetched_at": "2026-09-05T11:18:41.354Z"
+      }
+    ]
+  },
+  {
+    "manifest": "work/coverage-swarm/agentic/captures/manifest.json",
+    "captures": [
+      {
+        "name": "deepswe.html",
+        "url": "https://deepswe.datacurve.ai/",
+        "final_url": "https://deepswe.datacurve.ai/",
+        "status": 200,
+        "bytes": 268313,
+        "sha256": "8fdbb59257d00cbb0772248bb602aafc1d20a51822388cd4eaf4625505182be7",
+        "fetched_at": "2026-09-05T10:58:52.278Z"
+      },
+      {
+        "name": "osworld.html",
+        "url": "https://osworld-v2.xlang.ai/",
+        "final_url": "https://osworld-v2.xlang.ai/",
+        "status": 200,
+        "bytes": 88346,
+        "sha256": "b366fbcde976419afc53298fc6c8e7e5b070be703cd72fca12e1a6fb3b4ff472",
+        "fetched_at": "2026-09-05T10:58:52.777Z"
+      },
+      {
+        "name": "mcpmark-readme.md",
+        "url": "https://raw.githubusercontent.com/eval-sys/mcpmark/v1.2.0/README.md",
+        "final_url": "https://raw.githubusercontent.com/eval-sys/mcpmark/v1.2.0/README.md",
+        "status": 200,
+        "bytes": 7992,
+        "sha256": "ed5193159a8b28d61719ea5353012e7be9014509c9f87d435f76c92d498c91f6",
+        "fetched_at": "2026-09-05T10:58:52.900Z"
+      },
+      {
+        "name": "swe-rebench.html",
+        "url": "https://swe-rebench.com/leaderboard",
+        "final_url": "https://swe-rebench.com/",
+        "status": 200,
+        "bytes": 7789901,
+        "sha256": "fbb1b659562843da266aa20ec2295253d727ccd9b9469c78ab32df6fad1fffed",
+        "fetched_at": "2026-09-05T10:58:53.146Z"
+      },
+      {
+        "name": "mcpmark.html",
+        "url": "https://mcpmark.ai/leaderboard",
+        "final_url": "https://mcpmark.ai/leaderboard",
+        "status": 200,
+        "bytes": 2473406,
+        "sha256": "a331a3464f8a2c1e76a61c02a63e3cee5f1d03bc8d6e9c4de800219bd9cfa9f6",
+        "fetched_at": "2026-09-05T10:58:53.930Z"
+      },
+      {
+        "name": "mcpmark-pipeline.py",
+        "url": "https://raw.githubusercontent.com/eval-sys/mcpmark/v1.2.0/pipeline.py",
+        "final_url": "https://raw.githubusercontent.com/eval-sys/mcpmark/v1.2.0/pipeline.py",
+        "status": 200,
+        "bytes": 5447,
+        "sha256": "c5fbed85f8a00618f1c336dde23a775e7fd4eb498bbae3813f0d7a24ec22bbb6",
+        "fetched_at": "2026-09-05T10:58:54.216Z"
+      },
+      {
+        "name": "automation-readme.md",
+        "url": "https://raw.githubusercontent.com/zapier/AutomationBench/main/README.md",
+        "final_url": "https://raw.githubusercontent.com/zapier/AutomationBench/main/README.md",
+        "status": 200,
+        "bytes": 9260,
+        "sha256": "4c5452dec0abe00ad4dd9e1543709817c563486c1f53088c0adc9fafb609093a",
+        "fetched_at": "2026-09-05T10:58:54.946Z"
+      },
+      {
+        "name": "vending.html",
+        "url": "https://andonlabs.com/evals/vending-bench-2",
+        "final_url": "https://andonlabs.com/evals/vending-bench-2",
+        "status": 200,
+        "bytes": 64348,
+        "sha256": "f27ef3bd0f0829fba3f68ca9f91df185a6b407d4979c49fea9cebb24d95034d6",
+        "fetched_at": "2026-09-05T10:58:55.082Z"
+      },
+      {
+        "name": "metr.yaml",
+        "url": "https://metr.org/assets/benchmark_results_1_1.yaml",
+        "final_url": "https://metr.org/assets/benchmark_results_1_1.yaml",
+        "status": 200,
+        "bytes": 16255,
+        "sha256": "aae31902b0519a4da73e16643915e5e8aca13cd3315c3aac893ce3d6dfe92ad9",
+        "fetched_at": "2026-09-05T10:58:55.197Z"
+      },
+      {
+        "name": "tau.html",
+        "url": "https://taubench.com/leaderboard?benchmark=knowledge",
+        "final_url": "http://taubench.com/leaderboard/?benchmark=knowledge",
+        "status": 200,
+        "bytes": 61902,
+        "sha256": "3f42bca79e60b56e6614dc43427dc1ab2c21f32b287210560e695424b863151d",
+        "fetched_at": "2026-09-05T10:58:56.243Z"
+      },
+      {
+        "name": "osworld-manifest.json",
+        "url": "https://raw.githubusercontent.com/xlang-ai/OSWorld-V2/v2026.08.08/benchmark_releases/osworld-v2-2026.08.08.json",
+        "final_url": "https://raw.githubusercontent.com/xlang-ai/OSWorld-V2/v2026.08.08/benchmark_releases/osworld-v2-2026.08.08.json",
+        "status": 200,
+        "bytes": 1534,
+        "sha256": "afe4f61ba6f4e4dce6c9f5815578e41e084fb6b61ee96b7118d9055e5d339aab",
+        "fetched_at": "2026-09-05T10:58:56.520Z"
+      },
+      {
+        "name": "science.html",
+        "url": "https://www.terminal-bench-science.ai/announcement",
+        "final_url": "https://www.terminal-bench-science.ai/announcement",
+        "status": 200,
+        "bytes": 230651,
+        "sha256": "6ced6c2bebd0aefe89593504950175482fdaaf5794e6d999cb5b12010f867e4b",
+        "fetched_at": "2026-09-05T10:58:57.188Z"
+      },
+      {
+        "name": "terminal.html",
+        "url": "https://www.tbench.ai/leaderboard",
+        "final_url": "https://www.tbench.ai/",
+        "status": 200,
+        "bytes": 124263,
+        "sha256": "01d53928d791b8cea6f84053317c2c1020d0ef63da86d4a857b364cf908cdc63",
+        "fetched_at": "2026-09-05T10:58:57.655Z"
+      },
+      {
+        "name": "snorkel.html",
+        "url": "https://snorkel.ai/leaderboard/terminal-bench-4-0/",
+        "final_url": "https://snorkel.ai/leaderboard/terminal-bench-4-0/",
+        "status": 200,
+        "bytes": 480550,
+        "sha256": "2c7ce1704a5910c1c0d9675a94fbf783b9894971d92b044d0bf98762b8a95f26",
+        "fetched_at": "2026-09-05T10:58:58.132Z"
+      }
+    ]
+  },
+  {
+    "manifest": "root captures",
+    "captures": [
+      {
+        "file": "arena-latest.parquet",
+        "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/refs%2Fconvert%2Fparquet/text_style_control/latest/0000.parquet",
+        "sha256": "be69202c42fe4ddf7519f1f55a4e15c2fcdbfe080c1ed9cb0303105be12d626a",
+        "retrieved_on": "2026-09-05"
+      },
+      {
+        "file": "table_2026_06_25.csv",
+        "url": "https://livebench.ai/table_2026_06_25.csv",
+        "sha256": "f23992acb9c01d4904b8cb2c5714a0e9ab15694e9ee0cdc4a2b525167033ba87",
+        "retrieved_on": "2026-09-05"
+      },
+      {
+        "file": "categories_2026_06_25.json",
+        "url": "https://livebench.ai/categories_2026_06_25.json",
+        "sha256": "dad300ad18655b69db720e1b88fc5a5eac06c5b2f0e52c2bf50f10ff057674f3",
+        "retrieved_on": "2026-09-05"
+      }
+    ]
+  }
+]

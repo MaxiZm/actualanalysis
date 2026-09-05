@@ -1,0 +1,42 @@
+id: osworld-2.0-2026.08.08-offline
+name: OSWorld 2.0 · August 8 offline
+version: osworld-v2-2026.08.08
+family_id: osworld
+tags:
+  - agentic
+categories:
+  - computer-use
+domains:
+  agentic: 0.75
+  software-code: 0.05
+  reasoning: 0.05
+  knowledge-information: 0.05
+  communication-professional: 0.1
+holdout: semi_private
+holdout_details: Official gated task assets and evaluators from the immutable
+  2026-08-08 release.
+chance_level: 0
+obs_type: judge
+public_release_date: 2026-06-26
+tool_policy: osworld-v2-computer-use
+transform:
+  type: accuracy
+  input_scale: percent
+n_items: null
+harness_url: https://osworld-v2.xlang.ai/
+source_ids:
+  - osworld
+metadata_sources:
+  - https://github.com/xlang-ai/OSWorld-V2
+  - https://github.com/xlang-ai/OSWorld-V2/releases/tag/v2026.08.08
+  - https://raw.githubusercontent.com/xlang-ai/OSWorld-V2/v2026.08.08/benchmark_releases/osworld-v2-2026.08.08.json
+  - https://osworld-v2.xlang.ai/
+  - https://osworld-v2.xlang.ai/static/js/leaderboard.js?v=leaderboard-gpt56-cost-v1
+status: watchlist
+notes: 11 native offline rows, distinct subset from Aug-08 full dataset. Use
+  binaryAccuracy only; partialScore is not binary completion. The source
+  footnote reports 82 nominal offline tasks and August averages of seven
+  Claude Opus 5 runs and two GPT-5.6 Sol runs. Per-run task denominators and
+  uncertainty are not supplied, so nominal suite size remains descriptive
+  metadata. Preserve step budget, tool setting and effort.
+default_k: 1

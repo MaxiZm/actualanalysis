@@ -1,0 +1,28 @@
+id: cybergym-zai-1507
+name: CyberGym (Z.ai;1507tasks)
+version: 1507-vendor-unspecified
+family_id: cybergym-zai-1507
+tags:
+  - agentic
+categories:
+  - software-engineering
+domains:
+  software-code: 1
+holdout: public
+chance_level: 0
+obs_type: judge
+transform:
+  type: accuracy
+  input_scale: percent
+n_items: 1507
+harness_url: https://huggingface.co/zai-org/GLM-5.3
+source_ids:
+  - vendor-model-cards
+metadata_sources:
+  - https://huggingface.co/zai-org/GLM-5.3
+status: watchlist
+notes: "Reported metric: pass_at_1. Exact reported condition; not an alias of a
+  similarly named active benchmark. Source-specific evidence is shown for
+  inspection; missing evaluator, subset or uncertainty details are not imputed.
+  Nominal task count is descriptive and is never treated as a binary run
+  denominator."

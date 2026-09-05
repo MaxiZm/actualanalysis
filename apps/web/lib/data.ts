@@ -106,11 +106,34 @@ export interface CostPerTaskRecord {
   provider: string;
   configuration: string;
   workload: string;
+  version?: string;
   observedOn: string;
   sourceUrl: string;
   definition: string;
   methodologyUrl: string;
   redistributable: false;
+}
+
+export function costPerTaskWorkloadLabel(
+  cost: Pick<CostPerTaskRecord, "workload" | "version">,
+): string {
+  const version =
+    cost.version ?? /^aa-intelligence-index-v(.+)$/u.exec(cost.workload)?.[1];
+  return version ? `AA ${version}` : `AA · ${cost.workload}`;
+}
+
+export function costPerTaskSuiteLabel(
+  models: readonly Pick<ModelRecord, "costPerTask">[],
+): string {
+  const costs = models.flatMap((model) =>
+    model.costPerTask ? [model.costPerTask] : [],
+  );
+  const workloads = new Set(costs.map((cost) => cost.workload));
+  return workloads.size === 1 && costs[0]
+    ? costPerTaskWorkloadLabel(costs[0])
+    : workloads.size > 1
+      ? "AA · different workloads"
+      : "AA";
 }
 
 export interface ModelRecord {

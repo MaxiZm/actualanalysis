@@ -1,978 +1,1268 @@
 results:
-- model_id: claude-opus-5
-  benchmark_id: matharena-composite
-  source_id: matharena
-  score: 72.7
-  score_unit: percent
-  se: 1.378
-  config:
-    reasoning_effort: max
-    cost_usd: 4.37
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
-- model_id: gpt-5.6-sol
-  benchmark_id: matharena-composite
-  source_id: matharena
-  score: 61.6
-  score_unit: percent
-  se: 1.531
-  config:
-    reasoning_effort: max
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
-- model_id: gpt-5.5
-  benchmark_id: matharena-composite
-  source_id: matharena
-  score: 60.6
-  score_unit: percent
-  se: 1.276
-  config:
-    reasoning_effort: xhigh
-    cost_usd: 1.91
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
-- model_id: claude-fable-5
-  benchmark_id: matharena-composite
-  source_id: matharena
-  score: 53.6
-  score_unit: percent
-  se: 1.071
-  config:
-    reasoning_effort: max
-    cost_usd: 10.19
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
-- model_id: gpt-5.4-pro
-  benchmark_id: matharena-composite
-  source_id: matharena
-  score: 52.6
-  score_unit: percent
-  se: 2.5
-  config:
-    reasoning_effort: xhigh
-    cost_usd: 17.95
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
-- model_id: kimi-k3
-  benchmark_id: matharena-composite
-  source_id: matharena
-  score: 48.2
-  score_unit: percent
-  se: 0.969
-  config:
-    reasoning_effort: think
-    cost_usd: 1.41
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
-- model_id: muse-spark-1.1
-  benchmark_id: matharena-composite
-  source_id: matharena
-  score: 44.4
-  score_unit: percent
-  se: 1.429
-  config:
-    cost_usd: 0.39
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
-- model_id: claude-opus-4.8
-  benchmark_id: matharena-composite
-  source_id: matharena
-  score: 42.4
-  score_unit: percent
-  se: 0.867
-  config:
-    reasoning_effort: max
-    cost_usd: 8.01
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
-- model_id: gpt-5.4
-  benchmark_id: matharena-composite
-  source_id: matharena
-  score: 39.9
-  score_unit: percent
-  se: 1.224
-  config:
-    reasoning_effort: xhigh
-    cost_usd: 1.8
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
-- model_id: grok-4.5
-  benchmark_id: matharena-composite
-  source_id: matharena
-  score: 38.0
-  score_unit: percent
-  se: 1.327
-  config:
-    cost_usd: 0.73
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
-- model_id: gpt-5.2
-  benchmark_id: matharena-composite
-  source_id: matharena
-  score: 36.9
-  score_unit: percent
-  se: 1.786
-  config:
-    reasoning_effort: xhigh
-    cost_usd: 1.22
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
-- model_id: gemini-3.8-flash
-  benchmark_id: matharena-composite
-  source_id: matharena
-  score: 35.3
-  score_unit: percent
-  se: 0.918
-  config:
-    cost_usd: 0.47
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
-- model_id: gemini-3.1-pro
-  benchmark_id: matharena-composite
-  source_id: matharena
-  score: 34.0
-  score_unit: percent
-  se: 0.663
-  config:
-    cost_usd: 0.52
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
-- model_id: gemini-3.7-flash
-  benchmark_id: matharena-composite
-  source_id: matharena
-  score: 30.0
-  score_unit: percent
-  se: 1.071
-  config:
-    cost_usd: 0.43
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
-- model_id: gpt-5.2
-  benchmark_id: matharena-composite
-  source_id: matharena
-  score: 26.8
-  score_unit: percent
-  se: 0.969
-  config:
-    reasoning_effort: high
-    cost_usd: 0.88
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
-- model_id: claude-opus-4.6
-  benchmark_id: matharena-composite
-  source_id: matharena
-  score: 25.5
-  score_unit: percent
-  se: 0.816
-  config:
-    reasoning_effort: high
-    cost_usd: 3.71
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
-- model_id: glm-5.2
-  benchmark_id: matharena-composite
-  source_id: matharena
-  score: 24.8
-  score_unit: percent
-  se: 0.714
-  config:
-    cost_usd: 1.32
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
-- model_id: claude-opus-4.7
-  benchmark_id: matharena-composite
-  source_id: matharena
-  score: 21.3
-  score_unit: percent
-  se: 0.918
-  config:
-    reasoning_effort: xhigh
-    cost_usd: 3.82
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
-- model_id: gemini-3-pro
-  benchmark_id: matharena-composite
-  source_id: matharena
-  score: 20.8
-  score_unit: percent
-  se: 1.224
-  config:
-    variant: preview
-    cost_usd: 1.04
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
-- model_id: gemini-3-flash
-  benchmark_id: matharena-composite
-  source_id: matharena
-  score: 20.6
-  score_unit: percent
-  se: 1.173
-  config:
-    cost_usd: 0.32
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
-- model_id: glm-5
-  benchmark_id: matharena-composite
-  source_id: matharena
-  score: 19.7
-  score_unit: percent
-  se: 1.071
-  config:
-    cost_usd: 0.48
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
-- model_id: deepseek-v3.2
-  benchmark_id: matharena-composite
-  source_id: matharena
-  score: 19.1
-  sample_only: true
-  score_unit: percent
-  se: 1.48
-  config:
-    variant: Speciale
-    cost_usd: 0.062
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
-- model_id: qwen3.5-397b-a17b
-  benchmark_id: matharena-composite
-  source_id: matharena
-  score: 18.5
-  score_unit: percent
-  se: 1.378
-  config:
-    cost_usd: 0.43
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
-- model_id: gemini-3.1-pro
-  benchmark_id: matharena-composite
-  source_id: matharena
-  score: 17.2
-  score_unit: percent
-  se: 1.735
-  config:
-    reasoning_effort: low
-    cost_usd: 0.084
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
-- model_id: kimi-k2.5
-  benchmark_id: matharena-composite
-  source_id: matharena
-  score: 16.9
-  score_unit: percent
-  se: 1.327
-  config:
-    reasoning_effort: think
-    cost_usd: 0.39
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
-- model_id: gpt-5-2025-08-07
-  benchmark_id: matharena-composite
-  source_id: matharena
-  score: 16.0
-  score_unit: percent
-  se: 1.531
-  config:
-    reasoning_effort: high
-    cost_usd: 0.87
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
-- model_id: gpt-5.1
-  benchmark_id: matharena-composite
-  source_id: matharena
-  score: 15.8
-  score_unit: percent
-  se: 1.327
-  config:
-    reasoning_effort: high
-    cost_usd: 0.99
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
-- model_id: glm-4.6
-  benchmark_id: matharena-composite
-  source_id: matharena
-  score: 14.9
-  score_unit: percent
-  se: 1.582
-  config:
-    cost_usd: 0.22
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
-- model_id: deepseek-v3.2
-  benchmark_id: matharena-composite
-  source_id: matharena
-  score: 14.3
-  sample_only: true
-  score_unit: percent
-  se: 1.378
-  config:
-    reasoning_effort: think
-    cost_usd: 0.041
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
-- model_id: kimi-k2
-  benchmark_id: matharena-composite
-  sample_only: true
-  source_id: matharena
-  score: 14.2
-  score_unit: percent
-  se: 1.429
-  config:
-    reasoning_effort: thinking
-    cost_usd: 0.36
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
-- model_id: grok-4.1-fast
-  benchmark_id: matharena-composite
-  source_id: matharena
-  score: 13.3
-  score_unit: percent
-  se: 1.429
-  config:
-    variant: reasoning
-    cost_usd: 0.04
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
-- model_id: grok-4
-  benchmark_id: matharena-composite
-  source_id: matharena
-  score: 13.2
-  score_unit: percent
-  se: 1.48
-  config:
-    cost_usd: 1.59
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
-- model_id: gpt-oss-120b
-  benchmark_id: matharena-composite
-  source_id: matharena
-  score: 13.1
-  score_unit: percent
-  se: 1.48
-  config:
-    reasoning_effort: high
-    cost_usd: 0.073
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
-- model_id: o4-mini
-  benchmark_id: matharena-composite
-  source_id: matharena
-  score: 12.8
-  score_unit: percent
-  se: 1.48
-  config:
-    reasoning_effort: high
-    cost_usd: 0.35
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
-- model_id: gpt-5-mini
-  benchmark_id: matharena-composite
-  source_id: matharena
-  score: 12.8
-  score_unit: percent
-  se: 1.48
-  config:
-    reasoning_effort: high
-    cost_usd: 0.15
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
-- model_id: grok-4-fast
-  benchmark_id: matharena-composite
-  source_id: matharena
-  score: 12.6
-  score_unit: percent
-  se: 1.429
-  config:
-    variant: reasoning
-    cost_usd: 0.034
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
-- model_id: deepseek-v3.2
-  benchmark_id: matharena-composite
-  source_id: matharena
-  score: 12.2
-  sample_only: true
-  score_unit: percent
-  se: 1.48
-  config:
-    variant: Exp
-    reasoning_effort: think
-    cost_usd: 0.038
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
-- model_id: o3
-  benchmark_id: matharena-composite
-  source_id: matharena
-  score: 11.9
-  score_unit: percent
-  se: 1.582
-  config:
-    reasoning_effort: high
-    cost_usd: 0.58
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
-- model_id: glm-4.5
-  benchmark_id: matharena-composite
-  source_id: matharena
-  score: 10.8
-  score_unit: percent
-  se: 1.531
-  config:
-    cost_usd: 0.28
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
-- model_id: gpt-5-nano
-  benchmark_id: matharena-composite
-  source_id: matharena
-  score: 10.3
-  score_unit: percent
-  se: 1.48
-  config:
-    reasoning_effort: high
-    cost_usd: 0.073
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
-- model_id: gemini-2.5-pro-20250506
-  benchmark_id: matharena-composite
-  source_id: matharena
-  score: 10.3
-  score_unit: percent
-  se: 1.633
-  config: {}
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
-- model_id: gemini-2.5-pro
-  benchmark_id: matharena-composite
-  source_id: matharena
-  score: 10.2
-  score_unit: percent
-  se: 1.429
-  config:
-    cost_usd: 1.18
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
-- model_id: claude-sonnet-4.5
-  benchmark_id: matharena-composite
-  source_id: matharena
-  score: 10.1
-  score_unit: percent
-  se: 1.48
-  config:
-    reasoning_effort: think
-    cost_usd: 1.25
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
-- model_id: o3-mini
-  benchmark_id: matharena-composite
-  source_id: matharena
-  score: 8.8
-  score_unit: percent
-  se: 1.582
-  config:
-    reasoning_effort: high
-    cost_usd: 0.32
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
-- model_id: o4-mini
-  benchmark_id: matharena-composite
-  source_id: matharena
-  score: 8.7
-  score_unit: percent
-  se: 1.531
-  config:
-    reasoning_effort: medium
-    cost_usd: 0.16
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
-- model_id: qwen3-235b-a22b
-  benchmark_id: matharena-composite
-  source_id: matharena
-  score: 8.2
-  score_unit: percent
-  se: 1.582
-  config:
-    cost_usd: 0.052
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
-- model_id: gemini-2.5-flash
-  benchmark_id: matharena-composite
-  source_id: matharena
-  score: 7.6
-  score_unit: percent
-  se: 1.582
-  config:
-    variant: thinking
-    cost_usd: 0.48
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
-- model_id: claude-opus-4
-  benchmark_id: matharena-composite
-  source_id: matharena
-  score: 7.2
-  score_unit: percent
-  se: 1.633
-  config:
-    reasoning_effort: think
-    cost_usd: 6.88
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
-- model_id: o1
-  benchmark_id: matharena-composite
-  sample_only: true
-  source_id: matharena
-  score: 7.1
-  score_unit: percent
-  se: 1.633
-  config:
-    reasoning_effort: medium
-    cost_usd: 4.52
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
-- model_id: o3-mini
-  benchmark_id: matharena-composite
-  source_id: matharena
-  score: 6.9
-  score_unit: percent
-  se: 1.633
-  config:
-    reasoning_effort: medium
-    cost_usd: 0.17
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
-- model_id: o4-mini
-  benchmark_id: matharena-composite
-  source_id: matharena
-  score: 5.8
-  score_unit: percent
-  se: 1.582
-  config:
-    reasoning_effort: low
-    cost_usd: 0.062
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
-- model_id: gemini-2.0-flash-thinking
-  benchmark_id: matharena-composite
-  sample_only: true
-  source_id: matharena
-  score: 4.7
-  score_unit: percent
-  se: 1.582
-  config: {}
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
-- model_id: claude-3.7-sonnet
-  benchmark_id: matharena-composite
-  source_id: matharena
-  score: 4.3
-  score_unit: percent
-  se: 1.48
-  config:
-    reasoning_effort: think
-    cost_usd: 2.2
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
-- model_id: o3-mini
-  benchmark_id: matharena-composite
-  source_id: matharena
-  score: 4.0
-  score_unit: percent
-  se: 1.48
-  config:
-    reasoning_effort: low
-    cost_usd: 0.064
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
-- model_id: claude-3.5-sonnet-20241022
-  benchmark_id: matharena-composite
-  source_id: matharena
-  score: 1.1
-  score_unit: percent
-  se: 0.612
-  config:
-    cost_usd: 0.049
-  observed_on: '2026-09-04'
-  url: https://matharena.ai/models
-  provenance: independent
-  notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted accuracy across non-deprecated
-    competitions (ArXivLean, BrokenArXiv, ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov
-    2025/Feb 2026, BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026, IMO 2025, IMC
-    2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler; see https://matharena.ai/competitions).
-    Source shows a 95% CI (±X%); se = half-width / 1.96. No explicit ''last updated'' date is published
-    on the live leaderboard, so observed_on is the scrape date.'
+  - model_id: claude-opus-5
+    benchmark_id: matharena-composite
+    source_id: matharena
+    score: 72.7
+    score_unit: percent
+    se: 1.378
+    config:
+      reasoning_effort: max
+      cost_usd: 4.37
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date.'
+  - model_id: gpt-5.6-sol
+    benchmark_id: matharena-composite
+    source_id: matharena
+    score: 61.6
+    score_unit: percent
+    se: 1.531
+    config:
+      reasoning_effort: max
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date.'
+  - model_id: gpt-5.5
+    benchmark_id: matharena-composite
+    source_id: matharena
+    score: 60.6
+    score_unit: percent
+    se: 1.276
+    config:
+      reasoning_effort: xhigh
+      cost_usd: 1.91
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date.'
+  - model_id: claude-fable-5
+    benchmark_id: matharena-composite
+    source_id: matharena
+    score: 53.6
+    score_unit: percent
+    se: 1.071
+    config:
+      reasoning_effort: max
+      cost_usd: 10.19
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date. Superseded by the
+      2026-09-05 coverage audit: Rolling IRT composites must be refreshed
+      together from one captured full catalog. Remove old score/interval/cost
+      even when the point estimate happens to be unchanged.'
+    sample_only: true
+  - model_id: gpt-5.4-pro
+    benchmark_id: matharena-composite
+    source_id: matharena
+    score: 52.6
+    score_unit: percent
+    se: 2.5
+    config:
+      reasoning_effort: xhigh
+      cost_usd: 17.95
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date. Superseded by the
+      2026-09-05 coverage audit: Rolling IRT composites must be refreshed
+      together from one captured full catalog. Remove old score/interval/cost
+      even when the point estimate happens to be unchanged.'
+    sample_only: true
+  - model_id: kimi-k3
+    benchmark_id: matharena-composite
+    source_id: matharena
+    score: 48.2
+    score_unit: percent
+    se: 0.969
+    config:
+      reasoning_effort: think
+      cost_usd: 1.41
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date.'
+  - model_id: muse-spark-1.1
+    benchmark_id: matharena-composite
+    source_id: matharena
+    score: 44.4
+    score_unit: percent
+    se: 1.429
+    config:
+      cost_usd: 0.39
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date. Superseded by the
+      2026-09-05 coverage audit: Rolling IRT composites must be refreshed
+      together from one captured full catalog. Remove old score/interval/cost
+      even when the point estimate happens to be unchanged.'
+    sample_only: true
+  - model_id: claude-opus-4.8
+    benchmark_id: matharena-composite
+    source_id: matharena
+    score: 42.4
+    score_unit: percent
+    se: 0.867
+    config:
+      reasoning_effort: max
+      cost_usd: 8.01
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date. Superseded by the
+      2026-09-05 coverage audit: Rolling IRT composites must be refreshed
+      together from one captured full catalog. Remove old score/interval/cost
+      even when the point estimate happens to be unchanged.'
+    sample_only: true
+  - model_id: gpt-5.4
+    benchmark_id: matharena-composite
+    source_id: matharena
+    score: 39.9
+    score_unit: percent
+    se: 1.224
+    config:
+      reasoning_effort: xhigh
+      cost_usd: 1.8
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date. Superseded by the
+      2026-09-05 coverage audit: Rolling IRT composites must be refreshed
+      together from one captured full catalog. Remove old score/interval/cost
+      even when the point estimate happens to be unchanged.'
+    sample_only: true
+  - model_id: grok-4.5
+    benchmark_id: matharena-composite
+    source_id: matharena
+    score: 38.0
+    score_unit: percent
+    se: 1.327
+    config:
+      cost_usd: 0.73
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date. Superseded by the
+      2026-09-05 coverage audit: Rolling IRT composites must be refreshed
+      together from one captured full catalog. Remove old score/interval/cost
+      even when the point estimate happens to be unchanged.'
+    sample_only: true
+  - model_id: gpt-5.2
+    benchmark_id: matharena-composite
+    source_id: matharena
+    score: 36.9
+    score_unit: percent
+    se: 1.786
+    config:
+      reasoning_effort: xhigh
+      cost_usd: 1.22
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date. Superseded by the
+      2026-09-05 coverage audit: Rolling IRT composites must be refreshed
+      together from one captured full catalog. Remove old score/interval/cost
+      even when the point estimate happens to be unchanged.'
+    sample_only: true
+  - model_id: gemini-3.8-flash
+    benchmark_id: matharena-composite
+    source_id: matharena
+    score: 35.3
+    score_unit: percent
+    se: 0.918
+    config:
+      cost_usd: 0.47
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date. Superseded by the
+      2026-09-05 coverage audit: Rolling IRT composites must be refreshed
+      together from one captured full catalog. Remove old score/interval/cost
+      even when the point estimate happens to be unchanged.'
+    sample_only: true
+  - model_id: gemini-3.1-pro
+    benchmark_id: matharena-composite
+    source_id: matharena
+    score: 34.0
+    score_unit: percent
+    se: 0.663
+    config:
+      cost_usd: 0.52
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date. Superseded by the
+      2026-09-05 coverage audit: Rolling IRT composites must be refreshed
+      together from one captured full catalog. Remove old score/interval/cost
+      even when the point estimate happens to be unchanged.'
+    sample_only: true
+  - model_id: gemini-3.7-flash
+    benchmark_id: matharena-composite
+    source_id: matharena
+    score: 30.0
+    score_unit: percent
+    se: 1.071
+    config:
+      cost_usd: 0.43
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date. Superseded by the
+      2026-09-05 coverage audit: Rolling IRT composites must be refreshed
+      together from one captured full catalog. Remove old score/interval/cost
+      even when the point estimate happens to be unchanged.'
+    sample_only: true
+  - model_id: gpt-5.2
+    benchmark_id: matharena-composite
+    source_id: matharena
+    score: 26.8
+    score_unit: percent
+    se: 0.969
+    config:
+      reasoning_effort: high
+      cost_usd: 0.88
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date. Superseded by the
+      2026-09-05 coverage audit: Rolling IRT composites must be refreshed
+      together from one captured full catalog. Remove old score/interval/cost
+      even when the point estimate happens to be unchanged.'
+    sample_only: true
+  - model_id: claude-opus-4.6
+    benchmark_id: matharena-composite
+    source_id: matharena
+    score: 25.5
+    score_unit: percent
+    se: 0.816
+    config:
+      reasoning_effort: high
+      cost_usd: 3.71
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date. Superseded by the
+      2026-09-05 coverage audit: Rolling IRT composites must be refreshed
+      together from one captured full catalog. Remove old score/interval/cost
+      even when the point estimate happens to be unchanged.'
+    sample_only: true
+  - model_id: glm-5.2
+    benchmark_id: matharena-composite
+    source_id: matharena
+    score: 24.8
+    score_unit: percent
+    se: 0.714
+    config:
+      cost_usd: 1.32
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date. Superseded by the
+      2026-09-05 coverage audit: Rolling IRT composites must be refreshed
+      together from one captured full catalog. Remove old score/interval/cost
+      even when the point estimate happens to be unchanged.'
+    sample_only: true
+  - model_id: claude-opus-4.7
+    benchmark_id: matharena-composite
+    source_id: matharena
+    score: 21.3
+    score_unit: percent
+    se: 0.918
+    config:
+      reasoning_effort: xhigh
+      cost_usd: 3.82
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date. Superseded by the
+      2026-09-05 coverage audit: Rolling IRT composites must be refreshed
+      together from one captured full catalog. Remove old score/interval/cost
+      even when the point estimate happens to be unchanged.'
+    sample_only: true
+  - model_id: gemini-3-pro
+    benchmark_id: matharena-composite
+    source_id: matharena
+    score: 20.8
+    score_unit: percent
+    se: 1.224
+    config:
+      variant: preview
+      cost_usd: 1.04
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date. Superseded by the
+      2026-09-05 coverage audit: Rolling IRT composites must be refreshed
+      together from one captured full catalog. Remove old score/interval/cost
+      even when the point estimate happens to be unchanged.'
+    sample_only: true
+  - model_id: gemini-3-flash
+    benchmark_id: matharena-composite
+    source_id: matharena
+    score: 20.6
+    score_unit: percent
+    se: 1.173
+    config:
+      cost_usd: 0.32
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date. Superseded by the
+      2026-09-05 coverage audit: Rolling IRT composites must be refreshed
+      together from one captured full catalog. Remove old score/interval/cost
+      even when the point estimate happens to be unchanged.'
+    sample_only: true
+  - model_id: glm-5
+    benchmark_id: matharena-composite
+    source_id: matharena
+    score: 19.7
+    score_unit: percent
+    se: 1.071
+    config:
+      cost_usd: 0.48
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date. Superseded by the
+      2026-09-05 coverage audit: Rolling IRT composites must be refreshed
+      together from one captured full catalog. Remove old score/interval/cost
+      even when the point estimate happens to be unchanged.'
+    sample_only: true
+  - model_id: deepseek-v3.2
+    benchmark_id: matharena-composite
+    source_id: matharena
+    score: 19.1
+    sample_only: true
+    score_unit: percent
+    se: 1.48
+    config:
+      variant: Speciale
+      cost_usd: 0.062
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date.'
+  - model_id: qwen3.5-397b-a17b
+    benchmark_id: matharena-composite
+    source_id: matharena
+    score: 18.5
+    score_unit: percent
+    se: 1.378
+    config:
+      cost_usd: 0.43
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date. Superseded by the
+      2026-09-05 coverage audit: Rolling IRT composites must be refreshed
+      together from one captured full catalog. Remove old score/interval/cost
+      even when the point estimate happens to be unchanged.'
+    sample_only: true
+  - model_id: gemini-3.1-pro
+    benchmark_id: matharena-composite
+    source_id: matharena
+    score: 17.2
+    score_unit: percent
+    se: 1.735
+    config:
+      reasoning_effort: low
+      cost_usd: 0.084
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date. Superseded by the
+      2026-09-05 coverage audit: Rolling IRT composites must be refreshed
+      together from one captured full catalog. Remove old score/interval/cost
+      even when the point estimate happens to be unchanged.'
+    sample_only: true
+  - model_id: kimi-k2.5
+    benchmark_id: matharena-composite
+    source_id: matharena
+    score: 16.9
+    score_unit: percent
+    se: 1.327
+    config:
+      reasoning_effort: think
+      cost_usd: 0.39
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date. Superseded by the
+      2026-09-05 coverage audit: Rolling IRT composites must be refreshed
+      together from one captured full catalog. Remove old score/interval/cost
+      even when the point estimate happens to be unchanged.'
+    sample_only: true
+  - model_id: gpt-5-2025-08-07
+    benchmark_id: matharena-composite
+    source_id: matharena
+    score: 16.0
+    score_unit: percent
+    se: 1.531
+    config:
+      reasoning_effort: high
+      cost_usd: 0.87
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date. Superseded by the
+      2026-09-05 coverage audit: Rolling IRT composites must be refreshed
+      together from one captured full catalog. Remove old score/interval/cost
+      even when the point estimate happens to be unchanged.'
+    sample_only: true
+  - model_id: gpt-5.1
+    benchmark_id: matharena-composite
+    source_id: matharena
+    score: 15.8
+    score_unit: percent
+    se: 1.327
+    config:
+      reasoning_effort: high
+      cost_usd: 0.99
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date. Superseded by the
+      2026-09-05 coverage audit: Rolling IRT composites must be refreshed
+      together from one captured full catalog. Remove old score/interval/cost
+      even when the point estimate happens to be unchanged.'
+    sample_only: true
+  - model_id: glm-4.6
+    benchmark_id: matharena-composite
+    source_id: matharena
+    score: 14.9
+    score_unit: percent
+    se: 1.582
+    config:
+      cost_usd: 0.22
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date. Superseded by the
+      2026-09-05 coverage audit: Rolling IRT composites must be refreshed
+      together from one captured full catalog. Remove old score/interval/cost
+      even when the point estimate happens to be unchanged.'
+    sample_only: true
+  - model_id: deepseek-v3.2
+    benchmark_id: matharena-composite
+    source_id: matharena
+    score: 14.3
+    sample_only: true
+    score_unit: percent
+    se: 1.378
+    config:
+      reasoning_effort: think
+      cost_usd: 0.041
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date.'
+  - model_id: kimi-k2
+    benchmark_id: matharena-composite
+    sample_only: true
+    source_id: matharena
+    score: 14.2
+    score_unit: percent
+    se: 1.429
+    config:
+      reasoning_effort: thinking
+      cost_usd: 0.36
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date.'
+  - model_id: grok-4.1-fast
+    benchmark_id: matharena-composite
+    source_id: matharena
+    score: 13.3
+    score_unit: percent
+    se: 1.429
+    config:
+      variant: reasoning
+      cost_usd: 0.04
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date. Superseded by the
+      2026-09-05 coverage audit: Rolling IRT composites must be refreshed
+      together from one captured full catalog. Remove old score/interval/cost
+      even when the point estimate happens to be unchanged.'
+    sample_only: true
+  - model_id: grok-4
+    benchmark_id: matharena-composite
+    source_id: matharena
+    score: 13.2
+    score_unit: percent
+    se: 1.48
+    config:
+      cost_usd: 1.59
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date. Superseded by the
+      2026-09-05 coverage audit: Rolling IRT composites must be refreshed
+      together from one captured full catalog. Remove old score/interval/cost
+      even when the point estimate happens to be unchanged.'
+    sample_only: true
+  - model_id: gpt-oss-120b
+    benchmark_id: matharena-composite
+    source_id: matharena
+    score: 13.1
+    score_unit: percent
+    se: 1.48
+    config:
+      reasoning_effort: high
+      cost_usd: 0.073
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date. Superseded by the
+      2026-09-05 coverage audit: Rolling IRT composites must be refreshed
+      together from one captured full catalog. Remove old score/interval/cost
+      even when the point estimate happens to be unchanged.'
+    sample_only: true
+  - model_id: o4-mini
+    benchmark_id: matharena-composite
+    source_id: matharena
+    score: 12.8
+    score_unit: percent
+    se: 1.48
+    config:
+      reasoning_effort: high
+      cost_usd: 0.35
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date. Superseded by the
+      2026-09-05 coverage audit: Rolling IRT composites must be refreshed
+      together from one captured full catalog. Remove old score/interval/cost
+      even when the point estimate happens to be unchanged.'
+    sample_only: true
+  - model_id: gpt-5-mini
+    benchmark_id: matharena-composite
+    source_id: matharena
+    score: 12.8
+    score_unit: percent
+    se: 1.48
+    config:
+      reasoning_effort: high
+      cost_usd: 0.15
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date. Superseded by the
+      2026-09-05 coverage audit: Rolling IRT composites must be refreshed
+      together from one captured full catalog. Remove old score/interval/cost
+      even when the point estimate happens to be unchanged.'
+    sample_only: true
+  - model_id: grok-4-fast
+    benchmark_id: matharena-composite
+    source_id: matharena
+    score: 12.6
+    score_unit: percent
+    se: 1.429
+    config:
+      variant: reasoning
+      cost_usd: 0.034
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date. Superseded by the
+      2026-09-05 coverage audit: Rolling IRT composites must be refreshed
+      together from one captured full catalog. Remove old score/interval/cost
+      even when the point estimate happens to be unchanged.'
+    sample_only: true
+  - model_id: deepseek-v3.2
+    benchmark_id: matharena-composite
+    source_id: matharena
+    score: 12.2
+    sample_only: true
+    score_unit: percent
+    se: 1.48
+    config:
+      variant: Exp
+      reasoning_effort: think
+      cost_usd: 0.038
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date.'
+  - model_id: o3
+    benchmark_id: matharena-composite
+    source_id: matharena
+    score: 11.9
+    score_unit: percent
+    se: 1.582
+    config:
+      reasoning_effort: high
+      cost_usd: 0.58
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date. Superseded by the
+      2026-09-05 coverage audit: Rolling IRT composites must be refreshed
+      together from one captured full catalog. Remove old score/interval/cost
+      even when the point estimate happens to be unchanged.'
+    sample_only: true
+  - model_id: glm-4.5
+    benchmark_id: matharena-composite
+    source_id: matharena
+    score: 10.8
+    score_unit: percent
+    se: 1.531
+    config:
+      cost_usd: 0.28
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date. Superseded by the
+      2026-09-05 coverage audit: Rolling IRT composites must be refreshed
+      together from one captured full catalog. Remove old score/interval/cost
+      even when the point estimate happens to be unchanged.'
+    sample_only: true
+  - model_id: gpt-5-nano
+    benchmark_id: matharena-composite
+    source_id: matharena
+    score: 10.3
+    score_unit: percent
+    se: 1.48
+    config:
+      reasoning_effort: high
+      cost_usd: 0.073
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date. Superseded by the
+      2026-09-05 coverage audit: Rolling IRT composites must be refreshed
+      together from one captured full catalog. Remove old score/interval/cost
+      even when the point estimate happens to be unchanged.'
+    sample_only: true
+  - model_id: gemini-2.5-pro-20250506
+    benchmark_id: matharena-composite
+    source_id: matharena
+    score: 10.3
+    score_unit: percent
+    se: 1.633
+    config: {}
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date. Superseded by the
+      2026-09-05 coverage audit: Rolling IRT composites must be refreshed
+      together from one captured full catalog. Remove old score/interval/cost
+      even when the point estimate happens to be unchanged.'
+    sample_only: true
+  - model_id: gemini-2.5-pro
+    benchmark_id: matharena-composite
+    source_id: matharena
+    score: 10.2
+    score_unit: percent
+    se: 1.429
+    config:
+      cost_usd: 1.18
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date. Superseded by the
+      2026-09-05 coverage audit: Rolling IRT composites must be refreshed
+      together from one captured full catalog. Remove old score/interval/cost
+      even when the point estimate happens to be unchanged.'
+    sample_only: true
+  - model_id: claude-sonnet-4.5
+    benchmark_id: matharena-composite
+    source_id: matharena
+    score: 10.1
+    score_unit: percent
+    se: 1.48
+    config:
+      reasoning_effort: think
+      cost_usd: 1.25
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date. Superseded by the
+      2026-09-05 coverage audit: Rolling IRT composites must be refreshed
+      together from one captured full catalog. Remove old score/interval/cost
+      even when the point estimate happens to be unchanged.'
+    sample_only: true
+  - model_id: o3-mini
+    benchmark_id: matharena-composite
+    source_id: matharena
+    score: 8.8
+    score_unit: percent
+    se: 1.582
+    config:
+      reasoning_effort: high
+      cost_usd: 0.32
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date. Superseded by the
+      2026-09-05 coverage audit: Rolling IRT composites must be refreshed
+      together from one captured full catalog. Remove old score/interval/cost
+      even when the point estimate happens to be unchanged.'
+    sample_only: true
+  - model_id: o4-mini
+    benchmark_id: matharena-composite
+    source_id: matharena
+    score: 8.7
+    score_unit: percent
+    se: 1.531
+    config:
+      reasoning_effort: medium
+      cost_usd: 0.16
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date. Superseded by the
+      2026-09-05 coverage audit: Rolling IRT composites must be refreshed
+      together from one captured full catalog. Remove old score/interval/cost
+      even when the point estimate happens to be unchanged.'
+    sample_only: true
+  - model_id: qwen3-235b-a22b
+    benchmark_id: matharena-composite
+    source_id: matharena
+    score: 8.2
+    score_unit: percent
+    se: 1.582
+    config:
+      cost_usd: 0.052
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date. Superseded by the
+      2026-09-05 coverage audit: Rolling IRT composites must be refreshed
+      together from one captured full catalog. Remove old score/interval/cost
+      even when the point estimate happens to be unchanged.'
+    sample_only: true
+  - model_id: gemini-2.5-flash
+    benchmark_id: matharena-composite
+    source_id: matharena
+    score: 7.6
+    score_unit: percent
+    se: 1.582
+    config:
+      variant: thinking
+      cost_usd: 0.48
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date. Superseded by the
+      2026-09-05 coverage audit: Rolling IRT composites must be refreshed
+      together from one captured full catalog. Remove old score/interval/cost
+      even when the point estimate happens to be unchanged.'
+    sample_only: true
+  - model_id: claude-opus-4
+    benchmark_id: matharena-composite
+    source_id: matharena
+    score: 7.2
+    score_unit: percent
+    se: 1.633
+    config:
+      reasoning_effort: think
+      cost_usd: 6.88
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date. Superseded by the
+      2026-09-05 coverage audit: Rolling IRT composites must be refreshed
+      together from one captured full catalog. Remove old score/interval/cost
+      even when the point estimate happens to be unchanged.'
+    sample_only: true
+  - model_id: o1
+    benchmark_id: matharena-composite
+    sample_only: true
+    source_id: matharena
+    score: 7.1
+    score_unit: percent
+    se: 1.633
+    config:
+      reasoning_effort: medium
+      cost_usd: 4.52
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date.'
+  - model_id: o3-mini
+    benchmark_id: matharena-composite
+    source_id: matharena
+    score: 6.9
+    score_unit: percent
+    se: 1.633
+    config:
+      reasoning_effort: medium
+      cost_usd: 0.17
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date. Superseded by the
+      2026-09-05 coverage audit: Rolling IRT composites must be refreshed
+      together from one captured full catalog. Remove old score/interval/cost
+      even when the point estimate happens to be unchanged.'
+    sample_only: true
+  - model_id: o4-mini
+    benchmark_id: matharena-composite
+    source_id: matharena
+    score: 5.8
+    score_unit: percent
+    se: 1.582
+    config:
+      reasoning_effort: low
+      cost_usd: 0.062
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date. Superseded by the
+      2026-09-05 coverage audit: Rolling IRT composites must be refreshed
+      together from one captured full catalog. Remove old score/interval/cost
+      even when the point estimate happens to be unchanged.'
+    sample_only: true
+  - model_id: gemini-2.0-flash-thinking
+    benchmark_id: matharena-composite
+    sample_only: true
+    source_id: matharena
+    score: 4.7
+    score_unit: percent
+    se: 1.582
+    config: {}
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date.'
+  - model_id: claude-3.7-sonnet
+    benchmark_id: matharena-composite
+    source_id: matharena
+    score: 4.3
+    score_unit: percent
+    se: 1.48
+    config:
+      reasoning_effort: think
+      cost_usd: 2.2
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date. Superseded by the
+      2026-09-05 coverage audit: Rolling IRT composites must be refreshed
+      together from one captured full catalog. Remove old score/interval/cost
+      even when the point estimate happens to be unchanged.'
+    sample_only: true
+  - model_id: o3-mini
+    benchmark_id: matharena-composite
+    source_id: matharena
+    score: 4.0
+    score_unit: percent
+    se: 1.48
+    config:
+      reasoning_effort: low
+      cost_usd: 0.064
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date. Superseded by the
+      2026-09-05 coverage audit: Rolling IRT composites must be refreshed
+      together from one captured full catalog. Remove old score/interval/cost
+      even when the point estimate happens to be unchanged.'
+    sample_only: true
+  - model_id: claude-3.5-sonnet-20241022
+    benchmark_id: matharena-composite
+    source_id: matharena
+    score: 1.1
+    score_unit: percent
+    se: 0.612
+    config:
+      cost_usd: 0.049
+    observed_on: '2026-09-04'
+    url: https://matharena.ai/models
+    provenance: independent
+    notes: 'MathArena ''Expected performance'' composite: IRT-model mean predicted
+      accuracy across non-deprecated competitions (ArXivLean, BrokenArXiv,
+      ArXivMath, Kangaroo 2025, AIME 2025/2026, HMMT Feb 2025/Nov 2025/Feb 2026,
+      BRUMO 2025, SMT 2025, CMIMC 2025, Apex/Apex Shortlist, USAMO 2025/2026,
+      IMO 2025, IMC 2025, Miklos Schweitzer 2025, Putnam 2025, Project Euler;
+      see https://matharena.ai/competitions). Source shows a 95% CI (±X%); se =
+      half-width / 1.96. No explicit ''last updated'' date is published on the
+      live leaderboard, so observed_on is the scrape date. Superseded by the
+      2026-09-05 coverage audit: Rolling IRT composites must be refreshed
+      together from one captured full catalog. Remove old score/interval/cost
+      even when the point estimate happens to be unchanged.'
+    sample_only: true

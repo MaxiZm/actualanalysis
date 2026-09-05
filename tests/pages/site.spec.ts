@@ -57,9 +57,9 @@ test("loads the branded static site, assets and snapshot resources", async ({
     .click();
   await expect(
     page.getByRole("combobox", { name: "Runtime metric" }),
-  ).toContainText("AA cost per task");
+  ).toContainText("AA 4.2 cost per task");
   await expect(
-    page.getByRole("img", { name: "Mixed vs AA cost per task", exact: true }),
+    page.getByRole("img", { name: "Mixed vs AA 4.2 cost per task", exact: true }),
   ).toBeVisible();
   for (const width of [320, 375, 414, 768]) {
     await page.setViewportSize({ width, height: 900 });

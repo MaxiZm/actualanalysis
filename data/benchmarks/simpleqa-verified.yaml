@@ -3,41 +3,40 @@ name: SimpleQA Verified
 version: paper-v2
 grader_version: Appendix-A prompted autorater; production judge revision unresolved
 family_id: simpleqa
-aliases: [ SimpleQA-Verified, Simple QA Verified ]
-tags: [ chat ]
-categories: [ factuality ]
+aliases:
+  - SimpleQA-Verified
+  - Simple QA Verified
+tags:
+  - chat
+categories:
+  - factuality
 domains:
-  {
-    agentic: 0,
-    software-code: 0,
-    reasoning: 0,
-    knowledge-information: 0.95,
-    communication-professional: 0.05
-  }
+  agentic: 0
+  software-code: 0
+  reasoning: 0
+  knowledge-information: 0.95
+  communication-professional: 0.05
 holdout: public
 chance_level: 0
-obs_type: count
+obs_type: judge
 public_release_date: 2025-09-09
-default_k: 1
 tool_policy: none
-transform: { type: accuracy, input_scale: percent }
-n_items: 1000
+transform:
+  type: accuracy
+  input_scale: percent
+n_items: null
 harness_url: https://www.kaggle.com/benchmarks/deepmind/simpleqa-verified
-source_ids: [ kaggle, epoch, vendor-model-cards ]
+source_ids:
+  - kaggle
+  - epoch
+  - vendor-model-cards
 metadata_sources:
   - https://arxiv.org/html/2509.07968
   - https://www.kaggle.com/benchmarks/deepmind/simpleqa-verified
   - https://epoch.ai/benchmarks/simple-qa-verified
   - https://gist.github.com/tadamcz/27b929c0923a4c539b0655536cd220ea
-status: active
-promotion_rule: "Promoted to active under method 1.2.3: the benchmark has
-  independent results for ≥8 registered models; metadata pins that are still
-  missing are carried as metadata_incomplete on each observation instead of
-  blocking the fit."
-notes: The fitted Epoch observations measure accuracy, the proportion of the 1,000
-  questions answered correctly; incorrect answers and abstentions both count as
-  unsuccessful. This differs from the official Google/Kaggle F1 metric, the
-  harmonic mean of overall accuracy and accuracy among attempted questions.
-  F1 observations must not be treated as binomial accuracy or pooled with Epoch
-  accuracy. Epoch added an anti-abstention prompt on 2026-08-27 and retired its
-  earlier prompt scores; observation metadata should identify that protocol.
+status: retired
+notes: Retired unspecified condition. Earlier ECI best-per-model rows omitted
+  native task revision, effort, run ID and uncertainty. Replaced by distinct
+  native Epoch 1.0.0 and 1.2.0 accuracy conditions. Google/Kaggle F1 is a
+  different metric and must not be merged into either accuracy condition.

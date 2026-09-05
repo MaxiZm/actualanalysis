@@ -98,10 +98,12 @@ export const DisplayCostFileSchema = z
   .object({
     redistributable: z.literal(false),
     warning: z.string().min(1),
+    active_workload: z.string().min(1).optional(),
     metric: z
       .object({
         id: z.literal("aa-cost-per-task"),
         name: z.string(),
+        version: z.string().min(1).optional(),
         definition: z.string(),
         methodology_url: z.string().url(),
         suite: z.array(z.string()),
@@ -131,8 +133,15 @@ export function withDisplayCost(
   file: DisplayCostFile | null,
 ): SiteData {
   if (!file) return data;
+  // Legacy files are safe only when every row measures the same workload.
+  // Mixed archives must explicitly select one suite before any comparison.
+  const workloads = new Set(file.observations.map((row) => row.workload));
+  const activeWorkload =
+    file.active_workload ??
+    (workloads.size === 1 ? file.observations[0]?.workload : undefined);
   const byModel = new Map<string, DisplayCostFile["observations"][number]>();
   for (const row of file.observations) {
+    if (row.workload !== activeWorkload) continue;
     const previous = byModel.get(row.model_id);
     if (!previous || row.observed_on > previous.observed_on)
       byModel.set(row.model_id, row);
@@ -149,6 +158,7 @@ export function withDisplayCost(
               provider: row.provider,
               configuration: row.configuration,
               workload: row.workload,
+              ...(file.metric.version ? { version: file.metric.version } : {}),
               observedOn: row.observed_on,
               sourceUrl: row.source_url,
               definition: file.metric.definition,
@@ -156,7 +166,9 @@ export function withDisplayCost(
               redistributable: false as const,
             },
           }
-        : model;
+        : model.costPerTask
+          ? { ...model, costPerTask: null }
+          : model;
     }),
   };
 }

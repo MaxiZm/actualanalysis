@@ -15,6 +15,24 @@ const copy = (score: number, effort?: string) => benchmarkResult({
 });
 
 describe("upstream observation lineage", () => {
+  it("keeps distinct results when a publisher uses one batch run ID", () => {
+    const base = { ...native("high", .8), evaluation_run_id: "leaderboard-2026-09-05" };
+    const rows = [base,
+      { ...base, model_id: "gpt-5.6-sol", model: "GPT-5.6 Sol" },
+      { ...base, benchmark_id: "hle-no-tools", benchmark: "HLE" },
+      { ...native("xhigh", .9), evaluation_run_id: base.evaluation_run_id },
+    ];
+    expect(selectLineageObservations(harmonizeObservationLineages(rows)).kept).toHaveLength(4);
+  });
+
+  it("never deduplicates different entities under a supplied lineage ID", () => {
+    const base = { ...native("high", .8), lineage_id: "upstream-batch" };
+    expect(selectLineageObservations([base,
+      { ...base, model_id: "gpt-5.6-sol", model: "GPT-5.6 Sol" },
+      { ...base, benchmark_id: "hle-no-tools", benchmark: "HLE" },
+    ]).kept).toHaveLength(3);
+  });
+
   it("counts an unambiguous ARC mirror once and preserves low/high configurations", () => {
     const rows = harmonizeObservationLineages([copy(.85), native("medium", .7042), native("xhigh", .85)]);
     const result = selectLineageObservations(rows);

@@ -5,11 +5,11 @@ family: GPT-5.6
 release_date: 2026-07-09
 open_weights: false
 license: Proprietary
-aliases: [gpt-5.6-luna-xhigh]
+aliases: [ gpt-5.6-luna-xhigh ]
 source_url: https://openai.com/index/gpt-5-6/
 default_effort_tier: medium
 max_effort_tier: max
-effort_tier_order: [none, low, medium, high, xhigh, max]
+effort_tier_order: [ none, low, medium, high, xhigh, max ]
 reasoning: true
 reasoning_config:
   control: categorical
@@ -17,5 +17,10 @@ reasoning_config:
 metadata_sources:
   - https://developers.openai.com/api/docs/models/gpt-5.6-luna
   - https://openai.com/index/gpt-5-6/
-notes: OpenAI documents medium as the default and max as the highest single-model API reasoning effort. Ultra uses multi-agent orchestration and is not a single-model effort tier.
+notes: OpenAI documents medium as the default and max as the highest
+  single-model API reasoning effort. Ultra uses multi-agent orchestration and is
+  not a single-model effort tier.
 status: active
+context_length: 1050000
+max_output: 128000
+modality: multimodal

@@ -5,7 +5,10 @@ family: GPT-5
 release_date: 2026-03-05
 open_weights: false
 license: Proprietary
-aliases: [gpt-5.4-2026-03-05]
+aliases:
+  - gpt-5.4-2026-03-05
+  - gpt-5.4-high
 source_url: https://openai.com/index/introducing-gpt-5-4/
 status: active
-
+metadata_sources:
+  - https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset

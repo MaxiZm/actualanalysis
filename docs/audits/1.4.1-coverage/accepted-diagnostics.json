@@ -1,0 +1,76 @@
+{
+  "parameters": {
+    "Agentic_cal": {
+      "rhat": 1.0019280069067245,
+      "ess_bulk": 3149.9812617687116,
+      "ess_tail": 8336.703650493962
+    },
+    "Chat_cal": {
+      "rhat": 1.000582613463807,
+      "ess_bulk": 7308.619580426207,
+      "ess_tail": 6729.383942267337
+    },
+    "G_cal": {
+      "rhat": 1.000905390717145,
+      "ess_bulk": 5204.007229991164,
+      "ess_tail": 7851.691674724592
+    },
+    "Omega": {
+      "rhat": 1.0020242396862924,
+      "ess_bulk": 1914.7655985135802,
+      "ess_tail": 3283.248182284129
+    },
+    "Z_cal": {
+      "rhat": 1.0018197277642835,
+      "ess_bulk": 2862.921727676668,
+      "ess_tail": 6592.035801324401
+    },
+    "cell_sigma": {
+      "rhat": 1.0015428235487132,
+      "ess_bulk": 2335.0800819536476,
+      "ess_tail": 3331.186879076713
+    },
+    "effort_mean": {
+      "rhat": 1.000273196992213,
+      "ess_bulk": 4396.235531832098,
+      "ess_tail": 8329.419466837066
+    },
+    "effort_sd": {
+      "rhat": 1.0004790904697838,
+      "ess_bulk": 4483.604431844097,
+      "ess_tail": 7668.221249985632
+    },
+    "run_noise": {
+      "rhat": 1.0016306849955425,
+      "ess_bulk": 2465.1085558613167,
+      "ess_tail": 3362.787112885537
+    }
+  },
+  "divergences": 0,
+  "divergence_fraction": 0.0,
+  "ebfmi": [
+    0.8828623515771409,
+    0.8578219675998788,
+    0.867785949890646,
+    0.8829949862580034
+  ],
+  "ebfmi_energy": "hamiltonian",
+  "elapsed_seconds": 553.4439497920685,
+  "posterior_draws": 12000,
+  "engine": "numpyro-nuts",
+  "inference": {
+    "chains": 4,
+    "warmup": 3000,
+    "samples": 5000,
+    "target_accept": 0.995
+  },
+  "devices": 4,
+  "mcse_display_points": {
+    "G_cal": 0.0889336758226096,
+    "Z_cal": 0.2798268436131646,
+    "Agentic_cal": 0.12623116574497892,
+    "Chat_cal": 0.08796617060135875
+  },
+  "accepted": true,
+  "issues": []
+}

@@ -1,0 +1,187 @@
+[
+  {
+    "capture": "before",
+    "source": "andonlabs",
+    "rows": 10
+  },
+  {
+    "capture": "before",
+    "source": "arcprize",
+    "rows": 244
+  },
+  {
+    "capture": "before",
+    "source": "automationbench",
+    "rows": 8
+  },
+  {
+    "capture": "before",
+    "source": "benchcad",
+    "rows": 3
+  },
+  {
+    "capture": "before",
+    "source": "datacurve",
+    "rows": 15
+  },
+  {
+    "capture": "before",
+    "source": "epoch",
+    "rows": 342
+  },
+  {
+    "capture": "before",
+    "source": "livebench",
+    "rows": 27
+  },
+  {
+    "capture": "before",
+    "source": "lmarena",
+    "rows": 63
+  },
+  {
+    "capture": "before",
+    "source": "matharena",
+    "rows": 49
+  },
+  {
+    "capture": "before",
+    "source": "mcpmark",
+    "rows": 35
+  },
+  {
+    "capture": "before",
+    "source": "metr",
+    "rows": 15
+  },
+  {
+    "capture": "before",
+    "source": "osworld",
+    "rows": 21
+  },
+  {
+    "capture": "before",
+    "source": "scale",
+    "rows": 56
+  },
+  {
+    "capture": "before",
+    "source": "swe-rebench",
+    "rows": 6
+  },
+  {
+    "capture": "before",
+    "source": "taubench",
+    "rows": 46
+  },
+  {
+    "capture": "before",
+    "source": "tbench",
+    "rows": 18
+  },
+  {
+    "capture": "before",
+    "source": "terminal-bench-science",
+    "rows": 6
+  },
+  {
+    "capture": "before",
+    "source": "vendor-model-cards",
+    "rows": 111
+  },
+  {
+    "capture": "after",
+    "source": "andonlabs",
+    "rows": 49
+  },
+  {
+    "capture": "after",
+    "source": "arcprize",
+    "rows": 241
+  },
+  {
+    "capture": "after",
+    "source": "automationbench",
+    "rows": 10
+  },
+  {
+    "capture": "after",
+    "source": "benchcad",
+    "rows": 3
+  },
+  {
+    "capture": "after",
+    "source": "datacurve",
+    "rows": 90
+  },
+  {
+    "capture": "after",
+    "source": "epoch",
+    "rows": 367
+  },
+  {
+    "capture": "after",
+    "source": "livebench",
+    "rows": 44
+  },
+  {
+    "capture": "after",
+    "source": "lmarena",
+    "rows": 90
+  },
+  {
+    "capture": "after",
+    "source": "matharena",
+    "rows": 55
+  },
+  {
+    "capture": "after",
+    "source": "mcpmark",
+    "rows": 35
+  },
+  {
+    "capture": "after",
+    "source": "metr",
+    "rows": 15
+  },
+  {
+    "capture": "after",
+    "source": "osworld",
+    "rows": 37
+  },
+  {
+    "capture": "after",
+    "source": "scale",
+    "rows": 51
+  },
+  {
+    "capture": "after",
+    "source": "scicode-verified",
+    "rows": 8
+  },
+  {
+    "capture": "after",
+    "source": "swe-rebench",
+    "rows": 11
+  },
+  {
+    "capture": "after",
+    "source": "taubench",
+    "rows": 26
+  },
+  {
+    "capture": "after",
+    "source": "tbench",
+    "rows": 18
+  },
+  {
+    "capture": "after",
+    "source": "terminal-bench-science",
+    "rows": 9
+  },
+  {
+    "capture": "after",
+    "source": "vendor-model-cards",
+    "rows": 271
+  }
+]

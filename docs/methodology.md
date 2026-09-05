@@ -1,6 +1,6 @@
 # How the index works
 
-**ActualAnalysis Capability Index · version 1.4.0 · calibration edition 2026a**
+**ActualAnalysis Capability Index · version 1.4.1 · calibration edition 2026a**
 
 The index estimates model capability from published benchmark evidence. It is a relative comparison, not a percentage of tasks a model will solve. Price, output speed and context are shown beside capability and do not change it.
 
@@ -46,9 +46,17 @@ Version 1.3.2 preserves original evaluation run IDs, reported uncertainty and ex
 
 Version 1.4.0 corrects the documented reasoning controls for GPT-5.6 Sol, Terra and Luna. It also restores their named Arena configurations and GPT-5.5 high. Explicit effort suffixes are preserved before alias deduplication, so two settings do not collapse into one result. The underlying benchmark measurements are unchanged by this method release.
 
+Version 1.4.1 expands and audits the evidence. Arena preserves the complete publication, original model labels and every distinct configuration; a publisher's batch ID cannot collapse different models into one observation. Vending-Bench includes its full native table, with each configuration's actual repeat count and standard error. SWE-rebench compares one declared 111-task window, rather than giving each model a different historical task set.
+
+DeepSWE v1 and v1.1 are separate conditions. Native SimpleQA task revisions 1.0.0 and 1.2.0 are also separate, with their reported item errors and evaluation IDs. SciCode-Verified v2 uses 64 whole problems with background under the pinned corrected evaluator; the original SciCode task count is inapplicable. Lower-level subproblem scores are retained as context and do not become additional independent evidence.
+
+Epoch's ECI export contains preprocessed scores, not necessarily raw benchmark accuracy. In HLE it subtracts a 4.8% floor and rescales the remainder. Those transformed copies are excluded in favor of the source's original estimates. A second website quoting the same measurement does not strengthen the result.
+
+MathArena's composite is a continuous expected-performance estimate. We use its published bootstrap interval and freeze the current component manifest together with the table. LiveBench's equal-category composite, MRCR's sequence-match ratios and OSWorld's published aggregate means remain visible without entering the fit where sampling uncertainty or evaluated denominators are unresolved. OSWorld release dates, full versus offline subsets, strict completion and partial reward remain distinct. A nominal task-set size does not justify inventing a binomial sample size.
+
 Repeated reports of the same result are not independent evidence. The source table keeps audit history, while comparison tables show one selected current result per model and benchmark. For a compact table, source priority is followed by highest explicitly reported effort, latest observation and stable identity. The selected score keeps its own uncertainty; errors are never borrowed from another configuration. Results from different harnesses are not automatically controlled comparisons.
 
-Version 1.3.1 retires SWE-bench Pro Public and LiveCodeBench v6 Pro from fitting and current public exports. GSM8K and standalone AIME 2025 are not included. **MathArena composite remains included**, including its constituent competitions; AIME 2025 is not removed from that composite. The software-code utility basket now contains SWE-rebench, DeepSWE and SciCode Verified.
+Version 1.3.1 retires SWE-bench Pro Public and LiveCodeBench v6 Pro from fitting and current public exports. GSM8K and standalone AIME 2025 are not included. **MathArena composite remains included** as published: excluding standalone AIME does not alter the composite. Its owner can deprecate competitions, so the frozen manifest records which components were active at capture. The software-code utility basket now contains SWE-rebench, DeepSWE v1.1 and SciCode-Verified v2.
 
 ## Sparse evidence and close comparisons
 
@@ -100,8 +108,8 @@ Elo, time horizons, money and rubric scores require their declared continuous tr
 
 - **CritPt:** [70 research-level physics challenges](https://github.com/CritPt-Benchmark/CritPt), evaluated by Artificial Analysis over five repeats per question. The displayed result is mean pass@1, not best-of-five. These remain 70 distinct questions, not 350 independent items. The attributed AA observations are visible in Compare and model pages; they do not enter the public fit.
 - **ARC-AGI-3:** its [Relative Human Action Efficiency](https://docs.arcprize.org/methodology) is a continuous action-efficiency metric. Version 1.3.0 removes it from fitting and preserves observed scores until a suitable likelihood and uncertainty are available.
-- **DeepSWE:** reported scores use 113 software tasks. The source’s unspecified “±” is not treated as a known confidence level. Incomplete dataset and harness revision pins remain flagged; canonical expectations need not reproduce every source row.
-- **AutomationBench:** the [600-task public strict pass rate](https://github.com/zapier/AutomationBench) is separate from partial-credit rewards and the harder private leaderboard.
+- **DeepSWE:** v1 and v1.1 each identify a 113-task suite, but actual scored attempts vary when provider or verifier failures are excluded. The native source defines a 95% run-to-run confidence interval, which is preserved with its actual repeat count. One documented interrupted run uses an item-level interval instead. No full-suite denominator is fabricated, and each revision is fitted separately.
+- **AutomationBench:** the [600-task public strict pass rate](https://github.com/zapier/AutomationBench) is separate from partial-credit rewards and the harder private leaderboard. Previously mislabeled July results are assigned to the pinned v1.0.6 source condition; public v3 remains separate. These reported aggregates are observed-only while compatible sampling uncertainty remains unresolved.
 - **Terminal-Bench-Science 0.1:** [native-agent results on 70 tasks, three trials each](https://www.terminal-bench-science.ai/announcement) are visible as source evidence and remain outside common-harness fitting.
 - **BenchCAD:** the [with-tools 1,000-file voxel-IoU subset](https://benchcad.com/) is kept distinct from the full 17,900-part benchmark. These continuous scores are not fitted as task counts.
 - **HealthBench Professional:** [length-adjusted rubric scores](https://deploymentsafety.openai.com/gpt-5-6) remain observed-only until compatible uncertainty and grader pins are available.
@@ -143,7 +151,7 @@ Ranked charts show medians and intervals. A cost frontier connects non-dominated
 
 ## Inference and validation limits
 
-The production run uses four NUTS chains, 2,000 warm-up iterations and 3,000 samples per chain, target acceptance 0.98, and 8,000 retained draws. It must pass zero divergences, R-hat ≤ 1.01, bulk and tail effective sample size ≥ 400, E-BFMI ≥ 0.3, and maximum score Monte Carlo error ≤ 0.3 display points on the declared calibrated estimands.
+The production run uses four NUTS chains, 3,000 warm-up iterations and 5,000 samples per chain, target acceptance 0.995, and 12,000 retained draws. It must pass zero divergences, R-hat ≤ 1.01, bulk and tail effective sample size ≥ 400, E-BFMI ≥ 0.3, and maximum score Monte Carlo error ≤ 0.3 display points on the declared calibrated estimands. Version 1.4.1 increases sampling precision for the revised evidence; the model, priors, profile weights, panel and acceptance thresholds are unchanged.
 
 The fixed 16-system panel must retain at least 12 fitted members. Each configured panel system needs independent evidence in every domain and at least two cells in three domains. Publication also requires an accepted joint run and at least one rankable Mixed system.
 
@@ -164,6 +172,8 @@ Context is the source-reported token limit, with exact vendor overrides where av
 Artificial Analysis runtime, task-cost and CritPt observations are an isolated display-only overlay, excluded from the fit, downloadable snapshots and public bulk APIs. Missing measurements remain missing.
 
 **AA cost per task** is the weighted-average USD spent per task in [Artificial Analysis’s Intelligence Index suite](https://artificialanalysis.ai/methodology/intelligence-benchmarking). It includes input, cache, reasoning and answer token expenditure. It is neither the total cost to run the suite nor a price for an arbitrary user request. Our cost chart compares this externally measured cost with our own selected capability index; the two use different task weights.
+
+The current cost chart uses **AA 4.2** throughout. Older 4.1.1 observations are retained separately and never used as fallback points on a 4.2 chart. A model with no measurement for the selected suite has no cost point; an older suite's cost is not a comparable substitute. The 2026-09-05 audit also rechecked all 113 existing CritPt display measurements against their exact AA configurations.
 
 Runtime and task cost use one exact published configuration per model release, preferring its highest available reasoning setting. If that configuration has no speed or latency measurement, another faster setting is not silently substituted. The source link exposes the configuration. Output throughput is standardized to AA’s tokenization; TTFT measures the first returned token, which can be a reasoning token. The displayed date is retrieval date, because the payload does not publish a measurement window. Registry configuration, raw eligible source evidence, run metadata and accepted summaries are versioned separately from that overlay.
 

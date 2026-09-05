@@ -9,6 +9,7 @@ aliases:
   - meta/muse-spark-1.2
   - Muse Spark 1.2
   - muse-spark-1-2
+  - muse-spark-1.2 (xHigh)
 reasoning: true
 context_length: 1048576
 modality: multimodal
@@ -16,6 +17,7 @@ source_url: https://research.meta.ai/blog/introducing-muse-code-and-muse-spark-1
 metadata_sources:
   - https://research.meta.ai/blog/introducing-muse-code-and-muse-spark-1-2
   - https://artificialanalysis.ai/models/muse-spark-1-2
+  - https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset
 status: active
 max_effort_tier: xhigh
 default_effort_tier: xhigh

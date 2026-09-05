@@ -9,7 +9,9 @@ results:
     observed_on: 2025-12-02
     url: https://arxiv.org/abs/2512.02556
     provenance: self_report
-    notes: Text-only HLE score without tools, from DeepSeek-V3.2 technical report Table 2 ("English Reasoning"). A separate with-tools score of 40.8 was excluded.
+    notes: Text-only HLE score without tools, from DeepSeek-V3.2 technical report
+      Table 2 ("English Reasoning"). A separate with-tools score of 40.8 was
+      excluded.
 
   - model_id: deepseek-v3.2
     benchmark_id: mcpmark
@@ -32,7 +34,8 @@ results:
     observed_on: 2025-11-06
     url: https://huggingface.co/moonshotai/Kimi-K2-Thinking
     provenance: self_report
-    notes: "Text-only HLE, no tools. Exact card publish date not shown; using the approximate public Kimi K2 Thinking release date (Nov 2025)."
+    notes: "Text-only HLE, no tools. Exact card publish date not shown; using the
+      approximate public Kimi K2 Thinking release date (Nov 2025)."
 
   - model_id: kimi-k2
     benchmark_id: scicode-verified
@@ -44,7 +47,8 @@ results:
     observed_on: 2025-11-06
     url: https://huggingface.co/moonshotai/Kimi-K2-Thinking
     provenance: self_report
-    notes: Revision (verified vs. base) not specified by the source; observed_on date approximate.
+    notes: Revision (verified vs. base) not specified by the source; observed_on
+      date approximate.
 
   - model_id: kimi-k2
     benchmark_id: livecodebench-v6-pro
@@ -56,7 +60,8 @@ results:
     observed_on: 2025-11-06
     url: https://huggingface.co/moonshotai/Kimi-K2-Thinking
     provenance: self_report
-    notes: Listed as "LiveCodeBenchV6" on the model card; observed_on date approximate.
+    notes: Listed as "LiveCodeBenchV6" on the model card; observed_on date
+      approximate.
 
   # --- Moonshot AI Kimi K2.5 ---
   - model_id: kimi-k2.5
@@ -68,7 +73,8 @@ results:
     observed_on: 2026-02-02
     url: https://huggingface.co/moonshotai/Kimi-K2.5
     provenance: self_report
-    notes: Listed as "HLE-Full" (text & image, no tools). A separate with-tools score of 50.2 was excluded.
+    notes: Listed as "HLE-Full" (text & image, no tools). A separate with-tools
+      score of 50.2 was excluded.
 
   - model_id: kimi-k2.5
     benchmark_id: aa-lcr
@@ -93,7 +99,8 @@ results:
     observed_on: 2026-02-02
     url: https://huggingface.co/moonshotai/Kimi-K2.5
     provenance: self_report
-    notes: "avg@5 runs. Card lists this simply as \"SWE-Bench Pro\"; public/private split not stated, assumed public."
+    notes: "avg@5 runs. Card lists this simply as \"SWE-Bench Pro\"; public/private
+      split not stated, assumed public."
 
   - model_id: kimi-k2.5
     benchmark_id: scicode-verified
@@ -127,7 +134,9 @@ results:
     observed_on: 2026-07-17
     url: https://huggingface.co/moonshotai/Kimi-K3
     provenance: self_report
-    notes: "Listed as \"HLE-Full\" no-tools value (56.0 with-tools variant excluded). Card had no explicit date; observed_on is approximate based on secondary reporting of a mid-July 2026 launch."
+    notes: "Listed as \"HLE-Full\" no-tools value (56.0 with-tools variant
+      excluded). Card had no explicit date; observed_on is approximate based on
+      secondary reporting of a mid-July 2026 launch."
 
   - model_id: kimi-k3
     benchmark_id: aa-lcr
@@ -138,7 +147,10 @@ results:
     observed_on: 2026-07-17
     url: https://huggingface.co/moonshotai/Kimi-K3
     provenance: self_report
-    notes: observed_on approximate (see HLE row note).
+    notes: "observed_on approximate (see HLE row note). Superseded by the 2026-09-05
+      coverage audit: AA-cited vendor copy removed from the open evidence
+      replay; no independent measurement established."
+    sample_only: true
 
   - model_id: kimi-k3
     benchmark_id: scicode-verified
@@ -162,7 +174,9 @@ results:
     observed_on: 2026-07-17
     url: https://huggingface.co/moonshotai/Kimi-K3
     provenance: self_report
-    notes: "Card also lists a separate \"OSWorld-Verified\" score of 84.8 (a different benchmark, not used here). observed_on approximate (see HLE row note)."
+    notes: "Card also lists a separate \"OSWorld-Verified\" score of 84.8 (a
+      different benchmark, not used here). observed_on approximate (see HLE row
+      note)."
 
   - model_id: kimi-k3
     benchmark_id: tau3-bench-banking
@@ -173,7 +187,10 @@ results:
     observed_on: 2026-07-17
     url: https://huggingface.co/moonshotai/Kimi-K3
     provenance: self_report
-    notes: "Listed as \"τ³-Banking\". observed_on approximate (see HLE row note)."
+    notes: "Listed as \"τ³-Banking\". observed_on approximate (see HLE row note).
+      Superseded by the 2026-09-05 coverage audit: AA-cited vendor copy removed
+      from the open evidence replay; no independent measurement established."
+    sample_only: true
 
   - model_id: kimi-k3
     benchmark_id: mcpmark
@@ -185,7 +202,10 @@ results:
     observed_on: 2026-07-17
     url: https://huggingface.co/moonshotai/Kimi-K3
     provenance: self_report
-    notes: "Listed as \"MCPMark-Verified\"; markedly higher than other vendors' plain MCPMark self-reports (DeepSeek-V3.2: 38.0, Qwen3.5-397B-A17B: 46.1), suggesting a possibly different eval subset/harness. Flagging for reviewer judgment on comparability. observed_on approximate (see HLE row note)."
+    notes: "Listed as \"MCPMark-Verified\"; markedly higher than other vendors'
+      plain MCPMark self-reports (DeepSeek-V3.2: 38.0, Qwen3.5-397B-A17B: 46.1),
+      suggesting a possibly different eval subset/harness. Flagging for reviewer
+      judgment on comparability. observed_on approximate (see HLE row note)."
 
   # --- Z.ai GLM-4.5 (technical report) ---
   - model_id: glm-4.5
@@ -196,7 +216,9 @@ results:
     observed_on: 2025-08-08
     url: https://arxiv.org/abs/2508.06471
     provenance: self_report
-    notes: "From Table 4 (\"Reasoning Benchmarks\"). Paper does not explicitly label this as no-tools, but no separate with-tools HLE row exists for GLM-4.5, so it is assumed to be the standard (no-tools) score."
+    notes: "From Table 4 (\"Reasoning Benchmarks\"). Paper does not explicitly label
+      this as no-tools, but no separate with-tools HLE row exists for GLM-4.5,
+      so it is assumed to be the standard (no-tools) score."
 
   - model_id: glm-4.5
     benchmark_id: scicode-verified
@@ -252,7 +274,8 @@ results:
     observed_on: 2025-04-29
     url: https://huggingface.co/Qwen/Qwen3-235B-A22B
     provenance: self_report
-    notes: observed_on inferred from the Qwen3 family's public release date (Apr 29, 2025); not explicitly shown on the card.
+    notes: observed_on inferred from the Qwen3 family's public release date (Apr 29,
+      2025); not explicitly shown on the card.
 
   # --- Alibaba Qwen3-235B-A22B-Instruct-2507 ---
   - model_id: qwen3-235b-a22b-2507
@@ -264,7 +287,8 @@ results:
     observed_on: 2025-07-21
     url: https://huggingface.co/Qwen/Qwen3-235B-A22B-Instruct-2507
     provenance: self_report
-    notes: "Listed as \"LiveCodeBench v6 (25.02-25.05)\". observed_on inferred from the \"2507\" (July 2025) model suffix."
+    notes: "Listed as \"LiveCodeBench v6 (25.02-25.05)\". observed_on inferred from
+      the \"2507\" (July 2025) model suffix."
 
   # --- Alibaba Qwen3-Coder-480B-A35B-Instruct ---
   - model_id: qwen3-coder-480b-a35b
@@ -276,7 +300,8 @@ results:
     observed_on: 2025-07-23
     url: https://huggingface.co/Qwen/Qwen3-Coder-480B-A35B-Instruct
     provenance: self_report
-    notes: observed_on inferred from Qwen3-Coder-480B-A35B-Instruct's known July 2025 release; not explicitly shown in the fetched card content.
+    notes: observed_on inferred from Qwen3-Coder-480B-A35B-Instruct's known July
+      2025 release; not explicitly shown in the fetched card content.
 
   # --- Alibaba Qwen3.5-397B-A17B ---
   - model_id: qwen3.5-397b-a17b
@@ -287,7 +312,8 @@ results:
     observed_on: 2026-09-04
     url: https://huggingface.co/Qwen/Qwen3.5-397B-A17B
     provenance: self_report
-    notes: Model card did not show an explicit publish date; using today's date per instructions.
+    notes: Model card did not show an explicit publish date; using today's date per
+      instructions.
 
   - model_id: qwen3.5-397b-a17b
     benchmark_id: hle-no-tools
@@ -298,7 +324,10 @@ results:
     observed_on: 2026-09-04
     url: https://huggingface.co/Qwen/Qwen3.5-397B-A17B
     provenance: self_report
-    notes: "Listed as \"HLE-Verified\" (37.6), distinct from a separate plain \"HLE\" row of 28.7 which was not used, since the registry benchmark's alias list specifically includes \"HLE-Verified\". Publish date unknown; using today's date."
+    notes: "Listed as \"HLE-Verified\" (37.6), distinct from a separate plain
+      \"HLE\" row of 28.7 which was not used, since the registry benchmark's
+      alias list specifically includes \"HLE-Verified\". Publish date unknown;
+      using today's date."
 
   - model_id: qwen3.5-397b-a17b
     benchmark_id: mcpmark
