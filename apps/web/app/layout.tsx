@@ -73,8 +73,8 @@ export default async function RootLayout({
         </a>
         <div className="app-shell">
           <SiteHeader
-            models={data.models}
-            benchmarks={data.benchmarks}
+            models={data.models.map(({ name, slug }) => ({ name, slug }))}
+            benchmarks={data.benchmarks.map(({ name, slug }) => ({ name, slug }))}
             status={data.status}
           />
           {data.status.mode === "fixture" ? (

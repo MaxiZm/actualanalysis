@@ -62,12 +62,15 @@ export function selectSnapshotRuns(
   allRuns: readonly IndexRunRow[],
   exactRunIds?: SnapshotRunIds,
 ): { chosen: IndexRunRow[]; history: IndexRunRow[] } {
+  // Numerically converged experiments can still fail predictive validation.
+  // Preserve them in database history without exporting them as public releases.
+  const publishableRuns = allRuns.filter((run) => run.params.publication_status !== "rejected");
   if (!exactRunIds) {
-    const chosen = SNAPSHOT_KINDS.flatMap((kind) => allRuns.find((run) => run.kind === kind) ?? []);
+    const chosen = SNAPSHOT_KINDS.flatMap((kind) => publishableRuns.find((run) => run.kind === kind) ?? []);
     if (chosen.length !== SNAPSHOT_KINDS.length) {
       throw new Error(`Refusing to publish an incomplete snapshot: found ${chosen.length}/3 latest index runs.`);
     }
-    return { chosen, history: [...allRuns] };
+    return { chosen, history: publishableRuns };
   }
 
   const requestedIds = SNAPSHOT_KINDS.map((kind) => exactRunIds[kind]);
@@ -79,13 +82,16 @@ export function selectSnapshotRuns(
     const requestedId = exactRunIds[kind];
     const run = allRuns.find((candidate) => candidate.id === requestedId);
     if (!run) throw new Error(`Exact ${kind} snapshot run does not exist: ${requestedId}`);
+    if (run.params.publication_status === "rejected") {
+      throw new Error(`Exact ${kind} snapshot run was rejected for publication: ${requestedId}`);
+    }
     if (run.kind !== kind) {
       throw new Error(`Exact ${kind} snapshot run ${requestedId} has kind ${run.kind}.`);
     }
     return run;
   });
   const chosenByKind = new Map(chosen.map((run) => [run.kind, run]));
-  const history = allRuns.filter((run) => {
+  const history = publishableRuns.filter((run) => {
     const cutoff = chosenByKind.get(run.kind);
     return cutoff !== undefined && run.createdAt.getTime() <= cutoff.createdAt.getTime();
   });

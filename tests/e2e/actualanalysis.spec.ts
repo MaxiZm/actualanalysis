@@ -487,7 +487,7 @@ test.describe("ActualAnalysis public experience", () => {
       page.getByRole("heading", { level: 1, name: "How the index works" }),
     ).toBeVisible();
     await expect(
-      page.getByText("ActualAnalysis Capability Index · version 1.3.2", {
+      page.getByText("ActualAnalysis Capability Index · version 1.4.0", {
         exact: false,
       }),
     ).toBeVisible();

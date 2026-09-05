@@ -60,6 +60,7 @@ export default async function MethodologyPage() {
   };
   const rows: Array<[string, string]> = [
     ["Method version", String(config.method_version ?? "—")],
+    ["Trait model", config.trait_structure === "general_specific" ? "Shared capability + domain specialization (experimental)" : config.trait_structure === "correlated_unit" ? "Equal-unit correlated traits (experimental)" : "Correlated domain traits"],
     ["Taxonomy edition", String(config.taxonomy_edition ?? "—")],
     ["Calibration edition", String(config.calibration_edition ?? "—")],
     ["Calibration panel", panel.length ? `${panel.length} systems` : "—"],

@@ -373,6 +373,13 @@ def build_posterior_summary(data: dict, samples: dict[str, np.ndarray]) -> dict:
                 continue
             val_summary = _summary(values)
             ranking = rank_output.get(sid)
+            # Comparative uncertainty is useful even when coverage withholds a
+            # statistical rank. Compute it from paired joint draws, never from
+            # independent normal approximations to the two marginal intervals.
+            pairwise = {other: float(np.mean(values > other_values)) for other, other_values in v_draws.items() if other != sid}
+            margin = float(data.get("tiers", {}).get("practical_margin", 1.0))
+            unresolved = {other: bool(np.mean(values > other_values + margin) < .90 and np.mean(other_values > values + margin) < .90)
+                          for other, other_values in v_draws.items() if other != sid}
             view[sid] = {
                 "score": val_summary["median"] if ranking else None,
                 "ci_low": val_summary["low"],
@@ -382,8 +389,8 @@ def build_posterior_summary(data: dict, samples: dict[str, np.ndarray]) -> dict:
                 "rank_high": ranking["rank_high"] if ranking else None,
                 "rank_cdf": ranking["rank_cdf"] if ranking else [],
                 "top_k": ranking["top_k"] if ranking else {},
-                "pairwise": ranking["pairwise"] if ranking else {},
-                "pairwise_unresolved": ranking.get("pairwise_unresolved", {}) if ranking else {},
+                "pairwise": pairwise,
+                "pairwise_unresolved": unresolved,
             }
         views[view_name] = view
 

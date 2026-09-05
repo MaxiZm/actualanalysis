@@ -1,19 +1,17 @@
-import type { IndexConfig } from "@actualanalysis/shared";
 import type { Aci12PosteriorOutput } from "./numpyro.js";
-import { type PreparedAciObservation } from "./aci12.js";
 
 export interface SbcMetrics {
   datasets: number;
-  medianAbsoluteBias: number;
-  intervalCoverage: number;
-  rankCoverage: number;
+  medianAbsoluteBias: number | null;
+  intervalCoverage: number | null;
+  rankCoverage: number | null;
   passed: boolean;
 }
 
 export interface HoldoutEvaluation {
   totalHeldOut: number;
   coveredCount: number;
-  coverageFraction: number;
+  coverageFraction: number | null;
   passed: boolean;
 }
 
@@ -30,6 +28,19 @@ export interface InvarianceCheckResult {
   passed: boolean;
 }
 
+function validateIntervals(actuals: number[], intervals: Array<[number, number]>): void {
+  if (actuals.length !== intervals.length) {
+    throw new RangeError("Every validation target must have exactly one predictive interval");
+  }
+  for (let i = 0; i < actuals.length; i++) {
+    const interval = intervals[i];
+    if (!Number.isFinite(actuals[i]) || interval?.length !== 2
+      || !interval.every(Number.isFinite) || interval[0] > interval[1]) {
+      throw new RangeError(`Invalid target or predictive interval at validation row ${i}`);
+    }
+  }
+}
+
 /**
  * Validates pipeline invariance (§12.6):
  * Permuting observation order or entity labels preserves published integers.
@@ -39,16 +50,24 @@ export function checkPermutationInvariance(
   permutedSummary: Aci12PosteriorOutput,
 ): InvarianceCheckResult {
   let maxDiff = 0;
-  let matches = true;
+  const originalIds = Object.keys(originalSummary.systems);
+  let complete = originalIds.length > 0 && originalIds.length === Object.keys(permutedSummary.systems).length;
+  let matches = complete;
 
   for (const [sysId, sysOriginal] of Object.entries(originalSummary.systems)) {
     const sysPermuted = permutedSummary.systems[sysId];
     if (!sysPermuted) {
+      complete = false;
       matches = false;
       continue;
     }
     const scoreOrig = Math.round(sysOriginal.display.median);
     const scorePerm = Math.round(sysPermuted.display.median);
+    if (!Number.isFinite(scoreOrig) || !Number.isFinite(scorePerm)) {
+      complete = false;
+      matches = false;
+      continue;
+    }
     const diff = Math.abs(scoreOrig - scorePerm);
     if (diff > maxDiff) maxDiff = diff;
     if (diff > 0) {
@@ -58,7 +77,7 @@ export function checkPermutationInvariance(
 
   return {
     permutationInvariant: matches,
-    reseedEquivalent: maxDiff <= 1,
+    reseedEquivalent: complete && maxDiff <= 1,
     maxScoreDifference: maxDiff,
     passed: matches,
   };
@@ -74,13 +93,25 @@ export function evaluateAdversarialGate(
   adversarialSummary: Aci12PosteriorOutput,
   maxAllowedShift = 3.0,
 ): AdversarialGateResult {
+  if (!Number.isFinite(maxAllowedShift) || maxAllowedShift < 0) {
+    throw new RangeError("The allowed adversarial shift must be finite and nonnegative");
+  }
   const shifts: Record<string, number> = {};
   const blocked: string[] = [];
+  const standardIds = Object.keys(standardSummary.systems);
+  let complete = standardIds.length > 0 && standardIds.length === Object.keys(adversarialSummary.systems).length;
 
   for (const [sysId, stdSys] of Object.entries(standardSummary.systems)) {
     const advSys = adversarialSummary.systems[sysId];
-    if (!advSys) continue;
+    if (!advSys) {
+      complete = false;
+      continue;
+    }
     const shift = Math.abs(advSys.display.median - stdSys.display.median);
+    if (!Number.isFinite(shift)) {
+      complete = false;
+      continue;
+    }
     shifts[sysId] = shift;
     if (shift > maxAllowedShift && stdSys.tier === "verified") {
       blocked.push(sysId);
@@ -90,7 +121,7 @@ export function evaluateAdversarialGate(
   return {
     systemShifts: shifts,
     blockedFromVerified: blocked,
-    passed: blocked.length === 0,
+    passed: complete && blocked.length === 0,
   };
 }
 
@@ -104,13 +135,18 @@ export function evaluateHoldoutMetrics(
   minCoverage = 0.85,
   maxCoverage = 0.95,
 ): HoldoutEvaluation {
+  validateIntervals(actuals, predictiveIntervals);
+  if (!Number.isFinite(minCoverage) || !Number.isFinite(maxCoverage)
+    || minCoverage < 0 || maxCoverage > 1 || minCoverage > maxCoverage) {
+    throw new RangeError("Coverage thresholds must satisfy 0 <= minimum <= maximum <= 1");
+  }
   if (actuals.length === 0) {
-    return { totalHeldOut: 0, coveredCount: 0, coverageFraction: 1.0, passed: true };
+    return { totalHeldOut: 0, coveredCount: 0, coverageFraction: null, passed: false };
   }
   let covered = 0;
   for (let i = 0; i < actuals.length; i++) {
     const val = actuals[i]!;
-    const [low, high] = predictiveIntervals[i] ?? [Number.NEGATIVE_INFINITY, Number.POSITIVE_INFINITY];
+    const [low, high] = predictiveIntervals[i]!;
     if (val >= low && val <= high) covered++;
   }
   const fraction = covered / actuals.length;
@@ -132,8 +168,12 @@ export function evaluateSbcMetrics(
   intervals: Array<[number, number]>,
 ): SbcMetrics {
   const n = trueValues.length;
+  validateIntervals(trueValues, intervals);
+  if (estimatedMedians.length !== n || !estimatedMedians.every(Number.isFinite)) {
+    throw new RangeError("Every simulation target must have exactly one finite estimated median");
+  }
   if (n === 0) {
-    return { datasets: 0, medianAbsoluteBias: 0, intervalCoverage: 1.0, rankCoverage: 1.0, passed: true };
+    return { datasets: 0, medianAbsoluteBias: null, intervalCoverage: null, rankCoverage: null, passed: false };
   }
   const biases: number[] = [];
   let covered = 0;
@@ -145,14 +185,16 @@ export function evaluateSbcMetrics(
     if (tv >= low && tv <= high) covered++;
   }
   biases.sort((a, b) => a - b);
-  const medianBias = biases[Math.floor(biases.length / 2)]!;
+  const middle = Math.floor(biases.length / 2);
+  const medianBias = biases.length % 2 ? biases[middle]! : (biases[middle - 1]! + biases[middle]!) / 2;
   const coverage = covered / n;
   const passed = medianBias < 1.0 && coverage >= 0.87 && coverage <= 0.93;
   return {
     datasets: n,
     medianAbsoluteBias: medianBias,
     intervalCoverage: coverage,
-    rankCoverage: 0.92,
+    // No rank truths or rank intervals are supplied to this evaluator.
+    rankCoverage: null,
     passed,
   };
 }

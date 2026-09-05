@@ -5,6 +5,7 @@ family: GPT-5
 release_date: 2026-04-23
 open_weights: false
 license: Proprietary
+aliases: [gpt-5.5-high]
 source_url: https://openai.com/index/introducing-gpt-5-5/
 default_effort_tier: medium
 max_effort_tier: xhigh

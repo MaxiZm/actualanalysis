@@ -200,6 +200,7 @@ export interface RankPosterior {
 }
 
 export function isFixedEffort(system: AciSystemDefinition): boolean {
+  if (system.maxEffortTier && (system.effortTierOrder?.length ?? 0) > 1 && !system.defaultEffortTier) return false;
   if (!system.maxEffortTier || !system.defaultEffortTier) return true;
   return normalizedTier(system.defaultEffortTier) === normalizedTier(system.maxEffortTier);
 }
@@ -308,6 +309,17 @@ function profileFor(observation: AciObservation, system: AciSystemDefinition, be
   }
   const defaultTier = canonicalEffortTier(system.defaultEffortTier);
   const maxTier = canonicalEffortTier(system.maxEffortTier);
+  // A documented dial with an unknown default is not fixed effort. Only an
+  // explicitly matching endpoint can support a declared system in this case.
+  if (defaultTier === null || maxTier === null) {
+    if (observedTier !== null && observedTier === maxTier) {
+      return { systemClass: "max-common", profile: "max-common", systemId: `${system.modelSnapshotId}@max-common`, approximate: false };
+    }
+    if (!nativeAgentic && defaultTier !== null && (observedTier === defaultTier || observedTier === "default")) {
+      return { systemClass: "std-common", profile: "std-common", systemId: `${system.modelSnapshotId}@std-common`, approximate: false };
+    }
+    return null;
+  }
   let systemClass: "std-common" | "max-common";
   let approximate = false;
   if (observedTier === null) {
@@ -322,8 +334,8 @@ function profileFor(observation: AciObservation, system: AciSystemDefinition, be
     const low = effortRank(defaultTier);
     const high = effortRank(maxTier);
     if (observed !== null && low !== null && high !== null) {
-      if (observed <= low) systemClass = "std-common";
-      else if (observed >= high) systemClass = "max-common";
+      if (observed <= low) { systemClass = "std-common"; approximate = observed !== low; }
+      else if (observed >= high) { systemClass = "max-common"; approximate = observed !== high; }
       else {
         systemClass = high - observed <= observed - low ? "max-common" : "std-common";
         approximate = true;

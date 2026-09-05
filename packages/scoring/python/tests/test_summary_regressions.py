@@ -64,4 +64,13 @@ class SummaryRegressions(unittest.TestCase):
             self.assertAlmostEqual(float(np.mean(vals)),50.)
             self.assertAlmostEqual(float(np.std(vals,ddof=1)),10.)
 
+    def test_preliminary_models_keep_paired_comparisons_without_statistical_ranks(self):
+        data,samples=fixture();summary=build_posterior_summary(data,samples)
+        a,b=data['system_ids'][:2]
+        view=summary['views']['chat']
+        self.assertIsNone(view[a]['rank'])
+        self.assertIn(b,view[a]['pairwise'])
+        self.assertAlmostEqual(view[a]['pairwise'][b]+view[b]['pairwise'][a],1.)
+        self.assertNotIn(a,view[a]['pairwise'])
+
 if __name__=='__main__':unittest.main()

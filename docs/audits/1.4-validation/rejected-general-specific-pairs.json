@@ -1,0 +1,244 @@
+{
+  "method_version": "1.4.0",
+  "posterior_draws": 8000,
+  "pairs": {
+    "gpt-5.6-sol-vs-gpt-5.5": {
+      "left": "gpt-5.6-sol",
+      "right": "gpt-5.5",
+      "profiles": {
+        "general": {
+          "left_median": 67.08329525521566,
+          "right_median": 61.638957516197166,
+          "paired_difference_median": 5.416306270790649,
+          "paired_difference_90": [
+            1.2707227016248066,
+            9.53714162226051
+          ],
+          "probability_left_higher": 0.98425,
+          "probability_left_higher_by_one": 0.960375,
+          "mean_domain_contributions": {
+            "agentic": 1.4475303686475183,
+            "software-code": 1.0796318391406439,
+            "reasoning": 0.9824664502879802,
+            "knowledge-information": 1.1283612391758593,
+            "communication-professional": 0.7896805188337455
+          }
+        },
+        "agentic": {
+          "left_median": 67.13795365730829,
+          "right_median": 60.8613902627188,
+          "paired_difference_median": 6.227937484354705,
+          "paired_difference_90": [
+            1.978930259261433,
+            10.726702975726234
+          ],
+          "probability_left_higher": 0.98975,
+          "probability_left_higher_by_one": 0.977,
+          "mean_domain_contributions": {
+            "agentic": 4.236843505504428,
+            "software-code": 1.5784918221808295,
+            "reasoning": 0.47917835259557384,
+            "knowledge-information": 0.0,
+            "communication-professional": 0.0
+          }
+        },
+        "chat": {
+          "left_median": 66.45001686904203,
+          "right_median": 61.58575509729134,
+          "paired_difference_median": 4.8435871626719695,
+          "paired_difference_90": [
+            -0.7344195739695208,
+            10.360135119664701
+          ],
+          "probability_left_higher": 0.924375,
+          "probability_left_higher_by_one": 0.871125,
+          "mean_domain_contributions": {
+            "agentic": 0.0,
+            "software-code": 0.5422926010658278,
+            "reasoning": 0.985897234190534,
+            "knowledge-information": 1.697771591962342,
+            "communication-professional": 1.580898842623837
+          }
+        }
+      },
+      "domain_differences": {
+        "agentic": {
+          "median": 6.846675311034761,
+          "ci90": [
+            1.8714080414593963,
+            12.219199988766954
+          ]
+        },
+        "software-code": {
+          "median": 5.163907394894366,
+          "ci90": [
+            -3.5725265359315235,
+            13.601165187317605
+          ]
+        },
+        "reasoning": {
+          "median": 4.679062026109351,
+          "ci90": [
+            0.4934065274654997,
+            8.930010112872187
+          ]
+        },
+        "knowledge-information": {
+          "median": 5.5079455960802335,
+          "ci90": [
+            -3.541205723097641,
+            14.296178400190996
+          ]
+        },
+        "communication-professional": {
+          "median": 4.092922123332414,
+          "ci90": [
+            -6.635340763988912,
+            13.289960363407841
+          ]
+        }
+      }
+    },
+    "gpt-5.5-pro-vs-gpt-5.5": {
+      "left": "gpt-5.5-pro",
+      "right": "gpt-5.5",
+      "profiles": {
+        "general": {
+          "left_median": 66.486119685353,
+          "right_median": 61.638957516197166,
+          "paired_difference_median": 4.801239140819767,
+          "paired_difference_90": [
+            -1.7639150617400143,
+            11.506612343038375
+          ],
+          "probability_left_higher": 0.88425,
+          "probability_left_higher_by_one": 0.82825,
+          "mean_domain_contributions": {
+            "agentic": 1.3592704154139208,
+            "software-code": 0.9350333421928894,
+            "reasoning": 0.6923399904097535,
+            "knowledge-information": 0.6498890741084352,
+            "communication-professional": 1.195768230808313
+          }
+        },
+        "agentic": {
+          "left_median": 66.61553781337147,
+          "right_median": 60.8613902627188,
+          "paired_difference_median": 5.671763281795702,
+          "paired_difference_90": [
+            -1.6417648637204207,
+            13.122410676743911
+          ],
+          "probability_left_higher": 0.901875,
+          "probability_left_higher_by_one": 0.85625,
+          "mean_domain_contributions": {
+            "agentic": 3.97934308141447,
+            "software-code": 1.3669680732172398,
+            "reasoning": 0.337645206980551,
+            "knowledge-information": 0.0,
+            "communication-professional": 0.0
+          }
+        },
+        "chat": {
+          "left_median": 66.16710153921818,
+          "right_median": 61.58575509729134,
+          "paired_difference_median": 4.577979056998796,
+          "paired_difference_90": [
+            -3.15848004984527,
+            12.370925945420817
+          ],
+          "probability_left_higher": 0.836,
+          "probability_left_higher_by_one": 0.776625,
+          "mean_domain_contributions": {
+            "agentic": 0.0,
+            "software-code": 0.4698705368735871,
+            "reasoning": 0.6949555604889749,
+            "knowledge-information": 0.9753358548552747,
+            "communication-professional": 2.4008656473558707
+          }
+        }
+      },
+      "domain_differences": {
+        "agentic": {
+          "median": 6.375689342366808,
+          "ci90": [
+            -1.5476853880178423,
+            14.961478736180423
+          ]
+        },
+        "software-code": {
+          "median": 4.504837673737086,
+          "ci90": [
+            -7.036931025414753,
+            15.821995857514606
+          ]
+        },
+        "reasoning": {
+          "median": 3.265183710760663,
+          "ci90": [
+            -1.871188496226201,
+            8.441111675011934
+          ]
+        },
+        "knowledge-information": {
+          "median": 3.4898523551070926,
+          "ci90": [
+            -8.729934975354865,
+            13.825232865617146
+          ]
+        },
+        "communication-professional": {
+          "median": 5.558339164465398,
+          "ci90": [
+            -5.95322252342551,
+            18.12782527845957
+          ]
+        }
+      }
+    }
+  },
+  "domain_departure_scales": {
+    "agentic": 0.09517977325530279,
+    "software-code": 0.20537143188599621,
+    "reasoning": 0.09599837467634892,
+    "knowledge-information": 0.2455501725442215,
+    "communication-professional": 0.2995171047934837
+  },
+  "mean_prior_trait_correlation": [
+    [
+      1.0,
+      0.9477227758485659,
+      0.9825894163579095,
+      0.9430548421764907,
+      0.9314359105427524
+    ],
+    [
+      0.9477227758485659,
+      1.0,
+      0.9484648931212114,
+      0.9102641497351531,
+      0.8991169397926879
+    ],
+    [
+      0.9825894163579095,
+      0.9484648931212114,
+      1.0,
+      0.9437459265289768,
+      0.9320561266230094
+    ],
+    [
+      0.9430548421764907,
+      0.9102641497351531,
+      0.9437459265289768,
+      1.0,
+      0.8946412949853285
+    ],
+    [
+      0.9314359105427524,
+      0.8991169397926879,
+      0.9320561266230094,
+      0.8946412949853285,
+      1.0
+    ]
+  ]
+}

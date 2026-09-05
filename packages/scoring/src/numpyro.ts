@@ -9,7 +9,7 @@ export interface NutsDiagnostics {
   parameters: Record<string, { rhat: number | null; ess_bulk: number; ess_tail: number }>;
   divergences: number;
   divergence_fraction: number;
-  ebfmi: number[];
+  ebfmi: Array<number | null>;
   elapsed_seconds: number;
   posterior_draws: number;
   accepted: boolean;
@@ -180,6 +180,7 @@ export async function runAci12Nuts(options: {
 
   const data = {
     method_version: options.config.method_version,
+    trait_structure: options.config.trait_structure ?? "correlated",
     n_models: modelIds.length,
     n_systems: representedSystemIds.length,
     n_benchmarks: benchmarks.length,

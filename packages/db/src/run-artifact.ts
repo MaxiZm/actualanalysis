@@ -52,7 +52,7 @@ export const RunArtifactSchema = z.object({
   // Integrity guard: a run labelled with a 1.2.x method must carry the NumPyro
   // NUTS diagnostics that only the real joint fit produces. This blocks
   // relabelling a legacy fit (or hand-edited numbers) as a Bayesian run.
-  if (!/^1\.[23]\.\d+$/.test(artifact.method_version)) return;
+  if (!/^1\.[234]\.\d+$/.test(artifact.method_version)) return;
   const diagnostics = (artifact.params as Record<string, unknown>).diagnostics as Record<string, unknown> | undefined;
   const problems: string[] = [];
   if (!diagnostics || typeof diagnostics !== "object") problems.push("params.diagnostics missing");

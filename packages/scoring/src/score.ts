@@ -79,8 +79,8 @@ function requireConverged(fit: ReturnType<typeof fitLatentModel>, stage: string)
 
 /** Complete ACI scoring pass: normalize, fit, weight, diagnose, bootstrap and gate. */
 export function runScoring(input: ScoringInput): ScoringRun {
-  if (input.config.methodVersion === "1.2.1") {
-    throw new Error("Method 1.2.1 requires the joint NumPyro runner; the legacy per-index optimizer is disabled");
+  if (/^1\.[234]\.\d+$/.test(input.config.methodVersion ?? "")) {
+    throw new Error(`Method ${input.config.methodVersion} requires the joint NumPyro runner; the legacy per-index optimizer is disabled`);
   }
   const benchmarks = input.benchmarks.filter((benchmark) =>
     benchmarkBelongsToIndex(benchmark, input.config.kind),

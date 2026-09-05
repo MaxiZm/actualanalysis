@@ -593,7 +593,7 @@ export function publicationCoverageRegressions(
     const current = runs[kind];
     if (!current) continue;
     const previousRow = [...priorRuns]
-      .filter((row) => row.kind === kind)
+      .filter((row) => row.kind === kind && row.params.publication_status !== "rejected")
       .sort((left, right) => right.createdAt.getTime() - left.createdAt.getTime())[0];
     if (!previousRow) continue;
     const previous = publicationCoverage(previousRow.params);
@@ -844,7 +844,7 @@ async function main(): Promise<void> {
   const lineageSelection = selectLineageObservations(ingested.records);
   const mapped = mappedBenchmarkRecords(lineageSelection.kept);
   const strongestTierMapped = mappedBenchmarkRecords(ingested.selectedRecords);
-  const isAci12 = /^1\.[23]\./.test(ingested.registry.indexConfig.method_version);
+  const isAci12 = /^1\.[234]\./.test(ingested.registry.indexConfig.method_version);
   // Method 1.2 fits every non-duplicate observation in the joint likelihood. The
   // canonical-config, provenance-supersession and legacy uncertainty gates below
   // exist only for replaying pre-1.2 runs.

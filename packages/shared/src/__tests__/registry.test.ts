@@ -11,7 +11,7 @@ describe("repository registries", () => {
     expect(registry.benchmarks).toHaveLength(29);
     expect(registry.benchmarks.every((benchmark) => benchmark.categories.length > 0)).toBe(true);
     expect(registry.sources.length).toBeGreaterThanOrEqual(12);
-    expect(registry.indexConfig.method_version).toMatch(/^1\.[23]\.\d+$/);
+    expect(registry.indexConfig.method_version).toMatch(/^1\.[234]\.\d+$/);
     expect(registry.results.length).toBeGreaterThan(0);
     const sampleOnlyResults = registry.results.filter((result) => result.sample_only);
     expect(sampleOnlyResults.filter((result) =>

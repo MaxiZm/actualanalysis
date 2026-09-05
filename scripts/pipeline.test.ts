@@ -196,6 +196,18 @@ describe("pipeline run handoff", () => {
       "mixed scorable_results fell from 100 to 79",
       "mixed source epoch fell from 10 to 4 scorable results",
     ]);
+    expect(publicationCoverageRegressions({ mixed: current }, [{
+      kind: "mixed",
+      createdAt: new Date("2026-09-04T00:00:00.000Z"),
+      params: {
+        publication_status: "rejected",
+        publication_coverage: {
+          scorable_results: 1000, models: 100, benchmarks: 50,
+          fitted_cells: 1000, positive_weight_benchmarks: 50,
+          ranked_models: 100, by_source: { epoch: 100 },
+        },
+      },
+    }])).toEqual([]);
   });
 });
 

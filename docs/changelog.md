@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.4.0 — 2026-09-05
+
+- Correct GPT-5.6 Sol, Terra and Luna reasoning metadata; restore their explicitly named Arena configurations and GPT-5.5 high before alias deduplication. Preserve every original measurement. Unknown defaults are not invented, and approximate effort assignments carry extra uncertainty.
+- Publish joint-posterior pairwise probabilities for preliminary fitted systems. Compare now shows the probability even when the ordering is unresolved; model names and release dates do not impose a ranking.
+- Add reproducible model × benchmark holdouts that remove every effort setting and source copy together. Evaluate predictive error, proper distribution scores, uncertainty calibration and matched-configuration ordering with model-cluster uncertainty.
+- Reject two experimental formula replacements: the shared-capability variant worsened the original held-out test; the equal-unit correlated variant showed no aggregate improvement over three prespecified exploratory folds. Retain the correlated-trait formula and profile weights. This release does not claim a validated formula improvement.
+- Monitor convergence and Monte Carlo error for Chat and Agentic as well as Mixed. Compute E-BFMI from total Hamiltonian energy; incomplete validation inputs cannot pass as successful checks.
+- Keep rejected experiments in database audit history and exclude them from public snapshots. Remove the full comparison matrix from header search data to reduce every exported page's payload.
+
+See the [release audit](https://github.com/MaxiZm/actualanalysis/blob/main/docs/audits/1.4-release-audit.md) and [reproducible validation](https://github.com/MaxiZm/actualanalysis/tree/main/docs/audits/1.4-validation) for the accepted fit, comparison results and limitations.
+
 ## 1.3.2 — 2026-09-05
 
 - Correct FrontierMath revision identity and private task-set sizes. Read original Epoch runs with exact reasoning settings, run IDs and reported uncertainty; select the latest run per configuration instead of the highest score.

@@ -318,7 +318,7 @@ export function ModelCompareInspector({
                 ? `${a.name} has ${formatPercent(p, 0)} posterior probability of a higher ${index} index.`
                 : p <= 0.1
                   ? `${b.name} has ${formatPercent(1 - p, 0)} posterior probability of a higher ${index} index.`
-                  : "The posterior does not establish a clear ordering for this pair."}{" "}
+                  : `No clear ordering: the estimated probability that ${a.name} has a higher ${index} index is ${formatPercent(p, 0)}.`}{" "}
             <span>{common} shared benchmarks.</span>
           </p>
         </MinimalCardContent>

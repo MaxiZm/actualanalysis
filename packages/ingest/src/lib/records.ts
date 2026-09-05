@@ -1,6 +1,7 @@
 import { createHash } from "node:crypto";
 import type { Registry } from "@actualanalysis/shared";
 import { RawResultSchema, type RawResult } from "../types.js";
+import { arenaNamedEffort } from "./reported-effort.js";
 
 function stable(value: unknown): unknown {
   if (Array.isArray(value)) return value.map(stable);
@@ -142,10 +143,18 @@ export function resolveRecordAliases(records: readonly RawResult[], registry: Re
     const modelId = record.model_id ?? registry.modelAliases.resolveId(record.model);
     // Only models observed on an in-suite benchmark belong in the alias queue.
     if (benchmarkId && !modelId) increment("model", record.model, record.source_id);
+    const namedEffort = arenaNamedEffort({ ...record, ...(benchmarkId ? { benchmark_id: benchmarkId } : {}) },
+      modelId ? registry.models.find((model) => model.id === modelId) : undefined);
+    const hasConfigEffort = ["reasoning_effort", "evaluation_profile", "effort_tier"]
+      .some((key) => record.config[key] !== undefined);
+    // Alias resolution immediately deduplicates by config. Materialize the
+    // source's explicit setting first so bare and named-effort rows cannot collide.
+    const preservedEffort = namedEffort && !hasConfigEffort ? record.effort_tier ?? namedEffort : undefined;
     return RawResultSchema.parse({
       ...record,
       ...(modelId ? { model_id: modelId } : {}),
       ...(benchmarkId ? { benchmark_id: benchmarkId } : {}),
+      ...(preservedEffort ? { effort_tier: preservedEffort, config: { ...record.config, reasoning_effort: preservedEffort } } : {}),
     });
   });
 

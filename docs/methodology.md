@@ -1,6 +1,6 @@
 # How the index works
 
-**ActualAnalysis Capability Index · version 1.3.2 · calibration edition 2026a**
+**ActualAnalysis Capability Index · version 1.4.0 · calibration edition 2026a**
 
 The index estimates model capability from published benchmark evidence. It is a relative comparison, not a percentage of tasks a model will solve. Price, output speed and context are shown beside capability and do not change it.
 
@@ -38,11 +38,13 @@ The weights are declared product choices, not learned measures of universal usef
 
 The unit of analysis is a model snapshot at a declared effort class. `std-common` represents default effort under a common evaluation harness; `max-common` represents the highest declared effort. The default leaderboard uses `max-common`.
 
-Models whose declared default and maximum effort are equal have one fitted system. Models without a declared dial are currently treated the same way. That is a metadata limitation, not proof that the provider exposes no dial. Lower and intermediate observed effort settings are assigned to the nearest declared class; ambiguous assignment is flagged.
+Models whose declared default and maximum effort are equal have one fitted system. Models without a documented maximum, including numeric thinking budgets without a universal maximum, retain a pooled configuration; this is a metadata limitation, not proof that the provider exposes no dial. With a documented variable dial and maximum but unknown default, only explicitly matched maximum-effort results enter the maximum system. A default is never invented. Lower and intermediate observed effort settings are assigned to the nearest declared class and flagged as approximate, including settings below the default.
 
 A result preserves its source, date, metric, benchmark version, harness and reasoning settings when reported. Dated source protocols can supply missing fields. Unresolved provenance pins are labelled `metadata_incomplete` and receive 1.5 times the run-noise scale. Explicitly incompatible harnesses, inactive conditions, duplicate lineages and observations without a usable likelihood are excluded.
 
 Version 1.3.2 preserves original evaluation run IDs, reported uncertainty and exact effort configurations. FrontierMath v1 launch scores are excluded from the v2 conditions. Native source rows and confirmed mirrors share a lineage, so copying a result does not add evidence.
+
+Version 1.4.0 corrects the documented reasoning controls for GPT-5.6 Sol, Terra and Luna. It also restores their named Arena configurations and GPT-5.5 high. Explicit effort suffixes are preserved before alias deduplication, so two settings do not collapse into one result. The underlying benchmark measurements are unchanged by this method release.
 
 Repeated reports of the same result are not independent evidence. The source table keeps audit history, while comparison tables show one selected current result per model and benchmark. For a compact table, source priority is followed by highest explicitly reported effort, latest observation and stable identity. The selected score keeps its own uncertainty; errors are never borrowed from another configuration. Results from different harnesses are not automatically controlled comparisons.
 
@@ -50,21 +52,41 @@ Version 1.3.1 retires SWE-bench Pro Public and LiveCodeBench v6 Pro from fitting
 
 ## Sparse evidence and close comparisons
 
-Missing tests are not counted as failures, and benchmark count is not an explicit score penalty. The model estimates unmeasured domains from its learned relationships and priors, with wider uncertainty. Four strong reasoning results do not establish a gain in code, knowledge or communication. Adding or removing evidence can therefore move a Mixed median in either direction.
+Missing tests are not counted as failures, and benchmark count is not an explicit score penalty. The joint model estimates five correlated traits. Evidence in measured domains can inform unmeasured domains through the learned population correlations, but it does not become direct evidence in those domains. Sparse communication and professional evidence remains a limitation, and adding or removing evidence can move a median in either direction. Four strong reasoning results do not establish a measured gain in code, knowledge or communication.
 
 For GPT-5.5 and GPT-5.5 Pro, the audit corrected mixed FrontierMath revisions, duplicated observations and missing Pro effort metadata. The matched xhigh results favor Pro on both FrontierMath v2 subsets but slightly favor GPT-5.5 on ARC-AGI-2. The model applies the same method to both; it does not enforce an ordering based on the Pro name. Use uncertainty and matched configurations to interpret small median differences.
 
+The former GPT-5.6 Sol / GPT-5.5 Chat reversal combined a missing Arena alias, pooled Sol reasoning settings and a weakly identified communication trait. The old paired 90% interval spanned −21.4 to +13.2 points for Sol minus GPT-5.5; it did not establish that GPT-5.5 was better. Pairwise probabilities now remain available for preliminary fitted models as well as ranked ones. They are calculated from the same joint posterior draws, preserving correlation between the two estimates. A small median difference is not a demonstrated winner.
+
+## Correlated capability traits and effort
+
+Version 1.4.0 retains the correlated five-domain structure used by 1.3.2. The release corrects source configuration and comparison reporting, and strengthens validation. It does **not** claim a demonstrated improvement from a new capability formula.
+
+For each model snapshot $m$, the standard-effort trait vector is drawn from a multivariate normal distribution:
+
+$$\epsilon_m\sim\mathcal N_5(0,I),\quad \Omega\sim\operatorname{LKJ}(2),\quad \sigma_k\sim\operatorname{LogNormal}(0,0.5),\qquad Z_m^{std}=\operatorname{diag}(\sigma)L_\Omega\epsilon_m$$
+
+Here $L_\Omega L_\Omega^T=\Omega$. The estimated correlations can be positive or negative. The raw domain spreads are learned; the display scale is subsequently standardized on the calibration panel. There is no separate shared-capability factor in the retained production structure.
+
+Variable-effort models share their standard-effort traits with the corresponding maximum-effort system and receive a domain-specific increment:
+
+$$Z^{max}_{mk}=Z^{std}_{mk}+\delta_{mk},\qquad \delta_{mk}=\mu_\delta+s_{\delta k}h_{mk},\qquad h_{mk}\sim\mathcal N(0,1)$$
+
+The configured priors are $\mu_\delta\sim\mathcal N(0.30,0.30)$ and $s_{\delta k}\sim\operatorname{HalfNormal}(0.30)$. Gains are signed, not forced positive. Fixed-effort systems receive no increment. These increments remain in raw latent units, so the same raw gain can correspond to different displayed gains across domains. Weakly measured effort effects and domain spreads must be interpreted through their intervals.
+
+Two replacement structures remain experimental: `general_specific` adds a positively correlated common factor with shrunk domain departures, while `correlated_unit` fixes marginal domain units but retains the unrestricted correlation matrix. Neither met the evidence required for promotion. Their rationale, fixed evaluation plans and unsuccessful results are retained in the [validation audit](https://github.com/MaxiZm/actualanalysis/tree/main/docs/audits/1.4-validation). No release date, Pro label or provider imposes a required score ordering.
+
 ## Joint statistical model
 
-A single Bayesian model estimates five correlated capability traits alongside benchmark and source effects:
+A single Bayesian likelihood estimates the capability traits alongside benchmark and source effects:
 
 $$\eta_{sb}=\beta_b+\alpha_b\sum_k\lambda_{bk}Z_{sk}+f_{s,F(b)}+e_{sb}$$
 
 The benchmark loadings $\lambda_{bk}$ are declared in its registry entry and sum to one. Positive discrimination $\alpha_b$ controls how strongly the benchmark separates systems. The intercept $\beta_b$ shifts its expected score. A shared family effect $f$ accounts for related tests, and a Student-t cell effect $e$ allows a model to perform unusually well or poorly on an individual benchmark.
 
-The observation predictor also includes source-domain and protocol-condition offsets. Source reports have partially pooled noise and vendor-report effects. Capability traits use an LKJ(2) correlation prior; trait spreads use LogNormal(0, 0.5). Benchmark intercepts use Normal(0, 3), log discrimination uses Normal(0, 0.6), and cell residuals use four degrees of freedom. The full configured constants appear below.
+The observation predictor also includes source-domain and protocol-condition offsets. Source reports have partially pooled noise and vendor-report effects. Benchmark intercepts use Normal(0, 3), log discrimination uses Normal(0, 0.6), and cell residuals use four degrees of freedom. The full configured constants appear below. Source effects, family dependence and robust cell residuals are retained in version 1.4.0; they are not replaced by a raw average of percentages from tests of different difficulty.
 
-No benchmark is fixed as an anchor. Priors regularize the raw latent coordinates; the published quantities are identified by draw-wise panel standardization. The optional raw-panel soft pin is **not enabled** in this release.
+No benchmark is fixed as an anchor. Priors regularize the raw coordinates, and published scores use draw-wise panel standardization. With fixed cross-loadings, separate raw domain rescaling can change a benchmark’s effective trait mixture; one benchmark slope cannot generally absorb five different rescalings. Panel normalization does not remove that modeling assumption. The optional raw-panel soft pin is **not enabled** in this release.
 
 ## Matching a score to its measurement
 
@@ -125,7 +147,13 @@ The production run uses four NUTS chains, 2,000 warm-up iterations and 3,000 sam
 
 The fixed 16-system panel must retain at least 12 fitted members. Each configured panel system needs independent evidence in every domain and at least two cells in three domains. Publication also requires an accepted joint run and at least one rankable Mixed system.
 
-Passing sampler diagnostics establishes numerical convergence of the monitored quantities, not external validity. Simulation calibration, temporal and family holdouts, adversarial vendor-report refits, PSIS-LOO residuals and benchmark-adjusted exposure gaps have **not been established for this release**. Their configuration targets are future validation criteria, not passed checks. Uncomputed diagnostics are null. Profile weight sensitivity and out-of-sample ranking quality remain open validation work.
+Sampler checks explicitly monitor Mixed, Agentic and Chat composites as well as domain traits. E-BFMI now uses total Hamiltonian energy, including kinetic energy; the old potential-energy-only ratio was not the specified diagnostic. Empty validation inputs cannot report a passed check, and unavailable rank validation remains null.
+
+Version 1.4 evaluated two candidate structures on the same corrected evidence. Complete model × benchmark groups, including effort settings and source reports, were removed from fitting. Held-out predictions did not reuse their fitted cell or family residuals. The first, shared-factor candidate was rejected on its reserved test: grouped logit RMSE increased from 0.7808 to 0.7949, and predictive CRPS also worsened.
+
+The subsequent equal-unit correlated candidate was examined in three prespecified repeated cross-validation folds. Across 262 unique held-out groups from 70 models, grouped RMSE was 0.610235 for the retained baseline and 0.610382 for the candidate; CRPS was 0.311415 versus 0.312293. All six fits passed their numerical checks, but the candidate did not establish a useful predictive gain. Model-cluster 90% intervals for the metric differences included zero. These overlapping folds were exploratory after inspection of the earlier candidate, not an untouched confirmation. Neither candidate was promoted. Exact reports and selection history are in the [validation audit](https://github.com/MaxiZm/actualanalysis/tree/main/docs/audits/1.4-validation).
+
+These tests assess missing-condition prediction within the available evidence graph, using transformed-scale predictive approximations. Passing sampler diagnostics establishes numerical convergence of monitored quantities, not external validity. Simulation calibration, temporal and whole-family holdouts, adversarial vendor-report refits, PSIS-LOO residuals and benchmark-adjusted exposure gaps remain unestablished. Their configured targets are not passed checks. Profile weight sensitivity, broader conversational usefulness and out-of-sample ranking quality remain open validation work.
 
 ## Runtime, sources and reproducibility
 

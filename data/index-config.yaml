@@ -1,4 +1,5 @@
-method_version: 1.3.2
+method_version: 1.4.0
+trait_structure: correlated
 method_name: ActualAnalysis Capability Index
 taxonomy_edition: 2026a
 calibration_edition: 2026a

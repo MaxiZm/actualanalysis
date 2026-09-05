@@ -136,6 +136,13 @@ describe("anti-benchmaxxing diagnostics", () => {
     expect(() => runScoring(fixture)).toThrow(/Preliminary scoring fit did not converge after 1 iterations/);
   });
 
+  it.each(["1.2.3", "1.3.2", "1.4.0"])("cannot relabel a legacy fit as Bayesian method %s", async (version) => {
+    const { runScoring } = await import("../src/score.js");
+    const fixture = pipelineFixture();
+    fixture.config.methodVersion = version;
+    expect(() => runScoring(fixture)).toThrow(/requires the joint NumPyro runner/);
+  });
+
   it("end-to-end scoring emits all diagnostics and cuts flagged cell weight", async () => {
     const { runScoring } = await import("../src/score.js");
     const fixture = pipelineFixture();

@@ -1,0 +1,38 @@
+{
+  "recorded_at_utc": "2026-09-05T07:33:54.965575+00:00",
+  "stage": "Exploratory repeated cross-validation after inspection of a rejected candidate",
+  "previous_candidate": "general_specific with fixed domain_specific_sd=0.5",
+  "previous_decision": "Rejected on original held-out test: grouped RMSE0.780787 to0.794891 and CRPS worsened",
+  "new_candidate": "correlated_unit",
+  "independent_motivation": "Fix unit marginal trait variances so declared cross-loadings and shared effort priors operate in comparable units; retain unrestricted LKJ correlations rather than assume positive common capability",
+  "fixed_priors": {
+    "effort_specific_sd": 0.15,
+    "other_priors": "unchanged frozen input"
+  },
+  "hyperparameter_grid": null,
+  "original_dev_diagnostic": {
+    "status": "Canceled before results; superseded by decision to evaluate only three prespecified folds"
+  },
+  "prespecified_repeated_cv_seeds": [
+    20260907,
+    20260908,
+    20260909
+  ],
+  "training_fraction": 0.8,
+  "evaluation_partition": "combined dev+test grouped20% holdout",
+  "original_test_reused_as_confirmatory_evidence": false,
+  "interpretation": "Dataset and overlapping cells have already been inspected; these folds are correlated exploratory repeated CV, not untouched confirmation. Report every fold and preserve rejected candidate history.",
+  "numerical_settings": {
+    "chains": 2,
+    "warmup": 1000,
+    "samples_per_chain": 1000,
+    "target_accept": 0.98,
+    "max_rhat": 1.01,
+    "min_ess": 400,
+    "divergences": 0,
+    "permitted_changes": "Only additional draws/warmup/chains to resolve numerical diagnostics; no candidate retuning"
+  },
+  "comparison_plan": "Inspect equally weighted grouped RMSE/CRPS, pooled RMSE, matching-protocol effort ordering, coverage/width, and model-cluster uncertainty; report all folds, never select a favorable seed",
+  "input_sha256": "693620371a78e87742e2498ac1d06d26b6f9a66ab195ea180f57f1b54c507933",
+  "model_source_sha256": "0da8e04b44c50ff6ec5ce04809b33356d2203511d2320e3db4607a549aec0185"
+}

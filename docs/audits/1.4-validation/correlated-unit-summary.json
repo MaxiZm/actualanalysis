@@ -1,0 +1,472 @@
+{
+  "schema_version": 1,
+  "stage": "Exploratory repeated cross-validation after candidate-selection history",
+  "candidate": "correlated_unit",
+  "input_sha256": "693620371a78e87742e2498ac1d06d26b6f9a66ab195ea180f57f1b54c507933",
+  "split_seeds": [
+    20260907,
+    20260908,
+    20260909
+  ],
+  "selection_history": {
+    "recorded_at_utc": "2026-09-05T07:33:54.965575+00:00",
+    "stage": "Exploratory repeated cross-validation after inspection of a rejected candidate",
+    "previous_candidate": "general_specific with fixed domain_specific_sd=0.5",
+    "previous_decision": "Rejected on original held-out test: grouped RMSE0.780787 to0.794891 and CRPS worsened",
+    "new_candidate": "correlated_unit",
+    "independent_motivation": "Fix unit marginal trait variances so declared cross-loadings and shared effort priors operate in comparable units; retain unrestricted LKJ correlations rather than assume positive common capability",
+    "fixed_priors": {
+      "effort_specific_sd": 0.15,
+      "other_priors": "unchanged frozen input"
+    },
+    "hyperparameter_grid": null,
+    "original_dev_diagnostic": {
+      "status": "Canceled before results; superseded by decision to evaluate only three prespecified folds"
+    },
+    "prespecified_repeated_cv_seeds": [
+      20260907,
+      20260908,
+      20260909
+    ],
+    "training_fraction": 0.8,
+    "evaluation_partition": "combined dev+test grouped20% holdout",
+    "original_test_reused_as_confirmatory_evidence": false,
+    "interpretation": "Dataset and overlapping cells have already been inspected; these folds are correlated exploratory repeated CV, not untouched confirmation. Report every fold and preserve rejected candidate history.",
+    "numerical_settings": {
+      "chains": 2,
+      "warmup": 1000,
+      "samples_per_chain": 1000,
+      "target_accept": 0.98,
+      "max_rhat": 1.01,
+      "min_ess": 400,
+      "divergences": 0,
+      "permitted_changes": "Only additional draws/warmup/chains to resolve numerical diagnostics; no candidate retuning"
+    },
+    "comparison_plan": "Inspect equally weighted grouped RMSE/CRPS, pooled RMSE, matching-protocol effort ordering, coverage/width, and model-cluster uncertainty; report all folds, never select a favorable seed",
+    "input_sha256": "693620371a78e87742e2498ac1d06d26b6f9a66ab195ea180f57f1b54c507933",
+    "model_source_sha256": "0da8e04b44c50ff6ec5ce04809b33356d2203511d2320e3db4607a549aec0185"
+  },
+  "folds": [
+    {
+      "split_seed": 20260907,
+      "train_group_count": 445,
+      "baseline_diagnostics": {
+        "chains": 2,
+        "warmup": 1000,
+        "samples_per_chain": 1000,
+        "elapsed_seconds": 135.41280791698955,
+        "divergences": 0,
+        "heldout_location_max_rhat": 1.0046172873194454,
+        "heldout_location_min_ess": 910.5296953607426,
+        "ebfmi": [
+          0.8979411800657595,
+          0.9610809166798141
+        ],
+        "thresholds": {
+          "max_rhat": 1.01,
+          "min_ess": 400
+        },
+        "adequate_for_comparison": true
+      },
+      "candidate_diagnostics": {
+        "chains": 2,
+        "warmup": 1000,
+        "samples_per_chain": 1000,
+        "elapsed_seconds": 363.77922533405945,
+        "divergences": 0,
+        "heldout_location_max_rhat": 1.0019953507223707,
+        "heldout_location_min_ess": 798.9876214919116,
+        "ebfmi": [
+          0.906990925297841,
+          1.0265147509554184
+        ],
+        "thresholds": {
+          "max_rhat": 1.01,
+          "min_ess": 400
+        },
+        "adequate_for_comparison": true
+      },
+      "baseline_metrics": {
+        "observations": 177,
+        "heldout_model_benchmark_groups": 112,
+        "logit_rmse": 0.7606117038974564,
+        "logit_mae": 0.5313843323018324,
+        "group_macro_logit_rmse": 0.6428116385780102,
+        "benchmark_macro_logit_rmse": 0.4417965386607765,
+        "by_domain": {
+          "reasoning": {
+            "n": 102,
+            "logit_rmse": 0.9176107412213328
+          },
+          "agentic": {
+            "n": 30,
+            "logit_rmse": 0.48304912699727404
+          },
+          "communication-professional": {
+            "n": 16,
+            "logit_rmse": 0.17718192109067962
+          },
+          "software-code": {
+            "n": 12,
+            "logit_rmse": 0.4261691195247039
+          },
+          "knowledge-information": {
+            "n": 17,
+            "logit_rmse": 0.6339902920408504
+          }
+        },
+        "same_benchmark_protocol_effort_ordering": {
+          "pairs": 456,
+          "correct": 358,
+          "accuracy": 0.7850877192982456,
+          "observed_ties_excluded": 6
+        },
+        "approx_predictive_90_coverage": 0.9548022598870056,
+        "approx_predictive_90_mean_width": 2.7055364860740747,
+        "approx_predictive_crps": 0.38447851796425153,
+        "approx_mean_predictive_log_density": -0.9068867664090547,
+        "approx_predictive_90_interval_score": 2.881302015003679
+      },
+      "candidate_metrics": {
+        "observations": 177,
+        "heldout_model_benchmark_groups": 112,
+        "logit_rmse": 0.7630190714328631,
+        "logit_mae": 0.5287145314884756,
+        "group_macro_logit_rmse": 0.6390574151779509,
+        "benchmark_macro_logit_rmse": 0.4485147208566067,
+        "by_domain": {
+          "reasoning": {
+            "n": 102,
+            "logit_rmse": 0.9246826823326686
+          },
+          "agentic": {
+            "n": 30,
+            "logit_rmse": 0.4808871284135664
+          },
+          "communication-professional": {
+            "n": 16,
+            "logit_rmse": 0.18488653488921947
+          },
+          "software-code": {
+            "n": 12,
+            "logit_rmse": 0.42089823635768325
+          },
+          "knowledge-information": {
+            "n": 17,
+            "logit_rmse": 0.6051162535246392
+          }
+        },
+        "same_benchmark_protocol_effort_ordering": {
+          "pairs": 456,
+          "correct": 361,
+          "accuracy": 0.7916666666666666,
+          "observed_ties_excluded": 6
+        },
+        "approx_predictive_90_coverage": 0.96045197740113,
+        "approx_predictive_90_mean_width": 2.7189658961388345,
+        "approx_predictive_crps": 0.3839623555937338,
+        "approx_mean_predictive_log_density": -0.9071084427441463,
+        "approx_predictive_90_interval_score": 2.8478095620203105
+      }
+    },
+    {
+      "split_seed": 20260908,
+      "train_group_count": 445,
+      "baseline_diagnostics": {
+        "chains": 2,
+        "warmup": 1000,
+        "samples_per_chain": 1000,
+        "elapsed_seconds": 132.83011062489823,
+        "divergences": 0,
+        "heldout_location_max_rhat": 1.0039288318794437,
+        "heldout_location_min_ess": 909.3615233434662,
+        "ebfmi": [
+          0.882321071309465,
+          0.9314933928602761
+        ],
+        "thresholds": {
+          "max_rhat": 1.01,
+          "min_ess": 400
+        },
+        "adequate_for_comparison": true
+      },
+      "candidate_diagnostics": {
+        "chains": 2,
+        "warmup": 1000,
+        "samples_per_chain": 1000,
+        "elapsed_seconds": 349.6405952500645,
+        "divergences": 0,
+        "heldout_location_max_rhat": 1.0049005640888893,
+        "heldout_location_min_ess": 977.1259036951163,
+        "ebfmi": [
+          0.8757111784999648,
+          1.022369005483739
+        ],
+        "thresholds": {
+          "max_rhat": 1.01,
+          "min_ess": 400
+        },
+        "adequate_for_comparison": true
+      },
+      "baseline_metrics": {
+        "observations": 172,
+        "heldout_model_benchmark_groups": 112,
+        "logit_rmse": 0.6915404621340407,
+        "logit_mae": 0.503988422083362,
+        "group_macro_logit_rmse": 0.6168467085681233,
+        "benchmark_macro_logit_rmse": 0.46558470878684177,
+        "by_domain": {
+          "communication-professional": {
+            "n": 16,
+            "logit_rmse": 0.3175991915758356
+          },
+          "reasoning": {
+            "n": 91,
+            "logit_rmse": 0.8335091247426164
+          },
+          "software-code": {
+            "n": 11,
+            "logit_rmse": 0.5390117567611241
+          },
+          "agentic": {
+            "n": 36,
+            "logit_rmse": 0.4552933084922366
+          },
+          "knowledge-information": {
+            "n": 18,
+            "logit_rmse": 0.6129098655061801
+          }
+        },
+        "same_benchmark_protocol_effort_ordering": {
+          "pairs": 327,
+          "correct": 267,
+          "accuracy": 0.8165137614678899,
+          "observed_ties_excluded": 2
+        },
+        "approx_predictive_90_coverage": 0.9476744186046512,
+        "approx_predictive_90_mean_width": 2.396275047350001,
+        "approx_predictive_crps": 0.3553457122137971,
+        "approx_mean_predictive_log_density": -0.8687615845961488,
+        "approx_predictive_90_interval_score": 2.6399666334425347
+      },
+      "candidate_metrics": {
+        "observations": 172,
+        "heldout_model_benchmark_groups": 112,
+        "logit_rmse": 0.6958665949734336,
+        "logit_mae": 0.5099832849482884,
+        "group_macro_logit_rmse": 0.6191306356830092,
+        "benchmark_macro_logit_rmse": 0.47369927074766555,
+        "by_domain": {
+          "communication-professional": {
+            "n": 16,
+            "logit_rmse": 0.3014566874487747
+          },
+          "reasoning": {
+            "n": 91,
+            "logit_rmse": 0.8382487492632733
+          },
+          "software-code": {
+            "n": 11,
+            "logit_rmse": 0.5258702939879668
+          },
+          "agentic": {
+            "n": 36,
+            "logit_rmse": 0.46683241321642505
+          },
+          "knowledge-information": {
+            "n": 18,
+            "logit_rmse": 0.6237851914786009
+          }
+        },
+        "same_benchmark_protocol_effort_ordering": {
+          "pairs": 327,
+          "correct": 268,
+          "accuracy": 0.8195718654434251,
+          "observed_ties_excluded": 2
+        },
+        "approx_predictive_90_coverage": 0.9476744186046512,
+        "approx_predictive_90_mean_width": 2.4093485678033617,
+        "approx_predictive_crps": 0.3581364320704594,
+        "approx_mean_predictive_log_density": -0.8758446295123885,
+        "approx_predictive_90_interval_score": 2.6444099169527697
+      }
+    },
+    {
+      "split_seed": 20260909,
+      "train_group_count": 445,
+      "baseline_diagnostics": {
+        "chains": 2,
+        "warmup": 1000,
+        "samples_per_chain": 1000,
+        "elapsed_seconds": 121.09295208379626,
+        "divergences": 0,
+        "heldout_location_max_rhat": 1.0039695990129032,
+        "heldout_location_min_ess": 815.2275180548675,
+        "ebfmi": [
+          0.8988394315201036,
+          0.9714550895738073
+        ],
+        "thresholds": {
+          "max_rhat": 1.01,
+          "min_ess": 400
+        },
+        "adequate_for_comparison": true
+      },
+      "candidate_diagnostics": {
+        "chains": 2,
+        "warmup": 1000,
+        "samples_per_chain": 1000,
+        "elapsed_seconds": 123.09138245787472,
+        "divergences": 0,
+        "heldout_location_max_rhat": 1.007685595619195,
+        "heldout_location_min_ess": 634.1643809151986,
+        "ebfmi": [
+          0.8640975052859852,
+          1.0090072939151402
+        ],
+        "thresholds": {
+          "max_rhat": 1.01,
+          "min_ess": 400
+        },
+        "adequate_for_comparison": true
+      },
+      "baseline_metrics": {
+        "observations": 199,
+        "heldout_model_benchmark_groups": 112,
+        "logit_rmse": 0.7579959893011741,
+        "logit_mae": 0.5127301067714808,
+        "group_macro_logit_rmse": 0.5583235652578532,
+        "benchmark_macro_logit_rmse": 0.47543363947092165,
+        "by_domain": {
+          "agentic": {
+            "n": 59,
+            "logit_rmse": 0.4460777585429934
+          },
+          "reasoning": {
+            "n": 115,
+            "logit_rmse": 0.9261811953684288
+          },
+          "communication-professional": {
+            "n": 13,
+            "logit_rmse": 0.24404920740461356
+          },
+          "knowledge-information": {
+            "n": 10,
+            "logit_rmse": 0.5239353862847519
+          },
+          "software-code": {
+            "n": 2,
+            "logit_rmse": 0.4632448314401291
+          }
+        },
+        "same_benchmark_protocol_effort_ordering": {
+          "pairs": 370,
+          "correct": 324,
+          "accuracy": 0.8756756756756757,
+          "observed_ties_excluded": 1
+        },
+        "approx_predictive_90_coverage": 0.9547738693467337,
+        "approx_predictive_90_mean_width": 2.5602260827554044,
+        "approx_predictive_crps": 0.37575588673069,
+        "approx_mean_predictive_log_density": -0.9130334172030056,
+        "approx_predictive_90_interval_score": 2.916647240968622
+      },
+      "candidate_metrics": {
+        "observations": 199,
+        "heldout_model_benchmark_groups": 112,
+        "logit_rmse": 0.7596206316936792,
+        "logit_mae": 0.514723450920899,
+        "group_macro_logit_rmse": 0.5642203473837826,
+        "benchmark_macro_logit_rmse": 0.4862505217630803,
+        "by_domain": {
+          "agentic": {
+            "n": 59,
+            "logit_rmse": 0.4498225249554758
+          },
+          "reasoning": {
+            "n": 115,
+            "logit_rmse": 0.9264727601456219
+          },
+          "communication-professional": {
+            "n": 13,
+            "logit_rmse": 0.27155364699500106
+          },
+          "knowledge-information": {
+            "n": 10,
+            "logit_rmse": 0.5271906004519589
+          },
+          "software-code": {
+            "n": 2,
+            "logit_rmse": 0.46968497378625146
+          }
+        },
+        "same_benchmark_protocol_effort_ordering": {
+          "pairs": 370,
+          "correct": 323,
+          "accuracy": 0.8729729729729729,
+          "observed_ties_excluded": 1
+        },
+        "approx_predictive_90_coverage": 0.9447236180904522,
+        "approx_predictive_90_mean_width": 2.5334109836388023,
+        "approx_predictive_crps": 0.3773919320666975,
+        "approx_mean_predictive_log_density": -0.9192952684022372,
+        "approx_predictive_90_interval_score": 2.891123358962671
+      }
+    }
+  ],
+  "all_fits_pass_strict_diagnostics": true,
+  "observation_appearances": 548,
+  "unique_heldout_model_benchmark_groups": 262,
+  "aggregate_unique_group_metrics": {
+    "baseline": {
+      "group_macro_logit_rmse": 0.6102348573497168,
+      "group_macro_predictive_crps": 0.311414702759758,
+      "group_macro_predictive_log_density": -0.745987002375779
+    },
+    "correlated_unit": {
+      "group_macro_logit_rmse": 0.6103817255638395,
+      "group_macro_predictive_crps": 0.31229286586642857,
+      "group_macro_predictive_log_density": -0.7517421880263382
+    }
+  },
+  "paired_comparison": {
+    "method": "Paired model-cluster bootstrap over equally weighted model x benchmark group means",
+    "replicates": 2000,
+    "seed": 48221,
+    "heldout_models": 70,
+    "heldout_groups": 262,
+    "direction": "Candidate minus baseline; RMSE and CRPS lower is better, log density higher is better",
+    "differences": {
+      "group_macro_logit_rmse": {
+        "estimate": 0.00014686821412268625,
+        "bootstrap_90_low": -0.004695364106133715,
+        "bootstrap_90_high": 0.004736631306896465
+      },
+      "group_macro_predictive_crps": {
+        "estimate": 0.0008781631066705218,
+        "bootstrap_90_low": -0.0012611027106506367,
+        "bootstrap_90_high": 0.002901462007382323
+      },
+      "group_macro_predictive_log_density": {
+        "estimate": -0.005755185650559181,
+        "bootstrap_90_low": -0.011789209775715655,
+        "bootstrap_90_high": 0.0005286579601850644
+      }
+    },
+    "limitation": "Benchmark errors may also correlate; intervals describe this fixed random split, not all future datasets"
+  },
+  "aggregation": "Average squared errors/CRPS/log density across source, effort, and fold appearances within each unique model x benchmark group; weight unique groups equally; bootstrap entire models across all folds together",
+  "limitations": [
+    "Repeated folds and their training sets overlap; this is not independent confirmatory evidence",
+    "Preserve original rejected candidate results and report every prespecified fold",
+    "Model-cluster intervals retain repeated-cell dependence but do not capture all benchmark/training-fit dependence"
+  ],
+  "assessment": {
+    "promotion_recommended": false,
+    "decision": "Retain correlated baseline with corrected evidence",
+    "reason": "Correlated-unit changes are negligible/mixed across folds; aggregate grouped RMSE/CRPS do not demonstrate a useful predictive improvement. This is exploratory repeated CV after rejection of the general-specific candidate, not independent confirmation.",
+    "original_general_specific_candidate": "Rejected on original test; original test-production report and decision lock retained",
+    "no_hyperparameter_retuning": true,
+    "all_prespecified_folds_reported": true
+  }
+}

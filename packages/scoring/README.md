@@ -1,66 +1,72 @@
-# `@actualanalysis/scoring`
+# ACI scoring
 
-Pure TypeScript implementation of the ActualAnalysis Capability Index (ACI). The
-engine has no database or network dependency; callers supply benchmark definitions,
-model metadata, and raw result records.
+The current index uses one Bayesian NumPyro fit for Mixed, Agentic and Chat.
+TypeScript validates source evidence, reasoning settings and lineage; Python
+fits five correlated capability traits, effort increments and benchmark/source
+effects. All published views come from the same posterior.
 
-```ts
-import { coerceScoringInput, runScoring } from "@actualanalysis/scoring";
+The normative equations and limits are in [methodology](../../docs/methodology.md).
+Versioned constants are in `data/index-config.yaml`. Version 1.4.0 retains
+`trait_structure: correlated`, the LKJ model used by 1.3.2. Reasoning metadata,
+configuration aliases, paired probabilities for preliminary systems and numerical
+diagnostics are corrected. A replacement capability formula has not demonstrated
+a useful predictive improvement.
 
-const run = runScoring(coerceScoringInput(payload, "agentic"));
-```
+## Fit and reproduce
 
-`payload` may use the package's camelCase interfaces or the shared registries'
-snake_case shapes. In particular, the adapter understands `accuracy`, `elo`,
-`metr_horizon`, and `log_relative` transforms and the nested `data/index-config.yaml`
-layout.
-
-The full pass performs:
-
-1. provenance-tier selection and chance/continuous-score normalization;
-2. logit-scale cell-noise and harness-heterogeneity estimation;
-3. reference-identified robust 2PL fitting with Adam;
-4. discrimination, saturation, source, and holdout weighting;
-5. public-outlier downweighting and the final refit;
-6. two-model affine anchoring;
-7. hierarchical benchmark/cell bootstrap uncertainty and rank probabilities;
-8. public-private, leave-one-out, outlier, and mean-win-rate diagnostics; and
-9. coverage gating with family-prior shrinkage for provisional models.
-
-For benchmark additions between full method releases, use
-`calibrateNewBenchmark(cells, frozenCapabilities)` to fit only the new difficulty and
-discrimination.
-
-## CLI
+Install the locked Python environment with `uv sync --frozen` in the `python`
+subdirectory. From the repository root:
 
 ```sh
-npm run score -- --input payload.yaml --kind mixed --pretty
-npm run score -- --input payload.yaml --all --output runs.json
-npm run score -- --input payload.yaml --kind mixed --eci-compatible
+npm run pipeline -- --all --dry-run
+npm run pipeline -- --input work/reviewed-records.json --commit-snapshot
 ```
 
-Use `--bootstrap N` for a quicker local smoke test. The versioned default remains 500.
-
-## ECI ordering cross-check
-
-`--eci-compatible` switches the fit to equal benchmark/cell weights, ordinary
-unstandardized squared residuals, and the declared reference benchmark. It exists
-only for ordering comparisons; it does not claim numeric equality between ACI's
-logit 2PL parameters and ECI parameters.
-
-The checked-in `test/fixtures/eci-synthetic-ordering.json` is deliberately synthetic
-and gates Spearman rho at 0.99. It is not represented as real Epoch data. For the
-real cross-check, obtain an attributed capability export from the MIT-licensed
-`epoch-research/eci-public` repository, export this package's compatibility-mode
-scores as `work/actualanalysis-eci-mode.json`, and run the repository utility:
+Publication requires `DATABASE_URL`. A dry run writes its exact indexed input,
+posterior, summary and diagnostics under `work/pipeline/<timestamp>/` without
+changing the database. Only a complete, accepted three-view run can publish.
+The input can also be replayed directly from `packages/scoring/python`:
 
 ```sh
-python3 scripts/crosscheck/compare_ordering.py \
-  work/actualanalysis-eci-mode.json \
-  work/eci-public-capabilities.csv \
-  --candidate-id modelId
+uv run --frozen python -m aci12.runner \
+  --input /absolute/path/aci12-input.json \
+  --output /absolute/path/diagnostics.json \
+  --posterior /absolute/path/posterior.npz \
+  --summary /absolute/path/summary.json
 ```
 
-The utility intersects canonical model ids and exits non-zero below rho 0.99. The
-official source data remains out of tree rather than being mislabeled as a vendored
-fixture.
+## Predictive validation
+
+The experimental `general_specific` candidate failed its reserved test. A later
+`correlated_unit` candidate was evaluated in three prespecified exploratory
+repeated folds and did not establish a useful gain. Neither is the production
+method. Their results, input hashes and selection history are preserved in the
+[validation audit](../../docs/audits/1.4-validation/).
+
+`aci12.validate_predictive` partitions complete model × benchmark groups,
+including every effort setting and source report. Development and final test
+rows are both excluded from training. Held-out predictions never reuse fitted
+cell or family residuals. Fix the candidate using development results before
+opening the final test partition.
+
+```sh
+uv run --frozen python -m aci12.validate_predictive \
+  --input /absolute/path/aci12-input.json \
+  --output /absolute/path/development.json --split dev \
+  --structures baseline general_specific --domain-specific-sd 0.5 \
+  --target-accept 0.98
+```
+
+Use `--split test --production` only after recording the candidate decision.
+The report contains the split, input/code hashes, sampler checks, proper
+predictive scores, matched-configuration ordering and clustered uncertainty.
+Development and reserved-test results must be distinguished from later exploratory
+repeated cross-validation on the inspected dataset. The predictive scores use
+transformed-scale approximations and test missing benchmark prediction within
+the connected evidence graph. They do not establish temporal generalization or
+universal intelligence.
+
+Run Python regressions with `uv run --frozen python -m unittest discover -s tests`.
+They are also part of GitHub CI. `npm test` runs TypeScript evidence and pipeline
+checks. Legacy Huber/anchor/bootstrap helpers reproduce historical experiments;
+`runScoring` rejects current Bayesian release versions.

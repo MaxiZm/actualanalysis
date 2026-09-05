@@ -1,13 +1,17 @@
 # ActualAnalysis
 
-ActualAnalysis is an open model-comparison stack: public benchmark registries, source-aware ingestion, a robust latent-capability model, uncertainty estimates, anti-benchmaxxing diagnostics, and a fast comparison UI. It reports separate **Mixed**, **Agentic**, and **Chat** indexes instead of hiding incompatible workloads inside one arithmetic average. The app uses Next.js 16 rather than the originally proposed Next.js 15 because the supported 16.x line resolves known framework advisories.
+ActualAnalysis is an open model-comparison stack with public benchmark registries, source-aware ingestion, a Bayesian capability model, uncertainty estimates and a Next.js comparison UI. It reports **Mixed**, **Agentic** and **Chat** views using different declared domain weights on the same posterior.
 
-The repository is intentionally useful before a database is configured. The web app reads the latest valid committed snapshot—currently the first live snapshot dated `2026-09-04`—and falls back to clearly labelled synthetic fixture data if no valid snapshot is available. Artificial Analysis runtime, task cost and CritPt results are attributed UI overlays. They do not enter the capability fit or bulk exports; the private registries may be absent.
+The repository is intentionally useful before a database is configured. The web app reads the latest valid committed snapshot and falls back to clearly labelled synthetic fixture data if no valid snapshot is available. Artificial Analysis runtime, task cost and CritPt results are attributed UI overlays. They do not enter the capability fit or bulk exports; the private registries may be absent.
 
-## Scoring engine (method 1.3.2)
+## Scoring engine (method 1.4.0)
 
-Scores come from one joint five-domain Bayesian model fitted with NumPyro NUTS
-(`packages/scoring/python`). The Python environment is managed by `uv`:
+Scores come from one joint Bayesian model with five correlated capability traits,
+reasoning-effort increments and benchmark/source effects, fitted with NumPyro NUTS
+(`packages/scoring/python`). All three profiles use the same posterior. Method
+1.4.0 retains the correlated formula from 1.3.2 and corrects reasoning metadata,
+Arena configuration aliases, paired comparisons and numerical diagnostics.
+The Python environment is managed by `uv`:
 
 ```bash
 cd packages/scoring/python && uv sync --frozen
@@ -16,9 +20,17 @@ cd packages/scoring/python && uv sync --frozen
 `npm run pipeline -- --all --dry-run` ingests, prepares observations, audits the
 calibration panel and runs the fit (4 chains × 2,000 warm-up + 3,000 samples;
 several minutes on a laptop CPU). For quick local iterations use
-`ACI12_CHAINS=2 ACI12_WARMUP=300 ACI12_SAMPLES=300`; such runs never pass the
-convergence gate and are never published. Method rules live in
+`ACI12_CHAINS=2 ACI12_WARMUP=300 ACI12_SAMPLES=300`; these are exploratory runs,
+not substitutes for the production checks. Method rules live in
 [docs/methodology.md](docs/methodology.md); constants in `data/index-config.yaml`.
+
+Two alternative formulas were evaluated with complete model × benchmark
+holdouts, including effort settings and source reports. The shared-factor
+candidate failed its reserved test; an equal-unit correlated candidate did not
+establish a useful gain in subsequent exploratory repeated cross-validation.
+Neither was promoted. This release does not claim improved predictive accuracy
+from a formula change. See the [validation audit](docs/audits/1.4-validation/)
+and [scoring package](packages/scoring/README.md) for the evidence and commands.
 
 ## GitHub Pages
 
@@ -51,7 +63,7 @@ DATABASE_URL=postgres://actualanalysis:actualanalysis@localhost:5432/actualanaly
   npm run pipeline -- --all
 ```
 
-`--dry-run` still fetches, validates, resolves aliases, and attempts scoring, but never mutates Postgres. Add `--commit-snapshot` only for a publishable run: the exporter refuses to write unless all three indexes exist and each has a ranked, non-provisional result. The committed `2026-09-04` snapshot is the web app's current default; the conspicuous synthetic fixture remains a fail-safe for missing or invalid snapshot data.
+`--dry-run` still fetches, validates, resolves aliases, and attempts scoring, but never mutates Postgres. Add `--commit-snapshot` only for a publishable run: the exporter requires all three views from an accepted joint run and at least one rankable Mixed system. The latest valid committed snapshot is the web app's default; clearly labelled synthetic fixtures remain a fallback for missing or invalid snapshot data.
 
 ## What is implemented
 
@@ -71,7 +83,7 @@ DATABASE_URL=postgres://actualanalysis:actualanalysis@localhost:5432/actualanaly
 apps/web/            Next.js App Router UI and public API
 packages/shared/     Schemas, registry loader, IDs and aliases
 packages/ingest/     Source adapters and ingest CLI
-packages/scoring/    Pure TypeScript capability model
+packages/scoring/    TypeScript evidence preparation and Python Bayesian fit
 packages/db/         Drizzle schema, seed and snapshot export
 data/                Versioned registries and manual observations
 docs/                Methodology and method changelog
@@ -105,10 +117,12 @@ npm run verify:db
 
 It checks source-tier supersession, JSON import, every emitted CSV row count, and the hard exclusion of source-marked non-redistributable raw observations and all speed observations.
 
-The scoring tests cover the 1.2 likelihood transforms, lineage and profile gates, draw-wise calibration, evidence tiers, rank distributions, and information concentration, alongside historical-method regression tests. Adapter tests use fixtures rather than depending on remote pages during CI. The site works without JavaScript for navigation and tabular reading; enhanced search and charts hydrate on the client.
+The scoring tests cover likelihood transforms, source lineage and effort assignments, draw-wise calibration, paired posterior comparisons, evidence tiers, information concentration and diagnostic failure modes, alongside historical-method regression tests. Python regressions run in CI and locally with `uv run --frozen python -m unittest discover -s tests` from `packages/scoring/python`. Adapter tests use fixtures rather than depending on remote pages during CI. The site works without JavaScript for navigation and tabular reading; enhanced search and charts hydrate on the client.
 
 ## Status
 
-Method version `1.0.0` produced the currently committed historical snapshot at `data/snapshots/2026-09-04`. Method `1.2.0` is now the configured scoring contract, but publication fails closed until the source registry supplies the effort-profile and harness metadata required to fit the frozen calibration panel. The existing snapshot is not relabelled or silently recomputed.
+The current scoring contract is method `1.4.0`, with the correlated baseline retained after two unsuccessful candidate evaluations. The release snapshot is dated `2026-09-05`; historical runs keep their original method versions. The site uses the latest valid committed snapshot, and GitHub Pages publication is separate from the database-backed scoring pipeline.
 
-This run was fail-soft rather than source-complete. The live capture included LMArena and ARC Prize; configured Kaggle feeds/local files were absent, while 16 accepted Kaggle observations and 18 accepted Terminal-Bench observations came from the versioned manual-results registry. Another 51 Kaggle rows remain review-only and were excluded from ingest. Those source conditions remain visible in the capture report and must not be interpreted as zero benchmark performance. The committed snapshot records a successful local pipeline publication only; this historical run predates the GitHub Pages deployment described above. Unknown in-scope names continue to flow to the deterministic, human-reviewable `data/manual/unmapped.yaml`, and future publication remains gated by the checks in [docs/methodology.md](docs/methodology.md).
+Corrected reasoning controls and restored Arena configurations change which evidence belongs to each model system. Preliminary models now retain paired posterior probabilities, and the runner checks every displayed profile with corrected energy diagnostics. These are evidence and reporting fixes; a more accurate replacement formula has not been established. Release reports and rejected candidate results remain in [docs/audits/1.4-validation](docs/audits/1.4-validation/).
+
+Source coverage is incomplete. Missing feeds and unresolved names are recorded in capture reports and `data/manual/unmapped.yaml`; they do not imply zero benchmark performance. Future snapshots remain subject to the publication checks in [docs/methodology.md](docs/methodology.md).

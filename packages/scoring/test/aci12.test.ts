@@ -266,6 +266,25 @@ describe("ACI 1.2 posterior outputs", () => {
     expect(isFixedEffort(system)).toBe(false);
   });
 
+  it("does not pool a documented variable dial when only its maximum is known", () => {
+    const variable = { modelSnapshotId: "m", maxEffortTier: "max", effortTierOrder: ["low", "medium", "high", "max"] };
+    expect(isFixedEffort(variable)).toBe(false);
+    const prepared = prepareAci12([
+      observation({ observationId: "low", effortTier: "low", nTasks: 100 }),
+      observation({ observationId: "unknown", effortTier: undefined, nTasks: 100 }),
+      observation({ observationId: "max", effortTier: "max", nTasks: 100 }),
+    ], [variable], [benchmark()], config);
+    expect(prepared.observations.map((row) => row.observationId)).toEqual(["max"]);
+    expect(prepared.rejections).toHaveLength(2);
+  });
+
+  it("flags below-default effort as approximate instead of exact standard effort", () => {
+    const prepared = prepareAci12([observation({ effortTier: "low", nTasks: 100 })],
+      [{ modelSnapshotId: "m", defaultEffortTier: "medium", maxEffortTier: "max" }], [benchmark()], config);
+    expect(prepared.observations[0]?.profile).toBe("std-common");
+    expect(prepared.observations[0]?.metadataIncomplete).toBe(true);
+  });
+
   it("evaluates contamination states according to 1.2.2 rules", () => {
     const sysWithFreeze: AciSystemDefinition = {
       modelSnapshotId: "sys-freeze",

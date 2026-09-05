@@ -1,0 +1,34 @@
+{
+  "locked_at_utc": "2026-09-05T07:20:44.632774+00:00",
+  "structure": "general_specific",
+  "domain_specific_sd": 0.5,
+  "predeclared_development_grid": [
+    0.25,
+    0.5,
+    1.0
+  ],
+  "reason": "All three predeclared scales improved development proper scores and grouped errors; differences between candidates were small. Retain the central default 0.5 with moderate pooling rather than selecting a small development-only gain.",
+  "test_outcomes_seen_at_lock": false,
+  "input_sha256": "693620371a78e87742e2498ac1d06d26b6f9a66ab195ea180f57f1b54c507933",
+  "model_source_sha256": "73d56a66249cd99165078fd5d50f63fd39ce39b6423d7e5f1141b5d4d5523797",
+  "required_test_diagnostics": {
+    "chains": 4,
+    "warmup": 2000,
+    "samples_per_chain": 2000,
+    "max_rhat": 1.01,
+    "min_ess": 400,
+    "divergences": 0,
+    "min_ebfmi": 0.3
+  },
+  "development_report": "validation-dev-sensitivity.json",
+  "test_promotion_checks": {
+    "agreed_before_candidate_results_utc": "2026-09-05T07:26:39.167359+00:00",
+    "strict_sampling_diagnostics": true,
+    "require_lower_grouped_rmse_and_crps": true,
+    "pooled_rmse_secondary": true,
+    "inspect_pair_ordering_and_predictive_coverage_width_for_material_regression": true,
+    "ci_crossing_zero_means_inconclusive_not_automatic_failure": true,
+    "no_retuning_after_test": true,
+    "calibration_coverage_guide": "Inspect approximately 85–95% coverage for a nominal 90% interval; account for sample size and count approximation."
+  }
+}

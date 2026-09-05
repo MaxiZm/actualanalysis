@@ -141,6 +141,17 @@ describe("exact snapshot run selection", () => {
     );
   });
 
+  it("keeps rejected experiments out of latest selection and public history", () => {
+    const rejected = {
+      ...run("rejected-experiment", "mixed", "2026-09-05T03:00:00.000Z"),
+      params: { publication_status: "rejected" },
+    };
+    const all = [rejected, ...exactRuns];
+    expect(selectSnapshotRuns(all).chosen).toEqual(exactRuns);
+    expect(selectSnapshotRuns(all, exactIds).history).toEqual(exactRuns);
+    expect(() => selectSnapshotRuns(all, { ...exactIds, mixed: rejected.id })).toThrow("rejected for publication");
+  });
+
   it("archives an existing dated directory when replaceExisting is requested", async () => {
     const root = await mkdtemp(path.join(os.tmpdir(), "snapshot-replace-"));
     const output = path.join(root, "2026-09-04");

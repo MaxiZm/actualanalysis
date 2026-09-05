@@ -141,7 +141,7 @@ function assertReferences(
     const modelId = separatorIndex >= 0 ? systemId.slice(0, separatorIndex) : systemId;
     const profile = separatorIndex >= 0 ? systemId.slice(separatorIndex + 1) : "";
     if (!modelId || !modelIds.has(modelId)) throw new Error(`Calibration panel references unknown model ${modelId ?? systemId}`);
-    if (/^1\.[23]\./.test(config.method_version)) {
+    if (/^1\.[234]\./.test(config.method_version)) {
       if (profile !== "max-common" && profile !== "std-common" && profile !== "std" && profile !== "max") {
         throw new Error(`Calibration panel system ${systemId} must use an allowed class`);
       }

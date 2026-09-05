@@ -1,5 +1,17 @@
 import { test, expect } from "@playwright/test";
 
+test("shows paired uncertainty for the selected preliminary Chat comparison", async ({ page }) => {
+  await page.goto("compare/?index=chat&highlight=gpt-5.6-sol&highlight=gpt-5.5");
+  await expect(page.getByRole("combobox", { name: "First model", exact: true })).toContainText("GPT-5.6 Sol");
+  await expect(page.getByRole("combobox", { name: "Second model", exact: true })).toHaveText("GPT-5.5");
+  await expect(page.locator(".comparison-verdict")).toContainText(/probability.*\d+%|\d+%.*probability/);
+  await expect(page.locator(".comparison-verdict")).not.toContainText("unavailable");
+  for (const width of [320, 768, 1440]) {
+    await page.setViewportSize({ width, height: 900 });
+    await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  }
+});
+
 test("loads the branded static site, assets and snapshot resources", async ({
   page,
   request,

@@ -31,7 +31,8 @@ const TierSchema = z.object({
 }).strict();
 
 export const IndexConfigSchema = z.object({
-  method_version: z.string().regex(/^1\.[23]\.\d+$/, "expected a 1.2.x or 1.3.x method version"),
+  method_version: z.string().regex(/^1\.[234]\.\d+$/, "expected a 1.2.x, 1.3.x or 1.4.x method version"),
+  trait_structure: z.enum(["correlated", "general_specific", "correlated_unit"]).optional(),
   method_name: NonEmptyStringSchema,
   taxonomy_edition: NonEmptyStringSchema,
   calibration_edition: NonEmptyStringSchema,
@@ -65,6 +66,8 @@ export const IndexConfigSchema = z.object({
     effort_gain_sd: z.number().positive().optional(),
     effort_domain_gain_sd: z.number().positive().optional(),
     trait_spread_sd: z.number().positive().optional(),
+    domain_specific_sd: z.number().positive().optional(),
+    effort_specific_sd: z.number().positive().optional(),
     trait_spread_lognormal_sd: z.number().nonnegative().optional(),
     trait_spread_lognormal_median_log: z.number().finite().optional(),
     panel_pin_sd: z.number().nonnegative().optional(),

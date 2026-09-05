@@ -1,4 +1,5 @@
 import { harmonizeObservationLineages } from "./lib/lineage.js";
+import { arenaNamedEffort } from "./lib/reported-effort.js";
 import type { Model, Registry, SourceProtocol } from "@actualanalysis/shared";
 import { RawResultSchema, type RawBenchmarkResult, type RawResult } from "./types.js";
 
@@ -254,6 +255,11 @@ export function annotateObservationMetadata(records: readonly RawResult[], regis
       additions.effort_tier = declaredEffort.trim();
       appliedFields.push("effort_tier");
     }
+    const namedEffort = arenaNamedEffort(record, record.model_id ? models.get(record.model_id) : undefined);
+    if (!record.effort_tier && !additions.effort_tier && namedEffort) {
+      additions.effort_tier = namedEffort;
+      appliedFields.push("effort_tier");
+    }
     let versionInferred = record.version_inferred === true;
     if (protocol) {
       evidenceUrls.add(protocol.methodology_url);
@@ -289,7 +295,7 @@ export function annotateObservationMetadata(records: readonly RawResult[], regis
     }
 
     let reason: string | undefined;
-    let effortRuleId: string | undefined;
+    let effortRuleId: string | undefined = namedEffort ? "lmarena-explicit-model-effort-suffix" : undefined;
     if (effortRule) {
       effortRuleId = effortRule.id;
       effortRule.evidenceUrls.forEach((url) => evidenceUrls.add(url));

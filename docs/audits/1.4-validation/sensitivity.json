@@ -1,0 +1,314 @@
+{
+  "input_sha256": "693620371a78e87742e2498ac1d06d26b6f9a66ab195ea180f57f1b54c507933",
+  "split_seed": 20260906,
+  "candidate_grid_predeclared": [
+    0.25,
+    0.5,
+    1.0
+  ],
+  "test_partition_opened": false,
+  "baseline": {
+    "observations": 78,
+    "heldout_model_benchmark_groups": 56,
+    "logit_rmse": 0.5795341017974098,
+    "logit_mae": 0.42826708180866474,
+    "group_macro_logit_rmse": 0.5440788130327605,
+    "benchmark_macro_logit_rmse": 0.4719164746861982,
+    "by_domain": {
+      "agentic": {
+        "n": 11,
+        "logit_rmse": 0.6416877544915586
+      },
+      "reasoning": {
+        "n": 41,
+        "logit_rmse": 0.6418125183256084
+      },
+      "communication-professional": {
+        "n": 7,
+        "logit_rmse": 0.12758971339398392
+      },
+      "software-code": {
+        "n": 8,
+        "logit_rmse": 0.3397743850794033
+      },
+      "knowledge-information": {
+        "n": 11,
+        "logit_rmse": 0.5831953424364568
+      }
+    },
+    "same_benchmark_protocol_effort_ordering": {
+      "pairs": 83,
+      "correct": 71,
+      "accuracy": 0.8554216867469879,
+      "observed_ties_excluded": 0
+    },
+    "approx_predictive_90_coverage": 0.9487179487179487,
+    "approx_predictive_90_mean_width": 2.47466098398228,
+    "approx_predictive_crps": 0.31558849729197724,
+    "approx_mean_predictive_log_density": -0.8023932603183113,
+    "approx_predictive_90_interval_score": 2.6271282002914016
+  },
+  "candidates": {
+    "0.25": {
+      "diagnostics": {
+        "chains": 2,
+        "warmup": 600,
+        "samples_per_chain": 600,
+        "elapsed_seconds": 75.54140420793556,
+        "divergences": 0,
+        "heldout_location_max_rhat": 1.004379111820282,
+        "heldout_location_min_ess": 470.34976881422114,
+        "ebfmi": [
+          0.9452158522144463,
+          1.013208596207604
+        ],
+        "thresholds": {
+          "max_rhat": 1.05,
+          "min_ess": 100
+        },
+        "adequate_for_comparison": true
+      },
+      "metrics": {
+        "observations": 78,
+        "heldout_model_benchmark_groups": 56,
+        "logit_rmse": 0.5593166738775166,
+        "logit_mae": 0.42292386936184645,
+        "group_macro_logit_rmse": 0.51688828704712,
+        "benchmark_macro_logit_rmse": 0.44769127073253046,
+        "by_domain": {
+          "agentic": {
+            "n": 11,
+            "logit_rmse": 0.6010616385571247
+          },
+          "reasoning": {
+            "n": 41,
+            "logit_rmse": 0.6341437664129778
+          },
+          "communication-professional": {
+            "n": 7,
+            "logit_rmse": 0.12621115633916788
+          },
+          "software-code": {
+            "n": 8,
+            "logit_rmse": 0.32857705461128006
+          },
+          "knowledge-information": {
+            "n": 11,
+            "logit_rmse": 0.5191107965390704
+          }
+        },
+        "same_benchmark_protocol_effort_ordering": {
+          "pairs": 83,
+          "correct": 72,
+          "accuracy": 0.8674698795180723,
+          "observed_ties_excluded": 0
+        },
+        "approx_predictive_90_coverage": 0.9615384615384616,
+        "approx_predictive_90_mean_width": 2.3634064898506204,
+        "approx_predictive_crps": 0.3064916862516955,
+        "approx_mean_predictive_log_density": -0.7656084996720182,
+        "approx_predictive_90_interval_score": 2.5685362833226857
+      },
+      "comparison_to_baseline": {
+        "method": "Paired model-cluster bootstrap over equally weighted model x benchmark group means",
+        "replicates": 2000,
+        "seed": 48221,
+        "heldout_models": 39,
+        "heldout_groups": 56,
+        "direction": "Candidate minus baseline; RMSE and CRPS lower is better, log density higher is better",
+        "differences": {
+          "group_macro_logit_rmse": {
+            "estimate": -0.027190525985640535,
+            "bootstrap_90_low": -0.04684105376802005,
+            "bootstrap_90_high": -0.007168086601094793
+          },
+          "group_macro_predictive_crps": {
+            "estimate": -0.010903414785509291,
+            "bootstrap_90_low": -0.020751726552342305,
+            "bootstrap_90_high": -0.0021887948060073576
+          },
+          "group_macro_predictive_log_density": {
+            "estimate": 0.03734401159980301,
+            "bootstrap_90_low": 0.018756876447276586,
+            "bootstrap_90_high": 0.05796482101573852
+          }
+        },
+        "limitation": "Benchmark errors may also correlate; intervals describe this fixed random split, not all future datasets"
+      }
+    },
+    "0.5": {
+      "diagnostics": {
+        "chains": 2,
+        "warmup": 600,
+        "samples_per_chain": 600,
+        "elapsed_seconds": 75.82904687500559,
+        "divergences": 0,
+        "heldout_location_max_rhat": 1.0206448553092513,
+        "heldout_location_min_ess": 260.9442936759987,
+        "ebfmi": [
+          0.9637465057506425,
+          0.9972760343562099
+        ],
+        "thresholds": {
+          "max_rhat": 1.05,
+          "min_ess": 100
+        },
+        "adequate_for_comparison": true
+      },
+      "metrics": {
+        "observations": 78,
+        "heldout_model_benchmark_groups": 56,
+        "logit_rmse": 0.5592534212827779,
+        "logit_mae": 0.42208732268166743,
+        "group_macro_logit_rmse": 0.5206213970740832,
+        "benchmark_macro_logit_rmse": 0.44893080496126375,
+        "by_domain": {
+          "agentic": {
+            "n": 11,
+            "logit_rmse": 0.6087028504186899
+          },
+          "reasoning": {
+            "n": 41,
+            "logit_rmse": 0.6305422717666176
+          },
+          "communication-professional": {
+            "n": 7,
+            "logit_rmse": 0.12547010448943186
+          },
+          "software-code": {
+            "n": 8,
+            "logit_rmse": 0.3360859358968267
+          },
+          "knowledge-information": {
+            "n": 11,
+            "logit_rmse": 0.5226815910219846
+          }
+        },
+        "same_benchmark_protocol_effort_ordering": {
+          "pairs": 83,
+          "correct": 71,
+          "accuracy": 0.8554216867469879,
+          "observed_ties_excluded": 0
+        },
+        "approx_predictive_90_coverage": 0.9487179487179487,
+        "approx_predictive_90_mean_width": 2.3777785213748497,
+        "approx_predictive_crps": 0.3063415525345888,
+        "approx_mean_predictive_log_density": -0.7674467121854939,
+        "approx_predictive_90_interval_score": 2.6186464049263805
+      },
+      "comparison_to_baseline": {
+        "method": "Paired model-cluster bootstrap over equally weighted model x benchmark group means",
+        "replicates": 2000,
+        "seed": 48221,
+        "heldout_models": 39,
+        "heldout_groups": 56,
+        "direction": "Candidate minus baseline; RMSE and CRPS lower is better, log density higher is better",
+        "differences": {
+          "group_macro_logit_rmse": {
+            "estimate": -0.02345741595867734,
+            "bootstrap_90_low": -0.04041498901110384,
+            "bootstrap_90_high": -0.006701884793114937
+          },
+          "group_macro_predictive_crps": {
+            "estimate": -0.009757239876423728,
+            "bootstrap_90_low": -0.018479301530491845,
+            "bootstrap_90_high": -0.002038602896083715
+          },
+          "group_macro_predictive_log_density": {
+            "estimate": 0.034303546334964664,
+            "bootstrap_90_low": 0.016693536510761723,
+            "bootstrap_90_high": 0.05392584972478463
+          }
+        },
+        "limitation": "Benchmark errors may also correlate; intervals describe this fixed random split, not all future datasets"
+      }
+    },
+    "1.0": {
+      "diagnostics": {
+        "chains": 2,
+        "warmup": 600,
+        "samples_per_chain": 600,
+        "elapsed_seconds": 80.34011962497607,
+        "divergences": 0,
+        "heldout_location_max_rhat": 1.0024019648133382,
+        "heldout_location_min_ess": 544.3163746873622,
+        "ebfmi": [
+          0.9344147276016344,
+          0.9856176927324592
+        ],
+        "thresholds": {
+          "max_rhat": 1.05,
+          "min_ess": 100
+        },
+        "adequate_for_comparison": true
+      },
+      "metrics": {
+        "observations": 78,
+        "heldout_model_benchmark_groups": 56,
+        "logit_rmse": 0.5594700260465982,
+        "logit_mae": 0.4209931641080446,
+        "group_macro_logit_rmse": 0.5184418898593411,
+        "benchmark_macro_logit_rmse": 0.4515190740312373,
+        "by_domain": {
+          "agentic": {
+            "n": 11,
+            "logit_rmse": 0.6051523008244128
+          },
+          "reasoning": {
+            "n": 41,
+            "logit_rmse": 0.630266263251716
+          },
+          "communication-professional": {
+            "n": 7,
+            "logit_rmse": 0.12447490191078332
+          },
+          "software-code": {
+            "n": 8,
+            "logit_rmse": 0.34876788643285583
+          },
+          "knowledge-information": {
+            "n": 11,
+            "logit_rmse": 0.523796683381347
+          }
+        },
+        "same_benchmark_protocol_effort_ordering": {
+          "pairs": 83,
+          "correct": 71,
+          "accuracy": 0.8554216867469879,
+          "observed_ties_excluded": 0
+        },
+        "approx_predictive_90_coverage": 0.9487179487179487,
+        "approx_predictive_90_mean_width": 2.3857286915426443,
+        "approx_predictive_crps": 0.30725129731852135,
+        "approx_mean_predictive_log_density": -0.7764671310888575,
+        "approx_predictive_90_interval_score": 2.6118124111720378
+      },
+      "comparison_to_baseline": {
+        "method": "Paired model-cluster bootstrap over equally weighted model x benchmark group means",
+        "replicates": 2000,
+        "seed": 48221,
+        "heldout_models": 39,
+        "heldout_groups": 56,
+        "direction": "Candidate minus baseline; RMSE and CRPS lower is better, log density higher is better",
+        "differences": {
+          "group_macro_logit_rmse": {
+            "estimate": -0.02563692317341948,
+            "bootstrap_90_low": -0.04159142867115109,
+            "bootstrap_90_high": -0.009319683947364274
+          },
+          "group_macro_predictive_crps": {
+            "estimate": -0.009360189527438108,
+            "bootstrap_90_low": -0.01724586371682734,
+            "bootstrap_90_high": -0.0022939336553597133
+          },
+          "group_macro_predictive_log_density": {
+            "estimate": 0.025609156013843528,
+            "bootstrap_90_low": 0.00923525485283307,
+            "bootstrap_90_high": 0.043202324433125217
+          }
+        },
+        "limitation": "Benchmark errors may also correlate; intervals describe this fixed random split, not all future datasets"
+      }
+    }
+  }
+}

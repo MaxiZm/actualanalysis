@@ -26,12 +26,35 @@ from .summarize import build_posterior_summary
 DECLARED_PARAMETERS = {
     "Z_cal",
     "G_cal",
+    "Agentic_cal",
+    "Chat_cal",
     "Omega",
+    "domain_scale",
     "cell_sigma",
     "effort_mean",
     "effort_sd",
+    "effort_domain_sd",
     "run_noise",
 }
+
+
+def _energy_bfmi(extra: dict, chains: int) -> list[float | None]:
+    """E-BFMI uses Hamiltonian (potential + kinetic) energy per chain.
+
+    Potential energy alone measures a different quantity and must not serve as
+    a fallback when the sampler has not collected its total energy.
+    """
+    energy = np.asarray(extra.get("energy", []), dtype=float)
+    if energy.ndim != 2 or energy.shape[0] != chains or energy.shape[1] < 2:
+        return [None] * chains
+    values = []
+    for chain in energy:
+        if not np.isfinite(chain).all():
+            values.append(None)
+            continue
+        denominator = np.var(chain, ddof=1)
+        values.append(float(np.mean(np.diff(chain) ** 2) / denominator) if denominator > 0 else None)
+    return values
 
 
 def _diagnostics(samples: dict, extra: dict, chains: int) -> dict:
@@ -75,17 +98,13 @@ def _diagnostics(samples: dict, extra: dict, chains: int) -> dict:
             "ess_tail": tail_value,
         }
     divergences = int(np.asarray(extra.get("diverging", [])).sum())
-    potential = np.asarray(extra.get("potential_energy", []))
-    ebfmi = []
-    if potential.size and potential.ndim == 2:
-        for chain in potential:
-            denominator = np.var(chain)
-            ebfmi.append(float(np.mean(np.diff(chain) ** 2) / denominator) if denominator > 0 else 0.0)
+    divergent_draws = np.asarray(extra.get("diverging", []))
     return {
         "parameters": tracked,
         "divergences": divergences,
-        "divergence_fraction": divergences / max(1, potential.size),
-        "ebfmi": ebfmi or [0.0] * chains,
+        "divergence_fraction": divergences / max(1, divergent_draws.size),
+        "ebfmi": _energy_bfmi(extra, chains),
+        "ebfmi_energy": "hamiltonian",
     }
 
 
@@ -106,9 +125,17 @@ def run(input_path: Path, output_path: Path, posterior_path: Path, summary_path:
     # available for experiments via ACI12_DENSE=1.
     dense_mass: list | bool = False
     if os.environ.get("ACI12_DENSE"):
-        dense_sites = ["varsigma", "effort_mean", "effort_sd", "beta", "log_alpha", "family_sd", "cell_sigma",
+        dense_sites = ["effort_mean", "effort_sd", "beta", "log_alpha", "family_sd", "cell_sigma",
                        "scale_a_indep", "scale_a_self", "mu_self", "omega_bar"]
-        if not data.get("one_trait_baseline", False):
+        general_specific = data.get("trait_structure", "correlated") == "general_specific" and not data.get("one_trait_baseline", False)
+        unit_traits = data.get("trait_structure", "correlated") in ("general_specific", "correlated_unit") and not data.get("one_trait_baseline", False)
+        if general_specific:
+            dense_sites.append("domain_scale")
+        if unit_traits:
+            dense_sites.append("effort_domain_sd")
+        else:
+            dense_sites.append("varsigma")
+        if not general_specific and not data.get("one_trait_baseline", False):
             dense_sites.append("L_Omega")
         dense_mass = [tuple(dense_sites)]
 
@@ -127,7 +154,7 @@ def run(input_path: Path, output_path: Path, posterior_path: Path, summary_path:
         progress_bar=bool(data.get("progress_bar", False)),
     )
     started = monotonic()
-    mcmc.run(jax.random.PRNGKey(int(data.get("seed", 20260904))), data=data, extra_fields=("diverging", "potential_energy"))
+    mcmc.run(jax.random.PRNGKey(int(data.get("seed", 20260904))), data=data, extra_fields=("diverging", "potential_energy", "energy"))
     chain_samples = mcmc.get_samples(group_by_chain=True)
     jax.block_until_ready(chain_samples)
     elapsed = monotonic() - started
@@ -161,7 +188,7 @@ def run(input_path: Path, output_path: Path, posterior_path: Path, summary_path:
     # Monte Carlo standard error per published quantity (§6): scores are 10 x the
     # calibrated trait, so MCSE in display points is 10 * sd / sqrt(ESS_bulk).
     mcse_limit = float(inference.get("max_score_mcse", 0.3))
-    for name in ("G_cal", "Z_cal"):
+    for name in ("G_cal", "Z_cal", "Agentic_cal", "Chat_cal"):
         if name not in chain_samples:
             continue
         values = np.asarray(chain_samples[name], dtype=float)
@@ -178,13 +205,15 @@ def run(input_path: Path, output_path: Path, posterior_path: Path, summary_path:
     # zero divergences gate (§6)
     div = diagnostics["divergences"]
     div_frac = diagnostics["divergence_fraction"]
-    ebfmi_min = min(diagnostics["ebfmi"])
+    finite_ebfmi = [value for value in diagnostics["ebfmi"] if value is not None]
     if div > 0 and float(inference.get("max_divergence_fraction", 0.0)) == 0.0:
         issues.append(f"divergences: {div} (method 1.2 requires zero)")
     elif div_frac > float(inference.get("max_divergence_fraction", 0.0)):
         issues.append(f"divergence fraction {div_frac}")
-    if ebfmi_min < float(inference.get("min_ebfmi", 0.3)):
-        issues.append(f"E-BFMI {ebfmi_min}")
+    if len(finite_ebfmi) != int(inference.get("chains", 4)):
+        issues.append("E-BFMI unavailable: total Hamiltonian energy missing, non-finite, or constant")
+    elif min(finite_ebfmi) < float(inference.get("min_ebfmi", 0.3)):
+        issues.append(f"E-BFMI {min(finite_ebfmi)}")
 
     diagnostics["accepted"] = not issues
     diagnostics["issues"] = issues

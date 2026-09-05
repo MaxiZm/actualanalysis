@@ -83,6 +83,8 @@ def aci_model(data: dict) -> None:
     lambdas = jnp.asarray(data["benchmark_domains"], dtype=jnp.float32)
 
     one_trait_baseline = bool(data.get("one_trait_baseline", False))
+    general_specific = data.get("trait_structure", "correlated") == "general_specific"
+    unit_traits = data.get("trait_structure", "correlated") in ("general_specific", "correlated_unit")
 
     # --- 1. System traits Z_sk (LKJ(2) correlated) ---
     # Trait spread per domain. A HalfNormal prior has its mode at zero and lets a
@@ -92,12 +94,32 @@ def aci_model(data: dict) -> None:
     # irrelevant because published scales standardize on the calibration panel.
     trait_spread_sd = float(priors.get("trait_spread_sd", 1.5))
     lognormal_sd = float(priors.get("trait_spread_lognormal_sd", 0.0))
-    if lognormal_sd > 0:
+    if unit_traits and not one_trait_baseline:
+        # Declared cross-loadings act on equal marginal-variance coordinates.
+        # Free domain spreads otherwise silently change those benchmark shares;
+        # a single benchmark slope cannot absorb five different scale changes.
+        varsigma = jnp.ones(n_domains)
+        numpyro.deterministic("varsigma", varsigma)
+    elif lognormal_sd > 0:
         varsigma = numpyro.sample("varsigma", dist.LogNormal(float(priors.get("trait_spread_lognormal_median_log", 0.0)), lognormal_sd).expand([n_domains]).to_event(1))
     else:
         varsigma = _halfnormal("varsigma", trait_spread_sd, (n_domains,))
 
-    if one_trait_baseline:
+    if general_specific and not one_trait_baseline:
+        # Shared capability carries information into sparsely observed domains.
+        # Domain departures are zero-centered and partially pooled; a mixed test
+        # cannot freely trade a large negative communication trait against a
+        # positive reasoning trait without evidence for that specialization.
+        g = numpyro.sample("g", dist.Normal(0, 1).expand([n_models]).to_event(1))
+        domain_scale = _halfnormal("domain_scale", float(priors.get("domain_specific_sd", 0.5)), (n_domains,))
+        domain_z = numpyro.sample("domain_z", dist.Normal(0, 1).expand([n_models, n_domains]).to_event(2))
+        marginal_scale = jnp.sqrt(1 + domain_scale**2)
+        standardized = (g[:, None] + domain_scale[None, :] * domain_z) / marginal_scale[None, :]
+        Z_std_raw = standardized * varsigma[None, :]
+        common_loading = 1 / marginal_scale
+        correlation = jnp.outer(common_loading, common_loading)
+        numpyro.deterministic("Omega", correlation.at[jnp.diag_indices(n_domains)].set(1.0))
+    elif one_trait_baseline:
         z_scalar = numpyro.sample("z_scalar", dist.Normal(0, 1).expand([n_models]).to_event(1))
         Z_std_raw = z_scalar[:, None] * varsigma[None, :]
         numpyro.deterministic("Omega", jnp.eye(n_domains))
@@ -110,9 +132,21 @@ def aci_model(data: dict) -> None:
 
     # Effort gain delta_m for max-common (zero for fixed-effort systems)
     effort_mean = numpyro.sample("effort_mean", dist.Normal(float(priors.get("effort_mean", 0.30)), float(priors.get("effort_sd", 0.30))))
-    effort_sd = _halfnormal("effort_sd", float(priors.get("effort_sd", 0.30)), (n_domains,))
-    delta_z = numpyro.sample("delta_z", dist.Normal(0, 1).expand([n_models, n_domains]).to_event(2))
-    delta_m = effort_mean + effort_sd * delta_z
+    if unit_traits and not one_trait_baseline:
+        effort_sd = _halfnormal("effort_sd", float(priors.get("effort_sd", 0.30)))
+        effort_z = numpyro.sample("effort_z", dist.Normal(0, 1).expand([n_models]).to_event(1))
+        effort_domain_sd = _halfnormal("effort_domain_sd", float(priors.get("effort_specific_sd", 0.15)), (n_domains,))
+        delta_z = numpyro.sample("delta_z", dist.Normal(0, 1).expand([n_models, n_domains]).to_event(2))
+        # Effort is measured in dimensionless trait units, then mapped back to
+        # each domain's raw scale. The previous shared raw-unit prior magnified
+        # gains in domains whose fitted scale was small (especially Chat).
+        delta_m = varsigma[None, :] * (
+            effort_mean + effort_sd * effort_z[:, None] + effort_domain_sd[None, :] * delta_z
+        )
+    else:
+        effort_sd = _halfnormal("effort_sd", float(priors.get("effort_sd", 0.30)), (n_domains,))
+        delta_z = numpyro.sample("delta_z", dist.Normal(0, 1).expand([n_models, n_domains]).to_event(2))
+        delta_m = effort_mean + effort_sd * delta_z
 
     Z_std = Z_std_raw
     Z_max = Z_std_raw + delta_m
@@ -134,12 +168,20 @@ def aci_model(data: dict) -> None:
         panel_index = jnp.asarray([data["system_ids"].index(system_id) for system_id in panel_ids], dtype=jnp.int32)
         panel_traits = traits[panel_index]
         panel_mean = jnp.mean(panel_traits, axis=0)
-        panel_sd = jnp.maximum(jnp.std(panel_traits, axis=0, ddof=1), 1e-6)
+        scale_floor = float(data.get("panel_scale_floor", 0.05))
+        panel_sd = jnp.maximum(jnp.std(panel_traits, axis=0, ddof=1), scale_floor)
         z_cal = (traits - panel_mean[None, :]) / panel_sd[None, :]
         numpyro.deterministic("Z_cal", z_cal)
         g_raw = jnp.mean(z_cal, axis=1)
         g_panel = g_raw[panel_index]
-        numpyro.deterministic("G_cal", (g_raw - jnp.mean(g_panel)) / jnp.maximum(jnp.std(g_panel, ddof=1), 1e-6))
+        numpyro.deterministic("G_cal", (g_raw - jnp.mean(g_panel)) / jnp.maximum(jnp.std(g_panel, ddof=1), scale_floor))
+        for profile_name, site_name in (("agentic", "Agentic_cal"), ("chat", "Chat_cal")):
+            if profile_name not in data.get("profiles", {}):
+                continue
+            weights = jnp.asarray([data["profiles"][profile_name]["weights"].get(domain, 0) for domain in data["domains"]])
+            composite = z_cal @ weights
+            panel_composite = composite[panel_index]
+            numpyro.deterministic(site_name, (composite - jnp.mean(panel_composite)) / jnp.maximum(jnp.std(panel_composite, ddof=1), float(data.get("panel_scale_floor", 0.05))))
         pin = float(priors.get("panel_pin_sd", 0.0))
         if pin > 0:
             numpyro.factor(
