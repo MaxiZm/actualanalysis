@@ -85,10 +85,13 @@ def aci_model(data: dict) -> None:
     lambdas = jnp.asarray(data["benchmark_domains"], dtype=jnp.float32)
 
     one_trait_baseline = bool(data.get("one_trait_baseline", False))
-    general_specific = data.get("trait_structure", "correlated") == "general_specific"
-    unit_traits = data.get("trait_structure", "correlated") in ("general_specific", "correlated_unit")
+    trait_structure = data.get("trait_structure", "correlated")
+    general_specific = trait_structure == "general_specific"
+    unit_traits = trait_structure in ("general_specific", "correlated_unit")
     class_spec = resolve_class_prior(data)
-    if class_spec.enabled and (one_trait_baseline or general_specific):
+    # Enabled class pooling is defined only on free-marginal LKJ traits. Unit
+    # structures change varsigma and the effort sites; other structures omit L_Ω.
+    if class_spec.enabled and (one_trait_baseline or trait_structure != "correlated"):
         raise ValueError("class_prior restricted candidate requires the correlated LKJ trait structure")
 
     # --- 1. System traits Z_sk (LKJ(2) correlated) ---

@@ -45,8 +45,24 @@ def correlated_fixture(n_models=3, dual_effort=False):
     return data
 
 
+UNIT_EFFORT_SITES = ("effort_z", "effort_domain_sd")
+GENERAL_SPECIFIC_SITES = ("g", "domain_scale", "domain_z")
+ONE_TRAIT_SITES = ("z_scalar",)
+
+
 def stochastic_sites(samples):
     return {name for name, site in samples.items() if site["type"] == "sample" and not site["is_observed"]}
+
+
+def record_trace(data, seed=13):
+    """Capture a NumPyro trace even when aci_model raises, so guards can be
+    checked against sites that must not have been created yet."""
+    tracer = handlers.trace(handlers.seed(aci_model, rng_seed=seed))
+    try:
+        tracer.get_trace(data)
+    except Exception as exc:
+        return dict(getattr(tracer, "trace", {}) or {}), exc
+    return dict(tracer.trace), None
 
 
 class ClassPriorContract(unittest.TestCase):
@@ -308,11 +324,88 @@ class ClassPriorModel(unittest.TestCase):
         np.testing.assert_allclose(z[1] - z[0], np.full(5, 0.5), atol=1e-6)
         np.testing.assert_array_equal(z[3], z[2])
 
-    def test_general_specific_cannot_enable_class_prior(self):
-        data = trait_fixture(n_models=2, dual_effort=False)
-        data["class_prior"] = class_payload([{"class_id": "line-a", "model_ids": ["m0", "m1"]}])
-        with self.assertRaisesRegex(ValueError, "correlated LKJ"):
-            trace(data)
+    def test_enabled_correlated_keeps_production_effort_sites_and_rho_zero_identity(self):
+        baseline = correlated_fixture(n_models=2, dual_effort=False)
+        enabled = correlated_fixture(n_models=2, dual_effort=False)
+        enabled["class_prior"] = class_payload(
+            [{"class_id": "line-a", "model_ids": ["m0", "m1"]}],
+            pooling={"kind": "fixed", "value": 0},
+        )
+        baseline_trace = trace(baseline, seed=4)
+        enabled_trace = trace(enabled, seed=4)
+        self.assertEqual(stochastic_sites(baseline_trace), stochastic_sites(enabled_trace))
+        self.assertNotIn("effort_z", enabled_trace)
+        self.assertNotIn("effort_domain_sd", enabled_trace)
+        self.assertEqual(enabled_trace["varsigma"]["type"], "sample")
+        self.assertEqual(tuple(np.asarray(enabled_trace["effort_sd"]["value"]).shape), (5,))
+        self.assertEqual(float(enabled_trace["class_rho"]["value"]), 0.0)
+        np.testing.assert_allclose(enabled_trace["Z"]["value"], baseline_trace["Z"]["value"])
+
+    def test_absent_trait_structure_defaults_to_correlated_with_class_prior(self):
+        data = correlated_fixture(n_models=2, dual_effort=False)
+        data.pop("trait_structure", None)
+        data["class_prior"] = class_payload(
+            [{"class_id": "line-a", "model_ids": ["m0", "m1"]}],
+            pooling={"kind": "fixed", "value": 0},
+        )
+        samples = trace(data, seed=4)
+        self.assertIn("L_Omega", samples)
+        self.assertNotIn("effort_z", samples)
+        self.assertEqual(float(samples["class_rho"]["value"]), 0.0)
+
+    def test_correlated_unit_class_prior_fails_before_unit_effort_sites(self):
+        unit = trait_fixture(n_models=2, dual_effort=False)
+        unit["trait_structure"] = "correlated_unit"
+        permitted = record_trace(unit)
+        self.assertIsNone(permitted[1])
+        for name in UNIT_EFFORT_SITES:
+            self.assertEqual(permitted[0][name]["type"], "sample")
+        self.assertEqual(permitted[0]["varsigma"]["type"], "deterministic")
+
+        blocked = trait_fixture(n_models=2, dual_effort=False)
+        blocked["trait_structure"] = "correlated_unit"
+        blocked["class_prior"] = class_payload([{"class_id": "line-a", "model_ids": ["m0", "m1"]}])
+        sites, error = record_trace(blocked)
+        self.assertIsInstance(error, ValueError)
+        self.assertRegex(str(error), "correlated LKJ")
+        for name in UNIT_EFFORT_SITES + ("varsigma", "delta_z", "effort_sd", "L_Omega", "class_z", "class_rho"):
+            self.assertNotIn(name, sites)
+
+    def test_class_prior_rejects_one_trait_general_specific_and_unknown_before_alt_sites(self):
+        payload = class_payload([{"class_id": "line-a", "model_ids": ["m0", "m1"]}])
+
+        one_trait = correlated_fixture(n_models=2, dual_effort=False)
+        one_trait["one_trait_baseline"] = True
+        control_sites, control_error = record_trace(one_trait)
+        self.assertIsNone(control_error)
+        for name in ONE_TRAIT_SITES:
+            self.assertEqual(control_sites[name]["type"], "sample")
+        one_trait["class_prior"] = payload
+        sites, error = record_trace(one_trait)
+        self.assertIsInstance(error, ValueError)
+        self.assertRegex(str(error), "correlated LKJ")
+        for name in ONE_TRAIT_SITES + UNIT_EFFORT_SITES + ("L_Omega", "class_z"):
+            self.assertNotIn(name, sites)
+
+        general = trait_fixture(n_models=2, dual_effort=False)
+        general_sites, general_error = record_trace(general)
+        self.assertIsNone(general_error)
+        for name in GENERAL_SPECIFIC_SITES:
+            self.assertEqual(general_sites[name]["type"], "sample")
+        general["class_prior"] = payload
+        sites, error = record_trace(general)
+        self.assertIsInstance(error, ValueError)
+        self.assertRegex(str(error), "correlated LKJ")
+        for name in GENERAL_SPECIFIC_SITES + UNIT_EFFORT_SITES + ("class_z",):
+            self.assertNotIn(name, sites)
+
+        unknown = correlated_fixture(n_models=2, dual_effort=False)
+        unknown["trait_structure"] = "unknown"
+        unknown["class_prior"] = payload
+        sites, error = record_trace(unknown)
+        self.assertIsInstance(error, ValueError)
+        self.assertRegex(str(error), "correlated LKJ")
+        self.assertEqual(sites, {})
 
     def test_beta_prior_is_uniform_on_the_unit_interval(self):
         data = correlated_fixture(n_models=2, dual_effort=False)
