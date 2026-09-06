@@ -3,8 +3,12 @@ import { test, expect } from "@playwright/test";
 test("shows Gemini's native fitted evidence without counting vendor mirrors twice", async ({ page }) => {
   await page.goto("models/gemini-3.8-flash/");
   await expect(page.getByRole("heading", { name: "Gemini 3.8 Flash", exact: true })).toBeVisible();
-  await expect(page.locator(".evidence-grid > div").filter({ has: page.getByText("Fitted cells", { exact: true }) }).locator("dd")).toHaveText("4");
+  await expect(page.locator(".evidence-grid > div").filter({ has: page.getByText("Fitted cells", { exact: true }) }).locator("dd")).toHaveText("5");
   const evidence = page.locator(".evidence-table");
+  const matharena = evidence.locator("tbody tr").filter({ has: page.getByRole("link", { name: "MathArena composite", exact: true }) });
+  await expect(matharena).toHaveCount(1);
+  await expect(matharena.getByText("Max assumed", { exact: true })).toBeVisible();
+  await expect(matharena.locator('[data-label="Predicted"]')).not.toContainText("no fitted cell");
   const finance = evidence.locator("tbody tr").filter({ has: page.getByRole("link", { name: "Finance Agent v2", exact: true }) });
   await expect(finance).toHaveCount(1);
   await expect(finance.locator('[data-label="Observed"]')).toContainText("61.4%");

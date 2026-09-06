@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { readReportedEffort } from "@actualanalysis/shared/effort";
 
 import {
   ACI_BASKETS,
@@ -188,6 +189,8 @@ const ResultRowSchema = z.object({
   n_items: z.number().int().positive().nullable().optional(),
   config: unknownRecord.default({}),
   harness: z.string().min(1).nullable().optional(),
+  effortTier: z.string().nullable().optional(),
+  effort_tier: z.string().nullable().optional(),
   observedOn: dateValue.optional(),
   observed_on: dateValue.optional(),
   url: httpUrl.optional(),
@@ -883,6 +886,8 @@ export function mapCommittedSnapshot(raw: unknown, snapshotDate: string): Publis
         : row.provenance === "independent"
           ? "independent"
           : sourceKind(source.kind);
+    const sourceEffort = readReportedEffort({ effort_tier: row.effortTier ?? row.effort_tier, config: row.config });
+    const assumedMaximum = selectedRuns.mixed?.params.unreported_effort_policy === "maximum" && sourceEffort === undefined;
     return [{
       id: row.id,
       modelSlug,
@@ -900,7 +905,7 @@ export function mapCommittedSnapshot(raw: unknown, snapshotDate: string): Publis
       sourceName: source.name,
       sourceUrl,
       harness: row.harness ?? null,
-      config: row.config,
+      config: assumedMaximum ? { ...row.config, index_effort_assumption: "maximum", source_effort: "not reported" } : row.config,
       nItems: firstDefined(row.nItems, row.n_items),
       observedOn,
       used: firstDefined(row.supersededBy, row.superseded_by) === null,

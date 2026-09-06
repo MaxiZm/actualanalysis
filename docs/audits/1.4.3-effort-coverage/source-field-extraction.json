@@ -1,0 +1,9 @@
+[
+  {
+    "id": "inkling:tau3-bench-banking:vendor-model-cards:704",
+    "before": null,
+    "after": "0.99",
+    "system_unchanged": true,
+    "note": "Extracted already reported numeric compute_effort; raw source unchanged."
+  }
+]

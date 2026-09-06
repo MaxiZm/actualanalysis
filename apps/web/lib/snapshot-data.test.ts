@@ -211,6 +211,22 @@ function canonicalSnapshot() {
 }
 
 describe("committed snapshot mapping", () => {
+  it("labels the maximum-effort assumption without replacing source settings or relabelling older runs", () => {
+    const snapshot = canonicalSnapshot();
+    const result = { ...snapshot.results[0]!, config: {} };
+    const rows = [result,
+      { ...result, id: "explicit-medium", config: { thinking_level: "medium" } },
+      { ...result, id: "explicit-top-level", effortTier: "high" },
+    ];
+    const updated = { ...snapshot, results: rows, runs: snapshot.runs.map(r => ({ ...r, params: { ...r.params, unreported_effort_policy: "maximum" } })) };
+    const mapped = mapCommittedSnapshot(updated, "2026-09-06")!;
+    expect(mapped.results[0]?.config).toEqual({ index_effort_assumption: "maximum", source_effort: "not reported" });
+    expect(mapped.results[1]?.config).toEqual({ thinking_level: "medium" });
+    expect(mapped.results[2]?.config).toEqual({});
+    expect(result.config).toEqual({});
+    expect(mapCommittedSnapshot({ ...snapshot, results: [result] }, "2026-09-05")?.results[0]?.config).toEqual({});
+  });
+
   it("retains catalog models without an estimate instead of silently hiding them", () => {
     const snapshot = canonicalSnapshot();
     snapshot.models.push({

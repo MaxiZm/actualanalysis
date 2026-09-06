@@ -1,0 +1,467 @@
+{
+  "baseline_commit": "bbd3fee608692b8c16659a076c209169c9f0333c",
+  "input_sha256": "54f5ddeed64469834f1d44d16c45dc694144d07131f49d0142a4818a067e413b",
+  "policy": "maximum",
+  "records": 4507,
+  "site_observations": 1571,
+  "fit_before": 921,
+  "fit_after": 924,
+  "moved_missing_observations": 46,
+  "new_missing_observations": 3,
+  "changed_explicit_efforts": 0,
+  "modified_measurements": 0,
+  "benchmarks": 19,
+  "models_with_greater_max_coverage": 21,
+  "gains": [
+    {
+      "model": "claude-3.7-sonnet",
+      "before": 3,
+      "after": 4
+    },
+    {
+      "model": "claude-fable-5.1",
+      "before": 8,
+      "after": 9
+    },
+    {
+      "model": "claude-fable-5",
+      "before": 11,
+      "after": 12
+    },
+    {
+      "model": "claude-opus-5",
+      "before": 11,
+      "after": 12
+    },
+    {
+      "model": "claude-sonnet-5",
+      "before": 7,
+      "after": 8
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "before": 2,
+      "after": 5
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "before": 3,
+      "after": 10
+    },
+    {
+      "model": "gemini-3.5-flash",
+      "before": 8,
+      "after": 10
+    },
+    {
+      "model": "gemini-3.7-flash",
+      "before": 8,
+      "after": 9
+    },
+    {
+      "model": "gemini-3.8-flash",
+      "before": 4,
+      "after": 5
+    },
+    {
+      "model": "gpt-5.1",
+      "before": 5,
+      "after": 6
+    },
+    {
+      "model": "gpt-5.2",
+      "before": 9,
+      "after": 11
+    },
+    {
+      "model": "gpt-5.5-pro",
+      "before": 3,
+      "after": 4
+    },
+    {
+      "model": "gpt-5.5",
+      "before": 12,
+      "after": 13
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "before": 8,
+      "after": 9
+    },
+    {
+      "model": "gpt-5.6-sol",
+      "before": 10,
+      "after": 11
+    },
+    {
+      "model": "gpt-5.6-terra",
+      "before": 8,
+      "after": 9
+    },
+    {
+      "model": "grok-4.3",
+      "before": 1,
+      "after": 3
+    },
+    {
+      "model": "grok-4.6",
+      "before": 5,
+      "after": 6
+    },
+    {
+      "model": "o3",
+      "before": 6,
+      "after": 8
+    },
+    {
+      "model": "o4-mini",
+      "before": 7,
+      "after": 9
+    }
+  ],
+  "moved": [
+    {
+      "id": "gemini-3.5-flash:matharena-composite:matharena:53",
+      "model": "gemini-3.5-flash",
+      "benchmark": "matharena-composite",
+      "from": "gemini-3.5-flash@std-common",
+      "to": "gemini-3.5-flash@max-common"
+    },
+    {
+      "id": "gpt-5.6-sol:frontiermath-v2-tier-4:vendor-model-cards:61",
+      "model": "gpt-5.6-sol",
+      "benchmark": "frontiermath-v2-tier-4",
+      "from": "gpt-5.6-sol@std-common",
+      "to": "gpt-5.6-sol@max-common"
+    },
+    {
+      "id": "gemini-2.5-pro:lmarena-text-style-controlled:lmarena:103",
+      "model": "gemini-2.5-pro",
+      "benchmark": "lmarena-text-style-controlled",
+      "from": "gemini-2.5-pro@std-common",
+      "to": "gemini-2.5-pro@max-common"
+    },
+    {
+      "id": "gpt-5.2:lmarena-text-style-controlled:lmarena:165",
+      "model": "gpt-5.2",
+      "benchmark": "lmarena-text-style-controlled",
+      "from": "gpt-5.2@std-common",
+      "to": "gpt-5.2@max-common"
+    },
+    {
+      "id": "grok-4.3:lmarena-text-style-controlled:lmarena:168",
+      "model": "grok-4.3",
+      "benchmark": "lmarena-text-style-controlled",
+      "from": "grok-4.3@std-common",
+      "to": "grok-4.3@max-common"
+    },
+    {
+      "id": "gpt-5.6-luna:frontiermath-v2-tiers-1-3:vendor-model-cards:195",
+      "model": "gpt-5.6-luna",
+      "benchmark": "frontiermath-v2-tiers-1-3",
+      "from": "gpt-5.6-luna@std-common",
+      "to": "gpt-5.6-luna@max-common"
+    },
+    {
+      "id": "claude-3.7-sonnet:lmarena-text-style-controlled:lmarena:199",
+      "model": "claude-3.7-sonnet",
+      "benchmark": "lmarena-text-style-controlled",
+      "from": "claude-3.7-sonnet@std-common",
+      "to": "claude-3.7-sonnet@max-common"
+    },
+    {
+      "id": "claude-sonnet-5:vending-bench-2:andonlabs:205",
+      "model": "claude-sonnet-5",
+      "benchmark": "vending-bench-2",
+      "from": "claude-sonnet-5@std-common",
+      "to": "claude-sonnet-5@max-common"
+    },
+    {
+      "id": "gpt-5.6-luna:vending-bench-2:andonlabs:228",
+      "model": "gpt-5.6-luna",
+      "benchmark": "vending-bench-2",
+      "from": "gpt-5.6-luna@std-common",
+      "to": "gpt-5.6-luna@max-common"
+    },
+    {
+      "id": "o3:lmarena-text-style-controlled:lmarena:271",
+      "model": "o3",
+      "benchmark": "lmarena-text-style-controlled",
+      "from": "o3@std-common",
+      "to": "o3@max-common"
+    },
+    {
+      "id": "gpt-5.1:lmarena-text-style-controlled:lmarena:331",
+      "model": "gpt-5.1",
+      "benchmark": "lmarena-text-style-controlled",
+      "from": "gpt-5.1@std-common",
+      "to": "gpt-5.1@max-common"
+    },
+    {
+      "id": "claude-opus-5:vending-bench-2:andonlabs:372",
+      "model": "claude-opus-5",
+      "benchmark": "vending-bench-2",
+      "from": "claude-opus-5@std-common",
+      "to": "claude-opus-5@max-common"
+    },
+    {
+      "id": "gemini-2.5-flash:hle-no-tools:vendor-model-cards:399",
+      "model": "gemini-2.5-flash",
+      "benchmark": "hle-no-tools",
+      "from": "gemini-2.5-flash@std-common",
+      "to": "gemini-2.5-flash@max-common"
+    },
+    {
+      "id": "gemini-2.5-pro:matharena-composite:matharena:480",
+      "model": "gemini-2.5-pro",
+      "benchmark": "matharena-composite",
+      "from": "gemini-2.5-pro@std-common",
+      "to": "gemini-2.5-pro@max-common"
+    },
+    {
+      "id": "gpt-5.6-sol:frontiermath-v2-tiers-1-3:vendor-model-cards:501",
+      "model": "gpt-5.6-sol",
+      "benchmark": "frontiermath-v2-tiers-1-3",
+      "from": "gpt-5.6-sol@std-common",
+      "to": "gpt-5.6-sol@max-common"
+    },
+    {
+      "id": "gemini-2.5-pro:frontiermath-v2-tier-4:epoch:505",
+      "model": "gemini-2.5-pro",
+      "benchmark": "frontiermath-v2-tier-4",
+      "from": "gemini-2.5-pro@std-common",
+      "to": "gemini-2.5-pro@max-common"
+    },
+    {
+      "id": "claude-fable-5.1:vending-bench-2:andonlabs:530",
+      "model": "claude-fable-5.1",
+      "benchmark": "vending-bench-2",
+      "from": "claude-fable-5.1@std-common",
+      "to": "claude-fable-5.1@max-common"
+    },
+    {
+      "id": "gpt-5.5-pro:hle-no-tools:vendor-model-cards:559",
+      "model": "gpt-5.5-pro",
+      "benchmark": "hle-no-tools",
+      "from": "gpt-5.5-pro@std-common",
+      "to": "gpt-5.5-pro@max-common"
+    },
+    {
+      "id": "gemini-2.5-flash:hle-no-tools:vendor-model-cards:560",
+      "model": "gemini-2.5-flash",
+      "benchmark": "hle-no-tools",
+      "from": "gemini-2.5-flash@std-common",
+      "to": "gemini-2.5-flash@max-common"
+    },
+    {
+      "id": "gpt-5.6-terra:frontiermath-v2-tiers-1-3:vendor-model-cards:565",
+      "model": "gpt-5.6-terra",
+      "benchmark": "frontiermath-v2-tiers-1-3",
+      "from": "gpt-5.6-terra@std-common",
+      "to": "gpt-5.6-terra@max-common"
+    },
+    {
+      "id": "gpt-5.5:lmarena-text-style-controlled:lmarena:698",
+      "model": "gpt-5.5",
+      "benchmark": "lmarena-text-style-controlled",
+      "from": "gpt-5.5@std-common",
+      "to": "gpt-5.5@max-common"
+    },
+    {
+      "id": "grok-4.6:vending-bench-2:andonlabs:730",
+      "model": "grok-4.6",
+      "benchmark": "vending-bench-2",
+      "from": "grok-4.6@std-common",
+      "to": "grok-4.6@max-common"
+    },
+    {
+      "id": "gemini-3.8-flash:matharena-composite:matharena:798",
+      "model": "gemini-3.8-flash",
+      "benchmark": "matharena-composite",
+      "from": "gemini-3.8-flash@std-common",
+      "to": "gemini-3.8-flash@max-common"
+    },
+    {
+      "id": "grok-4.3:vending-bench-2:andonlabs:799",
+      "model": "grok-4.3",
+      "benchmark": "vending-bench-2",
+      "from": "grok-4.3@std-common",
+      "to": "grok-4.3@max-common"
+    },
+    {
+      "id": "gpt-5.2:vending-bench-2:andonlabs:831",
+      "model": "gpt-5.2",
+      "benchmark": "vending-bench-2",
+      "from": "gpt-5.2@std-common",
+      "to": "gpt-5.2@max-common"
+    },
+    {
+      "id": "gemini-3.7-flash:matharena-composite:matharena:863",
+      "model": "gemini-3.7-flash",
+      "benchmark": "matharena-composite",
+      "from": "gemini-3.7-flash@std-common",
+      "to": "gemini-3.7-flash@max-common"
+    },
+    {
+      "id": "gemini-3.5-flash:vending-bench-2:andonlabs:869",
+      "model": "gemini-3.5-flash",
+      "benchmark": "vending-bench-2",
+      "from": "gemini-3.5-flash@std-common",
+      "to": "gemini-3.5-flash@max-common"
+    },
+    {
+      "id": "gpt-5.5:vending-bench-2:andonlabs:889",
+      "model": "gpt-5.5",
+      "benchmark": "vending-bench-2",
+      "from": "gpt-5.5@std-common",
+      "to": "gpt-5.5@max-common"
+    },
+    {
+      "id": "o4-mini:gdpval:epoch:906",
+      "model": "o4-mini",
+      "benchmark": "gdpval",
+      "from": "o4-mini@std-common",
+      "to": "o4-mini@max-common"
+    },
+    {
+      "id": "gpt-5.6-terra:vending-bench-2:andonlabs:918",
+      "model": "gpt-5.6-terra",
+      "benchmark": "vending-bench-2",
+      "from": "gpt-5.6-terra@std-common",
+      "to": "gpt-5.6-terra@max-common"
+    },
+    {
+      "id": "gemini-2.5-pro:vending-bench-2:andonlabs:944",
+      "model": "gemini-2.5-pro",
+      "benchmark": "vending-bench-2",
+      "from": "gemini-2.5-pro@std-common",
+      "to": "gemini-2.5-pro@max-common"
+    },
+    {
+      "id": "o3:gdpval:epoch:955",
+      "model": "o3",
+      "benchmark": "gdpval",
+      "from": "o3@std-common",
+      "to": "o3@max-common"
+    },
+    {
+      "id": "gpt-5.2:gdpval:epoch:998",
+      "model": "gpt-5.2",
+      "benchmark": "gdpval",
+      "from": "gpt-5.2@std-common",
+      "to": "gpt-5.2@max-common"
+    },
+    {
+      "id": "o4-mini:lmarena-text-style-controlled:lmarena:1060",
+      "model": "o4-mini",
+      "benchmark": "lmarena-text-style-controlled",
+      "from": "o4-mini@std-common",
+      "to": "o4-mini@max-common"
+    },
+    {
+      "id": "claude-fable-5.1:arc-agi-2-semi-private:epoch:1066",
+      "model": "claude-fable-5.1",
+      "benchmark": "arc-agi-2-semi-private",
+      "from": "claude-fable-5.1@std-common",
+      "to": "claude-fable-5.1@max-common"
+    },
+    {
+      "id": "claude-fable-5.1:terminal-bench-4.0:vendor-model-cards:1106",
+      "model": "claude-fable-5.1",
+      "benchmark": "terminal-bench-4.0",
+      "from": "claude-fable-5.1@std-common",
+      "to": "claude-fable-5.1@max-common"
+    },
+    {
+      "id": "gemini-2.5-pro:frontiermath-v2-tiers-1-3:epoch:1200",
+      "model": "gemini-2.5-pro",
+      "benchmark": "frontiermath-v2-tiers-1-3",
+      "from": "gemini-2.5-pro@std-common",
+      "to": "gemini-2.5-pro@max-common"
+    },
+    {
+      "id": "gemini-2.5-pro:gdpval:epoch:1205",
+      "model": "gemini-2.5-pro",
+      "benchmark": "gdpval",
+      "from": "gemini-2.5-pro@std-common",
+      "to": "gemini-2.5-pro@max-common"
+    },
+    {
+      "id": "gpt-5.1:vending-bench-2:andonlabs:1320",
+      "model": "gpt-5.1",
+      "benchmark": "vending-bench-2",
+      "from": "gpt-5.1@std-common",
+      "to": "gpt-5.1@max-common"
+    },
+    {
+      "id": "gpt-5.6-sol:vending-bench-2:andonlabs:1367",
+      "model": "gpt-5.6-sol",
+      "benchmark": "vending-bench-2",
+      "from": "gpt-5.6-sol@std-common",
+      "to": "gpt-5.6-sol@max-common"
+    },
+    {
+      "id": "gpt-5.6-luna:frontiermath-v2-tier-4:vendor-model-cards:1408",
+      "model": "gpt-5.6-luna",
+      "benchmark": "frontiermath-v2-tier-4",
+      "from": "gpt-5.6-luna@std-common",
+      "to": "gpt-5.6-luna@max-common"
+    },
+    {
+      "id": "gpt-5.6-terra:frontiermath-v2-tier-4:vendor-model-cards:1409",
+      "model": "gpt-5.6-terra",
+      "benchmark": "frontiermath-v2-tier-4",
+      "from": "gpt-5.6-terra@std-common",
+      "to": "gpt-5.6-terra@max-common"
+    },
+    {
+      "id": "gemini-2.5-flash:vending-bench-2:andonlabs:1424",
+      "model": "gemini-2.5-flash",
+      "benchmark": "vending-bench-2",
+      "from": "gemini-2.5-flash@std-common",
+      "to": "gemini-2.5-flash@max-common"
+    },
+    {
+      "id": "gemini-2.5-pro:hle-no-tools:vendor-model-cards:1465",
+      "model": "gemini-2.5-pro",
+      "benchmark": "hle-no-tools",
+      "from": "gemini-2.5-pro@std-common",
+      "to": "gemini-2.5-pro@max-common"
+    },
+    {
+      "id": "gemini-2.5-flash:lmarena-text-style-controlled:lmarena:1510",
+      "model": "gemini-2.5-flash",
+      "benchmark": "lmarena-text-style-controlled",
+      "from": "gemini-2.5-flash@std-common",
+      "to": "gemini-2.5-flash@max-common"
+    },
+    {
+      "id": "claude-fable-5:lmarena-text-style-controlled:lmarena:1511",
+      "model": "claude-fable-5",
+      "benchmark": "lmarena-text-style-controlled",
+      "from": "claude-fable-5@std-common",
+      "to": "claude-fable-5@max-common"
+    }
+  ],
+  "added": [
+    {
+      "id": "gpt-6-astra:terminal-bench-4.0:vendor-model-cards:310",
+      "model": "gpt-6-astra",
+      "benchmark": "terminal-bench-4.0",
+      "to": "gpt-6-astra@max-common"
+    },
+    {
+      "id": "gpt-6-astra:arc-agi-2-semi-private:vendor-model-cards:417",
+      "model": "gpt-6-astra",
+      "benchmark": "arc-agi-2-semi-private",
+      "to": "gpt-6-astra@max-common"
+    },
+    {
+      "id": "gpt-6-astra:frontiermath-v2-tier-4:vendor-model-cards:1035",
+      "model": "gpt-6-astra",
+      "benchmark": "frontiermath-v2-tier-4",
+      "to": "gpt-6-astra@max-common"
+    }
+  ],
+  "panel_passed": true
+}

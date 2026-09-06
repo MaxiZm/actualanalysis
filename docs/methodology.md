@@ -1,6 +1,6 @@
 # How the index works
 
-**ActualAnalysis Capability Index · version 1.4.2 · calibration edition 2026a**
+**ActualAnalysis Capability Index · version 1.4.3 · calibration edition 2026a**
 
 The index estimates model capability from published benchmark evidence. It is a relative comparison, not a percentage of tasks a model will solve. Price, output speed and context are shown beside capability and do not change it.
 
@@ -38,7 +38,11 @@ The weights are declared product choices, not learned measures of universal usef
 
 The unit of analysis is a model snapshot at a declared effort class. `std-common` represents default effort under a common evaluation harness; `max-common` represents the highest declared effort. The default leaderboard uses `max-common`.
 
-Models whose declared default and maximum effort are equal have one fitted system. Models without a documented maximum, including numeric thinking budgets without a universal maximum, retain a pooled configuration; this is a metadata limitation, not proof that the provider exposes no dial. With a documented variable dial and maximum but unknown default, only explicitly matched maximum-effort results enter the maximum system. A default is never invented. Lower and intermediate observed effort settings are assigned to the nearest declared class and flagged as approximate, including settings below the default.
+Models whose declared default and maximum effort are equal have one fitted system. Models without a documented maximum, including numeric thinking budgets without a universal maximum, retain a pooled configuration; this is a metadata limitation, not proof that the provider exposes no dial. Lower and intermediate observed effort settings are assigned to the nearest declared class and flagged as approximate, including settings below the default. A reported default setting uses the documented default; an unknown API default is not invented.
+
+**From version 1.4.3, an unreported effort setting is assigned to the maximum profile.** This convention treats a published benchmark result without a specified setting as the model's maximum-effort submission. It also applies when the model's maximum is documented but its default is unknown. Explicit Medium, High, xHigh, default and other reported settings retain their existing assignments. Source fields remain unchanged: the site marks missing settings as **Max assumed**, and the fit retains the 1.5× run-noise adjustment for incomplete configuration metadata. The assumption is a declared index policy, not verification of an evaluator's actual setting. Historical runs retain their previous policy.
+
+Coverage counts distinct fitted benchmark cells for the selected model profile, divided by the number of benchmark conditions fitted in that run. Assigning missing effort to maximum increases that profile's coverage; it does not turn an observed-only or incompatible condition into fitted evidence. Gemini 3.8 Flash's MathArena result now counts in its maximum profile, while its explicitly Medium DeepSWE run remains separate.
 
 A result preserves its source, date, metric, benchmark version, harness and reasoning settings when reported. Dated source protocols can supply missing fields. Unresolved provenance pins are labelled `metadata_incomplete` and receive 1.5 times the run-noise scale. Explicitly incompatible harnesses, inactive conditions, duplicate lineages and observations without a usable likelihood are excluded.
 

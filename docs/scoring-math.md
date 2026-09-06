@@ -4,6 +4,8 @@ Method **1.4.0** retains the correlated five-domain formula used in 1.3.2. It co
 
 The normative explanation and publication rules are in [methodology.md](methodology.md), executable constants are in `data/index-config.yaml`, and candidate selection records are in the [validation audit](audits/1.4-validation/). Historical specifications describe their named releases, not the current contract.
 
+Version **1.4.3** changes observation assignment: `unreported_effort_policy: maximum` sends a missing source setting to the maximum system, preserving the missing source field and marking configuration uncertainty. Explicit effort settings keep their existing assignments. This policy changes which system receives evidence; it does not change benchmark scores, domain weights or the capability likelihood. Historical registries without the policy retain the standard fallback.
+
 ## Traits, effort and measurement
 
 Let $m$ be a model snapshot, $s$ its effort-class system, $k$ a capability domain and $b$ a benchmark condition. In the retained `correlated` structure:

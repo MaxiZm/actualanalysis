@@ -239,6 +239,7 @@ export async function runAci12Nuts(options: {
     priors: options.config.priors,
     inference: options.config.inference,
     metadata_incomplete_multiplier: options.config.likelihood.metadata_incomplete_multiplier,
+    unreported_effort_policy: options.config.unreported_effort_policy,
     seed: options.seed ?? 20260904,
     progress_bar: options.progressBar ?? false,
   };

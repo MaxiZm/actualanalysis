@@ -1,0 +1,67 @@
+{
+  "method": "1.4.3",
+  "date": "2026-09-06",
+  "typecheck": "passed",
+  "lint": "passed",
+  "unit_tests": {
+    "passed": 309,
+    "failed": 0
+  },
+  "browser_tests": {
+    "desktop_and_mobile_passed": 24,
+    "failed": 0
+  },
+  "pages_build": "passed: 240 static routes",
+  "pages_browser_tests": {
+    "passed": 3,
+    "failed": 0
+  },
+  "visual_review": "Gemini model page at 1280px: 5/19 in all three index summaries; evidence count 5; MathArena maximum-assumption label visible. Responsive overflow checks passed at 375 and 1440px, and Compare at 320, 768 and 1440px.",
+  "publication_api": {
+    "publication": {
+      "siteUrl": "https://maxizm.github.io/actualanalysis/",
+      "snapshotDate": "2026-09-06",
+      "methodVersion": "1.4.3",
+      "models": 126,
+      "basePath": "/actualanalysis",
+      "commit": null
+    },
+    "checks": {
+      "mixed": {
+        "models": 110,
+        "verified_coverage_gains": 21,
+        "gemini_coverage": 5,
+        "sol_coverage": 11
+      },
+      "agentic": {
+        "models": 110,
+        "verified_coverage_gains": 21,
+        "gemini_coverage": 5,
+        "sol_coverage": 11
+      },
+      "chat": {
+        "models": 110,
+        "verified_coverage_gains": 21,
+        "gemini_coverage": 5,
+        "sol_coverage": 11
+      }
+    },
+    "catalog_models": 126
+  },
+  "numerics": {
+    "observations": 924,
+    "models": 110,
+    "systems": 131,
+    "benchmarks": 19,
+    "retained_draws": 12000,
+    "divergences": 0,
+    "max_rhat": 1.0017593627588304,
+    "min_ess": 2618.581751930913,
+    "min_ebfmi": 0.8263949569647864,
+    "max_mcse": 0.1970761863776125
+  },
+  "source_rows_preserved": 1517,
+  "notebook": "all five code cells executed successfully",
+  "resolved_application_check": "Initial browser startup failed because the web import traversed the shared registry barrel. A dedicated ./effort package export fixes module resolution; typecheck, lint, all 309 unit tests and 24 browser tests passed afterward.",
+  "deployment": "Validated local export ready for GitHub Pages. Post-push CI and live-site checks are recorded in the release handoff."
+}

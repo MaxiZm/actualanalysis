@@ -1,4 +1,5 @@
 import type { Domain, EvidenceTier, IndexConfig, SystemProfile } from "@actualanalysis/shared";
+import { readReportedEffort } from "@actualanalysis/shared";
 import { mean, sigmoid } from "./math.js";
 
 export const ACI_DOMAINS: Domain[] = [
@@ -113,6 +114,7 @@ export interface PreparedAciObservation extends AciObservation {
   rho?: number;
   defaultVarianceUsed: boolean;
   metadataIncomplete: boolean;
+  effortAssumedMaximum?: boolean;
   contaminationState: "safe" | "exposed" | "unknown";
   inReferenceComponent: boolean;
 }
@@ -290,17 +292,18 @@ export interface ProfileAssignment {
   systemId: string;
   /** True when the observation's effort tier was absent or did not name the declared default/max tier exactly. */
   approximate: boolean;
+  effortAssumedMaximum?: boolean;
 }
 
 /**
- * Assign an observation to a system class. Observations are never rejected for
- * an unknown or intermediate effort tier: a fixed-effort system (no declared
- * dial) takes every observation, a variable-effort system maps the observed
- * tier to the nearer of its default/max tiers. Approximate assignments are
- * flagged so the fit inflates their run noise (metadata_incomplete).
+ * Assign compatible observations to a declared system class. Intermediate
+ * effort maps to the nearer default/max tier; missing effort follows the
+ * registry policy without rewriting the source field. Approximate assignments
+ * inflate run noise through metadata_incomplete. Native agentic results cannot
+ * support a standard or pooled fixed-effort system.
  */
-function profileFor(observation: AciObservation, system: AciSystemDefinition, benchmark: AciBenchmarkDefinition): ProfileAssignment | null {
-  const observedTier = canonicalEffortTier(observation.effortTier);
+function profileFor(observation: AciObservation, system: AciSystemDefinition, benchmark: AciBenchmarkDefinition, missingEffortPolicy: IndexConfig["unreported_effort_policy"]): ProfileAssignment | null {
+  const observedTier = canonicalEffortTier(readReportedEffort({ effort_tier: observation.effortTier }));
   const nativeAgentic = benchmark.primaryDomain === "agentic" && observation.harnessClass === "native";
   if (isFixedEffort(system)) {
     if (nativeAgentic) return null;
@@ -309,8 +312,12 @@ function profileFor(observation: AciObservation, system: AciSystemDefinition, be
   }
   const defaultTier = canonicalEffortTier(system.defaultEffortTier);
   const maxTier = canonicalEffortTier(system.maxEffortTier);
+  if (observedTier === null && missingEffortPolicy === "maximum") {
+    return { systemClass: "max-common", profile: "max-common", systemId: `${system.modelSnapshotId}@max-common`, approximate: true, effortAssumedMaximum: true };
+  }
   // A documented dial with an unknown default is not fixed effort. Only an
-  // explicitly matching endpoint can support a declared system in this case.
+  // explicitly matching endpoint, or the missing-effort policy above, can
+  // support a declared system in this case.
   if (defaultTier === null || maxTier === null) {
     if (observedTier !== null && observedTier === maxTier) {
       return { systemClass: "max-common", profile: "max-common", systemId: `${system.modelSnapshotId}@max-common`, approximate: false };
@@ -607,7 +614,7 @@ export function prepareAci12(
       rejections.push({ observationId: observation.observationId, reason: "config_mismatch", detail: `Tool policy ${observation.toolPolicy} does not match ${benchmark.toolPolicy}.` });
       continue;
     }
-    const assigned = profileFor(observation, system, benchmark);
+    const assigned = profileFor(observation, system, benchmark, config.unreported_effort_policy);
     if (!assigned) {
       rejections.push({ observationId: observation.observationId, reason: "class_unassigned", detail: "Effort tier and harness do not match a declared std-common, max-common, or product system." });
       continue;
@@ -637,6 +644,7 @@ export function prepareAci12(
       profile: assigned.profile,
       benchmark,
       metadataIncomplete,
+      ...(assigned.effortAssumedMaximum ? { effortAssumedMaximum: true } : {}),
       contaminationState,
       inReferenceComponent: true,
     });

@@ -123,7 +123,7 @@ describe("ACI 1.2 observation contract", () => {
     expect(["class_unassigned", "profile_unassigned"]).toContain(prepared.rejections[0]?.reason);
   });
 
-  it("matches declared effort tiers case-insensitively and assigns a missing tier as approximate std-common", () => {
+  it("keeps explicit default effort but assigns missing effort to maximum without inventing a source tier", () => {
     const matched = prepareAci12(
       [observation({ effortTier: " Default ", nTasks: 100 })],
       [system],
@@ -138,8 +138,25 @@ describe("ACI 1.2 observation contract", () => {
       config,
     );
     expect(missing.rejections).toEqual([]);
-    expect(missing.observations[0]?.profile).toBe("std-common");
+    expect(missing.observations[0]?.profile).toBe("max-common");
     expect(missing.observations[0]?.metadataIncomplete).toBe(true);
+    expect(missing.observations[0]?.effortAssumedMaximum).toBe(true);
+    expect(missing.observations[0]?.effortTier).toBeUndefined();
+  });
+
+  it("retains the standard fallback when replaying a historical admission policy", () => {
+    const result = prepareAci12([observation({ effortTier: undefined, standardError: 0.02 })], [system], [benchmark()], { ...config, unreported_effort_policy: "standard" });
+    expect(result.observations[0]).toMatchObject({ profile: "std-common", metadataIncomplete: true });
+    expect(result.observations[0]?.effortAssumedMaximum).toBeUndefined();
+  });
+
+  it("moves only missing settings while preserving explicit medium and high and their measured uncertainty", () => {
+    const rows = [undefined, "unknown", "medium", "high"].map((effortTier, i) => observation({ observationId: String(i), effortTier, standardError: 0.02 }));
+    const result = prepareAci12(rows, [{ modelSnapshotId: "m", defaultEffortTier: "medium", maxEffortTier: "high" }], [benchmark()], config);
+    expect(result.observations.map(r => r.profile)).toEqual(["max-common", "max-common", "std-common", "max-common"]);
+    expect(result.observations.map(r => r.effortAssumedMaximum === true)).toEqual([true, true, false, false]);
+    expect(new Set(result.observations.map(r => r.variance)).size).toBe(1);
+    expect(result.observations.every(r => r.likelihood === "a_prime" && r.x === undefined)).toBe(true);
   });
 
   it("rejects source-incompatible aggregates but inflates unpinned reference metadata", () => {
@@ -274,8 +291,9 @@ describe("ACI 1.2 posterior outputs", () => {
       observation({ observationId: "unknown", effortTier: undefined, nTasks: 100 }),
       observation({ observationId: "max", effortTier: "max", nTasks: 100 }),
     ], [variable], [benchmark()], config);
-    expect(prepared.observations.map((row) => row.observationId)).toEqual(["max"]);
-    expect(prepared.rejections).toHaveLength(2);
+    expect(prepared.observations.map((row) => row.observationId)).toEqual(["unknown", "max"]);
+    expect(prepared.observations[0]).toMatchObject({ profile: "max-common", metadataIncomplete: true, effortAssumedMaximum: true });
+    expect(prepared.rejections).toHaveLength(1);
   });
 
   it("flags below-default effort as approximate instead of exact standard effort", () => {

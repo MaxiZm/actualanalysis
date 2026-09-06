@@ -1,4 +1,5 @@
 import type { Benchmark, Domain, IndexConfig, Model } from "@actualanalysis/shared";
+import { readReportedEffort } from "@actualanalysis/shared";
 import { ACI_DOMAINS, prepareAci12, type AciBenchmarkDefinition, type AciObservation, type AciPreparation, type AciSystemDefinition } from "./aci12.js";
 
 export interface Aci12RegistryResult {
@@ -75,15 +76,6 @@ function observationType(benchmark: Benchmark): AciBenchmarkDefinition["obsType"
   return "count";
 }
 
-function effortFrom(result: Aci12RegistryResult): string | undefined {
-  if (result.effort_tier) return result.effort_tier;
-  for (const key of ["reasoning_effort", "evaluation_profile", "effort_tier"]) {
-    const value = result.config?.[key];
-    if (typeof value === "string" && value.trim()) return value.trim();
-  }
-  return undefined;
-}
-
 function toolPolicyFrom(result: Aci12RegistryResult): string | undefined {
   if (result.tool_policy) return result.tool_policy;
   const tools = result.config?.tools;
@@ -152,7 +144,7 @@ export function coerceAci12RegistryInput(payload: {
     };
   });
   const observations: AciObservation[] = payload.results.map((result, index) => {
-    const effortTier = effortFrom(result);
+    const effortTier = readReportedEffort(result);
     const toolPolicy = toolPolicyFrom(result);
     const networkPolicy = networkPolicyFrom(result);
     const kTrials = result.k_trials;

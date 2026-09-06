@@ -760,6 +760,7 @@ function toAci12RunArtifacts(
         calibration_edition: registry.indexConfig.calibration_edition,
         data_cutoff: registry.indexConfig.data_cutoff,
         default_profile: registry.indexConfig.default_profile,
+        unreported_effort_policy: registry.indexConfig.unreported_effort_policy,
         reference_benchmark_id: registry.indexConfig.reference_benchmark ?? null,
         scales: posterior.scales,
         joint_posterior_path: posteriorPath,

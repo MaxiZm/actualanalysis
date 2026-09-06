@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.4.3 — 2026-09-06
+
+- Assign results with unreported effort to the maximum profile for every model. Preserve explicitly reported settings and original source values; mark the assumption and retain additional configuration uncertainty.
+- Restore Gemini 3.8 Flash's MathArena result to its maximum-profile coverage: five fitted conditions out of nineteen. The policy increases maximum-profile coverage for 21 models, moves 46 existing observations and admits three previously unassigned observations.
+- Show “Max assumed” beside source configurations without a reported setting. Keep the previous standard fallback available for historical registry replays.
+- Refit the same correlated-domain model with unchanged benchmark membership, calibration panel, profile weights and priors. The coverage change is a declared effort-assignment policy, not a claim that unreported evaluator settings have been verified.
+
+See the [effort-policy audit](https://github.com/MaxiZm/actualanalysis/tree/main/docs/audits/1.4.3-effort-coverage) for source preservation checks, affected models and the accepted fit.
+
 ## 1.4.2 — 2026-09-06
 
 - Expand Gemini 3.8 Flash from nine to eighteen distinct reported benchmark conditions, and from three to five fitted conditions across configurations. Its displayed maximum-effort profile now has four directly fitted cells. Add native Arena High and Finance Agent v2 results with published uncertainty; add source-linked LVBench, BioMysteryBench, LABBench2, MineBench and Harvey evidence with explicit measurement limits.

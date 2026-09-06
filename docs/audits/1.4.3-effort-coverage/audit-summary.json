@@ -1,0 +1,200 @@
+{
+  "method": "1.4.3",
+  "date": "2026-09-06",
+  "baseline_commit": "bbd3fee608692b8c16659a076c209169c9f0333c",
+  "policy": "maximum",
+  "source_rows_unchanged": 1517,
+  "catalog_models": 126,
+  "moved_unreported_observations": 46,
+  "newly_admitted_unreported_observations": 3,
+  "models_with_greater_maximum_coverage": 21,
+  "coverage_gains": [
+    {
+      "model": "claude-sonnet-5",
+      "before": 7,
+      "after": 8
+    },
+    {
+      "model": "gemini-3.7-flash",
+      "before": 8,
+      "after": 9
+    },
+    {
+      "model": "gemini-3.8-flash",
+      "before": 4,
+      "after": 5
+    },
+    {
+      "model": "grok-4.6",
+      "before": 5,
+      "after": 6
+    },
+    {
+      "model": "claude-3.7-sonnet",
+      "before": 3,
+      "after": 4
+    },
+    {
+      "model": "claude-fable-5.1",
+      "before": 8,
+      "after": 9
+    },
+    {
+      "model": "claude-fable-5",
+      "before": 11,
+      "after": 12
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "before": 3,
+      "after": 10
+    },
+    {
+      "model": "gpt-5.1",
+      "before": 5,
+      "after": 6
+    },
+    {
+      "model": "gpt-5.2",
+      "before": 9,
+      "after": 11
+    },
+    {
+      "model": "gpt-5.5-pro",
+      "before": 3,
+      "after": 4
+    },
+    {
+      "model": "gpt-5.5",
+      "before": 12,
+      "after": 13
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "before": 8,
+      "after": 9
+    },
+    {
+      "model": "gpt-5.6-sol",
+      "before": 10,
+      "after": 11
+    },
+    {
+      "model": "gpt-5.6-terra",
+      "before": 8,
+      "after": 9
+    },
+    {
+      "model": "grok-4.3",
+      "before": 1,
+      "after": 3
+    },
+    {
+      "model": "gemini-3.5-flash",
+      "before": 8,
+      "after": 10
+    },
+    {
+      "model": "claude-opus-5",
+      "before": 11,
+      "after": 12
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "before": 2,
+      "after": 5
+    },
+    {
+      "model": "o3",
+      "before": 6,
+      "after": 8
+    },
+    {
+      "model": "o4-mini",
+      "before": 7,
+      "after": 9
+    }
+  ],
+  "gemini_before": {
+    "mixed": {
+      "median": 61.789936,
+      "ci90": [
+        56.667854,
+        67.75362
+      ],
+      "coverage": 4,
+      "provisional": false
+    },
+    "agentic": {
+      "median": 61.412502,
+      "ci90": [
+        56.114437,
+        68.07289
+      ],
+      "coverage": 4,
+      "provisional": false
+    },
+    "chat": {
+      "median": 60.692562,
+      "ci90": [
+        54.065697,
+        67.84733
+      ],
+      "coverage": 4,
+      "provisional": true
+    }
+  },
+  "gemini_after": {
+    "mixed": {
+      "median": 61.791348,
+      "ci90": [
+        56.458298,
+        67.800865
+      ],
+      "coverage": 5,
+      "provisional": false
+    },
+    "agentic": {
+      "median": 61.22615,
+      "ci90": [
+        55.572765,
+        68.277985
+      ],
+      "coverage": 5,
+      "provisional": false
+    },
+    "chat": {
+      "median": 60.93387,
+      "ci90": [
+        54.199615,
+        68.078445
+      ],
+      "coverage": 5,
+      "provisional": true
+    }
+  },
+  "fit": {
+    "observations": 924,
+    "models": 110,
+    "systems": 131,
+    "benchmarks": 19,
+    "retained_draws": 12000,
+    "divergences": 0,
+    "max_rhat": 1.0017593627588304,
+    "min_ess": 2618.581751930913,
+    "min_ebfmi": 0.8263949569647864,
+    "max_mcse": 0.1970761863776125
+  },
+  "unchanged_modeling_fields": [
+    "priors",
+    "profiles",
+    "calibration_panel_system_ids",
+    "benchmark_ids",
+    "benchmark_domains",
+    "metadata_incomplete_multiplier"
+  ],
+  "baseline_snapshot_sha256": "3eb54898eb278fb2ac84d2bb6d789d83492c7c35753fe142cbb2432503124454",
+  "snapshot_sha256": "af4f8e6e198fb3ba7682eb597760e49ede56e23d6db7ba0d9f7d088c04d7c400",
+  "accepted_input_sha256": "e5d654f41019df63f9f78c28efcd8d83db9bf425bf63e4d2cadb3a166fe23578",
+  "canonical_source_input_sha256": "54f5ddeed64469834f1d44d16c45dc694144d07131f49d0142a4818a067e413b"
+}

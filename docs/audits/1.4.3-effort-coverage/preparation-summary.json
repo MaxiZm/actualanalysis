@@ -1,0 +1,4709 @@
+{
+  "method_version": "1.4.3",
+  "taxonomy_edition": "2026a",
+  "calibration_edition": "2026a",
+  "observations_received": 1571,
+  "observations_prepared_for_fit": 924,
+  "systems_prepared_for_fit": 129,
+  "missing_calibration_panel_systems": [],
+  "calibration_panel_coverage": {
+    "minimumSize": 12,
+    "configuredSystemIds": [
+      "gpt-4.1@max-common",
+      "gpt-5-2025-08-07@max-common",
+      "gpt-5.2@max-common",
+      "claude-opus-4.5@max-common",
+      "claude-sonnet-4@max-common",
+      "claude-opus-4.1@max-common",
+      "claude-opus-4.6@max-common",
+      "claude-fable-5@max-common",
+      "gemini-3-pro@max-common",
+      "gemini-3.1-pro@max-common",
+      "deepseek-v3.2@max-common",
+      "kimi-k3@max-common",
+      "grok-4.5@max-common",
+      "glm-5.2@max-common",
+      "qwen-3.8-max@max-common",
+      "muse-spark-1.1@max-common"
+    ],
+    "configuredMissingIndependentCells": [],
+    "eligibleSystemCount": 129,
+    "independentCellsBySystem": {
+      "gemini-3.1-pro@max-common": 13,
+      "glm-5.2@max-common": 13,
+      "claude-opus-4.8@max-common": 12,
+      "gpt-5.4@max-common": 12,
+      "gpt-5.5@max-common": 12,
+      "claude-fable-5@max-common": 11,
+      "claude-opus-4.6@max-common": 11,
+      "claude-opus-4.7@max-common": 11,
+      "claude-opus-5@max-common": 11,
+      "claude-sonnet-4.5@max-common": 11,
+      "gpt-5.6-sol@max-common": 11,
+      "grok-4.5@max-common": 11,
+      "kimi-k3@max-common": 11,
+      "claude-opus-4.5@max-common": 10,
+      "gemini-3-flash@max-common": 10,
+      "gemini-3.5-flash@max-common": 10,
+      "claude-fable-5.1@max-common": 9,
+      "gemini-3.7-flash@max-common": 9,
+      "gpt-5-2025-08-07@max-common": 9,
+      "gpt-5.2@max-common": 9,
+      "gpt-5.6-luna@max-common": 9,
+      "gpt-5.6-terra@max-common": 9,
+      "claude-sonnet-4.6@max-common": 8,
+      "gemini-2.5-pro@max-common": 8,
+      "gemini-3-pro@max-common": 8,
+      "gemini-3.6-flash@max-common": 8,
+      "gpt-5-mini@max-common": 8,
+      "muse-spark-1.1@max-common": 8,
+      "o4-mini@max-common": 8,
+      "claude-sonnet-5@max-common": 7,
+      "glm-5.3@max-common": 7,
+      "gpt-5-nano@max-common": 7,
+      "gpt-6-astra@max-common": 7,
+      "o3@max-common": 7,
+      "qwen-3.8-max@max-common": 7,
+      "claude-opus-4.1@max-common": 6,
+      "deepseek-v4-pro-0424@max-common": 6,
+      "deepseek-v4-pro-0813@max-common": 6,
+      "gpt-4.1@max-common": 6,
+      "gpt-5.1@max-common": 6,
+      "gpt-5.4-pro@max-common": 6,
+      "grok-4.6@max-common": 6,
+      "inkling@max-common": 6,
+      "o1@max-common": 6,
+      "o3-mini@max-common": 6,
+      "claude-fable-5@std-common": 5,
+      "claude-haiku-4.5@max-common": 5,
+      "deepseek-v4-flash-0731@max-common": 5,
+      "gemini-3.5-flash-lite@max-common": 5,
+      "gemini-3.8-flash@max-common": 5,
+      "glm-5.3-flash@max-common": 5,
+      "glm-5@max-common": 5,
+      "gpt-4.1-mini@max-common": 5,
+      "gpt-5.2@std-common": 5,
+      "grok-4.20@max-common": 5,
+      "grok-4.6@std-common": 5,
+      "inkling-small@max-common": 5,
+      "kimi-k2-7-code@max-common": 5,
+      "kimi-k2.5@max-common": 5,
+      "minimax-m3@max-common": 5,
+      "o4-mini@std-common": 5,
+      "qwen3-max@max-common": 5,
+      "claude-3.5-sonnet-20241022@max-common": 4,
+      "claude-3.7-sonnet@max-common": 4,
+      "claude-opus-4@max-common": 4,
+      "claude-opus-5@std-common": 4,
+      "claude-sonnet-4@max-common": 4,
+      "deepseek-v3.2@max-common": 4,
+      "gemini-2.5-flash@max-common": 4,
+      "glm-4.5@max-common": 4,
+      "gpt-4.1-nano@max-common": 4,
+      "gpt-5-pro@max-common": 4,
+      "gpt-5.6-luna@std-common": 4,
+      "gpt-5.6-sol@std-common": 4,
+      "grok-4-fast@max-common": 4,
+      "grok-4@max-common": 4,
+      "mimo-v2-5-pro@max-common": 4,
+      "muse-spark-1.2@max-common": 4,
+      "o3@std-common": 4,
+      "qwen3.5-397b-a17b@max-common": 4,
+      "claude-sonnet-5@std-common": 3,
+      "gemini-1.5-pro@max-common": 3,
+      "gemini-3.5-flash@std-common": 3,
+      "gpt-5.2-pro@max-common": 3,
+      "gpt-5.5-instant@max-common": 3,
+      "gpt-5.5-pro@max-common": 3,
+      "gpt-5.5@std-common": 3,
+      "gpt-oss-120b@max-common": 3,
+      "grok-4.1-fast@max-common": 3,
+      "grok-4.3@max-common": 3,
+      "llama-4-maverick@max-common": 3,
+      "qwen3-235b-a22b-2507@max-common": 3,
+      "qwen3.7-plus@max-common": 3,
+      "claude-3.5-sonnet@max-common": 2,
+      "claude-3.7-sonnet@std-common": 2,
+      "gemini-2.5-pro-20250506@max-common": 2,
+      "gemini-3.7-flash@std-common": 2,
+      "glm-4.6@max-common": 2,
+      "gpt-4.5@max-common": 2,
+      "gpt-5.1@std-common": 2,
+      "gpt-5.3-codex@max-common": 2,
+      "gpt-5.6-terra@std-common": 2,
+      "kimi-k2@max-common": 2,
+      "mimo-v2-5-0424@max-common": 2,
+      "muse-spark@max-common": 2,
+      "nova-lite@max-common": 2,
+      "nova-pro@max-common": 2,
+      "qwen3-235b-a22b@max-common": 2,
+      "qwen3-coder-480b-a35b@max-common": 2,
+      "qwen3.6-27b@max-common": 2,
+      "qwen3.8-27b@max-common": 2,
+      "claude-fable-5.1@std-common": 1,
+      "gemini-2.0-flash-thinking@max-common": 1,
+      "gemini-2.5-flash@std-common": 1,
+      "gemini-2.5-pro-20250325@max-common": 1,
+      "gemini-3.8-flash@std-common": 1,
+      "gpt-4o-2024-11-20@max-common": 1,
+      "gpt-5.1-codex-max@max-common": 1,
+      "gpt-5.5-pro@std-common": 1,
+      "grok-code-fast-1@max-common": 1,
+      "hy3@max-common": 1,
+      "mimo-v2-omni@max-common": 1,
+      "mistral-medium-3@max-common": 1,
+      "muse-glimmer@max-common": 1,
+      "muse-spark-1.3@max-common": 1,
+      "nemotron-3-ultra@max-common": 1,
+      "o1-pro@max-common": 1,
+      "o3-pro@max-common": 1,
+      "solar-pro4@max-common": 1
+    },
+    "coverageRankedSystemIds": [
+      "gemini-3.1-pro@max-common",
+      "glm-5.2@max-common",
+      "claude-opus-4.8@max-common",
+      "gpt-5.4@max-common",
+      "gpt-5.5@max-common",
+      "claude-fable-5@max-common",
+      "claude-opus-4.6@max-common",
+      "claude-opus-4.7@max-common",
+      "claude-opus-5@max-common",
+      "claude-sonnet-4.5@max-common",
+      "gpt-5.6-sol@max-common",
+      "grok-4.5@max-common",
+      "kimi-k3@max-common",
+      "claude-opus-4.5@max-common",
+      "gemini-3-flash@max-common",
+      "gemini-3.5-flash@max-common",
+      "claude-fable-5.1@max-common",
+      "gemini-3.7-flash@max-common",
+      "gpt-5-2025-08-07@max-common",
+      "gpt-5.2@max-common",
+      "gpt-5.6-luna@max-common",
+      "gpt-5.6-terra@max-common",
+      "claude-sonnet-4.6@max-common",
+      "gemini-2.5-pro@max-common",
+      "gemini-3-pro@max-common",
+      "gemini-3.6-flash@max-common",
+      "gpt-5-mini@max-common",
+      "muse-spark-1.1@max-common",
+      "o4-mini@max-common",
+      "claude-sonnet-5@max-common",
+      "glm-5.3@max-common",
+      "gpt-5-nano@max-common",
+      "gpt-6-astra@max-common",
+      "o3@max-common",
+      "qwen-3.8-max@max-common",
+      "claude-opus-4.1@max-common",
+      "deepseek-v4-pro-0424@max-common",
+      "deepseek-v4-pro-0813@max-common",
+      "gpt-4.1@max-common",
+      "gpt-5.1@max-common",
+      "gpt-5.4-pro@max-common",
+      "grok-4.6@max-common",
+      "inkling@max-common",
+      "o1@max-common",
+      "o3-mini@max-common",
+      "claude-fable-5@std-common",
+      "claude-haiku-4.5@max-common",
+      "deepseek-v4-flash-0731@max-common",
+      "gemini-3.5-flash-lite@max-common",
+      "gemini-3.8-flash@max-common",
+      "glm-5.3-flash@max-common",
+      "glm-5@max-common",
+      "gpt-4.1-mini@max-common",
+      "gpt-5.2@std-common",
+      "grok-4.20@max-common",
+      "grok-4.6@std-common",
+      "inkling-small@max-common",
+      "kimi-k2-7-code@max-common",
+      "kimi-k2.5@max-common",
+      "minimax-m3@max-common",
+      "o4-mini@std-common",
+      "qwen3-max@max-common",
+      "claude-3.5-sonnet-20241022@max-common",
+      "claude-3.7-sonnet@max-common",
+      "claude-opus-4@max-common",
+      "claude-opus-5@std-common",
+      "claude-sonnet-4@max-common",
+      "deepseek-v3.2@max-common",
+      "gemini-2.5-flash@max-common",
+      "glm-4.5@max-common",
+      "gpt-4.1-nano@max-common",
+      "gpt-5-pro@max-common",
+      "gpt-5.6-luna@std-common",
+      "gpt-5.6-sol@std-common",
+      "grok-4-fast@max-common",
+      "grok-4@max-common",
+      "mimo-v2-5-pro@max-common",
+      "muse-spark-1.2@max-common",
+      "o3@std-common",
+      "qwen3.5-397b-a17b@max-common",
+      "claude-sonnet-5@std-common",
+      "gemini-1.5-pro@max-common",
+      "gemini-3.5-flash@std-common",
+      "gpt-5.2-pro@max-common",
+      "gpt-5.5-instant@max-common",
+      "gpt-5.5-pro@max-common",
+      "gpt-5.5@std-common",
+      "gpt-oss-120b@max-common",
+      "grok-4.1-fast@max-common",
+      "grok-4.3@max-common",
+      "llama-4-maverick@max-common",
+      "qwen3-235b-a22b-2507@max-common",
+      "qwen3.7-plus@max-common",
+      "claude-3.5-sonnet@max-common",
+      "claude-3.7-sonnet@std-common",
+      "gemini-2.5-pro-20250506@max-common",
+      "gemini-3.7-flash@std-common",
+      "glm-4.6@max-common",
+      "gpt-4.5@max-common",
+      "gpt-5.1@std-common",
+      "gpt-5.3-codex@max-common",
+      "gpt-5.6-terra@std-common",
+      "kimi-k2@max-common",
+      "mimo-v2-5-0424@max-common",
+      "muse-spark@max-common",
+      "nova-lite@max-common",
+      "nova-pro@max-common",
+      "qwen3-235b-a22b@max-common",
+      "qwen3-coder-480b-a35b@max-common",
+      "qwen3.6-27b@max-common",
+      "qwen3.8-27b@max-common",
+      "claude-fable-5.1@std-common",
+      "gemini-2.0-flash-thinking@max-common",
+      "gemini-2.5-flash@std-common",
+      "gemini-2.5-pro-20250325@max-common",
+      "gemini-3.8-flash@std-common",
+      "gpt-4o-2024-11-20@max-common",
+      "gpt-5.1-codex-max@max-common",
+      "gpt-5.5-pro@std-common",
+      "grok-code-fast-1@max-common",
+      "hy3@max-common",
+      "mimo-v2-omni@max-common",
+      "mistral-medium-3@max-common",
+      "muse-glimmer@max-common",
+      "muse-spark-1.3@max-common",
+      "nemotron-3-ultra@max-common",
+      "o1-pro@max-common",
+      "o3-pro@max-common",
+      "solar-pro4@max-common"
+    ]
+  },
+  "per_domain_coverage": {
+    "minimumSize": 12,
+    "editionClass": "max-common",
+    "rule": {
+      "minCellsPerDomain": 1,
+      "minDomainsWithTwo": 3
+    },
+    "candidateSystemIds": [
+      "gemini-3.1-pro@max-common",
+      "glm-5.2@max-common",
+      "claude-opus-4.8@max-common",
+      "gpt-5.5@max-common",
+      "claude-fable-5@max-common",
+      "claude-opus-4.7@max-common",
+      "claude-opus-5@max-common",
+      "claude-sonnet-4.5@max-common",
+      "gpt-5.4@max-common",
+      "gpt-5.6-sol@max-common",
+      "grok-4.5@max-common",
+      "claude-opus-4.5@max-common",
+      "kimi-k3@max-common",
+      "claude-opus-4.6@max-common",
+      "claude-fable-5.1@max-common",
+      "gemini-3-flash@max-common",
+      "gemini-3-pro@max-common",
+      "gpt-5.6-luna@max-common",
+      "gpt-5.6-terra@max-common",
+      "muse-spark-1.1@max-common",
+      "claude-sonnet-4.6@max-common",
+      "gemini-3.5-flash@max-common",
+      "gpt-5.2@max-common",
+      "gemini-3.7-flash@max-common",
+      "gemini-2.5-pro@max-common",
+      "gpt-5-2025-08-07@max-common",
+      "gpt-5-mini@max-common",
+      "o4-mini@max-common",
+      "qwen-3.8-max@max-common",
+      "glm-5.3@max-common",
+      "o3@max-common",
+      "claude-sonnet-5@max-common",
+      "gemini-3.6-flash@max-common",
+      "gpt-4.1@max-common",
+      "minimax-m3@max-common",
+      "claude-opus-4.1@max-common",
+      "gemini-3.8-flash@max-common",
+      "gpt-5-nano@max-common",
+      "gpt-5.1@max-common",
+      "gpt-6-astra@max-common",
+      "qwen3-max@max-common",
+      "claude-sonnet-4@max-common",
+      "glm-4.5@max-common",
+      "grok-4.6@std-common",
+      "mimo-v2-5-pro@max-common",
+      "deepseek-v3.2@max-common",
+      "deepseek-v4-pro-0813@max-common",
+      "gemini-2.5-flash@max-common",
+      "glm-5.3-flash@max-common",
+      "glm-5@max-common",
+      "gpt-4.1-mini@max-common",
+      "inkling@max-common",
+      "muse-spark-1.2@max-common",
+      "o1@max-common",
+      "gpt-4.1-nano@max-common",
+      "claude-opus-5@std-common",
+      "gemini-3.5-flash-lite@max-common",
+      "gpt-5.2@std-common",
+      "grok-4.3@max-common",
+      "grok-4@max-common",
+      "claude-3.5-sonnet-20241022@max-common",
+      "claude-3.7-sonnet@max-common",
+      "claude-haiku-4.5@max-common",
+      "claude-sonnet-5@std-common",
+      "deepseek-v4-pro-0424@max-common",
+      "gpt-oss-120b@max-common",
+      "grok-4-fast@max-common",
+      "grok-4.6@max-common",
+      "kimi-k2.5@max-common",
+      "o3-mini@max-common",
+      "qwen3.5-397b-a17b@max-common",
+      "gemini-1.5-pro@max-common",
+      "inkling-small@max-common",
+      "kimi-k2-7-code@max-common",
+      "kimi-k2@max-common",
+      "llama-4-maverick@max-common",
+      "qwen3-coder-480b-a35b@max-common",
+      "qwen3.7-plus@max-common",
+      "gemini-3.5-flash@std-common",
+      "mimo-v2-5-0424@max-common",
+      "muse-spark@max-common",
+      "nova-lite@max-common",
+      "nova-pro@max-common",
+      "qwen3.8-27b@max-common",
+      "qwen3-235b-a22b-2507@max-common"
+    ],
+    "allSystemCounts": {
+      "gpt-5.5-instant@max-common": {
+        "agentic": 1,
+        "software-code": 1,
+        "reasoning": 3,
+        "knowledge-information": 1,
+        "communication-professional": 1
+      },
+      "claude-fable-5@max-common": {
+        "agentic": 6,
+        "software-code": 3,
+        "reasoning": 10,
+        "knowledge-information": 5,
+        "communication-professional": 5
+      },
+      "gemini-3.5-flash@max-common": {
+        "agentic": 4,
+        "software-code": 3,
+        "reasoning": 9,
+        "knowledge-information": 3,
+        "communication-professional": 4
+      },
+      "gpt-5.4@max-common": {
+        "agentic": 6,
+        "software-code": 4,
+        "reasoning": 10,
+        "knowledge-information": 4,
+        "communication-professional": 5
+      },
+      "gpt-4.5@max-common": {
+        "agentic": 0,
+        "software-code": 1,
+        "reasoning": 2,
+        "knowledge-information": 1,
+        "communication-professional": 1
+      },
+      "inkling-small@max-common": {
+        "agentic": 1,
+        "software-code": 1,
+        "reasoning": 4,
+        "knowledge-information": 2,
+        "communication-professional": 2
+      },
+      "kimi-k3@max-common": {
+        "agentic": 5,
+        "software-code": 3,
+        "reasoning": 10,
+        "knowledge-information": 4,
+        "communication-professional": 5
+      },
+      "gpt-5.6-sol@max-common": {
+        "agentic": 6,
+        "software-code": 3,
+        "reasoning": 10,
+        "knowledge-information": 5,
+        "communication-professional": 5
+      },
+      "claude-opus-4.7@max-common": {
+        "agentic": 5,
+        "software-code": 3,
+        "reasoning": 10,
+        "knowledge-information": 5,
+        "communication-professional": 6
+      },
+      "gemini-3.6-flash@max-common": {
+        "agentic": 3,
+        "software-code": 2,
+        "reasoning": 7,
+        "knowledge-information": 3,
+        "communication-professional": 3
+      },
+      "claude-opus-4.6@max-common": {
+        "agentic": 5,
+        "software-code": 3,
+        "reasoning": 9,
+        "knowledge-information": 4,
+        "communication-professional": 5
+      },
+      "gpt-5.2@max-common": {
+        "agentic": 4,
+        "software-code": 2,
+        "reasoning": 8,
+        "knowledge-information": 4,
+        "communication-professional": 5
+      },
+      "o3@max-common": {
+        "agentic": 2,
+        "software-code": 3,
+        "reasoning": 6,
+        "knowledge-information": 4,
+        "communication-professional": 4
+      },
+      "muse-glimmer@max-common": {
+        "agentic": 1,
+        "software-code": 1,
+        "reasoning": 1,
+        "knowledge-information": 1,
+        "communication-professional": 1
+      },
+      "gemini-3.8-flash@max-common": {
+        "agentic": 4,
+        "software-code": 3,
+        "reasoning": 5,
+        "knowledge-information": 3,
+        "communication-professional": 2
+      },
+      "claude-fable-5.1@max-common": {
+        "agentic": 4,
+        "software-code": 3,
+        "reasoning": 8,
+        "knowledge-information": 5,
+        "communication-professional": 5
+      },
+      "gpt-5-pro@max-common": {
+        "agentic": 0,
+        "software-code": 1,
+        "reasoning": 4,
+        "knowledge-information": 1,
+        "communication-professional": 1
+      },
+      "grok-4.5@max-common": {
+        "agentic": 6,
+        "software-code": 3,
+        "reasoning": 10,
+        "knowledge-information": 4,
+        "communication-professional": 5
+      },
+      "glm-5.2@max-common": {
+        "agentic": 7,
+        "software-code": 5,
+        "reasoning": 12,
+        "knowledge-information": 4,
+        "communication-professional": 5
+      },
+      "claude-fable-5@std-common": {
+        "agentic": 3,
+        "software-code": 3,
+        "reasoning": 5,
+        "knowledge-information": 0,
+        "communication-professional": 1
+      },
+      "gemini-2.5-pro-20250506@max-common": {
+        "agentic": 0,
+        "software-code": 1,
+        "reasoning": 2,
+        "knowledge-information": 1,
+        "communication-professional": 1
+      },
+      "o1@max-common": {
+        "agentic": 2,
+        "software-code": 2,
+        "reasoning": 4,
+        "knowledge-information": 3,
+        "communication-professional": 3
+      },
+      "o3@std-common": {
+        "agentic": 1,
+        "software-code": 1,
+        "reasoning": 3,
+        "knowledge-information": 1,
+        "communication-professional": 1
+      },
+      "claude-sonnet-4.5@max-common": {
+        "agentic": 4,
+        "software-code": 3,
+        "reasoning": 9,
+        "knowledge-information": 6,
+        "communication-professional": 7
+      },
+      "claude-opus-4@max-common": {
+        "agentic": 1,
+        "software-code": 1,
+        "reasoning": 3,
+        "knowledge-information": 1,
+        "communication-professional": 1
+      },
+      "gpt-5-2025-08-07@max-common": {
+        "agentic": 3,
+        "software-code": 3,
+        "reasoning": 7,
+        "knowledge-information": 4,
+        "communication-professional": 4
+      },
+      "gpt-5-mini@max-common": {
+        "agentic": 2,
+        "software-code": 3,
+        "reasoning": 7,
+        "knowledge-information": 4,
+        "communication-professional": 4
+      },
+      "gemini-3.1-pro@max-common": {
+        "agentic": 7,
+        "software-code": 4,
+        "reasoning": 11,
+        "knowledge-information": 5,
+        "communication-professional": 6
+      },
+      "gemini-3.7-flash@max-common": {
+        "agentic": 4,
+        "software-code": 3,
+        "reasoning": 8,
+        "knowledge-information": 4,
+        "communication-professional": 3
+      },
+      "deepseek-v4-flash-0731@max-common": {
+        "agentic": 1,
+        "software-code": 0,
+        "reasoning": 4,
+        "knowledge-information": 2,
+        "communication-professional": 2
+      },
+      "gemini-3.5-flash-lite@max-common": {
+        "agentic": 2,
+        "software-code": 1,
+        "reasoning": 5,
+        "knowledge-information": 2,
+        "communication-professional": 2
+      },
+      "gpt-5.1@max-common": {
+        "agentic": 2,
+        "software-code": 2,
+        "reasoning": 5,
+        "knowledge-information": 3,
+        "communication-professional": 4
+      },
+      "grok-4.6@std-common": {
+        "agentic": 3,
+        "software-code": 2,
+        "reasoning": 4,
+        "knowledge-information": 3,
+        "communication-professional": 3
+      },
+      "o1-pro@max-common": {
+        "agentic": 0,
+        "software-code": 1,
+        "reasoning": 1,
+        "knowledge-information": 1,
+        "communication-professional": 1
+      },
+      "gemini-3-pro@max-common": {
+        "agentic": 5,
+        "software-code": 3,
+        "reasoning": 7,
+        "knowledge-information": 4,
+        "communication-professional": 5
+      },
+      "deepseek-v4-pro-0813@max-common": {
+        "agentic": 2,
+        "software-code": 1,
+        "reasoning": 5,
+        "knowledge-information": 3,
+        "communication-professional": 3
+      },
+      "qwen-3.8-max@max-common": {
+        "agentic": 4,
+        "software-code": 2,
+        "reasoning": 6,
+        "knowledge-information": 4,
+        "communication-professional": 4
+      },
+      "mimo-v2-omni@max-common": {
+        "agentic": 1,
+        "software-code": 1,
+        "reasoning": 1,
+        "knowledge-information": 1,
+        "communication-professional": 1
+      },
+      "gpt-5.6-luna@std-common": {
+        "agentic": 2,
+        "software-code": 2,
+        "reasoning": 4,
+        "knowledge-information": 0,
+        "communication-professional": 0
+      },
+      "gemini-2.5-pro@max-common": {
+        "agentic": 4,
+        "software-code": 2,
+        "reasoning": 8,
+        "knowledge-information": 3,
+        "communication-professional": 4
+      },
+      "claude-haiku-4.5@max-common": {
+        "agentic": 2,
+        "software-code": 1,
+        "reasoning": 3,
+        "knowledge-information": 2,
+        "communication-professional": 3
+      },
+      "gpt-5.5@max-common": {
+        "agentic": 6,
+        "software-code": 4,
+        "reasoning": 11,
+        "knowledge-information": 4,
+        "communication-professional": 5
+      },
+      "qwen3.5-397b-a17b@max-common": {
+        "agentic": 2,
+        "software-code": 1,
+        "reasoning": 4,
+        "knowledge-information": 2,
+        "communication-professional": 2
+      },
+      "grok-4.6@max-common": {
+        "agentic": 2,
+        "software-code": 1,
+        "reasoning": 5,
+        "knowledge-information": 1,
+        "communication-professional": 2
+      },
+      "glm-5.3@max-common": {
+        "agentic": 4,
+        "software-code": 2,
+        "reasoning": 6,
+        "knowledge-information": 3,
+        "communication-professional": 4
+      },
+      "gpt-5.6-sol@std-common": {
+        "agentic": 2,
+        "software-code": 3,
+        "reasoning": 4,
+        "knowledge-information": 0,
+        "communication-professional": 0
+      },
+      "o3-pro@max-common": {
+        "agentic": 0,
+        "software-code": 0,
+        "reasoning": 1,
+        "knowledge-information": 0,
+        "communication-professional": 0
+      },
+      "gpt-4o-2024-11-20@max-common": {
+        "agentic": 0,
+        "software-code": 1,
+        "reasoning": 1,
+        "knowledge-information": 1,
+        "communication-professional": 1
+      },
+      "glm-5.3-flash@max-common": {
+        "agentic": 3,
+        "software-code": 2,
+        "reasoning": 5,
+        "knowledge-information": 2,
+        "communication-professional": 2
+      },
+      "claude-opus-5@max-common": {
+        "agentic": 6,
+        "software-code": 3,
+        "reasoning": 10,
+        "knowledge-information": 5,
+        "communication-professional": 5
+      },
+      "deepseek-v3.2@max-common": {
+        "agentic": 3,
+        "software-code": 2,
+        "reasoning": 4,
+        "knowledge-information": 2,
+        "communication-professional": 3
+      },
+      "muse-spark-1.1@max-common": {
+        "agentic": 5,
+        "software-code": 3,
+        "reasoning": 7,
+        "knowledge-information": 4,
+        "communication-professional": 5
+      },
+      "deepseek-v4-pro-0424@max-common": {
+        "agentic": 2,
+        "software-code": 2,
+        "reasoning": 5,
+        "knowledge-information": 1,
+        "communication-professional": 1
+      },
+      "gpt-4.1@max-common": {
+        "agentic": 2,
+        "software-code": 3,
+        "reasoning": 5,
+        "knowledge-information": 4,
+        "communication-professional": 4
+      },
+      "claude-opus-4.5@max-common": {
+        "agentic": 5,
+        "software-code": 3,
+        "reasoning": 8,
+        "knowledge-information": 5,
+        "communication-professional": 6
+      },
+      "gpt-5.6-terra@max-common": {
+        "agentic": 5,
+        "software-code": 3,
+        "reasoning": 8,
+        "knowledge-information": 4,
+        "communication-professional": 4
+      },
+      "claude-sonnet-5@max-common": {
+        "agentic": 4,
+        "software-code": 2,
+        "reasoning": 6,
+        "knowledge-information": 3,
+        "communication-professional": 3
+      },
+      "claude-3.5-sonnet@max-common": {
+        "agentic": 2,
+        "software-code": 1,
+        "reasoning": 1,
+        "knowledge-information": 1,
+        "communication-professional": 1
+      },
+      "grok-4.3@max-common": {
+        "agentic": 3,
+        "software-code": 1,
+        "reasoning": 3,
+        "knowledge-information": 2,
+        "communication-professional": 3
+      },
+      "claude-opus-4.8@max-common": {
+        "agentic": 6,
+        "software-code": 4,
+        "reasoning": 11,
+        "knowledge-information": 4,
+        "communication-professional": 5
+      },
+      "gpt-5.6-luna@max-common": {
+        "agentic": 5,
+        "software-code": 3,
+        "reasoning": 8,
+        "knowledge-information": 4,
+        "communication-professional": 4
+      },
+      "gpt-6-astra@max-common": {
+        "agentic": 3,
+        "software-code": 2,
+        "reasoning": 6,
+        "knowledge-information": 3,
+        "communication-professional": 2
+      },
+      "gpt-5.5-pro@std-common": {
+        "agentic": 0,
+        "software-code": 0,
+        "reasoning": 1,
+        "knowledge-information": 0,
+        "communication-professional": 0
+      },
+      "claude-opus-5@std-common": {
+        "agentic": 3,
+        "software-code": 3,
+        "reasoning": 4,
+        "knowledge-information": 1,
+        "communication-professional": 1
+      },
+      "gemini-3.5-flash@std-common": {
+        "agentic": 2,
+        "software-code": 2,
+        "reasoning": 3,
+        "knowledge-information": 1,
+        "communication-professional": 1
+      },
+      "claude-3.7-sonnet@max-common": {
+        "agentic": 1,
+        "software-code": 2,
+        "reasoning": 4,
+        "knowledge-information": 2,
+        "communication-professional": 2
+      },
+      "grok-4.20@max-common": {
+        "agentic": 1,
+        "software-code": 0,
+        "reasoning": 4,
+        "knowledge-information": 1,
+        "communication-professional": 2
+      },
+      "claude-sonnet-4@max-common": {
+        "agentic": 2,
+        "software-code": 3,
+        "reasoning": 4,
+        "knowledge-information": 3,
+        "communication-professional": 3
+      },
+      "qwen3-coder-480b-a35b@max-common": {
+        "agentic": 2,
+        "software-code": 2,
+        "reasoning": 2,
+        "knowledge-information": 2,
+        "communication-professional": 2
+      },
+      "o3-mini@max-common": {
+        "agentic": 1,
+        "software-code": 1,
+        "reasoning": 5,
+        "knowledge-information": 2,
+        "communication-professional": 2
+      },
+      "gpt-5.4-pro@max-common": {
+        "agentic": 0,
+        "software-code": 1,
+        "reasoning": 5,
+        "knowledge-information": 2,
+        "communication-professional": 2
+      },
+      "muse-spark@max-common": {
+        "agentic": 1,
+        "software-code": 2,
+        "reasoning": 2,
+        "knowledge-information": 2,
+        "communication-professional": 2
+      },
+      "muse-spark-1.2@max-common": {
+        "agentic": 3,
+        "software-code": 2,
+        "reasoning": 3,
+        "knowledge-information": 3,
+        "communication-professional": 3
+      },
+      "gpt-5-nano@max-common": {
+        "agentic": 2,
+        "software-code": 2,
+        "reasoning": 6,
+        "knowledge-information": 3,
+        "communication-professional": 3
+      },
+      "nemotron-3-ultra@max-common": {
+        "agentic": 1,
+        "software-code": 0,
+        "reasoning": 1,
+        "knowledge-information": 1,
+        "communication-professional": 1
+      },
+      "gpt-4.1-nano@max-common": {
+        "agentic": 2,
+        "software-code": 2,
+        "reasoning": 3,
+        "knowledge-information": 3,
+        "communication-professional": 3
+      },
+      "claude-opus-4.1@max-common": {
+        "agentic": 3,
+        "software-code": 3,
+        "reasoning": 5,
+        "knowledge-information": 3,
+        "communication-professional": 3
+      },
+      "gemini-1.5-pro@max-common": {
+        "agentic": 1,
+        "software-code": 2,
+        "reasoning": 3,
+        "knowledge-information": 2,
+        "communication-professional": 2
+      },
+      "gemini-2.5-flash@max-common": {
+        "agentic": 3,
+        "software-code": 2,
+        "reasoning": 4,
+        "knowledge-information": 2,
+        "communication-professional": 3
+      },
+      "qwen3-max@max-common": {
+        "agentic": 3,
+        "software-code": 2,
+        "reasoning": 4,
+        "knowledge-information": 3,
+        "communication-professional": 4
+      },
+      "grok-4@max-common": {
+        "agentic": 2,
+        "software-code": 2,
+        "reasoning": 4,
+        "knowledge-information": 2,
+        "communication-professional": 2
+      },
+      "kimi-k2-7-code@max-common": {
+        "agentic": 2,
+        "software-code": 1,
+        "reasoning": 4,
+        "knowledge-information": 1,
+        "communication-professional": 2
+      },
+      "mimo-v2-5-pro@max-common": {
+        "agentic": 4,
+        "software-code": 3,
+        "reasoning": 4,
+        "knowledge-information": 2,
+        "communication-professional": 2
+      },
+      "o4-mini@std-common": {
+        "agentic": 0,
+        "software-code": 1,
+        "reasoning": 4,
+        "knowledge-information": 2,
+        "communication-professional": 2
+      },
+      "minimax-m3@max-common": {
+        "agentic": 5,
+        "software-code": 3,
+        "reasoning": 5,
+        "knowledge-information": 2,
+        "communication-professional": 3
+      },
+      "claude-sonnet-4.6@max-common": {
+        "agentic": 5,
+        "software-code": 3,
+        "reasoning": 6,
+        "knowledge-information": 4,
+        "communication-professional": 5
+      },
+      "inkling@max-common": {
+        "agentic": 2,
+        "software-code": 1,
+        "reasoning": 5,
+        "knowledge-information": 3,
+        "communication-professional": 3
+      },
+      "gpt-5.2-pro@max-common": {
+        "agentic": 0,
+        "software-code": 0,
+        "reasoning": 3,
+        "knowledge-information": 0,
+        "communication-professional": 0
+      },
+      "kimi-k2@max-common": {
+        "agentic": 2,
+        "software-code": 2,
+        "reasoning": 2,
+        "knowledge-information": 2,
+        "communication-professional": 2
+      },
+      "gpt-5.5-pro@max-common": {
+        "agentic": 0,
+        "software-code": 0,
+        "reasoning": 3,
+        "knowledge-information": 0,
+        "communication-professional": 0
+      },
+      "claude-fable-5.1@std-common": {
+        "agentic": 0,
+        "software-code": 0,
+        "reasoning": 1,
+        "knowledge-information": 0,
+        "communication-professional": 0
+      },
+      "grok-4.1-fast@max-common": {
+        "agentic": 2,
+        "software-code": 0,
+        "reasoning": 3,
+        "knowledge-information": 1,
+        "communication-professional": 2
+      },
+      "claude-sonnet-5@std-common": {
+        "agentic": 3,
+        "software-code": 3,
+        "reasoning": 3,
+        "knowledge-information": 1,
+        "communication-professional": 1
+      },
+      "glm-4.5@max-common": {
+        "agentic": 2,
+        "software-code": 3,
+        "reasoning": 4,
+        "knowledge-information": 3,
+        "communication-professional": 3
+      },
+      "gpt-5.5@std-common": {
+        "agentic": 2,
+        "software-code": 2,
+        "reasoning": 3,
+        "knowledge-information": 0,
+        "communication-professional": 0
+      },
+      "qwen3-235b-a22b-2507@max-common": {
+        "agentic": 1,
+        "software-code": 1,
+        "reasoning": 2,
+        "knowledge-information": 2,
+        "communication-professional": 2
+      },
+      "o4-mini@max-common": {
+        "agentic": 2,
+        "software-code": 3,
+        "reasoning": 7,
+        "knowledge-information": 4,
+        "communication-professional": 4
+      },
+      "qwen3.7-plus@max-common": {
+        "agentic": 2,
+        "software-code": 1,
+        "reasoning": 3,
+        "knowledge-information": 2,
+        "communication-professional": 2
+      },
+      "glm-5@max-common": {
+        "agentic": 3,
+        "software-code": 1,
+        "reasoning": 5,
+        "knowledge-information": 2,
+        "communication-professional": 3
+      },
+      "nova-pro@max-common": {
+        "agentic": 1,
+        "software-code": 2,
+        "reasoning": 2,
+        "knowledge-information": 2,
+        "communication-professional": 2
+      },
+      "kimi-k2.5@max-common": {
+        "agentic": 1,
+        "software-code": 1,
+        "reasoning": 4,
+        "knowledge-information": 2,
+        "communication-professional": 3
+      },
+      "llama-4-maverick@max-common": {
+        "agentic": 1,
+        "software-code": 2,
+        "reasoning": 3,
+        "knowledge-information": 2,
+        "communication-professional": 2
+      },
+      "gpt-5.2@std-common": {
+        "agentic": 2,
+        "software-code": 1,
+        "reasoning": 3,
+        "knowledge-information": 3,
+        "communication-professional": 3
+      },
+      "claude-3.5-sonnet-20241022@max-common": {
+        "agentic": 2,
+        "software-code": 2,
+        "reasoning": 3,
+        "knowledge-information": 2,
+        "communication-professional": 2
+      },
+      "gemini-3-flash@max-common": {
+        "agentic": 5,
+        "software-code": 2,
+        "reasoning": 9,
+        "knowledge-information": 4,
+        "communication-professional": 5
+      },
+      "mistral-medium-3@max-common": {
+        "agentic": 0,
+        "software-code": 1,
+        "reasoning": 1,
+        "knowledge-information": 1,
+        "communication-professional": 1
+      },
+      "glm-4.6@max-common": {
+        "agentic": 1,
+        "software-code": 1,
+        "reasoning": 2,
+        "knowledge-information": 1,
+        "communication-professional": 1
+      },
+      "grok-4-fast@max-common": {
+        "agentic": 2,
+        "software-code": 1,
+        "reasoning": 4,
+        "knowledge-information": 2,
+        "communication-professional": 2
+      },
+      "gpt-oss-120b@max-common": {
+        "agentic": 2,
+        "software-code": 2,
+        "reasoning": 3,
+        "knowledge-information": 2,
+        "communication-professional": 2
+      },
+      "qwen3.8-27b@max-common": {
+        "agentic": 2,
+        "software-code": 1,
+        "reasoning": 2,
+        "knowledge-information": 2,
+        "communication-professional": 2
+      },
+      "gpt-5.6-terra@std-common": {
+        "agentic": 1,
+        "software-code": 1,
+        "reasoning": 2,
+        "knowledge-information": 0,
+        "communication-professional": 0
+      },
+      "solar-pro4@max-common": {
+        "agentic": 1,
+        "software-code": 1,
+        "reasoning": 1,
+        "knowledge-information": 1,
+        "communication-professional": 1
+      },
+      "nova-lite@max-common": {
+        "agentic": 1,
+        "software-code": 2,
+        "reasoning": 2,
+        "knowledge-information": 2,
+        "communication-professional": 2
+      },
+      "gpt-4.1-mini@max-common": {
+        "agentic": 2,
+        "software-code": 2,
+        "reasoning": 4,
+        "knowledge-information": 3,
+        "communication-professional": 3
+      },
+      "qwen3-235b-a22b@max-common": {
+        "agentic": 1,
+        "software-code": 1,
+        "reasoning": 2,
+        "knowledge-information": 1,
+        "communication-professional": 1
+      },
+      "gemini-2.0-flash-thinking@max-common": {
+        "agentic": 0,
+        "software-code": 0,
+        "reasoning": 1,
+        "knowledge-information": 0,
+        "communication-professional": 0
+      },
+      "qwen3.6-27b@max-common": {
+        "agentic": 1,
+        "software-code": 1,
+        "reasoning": 2,
+        "knowledge-information": 0,
+        "communication-professional": 0
+      },
+      "gemini-3.8-flash@std-common": {
+        "agentic": 1,
+        "software-code": 1,
+        "reasoning": 1,
+        "knowledge-information": 0,
+        "communication-professional": 0
+      },
+      "gpt-5.3-codex@max-common": {
+        "agentic": 2,
+        "software-code": 0,
+        "reasoning": 1,
+        "knowledge-information": 0,
+        "communication-professional": 1
+      },
+      "gpt-5.1-codex-max@max-common": {
+        "agentic": 1,
+        "software-code": 0,
+        "reasoning": 0,
+        "knowledge-information": 0,
+        "communication-professional": 0
+      },
+      "gemini-2.5-flash@std-common": {
+        "agentic": 0,
+        "software-code": 1,
+        "reasoning": 1,
+        "knowledge-information": 1,
+        "communication-professional": 1
+      },
+      "gemini-3.7-flash@std-common": {
+        "agentic": 1,
+        "software-code": 1,
+        "reasoning": 2,
+        "knowledge-information": 0,
+        "communication-professional": 0
+      },
+      "mimo-v2-5-0424@max-common": {
+        "agentic": 2,
+        "software-code": 1,
+        "reasoning": 2,
+        "knowledge-information": 2,
+        "communication-professional": 2
+      },
+      "gpt-5.1@std-common": {
+        "agentic": 0,
+        "software-code": 1,
+        "reasoning": 2,
+        "knowledge-information": 1,
+        "communication-professional": 1
+      },
+      "hy3@max-common": {
+        "agentic": 1,
+        "software-code": 1,
+        "reasoning": 1,
+        "knowledge-information": 1,
+        "communication-professional": 1
+      },
+      "muse-spark-1.3@max-common": {
+        "agentic": 1,
+        "software-code": 0,
+        "reasoning": 1,
+        "knowledge-information": 1,
+        "communication-professional": 1
+      },
+      "grok-code-fast-1@max-common": {
+        "agentic": 1,
+        "software-code": 1,
+        "reasoning": 1,
+        "knowledge-information": 1,
+        "communication-professional": 1
+      },
+      "gemini-2.5-pro-20250325@max-common": {
+        "agentic": 0,
+        "software-code": 1,
+        "reasoning": 1,
+        "knowledge-information": 1,
+        "communication-professional": 1
+      },
+      "claude-3.7-sonnet@std-common": {
+        "agentic": 0,
+        "software-code": 1,
+        "reasoning": 2,
+        "knowledge-information": 1,
+        "communication-professional": 1
+      }
+    },
+    "configuredSystemIds": [
+      "gpt-4.1@max-common",
+      "gpt-5-2025-08-07@max-common",
+      "gpt-5.2@max-common",
+      "claude-opus-4.5@max-common",
+      "claude-sonnet-4@max-common",
+      "claude-opus-4.1@max-common",
+      "claude-opus-4.6@max-common",
+      "claude-fable-5@max-common",
+      "gemini-3-pro@max-common",
+      "gemini-3.1-pro@max-common",
+      "deepseek-v3.2@max-common",
+      "kimi-k3@max-common",
+      "grok-4.5@max-common",
+      "glm-5.2@max-common",
+      "qwen-3.8-max@max-common",
+      "muse-spark-1.1@max-common"
+    ],
+    "passed": true,
+    "perDomainCellCounts": {
+      "gpt-4.1@max-common": {
+        "agentic": 2,
+        "software-code": 3,
+        "reasoning": 5,
+        "knowledge-information": 4,
+        "communication-professional": 4
+      },
+      "gpt-5-2025-08-07@max-common": {
+        "agentic": 3,
+        "software-code": 3,
+        "reasoning": 7,
+        "knowledge-information": 4,
+        "communication-professional": 4
+      },
+      "gpt-5.2@max-common": {
+        "agentic": 4,
+        "software-code": 2,
+        "reasoning": 8,
+        "knowledge-information": 4,
+        "communication-professional": 5
+      },
+      "claude-opus-4.5@max-common": {
+        "agentic": 5,
+        "software-code": 3,
+        "reasoning": 8,
+        "knowledge-information": 5,
+        "communication-professional": 6
+      },
+      "claude-sonnet-4@max-common": {
+        "agentic": 2,
+        "software-code": 3,
+        "reasoning": 4,
+        "knowledge-information": 3,
+        "communication-professional": 3
+      },
+      "claude-opus-4.1@max-common": {
+        "agentic": 3,
+        "software-code": 3,
+        "reasoning": 5,
+        "knowledge-information": 3,
+        "communication-professional": 3
+      },
+      "claude-opus-4.6@max-common": {
+        "agentic": 5,
+        "software-code": 3,
+        "reasoning": 9,
+        "knowledge-information": 4,
+        "communication-professional": 5
+      },
+      "claude-fable-5@max-common": {
+        "agentic": 6,
+        "software-code": 3,
+        "reasoning": 10,
+        "knowledge-information": 5,
+        "communication-professional": 5
+      },
+      "gemini-3-pro@max-common": {
+        "agentic": 5,
+        "software-code": 3,
+        "reasoning": 7,
+        "knowledge-information": 4,
+        "communication-professional": 5
+      },
+      "gemini-3.1-pro@max-common": {
+        "agentic": 7,
+        "software-code": 4,
+        "reasoning": 11,
+        "knowledge-information": 5,
+        "communication-professional": 6
+      },
+      "deepseek-v3.2@max-common": {
+        "agentic": 3,
+        "software-code": 2,
+        "reasoning": 4,
+        "knowledge-information": 2,
+        "communication-professional": 3
+      },
+      "kimi-k3@max-common": {
+        "agentic": 5,
+        "software-code": 3,
+        "reasoning": 10,
+        "knowledge-information": 4,
+        "communication-professional": 5
+      },
+      "grok-4.5@max-common": {
+        "agentic": 6,
+        "software-code": 3,
+        "reasoning": 10,
+        "knowledge-information": 4,
+        "communication-professional": 5
+      },
+      "glm-5.2@max-common": {
+        "agentic": 7,
+        "software-code": 5,
+        "reasoning": 12,
+        "knowledge-information": 4,
+        "communication-professional": 5
+      },
+      "qwen-3.8-max@max-common": {
+        "agentic": 4,
+        "software-code": 2,
+        "reasoning": 6,
+        "knowledge-information": 4,
+        "communication-professional": 4
+      },
+      "muse-spark-1.1@max-common": {
+        "agentic": 5,
+        "software-code": 3,
+        "reasoning": 7,
+        "knowledge-information": 4,
+        "communication-professional": 5
+      }
+    },
+    "failingSystemIds": [],
+    "eligibleSystemIds": [
+      "gpt-4.1@max-common",
+      "gpt-5-2025-08-07@max-common",
+      "gpt-5.2@max-common",
+      "claude-opus-4.5@max-common",
+      "claude-sonnet-4@max-common",
+      "claude-opus-4.1@max-common",
+      "claude-opus-4.6@max-common",
+      "claude-fable-5@max-common",
+      "gemini-3-pro@max-common",
+      "gemini-3.1-pro@max-common",
+      "deepseek-v3.2@max-common",
+      "kimi-k3@max-common",
+      "grok-4.5@max-common",
+      "glm-5.2@max-common",
+      "qwen-3.8-max@max-common",
+      "muse-spark-1.1@max-common"
+    ],
+    "unblockTable": []
+  },
+  "reference_coverage": {
+    "selectedBenchmarkId": "arc-agi-2-semi-private",
+    "selectedCellCount": 12,
+    "cellsByBenchmark": {
+      "arc-agi-2-semi-private": 12,
+      "deepswe": 0,
+      "deepswe-1.1": 0,
+      "frontiermath-v2-tier-4": 11,
+      "frontiermath-v2-tiers-1-3": 12,
+      "gdpval": 0,
+      "hle-no-tools": 0,
+      "lmarena-text-style-controlled": 0,
+      "matharena-composite": 0,
+      "mcpmark": 8,
+      "metr-time-horizon-1.1": 6,
+      "scicode-verified-v2-main-with-background": 3,
+      "simpleqa-verified-epoch-anti-abstention-v1-0-0": 0,
+      "simpleqa-verified-epoch-anti-abstention-v1-2-0": 0,
+      "swe-rebench": 0,
+      "tau3-bench-banking": 11,
+      "terminal-bench-4.0": 1,
+      "vals-finance-agent-v2-partial": 7,
+      "vending-bench-2": 0
+    }
+  },
+  "rejections": [
+    {
+      "observationId": "gemini-3.6-flash:automationbench-public-1.0.6:automationbench:1",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-3.7-flash:livebench-2026:livebench:3",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-luna:gpqa-diamond:epoch:5",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-3-flash:gpqa-diamond:epoch:9",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "qwen3.8-27b:deepswe-1.1:vendor-model-cards:11",
+      "reason": "config_mismatch",
+      "detail": "Display evidence pending registration/review of this exact benchmark condition; do not alias to a different version, metric, subset, or harness."
+    },
+    {
+      "observationId": "kimi-k3:jobbench-rubric-2026:vendor-model-cards:13",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-4.7:osworld-2.0-2026.06.24-full:osworld:14",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-4.7:livebench-2026:livebench:16",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "grok-4.6:terminal-bench-3.0:vendor-model-cards:18",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-3.5-sonnet:gpqa-diamond:epoch:19",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "deepseek-v4-flash-0731:livebench-2026:livebench:20",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "qwen3-235b-a22b:swe-bench-pro-public:scale:22",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is retired."
+    },
+    {
+      "observationId": "glm-5.3:terminal-bench-science-0.1:terminal-bench-science:23",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is shadow."
+    },
+    {
+      "observationId": "glm-5.3:deepswe-1.1:vendor-model-cards:25",
+      "reason": "config_mismatch",
+      "detail": "Display evidence pending registration/review of this exact benchmark condition; do not alias to a different version, metric, subset, or harness."
+    },
+    {
+      "observationId": "minimax-m3:osworld-2.0-2026.06.24-full:osworld:26",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-3.5-sonnet:livecodebench-v6-pro:kaggle:27",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is retired."
+    },
+    {
+      "observationId": "gpt-5.6-sol:osworld-2.0-2026.08.08-offline:osworld:28",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "mimo-v2-5-0424:harvey-legal-agent-vals-all-pass:vals:30",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "muse-spark-1.3:livebench-2026:livebench:36",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-4.7:osworld-2.0-2026.06.24-full:osworld:47",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "kimi-k3:livebench-2026:livebench:48",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "qwen3.7-plus:osworld-2.0-2026.06.24-full:osworld:51",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-5:osworld-2.0:osworld:52",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "qwen3-235b-a22b-2507:gpqa-diamond:epoch:56",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-5:terminal-bench-science-0.1:terminal-bench-science:65",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is shadow."
+    },
+    {
+      "observationId": "claude-opus-4.6:gpqa-diamond:epoch:70",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "deepseek-v3.2:swe-bench-pro-public:scale:71",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is retired."
+    },
+    {
+      "observationId": "gemini-3.7-flash:charxiv-reasoning-no-tools-google-202609:vendor-model-cards:78",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "deepseek-v4-pro-0813:deepswe-deepseek-reported:vendor-model-cards:79",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-6-astra:arc-agi-3:arcprize:81",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "qwen-3.8-max:toolathlon-verified-qwen-reported:vendor-model-cards:83",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-2.5-pro:gpqa-diamond:epoch:86",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.5:arc-agi-3:arcprize:87",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-terra:arc-agi-3:arcprize:89",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-5:osworld-2.0-2026.08.08-offline:osworld:90",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-sonnet-4:swe-bench-pro-public:scale:92",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is retired."
+    },
+    {
+      "observationId": "gemini-3.5-flash:gpqa-diamond:epoch:95",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-sol:arc-agi-3:arcprize:97",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-sol:osworld-2.0-2026.08.08-offline:osworld:101",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-haiku-4.5:swe-bench-pro-public:scale:102",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is retired."
+    },
+    {
+      "observationId": "o1:livecodebench-v6-pro:kaggle:106",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is retired."
+    },
+    {
+      "observationId": "minimax-m3:gpqa-diamond:epoch:112",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "glm-5.2:gpqa-diamond:epoch:114",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "muse-spark-1.3:mrcr-v2-8needle-512k-1m-sequence-match:vendor-model-cards:116",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "inkling:harvey-legal-agent-vals-all-pass:vals:119",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "qwen3.7-plus:gpqa-diamond:epoch:120",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-4.8:automationbench-public-1.0.6:automationbench:121",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-3.7-flash:gdp-pdf-google-202609:vendor-model-cards:122",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-5:osworld-v2-anthropic-202608-strict:vendor-model-cards:125",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-sol:osworld-v2-20260808-offline-partial:vendor-model-cards:126",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-fable-5:osworld-v2-anthropic-202608-strict:vendor-model-cards:128",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-sol:healthbench-professional:vendor-model-cards:131",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-sonnet-5:automationbench-public-1.0.6:automationbench:137",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "muse-spark:swe-bench-pro-public:scale:142",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is retired."
+    },
+    {
+      "observationId": "gpt-5.6-terra:arc-agi-3:arcprize:143",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-terra:mrcr-v2-1m-8-needle:vendor-model-cards:144",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-luna:mrcr-v2-1m-8-needle:vendor-model-cards:145",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "qwen-3.8-max:jobbench-rubric-2026:vendor-model-cards:147",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "qwen3.7-plus:osworld-2.0-2026.06.24-full:osworld:149",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-terra:arc-agi-3:arcprize:150",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "muse-spark:swe-bench-pro-public:vendor-model-cards:151",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is retired."
+    },
+    {
+      "observationId": "qwen-3.8-max:deepswe-1.1:vendor-model-cards:153",
+      "reason": "config_mismatch",
+      "detail": "Display evidence pending registration/review of this exact benchmark condition; do not alias to a different version, metric, subset, or harness."
+    },
+    {
+      "observationId": "claude-fable-5.1:harvey-legal-agent-vals-all-pass:vals:154",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.2:gpqa-diamond:epoch:155",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "glm-5:gpqa-diamond:epoch:156",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "o3:gpqa-diamond:epoch:160",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-3.5-sonnet-20241022:gpqa-diamond:epoch:162",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-5:osworld-2.0:osworld:164",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-terra:automationbench-public-1.0.6:automationbench:169",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-1.5-pro:livecodebench-v6-pro:kaggle:171",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is retired."
+    },
+    {
+      "observationId": "muse-spark-1.3:terminal-bench-2.1:vendor-model-cards:172",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "nemotron-3-ultra:gpqa-diamond:epoch:176",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "glm-5.3:livebench-2026:livebench:178",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "o1:gpqa-diamond:epoch:184",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "glm-5.3-flash:deepswe-1.1:vendor-model-cards:186",
+      "reason": "config_mismatch",
+      "detail": "Display evidence pending registration/review of this exact benchmark condition; do not alias to a different version, metric, subset, or harness."
+    },
+    {
+      "observationId": "claude-opus-5:osworld-v2-anthropic-202608-partial:vendor-model-cards:188",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5-nano:gpqa-diamond:epoch:189",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-sonnet-4:gpqa-diamond:epoch:190",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "glm-5.3:terminal-bench-2.1:vendor-model-cards:201",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "glm-5.3:hle-full-tools-zai-luna-medium:vendor-model-cards:203",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "inkling:vals-finance-agent-v2-partial:vals:207",
+      "reason": "config_mismatch",
+      "detail": "Continuous source effort has no verified discrete registry mapping"
+    },
+    {
+      "observationId": "deepseek-v4-pro-0813:toolathlon-verified-deepseek-reported:vendor-model-cards:208",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-3.8-flash:deepswe-1.1:vendor-model-cards:209",
+      "reason": "config_mismatch",
+      "detail": "Display evidence pending registration/review of this exact benchmark condition; do not alias to a different version, metric, subset, or harness."
+    },
+    {
+      "observationId": "gpt-5.6-sol:arc-agi-3:arcprize:211",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "o3-mini:gpqa-diamond:epoch:212",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-3.8-flash:gdp-pdf-google-202609:vendor-model-cards:214",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-sonnet-4:gpqa-diamond:epoch:215",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "glm-4.6:swe-bench-pro-public:scale:216",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is retired."
+    },
+    {
+      "observationId": "gpt-5.6-luna:arc-agi-3:arcprize:218",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-sol:mrcr-v2-1m-8-needle:vendor-model-cards:220",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-sol:mrcr-v2-8needle-256k-512k-sequence-match:vendor-model-cards:225",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-sol:terminal-bench-science-0.1-openai-reported:vendor-model-cards:230",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5-nano:gpqa-diamond:epoch:239",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "grok-4.5:harvey-legal-agent-vals-all-pass:vals:241",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "kimi-k3:programbench-kimi-reported:vendor-model-cards:244",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "deepseek-v4-flash-vision-exp:deepswe-deepseek-reported:vendor-model-cards:246",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-sol:hle-verified-1811-google-202609:vendor-model-cards:248",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-6-astra:frontiermath-v2-tier-4:epoch:251",
+      "reason": "class_unassigned",
+      "detail": "Effort tier and harness do not match a declared std-common, max-common, or product system."
+    },
+    {
+      "observationId": "gpt-6-astra:deepswe-1.1:datacurve:253",
+      "reason": "class_unassigned",
+      "detail": "Effort tier and harness do not match a declared std-common, max-common, or product system."
+    },
+    {
+      "observationId": "gpt-5.5:healthbench-professional:vendor-model-cards:254",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-5:harvey-legal-agent-vals-all-pass:vals:259",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-6-astra:terminal-bench-science-0.1-openai-reported:vendor-model-cards:262",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-3.7-sonnet:gpqa-diamond:epoch:268",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5-2025-08-07:healthbench-professional:vendor-model-cards:269",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "qwen3.6-27b:livebench-2026:livebench:272",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "grok-4.20:gpqa-diamond:epoch:273",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.4:gpqa-diamond:epoch:276",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-fable-5.1:healthbench-professional-length-adjusted-gpt54:vendor-model-cards:280",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-3.7-sonnet:gpqa-diamond:epoch:283",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-4.6:gpqa-diamond:epoch:284",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-6-astra:arc-agi-3:arcprize:285",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-luna:arc-agi-3:arcprize:286",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-3.8-flash:charxiv-reasoning-no-tools-google-202609:vendor-model-cards:287",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "muse-spark-1.3:swe-atlas-codebase-qna-public:vendor-model-cards:288",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-sol:charxiv-reasoning-no-tools-google-202609:vendor-model-cards:295",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "qwen3.6-27b:gpqa-diamond:epoch:297",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.5:livebench-2026:livebench:298",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-4.8:osworld-2.0-2026.06.24-full:osworld:299",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-5:healthbench-professional-length-adjusted-gpt54:vendor-model-cards:300",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "qwen3.8-27b:jobbench-rubric-2026:vendor-model-cards:304",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-6-astra:mrcr-v2-8needle-256k-512k-sequence-match:vendor-model-cards:305",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "kimi-k3:deepsearchqa-f1:vendor-model-cards:307",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "deepseek-v4-flash-0731:terminal-bench-2.1:vendor-model-cards:311",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "qwen3.8-flash-next:ifbench-qwen-reported:vendor-model-cards:315",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "glm-5.3:terminal-bench-3.0-avg3:vendor-model-cards:317",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-4.1:livecodebench-v6-pro:kaggle:319",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is retired."
+    },
+    {
+      "observationId": "gpt-5-nano:gpqa-diamond:epoch:321",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "kimi-k3:gpqa-diamond:epoch:326",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "deepseek-v4-flash-vision-exp:zerobench-pass5-deepseek-reported:vendor-model-cards:327",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-sol:arc-agi-3:vendor-model-cards:328",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-3.1-pro:arc-agi-3:arcprize:335",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-6-astra:arc-agi-2-semi-private:arcprize:336",
+      "reason": "class_unassigned",
+      "detail": "Effort tier and harness do not match a declared std-common, max-common, or product system."
+    },
+    {
+      "observationId": "gpt-6-astra:frontiermath-v2-tier-4:epoch:337",
+      "reason": "class_unassigned",
+      "detail": "Effort tier and harness do not match a declared std-common, max-common, or product system."
+    },
+    {
+      "observationId": "qwen3.5-397b-a17b:gpqa-diamond:epoch:338",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-6-astra:terminal-bench-4.0:tbench:340",
+      "reason": "class_unassigned",
+      "detail": "Effort tier and harness do not match a declared std-common, max-common, or product system."
+    },
+    {
+      "observationId": "gemini-3-flash:vending-bench-2:vendor-model-cards:342",
+      "reason": "too_few_runs",
+      "detail": "Money benchmarks require at least three run balances or a reported mean balance with a standard error."
+    },
+    {
+      "observationId": "gemini-3.5-flash:harvey-legal-agent-vals-all-pass:vals:343",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-3-flash:mrcr-v2-1m-8-needle:vendor-model-cards:350",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-sonnet-4.6:mrcr-v2-1m-8-needle:vendor-model-cards:353",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "inkling-small:harvey-legal-agent-vals-all-pass:vals:354",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-sol:healthbench-professional-length-adjusted-gpt54:vendor-model-cards:356",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-sol:gdp-pdf-google-202609:vendor-model-cards:357",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "kimi-k3:mcpmark-verified-kimi-reported:vendor-model-cards:360",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-sol:terminal-bench-science-0.1:terminal-bench-science:362",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is shadow."
+    },
+    {
+      "observationId": "gpt-5.6-terra:livebench-2026:livebench:364",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-2.5-pro:hle-no-tools:scale:367",
+      "reason": "config_mismatch",
+      "detail": "The source row names preview-06-05, not the stable gemini-2.5-pro snapshot in the model registry."
+    },
+    {
+      "observationId": "gemini-3.5-flash-lite:harvey-legal-agent-vals-all-pass:vals:369",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "qwen3.8-27b:osworld-v2-qwen-binary-reported:vendor-model-cards:370",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-fable-5.1:benchcad:benchcad:371",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "deepseek-v4-pro-0813:agents-last-exam-deepseek-reported:vendor-model-cards:374",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-sol:harvey-legal-agent-vals-all-pass:vals:376",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.1:gpqa-diamond:epoch:378",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "inkling:swe-bench-pro-public:vendor-model-cards:381",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is retired."
+    },
+    {
+      "observationId": "gpt-5.4:healthbench-professional:vendor-model-cards:382",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-5:arc-agi-3:vendor-model-cards:384",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "llama-4-maverick:gpqa-diamond:epoch:388",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-6-astra:arc-agi-3:arcprize:390",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-luna:terminal-bench-science-0.1:terminal-bench-science:391",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is shadow."
+    },
+    {
+      "observationId": "kimi-k3:mcp-atlas-public-500-kimi:vendor-model-cards:393",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-sol:lifescibench-gold-v1-openai:vendor-model-cards:395",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-luna:arc-agi-3:arcprize:396",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-4.8:livecodebench-v6-pro:kaggle:397",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is retired."
+    },
+    {
+      "observationId": "claude-sonnet-4:gpqa-diamond:epoch:400",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-3.6-flash:gpqa-diamond:epoch:402",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-terra:arc-agi-3:arcprize:403",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-5:hle-verified-1811-google-202609:vendor-model-cards:404",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.4:swe-bench-pro-public:vendor-model-cards:405",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is retired."
+    },
+    {
+      "observationId": "gpt-5.6-luna:arc-agi-3:arcprize:406",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.5-pro:gpqa-diamond:epoch:407",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-3.1-pro:swe-bench-pro-public:vendor-model-cards:410",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is retired."
+    },
+    {
+      "observationId": "deepseek-v4-pro-0813:gpqa-diamond:epoch:412",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "qwen3-235b-a22b:gpqa-diamond:epoch:415",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5-mini:gpqa-diamond:epoch:421",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-4.1:gpqa-diamond:epoch:422",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "qwen3.5-397b-a17b:livecodebench-v6-pro:vendor-model-cards:424",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is retired."
+    },
+    {
+      "observationId": "muse-spark-1.2:osworld-v2-20260624-binary:vendor-model-cards:425",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "deepseek-v4-pro-0424:gpqa-diamond:epoch:427",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-5:charxiv-reasoning-no-tools-google-202609:vendor-model-cards:428",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.2:swe-bench-pro-public:vendor-model-cards:429",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is retired."
+    },
+    {
+      "observationId": "qwen-3.8-max:livebench-2026:livebench:432",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-3.5-flash-lite:livebench-2026:livebench:433",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-terra:arc-agi-3:arcprize:437",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-4.5:gpqa-diamond:epoch:439",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "glm-5.2:livebench-2026:livebench:441",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-sol:frontiercode-1.1-main-score:vendor-model-cards:445",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "deepseek-v4-flash-vision-exp:agents-last-exam-deepseek-reported:vendor-model-cards:446",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-2.5-pro:gpqa-diamond:epoch:448",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.2:healthbench-professional:vendor-model-cards:450",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "deepseek-v4-pro-0813:terminal-bench-2.1:vendor-model-cards:452",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-4.1:gpqa-diamond:epoch:457",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "glm-5.3-flash:livebench-2026:livebench:460",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-3.7-flash:osworld-v2-google-pre0808-partial-max3:vendor-model-cards:461",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-fable-5.1:osworld-v2-anthropic-202608-partial:vendor-model-cards:463",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5-nano:gpqa-diamond:epoch:464",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "deepseek-v4-flash-vision-exp:chartography-deepseek-reported:vendor-model-cards:465",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "muse-spark-1.2:swe-atlas-codebase-qna-public:vendor-model-cards:469",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "glm-5.3-flash:terminal-bench-2.1:vendor-model-cards:472",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.2:gpqa-diamond:epoch:474",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-4.8:livebench-2026:livebench:476",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "muse-spark-1.3:osworld-v2-20260808-partial:vendor-model-cards:477",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-sonnet-4.6:osworld-2.0-2026.06.24-full:osworld:478",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "qwen3.7-plus:harvey-legal-agent-vals-all-pass:vals:486",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-fable-5:livebench-2026:livebench:487",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-5:gpqa-diamond:epoch:488",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-terra:gpqa-diamond:epoch:491",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-fable-5:gpqa-diamond:epoch:493",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-6-astra:frontiermath-v2-tier-4:epoch:495",
+      "reason": "class_unassigned",
+      "detail": "Effort tier and harness do not match a declared std-common, max-common, or product system."
+    },
+    {
+      "observationId": "claude-opus-4.6:mrcr-v2-1m-8-needle:vendor-model-cards:496",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "minimax-m3:osworld-2.0-2026.06.24-full:osworld:497",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-6-astra:arc-agi-2-semi-private:arcprize:502",
+      "reason": "class_unassigned",
+      "detail": "Effort tier and harness do not match a declared std-common, max-common, or product system."
+    },
+    {
+      "observationId": "minimax-m3:gpqa-diamond:epoch:506",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-sonnet-5:harvey-legal-agent-vals-all-pass:vals:510",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "deepseek-v4-flash-vision-exp:automationbench-public-deepseek-reported:vendor-model-cards:511",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "muse-spark-1.2:harvey-legal-agent-vals-all-pass:vals:514",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5-2025-08-07:swe-bench-pro-public:scale:516",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is retired."
+    },
+    {
+      "observationId": "claude-sonnet-4.5:gpqa-diamond:epoch:518",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-6-astra:gpqa-diamond:vendor-model-cards:519",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-sonnet-4.6:gpqa-diamond:epoch:524",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-terra:swe-bench-pro-public:vendor-model-cards:526",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is retired."
+    },
+    {
+      "observationId": "gpt-6-astra:deepswe-1.1:datacurve:528",
+      "reason": "class_unassigned",
+      "detail": "Effort tier and harness do not match a declared std-common, max-common, or product system."
+    },
+    {
+      "observationId": "grok-4.5:arc-agi-3:arcprize:529",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-fable-5:terminal-bench-science-0.1:terminal-bench-science:532",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is shadow."
+    },
+    {
+      "observationId": "deepseek-v4-flash-vision-exp:terminal-bench-2.1:vendor-model-cards:534",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-fable-5:healthbench-professional-length-adjusted-gpt54:vendor-model-cards:535",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.2-codex:swe-bench-pro-public:vendor-model-cards:543",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is retired."
+    },
+    {
+      "observationId": "claude-fable-5.1:cursorbench-3.2.0-reported:vendor-model-cards:544",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-fable-5:gpqa-diamond:epoch:546",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "kimi-k3:harvey-legal-agent-vals-all-pass:vals:553",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "o4-mini:livecodebench-v6-pro:kaggle:554",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is retired."
+    },
+    {
+      "observationId": "gemini-3.5-flash:automationbench-public-1.0.6:automationbench:556",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "kimi-k3:gpqa-diamond:epoch:557",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "deepseek-v4-pro-0813:hle-deepseek-with-tools-reported:vendor-model-cards:562",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "kimi-k3:gpqa-diamond:epoch:564",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-5:automationbench-public-1.0.6:automationbench:566",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.4-pro:gpqa-diamond:epoch:567",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "deepseek-v4-pro-0424:gpqa-diamond:vendor-model-cards:570",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "grok-4.5:arc-agi-3:arcprize:571",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "deepseek-v4-flash-0731:hle-deepseek-no-tools-reported:vendor-model-cards:573",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-4.7:osworld-2.0-2026.06.24-full:osworld:574",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "deepseek-v3.2:gpqa-diamond:epoch:575",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-luna:arc-agi-3:vendor-model-cards:576",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5-mini:gpqa-diamond:epoch:577",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.1:gpqa-diamond:epoch:579",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-3.6-flash:livebench-2026:livebench:580",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-3.7-flash:gpqa-diamond:epoch:581",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "qwen3.8-27b:ifbench-qwen-reported:vendor-model-cards:583",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-3-pro:swe-bench-pro-public:scale:584",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is retired."
+    },
+    {
+      "observationId": "gemini-2.5-pro-20250506:gpqa-diamond:epoch:585",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "muse-spark-1.2:livebench-2026:livebench:589",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-fable-5.1:livebench-2026:livebench:590",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5-2025-08-07:livecodebench-v6-pro:kaggle:593",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is retired."
+    },
+    {
+      "observationId": "gemini-3.8-flash:livebench-2026:livebench:595",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "qwen-3.8-max:automationbench-public-qwen-reported:vendor-model-cards:598",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-sol:genebench-pro-v13-openai:vendor-model-cards:601",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-sol:gpqa-diamond:epoch:605",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-3.8-flash:labbench2-macro11-google-202609:vendor-model-cards:606",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-terra:gdp-pdf-google-202609:vendor-model-cards:608",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-6-astra:frontiermath-v2-tier-4:epoch:609",
+      "reason": "class_unassigned",
+      "detail": "Effort tier and harness do not match a declared std-common, max-common, or product system."
+    },
+    {
+      "observationId": "claude-opus-4.8:gpqa-diamond:epoch:611",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-3-pro:gpqa-diamond:epoch:612",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "qwen-3.8-max:gpqa-diamond:epoch:613",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "grok-4.3:harvey-legal-agent-vals-all-pass:vals:617",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.1:swe-bench-pro-public:vendor-model-cards:623",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is retired."
+    },
+    {
+      "observationId": "grok-4.6:terminal-bench-science-0.1:terminal-bench-science:625",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is shadow."
+    },
+    {
+      "observationId": "gpt-5.6-luna:swe-bench-pro-public:vendor-model-cards:626",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is retired."
+    },
+    {
+      "observationId": "gpt-5.5:gpqa-diamond:epoch:627",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "grok-4.6:gpqa-diamond:epoch:629",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-sonnet-4.6:osworld-2.0-2026.06.24-full:osworld:630",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-sonnet-4.5:gpqa-diamond:epoch:636",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "deepseek-v3.2:arc-agi-2-semi-private:arcprize:640",
+      "reason": "config_mismatch",
+      "detail": "The source row does not identify deepseek-chat (non-thinking) versus deepseek-reasoner (thinking), so the grouped registry model cannot be assigned to std or max."
+    },
+    {
+      "observationId": "grok-4.5:gpqa-diamond:epoch:647",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "qwen-3.8-max:mrcr-v2-256k-qwen-sequence-match:vendor-model-cards:652",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "o3-mini:gpqa-diamond:epoch:653",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-3.8-flash:lvbench-agentic-google-202609:vendor-model-cards:654",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.3-codex:swe-bench-pro-public:vendor-model-cards:655",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is retired."
+    },
+    {
+      "observationId": "claude-sonnet-4.6:gpqa-diamond:epoch:663",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-sol:gpqa-diamond:epoch:664",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-oss-120b:livecodebench-v6-pro:kaggle:666",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is retired."
+    },
+    {
+      "observationId": "deepseek-v4-flash-vision-exp:apexbench-deepseek-vision-reported:vendor-model-cards:667",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "qwen-3.8-max:terminal-bench-2.1:vendor-model-cards:669",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-4.6:arc-agi-3:arcprize:670",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-sol:osworld-2.0:osworld:672",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-6-astra:arc-agi-3:arcprize:673",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "muse-spark-1.1:livebench-2026:livebench:675",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-sonnet-4.5:gpqa-diamond:epoch:677",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "qwen-3.8-max:gpqa-diamond:vendor-model-cards:680",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-6-astra:arc-agi-2-semi-private:arcprize:681",
+      "reason": "class_unassigned",
+      "detail": "Effort tier and harness do not match a declared std-common, max-common, or product system."
+    },
+    {
+      "observationId": "claude-opus-4.6:gpqa-diamond:epoch:684",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "deepseek-v4-pro-0424:gpqa-diamond:epoch:686",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "glm-5.3-flash:gpqa-diamond:epoch:687",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-3.6-flash:gpqa-diamond:epoch:691",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "minimax-m3:osworld-2.0-2026.06.24-full:osworld:692",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-sol:gpqa-diamond:epoch:695",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "kimi-k3:mls-bench-lite-kimi-reported:vendor-model-cards:696",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "o1:gpqa-diamond:epoch:699",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "glm-5.2:automationbench-public-1.0.6:automationbench:700",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "glm-5.3:agents-last-exam-ale-cli-zai:vendor-model-cards:701",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "muse-spark-1.2:mrcr-v2-8needle-512k-1m-sequence-match:vendor-model-cards:702",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "kimi-k3:automationbench-public-1.0.6:automationbench:703",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-6-astra:arc-agi-3:arcprize:706",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "o1:gpqa-diamond:epoch:707",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "muse-spark-1.3:mrcr-v2-8needle-256k-512k-sequence-match:vendor-model-cards:708",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-3-pro:mrcr-v2-1m-8-needle:vendor-model-cards:713",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-4.8:arc-agi-3:vendor-model-cards:719",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-3.8-flash:terminal-bench-2.1:vendor-model-cards:723",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-oss-120b:vending-bench-2:andonlabs:724",
+      "reason": "too_few_runs",
+      "detail": "Money benchmarks require at least three run balances or a reported mean balance with a standard error."
+    },
+    {
+      "observationId": "gpt-6-astra:livebench-2026:livebench:727",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-6-astra:arc-agi-2-semi-private:arcprize:729",
+      "reason": "class_unassigned",
+      "detail": "Effort tier and harness do not match a declared std-common, max-common, or product system."
+    },
+    {
+      "observationId": "glm-5.3:cybergym-zai-1507:vendor-model-cards:733",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "qwen3.6-27b:gpqa-diamond:vendor-model-cards:734",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "grok-4.20:arc-agi-3:arcprize:740",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-6-astra:frontiercode-1.1-main-score:vendor-model-cards:742",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "deepseek-v4-flash-vision-exp:livebench-2026:livebench:745",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "muse-spark-1.3:osworld-v2-20260808-binary:vendor-model-cards:749",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "mistral-medium-3:gpqa-diamond:epoch:751",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-3.7-sonnet:livecodebench-v6-pro:kaggle:754",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is retired."
+    },
+    {
+      "observationId": "qwen3.8-27b:hle-qwen-gpt4o-reported:vendor-model-cards:756",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-sonnet-4.6:livebench-2026:livebench:758",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "muse-spark-1.3:harvey-legal-agent-vals-all-pass:vals:759",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-6-astra:arc-agi-3:arcprize:760",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-fable-5.1:hle-tools-anthropic-reported:vendor-model-cards:761",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-6-astra:hle-tools-openai-reported:vendor-model-cards:767",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.4:gpqa-diamond:epoch:768",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.5:harvey-legal-agent-vals-all-pass:vals:769",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-sonnet-4.5:gpqa-diamond:epoch:771",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-3-pro:swe-bench-pro-public:vendor-model-cards:772",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is retired."
+    },
+    {
+      "observationId": "claude-opus-4.5:gpqa-diamond:epoch:775",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "qwen3.8-flash-next:agents-last-exam-qwen-pass:vendor-model-cards:776",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-3.7-flash:hle-verified-1811-google-202609:vendor-model-cards:777",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "deepseek-v4-flash-0731:hle-deepseek-with-tools-reported:vendor-model-cards:778",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-6-astra:deepswe-1.1:datacurve:788",
+      "reason": "class_unassigned",
+      "detail": "Effort tier and harness do not match a declared std-common, max-common, or product system."
+    },
+    {
+      "observationId": "gpt-6-astra:arc-agi-3:vendor-model-cards:792",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "grok-4.5:terminal-bench-4.0:tbench:796",
+      "reason": "class_unassigned",
+      "detail": "Effort tier and harness do not match a declared std-common, max-common, or product system."
+    },
+    {
+      "observationId": "claude-sonnet-4.6:osworld-2.0-2026.06.24-full:osworld:801",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-sol:osworld-2.0-2026.08.08-offline:osworld:802",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-6-astra:deepswe-1.1:datacurve:803",
+      "reason": "class_unassigned",
+      "detail": "Effort tier and harness do not match a declared std-common, max-common, or product system."
+    },
+    {
+      "observationId": "o4-mini:gpqa-diamond:epoch:804",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "muse-spark-1.3:deepsearchqa-f1:vendor-model-cards:809",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-4.6:livebench-2026:livebench:810",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-5:osworld-2.0:osworld:814",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "deepseek-v4-flash-vision-exp:nl2repo-deepseek-reported:vendor-model-cards:817",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.4:gpqa-diamond:epoch:818",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-4.8:terminal-bench-4.0:tbench:823",
+      "reason": "class_unassigned",
+      "detail": "Effort tier and harness do not match a declared std-common, max-common, or product system."
+    },
+    {
+      "observationId": "grok-4.3:livebench-2026:livebench:824",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "inkling:livebench-2026:livebench:825",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-4.1:gpqa-diamond:epoch:828",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.5:osworld-2.0-2026.06.24-full:osworld:829",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "muse-spark-1.2:mrcr-v2-8needle-256k-512k-sequence-match:vendor-model-cards:830",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-3.1-pro:livebench-2026:livebench:833",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-3.8-flash:osworld-v2-google-pre0808-partial-max3:vendor-model-cards:836",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-sonnet-4:livecodebench-v6-pro:kaggle:840",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is retired."
+    },
+    {
+      "observationId": "qwen3.8-flash-next:agents-last-exam-qwen-score:vendor-model-cards:843",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-4.8:gpqa-diamond:epoch:853",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.5:gpqa-diamond:epoch:857",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "o3:gpqa-diamond:epoch:860",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-5:osworld-2.0-2026.08.08-offline:osworld:862",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "deepseek-v4-pro-0813:livebench-2026:livebench:865",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5-2025-08-07:gpqa-diamond:epoch:867",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-5:osworld-2.0:osworld:870",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "qwen3.8-27b:osworld-v2-qwen-partial-reported:vendor-model-cards:873",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "kimi-k2.5:gpqa-diamond:epoch:875",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "kimi-k3:deepswe-1.1:vendor-model-cards:876",
+      "reason": "config_mismatch",
+      "detail": "Display evidence pending registration/review of this exact benchmark condition; do not alias to a different version, metric, subset, or harness."
+    },
+    {
+      "observationId": "gpt-5.6-sol:mrcr-v2-8needle-512k-1m-sequence-match:vendor-model-cards:880",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "mimo-v2-5-pro:harvey-legal-agent-vals-all-pass:vals:881",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "inkling:gpqa-diamond:epoch:882",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-6-astra:benchcad:benchcad:883",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-4.7:arc-agi-3:arcprize:884",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-4:gpqa-diamond:epoch:887",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-4.8:harvey-legal-agent-vals-all-pass:vals:888",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "grok-4.6:frontiercode-1.1-extended-score:vendor-model-cards:893",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "glm-5.2:harvey-legal-agent-vals-all-pass:vals:895",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-4.7:harvey-legal-agent-vals-all-pass:vals:897",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-terra:terminal-bench-science-0.1:terminal-bench-science:900",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is shadow."
+    },
+    {
+      "observationId": "gpt-6-astra:arc-agi-2-semi-private:arcprize:903",
+      "reason": "class_unassigned",
+      "detail": "Effort tier and harness do not match a declared std-common, max-common, or product system."
+    },
+    {
+      "observationId": "claude-sonnet-5:gdp-pdf-google-202609:vendor-model-cards:904",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-4.5:swe-bench-pro-public:scale:905",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is retired."
+    },
+    {
+      "observationId": "claude-fable-5:osworld-v2-anthropic-202608-partial:vendor-model-cards:908",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.2:gpqa-diamond:epoch:910",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-6-astra:frontiercode-1.1-extended-score:vendor-model-cards:911",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-luna:livebench-2026:livebench:912",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-3.7-sonnet:gpqa-diamond:epoch:914",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "glm-5.3-flash:harvey-legal-agent-vals-all-pass:vals:921",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-2.0-flash-thinking:hle-no-tools:scale:922",
+      "reason": "config_mismatch",
+      "detail": "The registry identity omits the provider snapshot suffix and conflicts with its January source label; selecting exp-1219 or exp-01-21 would be a guess."
+    },
+    {
+      "observationId": "qwen-3.8-max:hle-qwen-max-reported:vendor-model-cards:923",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "qwen3.8-flash-next:gpqa-diamond:vendor-model-cards:928",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "o3-mini:gpqa-diamond:epoch:930",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-sol:swe-bench-pro-public:vendor-model-cards:932",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is retired."
+    },
+    {
+      "observationId": "kimi-k2-7-code:programbench-kimi-reported:vendor-model-cards:934",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.2:livebench-2026:livebench:940",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-3-flash:swe-bench-pro-public:scale:941",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is retired."
+    },
+    {
+      "observationId": "gpt-5.5:mrcr-v2-1m-8-needle:vendor-model-cards:943",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "muse-spark-1.2:osworld-v2-20260624-partial:vendor-model-cards:945",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-5:osworld-2.0-2026.08.08-offline:osworld:947",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "kimi-k3:gpqa-diamond:vendor-model-cards:950",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-6-astra:terminal-bench-4.0:tbench:951",
+      "reason": "class_unassigned",
+      "detail": "Effort tier and harness do not match a declared std-common, max-common, or product system."
+    },
+    {
+      "observationId": "kimi-k2.5:livecodebench-v6-pro:vendor-model-cards:952",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is retired."
+    },
+    {
+      "observationId": "gpt-6-astra:frontiermath-v2-tier-4:epoch:957",
+      "reason": "class_unassigned",
+      "detail": "Effort tier and harness do not match a declared std-common, max-common, or product system."
+    },
+    {
+      "observationId": "claude-opus-4.7:vending-bench-2:vendor-model-cards:960",
+      "reason": "too_few_runs",
+      "detail": "Money benchmarks require at least three run balances or a reported mean balance with a standard error."
+    },
+    {
+      "observationId": "o3-mini:livecodebench-v6-pro:kaggle:966",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is retired."
+    },
+    {
+      "observationId": "claude-sonnet-4.6:osworld-2.0-2026.06.24-full:osworld:967",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-6-astra:gpqa-diamond:epoch:973",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-terra:charxiv-reasoning-no-tools-google-202609:vendor-model-cards:974",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "qwen3.5-397b-a17b:aa-lcr:vendor-model-cards:976",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is shadow."
+    },
+    {
+      "observationId": "muse-spark-1.1:mrcr-v2-1m-8-needle:vendor-model-cards:977",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-sonnet-5:hle-verified-1811-google-202609:vendor-model-cards:980",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.1:gpqa-diamond:epoch:982",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-sol:livebench-2026:livebench:983",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "deepseek-v4-flash-0731:toolathlon-verified-deepseek-reported:vendor-model-cards:984",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-2.5-pro-20250325:gpqa-diamond:epoch:986",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-5:osworld-2.0-2026.08.08-offline:osworld:989",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-6-astra:terminal-bench-4.0:tbench:991",
+      "reason": "class_unassigned",
+      "detail": "Effort tier and harness do not match a declared std-common, max-common, or product system."
+    },
+    {
+      "observationId": "claude-opus-5:gpqa-diamond:epoch:992",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "qwen3.8-flash-next:hle-qwen-gpt4o-reported:vendor-model-cards:993",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-4.1-nano:gpqa-diamond:epoch:994",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-sonnet-4.6:vending-bench-2:vendor-model-cards:997",
+      "reason": "too_few_runs",
+      "detail": "Money benchmarks require at least three run balances or a reported mean balance with a standard error."
+    },
+    {
+      "observationId": "claude-sonnet-5:gpqa-diamond:epoch:1000",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "qwen3.8-flash-next:osworld-v2-qwen-binary-reported:vendor-model-cards:1003",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "qwen3.8-flash-next:jobbench-rubric-2026:vendor-model-cards:1006",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-4:gpqa-diamond:epoch:1008",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "qwen3.6-27b:gpqa-diamond:epoch:1009",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-3-pro:livecodebench-v6-pro:kaggle:1010",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is retired."
+    },
+    {
+      "observationId": "minimax-m3:harvey-legal-agent-vals-all-pass:vals:1012",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-6-astra:arc-agi-3:arcprize:1015",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-6-astra:osworld-v2-20260808-offline-partial:vendor-model-cards:1016",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-4.8:arc-agi-3:arcprize:1017",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-6-astra:arc-agi-3:arcprize:1020",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "glm-5.3:automationbench-public-1.0.6:vendor-model-cards:1024",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-6-astra:arc-agi-3:arcprize:1026",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "qwen-3.8-max:hle-tools-qwen-max-reported:vendor-model-cards:1028",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-3-flash:harvey-legal-agent-vals-all-pass:vals:1033",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "qwen3.8-flash-next:toolathlon-verified-qwen-reported:vendor-model-cards:1034",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-6-astra:genebench-pro-v13-openai:vendor-model-cards:1037",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "qwen3.8-flash-next:osworld-v2-qwen-partial-reported:vendor-model-cards:1039",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.4:gpqa-diamond:epoch:1041",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-sonnet-4.5:swe-bench-pro-public:scale:1042",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is retired."
+    },
+    {
+      "observationId": "qwen3.8-27b:harvey-legal-agent-vals-all-pass:vals:1044",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "deepseek-v4-pro-0813:cybergym-deepseek-reported:vendor-model-cards:1045",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "deepseek-v4-pro-0813:automationbench-public-deepseek-reported:vendor-model-cards:1046",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-5:livebench-2026:livebench:1047",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "glm-5.3:terminal-bench-4.0:tbench:1050",
+      "reason": "class_unassigned",
+      "detail": "Effort tier and harness do not match a declared std-common, max-common, or product system."
+    },
+    {
+      "observationId": "grok-4.6:gpqa-diamond:epoch:1053",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-terra:harvey-legal-agent-vals-all-pass:vals:1055",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "kimi-k2-7-code:gpqa-diamond:epoch:1056",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "glm-5.3:gpqa-diamond:epoch:1059",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.2:gpqa-diamond:epoch:1062",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-5:osworld-v2-anthropic-202608-strict:vendor-model-cards:1063",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "inkling-small:gpqa-diamond:epoch:1064",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-fable-5:osworld-v2-anthropic-202608-strict:vendor-model-cards:1065",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-luna:gpqa-diamond:epoch:1067",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-haiku-4.5:gpqa-diamond:epoch:1071",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-3.6-flash:gpqa-diamond:epoch:1074",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "deepseek-v4-flash-0731:cybergym-deepseek-reported:vendor-model-cards:1077",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-3.1-pro:gpqa-diamond:epoch:1079",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-fable-5:harvey-legal-agent-vals-all-pass:vals:1086",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "qwen3-235b-a22b-2507:livecodebench-v6-pro:vendor-model-cards:1088",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is retired."
+    },
+    {
+      "observationId": "qwen3-max:gpqa-diamond:epoch:1089",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "deepseek-v4-flash-vision-exp:toolathlon-verified-deepseek-reported:vendor-model-cards:1092",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-sol:arc-agi-3:arcprize:1094",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-4.8:osworld-2.0-2026.06.24-full:osworld:1095",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "nex-n2-pro:gpqa-diamond:vendor-model-cards:1096",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "qwen3.8-27b:livebench-2026:livebench:1097",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-5:gdp-pdf-google-202609:vendor-model-cards:1098",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "o3:livecodebench-v6-pro:kaggle:1100",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is retired."
+    },
+    {
+      "observationId": "gpt-4o-2024-11-20:gpqa-diamond:epoch:1102",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.4:arc-agi-3:arcprize:1103",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-terra:arc-agi-3:vendor-model-cards:1105",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "qwen3-235b-a22b:livecodebench-v6-pro:kaggle:1107",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is retired."
+    },
+    {
+      "observationId": "muse-spark-1.2:jobbench-rubric-2026:vendor-model-cards:1109",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-4.8:terminal-bench-science-0.1:terminal-bench-science:1113",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is shadow."
+    },
+    {
+      "observationId": "claude-haiku-4.5:gpqa-diamond:epoch:1119",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "grok-4.6:arc-agi-3:arcprize:1121",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "kimi-k3:hle-full-tools-kimi-reported:vendor-model-cards:1126",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5-2025-08-07:gpqa-diamond:epoch:1127",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-sol:arc-agi-3:arcprize:1131",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-sol:arc-agi-3:arcprize:1136",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-sol:osworld-2.0-2026.08.08-offline:osworld:1137",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "muse-spark-1.2:terminal-bench-2.1:vendor-model-cards:1142",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "kimi-k3:automationbench-public-kimi-july:vendor-model-cards:1144",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-6-astra:healthbench-professional-length-adjusted-gpt54:vendor-model-cards:1147",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-6-astra:arc-agi-3:arcprize:1148",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.5:osworld-2.0-2026.06.24-full:osworld:1150",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-5:hle-tools-anthropic-reported:vendor-model-cards:1153",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-sonnet-4.6:osworld-2.0-2026.06.24-full:osworld:1157",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-luna:healthbench-professional:vendor-model-cards:1158",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "kimi-k3:terminal-bench-science-0.1:terminal-bench-science:1159",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is shadow."
+    },
+    {
+      "observationId": "gemini-3.1-pro:gpqa-diamond:epoch:1161",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-oss-120b:gpqa-diamond:epoch:1163",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-3.8-flash:lvbench-static-google-202609:vendor-model-cards:1164",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "qwen3.7-plus:gpqa-diamond:epoch:1165",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "qwen3.8-27b:gpqa-diamond:vendor-model-cards:1166",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-4:livecodebench-v6-pro:kaggle:1167",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is retired."
+    },
+    {
+      "observationId": "gpt-6-astra:lifescibench-gold-v1-openai:vendor-model-cards:1170",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "qwen3.8-flash-next:deepswe-1.1:vendor-model-cards:1173",
+      "reason": "config_mismatch",
+      "detail": "Display evidence pending registration/review of this exact benchmark condition; do not alias to a different version, metric, subset, or harness."
+    },
+    {
+      "observationId": "kimi-k2-7-code:mcpmark-verified-kimi-reported:vendor-model-cards:1174",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "glm-5.3-flash:agents-last-exam-zai-reported:vendor-model-cards:1175",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-sol:gpqa-diamond:vendor-model-cards:1176",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-6-astra:terminal-bench-4.0:tbench:1177",
+      "reason": "class_unassigned",
+      "detail": "Effort tier and harness do not match a declared std-common, max-common, or product system."
+    },
+    {
+      "observationId": "gemini-3.6-flash:harvey-legal-agent-vals-all-pass:vals:1178",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "grok-4.6:livebench-2026:livebench:1179",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-fable-5:cursorbench-3.2.0-reported:vendor-model-cards:1180",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-3.8-flash:minebench-spatial-bt:minebench:1181",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-3.1-pro:swe-bench-pro-public:scale:1190",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is retired."
+    },
+    {
+      "observationId": "claude-opus-4.7:gpqa-diamond:epoch:1193",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "grok-4.6:cursorbench-3.2.0-reported:vendor-model-cards:1199",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-2.5-flash:mrcr-v2-1m-8-needle:vendor-model-cards:1202",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-fable-5.1:osworld-v2-anthropic-202608-strict:vendor-model-cards:1203",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-sol:frontiermath-v2-tier-4:epoch:1204",
+      "reason": "config_mismatch",
+      "detail": "Native source distinguishes promax / pro, max from max, but the registered model has no verified matching effort/system definition. Preserve for observation only until identity is verified."
+    },
+    {
+      "observationId": "claude-opus-4.5:gpqa-diamond:epoch:1206",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-3.8-flash:hle-verified-1811-google-202609:vendor-model-cards:1211",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "glm-5.3-flash:hle-full-tools-zai-luna-medium:vendor-model-cards:1212",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.2:gpqa-diamond:epoch:1213",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-sol:osworld-2.0-2026.08.08-offline:osworld:1225",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "kimi-k3:toolathlon-verified-kimi-reported:vendor-model-cards:1230",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "qwen3.8-27b:agents-last-exam-qwen-score:vendor-model-cards:1233",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "glm-5.2:gpqa-diamond:epoch:1234",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.5:swe-bench-pro-public:vendor-model-cards:1238",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is retired."
+    },
+    {
+      "observationId": "muse-spark-1.2:automationbench-public-v3:vendor-model-cards:1239",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "grok-4.5:arc-agi-3:arcprize:1240",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "grok-4.6:terminal-bench-4.0:tbench:1242",
+      "reason": "class_unassigned",
+      "detail": "Effort tier and harness do not match a declared std-common, max-common, or product system."
+    },
+    {
+      "observationId": "gpt-5.5:osworld-2.0-2026.06.24-full:osworld:1244",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-4.6:mrcr-v2-1m-8-needle:vendor-model-cards:1251",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-luna:arc-agi-3:arcprize:1256",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-3.5-flash-lite:gpqa-diamond:epoch:1259",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-6-astra:mrcr-v2-8needle-512k-1m-sequence-match:vendor-model-cards:1261",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-fable-5:automationbench-public-1.0.6:automationbench:1262",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.5:gpqa-diamond:epoch:1264",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-4.8:gpqa-diamond:epoch:1265",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-fable-5:gpqa-diamond:epoch:1268",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-sol:deepswe-1.1:vendor-model-cards:1269",
+      "reason": "config_mismatch",
+      "detail": "Display evidence pending registration/review of this exact benchmark condition; do not alias to a different version, metric, subset, or harness."
+    },
+    {
+      "observationId": "muse-spark-1.3:jobbench-rubric-2026:vendor-model-cards:1270",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-4.7:osworld-2.0-2026.06.24-full:osworld:1271",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "qwen-3.8-max:harvey-legal-agent-vals-all-pass:vals:1272",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.4:mrcr-v2-1m-8-needle:vendor-model-cards:1277",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.4:gpqa-diamond:epoch:1278",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.4:swe-bench-pro-public:scale:1284",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is retired."
+    },
+    {
+      "observationId": "gemini-2.5-pro:vending-bench-2:vendor-model-cards:1285",
+      "reason": "too_few_runs",
+      "detail": "Money benchmarks require at least three run balances or a reported mean balance with a standard error."
+    },
+    {
+      "observationId": "deepseek-v4-flash-0731:agents-last-exam-deepseek-reported:vendor-model-cards:1286",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "muse-spark-1.3:deepswe-1.1:vendor-model-cards:1288",
+      "reason": "config_mismatch",
+      "detail": "Display evidence pending registration/review of this exact benchmark condition; do not alias to a different version, metric, subset, or harness."
+    },
+    {
+      "observationId": "deepseek-v4-pro-0813:nl2repo-deepseek-reported:vendor-model-cards:1294",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "kimi-k2-7-code:livebench-2026:livebench:1295",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-2.5-flash:hle-no-tools:scale:1297",
+      "reason": "config_mismatch",
+      "detail": "The source row is the April preview, while the registry system metadata identifies the unqualified stable model that became GA in June."
+    },
+    {
+      "observationId": "o4-mini:gpqa-diamond:epoch:1298",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "kimi-k2:swe-bench-pro-public:scale:1305",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is retired."
+    },
+    {
+      "observationId": "claude-opus-4.7:vending-bench-2:vendor-model-cards:1309",
+      "reason": "too_few_runs",
+      "detail": "Money benchmarks require at least three run balances or a reported mean balance with a standard error."
+    },
+    {
+      "observationId": "kimi-k2-7-code:mls-bench-lite-kimi-reported:vendor-model-cards:1316",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "o4-mini:gpqa-diamond:epoch:1318",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-sonnet-4.6:gpqa-diamond:epoch:1322",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-sonnet-4.6:harvey-legal-agent-vals-all-pass:vals:1323",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-3.8-flash:biomysterybench-human-difficult-google-202609:vendor-model-cards:1324",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-luna:gpqa-diamond:epoch:1326",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-2.5-pro:mrcr-v2-1m-8-needle:vendor-model-cards:1327",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "deepseek-v4-flash-0731:nl2repo-deepseek-reported:vendor-model-cards:1330",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "grok-4.6:harvey-legal-agent-vals-all-pass:vals:1332",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "deepseek-v4-flash-0731:harvey-legal-agent-vals-all-pass:vals:1337",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "deepseek-v4-flash-vision-exp:cybergym-deepseek-reported:vendor-model-cards:1338",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-sol:osworld-2.0-2026.08.08-offline:osworld:1339",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "glm-5.2:gpqa-diamond:epoch:1340",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-sonnet-5:livebench-2026:livebench:1343",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-3.8-flash:harvey-legal-agent-vals-all-pass:vals:1347",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-5:arc-agi-3:arcprize:1349",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.2:swe-bench-pro-public:scale:1350",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is retired."
+    },
+    {
+      "observationId": "glm-5.3-flash:automationbench-public-1.0.6:vendor-model-cards:1352",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5-mini:gpqa-diamond:epoch:1354",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.2-codex:swe-bench-pro-public:scale:1357",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is retired."
+    },
+    {
+      "observationId": "claude-sonnet-4.6:mrcr-v2-1m-8-needle:vendor-model-cards:1361",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-5:benchcad:benchcad:1362",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-3.5-flash-lite:gpqa-diamond:epoch:1363",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "muse-spark-1.2:deepsearchqa-f1:vendor-model-cards:1366",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-sonnet-5:osworld-v2-google-pre0808-partial-max3:vendor-model-cards:1368",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.5-instant:gpqa-diamond:epoch:1370",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-2.5-flash:vending-bench-2:vendor-model-cards:1372",
+      "reason": "too_few_runs",
+      "detail": "Money benchmarks require at least three run balances or a reported mean balance with a standard error."
+    },
+    {
+      "observationId": "gemini-3.5-flash:gpqa-diamond:epoch:1375",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-sonnet-4.6:osworld-2.0-2026.06.24-full:osworld:1377",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "muse-spark-1.1:harvey-legal-agent-vals-all-pass:vals:1381",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "nemotron-3-ultra:harvey-legal-agent-vals-all-pass:vals:1385",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-6-astra:mrcr-v2-1m-8-needle:vendor-model-cards:1387",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-sonnet-5:gpqa-diamond:epoch:1389",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "o3:gpqa-diamond:epoch:1391",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-3.1-pro:mrcr-v2-1m-8-needle:vendor-model-cards:1393",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-sol:frontiercode-1.1-extended-score:vendor-model-cards:1394",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-5:gpqa-diamond:epoch:1396",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-terra:hle-verified-1811-google-202609:vendor-model-cards:1398",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.2-codex:livebench-2026:livebench:1407",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.4:harvey-legal-agent-vals-all-pass:vals:1413",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.4:livebench-2026:livebench:1415",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-3.1-pro:harvey-legal-agent-vals-all-pass:vals:1420",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-oss-120b:swe-bench-pro-public:scale:1421",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is retired."
+    },
+    {
+      "observationId": "gpt-4.5:gpqa-diamond:epoch:1422",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "muse-spark-1.1:swe-bench-pro-public:scale:1423",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is retired."
+    },
+    {
+      "observationId": "gpt-4.1-mini:gpqa-diamond:epoch:1429",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-4.7:gpqa-diamond:epoch:1431",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "nemotron-3-ultra:livebench-2026:livebench:1436",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-6-astra:arc-agi-3:arcprize:1439",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "deepseek-v4-pro-0813:hle-deepseek-no-tools-reported:vendor-model-cards:1440",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "deepseek-v4-pro-0424:gpqa-diamond:epoch:1441",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "deepseek-v4-pro-0813:harvey-legal-agent-vals-all-pass:vals:1444",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "deepseek-v4-flash-0731:gpqa-diamond:epoch:1446",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-sol:automationbench-public-1.0.6:automationbench:1447",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-4.1:gpqa-diamond:epoch:1449",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-4.6:swe-bench-pro-public:scale:1450",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is retired."
+    },
+    {
+      "observationId": "claude-opus-4.1:livecodebench-v6-pro:kaggle:1453",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is retired."
+    },
+    {
+      "observationId": "claude-fable-5.1:osworld-v2-anthropic-202608-strict:vendor-model-cards:1454",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "qwen3.5-397b-a17b:gpqa-diamond:epoch:1455",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "qwen3.8-27b:agents-last-exam-qwen-pass:vendor-model-cards:1456",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "kimi-k2.5:aa-lcr:vendor-model-cards:1458",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is shadow."
+    },
+    {
+      "observationId": "gpt-5.1:healthbench-professional:vendor-model-cards:1459",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-4.5:livebench-2026:livebench:1460",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-3.5-flash-lite:gpqa-diamond:epoch:1463",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "qwen3-coder-480b-a35b:swe-bench-pro-public:scale:1469",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is retired."
+    },
+    {
+      "observationId": "gpt-5-mini:vending-bench-2:andonlabs:1470",
+      "reason": "too_few_runs",
+      "detail": "Money benchmarks require at least three run balances or a reported mean balance with a standard error."
+    },
+    {
+      "observationId": "grok-4.5:livebench-2026:livebench:1474",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "glm-5.3:harvey-legal-agent-vals-all-pass:vals:1477",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-terra:healthbench-professional:vendor-model-cards:1484",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-3-flash:gpqa-diamond:epoch:1485",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "solar-open2-250b:gpqa-diamond:vendor-model-cards:1488",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "deepseek-v4-flash-0731:deepswe-deepseek-reported:vendor-model-cards:1491",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "inkling-small:vals-finance-agent-v2-partial:vals:1492",
+      "reason": "config_mismatch",
+      "detail": "Continuous source effort has no verified discrete registry mapping"
+    },
+    {
+      "observationId": "claude-opus-5:osworld-2.0:osworld:1493",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-3.8-flash:biomysterybench-human-solvable-google-202609:vendor-model-cards:1494",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-luna:harvey-legal-agent-vals-all-pass:vals:1497",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-3.7-flash:harvey-legal-agent-vals-all-pass:vals:1498",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "kimi-k2-7-code:mcp-atlas-kimi-k27-reported:vendor-model-cards:1500",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "minimax-m3:livebench-2026:livebench:1501",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-6-astra:arc-agi-3:arcprize:1502",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-3.7-flash:terminal-bench-2.1:vendor-model-cards:1505",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "muse-spark-1.1:swe-bench-pro-public:vendor-model-cards:1508",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is retired."
+    },
+    {
+      "observationId": "claude-fable-5:hle-tools-anthropic-reported:vendor-model-cards:1512",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-terra:gpqa-diamond:epoch:1515",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5-2025-08-07:gpqa-diamond:epoch:1519",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-5.6-terra:gpqa-diamond:epoch:1526",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "deepseek-v4-flash-0731:automationbench-public-deepseek-reported:vendor-model-cards:1530",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "deepseek-v3.2:gpqa-diamond:epoch:1532",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "qwen3.8-flash-next:livebench-2026:livebench:1536",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-5:osworld-2.0-2026.08.08-offline:osworld:1539",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-sonnet-4.6:gpqa-diamond:epoch:1541",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "muse-spark-1.3:automationbench-public-v3:vendor-model-cards:1543",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "grok-4.6:deepswe-1.1:vendor-model-cards:1544",
+      "reason": "config_mismatch",
+      "detail": "Display evidence pending registration/review of this exact benchmark condition; do not alias to a different version, metric, subset, or harness."
+    },
+    {
+      "observationId": "kimi-k3:terminal-bench-2.1:vendor-model-cards:1545",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-opus-5:cursorbench-3.2.0-reported:vendor-model-cards:1546",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-6-astra:harvey-legal-agent-vals-all-pass:vals:1547",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-3.5-flash:gpqa-diamond:epoch:1549",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-3.7-sonnet:gpqa-diamond:epoch:1556",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gemini-3.5-flash:livebench-2026:livebench:1557",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "qwen3.8-27b:toolathlon-verified-qwen-reported:vendor-model-cards:1559",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "claude-sonnet-4:gpqa-diamond:epoch:1567",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is watchlist."
+    },
+    {
+      "observationId": "gpt-6-astra:deepswe-1.1:vendor-model-cards:1568",
+      "reason": "config_mismatch",
+      "detail": "Display evidence pending registration/review of this exact benchmark condition; do not alias to a different version, metric, subset, or harness."
+    },
+    {
+      "observationId": "llama-4-maverick:swe-bench-pro-public:scale:1570",
+      "reason": "condition_inactive",
+      "detail": "Benchmark is retired."
+    }
+  ]
+}

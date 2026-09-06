@@ -39,6 +39,8 @@ export const IndexConfigSchema = z.object({
   data_cutoff: IsoDateSchema,
   reference_benchmark: RegistryIdSchema.optional(),
   default_profile: z.string(),
+  // Absent on historical registries; keep their admission policy reproducible.
+  unreported_effort_policy: z.enum(["standard", "maximum"]).default("standard"),
   default_profile_switch_coverage: z.number().gt(0).lte(1),
   domains: z.record(DomainSchema, z.array(RegistryIdSchema).min(1)),
   profiles: z.record(RegistryIdSchema, ProfileSchema),

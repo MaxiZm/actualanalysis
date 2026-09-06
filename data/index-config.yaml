@@ -1,10 +1,11 @@
-method_version: 1.4.2
+method_version: 1.4.3
 trait_structure: correlated
 method_name: ActualAnalysis Capability Index
 taxonomy_edition: 2026a
 calibration_edition: 2026a
 data_cutoff: 2026-09-05
 default_profile: max-common
+unreported_effort_policy: maximum
 default_profile_switch_coverage: 0.60
 domains:
   agentic: [terminal-use, computer-use, tool-use, long-horizon, customer-service]
@@ -96,7 +97,7 @@ priors:
   effort_gain_mean: 0.30
   effort_gain_sd: 0.30
   effort_domain_gain_sd: 0.20
-inference: { engine: numpyro_nuts, chains: 4, warmup: 3000, samples: 5000, retained_draws: 12000, target_accept: 0.995, max_rhat: 1.01, min_ess: 400, max_divergence_fraction: 0.0, min_ebfmi: 0.3 }
+inference: { engine: numpyro_nuts, chains: 4, warmup: 4000, samples: 5000, retained_draws: 12000, target_accept: 0.999, max_rhat: 1.01, min_ess: 400, max_divergence_fraction: 0.0, min_ebfmi: 0.3 }
 tiers:
   # Widths are 90% intervals on the panel scale (sd 10). With 20 benchmarks the
   # median width of a well-covered system is ~14 points; thresholds below are set
