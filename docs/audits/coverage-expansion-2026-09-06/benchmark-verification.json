@@ -1,0 +1,4047 @@
+{
+  "audit_id": "coverage-expansion-2026-09-06",
+  "access_date": "2026-09-06",
+  "native_worker_count": 1,
+  "delegation": "none; spawn_subagent was not used",
+  "method_version": "1.4.3",
+  "scope": {
+    "benchmark_yaml_files": 107,
+    "source_yaml_files": 30,
+    "fitted_priority_conditions": 19,
+    "fitted_priority_ids": [
+      "arc-agi-2-semi-private",
+      "deepswe",
+      "deepswe-1.1",
+      "frontiermath-v2-tier-4",
+      "frontiermath-v2-tiers-1-3",
+      "gdpval",
+      "hle-no-tools",
+      "lmarena-text-style-controlled",
+      "matharena-composite",
+      "mcpmark",
+      "metr-time-horizon-1.1",
+      "scicode-verified-v2-main-with-background",
+      "simpleqa-verified-epoch-anti-abstention-v1-0-0",
+      "simpleqa-verified-epoch-anti-abstention-v1-2-0",
+      "swe-rebench",
+      "tau3-bench-banking",
+      "terminal-bench-4.0",
+      "vals-finance-agent-v2-partial",
+      "vending-bench-2"
+    ],
+    "yaml_files_modified": [
+      "data/benchmarks/vending-bench-2.yaml",
+      "data/benchmarks/metr-time-horizon-1.1.yaml",
+      "data/benchmarks/tau3-bench-banking.yaml",
+      "data/benchmarks/gdpval.yaml"
+    ],
+    "other_paths_modified": [
+      "docs/audits/coverage-expansion-2026-09-06/benchmark-verification.json",
+      "docs/audits/coverage-expansion-2026-09-06/benchmark-verification.md"
+    ]
+  },
+  "policy": {
+    "no_fit_weight_expansion": true,
+    "no_pending_version_promotion": true,
+    "no_aa_score_duplication": true,
+    "no_invented_citations": true,
+    "no_model_adapter_commit_push_publication": true,
+    "knowledge_and_professional_priority": [
+      "hle-no-tools",
+      "simpleqa-verified-epoch-anti-abstention-v1-2-0",
+      "gpqa-diamond",
+      "gdpval",
+      "vals-finance-agent-v2-partial",
+      "harvey-legal-agent-vals-all-pass",
+      "livebench-2026",
+      "lmarena-text-style-controlled",
+      "jobbench-rubric-2026",
+      "healthbench-professional"
+    ]
+  },
+  "counts": {
+    "benchmarks_total": 107,
+    "benchmarks_checked": 38,
+    "benchmarks_blocked": 69,
+    "benchmarks_not_yet_verified": 0,
+    "fitted_priority_checked": 19,
+    "sources_total": 30,
+    "sources_checked": 30,
+    "sources_blocked": 0,
+    "sources_not_yet_verified": 0,
+    "yaml_fixes_applied": 4,
+    "native_worker_count": 1
+  },
+  "yaml_fixes": [
+    {
+      "file": "data/benchmarks/vending-bench-2.yaml",
+      "id": "vending-bench-2",
+      "change": "Corrected stale notes that said current rows are not fitted; added official metadata_source. Did not change transform, n_items, or admission status."
+    },
+    {
+      "file": "data/benchmarks/metr-time-horizon-1.1.yaml",
+      "id": "metr-time-horizon-1.1",
+      "change": "Documented official 228-task TH1.1 suite size in notes. Did not set n_items (horizon likelihood)."
+    },
+    {
+      "file": "data/benchmarks/tau3-bench-banking.yaml",
+      "id": "tau3-bench-banking",
+      "change": "Added independently verified metadata_sources and documented 97-task / Pass^1 vs default_k=4 semantics. Did not change n_items or default_k."
+    },
+    {
+      "file": "data/benchmarks/gdpval.yaml",
+      "id": "gdpval",
+      "change": "Strengthened notes with independently confirmed 1320/220 split and pairwise-win-rate metric. Did not change obs_type, n_items, or fit weights."
+    }
+  ],
+  "failures": [
+    {
+      "url": "https://openai.com/index/gdpval/",
+      "error": "HTTP fetch failed on 2026-09-06"
+    },
+    {
+      "url": "https://openai.com/index/gdpval-v0",
+      "error": "HTTP fetch failed on 2026-09-06"
+    },
+    {
+      "url": "https://deepswe.datacurve.ai/changelog",
+      "error": "HTTP fetch failed on 2026-09-06"
+    },
+    {
+      "url": "https://github.com/flyingwagner/scicode-verified/commit/ddab4a92f8d80a7113ab946628e994b52354d838",
+      "error": "HTTP fetch failed on 2026-09-06"
+    },
+    {
+      "url": "https://livebench.ai/",
+      "error": "Homepage fetch returned insufficient content; CSV artifact succeeded"
+    },
+    {
+      "url": "https://critpt.com/",
+      "error": "SSL UNEXPECTED_EOF_WHILE_READING on 2026-09-06"
+    },
+    {
+      "url": "https://arxiv.org/abs/2509.26574",
+      "error": "SSL UNEXPECTED_EOF_WHILE_READING on 2026-09-06 from this host"
+    },
+    {
+      "url": "https://github.com/zapier/AutomationBench/releases/tag/v1.0.6",
+      "error": "HTTP 404 on 2026-09-06"
+    },
+    {
+      "url": "https://www.kaggle.com/benchmarks/deepmind/simpleqa-verified",
+      "error": "HTTP 200 SPA title-only; version/task count/metric not identifiable from HTML"
+    },
+    {
+      "url": "https://minebench.ai/leaderboard",
+      "error": "HTTP 200 JS SPA rendered Loading leaderboard; ratings not recoverable from HTML"
+    },
+    {
+      "url": "https://livecodebench.github.io/",
+      "error": "HTTP 200 but stale homepage (300+ May 2023\u2013Feb 2024); v6/1055 not named"
+    }
+  ],
+  "benchmarks": [
+    {
+      "id": "aa-lcr",
+      "file": "data/benchmarks/aa-lcr.yaml",
+      "priority_fitted": false,
+      "registry_status": "shadow",
+      "version": "public",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": null,
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://huggingface.co/datasets/artificial-analysis/AA-LCR",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://huggingface.co/datasets/artificial-analysis/AA-LCR"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Artificial Analysis origin; AA licensing restrictions persist. Do not duplicate AA-origin scores under author sources or CC-BY export.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "agents-last-exam-ale-cli-zai",
+      "file": "data/benchmarks/agents-last-exam-ale-cli-zai.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "ale-cli-105",
+      "n_items": 105,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://huggingface.co/zai-org/GLM-5.3",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://huggingface.co/zai-org/GLM-5.3"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Only source_ids is vendor-model-cards and harness_url is a model card. Independent primary-source verification of version/task count/metric is blocked.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "agents-last-exam-deepseek-reported",
+      "file": "data/benchmarks/agents-last-exam-deepseek-reported.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "vendor-unspecified",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Vendor-reported unspecified condition; harness points at a model card, not an independent primary benchmark identity. Task count/version/metric cannot be independently verified.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "agents-last-exam-qwen-pass",
+      "file": "data/benchmarks/agents-last-exam-qwen-pass.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "vendor-unspecified",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://huggingface.co/Qwen/Qwen3.8-27B"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Vendor-reported unspecified condition; harness points at a model card, not an independent primary benchmark identity. Task count/version/metric cannot be independently verified.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "agents-last-exam-qwen-score",
+      "file": "data/benchmarks/agents-last-exam-qwen-score.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "vendor-unspecified",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://huggingface.co/Qwen/Qwen3.8-27B"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Vendor-reported unspecified condition; harness points at a model card, not an independent primary benchmark identity. Task count/version/metric cannot be independently verified.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "agents-last-exam-zai-reported",
+      "file": "data/benchmarks/agents-last-exam-zai-reported.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "vendor-unspecified",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://huggingface.co/zai-org/GLM-5.3-Flash",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://huggingface.co/zai-org/GLM-5.3-Flash"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Vendor-reported unspecified condition; harness points at a model card, not an independent primary benchmark identity. Task count/version/metric cannot be independently verified.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "apexbench-deepseek-vision-reported",
+      "file": "data/benchmarks/apexbench-deepseek-vision-reported.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "vendor-unspecified",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-Vision-Exp",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-Vision-Exp"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Vendor-reported unspecified condition; harness points at a model card, not an independent primary benchmark identity. Task count/version/metric cannot be independently verified.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "arc-agi-2-semi-private",
+      "file": "data/benchmarks/arc-agi-2-semi-private.yaml",
+      "priority_fitted": true,
+      "registry_status": "active",
+      "version": "semi-private-120",
+      "n_items": 120,
+      "holdout": "semi_private",
+      "obs_type": "count",
+      "public_release_date": "2025-03-24",
+      "source_ids": [
+        "arcprize",
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://arcprize.org/arc-agi/2/",
+      "verification_status": "checked",
+      "primary_urls": [
+        "https://arcprize.org/arc-agi/2",
+        "https://arcprize.org/blog/announcing-arc-agi-2-and-arc-prize-2025"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "version",
+        "task_count",
+        "metric_semantics",
+        "private_public_split",
+        "source_lineage",
+        "leakage_contamination",
+        "date",
+        "harness_tools_effort",
+        "license_admission"
+      ],
+      "discrepancies": [],
+      "block_reason": null,
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "arc-agi-3",
+      "file": "data/benchmarks/arc-agi-3.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "3",
+      "n_items": 55,
+      "holdout": "semi_private",
+      "obs_type": "judge",
+      "public_release_date": "2026-03-25",
+      "source_ids": [
+        "arcprize",
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://arcprize.org/arc-agi/3/",
+      "verification_status": "checked",
+      "primary_urls": [
+        "https://arcprize.org/blog/arc-agi-3-launch"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "version",
+        "task_count",
+        "metric_semantics",
+        "private_public_split",
+        "source_lineage",
+        "leakage_contamination",
+        "date",
+        "harness_tools_effort",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Launch date 2026-03-25 matches. Official metric is Relative Human Action Efficiency, not binomial accuracy (already watchlist/judge).",
+        "Launch post describes hundreds of environments and thousands of levels; registry n_items=55 was not independently confirmed from the launch post."
+      ],
+      "block_reason": null,
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "automationbench-public-1.0.6",
+      "file": "data/benchmarks/automationbench-public-1.0.6.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "1.0.6-public",
+      "n_items": 600,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "automationbench",
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://github.com/zapier/AutomationBench",
+      "verification_status": "checked",
+      "primary_urls": [
+        "https://github.com/zapier/AutomationBench",
+        "https://raw.githubusercontent.com/zapier/AutomationBench/main/CHANGELOG.md",
+        "https://raw.githubusercontent.com/zapier/AutomationBench/main/README.md"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "version",
+        "task_count",
+        "metric_semantics",
+        "private_public_split",
+        "source_lineage",
+        "leakage_contamination",
+        "date",
+        "harness_tools_effort",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "GitHub README (HTTP 200) confirms the public set is 600 tasks (100/domain \u00d7 6); official Zapier leaderboard is a held-out private set. Metric is mean task_completed_correctly (strict all-assertions), distinct from partial_credit.",
+        "CHANGELOG documents 1.0.6 on 2026-07-31 (fairness/Google Sheets discoverability/stricter classifier). GitHub release tag v1.0.6 returned HTTP 404; grader_version commit 4a8e106 exists but is a README score-table edit, not an independently labeled task-freeze tag.",
+        "Watchlist retained; do not merge later public-v3 or vendor-unspecified conditions."
+      ],
+      "block_reason": null,
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "automationbench-public-deepseek-reported",
+      "file": "data/benchmarks/automationbench-public-deepseek-reported.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "public-unspecified",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Vendor-reported unspecified condition; harness points at a model card, not an independent primary benchmark identity. Task count/version/metric cannot be independently verified.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "automationbench-public-kimi-july",
+      "file": "data/benchmarks/automationbench-public-kimi-july.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "public-2026-07",
+      "n_items": 600,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://huggingface.co/moonshotai/Kimi-K3",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://huggingface.co/moonshotai/Kimi-K3"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Only source_ids is vendor-model-cards and harness_url is a model card. Independent primary-source verification of version/task count/metric is blocked.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "automationbench-public-qwen-reported",
+      "file": "data/benchmarks/automationbench-public-qwen-reported.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "public-unspecified",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Vendor-reported unspecified condition; harness points at a model card, not an independent primary benchmark identity. Task count/version/metric cannot be independently verified.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "automationbench-public-v3",
+      "file": "data/benchmarks/automationbench-public-v3.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "public-v3",
+      "n_items": 600,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://research.meta.ai/blog/introducing-muse-spark-1-3",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://research.meta.ai/blog/introducing-muse-spark-1-3"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Meta model-card blog condition; not used as independent primary identity for this audit except where a native benchmark URL was separately fetched.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "automationbench-public",
+      "file": "data/benchmarks/automationbench-public.yaml",
+      "priority_fitted": false,
+      "registry_status": "retired",
+      "version": "public-2026-07",
+      "n_items": 600,
+      "holdout": "public",
+      "obs_type": "count",
+      "public_release_date": null,
+      "source_ids": [
+        "automationbench",
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://github.com/zapier/AutomationBench",
+      "verification_status": "checked",
+      "primary_urls": [
+        "https://github.com/zapier/AutomationBench",
+        "https://raw.githubusercontent.com/zapier/AutomationBench/main/README.md"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "version",
+        "task_count",
+        "metric_semantics",
+        "private_public_split",
+        "source_lineage",
+        "leakage_contamination",
+        "date",
+        "harness_tools_effort",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Same official 600-task public identity as v1.0.6. Live README is the current public table, not a frozen July-2026 pin. Retirement note (July public rows were copies of pinned v1.0.6) is consistent with live source.",
+        "obs_type count vs 1.0.6 judge is a registry split, not an official second metric."
+      ],
+      "block_reason": null,
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "benchcad",
+      "file": "data/benchmarks/benchcad.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "vision2code-agentic-1k",
+      "n_items": 1000,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "benchcad"
+      ],
+      "harness_url": "https://benchcad.com/",
+      "verification_status": "checked",
+      "primary_urls": [
+        "https://benchcad.com/"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "version",
+        "task_count",
+        "metric_semantics",
+        "private_public_split",
+        "source_lineage",
+        "leakage_contamination",
+        "date",
+        "harness_tools_effort",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Homepage (HTTP 200) confirms 17,900 execution-verified CadQuery parts / 106 families; vendor with-tools figures are voxel IoU on a 1,000-file subset. Registry n_items=1000 and vision2code-agentic-1k match that subset, not the full 17,900 IoU\u00d7exec suite.",
+        "Primary metric is IoU-score (voxel IoU \u00d7 exec%), not binomial accuracy. Watchlist retained.",
+        "Homepage does not independently restate MIT code / CC-BY-4.0 dataset licenses claimed on the source YAML."
+      ],
+      "block_reason": null,
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "biomysterybench-human-difficult-google-202609",
+      "file": "data/benchmarks/biomysterybench-human-difficult-google-202609.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "google-2026-09",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://deepmind.google/models/evals-methodology/gemini-3-8-flash/",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://deepmind.google/models/evals-methodology/gemini-3-8-flash/"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Google vendor eval-methodology / model-card condition. Independent primary benchmark task identity and n_items were not established from a first-party benchmark release.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "biomysterybench-human-solvable-google-202609",
+      "file": "data/benchmarks/biomysterybench-human-solvable-google-202609.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "google-2026-09",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://deepmind.google/models/evals-methodology/gemini-3-8-flash/",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://deepmind.google/models/evals-methodology/gemini-3-8-flash/"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Google vendor eval-methodology / model-card condition. Independent primary benchmark task identity and n_items were not established from a first-party benchmark release.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "chartography-deepseek-reported",
+      "file": "data/benchmarks/chartography-deepseek-reported.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "vendor-unspecified",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-Vision-Exp",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-Vision-Exp"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Vendor-reported unspecified condition; harness points at a model card, not an independent primary benchmark identity. Task count/version/metric cannot be independently verified.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "charxiv-reasoning-no-tools-google-202609",
+      "file": "data/benchmarks/charxiv-reasoning-no-tools-google-202609.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "google-2026-09",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://deepmind.google/models/model-cards/gemini-3-8-flash/",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://deepmind.google/models/model-cards/gemini-3-8-flash/"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Google vendor eval-methodology / model-card condition. Independent primary benchmark task identity and n_items were not established from a first-party benchmark release.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "critpt",
+      "file": "data/benchmarks/critpt.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "challenge-70-2025-11-21",
+      "n_items": 70,
+      "holdout": "public",
+      "obs_type": "count",
+      "public_release_date": "2025-11-21",
+      "source_ids": [
+        "critpt",
+        "aa-benchmarks-manual"
+      ],
+      "harness_url": "https://github.com/CritPt-Benchmark/CritPt/tree/17c2545c302762d2f2d644d923ea4c301605cb08",
+      "verification_status": "checked",
+      "primary_urls": [
+        "https://github.com/CritPt-Benchmark/CritPt/tree/17c2545c302762d2f2d644d923ea4c301605cb08",
+        "https://raw.githubusercontent.com/CritPt-Benchmark/CritPt/17c2545c302762d2f2d644d923ea4c301605cb08/README.md"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "version",
+        "task_count",
+        "metric_semantics",
+        "private_public_split",
+        "source_lineage",
+        "leakage_contamination",
+        "date",
+        "harness_tools_effort",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Pinned README (HTTP 200) states 71 challenges and 190 checkpoints; scored set is 70 test challenges; primary metric is mean accuracy over 5 runs \u00d7 70 (not 350 independent items). n_items=70 and version challenge-70-2025-11-21 match the 2025-11-21 public debut.",
+        "critpt.com failed with SSL UNEXPECTED_EOF on 2026-09-06; arXiv abs/2509.26574 also failed SSL from this host. Identity taken from the pinned GitHub tree listed as harness_url.",
+        "README includes an Artificial Analysis Gemini 3 Pro row. Do not copy AA-origin scores into author/native sources. Watchlist retained pending grading-server revision."
+      ],
+      "block_reason": null,
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "cursorbench-3.2.0-reported",
+      "file": "data/benchmarks/cursorbench-3.2.0-reported.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "3.2.0",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://x.ai/news/grok-4-6",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://x.ai/news/grok-4-6"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "xAI news/model-card condition; not an independent primary benchmark release.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "cybergym-deepseek-reported",
+      "file": "data/benchmarks/cybergym-deepseek-reported.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "vendor-unspecified",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Vendor-reported unspecified condition; harness points at a model card, not an independent primary benchmark identity. Task count/version/metric cannot be independently verified.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "cybergym-zai-1507",
+      "file": "data/benchmarks/cybergym-zai-1507.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "1507-vendor-unspecified",
+      "n_items": 1507,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://huggingface.co/zai-org/GLM-5.3",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://huggingface.co/zai-org/GLM-5.3"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Vendor-reported unspecified condition; harness points at a model card, not an independent primary benchmark identity. Task count/version/metric cannot be independently verified.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "deepsearchqa-f1",
+      "file": "data/benchmarks/deepsearchqa-f1.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "public-900",
+      "n_items": 900,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://research.meta.ai/blog/introducing-muse-spark-1-3",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://research.meta.ai/blog/introducing-muse-spark-1-3"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Meta model-card blog condition; not used as independent primary identity for this audit except where a native benchmark URL was separately fetched.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "deepswe-1.1",
+      "file": "data/benchmarks/deepswe-1.1.yaml",
+      "priority_fitted": true,
+      "registry_status": "active",
+      "version": "1.1",
+      "n_items": 113,
+      "holdout": "public",
+      "obs_type": "count",
+      "public_release_date": null,
+      "source_ids": [
+        "datacurve",
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://deepswe.datacurve.ai/artifacts/v1.1/leaderboard-live.json",
+      "verification_status": "checked",
+      "primary_urls": [
+        "https://deepswe.datacurve.ai/"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "version",
+        "task_count",
+        "metric_semantics",
+        "private_public_split",
+        "source_lineage",
+        "leakage_contamination",
+        "date",
+        "harness_tools_effort",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Same 113-task identity on the live leaderboard with a v1.1 toggle. Changelog page unreachable on 2026-09-06."
+      ],
+      "block_reason": null,
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "deepswe-deepseek-reported",
+      "file": "data/benchmarks/deepswe-deepseek-reported.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "vendor-unspecified",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Vendor-reported unspecified condition; harness points at a model card, not an independent primary benchmark identity. Task count/version/metric cannot be independently verified.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "deepswe",
+      "file": "data/benchmarks/deepswe.yaml",
+      "priority_fitted": true,
+      "registry_status": "active",
+      "version": "1",
+      "n_items": 113,
+      "holdout": "public",
+      "obs_type": "count",
+      "public_release_date": null,
+      "source_ids": [
+        "datacurve",
+        "epoch",
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://deepswe.datacurve.ai/",
+      "verification_status": "checked",
+      "primary_urls": [
+        "https://deepswe.datacurve.ai/"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "version",
+        "task_count",
+        "metric_semantics",
+        "private_public_split",
+        "source_lineage",
+        "leakage_contamination",
+        "date",
+        "harness_tools_effort",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Official site confirms 113 tasks and contamination-free claim. Changelog page /changelog was unreachable on 2026-09-06. v1 vs v1.1 remain separate conditions."
+      ],
+      "block_reason": null,
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "frontiercode-1.1-extended-score",
+      "file": "data/benchmarks/frontiercode-1.1-extended-score.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "1.1-extended",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://x.ai/news/grok-4-6",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://x.ai/news/grok-4-6"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "xAI news/model-card condition; not an independent primary benchmark release.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "frontiercode-1.1-main-score",
+      "file": "data/benchmarks/frontiercode-1.1-main-score.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "1.1-main",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://openai.com/index/gpt-6-astra/",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://openai.com/index/gpt-6-astra/"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "OpenAI model-card / launch-page condition without an independently pinned public benchmark split on this audit.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "frontiermath-v2-tier-4",
+      "file": "data/benchmarks/frontiermath-v2-tier-4.yaml",
+      "priority_fitted": true,
+      "registry_status": "active",
+      "version": "v2-tier-4",
+      "n_items": 41,
+      "holdout": "private",
+      "obs_type": "count",
+      "public_release_date": "2026-06-12",
+      "source_ids": [
+        "epoch",
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://epoch.ai/benchmarks/frontiermath-tier-4-v2",
+      "verification_status": "checked",
+      "primary_urls": [
+        "https://epoch.ai/benchmarks/frontiermath-tier-4-v2"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "version",
+        "task_count",
+        "metric_semantics",
+        "private_public_split",
+        "source_lineage",
+        "leakage_contamination",
+        "date",
+        "harness_tools_effort",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Full v2 dataset 338 = 295 T1-3 + 43 T4; 2 T4 public \u21d2 41 private. Matches n_items=41. grader_version 2.0.0 is a registry pin, not a separately published Epoch grader tag on the fetched pages."
+      ],
+      "block_reason": null,
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "frontiermath-v2-tiers-1-3",
+      "file": "data/benchmarks/frontiermath-v2-tiers-1-3.yaml",
+      "priority_fitted": true,
+      "registry_status": "active",
+      "version": "v2-tiers-1-3",
+      "n_items": 285,
+      "holdout": "private",
+      "obs_type": "count",
+      "public_release_date": "2026-06-12",
+      "source_ids": [
+        "epoch",
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://epoch.ai/benchmarks/frontiermath-tiers-1-3-v2",
+      "verification_status": "checked",
+      "primary_urls": [
+        "https://epoch.ai/benchmarks/frontiermath-tiers-1-3-v2"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "version",
+        "task_count",
+        "metric_semantics",
+        "private_public_split",
+        "source_lineage",
+        "leakage_contamination",
+        "date",
+        "harness_tools_effort",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "295 T1-3 with 10 public \u21d2 285 private. Matches n_items=285. OpenAI exclusive access to a subset is an official conflict-of-interest statement, not a leakage proof for all models."
+      ],
+      "block_reason": null,
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "gdp-pdf-google-202609",
+      "file": "data/benchmarks/gdp-pdf-google-202609.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "google-2026-09",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://deepmind.google/models/model-cards/gemini-3-8-flash/",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://deepmind.google/models/model-cards/gemini-3-8-flash/"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Google vendor eval-methodology / model-card condition. Independent primary benchmark task identity and n_items were not established from a first-party benchmark release.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "gdpval",
+      "file": "data/benchmarks/gdpval.yaml",
+      "priority_fitted": true,
+      "registry_status": "active",
+      "version": "openai",
+      "n_items": 1320,
+      "holdout": "private",
+      "obs_type": "count",
+      "public_release_date": "2025-09-25",
+      "source_ids": [
+        "epoch",
+        "openai-evals",
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://openai.com/index/gdpval/",
+      "verification_status": "checked",
+      "primary_urls": [
+        "https://arxiv.org/html/2510.04374"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "version",
+        "task_count",
+        "metric_semantics",
+        "private_public_split",
+        "source_lineage",
+        "leakage_contamination",
+        "date",
+        "harness_tools_effort",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Official metric is blinded expert pairwise win rate, not binomial accuracy; registry obs_type=count and transform=accuracy retained because changing likelihood requires calibration.",
+        "Official split is Gold-220 public vs Full-1320 private; registry n_items=1320 conflates those identities.",
+        "openai.com/index/gdpval and openai.com/index/gdpval-v0 were unreachable on 2026-09-06; counts independently confirmed from arXiv:2510.04374 (1320/220) and contemporaneous 2025-09-25 coverage."
+      ],
+      "block_reason": null,
+      "yaml_fix_applied": true
+    },
+    {
+      "id": "genebench-pro-v13-openai",
+      "file": "data/benchmarks/genebench-pro-v13-openai.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "v13",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://openai.com/index/gpt-6-astra/",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://openai.com/index/gpt-6-astra/"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "OpenAI model-card / launch-page condition without an independently pinned public benchmark split on this audit.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "gpqa-diamond",
+      "file": "data/benchmarks/gpqa-diamond.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "diamond-198",
+      "n_items": 198,
+      "holdout": "public",
+      "obs_type": "count",
+      "public_release_date": "2023-11-20",
+      "source_ids": [
+        "epoch",
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://epoch.ai/data/gpqa",
+      "verification_status": "checked",
+      "primary_urls": [
+        "https://arxiv.org/html/2311.12022"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "version",
+        "task_count",
+        "metric_semantics",
+        "private_public_split",
+        "source_lineage",
+        "leakage_contamination",
+        "date",
+        "harness_tools_effort",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Diamond subset is 198 four-option items; chance_level=0.25 and n_items=198 match. public_release_date 2023-11-20 matches the paper. Watchlist pending exact task-revision/likelihood review is retained."
+      ],
+      "block_reason": null,
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "harvey-legal-agent-vals-all-pass",
+      "file": "data/benchmarks/harvey-legal-agent-vals-all-pass.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "1-held-out-vals-2026-09-04",
+      "n_items": null,
+      "holdout": "private",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vals"
+      ],
+      "harness_url": "https://www.vals.ai/benchmarks/hlab",
+      "verification_status": "checked",
+      "primary_urls": [
+        "https://www.vals.ai/benchmarks/hlab"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "version",
+        "task_count",
+        "metric_semantics",
+        "private_public_split",
+        "source_lineage",
+        "leakage_contamination",
+        "date",
+        "harness_tools_effort",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Vals page confirms held-out set, six file/shell tools, no internet, two-judge all-criteria-pass average, Fable 5 Opus 4.8 fallback. n_items still unpublished. Remains watchlist."
+      ],
+      "block_reason": null,
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "healthbench-professional-length-adjusted-gpt54",
+      "file": "data/benchmarks/healthbench-professional-length-adjusted-gpt54.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "gpt-5.4-length-adjusted-unclipped",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://openai.com/index/gpt-6-astra/",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://openai.com/index/gpt-6-astra/"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "OpenAI model-card / launch-page condition without an independently pinned public benchmark split on this audit.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "healthbench-professional",
+      "file": "data/benchmarks/healthbench-professional.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "2026-length-adjusted",
+      "n_items": 525,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://cdn.openai.com/dd128428-0184-4e25-b155-3a7686c7d744/HealthBench-Professional.pdf",
+      "verification_status": "checked",
+      "primary_urls": [
+        "https://cdn.openai.com/dd128428-0184-4e25-b155-3a7686c7d744/HealthBench-Professional.pdf"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "version",
+        "task_count",
+        "metric_semantics",
+        "private_public_split",
+        "source_lineage",
+        "leakage_contamination",
+        "date",
+        "harness_tools_effort",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Official PDF (HTTP 200, 24 pages, 1,154,664 bytes) confirms 525 final examples from 15,079 candidates; physician-authored rubric scoring; primary reported score is length-adjusted (s_len = s \u2212 2.94e-5(\u2113 \u2212 2000), then mean clipped to [0,1]). n_items=525 and version 2026-length-adjusted match.",
+        "source_ids is only vendor-model-cards; official identity is the OpenAI PDF, not a model card. Watchlist retained pending per-run uncertainty and pinned grader.",
+        "PDF CreationDate 2026-04-22; registry has no public_release_date."
+      ],
+      "block_reason": null,
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "hle-deepseek-no-tools-reported",
+      "file": "data/benchmarks/hle-deepseek-no-tools-reported.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "vendor-unspecified",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Vendor-reported unspecified condition; harness points at a model card, not an independent primary benchmark identity. Task count/version/metric cannot be independently verified.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "hle-deepseek-with-tools-reported",
+      "file": "data/benchmarks/hle-deepseek-with-tools-reported.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "vendor-unspecified",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Vendor-reported unspecified condition; harness points at a model card, not an independent primary benchmark identity. Task count/version/metric cannot be independently verified.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "hle-full-tools-kimi-reported",
+      "file": "data/benchmarks/hle-full-tools-kimi-reported.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "full-vendor-unspecified",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://huggingface.co/moonshotai/Kimi-K3",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://huggingface.co/moonshotai/Kimi-K3"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Vendor-reported unspecified condition; harness points at a model card, not an independent primary benchmark identity. Task count/version/metric cannot be independently verified.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "hle-full-tools-zai-luna-medium",
+      "file": "data/benchmarks/hle-full-tools-zai-luna-medium.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "full-vendor-unspecified",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://huggingface.co/zai-org/GLM-5.3-Flash",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://huggingface.co/zai-org/GLM-5.3-Flash"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Vendor-reported unspecified condition; harness points at a model card, not an independent primary benchmark identity. Task count/version/metric cannot be independently verified.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "hle-no-tools",
+      "file": "data/benchmarks/hle-no-tools.yaml",
+      "priority_fitted": true,
+      "registry_status": "active",
+      "version": "hf-5a81a4c7271a2a2a312b9a690f0c2fde837e4c29",
+      "n_items": 2500,
+      "holdout": "public",
+      "obs_type": "count",
+      "public_release_date": "2025-01-23",
+      "source_ids": [
+        "scale",
+        "epoch",
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://labs.scale.com/leaderboard/humanitys_last_exam",
+      "verification_status": "checked",
+      "primary_urls": [
+        "https://arxiv.org/html/2501.14249",
+        "https://huggingface.co/api/datasets/cais/hle/revision/5a81a4c7271a2a2a312b9a690f0c2fde837e4c29"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "version",
+        "task_count",
+        "metric_semantics",
+        "private_public_split",
+        "source_lineage",
+        "leakage_contamination",
+        "date",
+        "harness_tools_effort",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Paper and HF pin confirm 2,500 public questions; paper also maintains a private held-out set that is not this registry condition.",
+        "chance_level=0 is a schema convention; mixed multiple-choice and short-answer needs item-type-aware chance correction (already noted in YAML)."
+      ],
+      "block_reason": null,
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "hle-qwen-gpt4o-reported",
+      "file": "data/benchmarks/hle-qwen-gpt4o-reported.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "vendor-unspecified",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://huggingface.co/Qwen/Qwen3.8-27B"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Vendor-reported unspecified condition; harness points at a model card, not an independent primary benchmark identity. Task count/version/metric cannot be independently verified.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "hle-qwen-max-reported",
+      "file": "data/benchmarks/hle-qwen-max-reported.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "vendor-unspecified",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Vendor-reported unspecified condition; harness points at a model card, not an independent primary benchmark identity. Task count/version/metric cannot be independently verified.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "hle-tools-anthropic-reported",
+      "file": "data/benchmarks/hle-tools-anthropic-reported.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "vendor-unspecified",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://www.anthropic.com/claude-fable-and-mythos-5-1",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://www.anthropic.com/claude-fable-and-mythos-5-1"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Vendor-reported unspecified condition; harness points at a model card, not an independent primary benchmark identity. Task count/version/metric cannot be independently verified.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "hle-tools-openai-reported",
+      "file": "data/benchmarks/hle-tools-openai-reported.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "vendor-unspecified",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://openai.com/index/gpt-6-astra/",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://openai.com/index/gpt-6-astra/"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Vendor-reported unspecified condition; harness points at a model card, not an independent primary benchmark identity. Task count/version/metric cannot be independently verified.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "hle-tools-qwen-max-reported",
+      "file": "data/benchmarks/hle-tools-qwen-max-reported.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "vendor-unspecified",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Vendor-reported unspecified condition; harness points at a model card, not an independent primary benchmark identity. Task count/version/metric cannot be independently verified.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "hle-verified-1811-google-202609",
+      "file": "data/benchmarks/hle-verified-1811-google-202609.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "verified-1811-2026-09",
+      "n_items": 1811,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://deepmind.google/models/model-cards/gemini-3-8-flash/",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://deepmind.google/models/model-cards/gemini-3-8-flash/"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Google vendor eval-methodology / model-card condition. Independent primary benchmark task identity and n_items were not established from a first-party benchmark release.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "ifbench-qwen-reported",
+      "file": "data/benchmarks/ifbench-qwen-reported.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "vendor-unspecified",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://huggingface.co/Qwen/Qwen3.8-27B"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Vendor-reported unspecified condition; harness points at a model card, not an independent primary benchmark identity. Task count/version/metric cannot be independently verified.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "jobbench-rubric-2026",
+      "file": "data/benchmarks/jobbench-rubric-2026.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "2026-public-65",
+      "n_items": 65,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://research.meta.ai/blog/introducing-muse-spark-1-3",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://research.meta.ai/blog/introducing-muse-spark-1-3"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Meta model-card blog condition; not used as independent primary identity for this audit except where a native benchmark URL was separately fetched.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "labbench2-macro11-google-202609",
+      "file": "data/benchmarks/labbench2-macro11-google-202609.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "google-2026-09",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://deepmind.google/models/evals-methodology/gemini-3-8-flash/",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://deepmind.google/models/evals-methodology/gemini-3-8-flash/"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Google vendor eval-methodology / model-card condition. Independent primary benchmark task identity and n_items were not established from a first-party benchmark release.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "lifescibench-gold-v1-openai",
+      "file": "data/benchmarks/lifescibench-gold-v1-openai.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "gold-v1",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://openai.com/index/gpt-6-astra/",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://openai.com/index/gpt-6-astra/"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "OpenAI model-card / launch-page condition without an independently pinned public benchmark split on this audit.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "livebench-2026",
+      "file": "data/benchmarks/livebench-2026.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "2026-06-25",
+      "n_items": null,
+      "holdout": "rolling",
+      "obs_type": "judge",
+      "public_release_date": "2026-06-25",
+      "source_ids": [
+        "livebench"
+      ],
+      "harness_url": "https://livebench.ai/",
+      "verification_status": "checked",
+      "primary_urls": [
+        "https://livebench.ai/table_2026_06_25.csv"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "version",
+        "task_count",
+        "metric_semantics",
+        "private_public_split",
+        "source_lineage",
+        "leakage_contamination",
+        "date",
+        "harness_tools_effort",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Release artifact table_2026_06_25.csv exists and matches version 2026-06-25. Overall score is a heterogeneous equal-category composite; n_items null is correct. Remains watchlist/observed-only."
+      ],
+      "block_reason": null,
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "livecodebench-v6-pro",
+      "file": "data/benchmarks/livecodebench-v6-pro.yaml",
+      "priority_fitted": false,
+      "registry_status": "retired",
+      "version": "release_v6",
+      "n_items": 1055,
+      "holdout": "public",
+      "obs_type": "count",
+      "public_release_date": "2025-06-05",
+      "source_ids": [
+        "kaggle",
+        "livecodebench",
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://livecodebench.github.io/",
+      "verification_status": "checked",
+      "primary_urls": [
+        "https://livecodebench.github.io/",
+        "https://github.com/LiveCodeBench/LiveCodeBench/blob/main/README.md"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "version",
+        "task_count",
+        "metric_semantics",
+        "private_public_split",
+        "source_lineage",
+        "leakage_contamination",
+        "date",
+        "harness_tools_effort",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Listed homepage (HTTP 200) is stale: it still describes 'over three hundred' problems from May 2023\u2013February 2024 and does not name release_v6.",
+        "Official GitHub README (HTTP 200) documents release_v6 as May 2023\u2013Apr 2025 containing 1055 problems; default generation n=10 matches registry default_k=10. Hugging Face code_generation_lite changelog still ends at release_v5 (880). Kaggle V6 page returned title-only SPA.",
+        "Retired until an immutable harness commit is pinned. public_release_date 2025-06-05 was not independently confirmed on the homepage."
+      ],
+      "block_reason": null,
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "lmarena-text-style-controlled",
+      "file": "data/benchmarks/lmarena-text-style-controlled.yaml",
+      "priority_fitted": true,
+      "registry_status": "active",
+      "version": "rolling",
+      "n_items": null,
+      "holdout": "rolling",
+      "obs_type": "elo",
+      "public_release_date": "2024-08-29",
+      "source_ids": [
+        "lmarena"
+      ],
+      "harness_url": "https://lmarena.ai/leaderboard/text",
+      "verification_status": "checked",
+      "primary_urls": [
+        "https://arena.ai/blog/style-control"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "version",
+        "task_count",
+        "metric_semantics",
+        "private_public_split",
+        "source_lineage",
+        "leakage_contamination",
+        "date",
+        "harness_tools_effort",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Style-control blog published 2024-08-29 matches public_release_date. 1400/173.7178 Elo transform is an internal ACI anchor, not an official LMArena published scale.",
+        "Rolling leaderboard; exact FastChat commit still unpinned on the condition."
+      ],
+      "block_reason": null,
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "lvbench-agentic-google-202609",
+      "file": "data/benchmarks/lvbench-agentic-google-202609.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "google-2026-09",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://deepmind.google/models/evals-methodology/gemini-3-8-flash/",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://deepmind.google/models/evals-methodology/gemini-3-8-flash/"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Google vendor eval-methodology / model-card condition. Independent primary benchmark task identity and n_items were not established from a first-party benchmark release.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "lvbench-static-google-202609",
+      "file": "data/benchmarks/lvbench-static-google-202609.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "google-2026-09",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://deepmind.google/models/evals-methodology/gemini-3-8-flash/",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://deepmind.google/models/evals-methodology/gemini-3-8-flash/"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Google vendor eval-methodology / model-card condition. Independent primary benchmark task identity and n_items were not established from a first-party benchmark release.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "matharena-composite",
+      "file": "data/benchmarks/matharena-composite.yaml",
+      "priority_fitted": true,
+      "registry_status": "active",
+      "version": "rolling-expected-performance",
+      "n_items": null,
+      "holdout": "rolling",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "matharena"
+      ],
+      "harness_url": "https://matharena.ai/",
+      "verification_status": "checked",
+      "primary_urls": [
+        "https://matharena.ai/"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "version",
+        "task_count",
+        "metric_semantics",
+        "private_public_split",
+        "source_lineage",
+        "leakage_contamination",
+        "date",
+        "harness_tools_effort",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Live site on 2026-09-06 marks Final-Answer Comps (including AIME), Visual Math, Proof-Based Comps, and Project Euler as Deprecated; fitted protocol is the frozen 2026-09-05 expected-performance capture, not today's live mix.",
+        "Metric is IRT expected performance with parametric-bootstrap interval, not a pooled binary count (n_items null is correct)."
+      ],
+      "block_reason": null,
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "mcp-atlas-kimi-k27-reported",
+      "file": "data/benchmarks/mcp-atlas-kimi-k27-reported.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "vendor-unspecified",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://huggingface.co/moonshotai/Kimi-K2.7-Code",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://huggingface.co/moonshotai/Kimi-K2.7-Code"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Vendor-reported unspecified condition; harness points at a model card, not an independent primary benchmark identity. Task count/version/metric cannot be independently verified.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "mcp-atlas-public-500-kimi",
+      "file": "data/benchmarks/mcp-atlas-public-500-kimi.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "public-500",
+      "n_items": 500,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://huggingface.co/moonshotai/Kimi-K3",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://huggingface.co/moonshotai/Kimi-K3"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Only source_ids is vendor-model-cards and harness_url is a model card. Independent primary-source verification of version/task count/metric is blocked.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "mcpmark-verified-kimi-reported",
+      "file": "data/benchmarks/mcpmark-verified-kimi-reported.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "verified-unspecified",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://huggingface.co/moonshotai/Kimi-K3",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://huggingface.co/moonshotai/Kimi-K3"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Vendor-reported unspecified condition; harness points at a model card, not an independent primary benchmark identity. Task count/version/metric cannot be independently verified.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "mcpmark",
+      "file": "data/benchmarks/mcpmark.yaml",
+      "priority_fitted": true,
+      "registry_status": "active",
+      "version": "1.2.0",
+      "n_items": 127,
+      "holdout": "public",
+      "obs_type": "count",
+      "public_release_date": "2025-09-20",
+      "source_ids": [
+        "mcpmark",
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://mcpmark.ai/",
+      "verification_status": "checked",
+      "primary_urls": [
+        "https://mcpmark.ai/",
+        "https://github.com/eval-sys/mcpmark/releases/tag/v1.2.0",
+        "https://arxiv.org/abs/2509.24002",
+        "https://raw.githubusercontent.com/eval-sys/mcpmark/v1.2.0/README.md"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "version",
+        "task_count",
+        "metric_semantics",
+        "private_public_split",
+        "source_lineage",
+        "leakage_contamination",
+        "date",
+        "harness_tools_effort",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Live site now labels the 127-task set as MCPMark Verified; paper arXiv:2509.24002 and v1.2.0 also state 127 tasks. Registry version 1.2.0 / n_items 127 remains consistent. Separate watchlist mcpmark-verified-kimi-reported is not this condition."
+      ],
+      "block_reason": null,
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "metr-time-horizon-1.1",
+      "file": "data/benchmarks/metr-time-horizon-1.1.yaml",
+      "priority_fitted": true,
+      "registry_status": "active",
+      "version": "1.1",
+      "n_items": null,
+      "holdout": "rolling",
+      "obs_type": "horizon",
+      "public_release_date": "2026-01-29",
+      "source_ids": [
+        "metr"
+      ],
+      "harness_url": "https://metr.org/time-horizons/",
+      "verification_status": "checked",
+      "primary_urls": [
+        "https://metr.org/blog/2026-1-29-time-horizon-1-1/"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "version",
+        "task_count",
+        "metric_semantics",
+        "private_public_split",
+        "source_lineage",
+        "leakage_contamination",
+        "date",
+        "harness_tools_effort",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Official TH1.1 suite is 228 tasks (from 170); n_items remains null because obs_type is horizon."
+      ],
+      "block_reason": null,
+      "yaml_fix_applied": true
+    },
+    {
+      "id": "minebench-spatial-bt",
+      "file": "data/benchmarks/minebench-spatial-bt.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "public-arena-2026-09-05",
+      "n_items": null,
+      "holdout": "rolling",
+      "obs_type": "elo",
+      "public_release_date": null,
+      "source_ids": [
+        "minebench"
+      ],
+      "harness_url": "https://minebench.ai/leaderboard",
+      "verification_status": "checked",
+      "primary_urls": [
+        "https://minebench.ai/leaderboard",
+        "https://minebench.ai/faq"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "version",
+        "task_count",
+        "metric_semantics",
+        "private_public_split",
+        "source_lineage",
+        "leakage_contamination",
+        "date",
+        "harness_tools_effort",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Leaderboard URL (HTTP 200) is a JS SPA that rendered only 'Loading leaderboard'; ratings/cohort were not recoverable from HTML.",
+        "FAQ (HTTP 200) confirms blind pairwise votes aggregated into a Bradley-Terry-style arena rating, not accuracy; one accepted generation per model-prompt; prompts can be added. n_items null is correct.",
+        "Version public-arena-2026-09-05 was not independently dated on the FAQ. Watchlist retained."
+      ],
+      "block_reason": null,
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "mls-bench-lite-kimi-reported",
+      "file": "data/benchmarks/mls-bench-lite-kimi-reported.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "vendor-unspecified",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://huggingface.co/moonshotai/Kimi-K3",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://huggingface.co/moonshotai/Kimi-K3"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Vendor-reported unspecified condition; harness points at a model card, not an independent primary benchmark identity. Task count/version/metric cannot be independently verified.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "mrcr-v2-1m-8-needle",
+      "file": "data/benchmarks/mrcr-v2-1m-8-needle.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "v2-1m-8",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": "2025-12-05",
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://huggingface.co/datasets/openai/mrcr",
+      "verification_status": "checked",
+      "primary_urls": [
+        "https://huggingface.co/datasets/openai/mrcr"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "version",
+        "task_count",
+        "metric_semantics",
+        "private_public_split",
+        "source_lineage",
+        "leakage_contamination",
+        "date",
+        "harness_tools_effort",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Official metric is SequenceMatcher ratio, not binary accuracy. Changelog 2025-12-05 matches public_release_date. 100 samples per bin; n_items null is conservative. Remains watchlist."
+      ],
+      "block_reason": null,
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "mrcr-v2-256k-qwen-sequence-match",
+      "file": "data/benchmarks/mrcr-v2-256k-qwen-sequence-match.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "v2-256k-8needle",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Only source_ids is vendor-model-cards and harness_url is a model card. Independent primary-source verification of version/task count/metric is blocked.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "mrcr-v2-8needle-256k-512k-sequence-match",
+      "file": "data/benchmarks/mrcr-v2-8needle-256k-512k-sequence-match.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "openai-v2-256k-512k",
+      "n_items": 100,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://research.meta.ai/blog/introducing-muse-spark-1-3",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://research.meta.ai/blog/introducing-muse-spark-1-3"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Meta model-card blog condition; not used as independent primary identity for this audit except where a native benchmark URL was separately fetched.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "mrcr-v2-8needle-512k-1m-sequence-match",
+      "file": "data/benchmarks/mrcr-v2-8needle-512k-1m-sequence-match.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "openai-v2-512k-1m",
+      "n_items": 100,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://research.meta.ai/blog/introducing-muse-spark-1-3",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://research.meta.ai/blog/introducing-muse-spark-1-3"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Meta model-card blog condition; not used as independent primary identity for this audit except where a native benchmark URL was separately fetched.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "nl2repo-deepseek-reported",
+      "file": "data/benchmarks/nl2repo-deepseek-reported.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "vendor-unspecified",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Vendor-reported unspecified condition; harness points at a model card, not an independent primary benchmark identity. Task count/version/metric cannot be independently verified.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "osworld-2.0-2026.06.24-full",
+      "file": "data/benchmarks/osworld-2.0-2026.06.24-full.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "osworld-v2-2026.06.24",
+      "n_items": 108,
+      "holdout": "semi_private",
+      "obs_type": "judge",
+      "public_release_date": "2026-06-26",
+      "source_ids": [
+        "osworld"
+      ],
+      "harness_url": "https://osworld-v2.xlang.ai/",
+      "verification_status": "checked",
+      "primary_urls": [
+        "https://osworld-v2.xlang.ai/",
+        "https://osworld-v2.xlang.ai/static/data/leaderboard/official-results.json"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "version",
+        "task_count",
+        "metric_semantics",
+        "private_public_split",
+        "source_lineage",
+        "leakage_contamination",
+        "date",
+        "harness_tools_effort",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Homepage (HTTP 200) confirms 108 long-horizon tasks and binary vs partial metrics. official-results.json (HTTP 200) lists releaseVersions v2026.06.24 and v2026.08.08, datasetSize 108, defaultResultReleaseVersion v2026.06.24, defaultResultDatasetScope full, defaultMetric binaryAccuracy.",
+        "public_release_date 2026-06-26 was not on the homepage (paper arXiv:2606.29537 is June 2026). Nominal 108 does not establish per-run denominators. Watchlist retained."
+      ],
+      "block_reason": null,
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "osworld-2.0-2026.08.08-offline",
+      "file": "data/benchmarks/osworld-2.0-2026.08.08-offline.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "osworld-v2-2026.08.08",
+      "n_items": null,
+      "holdout": "semi_private",
+      "obs_type": "judge",
+      "public_release_date": "2026-06-26",
+      "source_ids": [
+        "osworld"
+      ],
+      "harness_url": "https://osworld-v2.xlang.ai/",
+      "verification_status": "checked",
+      "primary_urls": [
+        "https://osworld-v2.xlang.ai/",
+        "https://osworld-v2.xlang.ai/static/data/leaderboard/official-results.json",
+        "https://github.com/xlang-ai/OSWorld-V2/releases/tag/v2026.08.08"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "version",
+        "task_count",
+        "metric_semantics",
+        "private_public_split",
+        "source_lineage",
+        "leakage_contamination",
+        "date",
+        "harness_tools_effort",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "GitHub tag v2026.08.08 (HTTP 200) exists and documents upgrade from v2026.06.24 plus 14+31 task robustness edits. official-results.json includes datasetScope=offline rows on v2026.08.08. n_items null is correct: offline suite size is not datasetSize 108.",
+        "YAML notes cite 82 nominal offline tasks; that count was not independently recovered from the homepage or official-results.json. Use binaryAccuracy only. Watchlist retained."
+      ],
+      "block_reason": null,
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "osworld-2.0",
+      "file": "data/benchmarks/osworld-2.0.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "osworld-v2-2026.08.08",
+      "n_items": 108,
+      "holdout": "semi_private",
+      "obs_type": "judge",
+      "public_release_date": "2026-06-26",
+      "source_ids": [
+        "osworld",
+        "epoch",
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://osworld-v2.xlang.ai/",
+      "verification_status": "checked",
+      "primary_urls": [
+        "https://osworld-v2.xlang.ai/"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "version",
+        "task_count",
+        "metric_semantics",
+        "private_public_split",
+        "source_lineage",
+        "leakage_contamination",
+        "date",
+        "harness_tools_effort",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Official site confirms 108 long-horizon tasks and binary vs partial metrics. Registry version is osworld-v2-2026.08.08; public_release_date 2026-06-26 was not independently confirmed on the fetched homepage (paper arXiv:2606.29537 is June 2026).",
+        "Holdout labeled semi_private; official assets are gated. Binary completion vs partial reward must stay separate (already noted)."
+      ],
+      "block_reason": null,
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "osworld-v2-20260624-binary",
+      "file": "data/benchmarks/osworld-v2-20260624-binary.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "2026.06.24",
+      "n_items": 108,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://research.meta.ai/blog/introducing-muse-spark-1-3",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://research.meta.ai/blog/introducing-muse-spark-1-3"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Meta model-card blog condition; not used as independent primary identity for this audit except where a native benchmark URL was separately fetched.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "osworld-v2-20260624-partial",
+      "file": "data/benchmarks/osworld-v2-20260624-partial.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "2026.06.24",
+      "n_items": 108,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://research.meta.ai/blog/introducing-muse-spark-1-3",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://research.meta.ai/blog/introducing-muse-spark-1-3"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Meta model-card blog condition; not used as independent primary identity for this audit except where a native benchmark URL was separately fetched.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "osworld-v2-20260808-binary",
+      "file": "data/benchmarks/osworld-v2-20260808-binary.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "2026.08.08",
+      "n_items": 108,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://research.meta.ai/blog/introducing-muse-spark-1-3",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://research.meta.ai/blog/introducing-muse-spark-1-3"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Meta model-card blog condition; not used as independent primary identity for this audit except where a native benchmark URL was separately fetched.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "osworld-v2-20260808-offline-partial",
+      "file": "data/benchmarks/osworld-v2-20260808-offline-partial.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "2026.08.08-offline",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://openai.com/index/gpt-6-astra/",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://openai.com/index/gpt-6-astra/"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "OpenAI model-card / launch-page condition without an independently pinned public benchmark split on this audit.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "osworld-v2-20260808-partial",
+      "file": "data/benchmarks/osworld-v2-20260808-partial.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "2026.08.08",
+      "n_items": 108,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://research.meta.ai/blog/introducing-muse-spark-1-3",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://research.meta.ai/blog/introducing-muse-spark-1-3"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Meta model-card blog condition; not used as independent primary identity for this audit except where a native benchmark URL was separately fetched.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "osworld-v2-anthropic-202608-partial",
+      "file": "data/benchmarks/osworld-v2-anthropic-202608-partial.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "anthropic-2026-08-modified",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://www.anthropic.com/claude-fable-and-mythos-5-1",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://www.anthropic.com/claude-fable-and-mythos-5-1"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Anthropic model-card condition; not an independent primary benchmark release.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "osworld-v2-anthropic-202608-strict",
+      "file": "data/benchmarks/osworld-v2-anthropic-202608-strict.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "anthropic-2026-08-modified",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://www.anthropic.com/claude-fable-and-mythos-5-1",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://www.anthropic.com/claude-fable-and-mythos-5-1"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Anthropic model-card condition; not an independent primary benchmark release.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "osworld-v2-google-pre0808-partial-max3",
+      "file": "data/benchmarks/osworld-v2-google-pre0808-partial-max3.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "pre-2026.08.08",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://deepmind.google/models/model-cards/gemini-3-8-flash/",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://deepmind.google/models/model-cards/gemini-3-8-flash/"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Google vendor eval-methodology / model-card condition. Independent primary benchmark task identity and n_items were not established from a first-party benchmark release.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "osworld-v2-qwen-binary-reported",
+      "file": "data/benchmarks/osworld-v2-qwen-binary-reported.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "vendor-unspecified",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://huggingface.co/Qwen/Qwen3.8-27B"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Vendor-reported unspecified condition; harness points at a model card, not an independent primary benchmark identity. Task count/version/metric cannot be independently verified.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "osworld-v2-qwen-partial-reported",
+      "file": "data/benchmarks/osworld-v2-qwen-partial-reported.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "vendor-unspecified",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://huggingface.co/Qwen/Qwen3.8-27B"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Vendor-reported unspecified condition; harness points at a model card, not an independent primary benchmark identity. Task count/version/metric cannot be independently verified.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "programbench-kimi-reported",
+      "file": "data/benchmarks/programbench-kimi-reported.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "vendor-unspecified",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://huggingface.co/moonshotai/Kimi-K3",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://huggingface.co/moonshotai/Kimi-K3"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Vendor-reported unspecified condition; harness points at a model card, not an independent primary benchmark identity. Task count/version/metric cannot be independently verified.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "scicode-verified-v2-main-with-background",
+      "file": "data/benchmarks/scicode-verified-v2-main-with-background.yaml",
+      "priority_fitted": true,
+      "registry_status": "active",
+      "version": "verified-v2-with-bg-main",
+      "n_items": 64,
+      "holdout": "public",
+      "obs_type": "count",
+      "public_release_date": null,
+      "source_ids": [
+        "scicode-verified"
+      ],
+      "harness_url": "https://github.com/flyingwagner/scicode-verified",
+      "verification_status": "checked",
+      "primary_urls": [
+        "https://github.com/flyingwagner/scicode-verified"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "version",
+        "task_count",
+        "metric_semantics",
+        "private_public_split",
+        "source_lineage",
+        "leakage_contamination",
+        "date",
+        "harness_tools_effort",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Official README confirms 64 main problems / 287 scored subproblems, with-background, two-environment OR, pass@1. Pinned grader commit ddab4a92... was not independently re-fetched (GitHub commit URL failed); pin retained."
+      ],
+      "block_reason": null,
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "scicode-verified",
+      "file": "data/benchmarks/scicode-verified.yaml",
+      "priority_fitted": false,
+      "registry_status": "retired",
+      "version": "verified",
+      "n_items": 338,
+      "holdout": "public",
+      "obs_type": "count",
+      "public_release_date": null,
+      "source_ids": [
+        "kaggle",
+        "epoch",
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://scicode-bench.github.io/",
+      "verification_status": "checked",
+      "primary_urls": [
+        "https://scicode-bench.github.io/",
+        "https://github.com/flyingwagner/scicode-verified"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "version",
+        "task_count",
+        "metric_semantics",
+        "private_public_split",
+        "source_lineage",
+        "leakage_contamination",
+        "date",
+        "harness_tools_effort",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Primary URL (HTTP 200) is original SciCode: 80 main problems / 338 subproblems. Registry n_items=338 matches that original decomposition, not SciCode-Verified v2 (64 whole / 287 subproblems) already checked under scicode-verified-v2-main-with-background.",
+        "flyingwagner/scicode-verified repo is reachable (HTTP 200). Retired unspecified 338-count condition is correctly not an alias of the verified v2 pin."
+      ],
+      "block_reason": null,
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "simpleqa-verified-epoch-anti-abstention-v1-0-0",
+      "file": "data/benchmarks/simpleqa-verified-epoch-anti-abstention-v1-0-0.yaml",
+      "priority_fitted": true,
+      "registry_status": "active",
+      "version": "epoch-anti-abstention-1.0.0",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": "2025-09-09",
+      "source_ids": [
+        "epoch"
+      ],
+      "harness_url": "https://epoch.ai/benchmarks/simple-qa-verified",
+      "verification_status": "checked",
+      "primary_urls": [
+        "https://epoch.ai/benchmarks/simple-qa-verified"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "version",
+        "task_count",
+        "metric_semantics",
+        "private_public_split",
+        "source_lineage",
+        "leakage_contamination",
+        "date",
+        "harness_tools_effort",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Official suite is 1,000 questions; n_items remains null because some native Epoch runs are partial (do not invent 1,000 evaluated items).",
+        "Epoch reports simple accuracy with anti-abstention prompt; this is not Google/Kaggle F1.",
+        "Qwen3-Max-Instruct contamination is suspected by Epoch on this dataset.",
+        "Changelog 2026-08-27 documents the anti-abstention prompt change; keep 1.0.0 and 1.2.0 separate."
+      ],
+      "block_reason": null,
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "simpleqa-verified-epoch-anti-abstention-v1-2-0",
+      "file": "data/benchmarks/simpleqa-verified-epoch-anti-abstention-v1-2-0.yaml",
+      "priority_fitted": true,
+      "registry_status": "active",
+      "version": "epoch-anti-abstention-1.2.0",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": "2025-09-09",
+      "source_ids": [
+        "epoch"
+      ],
+      "harness_url": "https://epoch.ai/benchmarks/simple-qa-verified",
+      "verification_status": "checked",
+      "primary_urls": [
+        "https://epoch.ai/benchmarks/simple-qa-verified"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "version",
+        "task_count",
+        "metric_semantics",
+        "private_public_split",
+        "source_lineage",
+        "leakage_contamination",
+        "date",
+        "harness_tools_effort",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Official suite is 1,000 questions; n_items remains null because some native Epoch runs are partial.",
+        "Epoch reports simple accuracy with anti-abstention prompt; this is not Google/Kaggle F1.",
+        "Qwen3-Max-Instruct contamination is suspected by Epoch on this dataset."
+      ],
+      "block_reason": null,
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "simpleqa-verified",
+      "file": "data/benchmarks/simpleqa-verified.yaml",
+      "priority_fitted": false,
+      "registry_status": "retired",
+      "version": "paper-v2",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": "2025-09-09",
+      "source_ids": [
+        "kaggle",
+        "epoch",
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://www.kaggle.com/benchmarks/deepmind/simpleqa-verified",
+      "verification_status": "checked",
+      "primary_urls": [
+        "https://www.kaggle.com/benchmarks/deepmind/simpleqa-verified",
+        "https://arxiv.org/html/2509.07968"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "version",
+        "task_count",
+        "metric_semantics",
+        "private_public_split",
+        "source_lineage",
+        "leakage_contamination",
+        "date",
+        "harness_tools_effort",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Kaggle primary URL (HTTP 200) returned a title-only SPA ('SimpleQA Verified Leaderboard'); version/task count/metric were not identifiable from that HTML.",
+        "arXiv:2509.07968v2 (HTTP 200) independently confirms a 1,000-prompt suite and F1 (harmonic mean of overall correct and correct-given-attempted). Google/Kaggle F1 is not Epoch accuracy; retired unspecified condition must stay split from epoch-anti-abstention 1.0.0/1.2.0.",
+        "n_items remains null on this retired row (do not invent 1,000 evaluated items)."
+      ],
+      "block_reason": null,
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "swe-atlas-codebase-qna-public",
+      "file": "data/benchmarks/swe-atlas-codebase-qna-public.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "public-qna-124",
+      "n_items": 124,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://research.meta.ai/blog/introducing-muse-spark-1-3",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://research.meta.ai/blog/introducing-muse-spark-1-3"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Meta model-card blog condition; not used as independent primary identity for this audit except where a native benchmark URL was separately fetched.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "swe-bench-pro-public",
+      "file": "data/benchmarks/swe-bench-pro-public.yaml",
+      "priority_fitted": false,
+      "registry_status": "retired",
+      "version": "public-731",
+      "n_items": 731,
+      "holdout": "public",
+      "obs_type": "count",
+      "public_release_date": "2025-09-25",
+      "source_ids": [
+        "scale",
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://labs.scale.com/leaderboard/swe_bench_pro_public",
+      "verification_status": "checked",
+      "primary_urls": [
+        "https://labs.scale.com/leaderboard/swe_bench_pro_public",
+        "https://arxiv.org/html/2509.16941"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "version",
+        "task_count",
+        "metric_semantics",
+        "private_public_split",
+        "source_lineage",
+        "leakage_contamination",
+        "date",
+        "harness_tools_effort",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Scale public leaderboard (HTTP 200) and arXiv:2509.16941v2 confirm public set N=731 of 1,865 total (731 public / 276 commercial / 858 held-out). Primary metric is resolve rate (fail-to-pass and no pass-to-pass regressions). n_items=731 and public-731 match.",
+        "public_release_date 2025-09-25 is consistent with the September 2025 paper window. Retired status retained; grader_version pin was not re-validated beyond the listed GitHub commit URL existing as metadata."
+      ],
+      "block_reason": null,
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "swe-rebench",
+      "file": "data/benchmarks/swe-rebench.yaml",
+      "priority_fitted": true,
+      "registry_status": "active",
+      "version": "window-2026-05-15-2026-07-01",
+      "n_items": 111,
+      "holdout": "rolling",
+      "obs_type": "count",
+      "public_release_date": "2025-05-28",
+      "source_ids": [
+        "swe-rebench"
+      ],
+      "harness_url": "https://swe-rebench.com/",
+      "verification_status": "checked",
+      "primary_urls": [
+        "https://swe-rebench.com/leaderboard"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "version",
+        "task_count",
+        "metric_semantics",
+        "private_public_split",
+        "source_lineage",
+        "leakage_contamination",
+        "date",
+        "harness_tools_effort",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Live leaderboard confirms 111 problems in window 15/05/2026\u201301/07/2026. Source flags potential contamination per model; that is a per-row flag, not a benchmark-level holdout change."
+      ],
+      "block_reason": null,
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "tau3-bench-banking",
+      "file": "data/benchmarks/tau3-bench-banking.yaml",
+      "priority_fitted": true,
+      "registry_status": "active",
+      "version": "tau3",
+      "n_items": 97,
+      "holdout": "public",
+      "obs_type": "count",
+      "public_release_date": null,
+      "source_ids": [
+        "taubench",
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://taubench.com/",
+      "verification_status": "checked",
+      "primary_urls": [
+        "https://taubench.com/",
+        "https://github.com/sierra-research/tau2-bench/releases/tag/v1.0.0",
+        "https://arxiv.org/abs/2603.04370"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "version",
+        "task_count",
+        "metric_semantics",
+        "private_public_split",
+        "source_lineage",
+        "leakage_contamination",
+        "date",
+        "harness_tools_effort",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Official banking_knowledge domain is 97 tasks (confirmed). Current public leaderboard headline is Pass^1; registry default_k=4 retains the series pass^k convention.",
+        "Benchmark remains mutable with documented task fixes; commit/retrieval/evaluator pins still missing."
+      ],
+      "block_reason": null,
+      "yaml_fix_applied": true
+    },
+    {
+      "id": "terminal-bench-2.1",
+      "file": "data/benchmarks/terminal-bench-2.1.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "2.1",
+      "n_items": 89,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://research.meta.ai/blog/introducing-muse-spark-1-3",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://research.meta.ai/blog/introducing-muse-spark-1-3"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Meta model-card blog condition; not used as independent primary identity for this audit except where a native benchmark URL was separately fetched.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "terminal-bench-3.0-avg3",
+      "file": "data/benchmarks/terminal-bench-3.0-avg3.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "3.0",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://huggingface.co/zai-org/GLM-5.3",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://huggingface.co/zai-org/GLM-5.3"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Only source_ids is vendor-model-cards and harness_url is a model card. Independent primary-source verification of version/task count/metric is blocked.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "terminal-bench-3.0",
+      "file": "data/benchmarks/terminal-bench-3.0.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "3.0",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://x.ai/news/grok-4-6",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://x.ai/news/grok-4-6"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "xAI news/model-card condition; not an independent primary benchmark release.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "terminal-bench-4.0",
+      "file": "data/benchmarks/terminal-bench-4.0.yaml",
+      "priority_fitted": true,
+      "registry_status": "active",
+      "version": "4.0.0",
+      "n_items": 66,
+      "holdout": "public",
+      "obs_type": "count",
+      "public_release_date": "2026-08-26",
+      "source_ids": [
+        "tbench",
+        "snorkel",
+        "epoch",
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://www.tbench.ai/",
+      "verification_status": "checked",
+      "primary_urls": [
+        "https://www.tbench.ai/news/terminal-bench-4-0",
+        "https://github.com/harbor-framework/terminal-bench/releases/tag/v4.0.0",
+        "https://api.github.com/repos/harbor-framework/terminal-bench/contents/tasks?ref=v4.0.0"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "version",
+        "task_count",
+        "metric_semantics",
+        "private_public_split",
+        "source_lineage",
+        "leakage_contamination",
+        "date",
+        "harness_tools_effort",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "GitHub v4.0.0 task tree has exactly 66 task directories. Matches n_items=66. Released 2026-08-26; 8 tasks removed from 3.0."
+      ],
+      "block_reason": null,
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "terminal-bench-science-0.1-openai-reported",
+      "file": "data/benchmarks/terminal-bench-science-0.1-openai-reported.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "0.1",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://openai.com/index/gpt-6-astra/",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://openai.com/index/gpt-6-astra/"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "OpenAI model-card / launch-page condition without an independently pinned public benchmark split on this audit.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "terminal-bench-science-0.1",
+      "file": "data/benchmarks/terminal-bench-science-0.1.yaml",
+      "priority_fitted": false,
+      "registry_status": "shadow",
+      "version": "0.1",
+      "n_items": 70,
+      "holdout": "public",
+      "obs_type": "count",
+      "public_release_date": null,
+      "source_ids": [
+        "terminal-bench-science"
+      ],
+      "harness_url": "https://www.terminal-bench-science.ai/announcement",
+      "verification_status": "checked",
+      "primary_urls": [
+        "https://github.com/harbor-framework/terminal-bench-science/blob/main/README.md"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "version",
+        "task_count",
+        "metric_semantics",
+        "private_public_split",
+        "source_lineage",
+        "leakage_contamination",
+        "date",
+        "harness_tools_effort",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Official README states 70 expert-curated tasks. Matches n_items=70. Remains shadow/outside common-harness fitting per methodology."
+      ],
+      "block_reason": null,
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "toolathlon-verified-deepseek-reported",
+      "file": "data/benchmarks/toolathlon-verified-deepseek-reported.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "verified-unspecified",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Vendor-reported unspecified condition; harness points at a model card, not an independent primary benchmark identity. Task count/version/metric cannot be independently verified.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "toolathlon-verified-kimi-reported",
+      "file": "data/benchmarks/toolathlon-verified-kimi-reported.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "verified-unspecified",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://huggingface.co/moonshotai/Kimi-K3",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://huggingface.co/moonshotai/Kimi-K3"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Vendor-reported unspecified condition; harness points at a model card, not an independent primary benchmark identity. Task count/version/metric cannot be independently verified.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "toolathlon-verified-qwen-reported",
+      "file": "data/benchmarks/toolathlon-verified-qwen-reported.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "verified-unspecified",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://huggingface.co/Qwen/Qwen3.8-27B"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Vendor-reported unspecified condition; harness points at a model card, not an independent primary benchmark identity. Task count/version/metric cannot be independently verified.",
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "vals-finance-agent-v2-partial",
+      "file": "data/benchmarks/vals-finance-agent-v2-partial.yaml",
+      "priority_fitted": true,
+      "registry_status": "active",
+      "version": "2-private-test-450",
+      "n_items": 450,
+      "holdout": "private",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vals"
+      ],
+      "harness_url": "https://github.com/vals-ai/finance-agent-v2",
+      "verification_status": "checked",
+      "primary_urls": [
+        "https://www.vals.ai/benchmarks/fabv2"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "version",
+        "task_count",
+        "metric_semantics",
+        "private_public_split",
+        "source_lineage",
+        "leakage_contamination",
+        "date",
+        "harness_tools_effort",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Official splits Public27 / Private Validation450 / Test450. Leaderboard uses private Test 450. Partial-credit primary metric, 3 runs, 6-tool harness, 3-judge jury GPT-5.4 / Gemini-3.1-Pro / Claude Sonnet 4.6 match the registry grader_version string.",
+        "Page cites arXiv:2508.00828, which is the v1 Finance Agent paper; v2 methodology is the live Vals page."
+      ],
+      "block_reason": null,
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "vending-bench-2",
+      "file": "data/benchmarks/vending-bench-2.yaml",
+      "priority_fitted": true,
+      "registry_status": "active",
+      "version": "2",
+      "n_items": null,
+      "holdout": "private",
+      "obs_type": "money",
+      "public_release_date": null,
+      "source_ids": [
+        "andonlabs",
+        "epoch",
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://andonlabs.com/evals/vending-bench-2",
+      "verification_status": "checked",
+      "primary_urls": [
+        "https://andonlabs.com/evals/vending-bench-2"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "version",
+        "task_count",
+        "metric_semantics",
+        "private_public_split",
+        "source_lineage",
+        "leakage_contamination",
+        "date",
+        "harness_tools_effort",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Official human-reference 'good' strategy is ~$63,000; registry reference_value=63000 matches.",
+        "Upstream publishes mean/SEM/n (typically 5 runs), not per-run balances.",
+        "YAML notes previously said rows were not fitted; 1.4.3 accepted-input includes this condition. Notes corrected."
+      ],
+      "block_reason": null,
+      "yaml_fix_applied": true
+    },
+    {
+      "id": "zerobench-pass5-deepseek-reported",
+      "file": "data/benchmarks/zerobench-pass5-deepseek-reported.yaml",
+      "priority_fitted": false,
+      "registry_status": "watchlist",
+      "version": "vendor-unspecified",
+      "n_items": null,
+      "holdout": "public",
+      "obs_type": "judge",
+      "public_release_date": null,
+      "source_ids": [
+        "vendor-model-cards"
+      ],
+      "harness_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-Vision-Exp",
+      "verification_status": "blocked",
+      "primary_urls": [
+        "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-Vision-Exp"
+      ],
+      "access_date": "2026-09-06",
+      "fields_checked": [
+        "source_lineage",
+        "license_admission"
+      ],
+      "discrepancies": [
+        "Independent primary-source confirmation of version, task count, and metric semantics was not available for this condition."
+      ],
+      "block_reason": "Vendor-reported unspecified condition; harness points at a model card, not an independent primary benchmark identity. Task count/version/metric cannot be independently verified.",
+      "yaml_fix_applied": false
+    }
+  ],
+  "sources": [
+    {
+      "id": "aa-benchmarks-manual",
+      "file": "data/sources/aa-benchmarks-manual.yaml",
+      "kind": "manual",
+      "license": "Non-redistributable Artificial Analysis observations",
+      "redistributable": false,
+      "url": "https://artificialanalysis.ai/evaluations/critpt",
+      "protocol_ids": [],
+      "verification_status": "checked",
+      "access_date": "2026-09-06",
+      "discrepancies": [
+        "redistributable=false confirmed. AA licensing restrictions persist; do not copy AA-origin scores into author/native source files or CC-BY exports."
+      ],
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "aa-cost-manual",
+      "file": "data/sources/aa-cost-manual.yaml",
+      "kind": "manual",
+      "license": "Non-redistributable Artificial Analysis observations",
+      "redistributable": false,
+      "url": "https://artificialanalysis.ai/leaderboards/models/",
+      "protocol_ids": [],
+      "verification_status": "checked",
+      "access_date": "2026-09-06",
+      "discrepancies": [
+        "redistributable=false confirmed. AA licensing restrictions persist; do not copy AA-origin scores into author/native source files or CC-BY exports."
+      ],
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "aa-speed-manual",
+      "file": "data/sources/aa-speed-manual.yaml",
+      "kind": "manual",
+      "license": "Non-redistributable; use may conflict with Artificial Analysis Data Platform Terms",
+      "redistributable": false,
+      "url": "https://artificialanalysis.ai/",
+      "protocol_ids": [],
+      "verification_status": "checked",
+      "access_date": "2026-09-06",
+      "discrepancies": [
+        "redistributable=false confirmed. AA licensing restrictions persist; do not copy AA-origin scores into author/native source files or CC-BY exports."
+      ],
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "andonlabs",
+      "file": "data/sources/andonlabs.yaml",
+      "kind": "runner",
+      "license": "No explicit dataset redistribution license identified",
+      "redistributable": false,
+      "url": "https://andonlabs.com/evals/vending-bench-2",
+      "protocol_ids": [],
+      "verification_status": "checked",
+      "access_date": "2026-09-06",
+      "discrepancies": [
+        "No explicit dataset redistribution license identified; redistributable=false retained."
+      ],
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "arcprize",
+      "file": "data/sources/arcprize.yaml",
+      "kind": "scrape",
+      "license": "See upstream terms",
+      "redistributable": false,
+      "url": "https://arcprize.org/leaderboard",
+      "protocol_ids": [
+        "arcprize-arc2-standard-2025",
+        "arcprize-arc2-provider-adapter-2025"
+      ],
+      "verification_status": "checked",
+      "access_date": "2026-09-06",
+      "discrepancies": [],
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "automationbench",
+      "file": "data/sources/automationbench.yaml",
+      "kind": "runner",
+      "license": "See upstream license",
+      "redistributable": false,
+      "url": "https://github.com/zapier/AutomationBench",
+      "protocol_ids": [],
+      "verification_status": "checked",
+      "access_date": "2026-09-06",
+      "discrepancies": [
+        "GitHub repo HTTP 200. CHANGELOG is SPDX-License-Identifier: MIT; source YAML still says 'See upstream license' and redistributable=false. No source YAML edit."
+      ],
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "benchcad",
+      "file": "data/sources/benchcad.yaml",
+      "kind": "runner",
+      "license": "MIT code; CC-BY-4.0 dataset",
+      "redistributable": false,
+      "url": "https://benchcad.com/",
+      "protocol_ids": [],
+      "verification_status": "checked",
+      "access_date": "2026-09-06",
+      "discrepancies": [
+        "Homepage HTTP 200. Claimed MIT code / CC-BY-4.0 dataset licenses were not restated on the fetched homepage; redistributable=false retained."
+      ],
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "critpt",
+      "file": "data/sources/critpt.yaml",
+      "kind": "runner",
+      "license": "No explicit repository license; factual metadata attribution only",
+      "redistributable": false,
+      "url": "https://github.com/CritPt-Benchmark/CritPt/tree/17c2545c302762d2f2d644d923ea4c301605cb08",
+      "protocol_ids": [],
+      "verification_status": "checked",
+      "access_date": "2026-09-06",
+      "discrepancies": [
+        "Pinned GitHub tree HTTP 200. critpt.com SSL UNEXPECTED_EOF on 2026-09-06. No explicit repository license; redistributable=false retained. Do not treat AA README rows as author-measured."
+      ],
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "datacurve",
+      "file": "data/sources/datacurve.yaml",
+      "kind": "runner",
+      "license": "See upstream terms",
+      "redistributable": false,
+      "url": "https://deepswe.datacurve.ai/",
+      "protocol_ids": [],
+      "verification_status": "checked",
+      "access_date": "2026-09-06",
+      "discrepancies": [],
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "epoch",
+      "file": "data/sources/epoch.yaml",
+      "kind": "mirror",
+      "license": "CC-BY-4.0 (dataset; verify per linked benchmark)",
+      "redistributable": true,
+      "url": "https://epoch.ai/data/eci_benchmarks.csv",
+      "protocol_ids": [
+        "epoch-simpleqa-anti-abstention-v1-0-0",
+        "epoch-simpleqa-anti-abstention-v1-2-0"
+      ],
+      "verification_status": "checked",
+      "access_date": "2026-09-06",
+      "discrepancies": [
+        "CC-BY-4.0 dataset license confirmed as Epoch's published terms; still verify per linked benchmark. accepted-input.json includes protocol epoch-frontiermath-v2 which is not declared as a YAML protocol (SimpleQA protocols are). No protocol added without an established mapping."
+      ],
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "kaggle",
+      "file": "data/sources/kaggle.yaml",
+      "kind": "mirror",
+      "license": "Dataset-specific; verify before export",
+      "redistributable": false,
+      "url": "https://www.kaggle.com/datasets",
+      "protocol_ids": [],
+      "verification_status": "checked",
+      "access_date": "2026-09-06",
+      "discrepancies": [
+        "https://www.kaggle.com/datasets HTTP 200 is a catalog landing page, not a redistribution grant. Dataset-specific license / redistributable=false retained."
+      ],
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "livebench",
+      "file": "data/sources/livebench.yaml",
+      "kind": "runner",
+      "license": "See upstream terms",
+      "redistributable": false,
+      "url": "https://livebench.ai/",
+      "protocol_ids": [],
+      "verification_status": "checked",
+      "access_date": "2026-09-06",
+      "discrepancies": [
+        "Homepage HTTP 200 but 1,066 bytes of shell HTML; identity taken from table_2026_06_25.csv (HTTP 200). redistributable=false retained."
+      ],
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "livecodebench",
+      "file": "data/sources/livecodebench.yaml",
+      "kind": "runner",
+      "license": "See upstream terms",
+      "redistributable": false,
+      "url": "https://livecodebench.github.io/",
+      "protocol_ids": [],
+      "verification_status": "checked",
+      "access_date": "2026-09-06",
+      "discrepancies": [
+        "Homepage HTTP 200 but stale versus GitHub README release_v6 (1055). Source is a runner, not a license grant; redistributable=false retained."
+      ],
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "lmarena",
+      "file": "data/sources/lmarena.yaml",
+      "kind": "runner",
+      "license": "CC-BY-4.0",
+      "redistributable": true,
+      "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset",
+      "protocol_ids": [],
+      "verification_status": "checked",
+      "access_date": "2026-09-06",
+      "discrepancies": [],
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "matharena",
+      "file": "data/sources/matharena.yaml",
+      "kind": "runner",
+      "license": "See upstream dataset or competition terms",
+      "redistributable": false,
+      "url": "https://matharena.ai/",
+      "protocol_ids": [],
+      "verification_status": "checked",
+      "access_date": "2026-09-06",
+      "discrepancies": [
+        "No dated YAML protocol; fitted run uses protocol_id matharena-expected-performance-2026-09-05 from capture, not a new source protocol."
+      ],
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "mcpmark",
+      "file": "data/sources/mcpmark.yaml",
+      "kind": "scrape",
+      "license": "See upstream terms",
+      "redistributable": false,
+      "url": "https://mcpmark.ai/leaderboard",
+      "protocol_ids": [
+        "mcpmark-1.2.0-leaderboard"
+      ],
+      "verification_status": "checked",
+      "access_date": "2026-09-06",
+      "discrepancies": [],
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "metr",
+      "file": "data/sources/metr.yaml",
+      "kind": "runner",
+      "license": "See METR dataset terms",
+      "redistributable": false,
+      "url": "https://metr.org/time-horizons/",
+      "protocol_ids": [
+        "metr-time-horizon-1.1"
+      ],
+      "verification_status": "checked",
+      "access_date": "2026-09-06",
+      "discrepancies": [],
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "minebench",
+      "file": "data/sources/minebench.yaml",
+      "kind": "scrape",
+      "license": "MIT implementation; leaderboard data subject to upstream terms",
+      "redistributable": false,
+      "url": "https://minebench.ai/leaderboard",
+      "protocol_ids": [],
+      "verification_status": "checked",
+      "access_date": "2026-09-06",
+      "discrepancies": [
+        "Leaderboard SPA HTTP 200 without recoverable ratings; FAQ HTTP 200 confirms pairwise arena. MIT implementation claimed on YAML; leaderboard data terms unverified. redistributable=false retained."
+      ],
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "openai-evals",
+      "file": "data/sources/openai-evals.yaml",
+      "kind": "runner",
+      "license": "See upstream publication terms",
+      "redistributable": false,
+      "url": "https://openai.com/index/gdpval/",
+      "protocol_ids": [],
+      "verification_status": "checked",
+      "access_date": "2026-09-06",
+      "discrepancies": [],
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "openrouter",
+      "file": "data/sources/openrouter.yaml",
+      "kind": "runner",
+      "license": "OpenRouter API terms",
+      "redistributable": false,
+      "url": "https://openrouter.ai/docs/api/api-reference/models/get-models",
+      "protocol_ids": [],
+      "verification_status": "checked",
+      "access_date": "2026-09-06",
+      "discrepancies": [
+        "Docs GET /models HTTP 200 (redirects to list-all-models page). Live API https://openrouter.ai/api/v1/models HTTP 200 JSON with total_count. Used for price/context metadata, not benchmark scores. redistributable=false retained."
+      ],
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "osworld",
+      "file": "data/sources/osworld.yaml",
+      "kind": "runner",
+      "license": "See upstream terms",
+      "redistributable": false,
+      "url": "https://osworld-v2.xlang.ai/",
+      "protocol_ids": [],
+      "verification_status": "checked",
+      "access_date": "2026-09-06",
+      "discrepancies": [
+        "Homepage and official-results.json HTTP 200. No explicit redistribution license on fetched pages; redistributable=false retained."
+      ],
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "scale",
+      "file": "data/sources/scale.yaml",
+      "kind": "scrape",
+      "license": "See upstream terms",
+      "redistributable": false,
+      "url": "https://labs.scale.com/leaderboard/humanitys_last_exam",
+      "protocol_ids": [
+        "scale-hle-leaderboard-2025",
+        "scale-swe-pro-public-2025"
+      ],
+      "verification_status": "checked",
+      "access_date": "2026-09-06",
+      "discrepancies": [],
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "scicode-verified",
+      "file": "data/sources/scicode-verified.yaml",
+      "kind": "runner",
+      "license": "Apache-2.0 benchmark; factual paper score citations",
+      "redistributable": false,
+      "url": "https://github.com/flyingwagner/scicode-verified",
+      "protocol_ids": [],
+      "verification_status": "checked",
+      "access_date": "2026-09-06",
+      "discrepancies": [],
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "snorkel",
+      "file": "data/sources/snorkel.yaml",
+      "kind": "mirror",
+      "license": "See upstream terms",
+      "redistributable": false,
+      "url": "https://snorkel.ai/",
+      "protocol_ids": [],
+      "verification_status": "checked",
+      "access_date": "2026-09-06",
+      "discrepancies": [
+        "https://snorkel.ai/ HTTP 200 is a company marketing homepage (Open Benchmarks Grants, TB Science, OSWorld 2.0, Senior SWE-bench). It is not a Terminal-Bench result mirror or license grant. redistributable=false retained."
+      ],
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "swe-rebench",
+      "file": "data/sources/swe-rebench.yaml",
+      "kind": "runner",
+      "license": "CC-BY-4.0",
+      "redistributable": true,
+      "url": "https://swe-rebench.com/leaderboard",
+      "protocol_ids": [],
+      "verification_status": "checked",
+      "access_date": "2026-09-06",
+      "discrepancies": [],
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "taubench",
+      "file": "data/sources/taubench.yaml",
+      "kind": "self_report",
+      "license": "See upstream terms",
+      "redistributable": false,
+      "url": "https://taubench.com/",
+      "protocol_ids": [],
+      "verification_status": "checked",
+      "access_date": "2026-09-06",
+      "discrepancies": [],
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "tbench",
+      "file": "data/sources/tbench.yaml",
+      "kind": "scrape",
+      "license": "Upstream site terms; benchmark harness is Apache-2.0",
+      "redistributable": false,
+      "url": "https://www.tbench.ai/leaderboard",
+      "protocol_ids": [
+        "terminal-bench-4.0-leaderboard"
+      ],
+      "verification_status": "checked",
+      "access_date": "2026-09-06",
+      "discrepancies": [],
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "terminal-bench-science",
+      "file": "data/sources/terminal-bench-science.yaml",
+      "kind": "runner",
+      "license": "Apache-2.0 benchmark; source terms apply to leaderboard",
+      "redistributable": false,
+      "url": "https://www.terminal-bench-science.ai/announcement",
+      "protocol_ids": [],
+      "verification_status": "checked",
+      "access_date": "2026-09-06",
+      "discrepancies": [
+        "Announcement HTTP 200 confirms Terminal-Bench-Science 0.1 = 70 tasks; citation license Apache-2.0. Source YAML already records Apache-2.0 benchmark / source terms for leaderboard; redistributable=false retained."
+      ],
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "vals",
+      "file": "data/sources/vals.yaml",
+      "kind": "runner",
+      "license": "Upstream site terms; finance harness/public samples MIT; factual score citations only",
+      "redistributable": false,
+      "url": "https://www.vals.ai/benchmarks",
+      "protocol_ids": [],
+      "verification_status": "checked",
+      "access_date": "2026-09-06",
+      "discrepancies": [],
+      "yaml_fix_applied": false
+    },
+    {
+      "id": "vendor-model-cards",
+      "file": "data/sources/vendor-model-cards.yaml",
+      "kind": "self_report",
+      "license": "Source-specific; factual score citations only",
+      "redistributable": false,
+      "url": "https://huggingface.co/docs/hub/model-cards",
+      "protocol_ids": [],
+      "verification_status": "checked",
+      "access_date": "2026-09-06",
+      "discrepancies": [],
+      "yaml_fix_applied": false
+    }
+  ],
+  "validation": {
+    "command": "npm test --workspace @actualanalysis/shared",
+    "result": "pass",
+    "test_files": 4,
+    "tests": 30,
+    "notes": "loadRegistry cross-validates every benchmark and source YAML. Active-benchmark missing grader/date/tool_policy pins remain metadata_incomplete warnings, not test failures. YAML file count equals JSON: 107 benchmarks, 30 sources. 69 blocked entries retain block_reason. 0 not-yet-verified."
+  }
+}

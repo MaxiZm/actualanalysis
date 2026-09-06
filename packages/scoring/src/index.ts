@@ -14,3 +14,4 @@ export * from "./score.js";
 export * from "./types.js";
 export * from "./weights.js";
 export * from "./validation.js";
+export * from "./transfer-class.js";

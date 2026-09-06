@@ -6,6 +6,8 @@ import numpy as np
 import numpyro
 import numpyro.distributions as dist
 
+from .class_prior import resolve_class_prior
+
 
 def _halfnormal(name: str, scale: float, shape=()):
     return numpyro.sample(name, dist.HalfNormal(scale).expand(shape).to_event(len(shape)))
@@ -85,6 +87,9 @@ def aci_model(data: dict) -> None:
     one_trait_baseline = bool(data.get("one_trait_baseline", False))
     general_specific = data.get("trait_structure", "correlated") == "general_specific"
     unit_traits = data.get("trait_structure", "correlated") in ("general_specific", "correlated_unit")
+    class_spec = resolve_class_prior(data)
+    if class_spec.enabled and (one_trait_baseline or general_specific):
+        raise ValueError("class_prior restricted candidate requires the correlated LKJ trait structure")
 
     # --- 1. System traits Z_sk (LKJ(2) correlated) ---
     # Trait spread per domain. A HalfNormal prior has its mode at zero and lets a
@@ -126,7 +131,30 @@ def aci_model(data: dict) -> None:
     else:
         L_Omega = numpyro.sample("L_Omega", dist.LKJCholesky(n_domains, 2.0))
         numpyro.deterministic("Omega", jnp.matmul(L_Omega, L_Omega.T))
-        z_std = numpyro.sample("z_std", dist.Normal(0, 1).expand([n_models, n_domains]).to_event(2))
+        if class_spec.uses_class_components:
+            class_z = numpyro.sample(
+                "class_z",
+                dist.Normal(0, 1).expand([class_spec.n_classes, n_domains]).to_event(2),
+            )
+            release_z = numpyro.sample(
+                "release_z",
+                dist.Normal(0, 1).expand([n_models, n_domains]).to_event(2),
+            )
+            if class_spec.samples_class_rho:
+                class_rho = numpyro.sample(
+                    "class_rho",
+                    dist.Beta(float(class_spec.beta_alpha), float(class_spec.beta_beta)),
+                )
+            else:
+                class_rho = numpyro.deterministic("class_rho", jnp.asarray(class_spec.rho_value, dtype=jnp.float32))
+            rho = jnp.clip(class_rho, 0.0, 1.0 - 1e-12)
+            class_index = jnp.asarray(class_spec.model_class_index, dtype=jnp.int32)
+            z_std = jnp.sqrt(rho) * class_z[class_index] + jnp.sqrt(1.0 - rho) * release_z
+            numpyro.deterministic("z_std", z_std)
+        else:
+            z_std = numpyro.sample("z_std", dist.Normal(0, 1).expand([n_models, n_domains]).to_event(2))
+            if class_spec.enabled:
+                numpyro.deterministic("class_rho", jnp.asarray(class_spec.rho_value if class_spec.rho_value is not None else 0.0, dtype=jnp.float32))
         cov_factor = L_Omega * varsigma[:, None]
         Z_std_raw = jnp.matmul(z_std, cov_factor.T)
 

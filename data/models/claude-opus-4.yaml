@@ -5,6 +5,8 @@ family: Claude 4
 release_date: 2025-05-22
 open_weights: false
 license: Proprietary
+aliases:
+  - Claude-Opus-4.0
 source_url: https://www.anthropic.com/news/claude-4
 status: active
 

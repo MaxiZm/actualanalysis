@@ -4,6 +4,8 @@ from collections import defaultdict
 from datetime import date
 import numpy as np
 
+from .class_prior import class_prior_report, resolve_class_prior
+
 
 def _summary(values: np.ndarray) -> dict:
     return {
@@ -59,7 +61,28 @@ def _ranks(draws: dict[str, np.ndarray], eligible: list[str], margin: float = 1.
     return output
 
 
+def _practical_ordering(values: np.ndarray, others: dict[str, np.ndarray], margin: float) -> tuple[dict, dict, dict]:
+    """Paired P(I_a > I_b + margin) and 0.90 support; directional P(I_a > I_b) stays separate."""
+    gt_margin = {}
+    lt_margin = {}
+    support = {}
+    for other_id, other_values in others.items():
+        p_gt = float(np.mean(values > other_values + margin))
+        p_lt = float(np.mean(other_values > values + margin))
+        gt_margin[other_id] = p_gt
+        lt_margin[other_id] = p_lt
+        if p_gt >= 0.90:
+            support[other_id] = "this"
+        elif p_lt >= 0.90:
+            support[other_id] = "other"
+        else:
+            support[other_id] = "unresolved"
+    return gt_margin, lt_margin, support
+
+
 def build_posterior_summary(data: dict, samples: dict[str, np.ndarray]) -> dict:
+    class_spec = resolve_class_prior(data)
+    experimental = class_spec.enabled
     system_ids = data["system_ids"]
     benchmark_ids = data["benchmark_ids"]
     domains = data["domains"]
@@ -185,82 +208,91 @@ def build_posterior_summary(data: dict, samples: dict[str, np.ndarray]) -> dict:
         tot_info = sum(benchmark_information.values())
         max_benchmark_share = max(benchmark_information.values(), default=0) / tot_info if tot_info > 0 else 0.0
         max_family_share = max(family_information.values(), default=0) / tot_info if tot_info > 0 else 0.0
+        tiers = data["tiers"]
 
         # Exposure gap E_s^gap (§10.3)
         exposure_gap = None
         # A benchmark-adjusted exposure refit is not computed in this release.
         # Comparing raw observations across different conditions is invalid.
 
-        # Precision-drop concentration gate c_sF (§8.1)
-        # Gradient vector a_G = (1 / (K * sd_PG)) * D_P^{-1} 1
-        # For each draw, compute precision drop when removing family F
-        q90_csF_list = []
-        for fam_id, f_cells in family_cells.items():
-            f_drop_draws = []
-            for d_idx in range(min(n_draws, 200)):
-                dp_inv = 1.0 / varsigma_P[d_idx]
-                a_G = (1.0 / (n_domains * sd_PG[d_idx])) * dp_inv  # (5,)
-                # Prior precision
-                lambda_prior = np.diag(1.0 / (varsigma_P[d_idx] ** 2))
-                lambda_full = lambda_prior.copy()
-                lambda_drop = lambda_prior.copy()
-
-                for c_idx in direct_cells:
-                    b_idx = int(data["cell_benchmark_index"][c_idx])
-                    lam_vec = lambdas[b_idx]  # (5,)
-                    a_val = discrimination[d_idx, b_idx]
-                    sig_val = cell_sigma[d_idx, b_idx]
-                    term = (a_val ** 2 / (cell_tau_sq.get(c_idx, 1.0) + 2.0 * sig_val ** 2)) * np.outer(lam_vec, lam_vec)
-                    lambda_full += term
-                    if c_idx not in f_cells:
-                        lambda_drop += term
-
-                try:
-                    cov_full = np.linalg.inv(lambda_full)
-                    cov_drop = np.linalg.inv(lambda_drop)
-                    v_full = float(a_G @ cov_full @ a_G)
-                    v_drop = float(a_G @ cov_drop @ a_G)
-                    drop = 1.0 - (v_full / v_drop) if v_drop > 0 else 0.0
-                    f_drop_draws.append(max(0.0, drop))
-                except np.linalg.LinAlgError:
-                    f_drop_draws.append(0.0)
-
-            if f_drop_draws:
-                q90_csF_list.append(float(np.quantile(f_drop_draws, 0.90)))
-
-        max_q90_csF = max(q90_csF_list, default=0.0)
-
-        # Own-data variance reduction R_s
-        post_var_G = float(np.var(display_G[:, system_index]))
-        # Prior variance of G on panel scale is ~ 10^2 = 100
-        prior_var_G = 100.0
-        r_s_overall = float(max(0.0, min(1.0, 1.0 - post_var_G / prior_var_G)))
-
         general_summary = _summary(display_G[:, system_index])
-        evidence = {
-            "fitted_cells": len(direct_cells),
-            "domains": len(represented_domains),
-            "safe_independent_cells": safe_cells,
-            "max_benchmark_share": max_benchmark_share,
-            "max_family_share": max_family_share,
-            "own_data_reduction": r_s_overall,
-            "concentration_c_sf": max_q90_csF,
-            "loo_max_delta": None,  # PSIS-LOO not computed in this release
-            "exposure_gap": exposure_gap,
-            "adversarial_shift": None,  # adversarial self-report refit not run in this release
-        }
+        if experimental:
+            evidence = {
+                "fitted_cells": len(direct_cells),
+                "domains": len(represented_domains),
+                "safe_independent_cells": safe_cells,
+            }
+            tier = "provisional"
+            r_s_overall = None
+            max_q90_csF = None
+        else:
+            # Precision-drop concentration gate c_sF (§8.1)
+            # Gradient vector a_G = (1 / (K * sd_PG)) * D_P^{-1} 1
+            # For each draw, compute precision drop when removing family F
+            q90_csF_list = []
+            for fam_id, f_cells in family_cells.items():
+                f_drop_draws = []
+                for d_idx in range(min(n_draws, 200)):
+                    dp_inv = 1.0 / varsigma_P[d_idx]
+                    a_G = (1.0 / (n_domains * sd_PG[d_idx])) * dp_inv  # (5,)
+                    # Prior precision
+                    lambda_prior = np.diag(1.0 / (varsigma_P[d_idx] ** 2))
+                    lambda_full = lambda_prior.copy()
+                    lambda_drop = lambda_prior.copy()
 
-        tiers = data["tiers"]
-        def meets(threshold: dict) -> bool:
-            c_sf_gate = float(threshold.get("max_concentration", 0.35 if threshold.get("min_domains", 4) >= 4 else 0.55))
-            return (general_summary["width"] <= threshold["max_width"]
-                    and evidence["domains"] >= threshold["min_domains"]
-                    and safe_cells >= threshold["min_safe_cells"]
-                    and max_family_share <= float(threshold.get("max_family_share", 1.0))
-                    and max_q90_csF <= c_sf_gate
-                    and r_s_overall >= float(threshold.get("min_own_data_reduction", 0.50)))
+                    for c_idx in direct_cells:
+                        b_idx = int(data["cell_benchmark_index"][c_idx])
+                        lam_vec = lambdas[b_idx]  # (5,)
+                        a_val = discrimination[d_idx, b_idx]
+                        sig_val = cell_sigma[d_idx, b_idx]
+                        term = (a_val ** 2 / (cell_tau_sq.get(c_idx, 1.0) + 2.0 * sig_val ** 2)) * np.outer(lam_vec, lam_vec)
+                        lambda_full += term
+                        if c_idx not in f_cells:
+                            lambda_drop += term
 
-        tier = "verified" if meets(tiers["verified"]) else "ranked" if meets(tiers["ranked"]) else "provisional"
+                    try:
+                        cov_full = np.linalg.inv(lambda_full)
+                        cov_drop = np.linalg.inv(lambda_drop)
+                        v_full = float(a_G @ cov_full @ a_G)
+                        v_drop = float(a_G @ cov_drop @ a_G)
+                        drop = 1.0 - (v_full / v_drop) if v_drop > 0 else 0.0
+                        f_drop_draws.append(max(0.0, drop))
+                    except np.linalg.LinAlgError:
+                        f_drop_draws.append(0.0)
+
+                if f_drop_draws:
+                    q90_csF_list.append(float(np.quantile(f_drop_draws, 0.90)))
+
+            max_q90_csF = max(q90_csF_list, default=0.0)
+
+            # Own-data variance reduction R_s
+            post_var_G = float(np.var(display_G[:, system_index]))
+            # Prior variance of G on panel scale is ~ 10^2 = 100
+            prior_var_G = 100.0
+            r_s_overall = float(max(0.0, min(1.0, 1.0 - post_var_G / prior_var_G)))
+            evidence = {
+                "fitted_cells": len(direct_cells),
+                "domains": len(represented_domains),
+                "safe_independent_cells": safe_cells,
+                "max_benchmark_share": max_benchmark_share,
+                "max_family_share": max_family_share,
+                "own_data_reduction": r_s_overall,
+                "concentration_c_sf": max_q90_csF,
+                "loo_max_delta": None,  # PSIS-LOO not computed in this release
+                "exposure_gap": exposure_gap,
+                "adversarial_shift": None,  # adversarial self-report refit not run in this release
+            }
+
+            def meets(threshold: dict) -> bool:
+                c_sf_gate = float(threshold.get("max_concentration", 0.35 if threshold.get("min_domains", 4) >= 4 else 0.55))
+                return (general_summary["width"] <= threshold["max_width"]
+                        and evidence["domains"] >= threshold["min_domains"]
+                        and safe_cells >= threshold["min_safe_cells"]
+                        and max_family_share <= float(threshold.get("max_family_share", 1.0))
+                        and max_q90_csF <= c_sf_gate
+                        and r_s_overall >= float(threshold.get("min_own_data_reduction", 0.50)))
+
+            tier = "verified" if meets(tiers["verified"]) else "ranked" if meets(tiers["ranked"]) else "provisional"
 
         # Domain outputs
         domain_output = {}
@@ -271,14 +303,16 @@ def build_posterior_summary(data: dict, samples: dict[str, np.ndarray]) -> dict:
             # Own-profile cells that materially load on the domain (share >= 0.25);
             # a 5% spill-over share does not make a cell evidence for that domain.
             n_sk = sum(1 for c_idx in direct_cells if lambdas[data["cell_benchmark_index"][c_idx], d_idx] >= float(data.get("domain_cell_min_share", 0.25)))
-            published = (n_sk >= 2 and d_summary["width"] <= tiers.get("domain_max_width", 15.0) and r_sk >= float(tiers.get("domain_min_own_data_reduction", 0.50)))
-            domain_output[domain] = {
+            published = False if experimental else (n_sk >= 2 and d_summary["width"] <= tiers.get("domain_max_width", 15.0) and r_sk >= float(tiers.get("domain_min_own_data_reduction", 0.50)))
+            domain_row = {
                 **d_summary,
                 "published": published,
                 "extrapolated": not published,
-                "r_s": r_sk,
                 "n_sk": n_sk,
             }
+            if not experimental:
+                domain_row["r_s"] = r_sk
+            domain_output[domain] = domain_row
 
         # Profile baskets (ACI-Basket expected normalized utility in %)
         profile_output = {}
@@ -318,7 +352,7 @@ def build_posterior_summary(data: dict, samples: dict[str, np.ndarray]) -> dict:
             )
             profile_output[profile_name] = {
                 **basket_summary,
-                "published": tier != "provisional" and required_domains_publish and not missing,
+                "published": False if experimental else (tier != "provisional" and required_domains_publish and not missing),
                 "missing_benchmarks": sorted(set(missing)),
             }
 
@@ -328,11 +362,11 @@ def build_posterior_summary(data: dict, samples: dict[str, np.ndarray]) -> dict:
             required = [d for d in domains if data["profiles"][name]["weights"].get(d, 0) >= tiers.get("profile_domain_weight_gate", 0.15)]
             # Gate the composite's own uncertainty and direct domain evidence.
             # Do not veto a composite because one marginal interval is wider.
-            published = (tier != "provisional" and summary["width"] <= tiers["ranked"]["max_width"]
+            published = False if experimental else (tier != "provisional" and summary["width"] <= tiers["ranked"]["max_width"]
                          and all(domain_output[d]["n_sk"] >= 2 for d in required))
             index_profiles[name] = {**summary, "published": published}
 
-        systems[system_id] = {
+        system_row = {
             "model_id": system_id.rsplit("@", 1)[0],
             "profile": system_id.rsplit("@", 1)[1],
             "system_class": "max-common" if system_id.endswith("@max-common") else "std-common",
@@ -346,6 +380,9 @@ def build_posterior_summary(data: dict, samples: dict[str, np.ndarray]) -> dict:
             "task_profiles": profile_output,
             "index_profiles": index_profiles,
         }
+        if experimental:
+            system_row["raw_traits"] = {domain: _summary(Z[:, system_index, d_idx]) for d_idx, domain in enumerate(domains)}
+        systems[system_id] = system_row
 
     # Views ranking
     view_draws = {
@@ -381,7 +418,7 @@ def build_posterior_summary(data: dict, samples: dict[str, np.ndarray]) -> dict:
             unresolved = {other: bool(np.mean(values > other_values + margin) < .90 and np.mean(other_values > values + margin) < .90)
                           for other, other_values in v_draws.items() if other != sid}
             view[sid] = {
-                "score": val_summary["median"] if ranking else None,
+                "score": val_summary["median"] if ranking or experimental else None,
                 "ci_low": val_summary["low"],
                 "ci_high": val_summary["high"],
                 "rank": ranking["rank"] if ranking else None,
@@ -392,6 +429,12 @@ def build_posterior_summary(data: dict, samples: dict[str, np.ndarray]) -> dict:
                 "pairwise": pairwise,
                 "pairwise_unresolved": unresolved,
             }
+            if experimental:
+                others = {other: other_values for other, other_values in v_draws.items() if other != sid}
+                gt_margin, lt_margin, support = _practical_ordering(values, others, margin)
+                view[sid]["practical_gt_margin"] = gt_margin
+                view[sid]["practical_lt_margin"] = lt_margin
+                view[sid]["practical_support"] = support
         views[view_name] = view
 
     benchmark_output = {}
@@ -470,7 +513,7 @@ def build_posterior_summary(data: dict, samples: dict[str, np.ndarray]) -> dict:
         },
     }
 
-    return {
+    output = {
         "method_version": data.get("method_version", "1.2.x"),
         "scales": scales,
         "systems": systems,
@@ -481,3 +524,9 @@ def build_posterior_summary(data: dict, samples: dict[str, np.ndarray]) -> dict:
             "omega_correlation": np.mean(samples.get("Omega", np.eye(5)), axis=0).tolist(),
         },
     }
+    if experimental:
+        output["experimental"] = True
+        output["publishable"] = False
+        output["class_prior"] = class_prior_report(class_spec, samples)
+        output["diagnostics"]["class_prior"] = output["class_prior"]
+    return output

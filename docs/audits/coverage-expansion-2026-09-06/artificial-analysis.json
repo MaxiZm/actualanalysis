@@ -1,0 +1,663 @@
+{
+  "audit_metadata": {
+    "audit_date": "2026-09-06",
+    "target": "Artificial Analysis Intelligence Benchmarking & Private Evaluations",
+    "methodology_url": "https://artificialanalysis.ai/methodology/intelligence-benchmarking",
+    "repository_working_dir": "/Users/mzalik/Documents/Projects/actualanalysis",
+    "native_workers_count": 1,
+    "native_workers": [
+      {
+        "id": "5c30f6ae-44b6-4864-ada9-1d17b9ee5293",
+        "role": "Independent Benchmark Researcher",
+        "type": "research",
+        "status": "completed"
+      }
+    ]
+  },
+  "version_history": [
+    {
+      "version": "4.2",
+      "timeframe": "September 2026 \u2014 current",
+      "key_changes": [
+        "Added AA-Briefcase (15%) to Agents category",
+        "Added GDP.pdf (10%) to General category",
+        "Removed GPQA Diamond from the Intelligence Index (retained as standalone)",
+        "Upgraded AA-LCR to v1.1 (clarified system prompt, corrected 16 answer keys, graded with GPT-5.6 Luna medium)",
+        "Upgraded SciCode to v1.0.1 (regraded)",
+        "Rebalanced weights: Agents (30%), Coding (20%), General (30%), Scientific Reasoning (20%) across 10 evaluations"
+      ]
+    },
+    {
+      "version": "4.1.1",
+      "timeframe": "August 2026 \u2014 September 2026",
+      "key_changes": [
+        "Moved tau3-Banking to upstream tau2-bench v1.0.1 dataset and grader",
+        "Upgraded grader model for HLE, AA-LCR, and AA-Omniscience to GPT-5.6 Luna (medium)"
+      ]
+    },
+    {
+      "version": "4.1",
+      "timeframe": "June 2026 \u2014 August 2026",
+      "key_changes": [
+        "Upgraded GDPval-AA to GDPval-AA v2 (upgraded sandbox, dependencies, Elo re-baselined to human expert 1000, 3-judge panel, 250 turn limits)",
+        "Replaced Terminal-Bench Hard with Terminal-Bench v2.1 (higher turn limits, no token limits)",
+        "Replaced tau2-Bench Telecom with tau3-Banking",
+        "Removed IFBench from the Intelligence Index (retained as standalone)",
+        "Adjusted category weights to emphasize agentic tasks (Agents 34%, Coding 24%, Scientific Reasoning 24%, General 18%)",
+        "Upgraded token and cost metrics to reflect cache hit rates and cache pricing"
+      ]
+    },
+    {
+      "version": "4.0.4",
+      "timeframe": "March 2026 \u2014 June 2026",
+      "key_changes": [
+        "Updated grader model for GDPval-AA to Gemini 3.1 Pro Preview after deprecation of Gemini 3 Pro Preview"
+      ]
+    },
+    {
+      "version": "4.0.3",
+      "timeframe": "February 2026 \u2014 March 2026",
+      "key_changes": [
+        "Updated grader model for Omniscience to Gemini 3 Flash Preview (Reasoning)"
+      ]
+    },
+    {
+      "version": "4.0.2",
+      "timeframe": "January 2026 \u2014 February 2026",
+      "key_changes": [
+        "Re-anchored GDPval-AA Elo scores following sandbox robustness revisions"
+      ]
+    },
+    {
+      "version": "4.0.1",
+      "timeframe": "January 2026",
+      "key_changes": [
+        "Refined Terminal-Bench Hard to 44 tasks, pruning tasks with broken external dependencies"
+      ]
+    },
+    {
+      "version": "4.0",
+      "timeframe": "January 2026",
+      "key_changes": [
+        "Added GDPval-AA (knowledge work), AA-Omniscience (knowledge/hallucination), and CritPt (physics reasoning)",
+        "Removed MMLU-Pro, LiveCodeBench, AIME 2025 from Index",
+        "Introduced four-category structure: Agents (25%), Coding (25%), General (25%), Scientific Reasoning (25%)"
+      ]
+    },
+    {
+      "version": "3.0",
+      "timeframe": "September 2025 \u2014 December 2025",
+      "key_changes": [
+        "Added Terminal-Bench Hard and tau2-Bench Telecom",
+        "Included MMLU-Pro and LiveCodeBench in Index"
+      ]
+    },
+    {
+      "version": "2.2",
+      "timeframe": "August 2025 \u2014 September 2025",
+      "key_changes": [
+        "Added Artificial Analysis Long Context Reasoning (AA-LCR)"
+      ]
+    },
+    {
+      "version": "2.1",
+      "timeframe": "August 2025",
+      "key_changes": [
+        "Added IFBench and AIME 2025; retired MATH-500 and AIME 2024"
+      ]
+    },
+    {
+      "version": "1.0 - 2.0",
+      "timeframe": "January 2024 \u2014 August 2025",
+      "key_changes": [
+        "Initial index foundation and legacy academic benchmarks"
+      ]
+    }
+  ],
+  "current_index_v4_2": {
+    "version": "4.2",
+    "category_weights": {
+      "Agents": 0.3,
+      "Coding": 0.2,
+      "General": 0.3,
+      "Scientific Reasoning": 0.2
+    },
+    "benchmarks": [
+      {
+        "id": "aa-briefcase",
+        "name": "AA-Briefcase",
+        "category": "Agents",
+        "index_weight": 0.15,
+        "n_items": 91,
+        "scenarios": 4,
+        "repeats": 1,
+        "turns_cap": 500,
+        "response_type": "Agentic task completion with file outputs",
+        "scoring": "Combined Elo from pairwise comparisons on rubric-graded task success, analytical quality, and presentation quality",
+        "scale": "Elo",
+        "harness": "Stirrup in E2B sandbox (offline, code_exec, finish, abandon_task_finish)",
+        "grader": "Panel of 3 judges (Claude Opus 4.8 max effort, GPT-5.5 high, Gemini 3.1 Pro Preview high)",
+        "tool_usage": true,
+        "source_license": "Proprietary benchmark with public Lite sample",
+        "source_provenance": "Artificial Analysis original suite",
+        "contamination_protection": {
+          "design": "Internal scenario pools mixing real, augmented, and synthetic workplace files",
+          "leakage_risks": "Underlying business documents derive from public filings, transcripts, and open data; teacher models in judge panel share training distributions with frontier evaluated models"
+        }
+      },
+      {
+        "id": "gdpval-aa-v2",
+        "name": "GDPval-AA v2",
+        "category": "Agents",
+        "index_weight": 0.1,
+        "n_items": 220,
+        "repeats": 1,
+        "turns_cap": 250,
+        "response_type": "Agentic task completion with file outputs",
+        "scoring": "Pairwise Bradley-Terry Elo anchored to human experts at 1000; normalized as clamp((Elo - 500) / 2000)",
+        "scale": "Elo",
+        "harness": "Stirrup in E2B sandbox (6 tools: Web Fetch, Web Search via Brave, View Image, Code Exec, Finish, Abandon Task)",
+        "grader": "Panel of 3 frontier LLM judges",
+        "tool_usage": true,
+        "source_license": "OpenAI GDPval Gold (MIT / CC-BY where published); AA implementation proprietary",
+        "source_provenance": "OpenAI GDPval dataset (arXiv:2510.04374) evaluated under AA Stirrup harness",
+        "contamination_protection": {
+          "design": "220 gold tasks public, expanded environment and strict sandboxing",
+          "leakage_risks": "Public 220 tasks widely available in public GitHub / Hugging Face repos since late 2025; models may memorize reference files and Office document structures"
+        }
+      },
+      {
+        "id": "tau3-banking",
+        "name": "\u03c4\u00b3-Banking",
+        "category": "Agents",
+        "index_weight": 0.05,
+        "n_items": 97,
+        "repeats": 5,
+        "steps_cap": 200,
+        "response_type": "Dual control agent-user simulation with knowledge retrieval",
+        "scoring": "pass@1 against backend DB state",
+        "scale": "percent",
+        "harness": "tau2-bench v1.0.1 (bm25_grep mode, ~700 policy docs)",
+        "grader": "GPT-5.4 Mini (medium reasoning) for user simulator and NL assertion judge",
+        "tool_usage": true,
+        "source_license": "Apache-2.0 (Sierra Research tau2-bench)",
+        "source_provenance": "Sierra Research (arXiv:2603.04370)",
+        "contamination_protection": {
+          "design": "Evaluates DB state mutations rather than text utterances",
+          "leakage_risks": "Public repo code and task policies can be indexed; simulator LLM behavior may shift across API revisions"
+        }
+      },
+      {
+        "id": "terminal-bench-2.1",
+        "name": "Terminal-Bench v2.1",
+        "category": "Coding",
+        "index_weight": 0.1,
+        "n_items": 89,
+        "repeats": 3,
+        "episodes_cap": 250,
+        "timeout_seconds": 7200,
+        "response_type": "Terminal-based task execution",
+        "scoring": "pass@1 test suite pass/fail",
+        "scale": "percent",
+        "harness": "Terminus 2 agent harness in E2B sandbox",
+        "grader": "Programmatic bash verification test suite",
+        "tool_usage": false,
+        "source_license": "MIT (Stanford / Laude Institute)",
+        "source_provenance": "Stanford University, Laude Institute (arXiv:2601.11868)",
+        "contamination_protection": {
+          "design": "Containerized tasks with private execution sidecars",
+          "leakage_risks": "Curated tasks are open source; code and solutions exist in public git commits and scraping corpora"
+        }
+      },
+      {
+        "id": "scicode",
+        "name": "SciCode (v1.0.1)",
+        "category": "Coding",
+        "index_weight": 0.1,
+        "n_items": 288,
+        "main_problems": 80,
+        "repeats": 3,
+        "response_type": "Python Code (must pass all unit tests)",
+        "scoring": "pass@1 sub-problem scoring with scientist-annotated background prompting",
+        "scale": "percent",
+        "harness": "Isolated Python sandbox",
+        "grader": "Unit test suite (SciCode v1.0.1 regraded)",
+        "tool_usage": false,
+        "source_license": "MIT (SciCode Authors)",
+        "source_provenance": "SciCode Team (arXiv:2407.13168)",
+        "contamination_protection": {
+          "design": "Complex multi-step problems with scientist background; regraded in v1.0.1",
+          "leakage_risks": "Public GitHub test set; known test bugs addressed in SciCode-Verified (arXiv:2608.01655)"
+        }
+      },
+      {
+        "id": "aa-omniscience",
+        "name": "AA-Omniscience",
+        "category": "General",
+        "index_weight": 0.15,
+        "components": {
+          "accuracy": 0.1,
+          "non_hallucination_rate": 0.05
+        },
+        "n_items": 6000,
+        "repeats": 1,
+        "response_type": "Open Answer",
+        "scoring": "AA-Omniscience Index (points for correct, penalty for hallucinated, neutral for abstention)",
+        "scale": "percent",
+        "harness": "Single-turn zero-shot instruction prompt",
+        "grader": "GPT-5.6 Luna (medium reasoning) for 4-way classification (CORRECT, INCORRECT, PARTIAL_ANSWER, NOT_ATTEMPTED)",
+        "tool_usage": false,
+        "source_license": "Proprietary with public subset",
+        "source_provenance": "Artificial Analysis original benchmark (arXiv:2511.13029)",
+        "contamination_protection": {
+          "design": "6,000 questions across 42 topics with private held-out test keys",
+          "leakage_risks": "Factual knowledge questions inevitably overlap with Wikipedia, Wikidata, and common crawl web pre-training data"
+        }
+      },
+      {
+        "id": "gdp-pdf",
+        "name": "GDP.pdf",
+        "category": "General",
+        "index_weight": 0.1,
+        "n_items": 100,
+        "repeats": 5,
+        "total_attempts": 500,
+        "criteria_count": 1275,
+        "response_type": "Free-form answer grounded in a long PDF",
+        "scoring": "All-pass headline (all 500 attempts pass all criteria); Mean Pass secondary",
+        "scale": "percent",
+        "harness": "Single turn, text via LiteParse+OCR and 72-150 DPI page composite images",
+        "grader": "GPT-5.6 Luna (medium reasoning) independent criterion evaluations",
+        "tool_usage": false,
+        "source_license": "Proprietary Surge AI dataset",
+        "source_provenance": "Surge AI (arXiv:2607.11192)",
+        "contamination_protection": {
+          "design": "Long complex real-world PDFs across 10 domains",
+          "leakage_risks": "Source PDFs (SEC filings, municipal reports, public agency PDFs) are freely available on public web and frequently crawled during model pretraining"
+        }
+      },
+      {
+        "id": "aa-lcr-1.1",
+        "name": "AA-LCR v1.1",
+        "category": "General",
+        "index_weight": 0.05,
+        "n_items": 100,
+        "repeats": 3,
+        "context_window_min": 128000,
+        "response_type": "Open Answer",
+        "scoring": "pass@1 with Equality Checker LLM",
+        "scale": "percent",
+        "harness": "~100k input tokens per question across ~230 documents",
+        "grader": "GPT-5.6 Luna (medium reasoning) equality checker",
+        "tool_usage": false,
+        "source_license": "CC-BY-NC-4.0 / Proprietary evaluation",
+        "source_provenance": "Artificial Analysis Long Context Reasoning",
+        "contamination_protection": {
+          "design": "Synthesized and curated multi-document contexts; v1.1 corrected 16 answer keys",
+          "leakage_risks": "Public reports and consultations used as context documents exist in public web scrapes"
+        }
+      },
+      {
+        "id": "hle",
+        "name": "Humanity's Last Exam (HLE)",
+        "category": "Scientific Reasoning",
+        "index_weight": 0.1,
+        "n_items": 2158,
+        "repeats": 1,
+        "response_type": "Open Answer",
+        "scoring": "pass@1 text-only subset",
+        "scale": "percent",
+        "harness": "Zero-shot instruction prompted",
+        "grader": "GPT-5.6 Luna (medium reasoning) equality checker",
+        "tool_usage": false,
+        "source_license": "Academic Research (CAIS)",
+        "source_provenance": "Center for AI Safety (arXiv:2501.14249v2)",
+        "contamination_protection": {
+          "design": "Adversarially curated frontier academic questions",
+          "leakage_risks": "Subject to known adversarial curation bias (filtered against GPT-4o, Claude 3.5 Sonnet, Gemini 1.5 Pro, o1); questions may leak into open community datasets"
+        }
+      },
+      {
+        "id": "critpt",
+        "name": "CritPt",
+        "category": "Scientific Reasoning",
+        "index_weight": 0.1,
+        "n_items": 70,
+        "repeats": 5,
+        "response_type": "Python Functions, Symbolic Expressions, Numerical Answers",
+        "scoring": "pass@1 across 5 repeats of 70 challenge questions",
+        "scale": "percent",
+        "harness": "Two-step parsing (reasoning step + answer formatting step)",
+        "grader": "Official CritPt grading server",
+        "tool_usage": false,
+        "source_license": "Research evaluation (UIUC / Argonne / CritPt team)",
+        "source_provenance": "CritPt Team (arXiv:2509.26574)",
+        "contamination_protection": {
+          "design": "Unpublished problems created by 50+ physicists; private official grading server",
+          "leakage_risks": "Prompts are public; answers are private on grading server, but repeated API queries could allow answer extraction or distillation if query auditing is lax"
+        }
+      }
+    ]
+  },
+  "standalone_evaluations": [
+    {
+      "id": "harvey-lab-aa",
+      "name": "Harvey LAB-AA",
+      "domain": "Legal Agents",
+      "tasks": 120,
+      "practice_areas": 24,
+      "split": "private (120 private tasks held by Harvey; 5 public examples)",
+      "repeats": 1,
+      "turns_cap": 200,
+      "harness": "Stirrup in Linux sandbox (read-only documents, no internet)",
+      "grader": "Gemini 3.1 Pro (single judge, atomic binary rubric)",
+      "metrics": [
+        "criterion pass rate (headline)",
+        "all-pass rate"
+      ],
+      "contamination_assessment": "High task privacy, but legal statutes and standard deal structures exist in legal corpora"
+    },
+    {
+      "id": "apex-agents-aa",
+      "name": "APEX-Agents-AA",
+      "domain": "Professional Services Agents",
+      "tasks": 452,
+      "split": "public subset (452 of 480 tasks from mercor/apex-agents)",
+      "repeats": 3,
+      "turns_cap": 200,
+      "harness": "Stirrup in Archipelago environment with MCP tools",
+      "grader": "Archipelago local file grader + Gemini 3 Flash (low reasoning) judge",
+      "metrics": [
+        "pass@1"
+      ],
+      "contamination_assessment": "Tasks are derived from public release; risk of web/git memorization is moderate to high"
+    },
+    {
+      "id": "automationbench-aa",
+      "name": "AutomationBench-AA",
+      "domain": "SaaS Workflow Automation",
+      "tasks": 657,
+      "split": "private held-out split from Zapier AutomationBench v1.0",
+      "repeats": 1,
+      "turns_cap": 50,
+      "harness": "AutomationBench multi-turn environment with REST APIs",
+      "grader": "Programmatic assertions on environment state (objectives and guardrails)",
+      "metrics": [
+        "Objective completion percentage (zero credit on guardrail failure)"
+      ],
+      "contamination_assessment": "Private split prevents verbatim prompt memorization, but standard SaaS API schemas (Slack, Gmail, Jira) are in pre-training data"
+    },
+    {
+      "id": "aa-analystagent",
+      "name": "AA-AnalystAgent",
+      "domain": "Data Analysis Agents",
+      "tasks": 80,
+      "split": "private held-out benchmark (14 domains)",
+      "repeats": 5,
+      "turns_cap": 100,
+      "harness": "Stirrup sandbox (Python 3.12, spreadsheets, docs)",
+      "grader": "Gemini 3 Flash (reasoning) + deterministic numeric equivalence override",
+      "metrics": [
+        "pass^5 (headline)",
+        "pass@1",
+        "pass@5"
+      ],
+      "contamination_assessment": "Privately held files and questions provide strong barrier against public crawl, but standard financial/statistical formulas are universal"
+    },
+    {
+      "id": "itbench-aa",
+      "name": "ITBench-AA",
+      "domain": "Site Reliability Engineering (SRE)",
+      "tasks": 59,
+      "split": "hybrid (40 public IBM SRE tasks + 19 private tasks)",
+      "repeats": 3,
+      "turns_cap": 100,
+      "harness": "Stirrup sandbox with offline Kubernetes snapshot",
+      "grader": "GPT-5.5 (medium reasoning) entity normalization",
+      "metrics": [
+        "Precision at full recall"
+      ],
+      "contamination_assessment": "40 tasks are public; 19 private tasks offer limited protection from K8s architecture generalization"
+    },
+    {
+      "id": "enterpriseops-gym-aa",
+      "name": "EnterpriseOps-Gym-AA",
+      "domain": "Enterprise Tool Use",
+      "tasks": 1117,
+      "split": "oracle mode across 8 enterprise domains (ServiceNow-AI)",
+      "repeats": 3,
+      "turns_cap": 100,
+      "harness": "Stirrup sandbox with MCP gym servers and SQLite DBs",
+      "grader": "Outcome-based SQL state verifiers",
+      "metrics": [
+        "strict pass@1 success rate (headline)",
+        "verifier pass rate"
+      ],
+      "contamination_assessment": "Synthetic database seeds reduce memorization, but schema patterns are public in ServiceNow release"
+    },
+    {
+      "id": "ifbench",
+      "name": "IFBench",
+      "domain": "Instruction Following",
+      "tasks": 294,
+      "split": "public (allenai/IFBench_test)",
+      "repeats": 5,
+      "harness": "Single turn, loose evaluation mode",
+      "grader": "Programmatic checks from allenai/IFBench",
+      "metrics": [
+        "Prompt-level accuracy pass@1"
+      ],
+      "contamination_assessment": "Publicly released test set; high risk of inclusion in alignment and instruction-tuning datasets"
+    },
+    {
+      "id": "mlcr-aa",
+      "name": "MLCR-AA",
+      "domain": "Healthcare & Medical Reasoning",
+      "tasks": 60,
+      "split": "private held-out set (expert + compound tiers from Wisedocs)",
+      "repeats": 3,
+      "harness": "Multi-document clinical synthesis (~25k-64k tokens)",
+      "grader": "Conciseness gate (<5x ref len) + 3-judge majority vote",
+      "metrics": [
+        "Pass rate (concise, complete, accurate)"
+      ],
+      "contamination_assessment": "Private split shields exact clinical questions, but synthetic clinical cases mirror standard medical textbooks"
+    }
+  ],
+  "registry_overlap_and_gaps": {
+    "total_aa_index_benchmarks": 10,
+    "registry_status": [
+      {
+        "aa_id": "critpt",
+        "registry_id": "critpt",
+        "match_type": "exact_match",
+        "registry_file": "data/benchmarks/critpt.yaml",
+        "registry_status": "watchlist",
+        "schema_status": "supported_as_isolated_display_overlay",
+        "notes": "Already present in data/manual/benchmarks-aa.yaml with 113 observed models"
+      },
+      {
+        "aa_id": "scicode",
+        "registry_id": "scicode-verified-v2-main-with-background",
+        "match_type": "condition_mismatch",
+        "registry_file": "data/benchmarks/scicode-verified-v2-main-with-background.yaml",
+        "registry_status": "active",
+        "schema_status": "blocked_by_condition_and_schema",
+        "notes": "ActualAnalysis tracks 64 whole-problem pass@1 under SciCode-Verified v2, whereas AA v4.2 evaluates 288 subproblem pass@1 under SciCode v1.0.1"
+      },
+      {
+        "aa_id": "tau3-banking",
+        "registry_id": "tau3-bench-banking",
+        "match_type": "conceptual_match",
+        "registry_file": "data/benchmarks/tau3-bench-banking.yaml",
+        "registry_status": "active",
+        "schema_status": "blocked_by_single_benchmark_schema",
+        "notes": "Both use 97 items; AA uses 5 repeats and GPT-5.4 Mini judge, whereas actualanalysis specifies default_k: 4"
+      },
+      {
+        "aa_id": "terminal-bench-2.1",
+        "registry_id": "terminal-bench-2.1",
+        "match_type": "exact_id_match",
+        "registry_file": "data/benchmarks/terminal-bench-2.1.yaml",
+        "registry_status": "watchlist",
+        "schema_status": "blocked_by_single_benchmark_schema",
+        "notes": "Both use 89 items; AA uses Terminus 2 with 3 repeats, whereas actualanalysis holds it as vendor-reported watchlist"
+      },
+      {
+        "aa_id": "hle",
+        "registry_id": "hle-no-tools",
+        "match_type": "subset_mismatch",
+        "registry_file": "data/benchmarks/hle-no-tools.yaml",
+        "registry_status": "active",
+        "schema_status": "blocked_by_single_benchmark_schema",
+        "notes": "ActualAnalysis uses CAIS 2500-item split, whereas AA v4.2 evaluates 2158 text-only subset with GPT-5.6 Luna equality checker"
+      },
+      {
+        "aa_id": "aa-lcr-1.1",
+        "registry_id": "aa-lcr",
+        "match_type": "policy_blocked",
+        "registry_file": "data/benchmarks/aa-lcr.yaml",
+        "registry_status": "shadow",
+        "schema_status": "strictly_prohibited_by_registry_policy",
+        "notes": "data/benchmarks/aa-lcr.yaml explicitly states: Artificial Analysis scores themselves are prohibited; this entry permits only non-AA runs"
+      },
+      {
+        "aa_id": "gdpval-aa-v2",
+        "registry_id": "gdpval",
+        "match_type": "policy_blocked",
+        "registry_file": "data/benchmarks/gdpval.yaml",
+        "registry_status": "active",
+        "schema_status": "strictly_prohibited_by_registry_policy",
+        "notes": "data/benchmarks/gdpval.yaml explicitly commands: Never ingest GDPval-AA"
+      },
+      {
+        "aa_id": "aa-briefcase",
+        "registry_id": null,
+        "match_type": "missing_from_registry",
+        "registry_file": null,
+        "registry_status": "unmapped",
+        "schema_status": "blocked_missing_and_elo_scale",
+        "notes": "Grok owns registry additions; AA-Briefcase is an Elo metric (~1000-1400) which fails DisplayBenchmarkFileSchema 0-100 range"
+      },
+      {
+        "aa_id": "aa-omniscience",
+        "registry_id": null,
+        "match_type": "missing_from_registry",
+        "registry_file": null,
+        "registry_status": "unmapped",
+        "schema_status": "blocked_missing_from_registry",
+        "notes": "Grok owns registry additions; composite metric (Accuracy + Non-hallucination) needs schema adapter"
+      },
+      {
+        "aa_id": "gdp-pdf",
+        "registry_id": "gdp-pdf-google-202609",
+        "match_type": "variant_mismatch",
+        "registry_file": "data/benchmarks/gdp-pdf-google-202609.yaml",
+        "registry_status": "watchlist",
+        "schema_status": "blocked_missing_general_gdp_pdf",
+        "notes": "Registry only contains Google model card specific entry; AA GDP.pdf uses 500 attempts across 1275 criteria evaluated by GPT-5.6 Luna"
+      }
+    ]
+  },
+  "admission_blocker_analysis": {
+    "conclusion": "Cannot admit new AA benchmark suite into data/manual/benchmarks-aa.yaml without breaking schema and violating repository policy",
+    "technical_blockers": [
+      {
+        "component": "apps/web/lib/display-data.ts: DisplayBenchmarkFileSchema",
+        "rule": "benchmark: z.object({...}).strict().optional()",
+        "issue": "Schema strictly defines a single benchmark metadata block. There is no list or dictionary structure to hold 10 benchmarks."
+      },
+      {
+        "component": "apps/web/lib/display-data.ts: DisplayBenchmarkObservationSchema",
+        "rule": "score: z.number().finite().min(0).max(100), score_unit: z.literal(\"percent\")",
+        "issue": "Schema enforces percent scale bounded in [0, 100]. AA-Briefcase and GDPval-AA v2 are Elo scores (~1000-1400+), which fail validation."
+      },
+      {
+        "component": "apps/web/lib/display-data.ts: withDisplayBenchmarks",
+        "rule": "const benchmark = data.benchmarks.find(item => item.id === row.benchmark_id)",
+        "issue": "Rows whose benchmark_id is not in data/benchmarks/*.yaml are silently dropped. grok owns registry audit so we cannot add missing benchmarks."
+      },
+      {
+        "component": "Repository Exclusion Policy",
+        "rule": "README.md line 5 and line 99",
+        "issue": "README explicitly designates CritPt as the benchmark display overlay and isolates it strictly from CC-BY snapshots and capability fits."
+      },
+      {
+        "component": "Individual Benchmark Policies",
+        "rule": "data/benchmarks/aa-lcr.yaml & data/benchmarks/gdpval.yaml",
+        "issue": "Explicit prohibitions: data/benchmarks/aa-lcr.yaml forbids AA scores; data/benchmarks/gdpval.yaml forbids GDPval-AA."
+      }
+    ],
+    "resolution_taken": "Staged full candidate in ignored work/coverage-expansion/aa/benchmarks-candidate.yaml and documented blockers."
+  },
+  "independent_alternatives": [
+    {
+      "benchmark": "CritPt",
+      "authoritative_paper": "https://arxiv.org/abs/2509.26574",
+      "repository": "https://github.com/CritPt-Benchmark/CritPt",
+      "official_website": "https://critpt.com/",
+      "author_results_summary": "Base models reach ~4.0% (GPT-5 high); tool-augmented runs reach ~10%; human PhD experts reach ~65% vs skilled non-experts ~34%."
+    },
+    {
+      "benchmark": "SciCode / SciCode-Verified",
+      "authoritative_paper": "https://arxiv.org/abs/2407.13168 (SciCode) & https://arxiv.org/abs/2608.01655 (SciCode-Verified)",
+      "repository": "https://github.com/scicode-bench/SciCode & https://github.com/flyingwagner/scicode-verified",
+      "leaderboard": "https://scicode-bench.github.io/#experiment-results",
+      "author_results_summary": "Original SciCode main problem resolve rate: Claude 3.5 Sonnet ~4.6%, o1-preview ~7.7%. SciCode-Verified v2 provides corrected 64 whole-problem evaluations."
+    },
+    {
+      "benchmark": "\u03c4-bench / \u03c43-bench",
+      "authoritative_paper": "https://arxiv.org/abs/2603.04370",
+      "repository": "https://github.com/sierra-research/tau2-bench",
+      "official_website": "https://taubench.com/",
+      "author_results_summary": "Published by Sierra Research; measures pass@1 against transactional backend database states with ~700 policy documents."
+    },
+    {
+      "benchmark": "Terminal-Bench v2.1",
+      "authoritative_paper": "https://arxiv.org/abs/2601.11868",
+      "leaderboard": "https://tbench.ai/leaderboard/terminal-bench/2.1",
+      "author_results_summary": "Maintained by Stanford and Laude Institute across 89 curated terminal tasks; pass@1 graded by verification suites."
+    },
+    {
+      "benchmark": "GDPval",
+      "authoritative_paper": "https://arxiv.org/abs/2510.04374",
+      "repository": "https://huggingface.co/datasets/openai/gdpval",
+      "author_results_summary": "Published by OpenAI across 44 occupations; 220 gold tasks open-sourced, 1,320 tasks full suite; scored via human expert pairwise evaluation."
+    },
+    {
+      "benchmark": "GDP.pdf",
+      "authoritative_paper": "https://arxiv.org/abs/2607.11192",
+      "repository": "https://huggingface.co/datasets/surgeai/GDP.pdf",
+      "author_results_summary": "Published by Surge AI; 100 professional tasks over 4,592 PDF pages; original Surge AI harness uses raw PDF with Gemini 3.5 Flash judge."
+    },
+    {
+      "benchmark": "Humanity's Last Exam (HLE)",
+      "authoritative_paper": "https://arxiv.org/abs/2501.14249v2",
+      "repository": "https://github.com/centerforaisafety/hle",
+      "leaderboard": "https://labs.scale.com/leaderboard/humanitys_last_exam",
+      "author_results_summary": "Center for AI Safety (CAIS) and Scale AI; 2,500-question multidisciplinary exam designed to resist LLM shortcut solutions."
+    }
+  ],
+  "implementable_next_steps": [
+    {
+      "step": 1,
+      "owner": "Grok (Registry Owner)",
+      "action": "Audit and expand data/benchmarks/ to introduce official benchmark definitions for aa-briefcase, aa-omniscience, and general gdp-pdf, while clarifying policies on aa-lcr and gdpval."
+    },
+    {
+      "step": 2,
+      "owner": "Core Architecture / UI Owner",
+      "action": "Evolve DisplayBenchmarkFileSchema in apps/web/lib/display-data.ts to support a multi-benchmark manifest (e.g. benchmarks array or dictionary) and support both percent and Elo score scales."
+    },
+    {
+      "step": 3,
+      "owner": "Artificial Analysis Owner (Current Agent)",
+      "action": "Migrate staged candidates from work/coverage-expansion/aa/benchmarks-candidate.yaml into data/manual/benchmarks-aa.yaml once the schema and registry blockers are resolved."
+    },
+    {
+      "step": 4,
+      "owner": "Public Evidence Gemini",
+      "action": "Ingest independently published non-AA author results for SciCode-Verified, CAIS HLE, Stanford Terminal-Bench, and Sierra tau3-bench to enrich the public CC-BY capability fit without proprietary AA licensing entanglements."
+    }
+  ]
+}

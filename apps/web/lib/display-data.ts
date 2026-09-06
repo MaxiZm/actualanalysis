@@ -1,6 +1,13 @@
 import { z } from "zod";
 
-import type { SiteData, SpeedRecord } from "./data";
+import {
+  INDEX_KINDS,
+  type ExternalEvaluationRecord,
+  type ExternalMeasure,
+  type ExternalScoreUnit,
+  type SiteData,
+  type SpeedRecord,
+} from "./data";
 
 export const DisplaySpeedObservationSchema = z
   .object({
@@ -173,78 +180,227 @@ export function withDisplayCost(
   };
 }
 
+const displayDate = z.string().regex(/^\d{4}-\d{2}-\d{2}$/u);
+const displayScoreUnit = z.enum(["percent", "elo"]);
+const displayMeasure = z.enum([
+  "score",
+  "accuracy",
+  "hallucination",
+  "all-pass",
+]);
+
+export const DisplayBenchmarkDefinitionSchema = z
+  .object({
+    id: z.string().min(1),
+    name: z.string().min(1).optional(),
+    version: z.string().min(1),
+    n_items: z.number().int().positive(),
+    repeats: z.number().int().positive(),
+    scoring: z.string().min(1),
+    methodology_url: z.string().url(),
+    harness_url: z.string().url(),
+    grader_version: z.string().min(1),
+    score_unit: displayScoreUnit.optional(),
+    source_url: z.string().url().optional(),
+  })
+  .strict();
+
+export const DisplayBenchmarkObservationSchema = z
+  .object({
+    model_id: z.string().min(1),
+    system_id: z.string().min(1).optional(),
+    benchmark_id: z.string().min(1),
+    version: z.string().min(1).optional(),
+    score: z.number().finite(),
+    score_unit: displayScoreUnit,
+    measure: displayMeasure.optional(),
+    configuration: z.string().min(1),
+    observed_on: displayDate,
+    source_url: z.string().url(),
+    redistributable: z.literal(false),
+  })
+  .strict()
+  .superRefine((row, ctx) => {
+    if (row.score_unit === "percent" && (row.score < 0 || row.score > 100)) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "percent scores must be in [0, 100]",
+        path: ["score"],
+      });
+    }
+    if (row.score_unit === "elo" && row.score < 0) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "Elo scores must be finite and at least 0",
+        path: ["score"],
+      });
+    }
+  });
+
 export const DisplayBenchmarkFileSchema = z
   .object({
     redistributable: z.literal(false),
     warning: z.string().min(1),
-    benchmark: z
-      .object({
-        id: z.string(),
-        version: z.string(),
-        n_items: z.number().int().positive(),
-        repeats: z.number().int().positive(),
-        scoring: z.string(),
-        methodology_url: z.string().url(),
-        harness_url: z.string().url(),
-        grader_version: z.string(),
-      })
-      .strict()
-      .optional(),
-    observations: z.array(
-      z
-        .object({
-          model_id: z.string().min(1),
-          benchmark_id: z.string().min(1),
-          score: z.number().finite().min(0).max(100),
-          score_unit: z.literal("percent"),
-          configuration: z.string().min(1),
-          observed_on: z.string().regex(/^\d{4}-\d{2}-\d{2}$/u),
-          source_url: z.string().url(),
-          redistributable: z.literal(false),
-        })
-        .strict(),
-    ),
+    retrieved_on: displayDate.optional(),
+    benchmark: DisplayBenchmarkDefinitionSchema.optional(),
+    benchmarks: z.array(DisplayBenchmarkDefinitionSchema).optional(),
+    observations: z.array(DisplayBenchmarkObservationSchema),
   })
   .strict();
 
+export type DisplayBenchmarkFile = z.infer<typeof DisplayBenchmarkFileSchema>;
+export type DisplayBenchmarkObservation = z.infer<
+  typeof DisplayBenchmarkObservationSchema
+>;
+
+export function parseDisplayBenchmarkFile(
+  value: unknown,
+): DisplayBenchmarkFile | null {
+  const parsed = DisplayBenchmarkFileSchema.safeParse(value);
+  return parsed.success ? parsed.data : null;
+}
+
+function benchmarkCatalog(
+  file: DisplayBenchmarkFile,
+): Map<string, z.infer<typeof DisplayBenchmarkDefinitionSchema>> {
+  const catalog = new Map<
+    string,
+    z.infer<typeof DisplayBenchmarkDefinitionSchema>
+  >();
+  if (file.benchmark) catalog.set(file.benchmark.id, file.benchmark);
+  for (const definition of file.benchmarks ?? []) {
+    catalog.set(definition.id, definition);
+  }
+  return catalog;
+}
+
+function modelSystemIds(model: SiteData["models"][number]): Set<string> {
+  const ids = new Set<string>();
+  if (model.system?.id) ids.add(model.system.id);
+  for (const kind of INDEX_KINDS) {
+    const systemId = model.indexes[kind]?.systemId;
+    if (systemId) ids.add(systemId);
+  }
+  return ids;
+}
+
+function observationMatchesSystem(
+  row: DisplayBenchmarkObservation,
+  model: SiteData["models"][number],
+): boolean {
+  if (!row.system_id) return true;
+  return modelSystemIds(model).has(row.system_id);
+}
+
+function nativeChartValues(row: DisplayBenchmarkObservation): {
+  rawScore: number;
+  score: number;
+  scoreUnit: ExternalScoreUnit;
+} {
+  if (row.score_unit === "percent") {
+    return {
+      rawScore: row.score,
+      score: row.score / 100,
+      scoreUnit: "percent",
+    };
+  }
+  return { rawScore: row.score, score: row.score, scoreUnit: "elo" };
+}
+
+/**
+ * Adds isolated, non-redistributable external benchmark observations to UI
+ * data. Callers serving public JSON or snapshot assets must continue using
+ * the unmodified SiteData. Missing files are represented as null.
+ */
 export function withDisplayBenchmarks(
   data: SiteData,
-  file: z.infer<typeof DisplayBenchmarkFileSchema> | null,
+  file: DisplayBenchmarkFile | null,
 ): SiteData {
   if (!file) return data;
+  const catalog = benchmarkCatalog(file);
+  const evaluationsByModel = new Map<string, ExternalEvaluationRecord[]>();
   const results = file.observations.flatMap((row) => {
     const model = data.models.find((item) => item.id === row.model_id);
-    const benchmark = data.benchmarks.find(
+    if (!model || !observationMatchesSystem(row, model)) return [];
+    const definition = catalog.get(row.benchmark_id);
+    const registryBenchmark = data.benchmarks.find(
       (item) => item.id === row.benchmark_id,
     );
-    return model && benchmark
-      ? [
-          {
-            id: `aa:${row.model_id}:${row.benchmark_id}`,
-            modelSlug: model.slug,
-            benchmarkSlug: benchmark.slug,
-            rawScore: row.score,
-            score: row.score / 100,
-            scoreUnit: row.score_unit,
-            predicted: null,
-            predictedNative: null,
-            observedLogit: null,
-            predictedLogit: null,
-            standardError: null,
-            residualZ: null,
-            sourceKind: "independent" as const,
-            sourceName: "Artificial Analysis",
-            sourceUrl: row.source_url,
-            harness: "Artificial Analysis",
-            config: { evaluation_configuration: row.configuration },
-            nItems: benchmark.nItems,
-            observedOn: row.observed_on,
-            used: true,
-            displayOnly: true,
-            sourceLicense: "Non-redistributable",
-          },
-        ]
-      : [];
+    const measure = (row.measure ?? "score") as ExternalMeasure;
+    const native = nativeChartValues(row);
+    const version = row.version ?? definition?.version ?? "unspecified";
+    const evaluation: ExternalEvaluationRecord = {
+      benchmarkId: row.benchmark_id,
+      benchmarkName:
+        definition?.name ?? registryBenchmark?.name ?? row.benchmark_id,
+      version,
+      measure,
+      score: row.score,
+      scoreUnit: row.score_unit,
+      configuration: row.configuration,
+      ...(row.system_id ? { systemId: row.system_id } : {}),
+      observedOn: row.observed_on,
+      sourceUrl: row.source_url,
+      methodologyUrl:
+        definition?.methodology_url ??
+        registryBenchmark?.harnessUrl ??
+        row.source_url,
+      ...(definition?.harness_url
+        ? { harnessUrl: definition.harness_url }
+        : {}),
+      ...(definition?.grader_version
+        ? { graderVersion: definition.grader_version }
+        : {}),
+      ...(definition?.scoring ? { scoring: definition.scoring } : {}),
+      nItems: definition?.n_items ?? registryBenchmark?.nItems ?? null,
+      ...(definition?.repeats ? { repeats: definition.repeats } : {}),
+      ...(registryBenchmark ? { internalSlug: registryBenchmark.slug } : {}),
+      redistributable: false,
+    };
+    const existing = evaluationsByModel.get(model.id) ?? [];
+    existing.push(evaluation);
+    evaluationsByModel.set(model.id, existing);
+    if (!registryBenchmark) return [];
+    return [
+      {
+        id: `aa:${row.model_id}:${row.benchmark_id}:${measure}:${row.configuration}`,
+        modelSlug: model.slug,
+        benchmarkSlug: registryBenchmark.slug,
+        rawScore: native.rawScore,
+        score: native.score,
+        scoreUnit: native.scoreUnit,
+        predicted: null,
+        predictedNative: null,
+        observedLogit: null,
+        predictedLogit: null,
+        standardError: null,
+        residualZ: null,
+        sourceKind: "independent" as const,
+        sourceName: "Artificial Analysis",
+        sourceUrl: row.source_url,
+        harness: definition?.grader_version ?? "Artificial Analysis",
+        config: {
+          evaluation_configuration: row.configuration,
+          ...(row.system_id ? { system_id: row.system_id } : {}),
+          measure,
+          version,
+        },
+        nItems: definition?.n_items ?? registryBenchmark.nItems,
+        observedOn: row.observed_on,
+        used: true,
+        displayOnly: true,
+        sourceLicense: "Non-redistributable",
+      },
+    ];
   });
-  return { ...data, results: [...results, ...data.results] };
+  return {
+    ...data,
+    models: data.models.map((model) => {
+      const evaluations = evaluationsByModel.get(model.id);
+      return evaluations?.length
+        ? { ...model, externalEvaluations: evaluations }
+        : model;
+    }),
+    results: [...results, ...data.results],
+  };
 }

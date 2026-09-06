@@ -1,5 +1,6 @@
 import type { IngestAdapter } from "../types.js";
 import { ArcPrizeAdapter } from "./arcprize.js";
+import { DatacurveAdapter } from "./datacurve.js";
 import { EpochAdapter } from "./epoch.js";
 import { KaggleAdapter } from "./kaggle.js";
 import { LmArenaAdapter } from "./lmarena.js";
@@ -21,6 +22,7 @@ export function createAdapters(): Map<string, IngestAdapter> {
     new EpochAdapter(),
     new OpenRouterAdapter(),
     new SweRebenchAdapter(),
+    new DatacurveAdapter(),
     new OsworldAdapter(),
     new LmArenaAdapter(),
     new LiveBenchAdapter(),

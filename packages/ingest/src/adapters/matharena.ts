@@ -8,12 +8,16 @@ import { metricEstimateAt } from "./row-results.js";
 
 export const MATHARENA_URL = "https://matharena.ai/models";
 
+const DISCRETE_EFFORT = new Set(["none", "minimal", "low", "medium", "high", "xhigh", "max"]);
+
 function modelIdentity(value: string): { model: string; evaluationProfile?: string } {
   const suffix = /\s+\((think(?:ing)?|reasoning|none|minimal|low|medium|high|xhigh|max)\)$/i.exec(value.trim());
   if (!suffix?.[1]) return { model: value.trim() };
+  const token = suffix[1];
+  const discrete = token.toLowerCase();
   return {
     model: value.slice(0, suffix.index).trim(),
-    evaluationProfile: suffix[1],
+    evaluationProfile: DISCRETE_EFFORT.has(discrete) ? discrete : token,
   };
 }
 

@@ -5,7 +5,7 @@ family: Gemini 2.5
 release_date: 2025-05-06
 open_weights: false
 license: Proprietary
-aliases: [Gemini 2.5 Pro Preview (May 06 2025)]
+aliases: [Gemini 2.5 Pro Preview (May 06 2025), Gemini 2.5 Pro (05-06)]
 source_url: https://blog.google/technology/google-deepmind/gemini-model-thinking-updates-march-2025/#gemini-2-5-thinking
 status: active
 

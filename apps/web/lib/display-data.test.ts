@@ -12,6 +12,7 @@ import {
   DisplayCostFileSchema,
   DisplayBenchmarkFileSchema,
   DisplaySpeedFileSchema,
+  parseDisplayBenchmarkFile,
 } from "./display-data";
 
 describe("display-only speed overlay", () => {
@@ -237,5 +238,208 @@ describe("source-backed display registries", () => {
     expect(
       FIXTURE_SITE_DATA.results.some((row) => row.id.startsWith("aa:")),
     ).toBe(false);
+    expect(data.results.filter((row) => !row.displayOnly)).toEqual(
+      FIXTURE_SITE_DATA.results,
+    );
+    expect(data.models[0]?.indexes).toEqual(FIXTURE_SITE_DATA.models[0]?.indexes);
+    expect(data.models[0]?.indexes.mixed?.coverageCount).toBe(
+      FIXTURE_SITE_DATA.models[0]?.indexes.mixed?.coverageCount,
+    );
+  });
+});
+
+describe("versioned external benchmark overlay", () => {
+  const model = FIXTURE_SITE_DATA.models[0]!;
+  const registryBenchmark = FIXTURE_SITE_DATA.benchmarks[0]!;
+  const baseObservation = {
+    model_id: model.id,
+    configuration: "Model A (max)",
+    observed_on: "2026-09-06",
+    source_url: "https://artificialanalysis.ai/evaluations/aa-briefcase",
+    redistributable: false as const,
+  };
+
+  it("accepts native Elo and separate accuracy/hallucination percent measures", () => {
+    const file = DisplayBenchmarkFileSchema.parse({
+      redistributable: false,
+      warning: "Display only",
+      benchmarks: [
+        {
+          id: "aa-briefcase",
+          name: "AA-Briefcase",
+          version: "index-v4.2",
+          n_items: 91,
+          repeats: 1,
+          scoring: "Combined Elo",
+          methodology_url:
+            "https://artificialanalysis.ai/methodology/intelligence-benchmarking",
+          harness_url: "https://github.com/ArtificialAnalysis/Stirrup",
+          grader_version: "3-judge panel",
+          score_unit: "elo",
+        },
+        {
+          id: "aa-omniscience",
+          name: "AA-Omniscience",
+          version: "index-v4.2",
+          n_items: 6000,
+          repeats: 1,
+          scoring: "Accuracy and hallucination as separate measures",
+          methodology_url:
+            "https://artificialanalysis.ai/methodology/intelligence-benchmarking",
+          harness_url:
+            "https://artificialanalysis.ai/methodology/intelligence-benchmarking",
+          grader_version: "GPT-5.6 Luna (medium reasoning)",
+          score_unit: "percent",
+        },
+      ],
+      observations: [
+        {
+          ...baseObservation,
+          benchmark_id: "aa-briefcase",
+          score: 1665,
+          score_unit: "elo",
+        },
+        {
+          ...baseObservation,
+          benchmark_id: "aa-omniscience",
+          score: 67,
+          score_unit: "percent",
+          measure: "accuracy",
+        },
+        {
+          ...baseObservation,
+          benchmark_id: "aa-omniscience",
+          score: 12,
+          score_unit: "percent",
+          measure: "hallucination",
+        },
+      ],
+    });
+    const data = withDisplayBenchmarks(FIXTURE_SITE_DATA, file);
+    expect(data.models[0]?.externalEvaluations).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          benchmarkId: "aa-briefcase",
+          score: 1665,
+          scoreUnit: "elo",
+          measure: "score",
+          configuration: "Model A (max)",
+          redistributable: false,
+        }),
+        expect.objectContaining({
+          benchmarkId: "aa-omniscience",
+          measure: "accuracy",
+          score: 67,
+          scoreUnit: "percent",
+        }),
+        expect.objectContaining({
+          benchmarkId: "aa-omniscience",
+          measure: "hallucination",
+          score: 12,
+        }),
+      ]),
+    );
+    expect(data.results.some((row) => row.id.includes("aa-briefcase"))).toBe(
+      false,
+    );
+    expect(data.models[0]?.indexes.mixed?.coverageCount).toBe(
+      FIXTURE_SITE_DATA.models[0]?.indexes.mixed?.coverageCount,
+    );
+  });
+
+  it("rejects out-of-range percent and negative Elo while allowing Elo above 100", () => {
+    expect(
+      parseDisplayBenchmarkFile({
+        redistributable: false,
+        warning: "Display only",
+        observations: [
+          { ...baseObservation, benchmark_id: "aa-briefcase", score: 101, score_unit: "percent" },
+        ],
+      }),
+    ).toBeNull();
+    expect(
+      parseDisplayBenchmarkFile({
+        redistributable: false,
+        warning: "Display only",
+        observations: [
+          { ...baseObservation, benchmark_id: "aa-briefcase", score: -1, score_unit: "elo" },
+        ],
+      }),
+    ).toBeNull();
+    expect(
+      parseDisplayBenchmarkFile({
+        redistributable: false,
+        warning: "Display only",
+        observations: [
+          { ...baseObservation, benchmark_id: "aa-briefcase", score: 1665, score_unit: "elo" },
+        ],
+      }),
+    ).not.toBeNull();
+  });
+
+  it("keeps a system-matched configuration and drops a mismatched system_id", () => {
+    const mixed = model.indexes.mixed;
+    if (!mixed) throw new Error("fixture mixed index is missing");
+    const scored = {
+      ...FIXTURE_SITE_DATA,
+      models: [
+        {
+          ...model,
+          system: {
+            id: "model-a:max",
+            profile: "max",
+            tier: "ranked" as const,
+            aciG: null,
+            domains: {},
+            baskets: {},
+            evidence: null,
+          },
+          indexes: {
+            mixed: { ...mixed, systemId: "model-a:max" },
+            ...(model.indexes.agentic ? { agentic: model.indexes.agentic } : {}),
+            ...(model.indexes.chat ? { chat: model.indexes.chat } : {}),
+          },
+        },
+        ...FIXTURE_SITE_DATA.models.slice(1),
+      ],
+    };
+    const file = DisplayBenchmarkFileSchema.parse({
+      redistributable: false,
+      warning: "Display only",
+      observations: [
+        {
+          ...baseObservation,
+          benchmark_id: registryBenchmark.id,
+          system_id: "model-a:max",
+          score: 12.6,
+          score_unit: "percent",
+        },
+        {
+          ...baseObservation,
+          benchmark_id: registryBenchmark.id,
+          system_id: "model-a:low",
+          configuration: "Model A (low)",
+          score: 4,
+          score_unit: "percent",
+        },
+      ],
+    });
+    const data = withDisplayBenchmarks(scored, file);
+    expect(data.models[0]?.externalEvaluations).toHaveLength(1);
+    expect(data.models[0]?.externalEvaluations?.[0]).toMatchObject({
+      systemId: "model-a:max",
+      configuration: "Model A (max)",
+      score: 12.6,
+    });
+    expect(data.results.filter((row) => row.displayOnly)).toHaveLength(1);
+  });
+
+  it("failsofts a missing or malformed private file without mutating site data", () => {
+    expect(parseDisplayBenchmarkFile(undefined)).toBeNull();
+    expect(parseDisplayBenchmarkFile({ redistributable: false })).toBeNull();
+    const absent = withDisplayBenchmarks(FIXTURE_SITE_DATA, null);
+    expect(absent.results).toBe(FIXTURE_SITE_DATA.results);
+    expect(absent.models[0]).toBe(FIXTURE_SITE_DATA.models[0]);
+    expect(absent.models[0]?.externalEvaluations).toBeUndefined();
   });
 });

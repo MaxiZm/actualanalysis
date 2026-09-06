@@ -1,0 +1,499 @@
+{
+  "timestamp": "2026-09-06T21:43:53.542Z",
+  "baseline_source": "docs/audits/1.4.3-effort-coverage/accepted-input.json",
+  "candidate_source": "work/coverage-expansion/ready-input.json",
+  "gross_summary": {
+    "observations": {
+      "baseline": 924,
+      "candidate": 928,
+      "delta": 4
+    },
+    "cells": {
+      "baseline": 673,
+      "candidate": 677,
+      "delta": 4
+    },
+    "models": {
+      "baseline": 110,
+      "candidate": 110,
+      "delta": 0
+    },
+    "systems": {
+      "baseline": 131,
+      "candidate": 131,
+      "delta": 0
+    },
+    "benchmarks": {
+      "baseline": 19,
+      "candidate": 19,
+      "delta": 0
+    },
+    "families": {
+      "baseline": 16,
+      "candidate": 16,
+      "delta": 0
+    }
+  },
+  "additions": {
+    "gross_added_observations_count": 4,
+    "gross_added_cells_count": 4,
+    "added_benchmarks": [],
+    "added_models": [],
+    "added_observations_sample": [
+      {
+        "system_id": "claude-fable-5.1@max-common",
+        "benchmark_id": "matharena-composite",
+        "protocol_id": "matharena",
+        "provenance": "independent",
+        "score": 0.9444616088408513
+      },
+      {
+        "system_id": "qwen-3.8-max@max-common",
+        "benchmark_id": "matharena-composite",
+        "protocol_id": "matharena",
+        "provenance": "independent",
+        "score": -0.15229366908004557
+      },
+      {
+        "system_id": "claude-3.5-sonnet@max-common",
+        "benchmark_id": "matharena-composite",
+        "protocol_id": "matharena",
+        "provenance": "independent",
+        "score": -4.820281565605037
+      },
+      {
+        "system_id": "gpt-6-astra@max-common",
+        "benchmark_id": "matharena-composite",
+        "protocol_id": "matharena",
+        "provenance": "independent",
+        "score": 2.2657445237729745
+      }
+    ]
+  },
+  "removals": {
+    "gross_removed_observations_count": 0,
+    "gross_removed_cells_count": 0,
+    "removed_benchmarks": [],
+    "removed_models": [],
+    "removed_observations_sample": []
+  },
+  "corrections": {
+    "gross_corrected_observations_count": 458,
+    "corrections_sample": [
+      {
+        "system_id": "gpt-5.5-instant@max-common",
+        "benchmark_id": "frontiermath-v2-tier-4",
+        "protocol_id": "epoch-frontiermath-v2",
+        "changes": {
+          "y": {
+            "before": -3.6888794541139363,
+            "after": -3.688879492038937
+          },
+          "variance": {
+            "before": 1.050625,
+            "after": 1.0506249980563438
+          }
+        }
+      },
+      {
+        "system_id": "claude-fable-5@max-common",
+        "benchmark_id": "frontiermath-v2-tier-4",
+        "protocol_id": "epoch-frontiermath-v2",
+        "changes": {
+          "y": {
+            "before": 1.9740810260220096,
+            "after": 1.974081208244244
+          },
+          "variance": {
+            "before": 0.23347222222222228,
+            "after": 0.2334722813708615
+          }
+        }
+      },
+      {
+        "system_id": "gemini-3.5-flash@max-common",
+        "benchmark_id": "frontiermath-v2-tiers-1-3",
+        "protocol_id": "epoch-frontiermath-v2",
+        "changes": {
+          "y": {
+            "before": 0.5239467117286877,
+            "after": 0.5239468168725705
+          },
+          "variance": {
+            "before": 0.015073443719129363,
+            "after": 0.015073445843848277
+          }
+        }
+      },
+      {
+        "system_id": "gpt-5.4@max-common",
+        "benchmark_id": "vending-bench-2",
+        "protocol_id": "andonlabs",
+        "changes": {
+          "variance": {
+            "before": 0.041836612064366015,
+            "after": 0.04183661263697364
+          }
+        }
+      },
+      {
+        "system_id": "kimi-k3@max-common",
+        "benchmark_id": "deepswe-1.1",
+        "protocol_id": "datacurve",
+        "changes": {
+          "y": {
+            "before": 0.7775142192964849,
+            "after": 0.777514107260843
+          },
+          "variance": {
+            "before": 0.011514381937946936,
+            "after": 0.011514381960774998
+          }
+        }
+      },
+      {
+        "system_id": "gemini-3.6-flash@max-common",
+        "benchmark_id": "matharena-composite",
+        "protocol_id": "matharena-expected-performance-2026-09-05",
+        "changes": {
+          "y": {
+            "before": -1.056389658245763,
+            "after": -1.0616199598225393
+          },
+          "variance": {
+            "before": 0.0015981706581640112,
+            "after": 0.001827611778934916
+          }
+        }
+      },
+      {
+        "system_id": "gemini-3.6-flash@max-common",
+        "benchmark_id": "deepswe-1.1",
+        "protocol_id": "datacurve",
+        "changes": {
+          "y": {
+            "before": -0.1329388000145885,
+            "after": -0.13293879717020007
+          },
+          "variance": {
+            "before": 0.005767462419027787,
+            "after": 0.005767463141517111
+          }
+        }
+      },
+      {
+        "system_id": "o3@max-common",
+        "benchmark_id": "simpleqa-verified-epoch-anti-abstention-v1-2-0",
+        "protocol_id": "epoch-simpleqa-anti-abstention-v1-2-0",
+        "changes": {
+          "variance": {
+            "before": 0.004004580663619564,
+            "after": 0.004004580208630711
+          }
+        }
+      },
+      {
+        "system_id": "muse-glimmer@max-common",
+        "benchmark_id": "lmarena-text-style-controlled",
+        "protocol_id": "lmarena",
+        "changes": {
+          "y": {
+            "before": 0.15739842218802733,
+            "after": 0.1573983848480678
+          },
+          "variance": {
+            "before": 0.00085525791779241,
+            "after": 0.0008552579547429836
+          }
+        }
+      },
+      {
+        "system_id": "claude-fable-5.1@max-common",
+        "benchmark_id": "frontiermath-v2-tier-4",
+        "protocol_id": "epoch-frontiermath-v2",
+        "changes": {
+          "y": {
+            "before": 1.9740810260220096,
+            "after": 1.974081208244244
+          },
+          "variance": {
+            "before": 0.23347222222222228,
+            "after": 0.2334722813708615
+          }
+        }
+      },
+      {
+        "system_id": "gpt-5-pro@max-common",
+        "benchmark_id": "frontiermath-v2-tiers-1-3",
+        "protocol_id": "epoch-frontiermath-v2",
+        "changes": {
+          "y": {
+            "before": 0.23262229526875333,
+            "after": 0.2326224297027167
+          },
+          "variance": {
+            "before": 0.014275907014413529,
+            "after": 0.014275907915929718
+          }
+        }
+      },
+      {
+        "system_id": "grok-4.5@max-common",
+        "benchmark_id": "frontiermath-v2-tier-4",
+        "protocol_id": "epoch-frontiermath-v2",
+        "changes": {
+          "y": {
+            "before": -1.1314021114911006,
+            "after": -1.131402106200778
+          },
+          "variance": {
+            "before": 0.13556451612903228,
+            "after": 0.13556449383021657
+          }
+        }
+      },
+      {
+        "system_id": "gemini-2.5-pro-20250506@max-common",
+        "benchmark_id": "matharena-composite",
+        "protocol_id": "matharena-expected-performance-2026-09-05",
+        "changes": {
+          "y": {
+            "before": -2.153549513833558,
+            "after": -2.2196470413920517
+          },
+          "variance": {
+            "before": 0.028809024109550607,
+            "after": 0.0341132099758468
+          }
+        }
+      },
+      {
+        "system_id": "o1@max-common",
+        "benchmark_id": "metr-time-horizon-1.1",
+        "protocol_id": "metr-time-horizon-1.1",
+        "changes": {
+          "y": {
+            "before": -1.360420599153577,
+            "after": -1.3604205620009626
+          },
+          "variance": {
+            "before": 0.04257788051578156,
+            "after": 0.04257787586269268
+          }
+        }
+      },
+      {
+        "system_id": "o3@std-common",
+        "benchmark_id": "hle-no-tools",
+        "protocol_id": "scale-hle-leaderboard-2025",
+        "changes": {
+          "variance": {
+            "before": 0.002565098932881202,
+            "after": 0.0025650988302772454
+          }
+        }
+      }
+    ]
+  },
+  "provenance_breakdown": {
+    "independent_additions": 4,
+    "self_report_additions": 0,
+    "by_protocol": {
+      "matharena": 4
+    }
+  },
+  "latest_model_gaps": [
+    {
+      "system_id": "gemini-3.8-flash@max-common",
+      "before_benchmarks": 5,
+      "after_benchmarks": 5,
+      "before_missing_domains": [
+        "knowledge-information"
+      ],
+      "after_missing_domains": [
+        "knowledge-information"
+      ],
+      "resolved_domains": [],
+      "remaining_missing_domains": [
+        "knowledge-information"
+      ]
+    },
+    {
+      "system_id": "gemini-3.7-flash@max-common",
+      "before_benchmarks": 9,
+      "after_benchmarks": 9,
+      "before_missing_domains": [],
+      "after_missing_domains": [],
+      "resolved_domains": [],
+      "remaining_missing_domains": []
+    },
+    {
+      "system_id": "gpt-5.6-sol@max-common",
+      "before_benchmarks": 15,
+      "after_benchmarks": 15,
+      "before_missing_domains": [],
+      "after_missing_domains": [],
+      "resolved_domains": [],
+      "remaining_missing_domains": []
+    },
+    {
+      "system_id": "gpt-5.6-luna@max-common",
+      "before_benchmarks": 15,
+      "after_benchmarks": 15,
+      "before_missing_domains": [],
+      "after_missing_domains": [],
+      "resolved_domains": [],
+      "remaining_missing_domains": []
+    },
+    {
+      "system_id": "grok-4.6@max-common",
+      "before_benchmarks": 6,
+      "after_benchmarks": 6,
+      "before_missing_domains": [
+        "communication-professional"
+      ],
+      "after_missing_domains": [
+        "communication-professional"
+      ],
+      "resolved_domains": [],
+      "remaining_missing_domains": [
+        "communication-professional"
+      ]
+    },
+    {
+      "system_id": "claude-sonnet-5@max-common",
+      "before_benchmarks": 10,
+      "after_benchmarks": 10,
+      "before_missing_domains": [
+        "communication-professional"
+      ],
+      "after_missing_domains": [
+        "communication-professional"
+      ],
+      "resolved_domains": [],
+      "remaining_missing_domains": [
+        "communication-professional"
+      ]
+    },
+    {
+      "system_id": "claude-opus-5@max-common",
+      "before_benchmarks": 14,
+      "after_benchmarks": 14,
+      "before_missing_domains": [],
+      "after_missing_domains": [],
+      "resolved_domains": [],
+      "remaining_missing_domains": []
+    },
+    {
+      "system_id": "deepseek-v4-pro-0813@max-common",
+      "before_benchmarks": 9,
+      "after_benchmarks": 9,
+      "before_missing_domains": [
+        "software-code"
+      ],
+      "after_missing_domains": [
+        "software-code"
+      ],
+      "resolved_domains": [],
+      "remaining_missing_domains": [
+        "software-code"
+      ]
+    },
+    {
+      "system_id": "o1-pro@max-common",
+      "before_benchmarks": 1,
+      "after_benchmarks": 1,
+      "before_missing_domains": [
+        "agentic",
+        "software-code",
+        "knowledge-information",
+        "communication-professional"
+      ],
+      "after_missing_domains": [
+        "agentic",
+        "software-code",
+        "knowledge-information",
+        "communication-professional"
+      ],
+      "resolved_domains": [],
+      "remaining_missing_domains": [
+        "agentic",
+        "software-code",
+        "knowledge-information",
+        "communication-professional"
+      ]
+    },
+    {
+      "system_id": "o3-pro@max-common",
+      "before_benchmarks": 3,
+      "after_benchmarks": 3,
+      "before_missing_domains": [
+        "agentic",
+        "software-code",
+        "knowledge-information",
+        "communication-professional"
+      ],
+      "after_missing_domains": [
+        "agentic",
+        "software-code",
+        "knowledge-information",
+        "communication-professional"
+      ],
+      "resolved_domains": [],
+      "remaining_missing_domains": [
+        "agentic",
+        "software-code",
+        "knowledge-information",
+        "communication-professional"
+      ]
+    },
+    {
+      "system_id": "gpt-5.1-codex-max@max-common",
+      "before_benchmarks": 1,
+      "after_benchmarks": 1,
+      "before_missing_domains": [
+        "software-code",
+        "reasoning",
+        "knowledge-information",
+        "communication-professional"
+      ],
+      "after_missing_domains": [
+        "software-code",
+        "reasoning",
+        "knowledge-information",
+        "communication-professional"
+      ],
+      "resolved_domains": [],
+      "remaining_missing_domains": [
+        "software-code",
+        "reasoning",
+        "knowledge-information",
+        "communication-professional"
+      ]
+    },
+    {
+      "system_id": "grok-code-fast-1@max-common",
+      "before_benchmarks": 1,
+      "after_benchmarks": 1,
+      "before_missing_domains": [
+        "software-code",
+        "reasoning",
+        "knowledge-information",
+        "communication-professional"
+      ],
+      "after_missing_domains": [
+        "software-code",
+        "reasoning",
+        "knowledge-information",
+        "communication-professional"
+      ],
+      "resolved_domains": [],
+      "remaining_missing_domains": [
+        "software-code",
+        "reasoning",
+        "knowledge-information",
+        "communication-professional"
+      ]
+    }
+  ]
+}

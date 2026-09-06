@@ -2,7 +2,7 @@
 
 ActualAnalysis is an open model-comparison stack with public benchmark registries, source-aware ingestion, a Bayesian capability model, uncertainty estimates and a Next.js comparison UI. It reports **Mixed**, **Agentic** and **Chat** views using different declared domain weights on the same posterior.
 
-The repository is intentionally useful before a database is configured. The web app reads the latest valid committed snapshot and falls back to clearly labelled synthetic fixture data if no valid snapshot is available. Artificial Analysis runtime, task cost and CritPt results are attributed UI overlays. They do not enter the capability fit or bulk exports; the private registries may be absent.
+The repository is intentionally useful before a database is configured. The web app reads the latest valid committed snapshot and falls back to clearly labelled synthetic fixture data if no valid snapshot is available. Artificial Analysis runtime, task cost and versioned external benchmark results (native units, including Elo and separate accuracy/hallucination measures) are attributed UI overlays. They do not enter the capability fit, coverage badges or bulk exports; the private registries may be absent.
 
 ## Scoring engine (method 1.4.0)
 
@@ -96,7 +96,7 @@ Every observation needs a source URL, observation date, harness/config metadata,
 
 Kaggle result snapshots may be supplied as HTTP(S) URLs through the `ACTUALANALYSIS_KAGGLE_*_URL` variables or placed at `data/kaggle/<benchmark-id>.{csv,json,yaml,yml}`. The adapter deliberately has no guessed public defaults: currently discoverable datasets under these benchmark names contain question sets or third-party copies, not authoritative model-result leaderboards.
 
-The code is Apache-2.0. Redistributable registries and snapshots are CC-BY-4.0. `data/manual/speed-aa.yaml`, `cost-aa.yaml` and `benchmarks-aa.yaml` are explicitly **not** part of the CC-BY dataset, fit or bulk exporter; see the warnings in those files. Their UI values retain source and exact configuration links.
+The code is Apache-2.0. Redistributable registries and snapshots are CC-BY-4.0. `data/manual/speed-aa.yaml`, `cost-aa.yaml` and `benchmarks-aa.yaml` are explicitly **not** part of the CC-BY dataset, fit or bulk exporter; see the warnings in those files. The benchmark overlay is a versioned multi-evaluation display (legacy CritPt percent files still parse) with native units and exact system/config/source/date attribution. It must not include AA private questions or a full AA table in public CC-BY data. Their UI values retain source and exact configuration links. Missing private files fail soft.
 
 ## Quality gates
 

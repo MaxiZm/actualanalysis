@@ -22,6 +22,23 @@ describe("public model DTO", () => {
         methodologyUrl: "https://example.com/method",
         redistributable: false as const,
       },
+      externalEvaluations: [
+        {
+          benchmarkId: "aa-briefcase",
+          benchmarkName: "AA-Briefcase",
+          version: "index-v4.2",
+          measure: "score" as const,
+          score: 1665,
+          scoreUnit: "elo" as const,
+          configuration: "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)",
+          observedOn: "2026-09-06",
+          sourceUrl: "https://artificialanalysis.ai/evaluations/aa-briefcase",
+          methodologyUrl:
+            "https://artificialanalysis.ai/methodology/intelligence-benchmarking",
+          nItems: 91,
+          redistributable: false as const,
+        },
+      ],
       pricing: source.pricing.map((price) => ({
         ...price,
         privateSentinel: "restricted",
@@ -36,6 +53,8 @@ describe("public model DTO", () => {
     expect(serialized).not.toContain("aliases");
     expect(serialized).not.toContain("displayEconomics");
     expect(serialized).not.toContain("costPerTask");
+    expect(serialized).not.toContain("externalEvaluations");
+    expect(serialized).not.toContain("aa-briefcase");
     expect(serialized).not.toContain("private task cost");
     expect(serialized).not.toContain("tokensPerSecond");
     expect(serialized).not.toContain("privateSentinel");

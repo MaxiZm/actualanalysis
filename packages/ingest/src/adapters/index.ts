@@ -1,4 +1,5 @@
 export * from "./arcprize.js";
+export * from "./datacurve.js";
 export * from "./epoch.js";
 export * from "./kaggle.js";
 export * from "./lmarena.js";

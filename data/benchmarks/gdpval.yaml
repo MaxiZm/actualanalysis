@@ -37,6 +37,9 @@ promotion_rule: "Promoted to active under method 1.2.3: the benchmark has
   independent results for ≥8 registered models; metadata pins that are still
   missing are carried as metadata_incomplete on each observation instead of
   blocking the fit."
-notes: The registry currently conflates public Gold-220 and private Full-1320
-  and the metric is human pairwise judgment, not accuracy. Excluded until
-  identities and configurations are split. Never ingest GDPval-AA.
+notes: Official identity is 1,320 full-set tasks and a 220-task public gold
+  subset; primary metric is blinded expert pairwise win rate, not binomial
+  accuracy. The registry currently conflates Gold-220 and Full-1320 under one
+  condition. Do not change obs_type or n_items without a calibrated likelihood
+  split. openai.com/index/gdpval was unreachable on 2026-09-06; counts and
+  metric independently confirmed from arXiv:2510.04374. Never ingest GDPval-AA.

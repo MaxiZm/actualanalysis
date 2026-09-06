@@ -1,4 +1,5 @@
 import { CostPerTaskValue } from "@/components/cost-per-task-value";
+import { ExternalEvaluations } from "@/components/external-evaluations";
 import { VENDOR_DISPLAY } from "@/lib/display-economics";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -237,6 +238,8 @@ export default async function ModelPage({ params }: ModelPageProps) {
   const results = [...getResultsForModel(model.slug, data.results)].sort(
     resultOrder,
   );
+  const fittedResults = results.filter((result) => !result.displayOnly);
+  const externalEvaluations = model.externalEvaluations ?? [];
   const history = data.history.filter(
     (point) => point.modelSlug === model.slug,
   );
@@ -245,7 +248,7 @@ export default async function ModelPage({ params }: ModelPageProps) {
   const tier = mixed?.tier ?? system?.tier ?? null;
   const evidence = system?.evidence ?? null;
   const fittedBenchmarks = new Set(
-    results
+    fittedResults
       .filter((result) => result.residualZ !== null)
       .map((result) => result.benchmarkSlug),
   ).size;
@@ -362,7 +365,7 @@ export default async function ModelPage({ params }: ModelPageProps) {
       <div className="model-fit-chart">
         <ResidualPlot
           title="Normalized observed vs expected"
-          points={results
+          points={fittedResults
             .filter((result) => result.predicted !== null && result.used)
             .map((result) => ({
               id: result.id,
@@ -381,10 +384,11 @@ export default async function ModelPage({ params }: ModelPageProps) {
         <div className="section-heading">
           <h2 id="evidence-heading">Benchmark evidence</h2>
           <p>
-            {results.length} observations · {fittedBenchmarks} fitted benchmark
-            cells{system ? ` for ${system.id}` : ""}. Observed values are shown
-            in the unit the source reported; predictions are the fitted logit
-            mapped back through the benchmark transform.
+            {fittedResults.length} observations · {fittedBenchmarks} fitted
+            benchmark cells{system ? ` for ${system.id}` : ""}. Observed values
+            are shown in the unit the source reported; predictions are the
+            fitted logit mapped back through the benchmark transform. Display-only
+            Artificial Analysis rows are listed separately.
           </p>
         </div>
         <div className="data-table-wrap">
@@ -413,7 +417,7 @@ export default async function ModelPage({ params }: ModelPageProps) {
               </tr>
             </thead>
             <tbody>
-              {results.map((result) => {
+              {fittedResults.map((result) => {
                 const benchmark = data.benchmarks.find(
                   (item) => item.slug === result.benchmarkSlug,
                 );
@@ -521,6 +525,8 @@ export default async function ModelPage({ params }: ModelPageProps) {
           </table>
         </div>
       </section>
+
+      <ExternalEvaluations evaluations={externalEvaluations} />
 
       <section className="content-section" aria-labelledby="economics-heading">
         <div className="section-heading">

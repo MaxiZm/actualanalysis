@@ -28,4 +28,8 @@ metadata_sources:
   - https://github.com/METR/eval-analysis-public
   - https://metr.org/assets/benchmark_results_1_1.yaml
 status: active
-notes: Continuous p50 horizon input is not accuracy. Row-level task-set commit, scaffold list, and reported confidence interval are required.
+notes: Continuous p50 horizon input is not accuracy. Official TH1.1 suite is 228
+  tasks (from 170), including 31 tasks estimated at 8 hours or longer; n_items
+  remains null because the likelihood is a horizon, not a task-count success
+  rate. Row-level task-set commit, scaffold list, and reported confidence
+  interval are required.

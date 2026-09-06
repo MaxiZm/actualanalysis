@@ -14,10 +14,14 @@ transform:
 n_items: null
 harness_url: https://andonlabs.com/evals/vending-bench-2
 source_ids: [ andonlabs, epoch, vendor-model-cards ]
+metadata_sources:
+  - https://andonlabs.com/evals/vending-bench-2
 status: active
-notes: The money likelihood requires at least three run balances. Upstream
-  publishes only aggregate mean, SEM, and n, so current rows remain visible but
-  are not fitted.
+notes: Upstream publishes aggregate mean, SEM, and run count n (typically 5),
+  not per-run balances. Method 1.4.1+ admits those native aggregates through the
+  log_relative money transform against the published ~$63,000 strong-human
+  reference; do not reconstruct per-run balances. Never ingest Vending-Bench-AA
+  copies.
 obs_type: money
 domains:
   agentic: 0.8

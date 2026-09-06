@@ -1,0 +1,3070 @@
+{
+  "audit_metadata": {
+    "method_version": "1.4.3",
+    "date": "2026-09-06",
+    "baseline_input_file": "docs/audits/1.4.3-effort-coverage/accepted-input.json",
+    "baseline_input_sha256": "e5d654f41019df63f9f78c28efcd8d83db9bf425bf63e4d2cadb3a166fe23578",
+    "catalog_models_count": 126,
+    "catalog_benchmarks_count": 107,
+    "catalog_families_count": 66,
+    "fitted_models_count": 110,
+    "fitted_systems_count": 131,
+    "fitted_benchmarks_count": 19,
+    "fitted_families_count": 16,
+    "unfitted_catalog_models_count": 16
+  },
+  "benchmark_metadata_statuses": {
+    "total_catalog_benchmarks": 107,
+    "by_status": {
+      "shadow": 2,
+      "watchlist": 81,
+      "active": 19,
+      "retired": 5
+    },
+    "by_holdout": {
+      "public": 90,
+      "semi_private": 5,
+      "private": 6,
+      "rolling": 6
+    },
+    "by_utility_status": {
+      "pending": 107
+    },
+    "benchmarks": [
+      {
+        "id": "aa-lcr",
+        "name": "AA-LCR",
+        "family_id": "aa-lcr",
+        "status": "shadow",
+        "holdout": "public",
+        "primary_domain": "agentic",
+        "domains": {},
+        "obs_type": "count",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": true,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "agents-last-exam-ale-cli-zai",
+        "name": "Agents Last Exam (ALE-CLI; Z.ai)",
+        "family_id": "agents-last-exam-ale-cli-zai",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "agentic",
+        "domains": {
+          "agentic": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "agents-last-exam-deepseek-reported",
+        "name": "Agents Last Exam (DeepSeek reported)",
+        "family_id": "agents-last-exam-deepseek-reported",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "agentic",
+        "domains": {
+          "agentic": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "agents-last-exam-qwen-pass",
+        "name": "Agents Last Exam (Qwen; pass@1)",
+        "family_id": "agents-last-exam-qwen-pass",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "agentic",
+        "domains": {
+          "agentic": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "agents-last-exam-qwen-score",
+        "name": "Agents Last Exam (Qwen; rubric score)",
+        "family_id": "agents-last-exam-qwen-score",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "agentic",
+        "domains": {
+          "agentic": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "agents-last-exam-zai-reported",
+        "name": "Agents Last Exam (Z.ai reported)",
+        "family_id": "agents-last-exam-zai-reported",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "agentic",
+        "domains": {
+          "agentic": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "apexbench-deepseek-vision-reported",
+        "name": "ApexBench (DeepSeek vision; pass@1)",
+        "family_id": "apexbench-deepseek-vision-reported",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "agentic",
+        "domains": {
+          "agentic": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "arc-agi-2-semi-private",
+        "name": "ARC-AGI-2 semi-private",
+        "family_id": "arc-agi",
+        "status": "active",
+        "holdout": "semi_private",
+        "primary_domain": "reasoning",
+        "domains": {
+          "agentic": 0,
+          "software-code": 0,
+          "reasoning": 1,
+          "knowledge-information": 0,
+          "communication-professional": 0
+        },
+        "obs_type": "count",
+        "chance_level": 0,
+        "ceiling": 1,
+        "default_k": 1,
+        "is_reference": true,
+        "source_ids": [
+          "arcprize",
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": true
+      },
+      {
+        "id": "arc-agi-3",
+        "name": "ARC-AGI-3",
+        "family_id": "arc-agi",
+        "status": "watchlist",
+        "holdout": "semi_private",
+        "primary_domain": "reasoning",
+        "domains": {
+          "agentic": 0.45,
+          "software-code": 0,
+          "reasoning": 0.55,
+          "knowledge-information": 0,
+          "communication-professional": 0
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "default_k": 1,
+        "is_reference": false,
+        "source_ids": [
+          "arcprize",
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "automationbench-public-1.0.6",
+        "name": "AutomationBench public v1.0.6",
+        "family_id": "automationbench-public",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "agentic",
+        "domains": {
+          "agentic": 0.7,
+          "software-code": 0,
+          "reasoning": 0.1,
+          "knowledge-information": 0,
+          "communication-professional": 0.2
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "default_k": 1,
+        "is_reference": false,
+        "source_ids": [
+          "automationbench",
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "automationbench-public-deepseek-reported",
+        "name": "AutomationBench Public (DeepSeek card; revision unspecified)",
+        "family_id": "automationbench",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "agentic",
+        "domains": {
+          "agentic": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "automationbench-public-kimi-july",
+        "name": "AutomationBench public (Kimi July official setup)",
+        "family_id": "automationbench",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "agentic",
+        "domains": {
+          "agentic": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "automationbench-public-qwen-reported",
+        "name": "AutomationBench Public (Qwen reported)",
+        "family_id": "automationbench",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "agentic",
+        "domains": {
+          "agentic": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "automationbench-public-v3",
+        "name": "AutomationBench public v3",
+        "family_id": "automationbench",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "agentic",
+        "domains": {
+          "agentic": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "automationbench-public",
+        "name": "AutomationBench · public",
+        "family_id": "automationbench-public",
+        "status": "retired",
+        "holdout": "public",
+        "primary_domain": "agentic",
+        "domains": {
+          "agentic": 0.7,
+          "software-code": 0,
+          "reasoning": 0.1,
+          "knowledge-information": 0,
+          "communication-professional": 0.2
+        },
+        "obs_type": "count",
+        "chance_level": 0,
+        "ceiling": 1,
+        "default_k": 1,
+        "is_reference": false,
+        "source_ids": [
+          "automationbench",
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "benchcad",
+        "name": "BenchCAD · agentic 1k subset",
+        "family_id": "benchcad",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "software-code",
+        "domains": {
+          "agentic": 0.3,
+          "software-code": 0.35,
+          "reasoning": 0.35,
+          "knowledge-information": 0,
+          "communication-professional": 0
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "default_k": 1,
+        "is_reference": false,
+        "source_ids": [
+          "benchcad"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "biomysterybench-human-difficult-google-202609",
+        "name": "BioMysteryBench · human-difficult (Google)",
+        "family_id": "biomysterybench-human-difficult",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "knowledge-information",
+        "domains": {
+          "agentic": 0.3,
+          "reasoning": 0.3,
+          "knowledge-information": 0.4
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "biomysterybench-human-solvable-google-202609",
+        "name": "BioMysteryBench · human-solvable (Google)",
+        "family_id": "biomysterybench-human-solvable",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "knowledge-information",
+        "domains": {
+          "agentic": 0.3,
+          "reasoning": 0.3,
+          "knowledge-information": 0.4
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "chartography-deepseek-reported",
+        "name": "Chartography (DeepSeek reported)",
+        "family_id": "chartography-deepseek-reported",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "reasoning",
+        "domains": {
+          "reasoning": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "charxiv-reasoning-no-tools-google-202609",
+        "name": "CharXiv Reasoning (no tools; Google Sep 2026)",
+        "family_id": "charxiv-reasoning-no-tools-google-202609",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "reasoning",
+        "domains": {
+          "reasoning": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "critpt",
+        "name": "CritPt",
+        "family_id": "critpt",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "reasoning",
+        "domains": {
+          "agentic": 0,
+          "software-code": 0,
+          "reasoning": 0.85,
+          "knowledge-information": 0.15,
+          "communication-professional": 0
+        },
+        "obs_type": "count",
+        "chance_level": 0,
+        "ceiling": 1,
+        "default_k": 1,
+        "is_reference": false,
+        "source_ids": [
+          "critpt",
+          "aa-benchmarks-manual"
+        ],
+        "is_aa_related": true,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "cursorbench-3.2.0-reported",
+        "name": "CursorBench 3.2.0",
+        "family_id": "cursorbench-3.2.0-reported",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "software-code",
+        "domains": {
+          "software-code": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "cybergym-deepseek-reported",
+        "name": "CyberGym (DeepSeek reported)",
+        "family_id": "cybergym-deepseek-reported",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "software-code",
+        "domains": {
+          "software-code": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "cybergym-zai-1507",
+        "name": "CyberGym (Z.ai;1507tasks)",
+        "family_id": "cybergym-zai-1507",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "software-code",
+        "domains": {
+          "software-code": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "deepsearchqa-f1",
+        "name": "DeepSearchQA (answer-set F1)",
+        "family_id": "deepsearchqa-f1",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "agentic",
+        "domains": {
+          "agentic": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "deepswe-1.1",
+        "name": "DeepSWE v1.1",
+        "family_id": "deepswe",
+        "status": "active",
+        "holdout": "public",
+        "primary_domain": "software-code",
+        "domains": {
+          "agentic": 0.25,
+          "software-code": 0.7,
+          "reasoning": 0.05,
+          "knowledge-information": 0,
+          "communication-professional": 0
+        },
+        "obs_type": "count",
+        "chance_level": 0,
+        "ceiling": 1,
+        "default_k": 1,
+        "is_reference": false,
+        "source_ids": [
+          "datacurve",
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": true
+      },
+      {
+        "id": "deepswe-deepseek-reported",
+        "name": "DeepSWE (DeepSeek card; revision unspecified)",
+        "family_id": "deepswe",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "software-code",
+        "domains": {
+          "software-code": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "deepswe",
+        "name": "DeepSWE",
+        "family_id": "deepswe",
+        "status": "active",
+        "holdout": "public",
+        "primary_domain": "software-code",
+        "domains": {
+          "agentic": 0.25,
+          "software-code": 0.7,
+          "reasoning": 0.05,
+          "knowledge-information": 0,
+          "communication-professional": 0
+        },
+        "obs_type": "count",
+        "chance_level": 0,
+        "ceiling": 1,
+        "default_k": 1,
+        "is_reference": false,
+        "source_ids": [
+          "datacurve",
+          "epoch",
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": true
+      },
+      {
+        "id": "frontiercode-1.1-extended-score",
+        "name": "FrontierCode 1.1 Extended (score)",
+        "family_id": "frontiercode-1.1-extended-score",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "software-code",
+        "domains": {
+          "software-code": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "frontiercode-1.1-main-score",
+        "name": "FrontierCode 1.1 Main (score)",
+        "family_id": "frontiercode-1.1-main-score",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "software-code",
+        "domains": {
+          "software-code": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "frontiermath-v2-tier-4",
+        "name": "FrontierMath v2 Tier 4",
+        "family_id": "frontiermath",
+        "status": "active",
+        "holdout": "private",
+        "primary_domain": "reasoning",
+        "domains": {
+          "agentic": 0,
+          "software-code": 0,
+          "reasoning": 1,
+          "knowledge-information": 0,
+          "communication-professional": 0
+        },
+        "obs_type": "count",
+        "chance_level": 0,
+        "ceiling": 1,
+        "default_k": 1,
+        "is_reference": false,
+        "source_ids": [
+          "epoch",
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": true
+      },
+      {
+        "id": "frontiermath-v2-tiers-1-3",
+        "name": "FrontierMath v2 Tiers 1-3",
+        "family_id": "frontiermath",
+        "status": "active",
+        "holdout": "private",
+        "primary_domain": "reasoning",
+        "domains": {
+          "agentic": 0,
+          "software-code": 0,
+          "reasoning": 1,
+          "knowledge-information": 0,
+          "communication-professional": 0
+        },
+        "obs_type": "count",
+        "chance_level": 0,
+        "ceiling": 1,
+        "default_k": 1,
+        "is_reference": false,
+        "source_ids": [
+          "epoch",
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": true
+      },
+      {
+        "id": "gdp-pdf-google-202609",
+        "name": "GDP.PDF (all-pass rate; Google Sep 2026)",
+        "family_id": "gdp-pdf-google-202609",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "communication-professional",
+        "domains": {
+          "communication-professional": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "gdpval",
+        "name": "GDPval",
+        "family_id": "gdpval",
+        "status": "active",
+        "holdout": "private",
+        "primary_domain": "communication-professional",
+        "domains": {
+          "agentic": 0.15,
+          "software-code": 0.05,
+          "reasoning": 0.05,
+          "knowledge-information": 0.2,
+          "communication-professional": 0.55
+        },
+        "obs_type": "count",
+        "chance_level": 0,
+        "ceiling": 1,
+        "default_k": 1,
+        "is_reference": false,
+        "source_ids": [
+          "epoch",
+          "openai-evals",
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": true
+      },
+      {
+        "id": "genebench-pro-v13-openai",
+        "name": "GeneBench Pro v13 (OpenAI)",
+        "family_id": "genebench-pro-v13-openai",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "knowledge-information",
+        "domains": {
+          "knowledge-information": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "gpqa-diamond",
+        "name": "GPQA Diamond",
+        "family_id": "gpqa",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "reasoning",
+        "domains": {
+          "agentic": 0,
+          "software-code": 0,
+          "reasoning": 0.7,
+          "knowledge-information": 0.3,
+          "communication-professional": 0
+        },
+        "obs_type": "count",
+        "chance_level": 0.25,
+        "ceiling": 1,
+        "default_k": 1,
+        "is_reference": false,
+        "source_ids": [
+          "epoch",
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "harvey-legal-agent-vals-all-pass",
+        "name": "Harvey Legal Agent — Vals all-pass",
+        "family_id": "harvey-legal-agent",
+        "status": "watchlist",
+        "holdout": "private",
+        "primary_domain": "agentic",
+        "domains": {
+          "agentic": 0.5,
+          "communication-professional": 0.5
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vals"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "healthbench-professional-length-adjusted-gpt54",
+        "name": "HealthBench Professional (length-adjusted, GPT-5.4)",
+        "family_id": "healthbench-professional-length-adjusted-gpt54",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "communication-professional",
+        "domains": {
+          "communication-professional": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "healthbench-professional",
+        "name": "HealthBench Professional",
+        "family_id": "healthbench-professional",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "communication-professional",
+        "domains": {
+          "agentic": 0,
+          "software-code": 0,
+          "reasoning": 0.2,
+          "knowledge-information": 0.3,
+          "communication-professional": 0.5
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "default_k": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "hle-deepseek-no-tools-reported",
+        "name": "HLE no tools (DeepSeek reported)",
+        "family_id": "hle",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "knowledge-information",
+        "domains": {
+          "knowledge-information": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "hle-deepseek-with-tools-reported",
+        "name": "HLE with tools (DeepSeek reported)",
+        "family_id": "hle",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "knowledge-information",
+        "domains": {
+          "knowledge-information": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "hle-full-tools-kimi-reported",
+        "name": "HLE Full with tools (Kimi reported)",
+        "family_id": "hle",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "knowledge-information",
+        "domains": {
+          "knowledge-information": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "hle-full-tools-zai-luna-medium",
+        "name": "HLE full with tools (Z.ai; Luna medium judge)",
+        "family_id": "hle",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "knowledge-information",
+        "domains": {
+          "knowledge-information": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "hle-no-tools",
+        "name": "Humanity's Last Exam (no tools)",
+        "family_id": "hle",
+        "status": "active",
+        "holdout": "public",
+        "primary_domain": "reasoning",
+        "domains": {
+          "agentic": 0,
+          "software-code": 0.03,
+          "reasoning": 0.65,
+          "knowledge-information": 0.3,
+          "communication-professional": 0.02
+        },
+        "obs_type": "count",
+        "chance_level": 0,
+        "ceiling": 1,
+        "default_k": 1,
+        "is_reference": false,
+        "source_ids": [
+          "scale",
+          "epoch",
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": true
+      },
+      {
+        "id": "hle-qwen-gpt4o-reported",
+        "name": "HLE (Qwen; GPT-4o judge)",
+        "family_id": "hle",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "knowledge-information",
+        "domains": {
+          "knowledge-information": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "hle-qwen-max-reported",
+        "name": "HLE (Qwen3.8-Max; judge unspecified)",
+        "family_id": "hle",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "knowledge-information",
+        "domains": {
+          "knowledge-information": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "hle-tools-anthropic-reported",
+        "name": "HLE with tools (Anthropic reported)",
+        "family_id": "hle",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "knowledge-information",
+        "domains": {
+          "knowledge-information": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "hle-tools-openai-reported",
+        "name": "HLE with tools (OpenAI reported)",
+        "family_id": "hle",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "knowledge-information",
+        "domains": {
+          "knowledge-information": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "hle-tools-qwen-max-reported",
+        "name": "HLE with tools (Qwen3.8-Max)",
+        "family_id": "hle",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "knowledge-information",
+        "domains": {
+          "knowledge-information": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "hle-verified-1811-google-202609",
+        "name": "HLE-Verified (1,811 items; Google Sep 2026)",
+        "family_id": "hle",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "knowledge-information",
+        "domains": {
+          "knowledge-information": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "ifbench-qwen-reported",
+        "name": "IFBench (Qwen reported)",
+        "family_id": "ifbench-qwen-reported",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "communication-professional",
+        "domains": {
+          "communication-professional": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "jobbench-rubric-2026",
+        "name": "JobBench (mean rubric score)",
+        "family_id": "jobbench-rubric-2026",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "agentic",
+        "domains": {
+          "agentic": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "labbench2-macro11-google-202609",
+        "name": "LABBench2 · 11-task macro-average (Google)",
+        "family_id": "labbench2-macro11",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "knowledge-information",
+        "domains": {
+          "agentic": 0.3,
+          "reasoning": 0.3,
+          "knowledge-information": 0.4
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "lifescibench-gold-v1-openai",
+        "name": "LifeSciBench Gold v1 (OpenAI)",
+        "family_id": "lifescibench-gold-v1-openai",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "knowledge-information",
+        "domains": {
+          "knowledge-information": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "livebench-2026",
+        "name": "LiveBench 2026",
+        "family_id": "livebench",
+        "status": "watchlist",
+        "holdout": "rolling",
+        "primary_domain": "reasoning",
+        "domains": {
+          "agentic": 0.1,
+          "software-code": 0.2,
+          "reasoning": 0.3,
+          "knowledge-information": 0.15,
+          "communication-professional": 0.25
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "livebench"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "livecodebench-v6-pro",
+        "name": "LiveCodeBench Release v6",
+        "family_id": "livecodebench",
+        "status": "retired",
+        "holdout": "public",
+        "primary_domain": "software-code",
+        "domains": {
+          "agentic": 0,
+          "software-code": 0.7,
+          "reasoning": 0.3,
+          "knowledge-information": 0,
+          "communication-professional": 0
+        },
+        "obs_type": "count",
+        "chance_level": 0,
+        "ceiling": 1,
+        "default_k": 10,
+        "is_reference": false,
+        "source_ids": [
+          "kaggle",
+          "livecodebench",
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "lmarena-text-style-controlled",
+        "name": "LMArena text, style-controlled",
+        "family_id": "lmarena-text",
+        "status": "active",
+        "holdout": "rolling",
+        "primary_domain": "communication-professional",
+        "domains": {
+          "agentic": 0.05,
+          "software-code": 0.05,
+          "reasoning": 0.1,
+          "knowledge-information": 0.15,
+          "communication-professional": 0.65
+        },
+        "obs_type": "elo",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "lmarena"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": true
+      },
+      {
+        "id": "lvbench-agentic-google-202609",
+        "name": "LVBench · agentic (Google)",
+        "family_id": "lvbench-agentic",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "agentic",
+        "domains": {
+          "agentic": 0.5,
+          "reasoning": 0.5
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "lvbench-static-google-202609",
+        "name": "LVBench · static, 1024 frames (Google)",
+        "family_id": "lvbench-static",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "reasoning",
+        "domains": {
+          "reasoning": 0.7,
+          "knowledge-information": 0.3
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "matharena-composite",
+        "name": "MathArena composite",
+        "family_id": "matharena-composite",
+        "status": "active",
+        "holdout": "rolling",
+        "primary_domain": "reasoning",
+        "domains": {
+          "agentic": 0,
+          "software-code": 0,
+          "reasoning": 1,
+          "knowledge-information": 0,
+          "communication-professional": 0
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "matharena"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": true
+      },
+      {
+        "id": "mcp-atlas-kimi-k27-reported",
+        "name": "MCP Atlas (Kimi K2.7 reported)",
+        "family_id": "mcp-atlas-kimi-k27-reported",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "agentic",
+        "domains": {
+          "agentic": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "mcp-atlas-public-500-kimi",
+        "name": "MCP Atlas public 500 (Kimi; Gemini 3.1 judge)",
+        "family_id": "mcp-atlas-public-500-kimi",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "agentic",
+        "domains": {
+          "agentic": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "mcpmark-verified-kimi-reported",
+        "name": "MCPMark Verified (Kimi reported)",
+        "family_id": "mcpmark-verified-kimi-reported",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "agentic",
+        "domains": {
+          "agentic": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "mcpmark",
+        "name": "MCPMark",
+        "family_id": "mcpmark",
+        "status": "active",
+        "holdout": "public",
+        "primary_domain": "agentic",
+        "domains": {
+          "agentic": 0.75,
+          "software-code": 0.05,
+          "reasoning": 0.05,
+          "knowledge-information": 0.05,
+          "communication-professional": 0.1
+        },
+        "obs_type": "count",
+        "chance_level": 0,
+        "ceiling": 1,
+        "default_k": 4,
+        "is_reference": false,
+        "source_ids": [
+          "mcpmark",
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": true
+      },
+      {
+        "id": "metr-time-horizon-1.1",
+        "name": "METR Time Horizon 1.1",
+        "family_id": "metr-time-horizon",
+        "status": "active",
+        "holdout": "rolling",
+        "primary_domain": "agentic",
+        "domains": {
+          "agentic": 1,
+          "software-code": 0,
+          "reasoning": 0,
+          "knowledge-information": 0,
+          "communication-professional": 0
+        },
+        "obs_type": "horizon",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "metr"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": true
+      },
+      {
+        "id": "minebench-spatial-bt",
+        "name": "MineBench spatial construction",
+        "family_id": "minebench-spatial",
+        "status": "watchlist",
+        "holdout": "rolling",
+        "primary_domain": "reasoning",
+        "domains": {
+          "reasoning": 0.8,
+          "software-code": 0.2
+        },
+        "obs_type": "elo",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "minebench"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "mls-bench-lite-kimi-reported",
+        "name": "MLS-Bench Lite (Kimi reported)",
+        "family_id": "mls-bench-lite-kimi-reported",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "software-code",
+        "domains": {
+          "software-code": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "mrcr-v2-1m-8-needle",
+        "name": "MRCR v2 (1M, 8-needle bin)",
+        "family_id": "mrcr",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "knowledge-information",
+        "domains": {
+          "agentic": 0,
+          "software-code": 0,
+          "reasoning": 0.2,
+          "knowledge-information": 0.8,
+          "communication-professional": 0
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "mrcr-v2-256k-qwen-sequence-match",
+        "name": "MRCR v2 256K 8-needle (Qwen)",
+        "family_id": "mrcr",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "knowledge-information",
+        "domains": {
+          "knowledge-information": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "mrcr-v2-8needle-256k-512k-sequence-match",
+        "name": "MRCR v2 8-needle 256K-512K (sequence match)",
+        "family_id": "mrcr",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "knowledge-information",
+        "domains": {
+          "knowledge-information": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "mrcr-v2-8needle-512k-1m-sequence-match",
+        "name": "MRCR v2 8-needle 512K-1M (sequence match)",
+        "family_id": "mrcr",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "knowledge-information",
+        "domains": {
+          "knowledge-information": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "nl2repo-deepseek-reported",
+        "name": "NL2Repo (DeepSeek reported)",
+        "family_id": "nl2repo-deepseek-reported",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "software-code",
+        "domains": {
+          "software-code": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "osworld-2.0-2026.06.24-full",
+        "name": "OSWorld 2.0 · June 24 full",
+        "family_id": "osworld",
+        "status": "watchlist",
+        "holdout": "semi_private",
+        "primary_domain": "agentic",
+        "domains": {
+          "agentic": 0.75,
+          "software-code": 0.05,
+          "reasoning": 0.05,
+          "knowledge-information": 0.05,
+          "communication-professional": 0.1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "default_k": 1,
+        "is_reference": false,
+        "source_ids": [
+          "osworld"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "osworld-2.0-2026.08.08-offline",
+        "name": "OSWorld 2.0 · August 8 offline",
+        "family_id": "osworld",
+        "status": "watchlist",
+        "holdout": "semi_private",
+        "primary_domain": "agentic",
+        "domains": {
+          "agentic": 0.75,
+          "software-code": 0.05,
+          "reasoning": 0.05,
+          "knowledge-information": 0.05,
+          "communication-professional": 0.1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "default_k": 1,
+        "is_reference": false,
+        "source_ids": [
+          "osworld"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "osworld-2.0",
+        "name": "OSWorld 2.0",
+        "family_id": "osworld",
+        "status": "watchlist",
+        "holdout": "semi_private",
+        "primary_domain": "agentic",
+        "domains": {
+          "agentic": 0.75,
+          "software-code": 0.05,
+          "reasoning": 0.05,
+          "knowledge-information": 0.05,
+          "communication-professional": 0.1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "default_k": 1,
+        "is_reference": false,
+        "source_ids": [
+          "osworld",
+          "epoch",
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "osworld-v2-20260624-binary",
+        "name": "OSWorld 2.0 2026.06.24 (strict completion)",
+        "family_id": "osworld",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "agentic",
+        "domains": {
+          "agentic": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "osworld-v2-20260624-partial",
+        "name": "OSWorld 2.0 2026.06.24 (partial score)",
+        "family_id": "osworld",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "agentic",
+        "domains": {
+          "agentic": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "osworld-v2-20260808-binary",
+        "name": "OSWorld 2.0 2026.08.08 (strict completion)",
+        "family_id": "osworld",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "agentic",
+        "domains": {
+          "agentic": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "osworld-v2-20260808-offline-partial",
+        "name": "OSWorld 2.0 08.08 offline (partial)",
+        "family_id": "osworld",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "agentic",
+        "domains": {
+          "agentic": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "osworld-v2-20260808-partial",
+        "name": "OSWorld 2.0 2026.08.08 (partial score)",
+        "family_id": "osworld",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "agentic",
+        "domains": {
+          "agentic": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "osworld-v2-anthropic-202608-partial",
+        "name": "OSWorld 2.0 Anthropic August tasks (partial)",
+        "family_id": "osworld",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "agentic",
+        "domains": {
+          "agentic": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "osworld-v2-anthropic-202608-strict",
+        "name": "OSWorld 2.0 Anthropic August tasks (strict)",
+        "family_id": "osworld",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "agentic",
+        "domains": {
+          "agentic": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "osworld-v2-google-pre0808-partial-max3",
+        "name": "OSWorld 2.0 pre-08.08 (partial; best of 3)",
+        "family_id": "osworld",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "agentic",
+        "domains": {
+          "agentic": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "osworld-v2-qwen-binary-reported",
+        "name": "OSWorld 2.0 (Qwen; binary)",
+        "family_id": "osworld",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "agentic",
+        "domains": {
+          "agentic": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "osworld-v2-qwen-partial-reported",
+        "name": "OSWorld 2.0 (Qwen; partial)",
+        "family_id": "osworld",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "agentic",
+        "domains": {
+          "agentic": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "programbench-kimi-reported",
+        "name": "ProgramBench (Kimi reported)",
+        "family_id": "programbench-kimi-reported",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "software-code",
+        "domains": {
+          "software-code": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "scicode-verified-v2-main-with-background",
+        "name": "SciCode-Verified v2 · main problems + background",
+        "family_id": "scicode-verified",
+        "status": "active",
+        "holdout": "public",
+        "primary_domain": "software-code",
+        "domains": {
+          "agentic": 0,
+          "software-code": 0.6,
+          "reasoning": 0.4,
+          "knowledge-information": 0,
+          "communication-professional": 0
+        },
+        "obs_type": "count",
+        "chance_level": 0,
+        "ceiling": 1,
+        "default_k": 1,
+        "is_reference": false,
+        "source_ids": [
+          "scicode-verified"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": true
+      },
+      {
+        "id": "scicode-verified",
+        "name": "SciCode Verified",
+        "family_id": "scicode-verified",
+        "status": "retired",
+        "holdout": "public",
+        "primary_domain": "software-code",
+        "domains": {
+          "agentic": 0,
+          "software-code": 0.6,
+          "reasoning": 0.4,
+          "knowledge-information": 0,
+          "communication-professional": 0
+        },
+        "obs_type": "count",
+        "chance_level": 0,
+        "ceiling": 1,
+        "default_k": 1,
+        "is_reference": false,
+        "source_ids": [
+          "kaggle",
+          "epoch",
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "simpleqa-verified-epoch-anti-abstention-v1-0-0",
+        "name": "SimpleQA Verified · Epoch 1.0.0",
+        "family_id": "simpleqa",
+        "status": "active",
+        "holdout": "public",
+        "primary_domain": "knowledge-information",
+        "domains": {
+          "agentic": 0,
+          "software-code": 0,
+          "reasoning": 0,
+          "knowledge-information": 0.95,
+          "communication-professional": 0.05
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "epoch"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": true
+      },
+      {
+        "id": "simpleqa-verified-epoch-anti-abstention-v1-2-0",
+        "name": "SimpleQA Verified · Epoch 1.2.0",
+        "family_id": "simpleqa",
+        "status": "active",
+        "holdout": "public",
+        "primary_domain": "knowledge-information",
+        "domains": {
+          "agentic": 0,
+          "software-code": 0,
+          "reasoning": 0,
+          "knowledge-information": 0.95,
+          "communication-professional": 0.05
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "epoch"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": true
+      },
+      {
+        "id": "simpleqa-verified",
+        "name": "SimpleQA Verified",
+        "family_id": "simpleqa",
+        "status": "retired",
+        "holdout": "public",
+        "primary_domain": "knowledge-information",
+        "domains": {
+          "agentic": 0,
+          "software-code": 0,
+          "reasoning": 0,
+          "knowledge-information": 0.95,
+          "communication-professional": 0.05
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "kaggle",
+          "epoch",
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "swe-atlas-codebase-qna-public",
+        "name": "SWE-Atlas Codebase QnA (public)",
+        "family_id": "swe-atlas-codebase-qna-public",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "software-code",
+        "domains": {
+          "software-code": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "swe-bench-pro-public",
+        "name": "SWE-bench Pro public",
+        "family_id": "swe-bench",
+        "status": "retired",
+        "holdout": "public",
+        "primary_domain": "software-code",
+        "domains": {
+          "agentic": 0.25,
+          "software-code": 0.7,
+          "reasoning": 0.05,
+          "knowledge-information": 0,
+          "communication-professional": 0
+        },
+        "obs_type": "count",
+        "chance_level": 0,
+        "ceiling": 1,
+        "default_k": 1,
+        "is_reference": false,
+        "source_ids": [
+          "scale",
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "swe-rebench",
+        "name": "SWE-rebench",
+        "family_id": "swe-rebench",
+        "status": "active",
+        "holdout": "rolling",
+        "primary_domain": "software-code",
+        "domains": {
+          "agentic": 0.25,
+          "software-code": 0.7,
+          "reasoning": 0.05,
+          "knowledge-information": 0,
+          "communication-professional": 0
+        },
+        "obs_type": "count",
+        "chance_level": 0,
+        "ceiling": 1,
+        "default_k": 5,
+        "is_reference": false,
+        "source_ids": [
+          "swe-rebench"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": true
+      },
+      {
+        "id": "tau3-bench-banking",
+        "name": "tau3-bench Banking",
+        "family_id": "tau3-bench-banking",
+        "status": "active",
+        "holdout": "public",
+        "primary_domain": "agentic",
+        "domains": {
+          "agentic": 0.7,
+          "software-code": 0,
+          "reasoning": 0.05,
+          "knowledge-information": 0.05,
+          "communication-professional": 0.2
+        },
+        "obs_type": "count",
+        "chance_level": 0,
+        "ceiling": 1,
+        "default_k": 4,
+        "is_reference": false,
+        "source_ids": [
+          "taubench",
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": true
+      },
+      {
+        "id": "terminal-bench-2.1",
+        "name": "Terminal-Bench 2.1",
+        "family_id": "terminal-bench",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "software-code",
+        "domains": {
+          "software-code": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "terminal-bench-3.0-avg3",
+        "name": "Terminal-Bench3.0 (average of3 rollouts)",
+        "family_id": "terminal-bench",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "software-code",
+        "domains": {
+          "software-code": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "terminal-bench-3.0",
+        "name": "Terminal-Bench 3.0",
+        "family_id": "terminal-bench",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "software-code",
+        "domains": {
+          "software-code": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "terminal-bench-4.0",
+        "name": "Terminal-Bench 4.0",
+        "family_id": "terminal-bench",
+        "status": "active",
+        "holdout": "public",
+        "primary_domain": "agentic",
+        "domains": {
+          "agentic": 0.55,
+          "software-code": 0.3,
+          "reasoning": 0.1,
+          "knowledge-information": 0.05,
+          "communication-professional": 0
+        },
+        "obs_type": "count",
+        "chance_level": 0,
+        "ceiling": 1,
+        "default_k": 5,
+        "is_reference": false,
+        "source_ids": [
+          "tbench",
+          "snorkel",
+          "epoch",
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": true
+      },
+      {
+        "id": "terminal-bench-science-0.1-openai-reported",
+        "name": "Terminal-Bench Science 0.1 (OpenAI reported)",
+        "family_id": "terminal-bench",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "software-code",
+        "domains": {
+          "software-code": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "terminal-bench-science-0.1",
+        "name": "Terminal-Bench-Science 0.1",
+        "family_id": "terminal-bench",
+        "status": "shadow",
+        "holdout": "public",
+        "primary_domain": "reasoning",
+        "domains": {
+          "agentic": 0.4,
+          "software-code": 0.1,
+          "reasoning": 0.5,
+          "knowledge-information": 0,
+          "communication-professional": 0
+        },
+        "obs_type": "count",
+        "chance_level": 0,
+        "ceiling": 1,
+        "default_k": 3,
+        "is_reference": false,
+        "source_ids": [
+          "terminal-bench-science"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "toolathlon-verified-deepseek-reported",
+        "name": "Toolathlon Verified (DeepSeek reported)",
+        "family_id": "toolathlon-verified-deepseek-reported",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "agentic",
+        "domains": {
+          "agentic": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "toolathlon-verified-kimi-reported",
+        "name": "Toolathlon Verified (Kimi reported)",
+        "family_id": "toolathlon-verified-kimi-reported",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "agentic",
+        "domains": {
+          "agentic": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "toolathlon-verified-qwen-reported",
+        "name": "Toolathlon Verified (Qwen reported)",
+        "family_id": "toolathlon-verified-qwen-reported",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "agentic",
+        "domains": {
+          "agentic": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      },
+      {
+        "id": "vals-finance-agent-v2-partial",
+        "name": "Finance Agent v2",
+        "family_id": "vals-finance-agent-v2",
+        "status": "active",
+        "holdout": "private",
+        "primary_domain": "agentic",
+        "domains": {
+          "agentic": 0.35,
+          "reasoning": 0.25,
+          "knowledge-information": 0.2,
+          "communication-professional": 0.2
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vals"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": true
+      },
+      {
+        "id": "vending-bench-2",
+        "name": "Vending-Bench 2",
+        "family_id": "vending-bench",
+        "status": "active",
+        "holdout": "private",
+        "primary_domain": "agentic",
+        "domains": {
+          "agentic": 0.8,
+          "software-code": 0,
+          "reasoning": 0.1,
+          "knowledge-information": 0,
+          "communication-professional": 0.1
+        },
+        "obs_type": "money",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "andonlabs",
+          "epoch",
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": true
+      },
+      {
+        "id": "zerobench-pass5-deepseek-reported",
+        "name": "ZeroBench (DeepSeek vision; pass@5)",
+        "family_id": "zerobench-pass5-deepseek-reported",
+        "status": "watchlist",
+        "holdout": "public",
+        "primary_domain": "reasoning",
+        "domains": {
+          "reasoning": 1
+        },
+        "obs_type": "judge",
+        "chance_level": 0,
+        "ceiling": 1,
+        "is_reference": false,
+        "source_ids": [
+          "vendor-model-cards"
+        ],
+        "is_aa_related": false,
+        "is_fitted_in_baseline": false
+      }
+    ]
+  },
+  "cells_and_observations": {
+    "total_raw_observations": 924,
+    "independent_observations": 853,
+    "self_report_observations": 71,
+    "total_unique_cells": 673,
+    "independent_unique_cells": 642,
+    "self_report_unique_cells": 68,
+    "cells_by_benchmark": [
+      {
+        "benchmark_id": "arc-agi-2-semi-private",
+        "family_id": "arc-agi",
+        "primary_domain": "reasoning",
+        "raw_observations": 214,
+        "total_cells": 77,
+        "independent_cells": 76,
+        "self_report_cells": 16
+      },
+      {
+        "benchmark_id": "deepswe",
+        "family_id": "deepswe",
+        "primary_domain": "software-code",
+        "raw_observations": 22,
+        "total_cells": 15,
+        "independent_cells": 15,
+        "self_report_cells": 0
+      },
+      {
+        "benchmark_id": "deepswe-1.1",
+        "family_id": "deepswe",
+        "primary_domain": "software-code",
+        "raw_observations": 64,
+        "total_cells": 36,
+        "independent_cells": 36,
+        "self_report_cells": 0
+      },
+      {
+        "benchmark_id": "frontiermath-v2-tier-4",
+        "family_id": "frontiermath",
+        "primary_domain": "reasoning",
+        "raw_observations": 52,
+        "total_cells": 48,
+        "independent_cells": 48,
+        "self_report_cells": 4
+      },
+      {
+        "benchmark_id": "frontiermath-v2-tiers-1-3",
+        "family_id": "frontiermath",
+        "primary_domain": "reasoning",
+        "raw_observations": 79,
+        "total_cells": 59,
+        "independent_cells": 59,
+        "self_report_cells": 3
+      },
+      {
+        "benchmark_id": "gdpval",
+        "family_id": "gdpval",
+        "primary_domain": "communication-professional",
+        "raw_observations": 11,
+        "total_cells": 11,
+        "independent_cells": 0,
+        "self_report_cells": 11
+      },
+      {
+        "benchmark_id": "hle-no-tools",
+        "family_id": "hle",
+        "primary_domain": "reasoning",
+        "raw_observations": 77,
+        "total_cells": 59,
+        "independent_cells": 41,
+        "self_report_cells": 28
+      },
+      {
+        "benchmark_id": "lmarena-text-style-controlled",
+        "family_id": "lmarena-text",
+        "primary_domain": "communication-professional",
+        "raw_observations": 92,
+        "total_cells": 84,
+        "independent_cells": 84,
+        "self_report_cells": 0
+      },
+      {
+        "benchmark_id": "matharena-composite",
+        "family_id": "matharena-composite",
+        "primary_domain": "reasoning",
+        "raw_observations": 55,
+        "total_cells": 50,
+        "independent_cells": 50,
+        "self_report_cells": 0
+      },
+      {
+        "benchmark_id": "mcpmark",
+        "family_id": "mcpmark",
+        "primary_domain": "agentic",
+        "raw_observations": 37,
+        "total_cells": 26,
+        "independent_cells": 25,
+        "self_report_cells": 2
+      },
+      {
+        "benchmark_id": "metr-time-horizon-1.1",
+        "family_id": "metr-time-horizon",
+        "primary_domain": "agentic",
+        "raw_observations": 15,
+        "total_cells": 15,
+        "independent_cells": 15,
+        "self_report_cells": 0
+      },
+      {
+        "benchmark_id": "scicode-verified-v2-main-with-background",
+        "family_id": "scicode-verified",
+        "primary_domain": "software-code",
+        "raw_observations": 8,
+        "total_cells": 8,
+        "independent_cells": 8,
+        "self_report_cells": 0
+      },
+      {
+        "benchmark_id": "simpleqa-verified-epoch-anti-abstention-v1-0-0",
+        "family_id": "simpleqa",
+        "primary_domain": "knowledge-information",
+        "raw_observations": 11,
+        "total_cells": 11,
+        "independent_cells": 11,
+        "self_report_cells": 0
+      },
+      {
+        "benchmark_id": "simpleqa-verified-epoch-anti-abstention-v1-2-0",
+        "family_id": "simpleqa",
+        "primary_domain": "knowledge-information",
+        "raw_observations": 51,
+        "total_cells": 48,
+        "independent_cells": 48,
+        "self_report_cells": 0
+      },
+      {
+        "benchmark_id": "swe-rebench",
+        "family_id": "swe-rebench",
+        "primary_domain": "software-code",
+        "raw_observations": 11,
+        "total_cells": 11,
+        "independent_cells": 11,
+        "self_report_cells": 0
+      },
+      {
+        "benchmark_id": "tau3-bench-banking",
+        "family_id": "tau3-bench-banking",
+        "primary_domain": "agentic",
+        "raw_observations": 27,
+        "total_cells": 26,
+        "independent_cells": 26,
+        "self_report_cells": 1
+      },
+      {
+        "benchmark_id": "terminal-bench-4.0",
+        "family_id": "terminal-bench",
+        "primary_domain": "agentic",
+        "raw_observations": 13,
+        "total_cells": 10,
+        "independent_cells": 10,
+        "self_report_cells": 3
+      },
+      {
+        "benchmark_id": "vals-finance-agent-v2-partial",
+        "family_id": "vals-finance-agent-v2",
+        "primary_domain": "agentic",
+        "raw_observations": 38,
+        "total_cells": 38,
+        "independent_cells": 38,
+        "self_report_cells": 0
+      },
+      {
+        "benchmark_id": "vending-bench-2",
+        "family_id": "vending-bench",
+        "primary_domain": "agentic",
+        "raw_observations": 47,
+        "total_cells": 41,
+        "independent_cells": 41,
+        "self_report_cells": 0
+      }
+    ]
+  },
+  "family_coverage": {
+    "total_catalog_families": 66,
+    "fitted_families_count": 16,
+    "unfitted_families_count": 50,
+    "fitted_families": [
+      {
+        "family_id": "arc-agi",
+        "benchmark_ids": [
+          "arc-agi-2-semi-private"
+        ],
+        "total_observations": 214,
+        "total_cells": 77,
+        "independent_cells": 76
+      },
+      {
+        "family_id": "deepswe",
+        "benchmark_ids": [
+          "deepswe",
+          "deepswe-1.1"
+        ],
+        "total_observations": 86,
+        "total_cells": 51,
+        "independent_cells": 51
+      },
+      {
+        "family_id": "frontiermath",
+        "benchmark_ids": [
+          "frontiermath-v2-tier-4",
+          "frontiermath-v2-tiers-1-3"
+        ],
+        "total_observations": 131,
+        "total_cells": 107,
+        "independent_cells": 107
+      },
+      {
+        "family_id": "gdpval",
+        "benchmark_ids": [
+          "gdpval"
+        ],
+        "total_observations": 11,
+        "total_cells": 11,
+        "independent_cells": 0
+      },
+      {
+        "family_id": "hle",
+        "benchmark_ids": [
+          "hle-no-tools"
+        ],
+        "total_observations": 77,
+        "total_cells": 59,
+        "independent_cells": 41
+      },
+      {
+        "family_id": "lmarena-text",
+        "benchmark_ids": [
+          "lmarena-text-style-controlled"
+        ],
+        "total_observations": 92,
+        "total_cells": 84,
+        "independent_cells": 84
+      },
+      {
+        "family_id": "matharena-composite",
+        "benchmark_ids": [
+          "matharena-composite"
+        ],
+        "total_observations": 55,
+        "total_cells": 50,
+        "independent_cells": 50
+      },
+      {
+        "family_id": "mcpmark",
+        "benchmark_ids": [
+          "mcpmark"
+        ],
+        "total_observations": 37,
+        "total_cells": 26,
+        "independent_cells": 25
+      },
+      {
+        "family_id": "metr-time-horizon",
+        "benchmark_ids": [
+          "metr-time-horizon-1.1"
+        ],
+        "total_observations": 15,
+        "total_cells": 15,
+        "independent_cells": 15
+      },
+      {
+        "family_id": "scicode-verified",
+        "benchmark_ids": [
+          "scicode-verified-v2-main-with-background"
+        ],
+        "total_observations": 8,
+        "total_cells": 8,
+        "independent_cells": 8
+      },
+      {
+        "family_id": "simpleqa",
+        "benchmark_ids": [
+          "simpleqa-verified-epoch-anti-abstention-v1-0-0",
+          "simpleqa-verified-epoch-anti-abstention-v1-2-0"
+        ],
+        "total_observations": 62,
+        "total_cells": 59,
+        "independent_cells": 59
+      },
+      {
+        "family_id": "swe-rebench",
+        "benchmark_ids": [
+          "swe-rebench"
+        ],
+        "total_observations": 11,
+        "total_cells": 11,
+        "independent_cells": 11
+      },
+      {
+        "family_id": "tau3-bench-banking",
+        "benchmark_ids": [
+          "tau3-bench-banking"
+        ],
+        "total_observations": 27,
+        "total_cells": 26,
+        "independent_cells": 26
+      },
+      {
+        "family_id": "terminal-bench",
+        "benchmark_ids": [
+          "terminal-bench-4.0"
+        ],
+        "total_observations": 13,
+        "total_cells": 10,
+        "independent_cells": 10
+      },
+      {
+        "family_id": "vals-finance-agent-v2",
+        "benchmark_ids": [
+          "vals-finance-agent-v2-partial"
+        ],
+        "total_observations": 38,
+        "total_cells": 38,
+        "independent_cells": 38
+      },
+      {
+        "family_id": "vending-bench",
+        "benchmark_ids": [
+          "vending-bench-2"
+        ],
+        "total_observations": 47,
+        "total_cells": 41,
+        "independent_cells": 41
+      }
+    ]
+  },
+  "domain_loadings_and_rank": {
+    "domains": [
+      "agentic",
+      "software-code",
+      "reasoning",
+      "knowledge-information",
+      "communication-professional"
+    ],
+    "loading_matrix_shape": [
+      19,
+      5
+    ],
+    "loading_matrix_rank": 5,
+    "singular_values": [
+      2.2275,
+      1.8785,
+      1.4298,
+      1.2611,
+      0.8117
+    ],
+    "condition_number": 2.744,
+    "direct_instruments_by_domain": {
+      "agentic": {
+        "primary_benchmarks": [
+          "mcpmark",
+          "metr-time-horizon-1.1",
+          "tau3-bench-banking",
+          "terminal-bench-4.0",
+          "vending-bench-2"
+        ],
+        "primary_families": [
+          "mcpmark",
+          "metr-time-horizon",
+          "tau3-bench-banking",
+          "terminal-bench",
+          "vending-bench"
+        ],
+        "dedicated_instrument_count": 5
+      },
+      "software-code": {
+        "primary_benchmarks": [
+          "deepswe",
+          "deepswe-1.1",
+          "scicode-verified-v2-main-with-background",
+          "swe-rebench"
+        ],
+        "primary_families": [
+          "deepswe",
+          "scicode-verified",
+          "swe-rebench"
+        ],
+        "dedicated_instrument_count": 4
+      },
+      "reasoning": {
+        "primary_benchmarks": [
+          "arc-agi-2-semi-private",
+          "frontiermath-v2-tier-4",
+          "frontiermath-v2-tiers-1-3",
+          "hle-no-tools",
+          "matharena-composite"
+        ],
+        "primary_families": [
+          "arc-agi",
+          "frontiermath",
+          "hle",
+          "matharena-composite"
+        ],
+        "dedicated_instrument_count": 5
+      },
+      "knowledge-information": {
+        "primary_benchmarks": [
+          "simpleqa-verified-epoch-anti-abstention-v1-0-0",
+          "simpleqa-verified-epoch-anti-abstention-v1-2-0"
+        ],
+        "primary_families": [
+          "simpleqa"
+        ],
+        "dedicated_instrument_count": 2
+      },
+      "communication-professional": {
+        "primary_benchmarks": [
+          "gdpval",
+          "lmarena-text-style-controlled"
+        ],
+        "primary_families": [
+          "gdpval",
+          "lmarena-text"
+        ],
+        "dedicated_instrument_count": 2
+      }
+    },
+    "caveats": "No positive crossloading counts as independent instruments. Cross-loadings (e.g., HLE at 0.30 knowledge or GDPval at 0.20 knowledge) reflect joint task covariance, NOT primary instruments for the secondary domain.",
+    "instrument_sparsity_analysis": {
+      "knowledge_information": {
+        "benchmarks_in_fit": [
+          "simpleqa-verified-epoch-anti-abstention-v1-0-0",
+          "simpleqa-verified-epoch-anti-abstention-v1-2-0"
+        ],
+        "families_in_fit": [
+          "simpleqa"
+        ],
+        "is_sparse": true,
+        "notes": "Critically sparse: fitted coverage relies entirely on a single benchmark family (SimpleQA anti-abstention variants v1.0.0 and v1.2.0)."
+      },
+      "communication_professional": {
+        "benchmarks_in_fit": [
+          "gdpval",
+          "lmarena-text-style-controlled"
+        ],
+        "families_in_fit": [
+          "gdpval",
+          "lmarena-text"
+        ],
+        "is_sparse": true,
+        "notes": "Sparse: represented by only two independent families (GDPval and LM-Arena text-style-controlled)."
+      }
+    }
+  },
+  "effort_analysis": {
+    "policy": "maximum",
+    "raw_snapshot_reported_effort": 973,
+    "raw_snapshot_unreported_effort": 544,
+    "prepared_observations_assumed_maximum": 49,
+    "prepared_observations_reported_effort": 627,
+    "prepared_observations_fixed_effort_systems": 248,
+    "total_prepared_observations": 924,
+    "policy_description": "Under 1.4.3 unreported_effort_policy: maximum, missing effort tiers are assigned to max-common with effortAssumedMaximum: true and metadataIncomplete: true (1.5x run-noise variance multiplier). Source missingness is preserved."
+  },
+  "source_lineage_and_rejections": {
+    "duplicate_lineage_policy": "Verified origin lineages are counted once; duplicate copies from mirror sources are superseded at ingest and duplicate_lineage rejections are applied in scoring preparation.",
+    "rejections_by_reason": {
+      "condition_inactive": 599,
+      "config_mismatch": 18,
+      "class_unassigned": 22,
+      "too_few_runs": 8
+    },
+    "total_rejected_observations": 647
+  },
+  "aa_private_data_isolation": {
+    "policy": "Artificial Analysis runtime, task cost, and CritPt results are attributed display-only UI overlays. They are strictly excluded from public report rows, fitted cells, and downloadable snapshots.",
+    "overlay_sources_count": 3,
+    "overlay_source_ids": [
+      "aa-speed-manual",
+      "aa-cost-manual",
+      "aa-benchmarks-manual"
+    ],
+    "benchmarks_with_aa_notes": [
+      "aa-lcr",
+      "critpt"
+    ],
+    "observations_in_public_fit": 0,
+    "is_fully_isolated": true
+  },
+  "latest_model_unresolved_gaps": {
+    "unfitted_catalog_models": [
+      "a-x-k2",
+      "agnes-2-5-pro-alpha",
+      "agnes-2-5-pro-beta",
+      "apodex-1-1",
+      "deepseek-v4-flash-vision-exp",
+      "gpt-5.2-codex",
+      "jt-4-1-flash-236b-a21b",
+      "k2-horizon-375b-a23b",
+      "ling-3-0-flash",
+      "mimo-v2-omni-0327",
+      "motif-3",
+      "nex-n2-pro",
+      "quasar-438b",
+      "qwen3.8-2.4t-a95b",
+      "qwen3.8-flash-next",
+      "solar-open2-250b"
+    ],
+    "frontier_model_coverage": [
+      {
+        "model_id": "gemini-3.8-flash",
+        "system_id": "gemini-3.8-flash@max-common",
+        "benchmark_count": 5,
+        "independent_cells": 5,
+        "covered_domains": [
+          "agentic",
+          "communication-professional",
+          "reasoning",
+          "software-code"
+        ],
+        "missing_domains": [
+          "knowledge-information"
+        ]
+      },
+      {
+        "model_id": "gemini-3.7-flash",
+        "system_id": "gemini-3.7-flash@max-common",
+        "benchmark_count": 9,
+        "independent_cells": 9,
+        "covered_domains": [
+          "agentic",
+          "communication-professional",
+          "knowledge-information",
+          "reasoning",
+          "software-code"
+        ],
+        "missing_domains": []
+      },
+      {
+        "model_id": "gpt-5.6-sol",
+        "system_id": "gpt-5.6-sol@max-common",
+        "benchmark_count": 11,
+        "independent_cells": 13,
+        "covered_domains": [
+          "agentic",
+          "communication-professional",
+          "knowledge-information",
+          "reasoning",
+          "software-code"
+        ],
+        "missing_domains": []
+      },
+      {
+        "model_id": "gpt-5.6-luna",
+        "system_id": "gpt-5.6-luna@max-common",
+        "benchmark_count": 9,
+        "independent_cells": 13,
+        "covered_domains": [
+          "agentic",
+          "communication-professional",
+          "knowledge-information",
+          "reasoning",
+          "software-code"
+        ],
+        "missing_domains": []
+      },
+      {
+        "model_id": "grok-4.6",
+        "system_id": "grok-4.6@max-common",
+        "benchmark_count": 6,
+        "independent_cells": 6,
+        "covered_domains": [
+          "agentic",
+          "knowledge-information",
+          "reasoning",
+          "software-code"
+        ],
+        "missing_domains": [
+          "communication-professional"
+        ]
+      },
+      {
+        "model_id": "claude-sonnet-5",
+        "system_id": "claude-sonnet-5@max-common",
+        "benchmark_count": 8,
+        "independent_cells": 9,
+        "covered_domains": [
+          "agentic",
+          "knowledge-information",
+          "reasoning",
+          "software-code"
+        ],
+        "missing_domains": [
+          "communication-professional"
+        ]
+      },
+      {
+        "model_id": "claude-opus-5",
+        "system_id": "claude-opus-5@max-common",
+        "benchmark_count": 12,
+        "independent_cells": 12,
+        "covered_domains": [
+          "agentic",
+          "communication-professional",
+          "knowledge-information",
+          "reasoning",
+          "software-code"
+        ],
+        "missing_domains": []
+      },
+      {
+        "model_id": "deepseek-v4-pro-0813",
+        "system_id": "deepseek-v4-pro-0813@max-common",
+        "benchmark_count": 6,
+        "independent_cells": 9,
+        "covered_domains": [
+          "agentic",
+          "communication-professional",
+          "knowledge-information",
+          "reasoning"
+        ],
+        "missing_domains": [
+          "software-code"
+        ]
+      },
+      {
+        "model_id": "o1-pro",
+        "system_id": "o1-pro@max-common",
+        "benchmark_count": 1,
+        "independent_cells": 1,
+        "covered_domains": [
+          "reasoning"
+        ],
+        "missing_domains": [
+          "agentic",
+          "software-code",
+          "knowledge-information",
+          "communication-professional"
+        ]
+      },
+      {
+        "model_id": "o3-pro",
+        "system_id": "o3-pro@max-common",
+        "benchmark_count": 1,
+        "independent_cells": 3,
+        "covered_domains": [
+          "reasoning"
+        ],
+        "missing_domains": [
+          "agentic",
+          "software-code",
+          "knowledge-information",
+          "communication-professional"
+        ]
+      },
+      {
+        "model_id": "gpt-5.1-codex-max",
+        "system_id": "gpt-5.1-codex-max@max-common",
+        "benchmark_count": 1,
+        "independent_cells": 1,
+        "covered_domains": [
+          "agentic"
+        ],
+        "missing_domains": [
+          "software-code",
+          "reasoning",
+          "knowledge-information",
+          "communication-professional"
+        ]
+      },
+      {
+        "model_id": "grok-code-fast-1",
+        "system_id": "grok-code-fast-1@max-common",
+        "benchmark_count": 1,
+        "independent_cells": 1,
+        "covered_domains": [
+          "agentic"
+        ],
+        "missing_domains": [
+          "software-code",
+          "reasoning",
+          "knowledge-information",
+          "communication-professional"
+        ]
+      }
+    ]
+  }
+}

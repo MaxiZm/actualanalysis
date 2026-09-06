@@ -10,10 +10,17 @@ transform: { type: accuracy, input_scale: percent }
 n_items: 97
 harness_url: https://taubench.com/
 source_ids: [ taubench, vendor-model-cards ]
+metadata_sources:
+  - https://github.com/sierra-research/tau2-bench/releases/tag/v1.0.0
+  - https://arxiv.org/abs/2603.04370
+  - https://sierra.ai/blog/tau-knowledge
 status: active
-notes: The benchmark is currently mutable and has documented task fixes.
-  Excluded until a commit, retrieval configuration, evaluator version, and
-  per-task trial outcomes are pinned.
+notes: Official banking_knowledge domain is 97 tasks over 698 documents. The
+  benchmark is currently mutable and has documented task fixes. Current public
+  leaderboard headline is Pass^1; registry default_k 4 retains the series'
+  pass^k reliability convention and is not a claim that every ingested row is
+  pass^4. Excluded from exact-pin comparisons until a commit, retrieval
+  configuration, evaluator version, and per-task trial outcomes are pinned.
 obs_type: count
 default_k: 4
 domains:

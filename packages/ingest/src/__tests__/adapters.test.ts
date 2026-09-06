@@ -37,7 +37,7 @@ function flightHtml(payload: string): string {
 describe("source adapters", () => {
   it("registers every v1 adapter", () => {
     expect([...createAdapters().keys()]).toEqual([
-      "epoch", "openrouter", "swe-rebench", "osworld", "lmarena", "livebench", "kaggle", "matharena", "metr",
+      "epoch", "openrouter", "swe-rebench", "datacurve", "osworld", "lmarena", "livebench", "kaggle", "matharena", "metr",
       "tbench", "andonlabs", "scale", "arcprize", "taubench", "mcpmark", "manual",
     ]);
   });

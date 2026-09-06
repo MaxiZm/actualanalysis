@@ -159,6 +159,7 @@ export interface ModelRecord {
   pricing: PriceRecord[];
   speed: SpeedRecord | null;
   costPerTask?: CostPerTaskRecord | null;
+  externalEvaluations?: ExternalEvaluationRecord[];
 }
 
 export interface BenchmarkRecord {
@@ -184,6 +185,35 @@ export interface BenchmarkRecord {
 }
 
 export type ScoreUnit = "fraction" | "percent" | "elo" | "minutes" | "hours" | "currency" | "raw";
+
+export type ExternalScoreUnit = "percent" | "elo";
+export type ExternalMeasure =
+  | "score"
+  | "accuracy"
+  | "hallucination"
+  | "all-pass";
+
+/** Display-only attributed external evaluation; never a fit or snapshot field. */
+export interface ExternalEvaluationRecord {
+  benchmarkId: string;
+  benchmarkName: string;
+  version: string;
+  measure: ExternalMeasure;
+  score: number;
+  scoreUnit: ExternalScoreUnit;
+  configuration: string;
+  systemId?: string;
+  observedOn: string;
+  sourceUrl: string;
+  methodologyUrl: string;
+  harnessUrl?: string;
+  graderVersion?: string;
+  scoring?: string;
+  nItems: number | null;
+  repeats?: number;
+  internalSlug?: string;
+  redistributable: false;
+}
 
 export interface ResultRecord {
   id: string;

@@ -1,0 +1,35 @@
+{
+  "edition": "unreviewed-illustrative-0.1",
+  "singleton_fallback": true,
+  "classes": [
+    {
+      "class_id": "illustrative-claude-35-sonnet",
+      "member_models": [
+        "claude-3.5-sonnet",
+        "claude-3.5-sonnet-20241022"
+      ],
+      "derivation_evidence": "Documented October 2024 checkpoint update of the Claude 3.5 Sonnet release lineage (Anthropic announcements).",
+      "reference_configuration_compatibility": "Matched default standard temperature and system prompt reference class.",
+      "is_singleton": false,
+      "notes": "Unreviewed illustrative class candidate for testing capability-transfer tooling."
+    },
+    {
+      "class_id": "illustrative-gpt-5-variants",
+      "member_models": [
+        "gpt-5-mini",
+        "gpt-5-nano"
+      ],
+      "derivation_evidence": "Documented lightweight distillation variants of the GPT-5 release family.",
+      "reference_configuration_compatibility": "Standardized API temperature 0.0 default inference configuration.",
+      "is_singleton": false,
+      "notes": "Unreviewed illustrative class candidate for testing capability-transfer tooling."
+    }
+  ],
+  "metadata": {
+    "is_experimental": true,
+    "is_publishable": false,
+    "confirmatory_criteria_locked": false,
+    "real_reviewed_classes_exist": false,
+    "notice": "UNREVIEWED ILLUSTRATIVE EXAMPLE ONLY. Do not use for production ranking or publication. Confirmatory promotion criteria are not locked, and reviewed capability-transfer classes have not been certified."
+  }
+}

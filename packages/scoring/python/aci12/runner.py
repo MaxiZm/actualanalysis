@@ -17,6 +17,7 @@ from numpyro.diagnostics import effective_sample_size, summary
 from numpyro.infer import MCMC, NUTS
 from numpyro.infer.initialization import init_to_median
 
+from .class_prior import production_export_issues, resolve_class_prior
 from .model import aci_model
 from .summarize import build_posterior_summary
 
@@ -35,6 +36,7 @@ DECLARED_PARAMETERS = {
     "effort_sd",
     "effort_domain_sd",
     "run_noise",
+    "class_rho",
 }
 
 
@@ -137,6 +139,8 @@ def run(input_path: Path, output_path: Path, posterior_path: Path, summary_path:
             dense_sites.append("varsigma")
         if not general_specific and not data.get("one_trait_baseline", False):
             dense_sites.append("L_Omega")
+        if resolve_class_prior(data).samples_class_rho:
+            dense_sites.append("class_rho")
         dense_mass = [tuple(dense_sites)]
 
     kernel = NUTS(
@@ -214,6 +218,13 @@ def run(input_path: Path, output_path: Path, posterior_path: Path, summary_path:
         issues.append("E-BFMI unavailable: total Hamiltonian energy missing, non-finite, or constant")
     elif min(finite_ebfmi) < float(inference.get("min_ebfmi", 0.3)):
         issues.append(f"E-BFMI {min(finite_ebfmi)}")
+    issues.extend(production_export_issues(data))
+
+    class_spec = resolve_class_prior(data)
+    if class_spec.enabled:
+        diagnostics["experimental"] = True
+        diagnostics["publishable"] = False
+        diagnostics["class_prior"] = class_spec.public_dict()
 
     diagnostics["accepted"] = not issues
     diagnostics["issues"] = issues
