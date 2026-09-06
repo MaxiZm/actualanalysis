@@ -1,6 +1,6 @@
 # How the index works
 
-**ActualAnalysis Capability Index · version 1.4.1 · calibration edition 2026a**
+**ActualAnalysis Capability Index · version 1.4.2 · calibration edition 2026a**
 
 The index estimates model capability from published benchmark evidence. It is a relative comparison, not a percentage of tasks a model will solve. Price, output speed and context are shown beside capability and do not change it.
 
@@ -48,11 +48,17 @@ Version 1.4.0 corrects the documented reasoning controls for GPT-5.6 Sol, Terra 
 
 Version 1.4.1 expands and audits the evidence. Arena preserves the complete publication, original model labels and every distinct configuration; a publisher's batch ID cannot collapse different models into one observation. Vending-Bench includes its full native table, with each configuration's actual repeat count and standard error. SWE-rebench compares one declared 111-task window, rather than giving each model a different historical task set.
 
+Version 1.4.2 recovers Gemini 3.8 Flash's explicit High result from the newer official Arena table. Because Arena ratings share a fitted scale, the complete dated cohort replaces the older export. Its exact published confidence interval supplies the uncertainty. Terminal-Bench's shared mini-SWE-agent results retain their native run uncertainty and common harness identity; a rounded vendor citation of that same run does not count twice. Documented medium-default and high-maximum settings for Gemini 3.7/3.8 remain separate from the actual effort reported by each evaluator.
+
 DeepSWE v1 and v1.1 are separate conditions. Native SimpleQA task revisions 1.0.0 and 1.2.0 are also separate, with their reported item errors and evaluation IDs. SciCode-Verified v2 uses 64 whole problems with background under the pinned corrected evaluator; the original SciCode task count is inapplicable. Lower-level subproblem scores are retained as context and do not become additional independent evidence.
 
 Epoch's ECI export contains preprocessed scores, not necessarily raw benchmark accuracy. In HLE it subtracts a 4.8% floor and rescales the remainder. Those transformed copies are excluded in favor of the source's original estimates. A second website quoting the same measurement does not strengthen the result.
 
 MathArena's composite is a continuous expected-performance estimate. We use its published bootstrap interval and freeze the current component manifest together with the table. LiveBench's equal-category composite, MRCR's sequence-match ratios and OSWorld's published aggregate means remain visible without entering the fit where sampling uncertainty or evaluated denominators are unresolved. OSWorld release dates, full versus offline subsets, strict completion and partial reward remain distinct. A nominal task-set size does not justify inventing a binomial sample size.
+
+[Finance Agent v2](https://www.vals.ai/benchmarks/fabv2) contributes its native weighted partial-credit mean on 450 private Test tasks, averaged over three runs. The reported SEM is in percentage points and enters the continuous logit likelihood directly, without another division by √3 or reconstructed success counts. Its run uncertainty describes repeatability on those fixed tasks, not generalization to a new task population. The existing learned run discrepancy and incomplete-metadata adjustment remain in force because exact harness and judge revisions are unavailable. Domain loadings were fixed before fitting from the task definition: 35% agentic, 25% reasoning, 20% knowledge and 20% professional communication. These are declared modeling judgments. All-Pass and category scores describe the same runs and do not add independent fitted evidence.
+
+Harvey Legal Agent, MineBench, LVBench, BioMysteryBench and LABBench2 extend the visible evidence for Gemini 3.8. They remain observed-only where sampling units, revision identity or evaluator conditions are unresolved. The two LVBench settings and two BioMystery subsets stay separate. More visible benchmark rows do not by themselves justify a narrower capability interval.
 
 Repeated reports of the same result are not independent evidence. The source table keeps audit history, while comparison tables show one selected current result per model and benchmark. For a compact table, source priority is followed by highest explicitly reported effort, latest observation and stable identity. The selected score keeps its own uncertainty; errors are never borrowed from another configuration. Results from different harnesses are not automatically controlled comparisons.
 

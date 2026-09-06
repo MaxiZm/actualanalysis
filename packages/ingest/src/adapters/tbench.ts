@@ -8,6 +8,17 @@ import { rowsToBenchmarkResults } from "./row-results.js";
 
 export const TBENCH_URL = "https://www.tbench.ai/leaderboard";
 
+function harnessClass(label: unknown, url: unknown): "common" | "native" | "unknown" {
+  if (typeof label !== "string") return "unknown";
+  const name = label.trim().toLowerCase();
+  // The public agent identity distinguishes a shared, model-agnostic scaffold
+  // from product agents. A leaderboard's native source is not a native harness.
+  if (name === "mini-swe-agent" && typeof url === "string"
+    && /^https:\/\/github\.com\/swe-agent\/mini-swe-agent\/?$/i.test(url)) return "common";
+  if (["codex", "claude code", "grok build"].includes(name)) return "native";
+  return "unknown";
+}
+
 export class TbenchAdapter implements IngestAdapter {
   readonly id = "tbench";
   readonly failSoft = true;
@@ -58,6 +69,7 @@ export class TbenchAdapter implements IngestAdapter {
           agent: typeof agentDisplay.label === "string" ? agentDisplay.label : null,
         },
         harness: typeof agentDisplay.label === "string" ? agentDisplay.label : "Terminal-Bench",
+        harness_class: harnessClass(agentDisplay.label, agentDisplay.url),
         observed_on: updatedOn && /^\d{4}-\d{2}-\d{2}$/.test(updatedOn)
           ? updatedOn
           : dateOnly(context.now()),
@@ -66,6 +78,7 @@ export class TbenchAdapter implements IngestAdapter {
         metadata: {
           leaderboard_row_id: typeof row.id === "string" ? row.id : null,
           reported_model_name: modelName,
+          source_agent_url: typeof agentDisplay.url === "string" ? agentDisplay.url : null,
           reported_ci95_half_width: ciHalfWidth ?? null,
           reported_standard_error: reportedSe ?? null,
           total_cost_usd: totalCost ?? null,

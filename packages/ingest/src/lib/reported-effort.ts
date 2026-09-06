@@ -8,7 +8,7 @@ function normalized(value: string): string {
 /** Source-scoped explicit label parsing; never infer an unsuffixed model's default. */
 export function arenaNamedEffort(record: RawBenchmarkResult, model: Model | undefined): string | undefined {
   if (record.source_id !== "lmarena"
-    || record.source_url !== "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"
+    || !["https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset", "https://arena.ai/leaderboard/text/overall"].includes(record.source_url)
     || record.benchmark_id !== "lmarena-text-style-controlled"
     || !model) return undefined;
   const label = normalized(record.model);

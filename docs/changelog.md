@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.4.2 — 2026-09-06
+
+- Expand Gemini 3.8 Flash from nine to eighteen distinct reported benchmark conditions, and from three to five fitted conditions across configurations. Its displayed maximum-effort profile now has four directly fitted cells. Add native Arena High and Finance Agent v2 results with published uncertainty; add source-linked LVBench, BioMysteryBench, LABBench2, MineBench and Harvey evidence with explicit measurement limits.
+- Recover the newer complete official Arena cohort when its export lags: 92 mapped configurations replace 90, including Gemini 3.8 Flash High and Fable 5.1 Max. Preserve source effort labels and exact confidence intervals.
+- Correct Terminal-Bench 4.0's shared mini-SWE-agent classification for Gemini 3.7/3.8. Use native run uncertainty and retire the rounded vendor mirrors. Other agents retain their own harness classifications.
+- Add 40 native Finance Agent v2 partial-credit results and 41 observed-only Harvey results. Fit the eligible Finance cohort with its reported run SEM; do not invent task successes or count correlated All-Pass scores as independent evidence.
+- Correct Gemini 3.7/3.8's documented medium default and high maximum. Add Gemini 3.8's current configuration-specific throughput and time to first token to the attributed display overlay.
+- Refit the existing correlated-domain method with the same priors, score-profile weights, calibration panel and numerical acceptance checks. This is an evidence update, not a claim of a newly validated capability formula.
+
+See the [Gemini coverage audit](https://github.com/MaxiZm/actualanalysis/tree/main/docs/audits/1.4.2-gemini-coverage) for source checks, before/after coverage and accepted inference.
+
 ## 1.4.1 — 2026-09-05
 
 - Audit independent benchmark feeds and first-party model cards in parallel. Integrate 887 reviewed additions and replacements, with exact configurations, original source links and explicit measurement boundaries. Newly documented evidence includes Muse Spark 1.3 and DeepSeek V4 Flash Vision Exp.

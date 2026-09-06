@@ -1,0 +1,6 @@
+id: minebench
+name: MineBench
+url: https://minebench.ai/leaderboard
+license: MIT implementation; leaderboard data subject to upstream terms
+kind: scrape
+redistributable: false

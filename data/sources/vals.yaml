@@ -1,0 +1,15 @@
+id: vals
+name: Vals AI native evaluation results
+url: https://www.vals.ai/benchmarks
+license: Upstream site terms; finance harness/public samples MIT; factual score
+  citations only
+kind: runner
+redistributable: false
+attribution: Vals AI; Harvey for Legal Agent benchmark tasks
+runner_benchmark_ids:
+  - vals-finance-agent-v2-partial
+  - harvey-legal-agent-vals-all-pass
+notes: Independent native runner results. Preserve exact task split, scoring
+  metric, repeated-run uncertainty and model effort; vendor summaries of these
+  results are mirrors, not independent replications. Do not redistribute
+  captured pages or private task content.

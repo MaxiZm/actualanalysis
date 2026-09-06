@@ -46,7 +46,7 @@ describe("repository registries", () => {
       "vendor-model-cards\0swe-bench-pro-public",
     ]);
     expect(sampleOnlyResults.every((result) => reviewOnlyPairs.has(`${result.source_id}\0${result.benchmark_id}`)
-      || result.notes?.includes("Superseded by the 2026-09-05 coverage audit:"))).toBe(true);
+      || /Superseded by [^:\n]*coverage audit[^:\n]*: \S/.test(result.notes ?? ""))).toBe(true);
     expect(registry.results.every((result) => result.url.startsWith("https://"))).toBe(true);
     expect(registry.manualSpeed.redistributable).toBe(false);
     expect(Array.isArray(registry.manualSpeed.observations)).toBe(true);

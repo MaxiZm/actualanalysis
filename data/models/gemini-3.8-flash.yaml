@@ -10,12 +10,13 @@ aliases:
   - gemini3.8
   - Gemini 3.8
   - gemini-3.8-flash
+  - gemini-3.8-flash-high
 source_url: https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash
 status: active
 context_length: 1048576
 max_output: 65536
 reasoning: true
-default_effort_tier: high
+default_effort_tier: medium
 max_effort_tier: high
 effort_tier_order:
   - low
@@ -23,3 +24,22 @@ effort_tier_order:
   - high
 metadata_sources:
   - https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash
+  - https://ai.google.dev/gemini-api/docs/generate-content/latest-model
+  - https://ai.google.dev/gemini-api/docs/generate-content/thinking
+  - https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/guides/gemini-3-8-flash
+modality: multimodal
+reasoning_config:
+  thinking_levels:
+    - low
+    - medium
+    - high
+  default_thinking_level: medium
+  minimal_supported: false
+  input_modalities:
+    - text
+    - image
+    - video
+    - audio
+    - pdf
+  output_modalities:
+    - text

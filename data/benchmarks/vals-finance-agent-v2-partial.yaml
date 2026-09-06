@@ -1,0 +1,43 @@
+id: vals-finance-agent-v2-partial
+name: Finance Agent v2
+version: 2-private-test-450
+grader_version: vals-finance-v2-gpt-5.4-gemini-3.1-pro-sonnet-4.6-jury
+family_id: vals-finance-agent-v2
+tags:
+  - agentic
+categories:
+  - professional-tasks
+domains:
+  agentic: 0.35
+  reasoning: 0.25
+  knowledge-information: 0.2
+  communication-professional: 0.2
+holdout: private
+holdout_details: 450 private Test tasks. Public27 and Private Validation450 are
+  separate splits and are not counted in the leaderboard result.
+chance_level: 0
+obs_type: judge
+tool_policy: finance-agent-v2-six-tools
+transform:
+  type: accuracy
+  input_scale: percent
+n_items: 450
+harness_url: https://github.com/vals-ai/finance-agent-v2
+source_ids:
+  - vals
+metadata_sources:
+  - https://www.vals.ai/benchmarks/fabv2
+  - https://github.com/vals-ai/finance-agent-v2
+status: active
+notes: Dealbreaker-gated weighted partial credit averaged across three runs of
+  the same private450-task cohort. Use the native reported SEM in percentage
+  points as Gaussian run uncertainty; do not divide SEM by sqrt(3), derive
+  synthetic correct counts, or treat1350 run-task pairs as independent tasks.
+  All-Pass and category slices are correlated secondary measurements. Run SEM
+  does not quantify uncertainty from drawing a new task population. Exact
+  evaluated harness commit and judge revisions remain unreported.
+promotion_rule: Use only this private-test-v2 partial-credit condition with
+  native SEM and preserved effort and common six-tool harness. Retain incomplete
+  provenance and unmapped effort honestly. Domain weights were specified before
+  fitting from research, quantitative reasoning, knowledge retrieval and
+  professional work demands.

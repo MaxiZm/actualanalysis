@@ -179,7 +179,12 @@ results:
       evaluation report (published alongside the Sept 2, 2026 blog.google
       announcement); absent from Gemini 3.7 Flash's own August 2026 evaluation
       report — Terminal-Bench 4.0 appears to have been added to Google's suite
-      between the two publications.
+      between the two publications. Superseded by Gemini coverage audit 1.4.2:
+      Keep the rounded vendor-reported value for provenance, but exclude it from
+      fitting. Do not reconstruct trials or uncertainty for this metadata-poor
+      summary when an exact primary submission with the same model/metric is
+      available.
+    sample_only: true
   - model_id: gemini-3.7-flash
     benchmark_id: osworld-2.0
     sample_only: true
@@ -206,8 +211,12 @@ results:
     observed_on: 2026-09-02
     url: https://storage.googleapis.com/deepmind-media/gemini/gemini_3-8_flash_model_evaluation.pdf
     provenance: self_report
-    notes: Google labels this the highest-scoring configuration among tested
-      thinking levels.
+    notes: "Google labels this the highest-scoring configuration among tested
+      thinking levels. Superseded by Gemini coverage audit 1.4.2: Keep the
+      rounded vendor-reported value for provenance, but exclude it from fitting.
+      Do not reconstruct trials or uncertainty for this metadata-poor summary
+      when an exact primary submission with the same model/metric is available."
+    sample_only: true
   - model_id: gemini-3.8-flash
     benchmark_id: osworld-2.0
     sample_only: true

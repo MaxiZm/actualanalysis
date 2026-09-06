@@ -1,0 +1,471 @@
+{
+  "reasoning": [
+    {
+      "name": "epoch-benchmarks.csv",
+      "url": "https://epoch.ai/data/benchmarks.csv",
+      "retrieved_at": "2026-09-05T21:29:45.095Z",
+      "status": 200,
+      "bytes": 3719161,
+      "sha256": "907315cbdfa404177e7655ec20fbeb86d727c9969baf5dca31e139d0506a5aa1",
+      "last_modified": null
+    },
+    {
+      "name": "epoch-gpqa.html",
+      "url": "https://epoch.ai/benchmarks/gpqa-diamond",
+      "retrieved_at": "2026-09-05T21:29:44.241Z",
+      "status": 200,
+      "bytes": 85372,
+      "sha256": "ce61cba50d23e74c7ce2ff4154a802b206d0f3387247e6fbc409f86eca7668cc",
+      "last_modified": null
+    },
+    {
+      "name": "epoch-simpleqa.html",
+      "url": "https://epoch.ai/benchmarks/simple-qa-verified",
+      "retrieved_at": "2026-09-05T21:29:44.527Z",
+      "status": 200,
+      "bytes": 84561,
+      "sha256": "d62216cb091efa663d189b6225f8923447fc4ee1b95be11c209599269e9580bf",
+      "last_modified": null
+    },
+    {
+      "name": "epoch-frontiermath.html",
+      "url": "https://epoch.ai/benchmarks/frontiermath",
+      "retrieved_at": "2026-09-05T21:29:45.554Z",
+      "status": 200,
+      "bytes": 85456,
+      "sha256": "ff1031888a8d854fbd3d5845ba8af5eb83c6b8e9fc9181fb9265822a07dd16e1",
+      "last_modified": null
+    },
+    {
+      "name": "matharena-models.html",
+      "url": "https://matharena.ai/models",
+      "retrieved_at": "2026-09-05T21:29:44.717Z",
+      "status": 200,
+      "bytes": 393073,
+      "sha256": "e8038a2b6456c527077d020d77b2b74081bb37235ace2aa73ef2b196f89a70d1",
+      "last_modified": null
+    },
+    {
+      "name": "matharena-competitions.html",
+      "url": "https://matharena.ai/competitions",
+      "retrieved_at": "2026-09-05T21:29:44.697Z",
+      "status": 200,
+      "bytes": 67441,
+      "sha256": "ca38fc07a3e2ebf4ed15bda904327260f2ab9b00b7265b1f287d31cc74bbd3c3",
+      "last_modified": null
+    },
+    {
+      "name": "scale-hle.html",
+      "url": "https://labs.scale.com/leaderboard/humanitys_last_exam",
+      "retrieved_at": "2026-09-05T21:29:44.848Z",
+      "status": 200,
+      "bytes": 213294,
+      "sha256": "96fd1dbaca4751162dcdd65f2afbdd7c20cd49e5beef09fc8c17ff9230463ad5",
+      "last_modified": null
+    },
+    {
+      "name": "arc-models.json",
+      "url": "https://arcprize.org/media/data/models.json",
+      "retrieved_at": "2026-09-05T21:29:45.163Z",
+      "status": 200,
+      "bytes": 114533,
+      "sha256": "2a3ac802eeda90b7fa5e0d79466d2b16306f686b08dca7dd5380a1987ac27179",
+      "last_modified": "Fri, 04 Sep 2026 14:41:18 GMT"
+    },
+    {
+      "name": "arc-evaluations.json",
+      "url": "https://arcprize.org/media/data/evaluations.json",
+      "retrieved_at": "2026-09-05T21:29:45.053Z",
+      "status": 200,
+      "bytes": 179164,
+      "sha256": "17b35f029522ca4ffee541e5dabecf9e311d81ee80a2b08e8912f2947d4ce334",
+      "last_modified": "Fri, 04 Sep 2026 14:41:18 GMT"
+    },
+    {
+      "name": "arc-v2.json",
+      "url": "https://arcprize.org/media/data/leaderboard/v2.json",
+      "retrieved_at": "2026-09-05T21:29:45.017Z",
+      "status": 200,
+      "bytes": 122928,
+      "sha256": "b5cb5ec6e8c7547c4f11a4e61e5ed7e0f28a26208f87bd16c83d1703777a2627",
+      "last_modified": "Fri, 04 Sep 2026 14:41:18 GMT"
+    },
+    {
+      "name": "arc-v3.json",
+      "url": "https://arcprize.org/media/data/leaderboard/v3.json",
+      "retrieved_at": "2026-09-05T21:29:45.003Z",
+      "status": 200,
+      "bytes": 21914,
+      "sha256": "d743d7a731ba6b9f102d3624d5fe82011630b90da4200ceb34bd56cf2b221e1c",
+      "last_modified": "Fri, 04 Sep 2026 14:41:18 GMT"
+    },
+    {
+      "name": "arena-parquet-index.json",
+      "url": "https://datasets-server.huggingface.co/parquet?dataset=lmarena-ai%2Fleaderboard-dataset",
+      "retrieved_at": "2026-09-05T21:29:45.224Z",
+      "status": 200,
+      "bytes": 11310,
+      "sha256": "db4aaad79948fa0e7c26ff558ca85728c4ca1c14db169d418b0a6457bc183b2a",
+      "last_modified": null
+    },
+    {
+      "name": "arena-filter.json",
+      "url": "https://datasets-server.huggingface.co/filter?dataset=lmarena-ai%2Fleaderboard-dataset&config=text_style_control&split=latest&where=%22model_name%22%20LIKE%20%27%25gemini%25%27&offset=0&length=100",
+      "retrieved_at": "2026-09-05T21:29:57.247Z",
+      "status": 200,
+      "bytes": 36045,
+      "sha256": "b13fa989b9752b376517b8c097521a25cb659ffd660976446e05ca1454b21fee",
+      "last_modified": null
+    },
+    {
+      "name": "arena-text.html",
+      "url": "https://arena.ai/leaderboard/text/overall",
+      "status": 200,
+      "bytes": 2960436,
+      "sha256": "01ac4a6fa6eabca237c0dc10c47fd992ba6e1bdb1bd522995ebdfe3f1317dc07",
+      "retrieved_at": "2026-09-05T21:30:46.598Z"
+    },
+    {
+      "name": "arena-changelog.html",
+      "url": "https://arena.ai/company/leaderboard-changelog",
+      "status": 200,
+      "bytes": 708115,
+      "sha256": "680f12b3a3cf1238cbfc4e305ef618fe4f51b257620ad8875047847cecfb3d85",
+      "retrieved_at": "2026-09-05T21:30:46.895Z"
+    },
+    {
+      "name": "epoch-about.html",
+      "url": "https://epoch.ai/benchmarks/about",
+      "status": 200,
+      "bytes": 93204,
+      "sha256": "1d20fd2f9bd242a9e62955d278e09263c3e7b1f2b527301ad86132fb75b58666",
+      "retrieved_at": "2026-09-05T21:30:45.301Z"
+    },
+    {
+      "name": "arena-hf-filter-exact.json",
+      "url": "https://datasets-server.huggingface.co/filter?dataset=lmarena-ai%2Fleaderboard-dataset&config=text_style_control&split=latest&where=%22model_name%22%20%3D%20%27gemini-3.8-flash-high%27&offset=0&length=100",
+      "status": 200,
+      "bytes": 971,
+      "sha256": "1c8eb346350e262e9f2182b9c93bb8cd3421634f6a1865630e7eb52f8b4267bb",
+      "retrieved_at": "2026-09-05T21:30:47.908Z"
+    },
+    {
+      "name": "arena-methodology.html",
+      "url": "https://arena.ai/blog/arena-rank",
+      "status": 200,
+      "bytes": 268096,
+      "sha256": "d9b286af7f4c368267a9b9cb859ff78b71d89b25e4f8cfebe06e1d413585c5e9",
+      "retrieved_at": "2026-09-05T21:38:26.163Z"
+    }
+  ],
+  "vendor": [
+    {
+      "file": "work/gemini-38-coverage/vendor/captures/google-model-card.html",
+      "source_url": "https://deepmind.google/models/model-cards/gemini-3-8-flash/",
+      "resolved_url": "https://deepmind.google/models/model-cards/gemini-3-8-flash/",
+      "sha256": "52d681e4b3ee011bbf7a0595d6b989f2d84f864d228baaa0a20659758d2e206b",
+      "bytes": 153246,
+      "retrieved_at": "2026-09-05T21:28:47.546875+00:00"
+    },
+    {
+      "file": "work/gemini-38-coverage/vendor/captures/google-evaluation.pdf",
+      "source_url": "https://deepmind.google/models/evals-methodology/gemini-3-8-flash/",
+      "resolved_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_3-8_flash_model_evaluation.pdf",
+      "sha256": "6c9a1793455330efece88254fd0342d8d0680c560f506f67f982bbabc3eed07a",
+      "bytes": 635167,
+      "retrieved_at": "2026-09-05T21:28:49.254625+00:00"
+    },
+    {
+      "file": "work/gemini-38-coverage/vendor/captures/google-api.html",
+      "source_url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash",
+      "resolved_url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash",
+      "sha256": "f6057c0884cc1b8a2dd4eca6c91d975591a036d8ad943f0f8f70658fdefd5e5f",
+      "bytes": 105657,
+      "retrieved_at": "2026-09-05T21:28:51.075434+00:00"
+    },
+    {
+      "file": "work/gemini-38-coverage/vendor/captures/google-thinking.html",
+      "source_url": "https://ai.google.dev/gemini-api/docs/thinking",
+      "resolved_url": "https://ai.google.dev/gemini-api/docs/thinking",
+      "sha256": "524fefc63cd243afd0b6cb74e4a34612232044e2dde417201d69fbb745e4c40b",
+      "bytes": 202197,
+      "retrieved_at": "2026-09-05T21:28:52.476638+00:00"
+    },
+    {
+      "file": "work/gemini-38-coverage/vendor/captures/google-announcement.html",
+      "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/",
+      "resolved_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/",
+      "sha256": "b7d1a1db02e95b9d1d2cbe2803dd1a3eaa3bfff0c4631cb899731179c52f1203",
+      "bytes": 406618,
+      "retrieved_at": "2026-09-05T21:28:54.205431+00:00"
+    },
+    {
+      "file": "work/gemini-38-coverage/vendor/captures/google-flash.html",
+      "source_url": "https://deepmind.google/models/gemini/flash/",
+      "resolved_url": "https://deepmind.google/models/gemini/flash/",
+      "sha256": "e61a26a80de8624b1f6d29582601d9dc4e3c93c42349ac49840d81cd458172c4",
+      "bytes": 220940,
+      "retrieved_at": "2026-09-05T21:28:55.451090+00:00"
+    },
+    {
+      "file": "work/gemini-38-coverage/vendor/captures/google-generate-content-latest.html",
+      "source_url": "https://ai.google.dev/gemini-api/docs/generate-content/latest-model",
+      "resolved_url": "https://ai.google.dev/gemini-api/docs/generate-content/latest-model",
+      "sha256": "34cc9d7ea1b6e1ff48f063b33b3886eb0dda4659b617d879160338d0082e86cc",
+      "bytes": 114643,
+      "retrieved_at": "2026-09-05T21:30:22.734550+00:00"
+    },
+    {
+      "file": "work/gemini-38-coverage/vendor/captures/google-generate-content-thinking.html",
+      "source_url": "https://ai.google.dev/gemini-api/docs/generate-content/thinking",
+      "resolved_url": "https://ai.google.dev/gemini-api/docs/generate-content/thinking",
+      "sha256": "16a70987900b77319dfc0716517c9a2dca6cbb20f0dcf8f490485bc70d48484d",
+      "bytes": 224776,
+      "retrieved_at": "2026-09-05T21:30:24.834949+00:00"
+    },
+    {
+      "file": "work/gemini-38-coverage/vendor/captures/google-cloud-guide.html",
+      "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/guides/gemini-3-8-flash",
+      "resolved_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/guides/gemini-3-8-flash",
+      "sha256": "6495a29345f2fbb1cf0b31e7ede0a0b7414af5a597b4d4c334ffa01508455a87",
+      "bytes": 397903,
+      "retrieved_at": "2026-09-05T21:30:27.674454+00:00"
+    }
+  ],
+  "vals": [
+    {
+      "file": "work/gemini-38-coverage/vals/captures/fabv2.html",
+      "source_url": "https://www.vals.ai/benchmarks/fabv2",
+      "resolved_url": "https://www.vals.ai/benchmarks/fabv2",
+      "sha256": "7029dec1b7d3de67fb0c67f1c0e4fec7ce860fc82948c76fdd23dfd423d2cfa1",
+      "bytes": 2651106,
+      "retrieved_at": "2026-09-05T21:38:58.924917+00:00"
+    },
+    {
+      "file": "work/gemini-38-coverage/vals/captures/hlab.html",
+      "source_url": "https://www.vals.ai/benchmarks/hlab",
+      "resolved_url": "https://www.vals.ai/benchmarks/hlab",
+      "sha256": "b44b319a74a2c21c1d8202187484aab08431f79e86fc6150d6586513ad33bb96",
+      "bytes": 3570533,
+      "retrieved_at": "2026-09-05T21:39:00.467774+00:00"
+    }
+  ],
+  "agentic": [
+    {
+      "name": "deepswe-live-v1.1.json",
+      "url": "https://deepswe.datacurve.ai/artifacts/v1.1/leaderboard-live.json",
+      "final_url": "https://deepswe.datacurve.ai/artifacts/v1.1/leaderboard-live.json",
+      "status": 200,
+      "bytes": 94738,
+      "sha256": "005cbedb49f988ba3f0d9636300862ad7ace93ce1992b37faf9945fe5b383415",
+      "fetched_at": "2026-09-05T21:28:15.561Z",
+      "mentions": true
+    },
+    {
+      "name": "deepswe-live-v1.json",
+      "url": "https://deepswe.datacurve.ai/artifacts/v1/leaderboard-live.json",
+      "final_url": "https://deepswe.datacurve.ai/artifacts/v1/leaderboard-live.json",
+      "status": 200,
+      "bytes": 36591,
+      "sha256": "6fc4a40007a7db1647b2661bed7f3c61f698ea08cb13d60de1707e108e9c2964",
+      "fetched_at": "2026-09-05T21:28:15.729Z",
+      "mentions": false
+    },
+    {
+      "name": "osworld-results.json",
+      "url": "https://osworld-v2.xlang.ai/static/data/leaderboard/official-results.json",
+      "final_url": "https://osworld-v2.xlang.ai/static/data/leaderboard/official-results.json",
+      "status": 200,
+      "bytes": 12721,
+      "sha256": "94b07148b350183677c3415befbdf736ec37bbcf74c525cea668f5d98dafaa32",
+      "fetched_at": "2026-09-05T21:28:16.169Z",
+      "mentions": false
+    },
+    {
+      "name": "mcpmark.html",
+      "url": "https://mcpmark.ai/leaderboard",
+      "final_url": "https://mcpmark.ai/leaderboard",
+      "status": 200,
+      "bytes": 2226216,
+      "sha256": "5f6d4db43618950eaa40759d39fbdb864c6bb1527f97d4da187a358e6918e8aa",
+      "fetched_at": "2026-09-05T21:28:16.684Z",
+      "mentions": false
+    },
+    {
+      "name": "swe-rebench.html",
+      "url": "https://swe-rebench.com/leaderboard",
+      "final_url": "https://swe-rebench.com/",
+      "status": 200,
+      "bytes": 7789901,
+      "sha256": "fbb1b659562843da266aa20ec2295253d727ccd9b9469c78ab32df6fad1fffed",
+      "fetched_at": "2026-09-05T21:28:17.807Z",
+      "mentions": false
+    },
+    {
+      "name": "science.html",
+      "url": "https://www.terminal-bench-science.ai/",
+      "final_url": "https://www.terminal-bench-science.ai/",
+      "status": 200,
+      "bytes": 44192,
+      "sha256": "885797592f8e69ddeb0dafa85a74a57371c025f8e618d533536ba2ce748afa52",
+      "fetched_at": "2026-09-05T21:28:18.731Z",
+      "mentions": false
+    },
+    {
+      "name": "vending.html",
+      "url": "https://andonlabs.com/evals/vending-bench-2",
+      "final_url": "https://andonlabs.com/evals/vending-bench-2",
+      "status": 200,
+      "bytes": 64348,
+      "sha256": "7374774f94e03e27cc8ebca981d01cff425253529b3e6a34b15a616cd321c3ab",
+      "fetched_at": "2026-09-05T21:28:19.075Z",
+      "mentions": false
+    },
+    {
+      "name": "automation-readme.md",
+      "url": "https://raw.githubusercontent.com/zapier/AutomationBench/main/README.md",
+      "final_url": "https://raw.githubusercontent.com/zapier/AutomationBench/main/README.md",
+      "status": 200,
+      "bytes": 9260,
+      "sha256": "4c5452dec0abe00ad4dd9e1543709817c563486c1f53088c0adc9fafb609093a",
+      "fetched_at": "2026-09-05T21:28:19.142Z",
+      "mentions": false
+    },
+    {
+      "name": "scicode-readme.md",
+      "url": "https://raw.githubusercontent.com/flyingwagner/scicode-verified/main/README.md",
+      "final_url": "https://raw.githubusercontent.com/flyingwagner/scicode-verified/main/README.md",
+      "status": 200,
+      "bytes": 7527,
+      "sha256": "3c3e59ba7205115b3196f0664d6fdaf231392bc1f404ee57cde72dde95a2b02a",
+      "fetched_at": "2026-09-05T21:28:19.178Z",
+      "mentions": false
+    },
+    {
+      "name": "scicode-paper.html",
+      "url": "https://arxiv.org/html/2608.04975v1",
+      "final_url": "https://arxiv.org/html/2608.04975v1",
+      "status": 200,
+      "bytes": 577529,
+      "sha256": "00a0d9b6bfac61b3c0d1c0ffaf159b25d7a17d70ca447b049fdd8fdc3876d554",
+      "fetched_at": "2026-09-05T21:28:19.977Z",
+      "mentions": false
+    },
+    {
+      "name": "scicode-tree.json",
+      "url": "https://api.github.com/repos/flyingwagner/scicode-verified/git/trees/main?recursive=1",
+      "final_url": "https://api.github.com/repos/flyingwagner/scicode-verified/git/trees/main?recursive=1",
+      "status": 200,
+      "bytes": 41952,
+      "sha256": "0029006697c2adbf5c579678ca123e18b554e806efe65d90c335e3e581508fd9",
+      "fetched_at": "2026-09-05T21:28:21.163Z",
+      "mentions": false
+    },
+    {
+      "name": "metr.yaml",
+      "url": "https://metr.org/assets/benchmark_results_1_1.yaml",
+      "final_url": "https://metr.org/assets/benchmark_results_1_1.yaml",
+      "status": 200,
+      "bytes": 16255,
+      "sha256": "aae31902b0519a4da73e16643915e5e8aca13cd3315c3aac893ce3d6dfe92ad9",
+      "fetched_at": "2026-09-05T21:28:21.167Z",
+      "mentions": false
+    },
+    {
+      "name": "benchcad.html",
+      "url": "https://benchcad.com/",
+      "final_url": "https://benchcad.com/",
+      "status": 200,
+      "bytes": 42977,
+      "sha256": "6ded8b1b24931c13297842957c3275275541c2e4df89a645fe3aa8649da6f874",
+      "fetched_at": "2026-09-05T21:28:21.790Z",
+      "mentions": false
+    },
+    {
+      "name": "snorkel.html",
+      "url": "https://snorkel.ai/leaderboard/terminal-bench-4-0/",
+      "final_url": "https://snorkel.ai/leaderboard/terminal-bench-4-0/",
+      "status": 200,
+      "bytes": 480542,
+      "sha256": "8b4666b2022ce12309dc76ddd8b3aea314e568da9cff5d884d9f34d93ead952f",
+      "fetched_at": "2026-09-05T21:28:22.217Z",
+      "mentions": true
+    },
+    {
+      "name": "terminal4.html",
+      "url": "https://www.tbench.ai/leaderboard/terminal-bench/4.0",
+      "final_url": "https://www.tbench.ai/",
+      "status": 200,
+      "bytes": 124263,
+      "sha256": "969add0b2a36f8ed4df893fd93f716d4a514fa2f950ad54288f4c19e79a5e395",
+      "fetched_at": "2026-09-05T21:28:22.565Z",
+      "mentions": true
+    },
+    {
+      "name": "terminal21.html",
+      "url": "https://www.tbench.ai/leaderboard/terminal-bench/2.1",
+      "final_url": "https://www.tbench.ai/?version=2.1",
+      "status": 200,
+      "bytes": 124263,
+      "sha256": "969add0b2a36f8ed4df893fd93f716d4a514fa2f950ad54288f4c19e79a5e395",
+      "fetched_at": "2026-09-05T21:28:22.923Z",
+      "mentions": true
+    },
+    {
+      "name": "tau-manifest.json",
+      "url": "https://sierra-tau-bench-public.s3.us-west-2.amazonaws.com/submissions/manifest.json",
+      "final_url": "https://sierra-tau-bench-public.s3.us-west-2.amazonaws.com/submissions/manifest.json",
+      "status": 200,
+      "bytes": 2780,
+      "sha256": "f3537987ce940cef9372f034dc55ca16565dce075b82c846a27500155d1d8c96",
+      "fetched_at": "2026-09-05T21:28:23.958Z",
+      "mentions": false
+    }
+  ],
+  "terminal": [
+    {
+      "name": "terminal2.1-native.json",
+      "url": "https://ofhuhcpkvzjlejydnvyd.supabase.co/functions/v1/leaderboard-read",
+      "request_body": {
+        "package": "terminal-bench/terminal-bench-2-1",
+        "name": "main"
+      },
+      "method": "POST (public read-only leaderboard query)",
+      "status": 200,
+      "sha256": "a03472372fd4cbf34bd7f344ec2d593e27c2147c00cb3170d898afb07711c1c2",
+      "fetched_at": "2026-09-05T21:30:09.316Z"
+    },
+    {
+      "name": "terminal2.0-native.json",
+      "url": "https://ofhuhcpkvzjlejydnvyd.supabase.co/functions/v1/leaderboard-read",
+      "request_body": {
+        "package": "terminal-bench/terminal-bench-2",
+        "name": "2-0"
+      },
+      "method": "POST (public read-only leaderboard query)",
+      "status": 200,
+      "sha256": "dd426eef8d24974e1b916b197c896990121932791e177a01d7908d9d7a3f08f6",
+      "fetched_at": "2026-09-05T21:30:10.872Z"
+    },
+    {
+      "name": "science-announcement.html",
+      "url": "https://www.terminal-bench-science.ai/announcement",
+      "status": 200,
+      "sha256": "6ced6c2bebd0aefe89593504950175482fdaaf5794e6d999cb5b12010f867e4b",
+      "fetched_at": "2026-09-05T21:30:12.251Z"
+    }
+  ],
+  "minebench": [
+    {
+      "source_url": "https://minebench.ai/api/leaderboard",
+      "file": "leaderboard.json",
+      "sha256": "fd8d9eeeb0c2f7bf205bf4a92c1644feb0261b9f6d52cf6f1146ba769ac59bce",
+      "capture_date_utc": "2026-09-05"
+    },
+    {
+      "source_url": "https://github.com/Ammaar-Alam/minebench/blob/9fb2d96c858f9250f6052eab5a3eec0554d637f0/lib/ai/modelBenchmarkProfiles.ts",
+      "file": "lib_ai_modelBenchmarkProfiles.ts",
+      "sha256": "cb64f011baaca000434a0091f9b46fe948b34824ac60c72b722e35add07f0de4"
+    }
+  ]
+}

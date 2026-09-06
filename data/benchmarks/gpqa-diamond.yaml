@@ -23,4 +23,7 @@ metadata_sources:
   - https://arxiv.org/abs/2311.12022
 status: watchlist
 promotion_rule: Active after reaching at least eight model configurations; demote if comparable coverage falls below that threshold.
-notes: Identity is pinned, but the current snapshot has no mapped independent observations; held until ACI promotion criteria are met.
+notes: Native Epoch display observations preserve source-reported means and
+  standard errors. Kept on the watchlist pending review of their exact task
+  revisions and aggregate likelihood; the nominal 198-item suite is not an
+  observed run denominator. ECI chance-normalized projections are excluded.

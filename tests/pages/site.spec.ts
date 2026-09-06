@@ -1,5 +1,27 @@
 import { test, expect } from "@playwright/test";
 
+test("shows Gemini's native fitted evidence without counting vendor mirrors twice", async ({ page }) => {
+  await page.goto("models/gemini-3.8-flash/");
+  await expect(page.getByRole("heading", { name: "Gemini 3.8 Flash", exact: true })).toBeVisible();
+  await expect(page.locator(".evidence-grid > div").filter({ has: page.getByText("Fitted cells", { exact: true }) }).locator("dd")).toHaveText("4");
+  const evidence = page.locator(".evidence-table");
+  const finance = evidence.locator("tbody tr").filter({ has: page.getByRole("link", { name: "Finance Agent v2", exact: true }) });
+  await expect(finance).toHaveCount(1);
+  await expect(finance.locator('[data-label="Observed"]')).toContainText("61.4%");
+  await expect(finance.locator('[data-label="Predicted"]')).not.toContainText("no fitted cell");
+  await expect(finance.locator('a[href="https://www.vals.ai/benchmarks/fabv2"]')).toBeVisible();
+  await expect(evidence.locator('a[href="https://arena.ai/leaderboard/text/overall"]')).toBeVisible();
+  for (const benchmark of ["lvbench-static-google-202609", "lvbench-agentic-google-202609", "biomysterybench-human-solvable-google-202609", "biomysterybench-human-difficult-google-202609", "labbench2-macro11-google-202609", "minebench-spatial-bt", "harvey-legal-agent-vals-all-pass"]) {
+    const row = evidence.locator("tbody tr").filter({ has: page.locator(`a[href$="/benchmarks/${benchmark}/"]`) });
+    await expect(row).toHaveCount(1);
+    await expect(row.locator('[data-label="Predicted"]')).toContainText("no fitted cell");
+  }
+  for (const width of [375, 1440]) {
+    await page.setViewportSize({ width, height: 900 });
+    await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  }
+});
+
 test("shows paired uncertainty for the selected preliminary Chat comparison", async ({ page }) => {
   await page.goto("compare/?index=chat&highlight=gpt-5.6-sol&highlight=gpt-5.5");
   await expect(page.getByRole("combobox", { name: "First model", exact: true })).toContainText("GPT-5.6 Sol");

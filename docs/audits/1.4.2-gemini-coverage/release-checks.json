@@ -1,0 +1,23 @@
+{
+  "unit_tests": {
+    "passed": 289,
+    "note": "All workspaces passed; after a retired-row audit marker assertion was generalized, all 13 shared tests were rerun successfully."
+  },
+  "typecheck": "passed",
+  "lint": "passed",
+  "static_export": "passed",
+  "pages_tests": {
+    "passed": 3,
+    "includes": "Gemini native evidence and no double-counted vendor mirrors; Compare pair; all126 models, assets and public API boundaries."
+  },
+  "integration_checks": 21,
+  "notebook": "Executed all five code cells without errors.",
+  "visual_review": "Updated Gemini summary inspected at 1280px; page overflow checks at375and1440px passed.",
+  "e2e_tests": {
+    "passed": 24,
+    "platforms": [
+      "desktop Chromium",
+      "mobile Chromium"
+    ]
+  }
+}

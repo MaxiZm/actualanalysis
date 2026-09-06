@@ -1,0 +1,34 @@
+id: biomysterybench-human-solvable-google-202609
+name: BioMysteryBench · human-solvable (Google)
+version: google-2026-09
+family_id: biomysterybench-human-solvable
+tags:
+  - agentic
+categories:
+  - professional-tasks
+domains:
+  agentic: 0.3
+  reasoning: 0.3
+  knowledge-information: 0.4
+holdout: public
+chance_level: 0
+obs_type: judge
+transform:
+  type: accuracy
+  input_scale: percent
+n_items: null
+harness_url: https://deepmind.google/models/evals-methodology/gemini-3-8-flash/
+source_ids:
+  - vendor-model-cards
+metadata_sources:
+  - https://huggingface.co/datasets/Anthropic/BioMysteryBench-full
+  - https://deepmind.google/models/model-cards/gemini-3-8-flash/
+  - https://deepmind.google/models/evals-methodology/gemini-3-8-flash/
+status: watchlist
+notes: Google self-computed result with terminal, biology software and
+  allowlisted internet. Human-solvable and human-difficult are separate subsets.
+  Exact task count, dataset revision, harness, thinking level and repeat
+  uncertainty are not reported.
+promotion_rule: Require verified matching dataset/subset, evaluator and effort,
+  plus aggregate or task-level uncertainty; do not construct binomial counts
+  from this rounded mean.

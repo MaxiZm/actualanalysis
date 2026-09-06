@@ -1,0 +1,39 @@
+id: harvey-legal-agent-vals-all-pass
+name: Harvey Legal Agent — Vals all-pass
+version: 1-held-out-vals-2026-09-04
+grader_version: vals-harvey-gpt-5.5-medium-sonnet-4.6-two-judge-mean
+family_id: harvey-legal-agent
+tags:
+  - agentic
+categories:
+  - professional-tasks
+domains:
+  agentic: 0.5
+  communication-professional: 0.5
+holdout: private
+holdout_details: Vals methodology states that its results use Harvey held-out
+  tasks. The public task collection is separate; the generic page
+  dataset_type=public must not override this reported evaluation split.
+chance_level: 0
+obs_type: judge
+tool_policy: legal-agent-six-file-shell-tools-no-network
+transform:
+  type: accuracy
+  input_scale: percent
+n_items: null
+harness_url: https://www.vals.ai/benchmarks/hlab
+source_ids:
+  - vals
+metadata_sources:
+  - https://www.vals.ai/benchmarks/hlab
+  - https://www.harvey.ai/blog/legal-agent-benchmark-initial-results
+  - https://github.com/harveyai/harvey-labs/pull/76
+status: watchlist
+notes: Average of two judges' all-criteria-pass task rates. Keep native stderr
+  for reference; its sampling unit and repeat policy are not documented. Two
+  judges do not establish two independent generation runs. The evaluation
+  disables internet and uses file/shell tools. Fable5 published result includes
+  a four-task Opus4.8 fallback and is not a plain single-model run.
+promotion_rule: Observed only pending verified evaluated task denominator,
+  repeat policy and uncertainty definition. Keep criteria-pass rates distinct
+  from strict all-pass.

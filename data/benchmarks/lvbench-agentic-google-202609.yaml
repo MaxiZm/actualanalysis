@@ -1,0 +1,33 @@
+id: lvbench-agentic-google-202609
+name: LVBench · agentic (Google)
+version: google-2026-09
+family_id: lvbench-agentic
+tags:
+  - agentic
+categories:
+  - professional-tasks
+domains:
+  agentic: 0.5
+  reasoning: 0.5
+holdout: public
+chance_level: 0
+obs_type: judge
+transform:
+  type: accuracy
+  input_scale: percent
+n_items: null
+harness_url: https://deepmind.google/models/evals-methodology/gemini-3-8-flash/
+source_ids:
+  - vendor-model-cards
+metadata_sources:
+  - https://github.com/zai-org/LVBench
+  - https://deepmind.google/models/model-cards/gemini-3-8-flash/
+  - https://deepmind.google/models/evals-methodology/gemini-3-8-flash/
+status: watchlist
+notes: Table labels this agentic but the general LVBench methodology says
+  without tools. The agentic scaffold and its frame/tool settings are
+  unresolved; preserve the label without asserting tool use or transferring the
+  static protocol.
+promotion_rule: Require verified matching dataset/subset, evaluator and effort,
+  plus aggregate or task-level uncertainty; do not construct binomial counts
+  from this rounded mean.

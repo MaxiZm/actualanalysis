@@ -1,0 +1,23 @@
+id: minebench-spatial-bt
+name: MineBench spatial construction
+version: public-arena-2026-09-05
+family_id: minebench-spatial
+tags: [chat]
+categories: [spatial-reasoning, human-preference]
+domains: { reasoning: 0.8, software-code: 0.2 }
+holdout: rolling
+holdout_details: Human pairwise preferences over accepted voxel programs for public prompts.
+chance_level: 0
+obs_type: elo
+transform: { type: elo, reference_model: public-arena-cohort-center, reference_elo: 1500, scale: 173.7178 }
+n_items: null
+harness_url: https://minebench.ai/leaderboard
+source_ids: [minebench]
+status: watchlist
+notes: Source-reported Bradley-Terry rating and 95% confidence interval, not
+  accuracy. The focused capture adds Gemini 3.8 Flash with 15 active prompts;
+  prompt count and vote count are descriptive and never become binary trials.
+  Remains observed-only pending cohort and cross-prompt dependence review.
+metadata_sources:
+  - https://minebench.ai/faq
+  - https://github.com/Ammaar-Alam/minebench/blob/9fb2d96c858f9250f6052eab5a3eec0554d637f0/docs/arena-ranking-system.md

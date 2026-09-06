@@ -5,7 +5,7 @@ family: Claude 5
 release_date: 2026-09-01
 open_weights: false
 license: Proprietary
-aliases: [ Fable 5.1 ]
+aliases: [ Fable 5.1, claude-fable-5-1-max ]
 source_url: https://www.anthropic.com/claude-fable-and-mythos-5-1
 status: active
 reasoning: true

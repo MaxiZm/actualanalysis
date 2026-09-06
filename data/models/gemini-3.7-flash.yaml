@@ -9,5 +9,12 @@ source_url: https://ai.google.dev/gemini-api/docs/models/gemini-3.7-flash
 status: active
 aliases:
   - gemini-3.7-flash-high
+default_effort_tier: medium
+max_effort_tier: high
+effort_tier_order:
+  - low
+  - medium
+  - high
 metadata_sources:
   - https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset
+  - https://ai.google.dev/gemini-api/docs/generate-content/thinking

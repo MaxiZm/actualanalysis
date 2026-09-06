@@ -1,0 +1,151 @@
+{
+  "method": "1.4.2",
+  "review_date_local": "2026-09-06",
+  "timezone": "Europe/Moscow",
+  "snapshot_date_utc": "2026-09-05",
+  "baseline_commit": "ce4aca316969131365a13a5fa5226fced3a13dd5",
+  "before": {
+    "site_evidence_rows": 1430,
+    "models_with_evidence": 115,
+    "catalog_models": 126,
+    "benchmark_conditions": 94,
+    "gemini": {
+      "source_rows": 12,
+      "distinct_conditions": 9,
+      "conditions": [
+        "charxiv-reasoning-no-tools-google-202609",
+        "deepswe-1.1",
+        "gdp-pdf-google-202609",
+        "hle-verified-1811-google-202609",
+        "livebench-2026",
+        "matharena-composite",
+        "osworld-v2-google-pre0808-partial-max3",
+        "terminal-bench-2.1",
+        "terminal-bench-4.0"
+      ],
+      "indexes": {
+        "mixed": {
+          "median": 56.320496,
+          "ci90": [
+            47.673336,
+            65.073044
+          ],
+          "profile": "max-common",
+          "provisional": false,
+          "fitted_cells": 3,
+          "domains": 4
+        },
+        "agentic": {
+          "median": 57.980286,
+          "ci90": [
+            51.53819,
+            64.151825
+          ],
+          "profile": "max-common",
+          "provisional": false,
+          "fitted_cells": 3,
+          "domains": 4
+        },
+        "chat": {
+          "median": 54.471325,
+          "ci90": [
+            42.449112,
+            66.60547
+          ],
+          "profile": "max-common",
+          "provisional": true,
+          "fitted_cells": 3,
+          "domains": 4
+        }
+      }
+    }
+  },
+  "after": {
+    "site_evidence_rows": 1517,
+    "models_with_evidence": 115,
+    "catalog_models": 126,
+    "benchmark_conditions": 102,
+    "gemini": {
+      "source_rows": 20,
+      "distinct_conditions": 18,
+      "conditions": [
+        "biomysterybench-human-difficult-google-202609",
+        "biomysterybench-human-solvable-google-202609",
+        "charxiv-reasoning-no-tools-google-202609",
+        "deepswe-1.1",
+        "gdp-pdf-google-202609",
+        "harvey-legal-agent-vals-all-pass",
+        "hle-verified-1811-google-202609",
+        "labbench2-macro11-google-202609",
+        "livebench-2026",
+        "lmarena-text-style-controlled",
+        "lvbench-agentic-google-202609",
+        "lvbench-static-google-202609",
+        "matharena-composite",
+        "minebench-spatial-bt",
+        "osworld-v2-google-pre0808-partial-max3",
+        "terminal-bench-2.1",
+        "terminal-bench-4.0",
+        "vals-finance-agent-v2-partial"
+      ],
+      "indexes": {
+        "mixed": {
+          "median": 61.789936,
+          "ci90": [
+            56.667854,
+            67.75362
+          ],
+          "profile": "max-common",
+          "provisional": false,
+          "fitted_cells": 4,
+          "domains": 5
+        },
+        "agentic": {
+          "median": 61.412502,
+          "ci90": [
+            56.114437,
+            68.07289
+          ],
+          "profile": "max-common",
+          "provisional": false,
+          "fitted_cells": 4,
+          "domains": 5
+        },
+        "chat": {
+          "median": 60.692562,
+          "ci90": [
+            54.065697,
+            67.84733
+          ],
+          "profile": "max-common",
+          "provisional": true,
+          "fitted_cells": 4,
+          "domains": 5
+        }
+      }
+    }
+  },
+  "fit": {
+    "observations": 921,
+    "models": 110,
+    "systems": 131,
+    "benchmark_conditions": 19,
+    "divergences": 0,
+    "retained_draws": 12000,
+    "max_rhat": 1.0033043795720782,
+    "min_ess": 1822.9626046755293,
+    "min_ebfmi": 0.8675545836219911,
+    "max_mcse": 0.29885668454607855
+  },
+  "runtime": {
+    "speed_or_ttft_models_before": 85,
+    "speed_or_ttft_models_after": 86,
+    "changed_model": "gemini-3.8-flash",
+    "configuration": "high; Google API",
+    "source_url": "https://artificialanalysis.ai/models/gemini-3-8-flash",
+    "scope": "Attributed display overlay only, excluded from fit and public bulk exports."
+  },
+  "baseline_snapshot_sha256": "a43e98009d79dff23c8b61eb0d36994a720d41e397c992f235d47c361f7cc117",
+  "snapshot_sha256": "3eb54898eb278fb2ac84d2bb6d789d83492c7c35753fe142cbb2432503124454",
+  "accepted_input_sha256": "e640a1c41d5c4bdb1c80e4ad93db208cce50d099ad9308a5fa174a7fd0d647c9"
+}

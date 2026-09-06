@@ -1,0 +1,34 @@
+id: labbench2-macro11-google-202609
+name: LABBench2 · 11-task macro-average (Google)
+version: google-2026-09
+family_id: labbench2-macro11
+tags:
+  - agentic
+categories:
+  - professional-tasks
+domains:
+  agentic: 0.3
+  reasoning: 0.3
+  knowledge-information: 0.4
+holdout: public
+chance_level: 0
+obs_type: judge
+transform:
+  type: accuracy
+  input_scale: percent
+n_items: null
+harness_url: https://deepmind.google/models/evals-methodology/gemini-3-8-flash/
+source_ids:
+  - vendor-model-cards
+metadata_sources:
+  - https://github.com/EdisonScientific/labbench2
+  - https://deepmind.google/models/model-cards/gemini-3-8-flash/
+  - https://deepmind.google/models/evals-methodology/gemini-3-8-flash/
+status: watchlist
+notes: Google self-computed macro-average across eleven named subtasks with
+  terminal and internet. It is not one pooled binary accuracy; subtask sizes,
+  weights beyond equal macro averaging, task outcomes, effort and uncertainty
+  are not published.
+promotion_rule: Require verified matching dataset/subset, evaluator and effort,
+  plus aggregate or task-level uncertainty; do not construct binomial counts
+  from this rounded mean.

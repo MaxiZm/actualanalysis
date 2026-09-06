@@ -1,0 +1,84 @@
+{
+  "review": "independent final candidate integration, read-only",
+  "hashes": {
+    "integrate.ts": "083b549c40a9a13ea9369e831071d836b0b94688ed9cccfae7331b9bd0bfe1b5",
+    "merged-records.json": "54f5ddeed64469834f1d44d16c45dc694144d07131f49d0142a4818a067e413b",
+    "preparation.json": "6e5127df7f4f05a1254c6842c988251f3e8a222329a423390a3a643d08dad061",
+    "vals/candidates.json": "93113f7ebe65b06b4446ab1621c54c32e026c8467a204b9f952a19e363b3fc2d"
+  },
+  "checks": {
+    "schema_valid": 4507,
+    "correction_indices_unique": 402,
+    "corrections_exact_baseline": true,
+    "no_duplicate_natural_keys": true,
+    "all_unreplaced_baseline_rows_preserved": {
+      "retained": 4018,
+      "changed": 0
+    },
+    "retained_plus_additions_conserved": {
+      "retained": 4018,
+      "added": 489,
+      "merged": 4507
+    },
+    "google_mirror_proposals_were_not_old_baseline": true,
+    "new_google_mirror_proposals_not_imported": true,
+    "secondary_finance_metric_not_extra_condition": true,
+    "one_native_vals_cohort": 81,
+    "vals_model_condition_keys_unique": true,
+    "all_vals_rows_match_native_and_registry": 81,
+    "no_display_conditions_admitted": true,
+    "finance_numeric_effort_not_invented": true,
+    "finance_native_SE_conversion_once": {
+      "rows": 38,
+      "numeric_effort_excluded": 2
+    },
+    "arena_complete_single_cutoff": 400,
+    "arena_exact_native_values": true,
+    "all_fitted_numeric_values_valid": true,
+    "no_duplicate_fitted_source_lineages": true,
+    "all_calibration_panel_members_pass": true,
+    "gemini_five_distinct_fitted_conditions": [
+      {
+        "benchmark": "vals-finance-agent-v2-partial",
+        "effort": "high",
+        "system": "gemini-3.8-flash@max-common",
+        "likelihood": "a_prime",
+        "variance": 2.9187812161261048e-05
+      },
+      {
+        "benchmark": "matharena-composite",
+        "system": "gemini-3.8-flash@std-common",
+        "likelihood": "a_prime",
+        "variance": 0.0016210541740761951
+      },
+      {
+        "benchmark": "terminal-bench-4.0",
+        "effort": "high",
+        "system": "gemini-3.8-flash@max-common",
+        "likelihood": "a_prime",
+        "variance": 0.012318282307701359
+      },
+      {
+        "benchmark": "deepswe-1.1",
+        "effort": "medium",
+        "system": "gemini-3.8-flash@std-common",
+        "likelihood": "a_prime",
+        "variance": 0.0031964292081577313
+      },
+      {
+        "benchmark": "deepswe-1.1",
+        "effort": "high",
+        "system": "gemini-3.8-flash@max-common",
+        "likelihood": "a_prime",
+        "variance": 0.0014003932682736882
+      },
+      {
+        "benchmark": "lmarena-text-style-controlled",
+        "effort": "high",
+        "system": "gemini-3.8-flash@max-common",
+        "likelihood": "normal",
+        "variance": 0.0006316097508811068
+      }
+    ]
+  }
+}

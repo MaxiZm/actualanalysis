@@ -9,7 +9,8 @@ protocols:
     benchmark_ids: [terminal-bench-4.0]
     provenance: independent
     effort_tier_rule: highest_exposed
-    harness_class: native
+    # The adapter classifies each published agent: mini-SWE-agent is common;
+    # Codex, Claude Code and Grok Build are native. Unrecognized agents stay unknown.
     tool_policy: terminal-shell
     benchmark_versions: { terminal-bench-4.0: "4.0.0" }
     grader_versions: { terminal-bench-4.0: terminal-bench/terminal-bench@4.0.0 }
