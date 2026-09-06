@@ -1,0 +1,407 @@
+{
+  "schema_version": 1,
+  "inspected_commit": "08af628cef56df133f3c1804cb301762ad0ec1eb",
+  "verdict": "NOTREADY",
+  "fit_authorized": false,
+  "promotion_authorized": false,
+  "promotion_claim": "not_claimed",
+  "strong_gate": "If the class registry is insufficient or the plan is unlocked, do not fit and do not promote. Report NOTREADY and the missing requirements. Do not relax the 10-component / 3-provider floor.",
+  "candidate_choice": {
+    "implemented_candidate": "restricted class prior; global rho ~ Beta(1,1); correlated LKJ traits with unchanged marginals versus independent baseline",
+    "implemented_baseline": "nested independent-release prior: class_prior disabled, or pooling kind=fixed value=0 (rho=0 / all-singleton); same correlated traits, likelihood, and effort priors",
+    "old_lock_draft_candidates": "unimplemented related-release random-walk siblings A (dimensionless root-SD change scale) and B (raw-unit edge scale); candidate selected UNSET",
+    "not_this_candidate": "Do not treat the 2026-09-06 related-release lock draft A/B roster as the confirmatory candidate. Those siblings are proposal-only."
+  },
+  "floors": {
+    "informative_original_components": 10,
+    "providers": 3,
+    "domain_loading_threshold": 0.25,
+    "relaxable": false
+  },
+  "gates": [
+    {
+      "id": "class_registry",
+      "passed": false,
+      "summary": "class_registry failed (4 issue(s))",
+      "issues": [
+        "metadata.real_reviewed_classes_exist requires actual JSON true; bool=False is rejected (no truthy-string bypass)",
+        "metadata.confirmatory_criteria_locked requires actual JSON true; bool=False is rejected (no truthy-string bypass)",
+        "Eligible certified configuration-compatible classes 0 < required floor 10. Candidate relationship-supported upper bound is 5 components / 2 providers and is not the eligible count. Informative availability-qualified components are also not certified. @max-common labels are not matched settings. The floor cannot be relaxed.",
+        "Eligible certified providers 0 < required floor 3 (candidate providers 2 are not the eligible count)."
+      ],
+      "details": {
+        "registry_supplied": true,
+        "edition": "metadata-reviewed-candidate-2026-09-07",
+        "real_reviewed_classes_exist": false,
+        "confirmatory_criteria_locked": false,
+        "canonical_provenance": "metadata.components",
+        "max_common_label_is_not_matched_settings": true,
+        "flags_not_forced": true,
+        "n_declared_classes": 5,
+        "n_observed_non_gemini_multi_member_classes": 5,
+        "n_fake_or_unobserved_members": 0,
+        "n_candidate_components": 5,
+        "n_candidate_providers": 2,
+        "n_informative_original_components": 5,
+        "n_informative_providers": 2,
+        "n_eligible_reviewed_classes": 0,
+        "n_eligible_providers": 0,
+        "candidate_component_ids": [
+          "claude-3.5-sonnet-snapshots",
+          "claude-opus-4-drop-in",
+          "claude-sonnet-4-drop-in",
+          "claude-fable-5-revision",
+          "deepseek-v4-pro-preview-to-ga"
+        ],
+        "candidate_providers": [
+          "Anthropic",
+          "DeepSeek"
+        ],
+        "informative_original_component_ids": [
+          "claude-3.5-sonnet-snapshots",
+          "claude-opus-4-drop-in",
+          "claude-sonnet-4-drop-in",
+          "claude-fable-5-revision",
+          "deepseek-v4-pro-preview-to-ga"
+        ],
+        "informative_providers": [
+          "Anthropic",
+          "DeepSeek"
+        ],
+        "eligible_component_ids": [],
+        "eligible_providers": [],
+        "floor_components": 10,
+        "floor_providers": 3,
+        "cannot_count_arbitrary_partitions_as_independent": true,
+        "candidate_upper_bound_is_not_eligible_count": true,
+        "component_identity_not_inferred_from_dict_keys": true,
+        "n_skipped_invalid_component_values": 0,
+        "skipped_invalid_component_values": [],
+        "registry_schema_valid": true,
+        "registry_frozen_hash": "283844ab88091e20e647165bdf62c0cfdfc27106abb5855847b85e056c58cada",
+        "ignored_noncanonical_class_keys": [],
+        "fake_or_unobserved_members": [],
+        "n_declared_original_components": 5,
+        "informative_components": [
+          {
+            "original_component_id": "claude-3.5-sonnet-snapshots",
+            "provider": "Anthropic",
+            "observed_non_gemini_members": [
+              "claude-3.5-sonnet",
+              "claude-3.5-sonnet-20241022"
+            ],
+            "review_status": "relationship-supported-config-unresolved",
+            "n_sources": 1,
+            "n_availability_blocks": 6
+          },
+          {
+            "original_component_id": "claude-opus-4-drop-in",
+            "provider": "Anthropic",
+            "observed_non_gemini_members": [
+              "claude-opus-4",
+              "claude-opus-4.1"
+            ],
+            "review_status": "relationship-supported-config-unresolved",
+            "n_sources": 2,
+            "n_availability_blocks": 7
+          },
+          {
+            "original_component_id": "claude-sonnet-4-drop-in",
+            "provider": "Anthropic",
+            "observed_non_gemini_members": [
+              "claude-sonnet-4",
+              "claude-sonnet-4.5"
+            ],
+            "review_status": "relationship-supported-config-unresolved",
+            "n_sources": 1,
+            "n_availability_blocks": 8
+          },
+          {
+            "original_component_id": "claude-fable-5-revision",
+            "provider": "Anthropic",
+            "observed_non_gemini_members": [
+              "claude-fable-5",
+              "claude-fable-5.1"
+            ],
+            "review_status": "relationship-supported-config-unresolved",
+            "n_sources": 1,
+            "n_availability_blocks": 10
+          },
+          {
+            "original_component_id": "deepseek-v4-pro-preview-to-ga",
+            "provider": "DeepSeek",
+            "observed_non_gemini_members": [
+              "deepseek-v4-pro-0424",
+              "deepseek-v4-pro-0813"
+            ],
+            "review_status": "relationship-supported-config-unresolved",
+            "n_sources": 2,
+            "n_availability_blocks": 8
+          }
+        ]
+      }
+    },
+    {
+      "id": "availability_family_closure_blocks",
+      "passed": true,
+      "summary": "availability-based >=0.25 family-closure blocks inventoried without reading y/x",
+      "issues": [],
+      "details": {
+        "input_supplied": true,
+        "domain_loading_threshold": 0.25,
+        "reads_outcomes_for_selection": false,
+        "n_blocks": 328,
+        "n_blocks_with_parent_evidence": 308,
+        "selection_rule": "Target conditions are those with declared domain loading >= domain_loading_threshold on the requested target domain. Every successor observation, at every source and effort, in every family that contains at least one target condition is removed from training (family closure). Default 0.25 is required and matches the production domain-cell gate n_sk and the planned 1.5.0 successor-domain holdout. Conditions below the threshold that are pulled in only by family grouping are held out from training but tagged family_closure, not silently scored as primary target conditions. Remaining successor cross-loadings on non-closed families are recorded and are not described as zero evidence.",
+        "primary_scoring_rule": "Primary scoring uses only successor observations on conditions with declared loading >= domain_loading_threshold (lock draft steps 1\u20133: identify targets at 0.25, remove every successor family row, score only the target conditions). family_closure rows are removed from training with the family but are not the default prediction/scoring set. held_out_observations is the training-removal union, not the primary score.",
+        "blocks_by_domain": {
+          "agentic": 72,
+          "software-code": 29,
+          "reasoning": 86,
+          "knowledge-information": 69,
+          "communication-professional": 72
+        }
+      }
+    },
+    {
+      "id": "frozen_lock_and_selection",
+      "passed": false,
+      "summary": "frozen_lock_and_selection failed (5 issue(s))",
+      "issues": [
+        "Lock record is not complete (28 UNSET token(s); draft=True). A hash without filled decisions is not a complete lock.",
+        "Lock draft describes unimplemented random-walk siblings A/B, not the implemented restricted class-prior rho~Beta(1,1) candidate. A new lock for the implemented candidate is required.",
+        "Lock does not select the implemented restricted class-prior candidate.",
+        "Validation plan text is proposed/not locked. Confirmation cannot open.",
+        "Frozen experiment manifest (train/eval hashes, selection rule, threshold, primary scoring rule) is missing."
+      ],
+      "details": {
+        "lock_supplied": true,
+        "plan_supplied": true,
+        "manifest_supplied": false,
+        "lock_status": "draft_unlocked",
+        "plan_locked": false,
+        "manifest_frozen": false,
+        "candidate_matches_implemented_restricted_class_prior": false,
+        "unset_fields": [
+          "candidate_selected_for_confirmation",
+          "historical_non_gemini_development_cohort",
+          "documentation_only_edge_or_class_registry",
+          "source_references_and_review_timestamps",
+          "original_documented_component_ids",
+          "depth_truncated_model_forest",
+          "motivating_component_exclusion_manifest",
+          "prospective_confirmation_outcomes",
+          "training_target_calibration_manifests",
+          "input_and_mask_hashes",
+          "prior_predictive_report",
+          "selected_scale_values",
+          "candidate_scale_search_history",
+          "eligible_successor_domain_block_manifest",
+          "availability_based_selection_rule_and_sample_size",
+          "prospective_prediction_cutoffs",
+          "numerical_predictive_improvement_rule",
+          "calibration_noninferiority_tolerances",
+          "component_cluster_uncertainty_method",
+          "repeated_mask_handling",
+          "precision_power_report",
+          "final_operating_floor_confirmation",
+          "deletion_sensitivity_decision_rules",
+          "simulation_design",
+          "sampler_implementation_revision",
+          "run_settings_seeds_probability_mcse",
+          "validated_publication_policy"
+        ],
+        "old_draft_random_walk_mismatch": true,
+        "markdown_unset_token_count": 28
+      }
+    },
+    {
+      "id": "confirmation_exclusion_provenance",
+      "passed": false,
+      "summary": "confirmation_exclusion_provenance failed (1 issue(s))",
+      "issues": [
+        "Confirmation exclusion metadata with provenance is missing. The CONSERVATIVE_GEMINI_DEVELOPMENT_EXCLUSIONS heuristic cannot be used for confirmatory training, scoring, or hyperprior tuning."
+      ],
+      "details": {
+        "supplied": false,
+        "confirmatory_certified": false,
+        "heuristic_development_superset_insufficient": true,
+        "n_members": 0
+      }
+    },
+    {
+      "id": "comparable_measurement_settings",
+      "passed": true,
+      "summary": "baseline/candidate share correlated traits, production likelihood, and nested rho=0 vs Beta(1,1)",
+      "issues": [],
+      "details": {
+        "required_trait_structure": "correlated",
+        "candidate_family": "restricted",
+        "candidate_pooling": {
+          "kind": "beta",
+          "alpha": 1.0,
+          "beta": 1.0
+        },
+        "baseline_pooling": {
+          "kind": "fixed",
+          "value": 0.0
+        },
+        "likelihood": "production_aci12_model_py",
+        "effort_prior": "production_signed_standard_maximum",
+        "unchanged_marginals": true,
+        "random_walk_siblings_are_not_the_candidate": true,
+        "production_export_issues_on_enabled_prior": [
+          "class_prior restricted candidate is experimental and nonpublishable"
+        ]
+      }
+    },
+    {
+      "id": "predictive_calibration_workflow",
+      "passed": false,
+      "summary": "predictive_calibration_workflow failed (2 issue(s))",
+      "issues": [
+        "No production-faithful paired joint predictive scorer is implemented for family-disjoint successor-domain groups. Reuse aci12.model observation families and integrate shared held-out effects jointly. Do not treat validate_predictive.py as automatically production-faithful.",
+        "Simulation-based calibration and prior-predictive workflows are not implemented as passed checks."
+      ],
+      "details": {
+        "production_likelihood_implemented": true,
+        "production_likelihood_module": "aci12.model.aci_model",
+        "production_families": [
+          "obs_normal",
+          "a_single",
+          "a_total",
+          "a_exact"
+        ],
+        "validate_predictive_py": {
+          "available": true,
+          "production_faithful": false,
+          "role": "Transformed-normal interpolation CV; not class-prior successor-domain joint score"
+        },
+        "paired_joint_production_predictive_scorer": false,
+        "simulation_based_calibration_workflow": false,
+        "prior_predictive_workflow": false
+      }
+    },
+    {
+      "id": "nonpublishable_guards",
+      "passed": true,
+      "summary": "nonpublishable guards retained",
+      "issues": [],
+      "details": {
+        "nonpublishable_metadata": {
+          "is_experimental": true,
+          "is_publishable": false,
+          "confirmatory_criteria_locked": false,
+          "real_reviewed_classes_exist": false,
+          "notice": "EXPERIMENTAL CANDIDATE ONLY. Do not use for production ranking or publication. Confirmatory promotion criteria are not locked, and reviewed capability-transfer classes have not been certified."
+        },
+        "stripping_guards_to_export_forbidden": true,
+        "production_export_issues_must_remain": true,
+        "unit_tests_are_not_validation_success": true,
+        "mcmc_convergence_is_not_validation_success": true,
+        "two_classes_cannot_satisfy_component_floor": true
+      }
+    }
+  ],
+  "missing_prerequisites": [
+    "metadata.real_reviewed_classes_exist requires actual JSON true; bool=False is rejected (no truthy-string bypass)",
+    "metadata.confirmatory_criteria_locked requires actual JSON true; bool=False is rejected (no truthy-string bypass)",
+    "Eligible certified configuration-compatible classes 0 < required floor 10. Candidate relationship-supported upper bound is 5 components / 2 providers and is not the eligible count. Informative availability-qualified components are also not certified. @max-common labels are not matched settings. The floor cannot be relaxed.",
+    "Eligible certified providers 0 < required floor 3 (candidate providers 2 are not the eligible count).",
+    "Lock record is not complete (28 UNSET token(s); draft=True). A hash without filled decisions is not a complete lock.",
+    "Lock draft describes unimplemented random-walk siblings A/B, not the implemented restricted class-prior rho~Beta(1,1) candidate. A new lock for the implemented candidate is required.",
+    "Lock does not select the implemented restricted class-prior candidate.",
+    "Validation plan text is proposed/not locked. Confirmation cannot open.",
+    "Frozen experiment manifest (train/eval hashes, selection rule, threshold, primary scoring rule) is missing.",
+    "Confirmation exclusion metadata with provenance is missing. The CONSERVATIVE_GEMINI_DEVELOPMENT_EXCLUSIONS heuristic cannot be used for confirmatory training, scoring, or hyperprior tuning.",
+    "No production-faithful paired joint predictive scorer is implemented for family-disjoint successor-domain groups. Reuse aci12.model observation families and integrate shared held-out effects jointly. Do not treat validate_predictive.py as automatically production-faithful.",
+    "Simulation-based calibration and prior-predictive workflows are not implemented as passed checks."
+  ],
+  "no_fit_reasons": [
+    "class registry insufficient",
+    "plan/lock unlocked"
+  ],
+  "counts": {
+    "candidate": {
+      "components": 5,
+      "providers": 2,
+      "ids": [
+        "claude-3.5-sonnet-snapshots",
+        "claude-opus-4-drop-in",
+        "claude-sonnet-4-drop-in",
+        "claude-fable-5-revision",
+        "deepseek-v4-pro-preview-to-ga"
+      ],
+      "provider_ids": [
+        "Anthropic",
+        "DeepSeek"
+      ],
+      "meaning": "Relationship-supported metadata.components upper bound; not the floor count"
+    },
+    "informative": {
+      "components": 5,
+      "providers": 2,
+      "ids": [
+        "claude-3.5-sonnet-snapshots",
+        "claude-opus-4-drop-in",
+        "claude-sonnet-4-drop-in",
+        "claude-fable-5-revision",
+        "deepseek-v4-pro-preview-to-ga"
+      ],
+      "provider_ids": [
+        "Anthropic",
+        "DeepSeek"
+      ],
+      "meaning": "Availability-qualified candidates; diagnostic only, not certified"
+    },
+    "eligible": {
+      "components": 0,
+      "providers": 0,
+      "ids": [],
+      "provider_ids": [],
+      "meaning": "Certified config-compatible classes; floor 10/3 applies here"
+    },
+    "floor": {
+      "components": 10,
+      "providers": 3,
+      "relaxable": false
+    }
+  },
+  "availability_block_count": 328,
+  "reads_outcomes_for_cohort_selection": false,
+  "nonpublishable_guards_retained": true,
+  "implemented_vs_missing": {
+    "implemented_at_08af628": [
+      "Restricted class prior rho~Beta(1,1) and nested rho=0 baseline on correlated LKJ traits",
+      "production_export_issues blocks publication; family-disjoint 0.25 holdouts; registry schema freeze",
+      "validate_predictive.py interpolation CV (transformed-normal approx; not this experiment's scorer)",
+      "Unit tests of implementation behavior, not confirmatory success"
+    ],
+    "not_implemented": [
+      "Random-walk A/B; certified config-compatible classes; complete lock for this candidate",
+      "Certified exclusion provenance; production-faithful paired joint predictive score",
+      "Prior-predictive, precision/power, SBC, leave-one-component/provider confirmation"
+    ],
+    "do_not_claim_success_from": [
+      "unit tests",
+      "MCMC convergence alone",
+      "two classes or a 5/2 candidate upper bound",
+      "JSON booleans",
+      "validate_predictive.py transformed-normal scores"
+    ]
+  },
+  "next_needed_input": [
+    "Reviewed class-registry JSON via --registry with canonical metadata.components (original_component_id, provider, member_models, source refs, review_status), certified configuration-compatible classes meeting the 10/3 floor, and metadata.real_reviewed_classes_exist=true (JSON boolean; do not force). External research-worker output; not a private agent path.",
+    "Complete lock JSON for the implemented restricted class-prior candidate (not A/B random-walk), plus frozen prepare manifest and locked plan JSON.",
+    "Caller-supplied confirmatory exclusion metadata JSON with non-heuristic provenance, member_models, and confirmatory_certified=true (JSON boolean).",
+    "After metadata gates pass: implement paired joint predictive scoring that reuses production likelihoods, then calibration/SBC. Do not start that workflow merely to bypass a missing registry."
+  ],
+  "notes": [
+    "This preflight is metadata-only. Passing unit tests is not validation success.",
+    "MCMC convergence is not predictive validation.",
+    "Two classes cannot satisfy the independent-component floor.",
+    "validate_predictive.py is a transformed-normal approximation, not the production joint score.",
+    "Do not strip production_export_issues or treat JSON booleans as certification.",
+    "Candidate 5/2 upper bound is not eligible certified count 0."
+  ]
+}

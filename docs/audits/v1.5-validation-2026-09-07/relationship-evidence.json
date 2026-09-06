@@ -1,0 +1,507 @@
+{
+  "audit_id": "v1.5-validation-2026-09-07-relationship-evidence",
+  "review_date": "2026-09-07",
+  "retrieval_date": "2026-09-07",
+  "confidence_status": "metadata-reviewed-not-empirically-validated",
+  "verdict": "not_ready",
+  "gate_status": "fail",
+  "promotion_supported": false,
+  "fits_run": false,
+  "outcomes_inspected": false,
+  "real_reviewed_classes_exist": false,
+  "max_common_note": "A shared @max-common fit assignment is a scoring-input effort-class label. It does not document matched vendor reference configuration, equal compute, or the same thinking/effort control.",
+  "implemented_candidate": {
+    "family": "restricted",
+    "pooling": {"kind": "beta", "alpha": 1, "beta": 1},
+    "baseline": {"kind": "fixed", "value": 0},
+    "construction": "z_m = L_Sigma (sqrt(rho) u_{c(m)} + sqrt(1-rho) v_m)",
+    "code": "packages/scoring/python/aci12/class_prior.py",
+    "proposal": "docs/proposals/aci-1.5.0-measurement-spaces-and-classes.md",
+    "not_implemented": "predecessor random-walk siblings A/B in docs/proposals/aci-1.5.0-related-release-prior.md"
+  },
+  "draft_lock": {
+    "path": "docs/proposals/aci-1.5.0-related-release-experiment-lock.md",
+    "status": "DRAFT — NOT LOCKED",
+    "date": "2026-09-06",
+    "candidate_selected_for_confirmation": "UNSET",
+    "roster": ["independent-root baseline", "A root-SD-multiple change scale", "B raw-unit change scale"],
+    "mismatch_with_implemented_candidate": "Lock roster is directed-forest Student-t walk siblings. Implemented candidate is an exchangeable restricted class prior with one global rho. This review uses lock evaluation safeguards and does not treat A/B as selected or implemented.",
+    "accepted_input_sha256_recorded_in_lock": "e5d654f41019df63f9f78c28efcd8d83db9bf425bf63e4d2cadb3a166fe23578"
+  },
+  "operating_floor": {
+    "min_informative_original_documented_components": 10,
+    "min_providers": 3,
+    "lowered": false,
+    "source": "docs/proposals/aci-1.5.0-related-release-experiment-lock.md section 7",
+    "applies_to": "fully_compatible_reviewed_classes, not the pre-config upper bound"
+  },
+  "fitted_universe": {
+    "n_fitted_models": 110,
+    "n_represented_systems": 131,
+    "n_fitted_conditions": 19,
+    "n_families": 16,
+    "domain_loading_threshold": 0.25,
+    "n_gemini_excluded_and_fitted": 14,
+    "n_non_gemini_fitted": 96,
+    "metadata_fields_used": [
+      "system_ids",
+      "system_model_index",
+      "benchmark_ids",
+      "benchmark_family_ids",
+      "benchmark_domains",
+      "observations.system_index",
+      "observations.benchmark_index"
+    ],
+    "outcome_fields_not_used": ["y", "x", "k_trials", "per_task_counts", "variance"]
+  },
+  "gemini_exclusion": {
+    "list_name": "CONSERVATIVE_GEMINI_DEVELOPMENT_EXCLUSIONS",
+    "alias": "DOCUMENTED_GEMINI_MOTIVATING_COMPONENT_MODELS",
+    "role": "confirmation exclusion only; not a certified lineage",
+    "member_models": [
+      "gemini-1.5-pro",
+      "gemini-2.0-flash-thinking",
+      "gemini-2.5-flash",
+      "gemini-2.5-pro",
+      "gemini-2.5-pro-20250325",
+      "gemini-2.5-pro-20250506",
+      "gemini-3-flash",
+      "gemini-3-pro",
+      "gemini-3.1-pro",
+      "gemini-3.5-flash",
+      "gemini-3.5-flash-lite",
+      "gemini-3.6-flash",
+      "gemini-3.7-flash",
+      "gemini-3.8-flash"
+    ],
+    "all_present_in_fitted_110": true
+  },
+  "counts": {
+    "relationship_supported_candidate_components": 5,
+    "relationship_supported_candidate_providers": ["Anthropic", "DeepSeek"],
+    "n_relationship_supported_candidate_providers": 2,
+    "relationship_supported_count_is": "upper_bound_before_strict_config_certification",
+    "fully_compatible_reviewed_classes": 0,
+    "fully_compatible_reviewed_providers": [],
+    "n_fully_compatible_reviewed_providers": 0,
+    "strict_successor_domain_blocks_on_candidates": 34,
+    "counting_rule": "original documented multi-member components, not domain blocks or subclasses; availability requires successor lambda>=0.25 in domain k and classmate lambda>=0.25 in that domain; fully compatible additionally requires certified reference-configuration compatibility",
+    "meets_floor": false,
+    "floor_relevant_certified_count": 0
+  },
+  "schema_note": "TransferClass class objects allow only class_id, member_models, derivation_evidence, reference_configuration_compatibility, is_singleton, notes. Original-component provenance is in registry metadata.components, not extra class keys.",
+  "relationship_supported_candidate_components": [
+    {
+      "original_component_id": "claude-3.5-sonnet-snapshots",
+      "class_id": "claude-3.5-sonnet-snapshots",
+      "provider": "Anthropic",
+      "member_models": ["claude-3.5-sonnet", "claude-3.5-sonnet-20241022"],
+      "review_status": "relationship-supported-config-unresolved",
+      "fully_compatible_reviewed_class": false,
+      "relationship_type": "dated-snapshot-upgrade-of-same-named-model",
+      "relationship_supported": true,
+      "config_compatibility_status": "unresolved",
+      "config_assessment": "June YAML has no effort/reasoning block. October YAML records reasoning=false and default_effort_tier=default. Both fitted only as @max-common fixed-effort. max-common is not a vendor-matched reference class. October also adds computer-use as a new capability surface.",
+      "sources": [
+        {
+          "url": "https://www.anthropic.com/news/3-5-models-and-computer-use",
+          "available_at": "2024-10-22",
+          "available_at_basis": "on-page date Oct 22, 2024",
+          "retrieval_date": "2026-09-07",
+          "provenance": "primary-vendor-announcement-fetched",
+          "paraphrase": "Anthropic (2024-10-22) presents the October snapshot as an upgrade of Claude 3.5 Sonnet relative to the earlier release, and says price and speed match that predecessor."
+        }
+      ],
+      "strict_availability_blocks": [
+        {"successor": "claude-3.5-sonnet", "domain": "agentic"},
+        {"successor": "claude-3.5-sonnet", "domain": "communication-professional"},
+        {"successor": "claude-3.5-sonnet-20241022", "domain": "agentic"},
+        {"successor": "claude-3.5-sonnet-20241022", "domain": "communication-professional"}
+      ]
+    },
+    {
+      "original_component_id": "claude-opus-4-drop-in",
+      "class_id": "claude-opus-4-drop-in",
+      "provider": "Anthropic",
+      "member_models": ["claude-opus-4", "claude-opus-4.1"],
+      "review_status": "relationship-supported-config-unresolved",
+      "fully_compatible_reviewed_class": false,
+      "relationship_type": "named-product-upgrade-api-swap",
+      "relationship_supported": true,
+      "config_compatibility_status": "unresolved",
+      "config_assessment": "Opus 4 YAML has no effort or reasoning block. Opus 4.1 YAML documents standard/extended-thinking with numeric thinking.budget_tokens. Both fitted only as @max-common. Shared max-common assignment does not show that the missing Opus 4 control matches 4.1's numeric budget.",
+      "sources": [
+        {
+          "url": "https://www.anthropic.com/news/claude-opus-4-1",
+          "available_at": "2025-08-05",
+          "available_at_basis": "on-page date Aug 5, 2025",
+          "retrieval_date": "2026-09-07",
+          "provenance": "primary-vendor-announcement-fetched",
+          "paraphrase": "Anthropic (2025-08-05) calls Opus 4.1 an upgrade of Opus 4, keeps the listed price, and tells developers to change the API model id."
+        },
+        {
+          "url": "https://aws.amazon.com/about-aws/whats-new/2025/08/anthropic-claude-opus-4-1-amazon-bedrock/",
+          "available_at": "2025-08-05",
+          "available_at_basis": "AWS posted Aug 5, 2025 in search snippet",
+          "retrieval_date": "2026-09-07",
+          "provenance": "secondary-aws-whats-new-search-snippet",
+          "paraphrase": "AWS (2025-08-05) uses drop-in replacement language for Opus 4.1 versus Opus 4."
+        },
+        {
+          "url": "https://www.anthropic.com/news/claude-4",
+          "available_at": "2025-05-22",
+          "available_at_basis": "on-page date May 22, 2025",
+          "retrieval_date": "2026-09-07",
+          "provenance": "primary-vendor-announcement-fetched",
+          "paraphrase": "Anthropic (2025-05-22) launches Opus 4 and Sonnet 4 as two models in the Claude 4 generation; used to keep Opus and Sonnet in separate components."
+        }
+      ],
+      "strict_availability_blocks": [
+        {"successor": "claude-opus-4", "domain": "agentic"},
+        {"successor": "claude-opus-4", "domain": "reasoning"},
+        {"successor": "claude-opus-4", "domain": "knowledge-information"},
+        {"successor": "claude-opus-4.1", "domain": "agentic"},
+        {"successor": "claude-opus-4.1", "domain": "reasoning"},
+        {"successor": "claude-opus-4.1", "domain": "knowledge-information"}
+      ]
+    },
+    {
+      "original_component_id": "claude-sonnet-4-drop-in",
+      "class_id": "claude-sonnet-4-drop-in",
+      "provider": "Anthropic",
+      "member_models": ["claude-sonnet-4", "claude-sonnet-4.5"],
+      "review_status": "relationship-supported-config-unresolved",
+      "fully_compatible_reviewed_class": false,
+      "relationship_type": "documented-drop-in-replacement",
+      "relationship_supported": true,
+      "config_compatibility_status": "unresolved",
+      "config_assessment": "Sonnet 4 YAML documents standard/extended-thinking with a numeric thinking budget. Sonnet 4.5 YAML has no effort/reasoning block. Both fitted only as @max-common. Drop-in/price language and max-common co-assignment do not certify matched thinking controls. claude-sonnet-4.6 omitted (no Anthropic primary 4.6 page fetched).",
+      "sources": [
+        {
+          "url": "https://www.anthropic.com/news/claude-sonnet-4-5",
+          "available_at": "2025-09-29",
+          "available_at_basis": "on-page date Sep 29, 2025",
+          "retrieval_date": "2026-09-07",
+          "provenance": "primary-vendor-announcement-fetched",
+          "paraphrase": "Anthropic (2025-09-29) keeps Sonnet 4 token prices and describes 4.5 as a drop-in replacement for all uses."
+        }
+      ],
+      "strict_availability_blocks": [
+        {"successor": "claude-sonnet-4", "domain": "agentic"},
+        {"successor": "claude-sonnet-4", "domain": "reasoning"},
+        {"successor": "claude-sonnet-4", "domain": "knowledge-information"},
+        {"successor": "claude-sonnet-4", "domain": "communication-professional"},
+        {"successor": "claude-sonnet-4.5", "domain": "agentic"},
+        {"successor": "claude-sonnet-4.5", "domain": "reasoning"},
+        {"successor": "claude-sonnet-4.5", "domain": "knowledge-information"},
+        {"successor": "claude-sonnet-4.5", "domain": "communication-professional"}
+      ]
+    },
+    {
+      "original_component_id": "claude-fable-5-revision",
+      "class_id": "claude-fable-5-revision",
+      "provider": "Anthropic",
+      "member_models": ["claude-fable-5", "claude-fable-5.1"],
+      "review_status": "relationship-supported-config-unresolved",
+      "fully_compatible_reviewed_class": false,
+      "relationship_type": "named-product-predecessor-successor",
+      "relationship_supported": true,
+      "config_compatibility_status": "unresolved",
+      "config_assessment": "Catalog effort ladders match (low/medium/high/xhigh/max; default high; max max; same output_config.effort). Both have std-common and max-common. Still not certified: vendor product-surface defaults differ by app (High in Claude Code, Medium on Cowork/claude.ai); equal effort names are not equal compute; fit-profile labels are not a vendor-matched reference class.",
+      "sources": [
+        {
+          "url": "https://www.anthropic.com/claude-fable-and-mythos-5-1",
+          "available_at": null,
+          "available_at_basis": "no on-page date stamp in fetched HTML",
+          "catalog_release_date": "2026-09-01",
+          "retrieval_date": "2026-09-07",
+          "provenance": "primary-vendor-page-fetched",
+          "paraphrase": "Anthropic's Fable 5.1 page names Fable 5 as predecessor and compares Low/Medium effort. It also states product-surface defaults of High in Claude Code and Medium on Cowork / claude.ai."
+        },
+        {
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/09/claude-fable-5-1-aws/",
+          "available_at": "2026-09-01",
+          "available_at_basis": "AWS posted Sep 1, 2026 in search snippet",
+          "retrieval_date": "2026-09-07",
+          "provenance": "secondary-aws-whats-new-search-snippet",
+          "paraphrase": "AWS (2026-09-01) posts Fable 5.1 as generally available and stronger than Fable 5."
+        }
+      ],
+      "strict_availability_blocks": [
+        {"successor": "claude-fable-5", "domain": "agentic"},
+        {"successor": "claude-fable-5", "domain": "software-code"},
+        {"successor": "claude-fable-5", "domain": "reasoning"},
+        {"successor": "claude-fable-5", "domain": "knowledge-information"},
+        {"successor": "claude-fable-5", "domain": "communication-professional"},
+        {"successor": "claude-fable-5.1", "domain": "agentic"},
+        {"successor": "claude-fable-5.1", "domain": "software-code"},
+        {"successor": "claude-fable-5.1", "domain": "reasoning"},
+        {"successor": "claude-fable-5.1", "domain": "knowledge-information"},
+        {"successor": "claude-fable-5.1", "domain": "communication-professional"}
+      ]
+    },
+    {
+      "original_component_id": "deepseek-v4-pro-preview-to-ga",
+      "class_id": "deepseek-v4-pro-preview-to-ga",
+      "provider": "DeepSeek",
+      "member_models": ["deepseek-v4-pro-0424", "deepseek-v4-pro-0813"],
+      "review_status": "relationship-supported-config-unresolved",
+      "fully_compatible_reviewed_class": false,
+      "relationship_type": "preview-checkpoint-superseded-by-official-release",
+      "relationship_supported": true,
+      "config_compatibility_status": "unresolved",
+      "config_assessment": "Both YAML default_effort_tier=max and max_effort_tier=max; both fitted only as @max-common. Preview effort order is none/high/max; 0813 is low/high/max (label set changed). DSpark is an attached decoding module. Catalog notes keep preview/GA observations untransferred. max-common does not certify matched reference configuration. Flash is a different scale and is excluded.",
+      "sources": [
+        {
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813",
+          "available_at": "2026-08-13",
+          "available_at_basis": "catalog release_date and HF release commit search hit 2026-08-13; model card HTML had no separate blog dateline",
+          "retrieval_date": "2026-09-07",
+          "provenance": "primary-model-card-fetched",
+          "paraphrase": "The 0813 card calls this the official V4-Pro checkpoint that supersedes the preview and attaches a DSpark decoding module to the preview structure."
+        },
+        {
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+          "available_at": null,
+          "available_at_basis": "no on-page calendar date in fetched HTML; catalog release_date 2026-04-24",
+          "catalog_release_date": "2026-04-24",
+          "retrieval_date": "2026-09-07",
+          "provenance": "primary-model-card-fetched",
+          "paraphrase": "The V4 preview series includes Pro (1.6T total / 49B active) and Flash (284B / 13B)."
+        }
+      ],
+      "strict_availability_blocks": [
+        {"successor": "deepseek-v4-pro-0424", "domain": "agentic"},
+        {"successor": "deepseek-v4-pro-0424", "domain": "reasoning"},
+        {"successor": "deepseek-v4-pro-0424", "domain": "knowledge-information"},
+        {"successor": "deepseek-v4-pro-0813", "domain": "agentic"},
+        {"successor": "deepseek-v4-pro-0813", "domain": "reasoning"},
+        {"successor": "deepseek-v4-pro-0813", "domain": "knowledge-information"}
+      ]
+    }
+  ],
+  "ambiguous": [
+    {
+      "candidate": ["muse-spark", "muse-spark-1.1", "muse-spark-1.2", "muse-spark-1.3"],
+      "provider": "Meta AI",
+      "status": "ambiguous",
+      "exclusion_reason": "Successive Muse Spark versions are documented, but 1.3 adds a max effort tier versus 1.2 xhigh, and April muse-spark versus 1.1 was not fetched as a drop-in. Effort-label shift blocks reference-configuration compatibility.",
+      "sources": [
+        {
+          "url": "https://research.meta.ai/blog/introducing-muse-spark-1-3",
+          "available_at": "2026-09-02",
+          "available_at_basis": "on-page September 2, 2026",
+          "retrieval_date": "2026-09-07",
+          "provenance": "primary-vendor-blog-fetched",
+          "paraphrase": "Meta (2026-09-02) compares Muse Spark 1.3 with 1.2 on coding-agent behavior (fewer turns and tokens in internal comparisons)."
+        }
+      ]
+    },
+    {
+      "candidate": ["glm-4.5", "glm-4.6"],
+      "provider": "Z.ai",
+      "status": "ambiguous",
+      "exclusion_reason": "Vendor describes a new flagship generation versus GLM-4.5, not a dated snapshot of one named release. Full primary page was not successfully fetched.",
+      "sources": [
+        {
+          "url": "https://z.ai/blog/glm-4.6",
+          "available_at": "2025-09-30",
+          "available_at_basis": "search snippet 2025-09-30; catalog release_date 2025-09-30",
+          "retrieval_date": "2026-09-07",
+          "provenance": "web-search-snippet-full-page-fetch-failed",
+          "paraphrase": "Search snippet: GLM-4.6 is presented as the latest flagship generation compared with GLM-4.5. Not treated as a completed primary-page read."
+        }
+      ]
+    },
+    {
+      "candidate": ["qwen3-235b-a22b", "qwen3-235b-a22b-2507"],
+      "provider": "Alibaba",
+      "status": "ambiguous",
+      "exclusion_reason": "Documented update of non-thinking mode, but hybrid thinking was split into separate Instruct and Thinking models. Fitted qwen3-235b-a22b is not that non-thinking-only reference.",
+      "sources": [
+        {
+          "url": "https://huggingface.co/Qwen/Qwen3-235B-A22B-Instruct-2507",
+          "available_at": "2025-07-21",
+          "available_at_basis": "catalog release_date 2025-07-21; official X post 2025-07-21",
+          "retrieval_date": "2026-09-07",
+          "provenance": "primary-model-card-fetched",
+          "paraphrase": "HF card presents 2507 as an update of non-thinking Qwen3-235B-A22B and says that checkpoint supports only non-thinking output."
+        },
+        {
+          "url": "https://x.com/Alibaba_Qwen/status/1947344511988076547",
+          "available_at": "2025-07-21",
+          "available_at_basis": "X post timestamp 2025-07-21 17:14:46 UTC",
+          "retrieval_date": "2026-09-07",
+          "provenance": "vendor-x-post",
+          "paraphrase": "Provider X post (2025-07-21): hybrid thinking dropped; Instruct and Thinking models trained separately."
+        }
+      ]
+    },
+    {
+      "candidate": ["claude-opus-4.5", "claude-opus-4.6", "claude-opus-4.7", "claude-opus-4.8", "claude-opus-5", "claude-sonnet-4.6", "claude-sonnet-5"],
+      "provider": "Anthropic",
+      "status": "ambiguous",
+      "exclusion_reason": "Numbered product successors and deprecation replacement pointers are not an exchangeable class. Transitive closure of Opus/Sonnet lines is over-broad. No primary drop-in page for Sonnet 4.6 was fetched.",
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations.md",
+          "available_at": null,
+          "retrieval_date": "2026-09-07",
+          "provenance": "docs-search-snippet-not-used-as-class",
+          "paraphrase": "Deprecation table search (2026-09-07): later Opus/Sonnet ids listed as recommended replacements; not used as a class."
+        }
+      ]
+    },
+    {
+      "candidate": ["grok-4-fast", "grok-4.1-fast", "grok-4", "grok-4.20", "grok-4.3", "grok-4.5", "grok-4.6"],
+      "provider": "xAI",
+      "status": "ambiguous",
+      "exclusion_reason": "Fast versus flagship are different SKUs. Grok 4.1 Fast as successor of Grok 4 Fast was not confirmed from a fetched xAI primary page.",
+      "sources": [
+        {
+          "url": "https://x.ai/news",
+          "available_at": null,
+          "retrieval_date": "2026-09-07",
+          "provenance": "index-search-snippet-primary-articles-not-fetched",
+          "paraphrase": "xAI news index lists a 2025-11-19 Grok 4.1 Fast item; the Fast article itself was not fetched."
+        }
+      ]
+    }
+  ],
+  "rejected": [
+    {
+      "candidate": "full-gemini-exclusion-list",
+      "member_models": [
+        "gemini-1.5-pro",
+        "gemini-2.0-flash-thinking",
+        "gemini-2.5-flash",
+        "gemini-2.5-pro",
+        "gemini-2.5-pro-20250325",
+        "gemini-2.5-pro-20250506",
+        "gemini-3-flash",
+        "gemini-3-pro",
+        "gemini-3.1-pro",
+        "gemini-3.5-flash",
+        "gemini-3.5-flash-lite",
+        "gemini-3.6-flash",
+        "gemini-3.7-flash",
+        "gemini-3.8-flash"
+      ],
+      "status": "rejected",
+      "exclusion_reason": "Full Gemini motivating component plus conservative existing exclusion list; excluded from confirmatory classes.",
+      "sources": [
+        {
+          "url": "packages/scoring/python/aci12/experiment.py",
+          "available_at": null,
+          "retrieval_date": "2026-09-07",
+          "provenance": "in-repo-exclusion-constant",
+          "paraphrase": "In-repo constant: conservative Gemini list is a development heuristic and is not certified for confirmatory evaluation or hyperprior tuning."
+        }
+      ]
+    },
+    {
+      "candidate": ["gpt-5-2025-08-07", "gpt-5-mini", "gpt-5-nano"],
+      "status": "rejected",
+      "exclusion_reason": "API ships three sizes for cost/latency tradeoffs. Size variants are not one release. Illustrative example class is unreviewed and is not adopted.",
+      "sources": [
+        {
+          "url": "https://openai.com/index/introducing-gpt-5-for-developers/",
+          "available_at": "2025-08-07",
+          "available_at_basis": "search result published 2025-08-07; full page fetch returned empty",
+          "retrieval_date": "2026-09-07",
+          "provenance": "web-search-snippet-full-page-fetch-failed",
+          "paraphrase": "Search snippet (2025-08-07): GPT-5 API ships three sizes (gpt-5, mini, nano) for performance/cost/latency tradeoffs. Full page fetch failed."
+        }
+      ]
+    },
+    {
+      "candidate": ["gpt-5.6-sol", "gpt-5.6-terra", "gpt-5.6-luna"],
+      "status": "rejected",
+      "exclusion_reason": "Named capability tiers / SKUs of one generation. Names plus shared generation number are insufficient. No OpenAI primary page was fetched.",
+      "sources": [
+        {
+          "url": "https://www.datacamp.com/blog/gpt-5-6-sol-luna-terra",
+          "available_at": "2026-06-26",
+          "retrieval_date": "2026-09-07",
+          "provenance": "secondary-blog-not-used-as-lineage-proof",
+          "paraphrase": "Secondary writeup treats Sol/Terra/Luna as capability tiers of GPT-5.6. Not used as lineage proof."
+        }
+      ]
+    },
+    {
+      "candidate": ["deepseek-v4-flash-0731", "deepseek-v4-pro-0424", "deepseek-v4-pro-0813"],
+      "status": "rejected",
+      "exclusion_reason": "Flash versus Pro are different parameter scales (284B/13B vs 1.6T/49B). Only the Pro preview/official pair is a relationship-supported candidate, separately, with config unresolved.",
+      "sources": [
+        {
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+          "available_at": null,
+          "catalog_release_date": "2026-04-24",
+          "retrieval_date": "2026-09-07",
+          "provenance": "primary-model-card-fetched",
+          "paraphrase": "Preview card: Pro is 1.6T/49B active; Flash is 284B/13B active."
+        }
+      ]
+    },
+    {
+      "candidate": ["kimi-k2", "kimi-k2.5", "kimi-k3"],
+      "status": "rejected",
+      "exclusion_reason": "K2.5 is introduced as a new multimodal agentic model, not a checkpoint of K2.",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2602.02276",
+          "available_at": "2026-02-02",
+          "available_at_basis": "arXiv submitted 2 Feb 2026",
+          "retrieval_date": "2026-09-07",
+          "provenance": "primary-arxiv-abstract",
+          "paraphrase": "arXiv abstract (submitted 2026-02-02) introduces Kimi K2.5 as a new multimodal agentic model."
+        }
+      ]
+    },
+    {
+      "candidate": "size-speed-tier-skus",
+      "examples": [
+        "gpt-5-pro",
+        "o1-pro",
+        "o3-pro",
+        "glm-5.3-flash",
+        "inkling-small",
+        "nova-lite",
+        "nova-pro",
+        "claude-haiku-4.5"
+      ],
+      "status": "rejected",
+      "exclusion_reason": "Pro/mini/nano/flash/haiku/lite labels and extra test-time compute are SKU or configuration differences. Names, provider, and Pro labels alone are insufficient.",
+      "sources": []
+    },
+    {
+      "candidate": "brand-wide-partitions",
+      "status": "rejected",
+      "exclusion_reason": "class_prior and transfer-class schemas reject provider/name guessing. Brand membership is not a class.",
+      "sources": [
+        {
+          "url": "packages/scoring/python/aci12/class_prior.py",
+          "retrieval_date": "2026-09-07",
+          "provenance": "in-repo-contract",
+          "paraphrase": "In-repo contract: class membership is never inferred from provider, name, or version."
+        }
+      ]
+    }
+  ],
+  "residual_fitted_releases": {
+    "policy": "Remaining non-Gemini fitted IDs were not given individual primary-page reviews. Catalog family/organization/name is not class evidence. Residual IDs remain runtime singletons. Residual was not mined to approach the 10/3 floor.",
+    "not_individually_sourced": true
+  },
+  "candidate_registry": {
+    "path": "data/experimental/transfer-classes-reviewed-candidate.json",
+    "written": true,
+    "edition": "metadata-reviewed-candidate-2026-09-07",
+    "frozen_hash_sha256": "283844ab88091e20e647165bdf62c0cfdfc27106abb5855847b85e056c58cada",
+    "provenance_location": "metadata.components keyed by class_id (original_component_id, provider, sources, review_status, config_compatibility_status)",
+    "is_publishable": false,
+    "is_experimental": true,
+    "confirmatory_criteria_locked": false,
+    "real_reviewed_classes_exist": false,
+    "notice": "Relationship-supported candidate partition only. Config compatibility unresolved. Fully compatible reviewed classes: 0. Gate fails / NOT READY. Nonpublishable until validation."
+  }
+}
