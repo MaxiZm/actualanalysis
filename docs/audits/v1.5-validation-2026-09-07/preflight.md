@@ -1,6 +1,6 @@
 # v1.5 validation preflight · 2026-09-07
 
-**Inspected commit:** `08af628cef56df133f3c1804cb301762ad0ec1eb`  
+**Inspected commit:** `85350674d1779327d2eb77aa53464d6a3ad31d5d`  
 **Machine-readable twin:** [preflight.json](preflight.json)  
 **Plan (proposed, not locked):** [candidate-validation-plan.md](candidate-validation-plan.md)  
 **Declared lock guide inspected:** [aci-1.5.0-related-release-experiment-lock.md](../../proposals/aci-1.5.0-related-release-experiment-lock.md)  
@@ -48,12 +48,12 @@ Comparable measurement settings for the implemented pair **pass** this preflight
 | Class registry | **FAIL** (4 issues) | Edition `metadata-reviewed-candidate-2026-09-07`. Schema-valid; frozen hash `058ba4c0ad16ae610cc306e70cd0d2babb7e7c835c23256c6fc677f398038acf`. Canonical provenance is `metadata.components` (dict values; dict keys are not `original_component_id`). Eight relationship-supported components (`review_status: relationship-supported-config-unresolved`, `relationship_supported: true`, `config_compatibility_status: unresolved`, `fully_compatible_reviewed_class: false`). `real_reviewed_classes_exist` is JSON `false` and is not forced. Counts: candidate 8/5, informative 8/5, eligible **0**. Floor 10/3 applies to eligible, not the 8/5 upper bound. `@max-common` is not matched settings. |
 | Availability family-closure blocks | **PASS** | Loading ≥ 0.25 then family closure, using repaired `prepare` identification (`build_family_index_name_map`, threshold 0.25). **328** successor–domain blocks from row presence; **308** have retained parent-domain rows. |
 | Frozen lock and selection | **FAIL** (5 issues) | Lock draft: DRAFT, **28 UNSET** tokens, random-walk roster mismatch. Plan markdown is PROPOSED / NOT LOCKED. No frozen prepare manifest. |
-| Confirmation exclusion provenance | **PASS** | Caller-supplied certified metadata in `data/experimental/gemini-exclusion-provenance.json` covering all 14 Gemini releases with primary Google DeepMind citations. |
+| Confirmation exclusion provenance | **FAIL** (1 issue) | Metadata in `data/experimental/gemini-exclusion-provenance.json` documents development superset, but `confirmatory_certified` is JSON `false` because 2024 primary citations do not cover 2025-2026 releases. Fails closed without truthy-string bypass. |
 | Comparable measurement settings | **PASS** | Restricted Beta(1,1) vs nested ρ=0; correlated traits; `production_export_issues` still flags enabled class priors as nonpublishable. |
 | Predictive / calibration workflow | **FAIL** (2 issues) | Tooling is implemented (`aci12.predictive_evaluator`, `aci12.calibration_sbc`, `aci12.validation_decision`), but empirical simulation-based calibration (SBC) has not been run to completion with verified rank uniformity and nominal coverage on this design. Code existence alone does not prove calibrated fit. |
 | Nonpublishable guards | **PASS** | `is_publishable: false`, `confirmatory_criteria_locked: false`, `real_reviewed_classes_exist: false` retained. |
 
-**11** missing prerequisites remain before confirmatory fit authorization. All were reported; none were bypassed with truthy strings.
+**12** missing prerequisites remain before confirmatory fit authorization. All were reported; none were bypassed with truthy strings.
 
 ## What is implemented versus missing
 

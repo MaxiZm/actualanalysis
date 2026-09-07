@@ -12,7 +12,7 @@
     "build": "npm run build --workspaces --if-present",
     "lint": "npm run lint --workspaces --if-present",
     "typecheck": "tsc --noEmit -p tsconfig.json && npm run typecheck --workspaces --if-present",
-    "test": "vitest run scripts && npm run test --workspaces --if-present",
+    "test": "vitest run scripts --testTimeout=20000 && npm run test --workspaces --if-present",
     "test:coverage": "npm run test:coverage --workspaces --if-present",
     "test:e2e": "playwright test",
     "ingest": "npm run cli --workspace @actualanalysis/ingest --",

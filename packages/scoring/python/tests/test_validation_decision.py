@@ -1,4 +1,5 @@
 import unittest
+from pathlib import Path
 import numpy as np
 
 from aci12.validation_decision import (
@@ -138,6 +139,43 @@ class TestValidationDecision(unittest.TestCase):
         res_promoted = evaluate_validation_decision(blocks_all_good, non_statistical_gates=all_non_stat)
         self.assertTrue(res_promoted.passed)
         self.assertEqual(res_promoted.decision, "PROMOTE")
+
+    def test_cli_fails_closed_on_missing_or_invalid_condition_scale(self):
+        import json
+        import tempfile
+        from unittest.mock import patch
+        from aci12.validation_decision import main
+
+        with tempfile.TemporaryDirectory() as tmpdir:
+            blocks_path = Path(tmpdir) / "blocks.json"
+            scales_path = Path(tmpdir) / "scales.json"
+            out_path = Path(tmpdir) / "out.json"
+
+            # Blocks reference condition "bench_1"
+            blocks = [{
+                "original_component_id": "c1",
+                "provider": "p1",
+                "benchmark_id": "bench_1",
+                "delta_lpd": 0.5,
+                "delta_coverage": 0.0,
+                "delta_interval_score": 0.1,
+            }]
+            blocks_path.write_text(json.dumps(blocks))
+
+            # Case 1: Missing scale for bench_1
+            scales_path.write_text(json.dumps({}))
+            test_args = ["prog", "--blocks-json", str(blocks_path), "--condition-scales-json", str(scales_path), "--output", str(out_path)]
+            with patch("sys.argv", test_args):
+                with self.assertRaises(ValueError) as ctx:
+                    main()
+                self.assertIn("Missing condition scale", str(ctx.exception))
+
+            # Case 2: Non-positive scale
+            scales_path.write_text(json.dumps({"bench_1": 0.0}))
+            with patch("sys.argv", test_args):
+                with self.assertRaises(ValueError) as ctx:
+                    main()
+                self.assertIn("finite positive", str(ctx.exception))
 
 
 if __name__ == "__main__":

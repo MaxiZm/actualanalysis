@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "inspected_commit": "08af628cef56df133f3c1804cb301762ad0ec1eb",
+  "inspected_commit": "85350674d1779327d2eb77aa53464d6a3ad31d5d",
   "verdict": "NOTREADY",
   "fit_authorized": false,
   "promotion_authorized": false,
@@ -262,12 +262,14 @@
     },
     {
       "id": "confirmation_exclusion_provenance",
-      "passed": true,
-      "summary": "caller-supplied certified exclusion provenance",
-      "issues": [],
+      "passed": false,
+      "summary": "confirmation_exclusion_provenance failed (1 issue(s))",
+      "issues": [
+        "exclusion_metadata.confirmatory_certified requires actual JSON true; bool=False is rejected (no truthy-string bypass)"
+      ],
       "details": {
         "supplied": true,
-        "confirmatory_certified": true,
+        "confirmatory_certified": false,
         "heuristic_development_superset_insufficient": true,
         "n_members": 14
       }
@@ -355,6 +357,7 @@
     "Lock does not select the implemented restricted class-prior candidate.",
     "Validation plan text is proposed/not locked. Confirmation cannot open.",
     "Frozen experiment manifest (train/eval hashes, selection rule, threshold, primary scoring rule) is missing.",
+    "exclusion_metadata.confirmatory_certified requires actual JSON true; bool=False is rejected (no truthy-string bypass)",
     "A production-faithful paired joint predictive scorer and empirical calibration are required on family-disjoint successor-domain groups. Do not treat validate_predictive.py as automatically production-faithful or code existence alone as proof of calibrated fit.",
     "Simulation-based calibration (SBC) has not been run to completion with verified rank uniformity and coverage on this design. Code implementation alone does not establish calibration readiness without schema-validated empirical calibration evidence."
   ],
@@ -446,6 +449,7 @@
   "next_needed_input": [
     "Reviewed class-registry JSON via --registry with canonical metadata.components (original_component_id, provider, member_models, source refs, review_status), certified configuration-compatible classes meeting the 10/3 floor, and metadata.real_reviewed_classes_exist=true (JSON boolean; do not force). External research-worker output; not a private agent path.",
     "Complete lock JSON for the implemented restricted class-prior candidate (not A/B random-walk), plus frozen prepare manifest and locked plan JSON.",
+    "Caller-supplied confirmatory exclusion metadata JSON with non-heuristic provenance, member_models, and confirmatory_certified=true (JSON boolean).",
     "After metadata gates pass: implement paired joint predictive scoring that reuses production likelihoods, then calibration/SBC. Do not start that workflow merely to bypass a missing registry."
   ],
   "notes": [

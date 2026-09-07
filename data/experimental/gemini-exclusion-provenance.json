@@ -16,8 +16,8 @@
     "gemini-3.7-flash",
     "gemini-3.8-flash"
   ],
-  "confirmatory_certified": true,
-  "exclusion_basis": "Motivating component exclusion to prevent exploratory data snooping and selection bias across all Gemini checkpoints.",
+  "confirmatory_certified": false,
+  "exclusion_basis": "Provisional motivating component development exclusion to prevent exploratory snooping bias. Cited 2024 sources establish Gemini 1.5 lineage but do not document post-2024 models (Gemini 2.5, 3.x); confirmatory certification remains false until primary sources establish entire claimed component membership.",
   "primary_sources": [
     "https://storage.googleapis.com/deepmind-media/gemini/gemini_1_5_report.pdf",
     "https://blog.google/technology/ai/google-gemini-next-generation-model-february-2024/",

@@ -294,6 +294,8 @@ def aci_model(data: dict) -> None:
     numpyro.deterministic("rho", rho)
 
     # --- 5. Observation likelihoods, one vectorized site per family ---
+    condition_obs = bool(data.get("condition_observations", True))
+
     def location_and_omega(group: dict):
         cell = jnp.asarray(group["cell"], dtype=jnp.int32)
         protocol = jnp.asarray(group["protocol"], dtype=jnp.int32)
@@ -309,10 +311,11 @@ def aci_model(data: dict) -> None:
     if normal["index"]:
         location, omega, _ = location_and_omega(normal)
         variance = jnp.asarray(normal["variance"], dtype=jnp.float32)
+        obs_normal_val = jnp.asarray(normal["y"], dtype=jnp.float32) if condition_obs else None
         numpyro.sample(
             "obs_normal",
             dist.Normal(location, jnp.sqrt(variance + omega**2)).to_event(1),
-            obs=jnp.asarray(normal["y"], dtype=jnp.float32),
+            obs=obs_normal_val,
         )
 
     single = grouped["groups"]["a_single"]
@@ -323,10 +326,11 @@ def aci_model(data: dict) -> None:
         ceiling = jnp.asarray(single["ceiling"], dtype=jnp.float32)
         prob = chance + (ceiling - chance) * sigmoid(location + omega * run_eps)
         prob = jnp.clip(prob, 1e-6, 1 - 1e-6)
+        obs_single_val = jnp.asarray(np.rint(single["x"]), dtype=jnp.int32) if condition_obs else None
         numpyro.sample(
             "obs_single",
             dist.Binomial(total_count=jnp.asarray(single["n_tasks"], dtype=jnp.int32), probs=prob).to_event(1),
-            obs=jnp.asarray(np.rint(single["x"]), dtype=jnp.int32),
+            obs=obs_single_val,
         )
 
     total_group = grouped["groups"]["a_total"]
@@ -342,10 +346,11 @@ def aci_model(data: dict) -> None:
         total = tasks * trials
         design_effect = 1 + (trials - 1) * rho[cell_benchmark[cell]]
         scale = jnp.sqrt(jnp.maximum(total * prob * (1 - prob) * design_effect, 1e-6))
+        obs_total_val = jnp.asarray(total_group["x"], dtype=jnp.float32) if condition_obs else None
         numpyro.sample(
             "obs_total",
             dist.Normal(total * prob, scale).to_event(1),
-            obs=jnp.asarray(total_group["x"], dtype=jnp.float32),
+            obs=obs_total_val,
         )
 
     # Per-task exact counts are rare (variable-length vectors); keep a per-row site.
@@ -357,12 +362,25 @@ def aci_model(data: dict) -> None:
         prob = float(row["chance_level"]) + (float(row["ceiling"]) - float(row["chance_level"])) * sigmoid(location + omega * run_eps)
         prob = jnp.clip(prob, 1e-6, 1 - 1e-6)
         trials = int(row["k_trials"])
-        counts = jnp.asarray(row["per_task_counts"], dtype=jnp.float32)
+        raw_counts = row.get("per_task_counts")
+        if condition_obs:
+            if raw_counts is None:
+                raise ValueError(f"Observation exact_{index} missing per_task_counts in conditioned mode")
+            counts = jnp.asarray(raw_counts, dtype=jnp.float32)
+            n_tasks = counts.shape[0]
+            obs_exact_val = counts
+        else:
+            n_tasks = len(raw_counts) if raw_counts is not None else int(row.get("n_tasks", 1))
+            obs_exact_val = None
         cell_rho = rho[cell_benchmark[row["cell"]]]
         concentration = jnp.maximum((1 - cell_rho) / jnp.maximum(cell_rho, 1e-6), 1e-3)
         distribution = (
-            dist.BetaBinomial(concentration1=prob * concentration, concentration0=(1 - prob) * concentration, total_count=trials)
+            dist.BetaBinomial(
+                concentration1=prob * concentration,
+                concentration0=(1 - prob) * concentration,
+                total_count=trials,
+            )
             if bool(row.get("use_beta_binomial", False))
             else dist.Binomial(total_count=trials, probs=prob)
         )
-        numpyro.sample(f"obs_exact_{index}", distribution.expand(counts.shape).to_event(1), obs=counts)
+        numpyro.sample(f"obs_exact_{index}", distribution.expand((n_tasks,)).to_event(1), obs=obs_exact_val)

@@ -32,7 +32,22 @@ from .experiment import (
 )
 
 PREFLIGHT_SCHEMA_VERSION = 1
-INSPECTED_COMMIT = "08af628cef56df133f3c1804cb301762ad0ec1eb"
+
+
+def resolve_current_commit() -> str:
+    """Dynamically resolve current git commit hash, with fallback to hardcoded base."""
+    import subprocess
+    try:
+        res = subprocess.run(["git", "rev-parse", "HEAD"], capture_output=True, text=True, check=True)
+        commit = res.stdout.strip()
+        if len(commit) == 40:
+            return commit
+    except Exception:
+        pass
+    return "08af628cef56df133f3c1804cb301762ad0ec1eb"
+
+
+INSPECTED_COMMIT = resolve_current_commit()
 VERDICT_READY = "READY"
 VERDICT_NOTREADY = "NOTREADY"
 
@@ -967,27 +982,55 @@ def inspect_predictive_workflow(
         res_design_hash = calibration_results.get("design_hash")
         details["calibration_design_hash"] = res_design_hash
         details["expected_design_hash"] = expected_design_hash
-        n_reps = int(calibration_results.get("n_replications", 0))
+        n_reps = int(calibration_results.get("replications_count", calibration_results.get("n_replications", 0)))
         details["calibration_replications"] = n_reps
-        is_smoke = bool(calibration_results.get("is_smoke", False))
+        is_smoke = bool(calibration_results.get("smoke_mode", calibration_results.get("is_smoke", False)))
         details["calibration_is_smoke"] = is_smoke
-        sbc_passed = bool(calibration_results.get("passed", False))
 
-        if is_smoke or n_reps < 50:
+        if is_smoke or n_reps < 100:
             issues.append(
-                f"Calibration evidence is smoke-only or has insufficient replications ({n_reps} < 50 floor). "
-                "Confirmatory calibration requires >= 50 replications."
+                f"Calibration evidence is smoke-only or has insufficient replications ({n_reps} < 100 floor). "
+                "Confirmatory calibration requires >= 100 replications."
             )
-        elif expected_design_hash and res_design_hash != expected_design_hash:
+
+        if expected_design_hash and res_design_hash != expected_design_hash:
             issues.append(
                 f"Calibration design hash mismatch: result has {res_design_hash!r}, "
                 f"expected {expected_design_hash!r} from input design."
             )
-        elif not sbc_passed:
-            issues.append(
-                f"Simulation-based calibration failed quality criteria: {calibration_results.get('reasons', ['Unknown failure'])}"
-            )
+
+        param_summaries = calibration_results.get("parameter_summaries")
+        if not isinstance(param_summaries, dict) or not param_summaries:
+            issues.append("Calibration evidence missing or invalid 'parameter_summaries' dictionary.")
         else:
+            for p_name, p_stats in sorted(param_summaries.items()):
+                if not isinstance(p_stats, dict):
+                    issues.append(f"Invalid summary for parameter {p_name!r}.")
+                    continue
+                ks_p = float(p_stats.get("ks_p_value", 0.0))
+                emp_cov = float(p_stats.get("empirical_coverage_90", 0.0))
+                if ks_p < 0.01:
+                    issues.append(
+                        f"Parameter {p_name!r} rank uniformity rejected by KS test (p={ks_p:.4f} < 0.01 threshold)."
+                    )
+                if not (0.85 <= emp_cov <= 0.95):
+                    issues.append(
+                        f"Parameter {p_name!r} 90% coverage {emp_cov:.3f} outside acceptable [0.85, 0.95] interval."
+                    )
+
+        sampler_diag = calibration_results.get("sampler_diagnostics")
+        if sampler_diag is not None:
+            r_hat_max = float(sampler_diag.get("r_hat_max", 999.0))
+            min_ess = float(sampler_diag.get("min_ess", 0.0))
+            divergences = int(sampler_diag.get("divergences", 999))
+            if r_hat_max > 1.01:
+                issues.append(f"Sampler convergence diagnostic failed: r_hat_max={r_hat_max:.3f} > 1.01")
+            if min_ess < 400.0:
+                issues.append(f"Sampler convergence diagnostic failed: min_ess={min_ess:.1f} < 400")
+            if divergences > 0:
+                issues.append(f"Sampler convergence diagnostic failed: divergences={divergences} > 0")
+
+        if not issues:
             details["simulation_based_calibration_workflow"] = True
             details["calibration_status"] = "PASSED"
 

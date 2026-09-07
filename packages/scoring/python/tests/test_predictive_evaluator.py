@@ -211,14 +211,56 @@ class TestProductionPredictiveEvaluator(unittest.TestCase):
         }
 
         evaluator = ProductionPredictiveEvaluator(train_data, posterior_samples, config=EvaluatorConfig(n_mc_draws=10, seed=123))
-        res = evaluator.evaluate_eval_spec(eval_spec)
+        # Default mode: block_joint (single joint block preserving shared effects)
+        res = evaluator.evaluate_eval_spec(eval_spec, scoring_mode="block_joint")
         self.assertEqual(res.n_observations, 2)
-        self.assertEqual(res.n_groups, 2)
+        self.assertEqual(res.n_groups, 1)
+        self.assertTrue(res.diagnostics["shared_family_joint_integration"])
         self.assertTrue(np.isfinite(res.joint_lpd))
         self.assertTrue(np.isfinite(res.normalized_lpd))
         self.assertGreaterEqual(res.mean_coverage_90, 0.0)
         self.assertLessEqual(res.mean_coverage_90, 1.0)
         self.assertGreaterEqual(res.mean_interval_score_90, 0.0)
+
+        # Condition marginal composite mode: separate groups per condition
+        res_marginal = evaluator.evaluate_eval_spec(eval_spec, scoring_mode="condition_marginal_composite")
+        self.assertEqual(res_marginal.n_observations, 2)
+        self.assertEqual(res_marginal.n_groups, 2)
+        self.assertEqual(res_marginal.diagnostics["scoring_mode"], "condition_marginal_composite")
+
+    def test_shared_family_block_joint_vs_marginal_composite(self):
+        # Two conditions sharing benchmark family 0 with withheld family effect
+        train_data = {
+            "n_models": 1, "n_systems": 1, "n_benchmarks": 2, "n_families": 1, "n_protocols": 1,
+            "system_ids": ["mod_a@max"], "benchmark_ids": ["bench_1", "bench_2"],
+            "benchmark_domains": [[1.0, 0.0, 0.0, 0.0, 0.0], [1.0, 0.0, 0.0, 0.0, 0.0]],
+            "benchmark_family_index": [0, 0],  # Both in family 0!
+            "observations": [],  # mod_a has no training observations in family 0
+        }
+        n_draws = 5
+        posterior_samples = {
+            "Z": np.zeros((n_draws, 1, 5)),
+            "beta": np.zeros((n_draws, 2)),
+            "log_alpha": np.zeros((n_draws, 2)),
+            "family_sd": np.full(n_draws, 0.5),  # substantial family effect SD
+            "cell_sigma": np.full((n_draws, 2), 0.1),
+            "run_noise": np.full((n_draws, 2, 5), 0.1),
+        }
+        eval_spec = {
+            "target_successor_model": "mod_a",
+            "target_domain": "agentic",
+            "primary_target_observations": [
+                {"train_system_index": 0, "train_benchmark_index": 0, "benchmark_id": "bench_1", "likelihood": "normal", "y": 1.2, "variance": 0.01, "evaluation_stratum": "primary_target"},
+                {"train_system_index": 0, "train_benchmark_index": 1, "benchmark_id": "bench_2", "likelihood": "normal", "y": 1.2, "variance": 0.01, "evaluation_stratum": "primary_target"},
+            ]
+        }
+        evaluator = ProductionPredictiveEvaluator(train_data, posterior_samples, config=EvaluatorConfig(n_mc_draws=200, seed=42))
+        res_joint = evaluator.evaluate_eval_spec(eval_spec, scoring_mode="block_joint")
+        res_marginal = evaluator.evaluate_eval_spec(eval_spec, scoring_mode="condition_marginal_composite")
+
+        # Due to shared positive family effect u_{s,f}, joint density is higher than marginal product
+        self.assertGreater(res_joint.joint_lpd, res_marginal.joint_lpd)
+        self.assertTrue(res_joint.diagnostics["shared_family_joint_integration"])
 
     def test_subprocess_reproducibility_different_pythonhashseed(self):
         script = """

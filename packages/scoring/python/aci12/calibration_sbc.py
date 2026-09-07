@@ -50,14 +50,46 @@ DEFAULT_SBC_POWER_CRITERIA = SBCPowerCriteria()
 
 
 def compute_design_hash(data: Mapping[str, Any]) -> str:
-    """Compute deterministic SHA-256 hash of design metadata (excluding observations)."""
-    design_keys = (
+    """Compute deterministic SHA-256 hash of design metadata, effort mappings, and observation structure (excluding outcomes)."""
+    top_level_keys = (
         "n_models", "n_systems", "n_benchmarks", "n_families", "n_protocols",
-        "system_ids", "benchmark_ids", "benchmark_family_ids",
+        "system_ids", "benchmark_ids", "benchmark_family_ids", "benchmark_family_index",
         "benchmark_domains", "trait_structure", "class_prior", "priors",
+        # Effort mappings:
+        "system_is_fixed_effort", "system_profile_index", "system_model",
+        "system_model_index", "profile_effort", "effort_domain_index", "unreported_effort_policy",
+        "calibration_panel_system_ids", "cell_system_index", "cell_benchmark_index",
     )
-    subset = {k: data[k] for k in design_keys if k in data}
-    serialized = json.dumps(sanitize_for_strict_json(subset), sort_keys=True, separators=(",", ":"))
+    design_dict: dict[str, Any] = {k: data[k] for k in top_level_keys if k in data}
+
+    # Include structural observation properties, excluding outcomes (y, x, score, per_task_counts values)
+    obs_structure = []
+    for obs in data.get("observations", []):
+        raw_ptc = obs.get("per_task_counts")
+        ptc_len = len(raw_ptc) if raw_ptc is not None else None
+        obs_structure.append({
+            "cell": obs.get("cell_index", obs.get("cell")),
+            "protocol": obs.get("protocol_index", obs.get("protocol")),
+            "provenance": obs.get("provenance_index", obs.get("provenance")),
+            "system": obs.get("system_index"),
+            "benchmark": obs.get("benchmark_index"),
+            "domain": obs.get("domain_index", obs.get("domain")),
+            "likelihood": obs.get("likelihood"),
+            "n_tasks": obs.get("n_tasks"),
+            "k_trials": obs.get("k_trials"),
+            "chance_level": obs.get("chance_level"),
+            "ceiling": obs.get("ceiling"),
+            "use_beta_binomial": obs.get("use_beta_binomial"),
+            "variance": obs.get("variance"),
+            "per_task_len": ptc_len,
+            "is_effort": obs.get("is_effort"),
+            "effort_domain": obs.get("effort_domain"),
+            "in_reference_component": obs.get("in_reference_component"),
+            "metadata_incomplete": obs.get("metadata_incomplete"),
+        })
+    design_dict["observation_structure"] = obs_structure
+
+    serialized = json.dumps(sanitize_for_strict_json(design_dict), sort_keys=True, separators=(",", ":"))
     return hashlib.sha256(serialized.encode("utf-8")).hexdigest()
 
 
@@ -86,12 +118,23 @@ def generate_synthetic_dataset(
     if not raw_obs:
         raise ValueError("design_data must contain template observations for structure")
 
-    # To let Predictive sample obs sites, remove observation values from template
+    # To let Predictive sample obs sites, set condition_observations to False
     stripped_template = copy.deepcopy(synthetic_template)
+    stripped_template["condition_observations"] = False
     for obs in stripped_template["observations"]:
         obs.pop("y", None)
         obs.pop("x", None)
-        obs.pop("per_task_counts", None)
+        raw_ptc = obs.get("per_task_counts")
+        if raw_ptc is not None:
+            obs["n_tasks"] = len(raw_ptc)
+            obs.pop("per_task_counts", None)
+
+    # Generative misspecification before outcome sampling:
+    if misspecification == "effort_shift":
+        shift = float(kwargs.get("shift_amount", 1.0))
+        stripped_template["priors"] = dict(stripped_template.get("priors") or {})
+        base_effort_mean = float(stripped_template["priors"].get("effort_mean", 0.30))
+        stripped_template["priors"]["effort_mean"] = base_effort_mean + shift
 
     prior_draws = prior_predictive(rng_key, data=stripped_template)
 
@@ -136,8 +179,11 @@ def generate_synthetic_dataset(
             if exact_site in truth:
                 counts = [int(x) for x in truth[exact_site]]
                 obs["per_task_counts"] = counts
+                obs["n_tasks"] = len(counts)
+                tot = float(len(counts)) * float(obs.get("k_trials", 1))
+                obs["score"] = float(sum(counts)) / tot if tot > 0 else 0.0
 
-    # Apply misspecifications if requested
+    # Apply data-structure misspecifications if requested
     if misspecification == "wrong_class":
         # Scramble class prior partition in synthetic_input_data
         cp = synthetic_template.get("class_prior")
@@ -149,12 +195,9 @@ def generate_synthetic_dataset(
         # Remove observations for a specific domain
         target_domain = int(kwargs.get("drop_domain_index", 0))
         synthetic_obs = [obs for obs in synthetic_obs if int(obs.get("domain_index", -1)) != target_domain]
-    elif misspecification == "effort_shift":
-        # Shift delta values by adding a constant offset
-        shift = float(kwargs.get("shift_amount", 1.0))
-        truth["effort_mean"] = float(truth.get("effort_mean", 0.3)) + shift
 
     synthetic_template["observations"] = synthetic_obs
+    synthetic_template["condition_observations"] = True
     synthetic_template["design_hash"] = compute_design_hash(synthetic_template)
 
     # Ensure ground truth arrays are serializable
@@ -254,8 +297,8 @@ def analyze_sbc_results(
 
     for p, rank_list in ranks_by_param.items():
         arr_ranks = np.asarray(rank_list, dtype=float)
-        # Uniform KS test: normalized ranks in [0, 1]
-        norm_ranks = (arr_ranks + 0.5) / float(total_draws)
+        # Uniform KS test: normalized ranks strictly in (0, 1) using (rank + 0.5) / (total_draws + 1)
+        norm_ranks = (arr_ranks + 0.5) / float(total_draws + 1.0)
         ks_stat, ks_p = stats.kstest(norm_ranks, "uniform")
 
         cov_list = cov_by_param.get(p, [])

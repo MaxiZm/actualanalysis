@@ -581,8 +581,17 @@ class ProductionPredictiveEvaluator:
     def evaluate_eval_spec(
         self,
         eval_spec: Mapping[str, Any],
+        scoring_mode: str = "block_joint",
     ) -> PredictiveEvaluationResult:
-        """Evaluate primary target observations partitioned by condition or successor-domain blocks."""
+        """Evaluate primary target observations for a successor-domain block.
+
+        Supported scoring modes:
+        - "block_joint" (default): Evaluates all primary target observations for the
+          successor-domain block simultaneously in a single joint evaluation, preserving
+          shared family effects across conditions within the block.
+        - "condition_marginal_composite": Partitions observations by condition and sums
+          their predictive log densities, factoring cross-condition family covariance marginally.
+        """
         primary_rows = select_primary_scoring_observations(dict(eval_spec))
         target_model = str(eval_spec.get("target_successor_model", ""))
         target_domain = str(eval_spec.get("target_domain", ""))
@@ -600,13 +609,39 @@ class ProductionPredictiveEvaluator:
                 n_observations=0,
                 mean_coverage_90=0.0,
                 mean_interval_score_90=0.0,
-                diagnostics={"empty": True},
+                diagnostics={"empty": True, "scoring_mode": scoring_mode},
             )
 
-        # Group observations by condition (model x condition) for joint evaluation
+        if scoring_mode == "block_joint":
+            block_id = f"{target_model}::{target_domain}::joint_block" if target_model else "joint_block"
+            geval = self.evaluate_group(
+                primary_rows,
+                group_id=block_id,
+                target_successor_model=target_model,
+                target_domain=target_domain,
+            )
+            return PredictiveEvaluationResult(
+                joint_lpd=geval.joint_lpd,
+                normalized_lpd=geval.normalized_lpd,
+                mcse_lpd=geval.mcse_lpd,
+                n_groups=1,
+                n_observations=geval.n_observations,
+                mean_coverage_90=geval.mean_coverage_90,
+                mean_interval_score_90=geval.mean_interval_score_90,
+                groups=[geval],
+                diagnostics={
+                    "target_successor_model": target_model,
+                    "target_domain": target_domain,
+                    "scoring_mode": "block_joint",
+                    "shared_family_joint_integration": True,
+                    "n_conditions": len({row.get("benchmark_id") for row in primary_rows}),
+                },
+            )
+
+        # Group observations by condition (model x condition) for marginal composite evaluation
         by_condition: dict[str, list[dict[str, Any]]] = {}
         for row in primary_rows:
-            b_id = str(row.get("benchmark_id", f"cond_{row.get("benchmark_index", 0)}"))
+            b_id = str(row.get("benchmark_id", f"cond_{row.get('benchmark_index', 0)}"))
             by_condition.setdefault(b_id, []).append(row)
 
         group_evals: list[GroupEvaluation] = []
@@ -642,6 +677,9 @@ class ProductionPredictiveEvaluator:
             diagnostics={
                 "target_successor_model": target_model,
                 "target_domain": target_domain,
+                "scoring_mode": "condition_marginal_composite",
+                "marginal_composite_across_conditions": True,
+                "cross_condition_family_covariance": "factored_marginally",
                 "n_conditions": len(group_evals),
             },
         )
@@ -653,6 +691,7 @@ def evaluate_paired_models(
     candidate_npz_path: Path | str,
     baseline_npz_path: Path | str,
     config: EvaluatorConfig | None = None,
+    scoring_mode: str = "block_joint",
 ) -> dict[str, Any]:
     """Perform paired joint evaluation between candidate and baseline posteriors."""
     cand_samples = np.load(candidate_npz_path)
@@ -662,8 +701,8 @@ def evaluate_paired_models(
     cand_evaluator = ProductionPredictiveEvaluator(train_data, cand_samples, cfg)
     base_evaluator = ProductionPredictiveEvaluator(train_data, base_samples, cfg)
 
-    cand_res = cand_evaluator.evaluate_eval_spec(eval_spec)
-    base_res = base_evaluator.evaluate_eval_spec(eval_spec)
+    cand_res = cand_evaluator.evaluate_eval_spec(eval_spec, scoring_mode=scoring_mode)
+    base_res = base_evaluator.evaluate_eval_spec(eval_spec, scoring_mode=scoring_mode)
 
     paired_groups: list[dict[str, Any]] = []
     for cand_g, base_g in zip(cand_res.groups, base_res.groups):

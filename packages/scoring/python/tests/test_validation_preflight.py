@@ -808,7 +808,18 @@ class FullReportAndCli(unittest.TestCase):
         self.assertIn("smoke-only", " ".join(gate_smoke["issues"]))
 
         # Full passing calibration results passes the gate
-        valid_results = {"design_hash": "abc", "n_replications": 50, "is_smoke": False, "passed": True}
+        valid_results = {
+            "design_hash": "abc",
+            "replications_count": 100,
+            "smoke_mode": False,
+            "passed": True,
+            "parameter_summaries": {
+                "effort_mean": {
+                    "ks_p_value": 0.45,
+                    "empirical_coverage_90": 0.91,
+                },
+            },
+        }
         report_valid = run_preflight(calibration_results=valid_results)
         gate_valid = [g for g in report_valid["gates"] if g["id"] == "predictive_calibration_workflow"][0]
         self.assertTrue(gate_valid["passed"])

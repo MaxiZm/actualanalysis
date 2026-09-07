@@ -325,15 +325,24 @@ def main() -> None:
         scales = json.load(f)
 
     # Normalize blocks
-    blocks: list[ComponentBlockData] = []
+    req_conditions = []
     for item in raw_blocks:
         cond = item.get("benchmark_id") or item.get("condition_id")
-        scale = float(scales[cond]) if cond in scales else 1.0
+        if not cond:
+            raise ValueError(f"Block entry missing condition identifier: {item}")
+        req_conditions.append(str(cond))
+
+    validated_scales = validate_condition_scales(scales, req_conditions)
+
+    blocks: list[ComponentBlockData] = []
+    for item in raw_blocks:
+        cond = str(item.get("benchmark_id") or item.get("condition_id"))
+        scale = validated_scales[cond]
         delta_is_raw = float(item.get("delta_interval_score", 0.0))
         blocks.append(ComponentBlockData(
             original_component_id=str(item["original_component_id"]),
             provider=str(item["provider"]),
-            block_id=str(item.get("block_id", f"{item["original_component_id"]}_{len(blocks)}")),
+            block_id=str(item.get("block_id", f"{item['original_component_id']}_{len(blocks)}")),
             delta_lpd=float(item["delta_lpd"]),
             delta_coverage=float(item["delta_coverage"]),
             delta_interval_score=delta_is_raw / scale,

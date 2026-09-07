@@ -68,14 +68,28 @@ class TestCalibrationSBC(unittest.TestCase):
         self.assertEqual(h1, h2)
         self.assertEqual(len(h1), 64)
 
-        # Modifying observations should NOT change design hash
-        modified_obs = dict(self.toy_design)
+        # Modifying outcome values (y, x, score) should NOT change design hash
+        import copy
+        modified_outcomes = copy.deepcopy(self.toy_design)
+        modified_outcomes["observations"][0]["y"] = 999.0
+        modified_outcomes["observations"][1]["x"] = 12
+        h_outcomes = compute_design_hash(modified_outcomes)
+        self.assertEqual(h1, h_outcomes)
+
+        # Modifying observation structure (dropping observations or changing likelihood) SHOULD change design hash
+        modified_obs = copy.deepcopy(self.toy_design)
         modified_obs["observations"] = []
         h3 = compute_design_hash(modified_obs)
-        self.assertEqual(h1, h3)
+        self.assertNotEqual(h1, h3)
+
+        # Modifying effort mappings SHOULD change design hash
+        modified_effort = copy.deepcopy(self.toy_design)
+        modified_effort["system_is_fixed_effort"] = [True, False]
+        h_effort = compute_design_hash(modified_effort)
+        self.assertNotEqual(h1, h_effort)
 
         # Modifying trait structure SHOULD change design hash
-        modified_trait = dict(self.toy_design)
+        modified_trait = copy.deepcopy(self.toy_design)
         modified_trait["trait_structure"] = "correlated_unit"
         h4 = compute_design_hash(modified_trait)
         self.assertNotEqual(h1, h4)
@@ -165,6 +179,92 @@ class TestCalibrationSBC(unittest.TestCase):
         self.assertEqual(rep["total_draws"], 10)
         self.assertIn("effort_mean", rep["ranks"])
         self.assertIn("effort_mean", rep["coverage_90"])
+
+    def test_synthetic_data_generation_unconditioned_nondegenerate(self):
+        design = {
+            "n_models": 1, "n_systems": 1, "n_benchmarks": 4, "n_families": 1, "n_protocols": 1,
+            "system_model_index": [0], "system_profile_index": [0.0], "benchmark_family_index": [0, 0, 0, 0],
+            "benchmark_domains": [[1.0, 0.0, 0.0, 0.0, 0.0]] * 4,
+            "cell_system_index": [0, 0, 0, 0], "cell_benchmark_index": [0, 1, 2, 3],
+            "observations": [
+                {"cell_index": 0, "system_index": 0, "benchmark_index": 0, "protocol_index": 0,
+                 "provenance_index": 0, "domain_index": 0, "likelihood": "normal", "variance": 0.1, "y": 0.0},
+                {"cell_index": 1, "system_index": 0, "benchmark_index": 1, "protocol_index": 0,
+                 "provenance_index": 0, "domain_index": 0, "likelihood": "a_single", "n_tasks": 50, "chance_level": 0.0, "ceiling": 1.0, "x": 0},
+                {"cell_index": 2, "system_index": 0, "benchmark_index": 2, "protocol_index": 0,
+                 "provenance_index": 0, "domain_index": 0, "likelihood": "a_total", "n_tasks": 50, "k_trials": 3, "chance_level": 0.0, "ceiling": 1.0, "x": 0.0},
+                {"cell_index": 3, "system_index": 0, "benchmark_index": 3, "protocol_index": 0,
+                 "provenance_index": 0, "domain_index": 0, "likelihood": "a_exact", "n_tasks": 5, "k_trials": 3, "chance_level": 0.0, "ceiling": 1.0,
+                 "per_task_counts": [0, 0, 0, 0, 0], "use_beta_binomial": False},
+            ],
+        }
+        syn, truth = generate_synthetic_dataset(design, seed=42)
+        obs = syn["observations"]
+
+        # 1. Normal likelihood outcome is non-zero
+        self.assertNotEqual(obs[0]["y"], 0.0)
+        self.assertAlmostEqual(obs[0]["y"], float(truth["obs_normal"][0]), places=5)
+
+        # 2. Single likelihood outcome is non-negative integer within [0, n_tasks]
+        self.assertIsInstance(obs[1]["x"], int)
+        self.assertGreaterEqual(obs[1]["x"], 0)
+        self.assertLessEqual(obs[1]["x"], 50)
+        self.assertEqual(obs[1]["x"], int(truth["obs_single"][0]))
+
+        # 3. Total likelihood outcome is non-zero within bounds
+        self.assertIsInstance(obs[2]["x"], float)
+        self.assertGreaterEqual(obs[2]["x"], 0.0)
+        self.assertAlmostEqual(obs[2]["x"], float(truth["obs_total"][0]), places=4)
+
+        # 4. Exact likelihood counts are non-empty list of task counts
+        counts = obs[3]["per_task_counts"]
+        self.assertEqual(len(counts), 5)
+        self.assertTrue(all(0 <= c <= 3 for c in counts))
+        self.assertEqual(counts, [int(c) for c in truth["obs_exact_3"]])
+
+        # Condition observations contract preserved for fitting
+        self.assertTrue(syn.get("condition_observations", False))
+
+    def test_synthetic_data_generation_seed_sensitivity(self):
+        design = {
+            "n_models": 1, "n_systems": 1, "n_benchmarks": 2, "n_families": 1, "n_protocols": 1,
+            "system_model_index": [0], "system_profile_index": [0.0], "benchmark_family_index": [0, 0],
+            "benchmark_domains": [[1.0, 0.0, 0.0, 0.0, 0.0]] * 2,
+            "cell_system_index": [0, 0], "cell_benchmark_index": [0, 1],
+            "observations": [
+                {"cell_index": 0, "system_index": 0, "benchmark_index": 0, "protocol_index": 0,
+                 "provenance_index": 0, "domain_index": 0, "likelihood": "normal", "variance": 0.1, "y": 0.0},
+                {"cell_index": 1, "system_index": 0, "benchmark_index": 1, "protocol_index": 0,
+                 "provenance_index": 0, "domain_index": 0, "likelihood": "a_single", "n_tasks": 50, "chance_level": 0.0, "ceiling": 1.0, "x": 0},
+            ],
+        }
+        syn1, truth1 = generate_synthetic_dataset(design, seed=42)
+        syn2, truth2 = generate_synthetic_dataset(design, seed=999)
+
+        # Observations must differ between different seeds
+        self.assertNotEqual(syn1["observations"][0]["y"], syn2["observations"][0]["y"])
+        self.assertNotEqual(syn1["observations"][1]["x"], syn2["observations"][1]["x"])
+        self.assertNotEqual(truth1["obs_normal"], truth2["obs_normal"])
+
+    def test_exact_likelihood_fails_closed_when_conditioned_without_counts(self):
+        from aci12.model import aci_model
+        import jax
+        bad_design = {
+            "n_models": 1, "n_systems": 1, "n_benchmarks": 1, "n_families": 1, "n_protocols": 1,
+            "system_model_index": [0], "system_profile_index": [0.0], "benchmark_family_index": [0],
+            "benchmark_domains": [[1.0, 0.0, 0.0, 0.0, 0.0]],
+            "cell_system_index": [0], "cell_benchmark_index": [0],
+            "observations": [
+                {"cell_index": 0, "system_index": 0, "benchmark_index": 0, "protocol_index": 0,
+                 "provenance_index": 0, "domain_index": 0, "likelihood": "a_exact", "n_tasks": 5, "k_trials": 3,
+                 "chance_level": 0.0, "ceiling": 1.0, "per_task_counts": None},
+            ],
+            "condition_observations": True,
+        }
+        with self.assertRaises(ValueError):
+            # Running model directly in conditioned mode with missing per_task_counts must fail closed
+            from numpyro.infer import Predictive
+            Predictive(aci_model, num_samples=1)(jax.random.PRNGKey(42), data=bad_design)
 
 
 if __name__ == "__main__":
