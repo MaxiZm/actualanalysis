@@ -32,6 +32,7 @@ from aci12.validation_preflight import (
     inspect_comparable_settings,
     inspect_exclusion_provenance,
     inspect_lock_and_selection,
+    inspect_predictive_workflow,
     is_json_true,
     json_true_issue,
     main as preflight_main,
@@ -808,25 +809,295 @@ class FullReportAndCli(unittest.TestCase):
         self.assertIn("smoke-only", " ".join(gate_smoke["issues"]))
 
         # Full passing calibration results passes the gate
+        from aci12.calibration_sbc import compute_design_hash
+        dummy_input = _input(2, 3)
+        expected_hash = compute_design_hash(dummy_input)
         valid_results = {
-            "design_hash": "abc",
+            "design_hash": expected_hash,
+            "code_identity": INSPECTED_COMMIT,
             "replications_count": 100,
             "smoke_mode": False,
             "passed": True,
+            "sampler_diagnostics": {
+                "r_hat_max": 1.002,
+                "min_ess": 550.0,
+                "divergences": 0,
+                "sampler_ok": True,
+            },
             "parameter_summaries": {
                 "effort_mean": {
+                    "n_replications": 100,
                     "ks_p_value": 0.45,
                     "empirical_coverage_90": 0.91,
                 },
+                "family_sd": {
+                    "n_replications": 100,
+                    "ks_p_value": 0.32,
+                    "empirical_coverage_90": 0.89,
+                },
+                "cell_sigma": {
+                    "n_replications": 100,
+                    "ks_p_value": 0.60,
+                    "empirical_coverage_90": 0.90,
+                },
+                "class_rho": {
+                    "n_replications": 100,
+                    "ks_p_value": 0.25,
+                    "empirical_coverage_90": 0.92,
+                },
             },
         }
-        report_valid = run_preflight(calibration_results=valid_results)
+        report_valid = run_preflight(input_data=dummy_input, calibration_results=valid_results)
         gate_valid = [g for g in report_valid["gates"] if g["id"] == "predictive_calibration_workflow"][0]
         self.assertTrue(gate_valid["passed"])
         self.assertTrue(gate_valid["details"]["simulation_based_calibration_workflow"])
         self.assertEqual(gate_valid["details"]["calibration_status"], "PASSED")
 
 
-if __name__ == "__main__":
+class TestInspectPredictiveWorkflowFailClosed(unittest.TestCase):
+    def setUp(self):
+        self.valid_results = {
+            "design_hash": "test_hash_123",
+            "code_identity": INSPECTED_COMMIT,
+            "replications_count": 100,
+            "smoke_mode": False,
+            "passed": True,
+            "sampler_diagnostics": {
+                "r_hat_max": 1.002,
+                "min_ess": 550.0,
+                "divergences": 0,
+                "sampler_ok": True,
+            },
+            "parameter_summaries": {
+                "effort_mean": {
+                    "n_replications": 100,
+                    "ks_p_value": 0.45,
+                    "empirical_coverage_90": 0.91,
+                },
+                "family_sd": {
+                    "n_replications": 100,
+                    "ks_p_value": 0.32,
+                    "empirical_coverage_90": 0.89,
+                },
+                "cell_sigma": {
+                    "n_replications": 100,
+                    "ks_p_value": 0.60,
+                    "empirical_coverage_90": 0.90,
+                },
+                "class_rho": {
+                    "n_replications": 100,
+                    "ks_p_value": 0.25,
+                    "empirical_coverage_90": 0.92,
+                },
+            },
+        }
 
+    def test_reproduction_host_review_fails_closed(self):
+        # Concrete reproduction from host-review.md:
+        # inspect_predictive_workflow(calibration_results={"design_hash":"x","n_replications":100,"parameter_summaries":{"bogus":{"ks_p_value":0.5,"empirical_coverage_90":0.9}}},expected_design_hash="x")
+        res = inspect_predictive_workflow(
+            calibration_results={
+                "design_hash": "x",
+                "n_replications": 100,
+                "parameter_summaries": {
+                    "bogus": {
+                        "ks_p_value": 0.5,
+                        "empirical_coverage_90": 0.9,
+                    }
+                },
+            },
+            expected_design_hash="x",
+        )
+        self.assertFalse(res.passed)
+        issues_text = " ".join(res.issues)
+        self.assertIn("sampler_diagnostics", issues_text)
+        self.assertIn("bogus", issues_text)
+        self.assertIn("Missing required monitored parameter", issues_text)
+        self.assertIn("insufficient or non-integer replications", issues_text)
+        self.assertIn("code_identity", issues_text)
+
+    def test_missing_sampler_diagnostics_fails_closed(self):
+        bad = copy.deepcopy(self.valid_results)
+        del bad["sampler_diagnostics"]
+        res = inspect_predictive_workflow(bad, expected_design_hash="test_hash_123")
+        self.assertFalse(res.passed)
+        self.assertIn("sampler_diagnostics", " ".join(res.issues))
+
+    def test_nonfinite_metrics_fails_closed(self):
+        # NaN / inf in parameter metrics
+        for bad_val in [float("nan"), float("inf"), float("-inf")]:
+            bad = copy.deepcopy(self.valid_results)
+            bad["parameter_summaries"]["effort_mean"]["ks_p_value"] = bad_val
+            res = inspect_predictive_workflow(bad, expected_design_hash="test_hash_123")
+            self.assertFalse(res.passed)
+            self.assertIn("non-finite", " ".join(res.issues))
+
+            bad = copy.deepcopy(self.valid_results)
+            bad["parameter_summaries"]["effort_mean"]["empirical_coverage_90"] = bad_val
+            res = inspect_predictive_workflow(bad, expected_design_hash="test_hash_123")
+            self.assertFalse(res.passed)
+            self.assertIn("non-finite", " ".join(res.issues))
+
+            # NaN / inf in sampler diagnostics
+            bad = copy.deepcopy(self.valid_results)
+            bad["sampler_diagnostics"]["r_hat_max"] = bad_val
+            res = inspect_predictive_workflow(bad, expected_design_hash="test_hash_123")
+            self.assertFalse(res.passed)
+            self.assertIn("r_hat_max", " ".join(res.issues))
+
+            bad = copy.deepcopy(self.valid_results)
+            bad["sampler_diagnostics"]["min_ess"] = bad_val
+            res = inspect_predictive_workflow(bad, expected_design_hash="test_hash_123")
+            self.assertFalse(res.passed)
+            self.assertIn("min_ess", " ".join(res.issues))
+
+    def test_out_of_range_sampler_diagnostics_fails_closed(self):
+        # r_hat > 1.01
+        bad = copy.deepcopy(self.valid_results)
+        bad["sampler_diagnostics"]["r_hat_max"] = 1.02
+        res = inspect_predictive_workflow(bad, expected_design_hash="test_hash_123")
+        self.assertFalse(res.passed)
+        self.assertIn("r_hat_max", " ".join(res.issues))
+
+        # min_ess < 400
+        bad = copy.deepcopy(self.valid_results)
+        bad["sampler_diagnostics"]["min_ess"] = 399.0
+        res = inspect_predictive_workflow(bad, expected_design_hash="test_hash_123")
+        self.assertFalse(res.passed)
+        self.assertIn("min_ess", " ".join(res.issues))
+
+        # divergences > 0
+        bad = copy.deepcopy(self.valid_results)
+        bad["sampler_diagnostics"]["divergences"] = 1
+        res = inspect_predictive_workflow(bad, expected_design_hash="test_hash_123")
+        self.assertFalse(res.passed)
+        self.assertIn("divergences", " ".join(res.issues))
+
+        # non-integer divergences
+        bad = copy.deepcopy(self.valid_results)
+        bad["sampler_diagnostics"]["divergences"] = "0"
+        res = inspect_predictive_workflow(bad, expected_design_hash="test_hash_123")
+        self.assertFalse(res.passed)
+        self.assertIn("divergences", " ".join(res.issues))
+
+    def test_out_of_range_parameter_metrics_fails_closed(self):
+        # ks_p < 0.01
+        bad = copy.deepcopy(self.valid_results)
+        bad["parameter_summaries"]["effort_mean"]["ks_p_value"] = 0.005
+        res = inspect_predictive_workflow(bad, expected_design_hash="test_hash_123")
+        self.assertFalse(res.passed)
+        self.assertIn("rejected by KS test", " ".join(res.issues))
+
+        # coverage < 0.85
+        bad = copy.deepcopy(self.valid_results)
+        bad["parameter_summaries"]["effort_mean"]["empirical_coverage_90"] = 0.84
+        res = inspect_predictive_workflow(bad, expected_design_hash="test_hash_123")
+        self.assertFalse(res.passed)
+        self.assertIn("outside acceptable [0.85, 0.95]", " ".join(res.issues))
+
+        # coverage > 0.95
+        bad = copy.deepcopy(self.valid_results)
+        bad["parameter_summaries"]["effort_mean"]["empirical_coverage_90"] = 0.96
+        res = inspect_predictive_workflow(bad, expected_design_hash="test_hash_123")
+        self.assertFalse(res.passed)
+        self.assertIn("outside acceptable [0.85, 0.95]", " ".join(res.issues))
+
+    def test_missing_or_mismatched_design_hash_fails_closed(self):
+        # Missing expected_design_hash
+        res = inspect_predictive_workflow(self.valid_results, expected_design_hash=None)
+        self.assertFalse(res.passed)
+        self.assertIn("Expected design hash must be a non-empty string", " ".join(res.issues))
+
+        res = inspect_predictive_workflow(self.valid_results, expected_design_hash="")
+        self.assertFalse(res.passed)
+        self.assertIn("Expected design hash must be a non-empty string", " ".join(res.issues))
+
+        # Missing design_hash in results
+        bad = copy.deepcopy(self.valid_results)
+        del bad["design_hash"]
+        res = inspect_predictive_workflow(bad, expected_design_hash="test_hash_123")
+        self.assertFalse(res.passed)
+        self.assertIn("missing or invalid 'design_hash'", " ".join(res.issues))
+
+        # Mismatched design_hash
+        bad = copy.deepcopy(self.valid_results)
+        bad["design_hash"] = "different_hash"
+        res = inspect_predictive_workflow(bad, expected_design_hash="test_hash_123")
+        self.assertFalse(res.passed)
+        self.assertIn("Calibration design hash mismatch", " ".join(res.issues))
+
+    def test_missing_or_mismatched_code_identity_fails_closed(self):
+        # Missing code_identity in results
+        bad = copy.deepcopy(self.valid_results)
+        del bad["code_identity"]
+        res = inspect_predictive_workflow(bad, expected_design_hash="test_hash_123")
+        self.assertFalse(res.passed)
+        self.assertIn("missing 'code_identity' or 'commit'", " ".join(res.issues))
+
+        # Mismatched code_identity
+        bad = copy.deepcopy(self.valid_results)
+        bad["code_identity"] = "deadbeef" * 5
+        res = inspect_predictive_workflow(bad, expected_design_hash="test_hash_123")
+        self.assertFalse(res.passed)
+        self.assertIn("Calibration code identity mismatch", " ".join(res.issues))
+
+    def test_incomplete_or_invalid_replications_count_fails_closed(self):
+        # Top-level < 100
+        bad = copy.deepcopy(self.valid_results)
+        bad["replications_count"] = 99
+        res = inspect_predictive_workflow(bad, expected_design_hash="test_hash_123")
+        self.assertFalse(res.passed)
+        self.assertIn("replications count invalid or insufficient", " ".join(res.issues))
+
+        # Non-integer replications_count
+        bad = copy.deepcopy(self.valid_results)
+        bad["replications_count"] = 100.5
+        res = inspect_predictive_workflow(bad, expected_design_hash="test_hash_123")
+        self.assertFalse(res.passed)
+        self.assertIn("replications count invalid or insufficient", " ".join(res.issues))
+
+        # Smoke mode = True
+        bad = copy.deepcopy(self.valid_results)
+        bad["smoke_mode"] = True
+        res = inspect_predictive_workflow(bad, expected_design_hash="test_hash_123")
+        self.assertFalse(res.passed)
+        self.assertIn("smoke-only", " ".join(res.issues))
+
+        # Per-parameter < 100
+        bad = copy.deepcopy(self.valid_results)
+        bad["parameter_summaries"]["effort_mean"]["n_replications"] = 99
+        res = inspect_predictive_workflow(bad, expected_design_hash="test_hash_123")
+        self.assertFalse(res.passed)
+        self.assertIn("has insufficient or non-integer replications", " ".join(res.issues))
+
+        # Per-parameter non-integer
+        bad = copy.deepcopy(self.valid_results)
+        bad["parameter_summaries"]["effort_mean"]["n_replications"] = "100"
+        res = inspect_predictive_workflow(bad, expected_design_hash="test_hash_123")
+        self.assertFalse(res.passed)
+        self.assertIn("has insufficient or non-integer replications", " ".join(res.issues))
+
+    def test_missing_monitored_parameter_fails_closed(self):
+        # Class candidate missing class_rho
+        bad = copy.deepcopy(self.valid_results)
+        del bad["parameter_summaries"]["class_rho"]
+        res = inspect_predictive_workflow(bad, expected_design_hash="test_hash_123")
+        self.assertFalse(res.passed)
+        self.assertIn("Missing required monitored parameter summary for 'class_rho'", " ".join(res.issues))
+
+        # Missing family_sd
+        bad = copy.deepcopy(self.valid_results)
+        del bad["parameter_summaries"]["family_sd"]
+        res = inspect_predictive_workflow(bad, expected_design_hash="test_hash_123")
+        self.assertFalse(res.passed)
+        self.assertIn("Missing required monitored parameter summary for 'family_sd'", " ".join(res.issues))
+
+    def test_valid_results_pass(self):
+        res = inspect_predictive_workflow(self.valid_results, expected_design_hash="test_hash_123")
+        self.assertTrue(res.passed)
+        self.assertEqual(res.details["calibration_status"], "PASSED")
+        self.assertTrue(res.details["simulation_based_calibration_workflow"])
+
+
+if __name__ == "__main__":
     unittest.main()

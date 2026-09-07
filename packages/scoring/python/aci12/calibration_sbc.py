@@ -220,10 +220,31 @@ def run_sbc_replication(
     warmup: int = 500,
     samples: int = 500,
     chains: int = 2,
-    monitored_parameters: Sequence[str] = ("effort_mean", "family_sd", "cell_sigma"),
+    monitored_parameters: Sequence[str] | None = None,
 ) -> dict[str, Any]:
     """Run a single SBC replication: draw prior truth, fit MCMC, compute rank statistics."""
     synthetic_data, truth = generate_synthetic_dataset(design_data, seed=seed)
+
+    if monitored_parameters is None:
+        param_list = ["effort_mean", "family_sd", "cell_sigma"]
+        try:
+            from .class_prior import resolve_class_prior
+            class_spec = resolve_class_prior(design_data)
+            if class_spec.samples_class_rho:
+                param_list.append("class_rho")
+        except Exception:
+            pass
+        monitored_parameters = tuple(param_list)
+    else:
+        param_list = list(monitored_parameters)
+        try:
+            from .class_prior import resolve_class_prior
+            class_spec = resolve_class_prior(design_data)
+            if class_spec.samples_class_rho and "class_rho" not in param_list:
+                param_list.append("class_rho")
+        except Exception:
+            pass
+        monitored_parameters = tuple(param_list)
 
     kernel = NUTS(aci_model, target_accept_prob=0.90, init_strategy=init_to_median())
     mcmc = MCMC(
@@ -260,8 +281,40 @@ def run_sbc_replication(
             post_means = np.mean(post_draws, axis=1)
             rank = int(np.sum(post_means < true_mean))
             lo, hi = np.quantile(post_means, [0.05, 0.95])
+            ranks[param] = rank
             ranks[f"{param}_mean"] = rank
+            coverages_90[param] = bool(lo <= true_mean <= hi)
             coverages_90[f"{param}_mean"] = bool(lo <= true_mean <= hi)
+
+    # Extract sampler diagnostics
+    extra_fields = mcmc.get_extra_fields(group_by_chain=True) if chains > 1 else mcmc.get_extra_fields(group_by_chain=False)
+    div_arr = np.asarray(extra_fields.get("diverging", []))
+    rep_divergences = int(np.sum(div_arr)) if div_arr.size > 0 else 0
+
+    chain_samples = mcmc.get_samples(group_by_chain=True) if chains > 1 else {k: np.expand_dims(v, 0) for k, v in mcmc.get_samples(group_by_chain=False).items()}
+    r_hat_max = 1.0
+    min_ess = float(samples * chains)
+    try:
+        from numpyro.diagnostics import summary
+        shaped = {name: np.asarray(value) for name, value in chain_samples.items() if np.asarray(value).ndim >= 2}
+        table = summary(shaped, prob=0.9, group_by_chain=True)
+        r_hats = [
+            float(np.nanmax(np.asarray(values["r_hat"])))
+            for values in table.values()
+            if "r_hat" in values and np.isfinite(values["r_hat"]).any()
+        ]
+        if r_hats:
+            r_hat_max = float(max(r_hats))
+
+        esses = [
+            float(np.nanmin(np.asarray(values["n_eff"])))
+            for values in table.values()
+            if "n_eff" in values and np.isfinite(values["n_eff"]).any()
+        ]
+        if esses:
+            min_ess = float(min(esses))
+    except Exception:
+        pass
 
     return {
         "replication_id": replication_id,
@@ -269,12 +322,19 @@ def run_sbc_replication(
         "total_draws": total_draws,
         "ranks": ranks,
         "coverage_90": coverages_90,
+        "sampler_diagnostics": {
+            "r_hat_max": float(r_hat_max),
+            "min_ess": float(min_ess),
+            "divergences": int(rep_divergences),
+        },
     }
 
 
 def analyze_sbc_results(
     replication_results: Sequence[Mapping[str, Any]],
     criteria: SBCPowerCriteria = DEFAULT_SBC_POWER_CRITERIA,
+    design_hash: str | None = None,
+    code_identity: str | None = None,
 ) -> dict[str, Any]:
     """Analyze collection of SBC replications for rank uniformity and nominal coverage."""
     n_rep = len(replication_results)
@@ -286,11 +346,32 @@ def analyze_sbc_results(
     cov_by_param: dict[str, list[bool]] = {}
     total_draws = replication_results[0].get("total_draws", 1000)
 
+    worst_r_hat = 1.0
+    worst_min_ess = float("inf")
+    total_divergences = 0
+    has_sampler = True
+
     for rep in replication_results:
         for p, r in rep.get("ranks", {}).items():
             ranks_by_param.setdefault(p, []).append(int(r))
         for p, c in rep.get("coverage_90", {}).items():
             cov_by_param.setdefault(p, []).append(bool(c))
+
+        s_diag = rep.get("sampler_diagnostics")
+        if not isinstance(s_diag, dict):
+            has_sampler = False
+        else:
+            r_hat = float(s_diag.get("r_hat_max", 999.0))
+            ess = float(s_diag.get("min_ess", 0.0))
+            div = int(s_diag.get("divergences", 999))
+            worst_r_hat = max(worst_r_hat, r_hat)
+            worst_min_ess = min(worst_min_ess, ess)
+            total_divergences += div
+
+    if worst_min_ess == float("inf"):
+        worst_min_ess = 0.0
+
+    sampler_ok = has_sampler and (worst_r_hat <= 1.01) and (worst_min_ess >= 400.0) and (total_divergences == 0)
 
     param_summaries: dict[str, Any] = {}
     all_passed = True
@@ -313,6 +394,7 @@ def analyze_sbc_results(
 
         param_summaries[p] = {
             "n_replications": len(rank_list),
+            "replications_count": len(rank_list),
             "empirical_coverage_90": emp_cov,
             "coverage_acceptable": cov_ok,
             "ks_statistic": float(ks_stat),
@@ -323,14 +405,26 @@ def analyze_sbc_results(
 
     replications_sufficient = n_rep >= criteria.min_replications
 
-    return {
-        "passed": all_passed and replications_sufficient,
+    out = {
+        "passed": all_passed and replications_sufficient and sampler_ok,
         "replications_count": n_rep,
         "min_replications_required": criteria.min_replications,
         "replications_sufficient": replications_sufficient,
         "parameter_summaries": param_summaries,
         "power_criteria": asdict(criteria),
     }
+    if has_sampler:
+        out["sampler_diagnostics"] = {
+            "r_hat_max": float(worst_r_hat),
+            "min_ess": float(worst_min_ess),
+            "divergences": int(total_divergences),
+            "sampler_ok": bool(sampler_ok),
+        }
+    if design_hash is not None:
+        out["design_hash"] = str(design_hash)
+    if code_identity is not None:
+        out["code_identity"] = str(code_identity)
+    return out
 
 
 def main() -> None:
@@ -377,7 +471,12 @@ def main() -> None:
             )
             results.append(rep_res)
 
-        analysis = analyze_sbc_results(results)
+        from .validation_preflight import resolve_current_commit
+        analysis = analyze_sbc_results(
+            results,
+            design_hash=compute_design_hash(design),
+            code_identity=resolve_current_commit(),
+        )
         analysis["smoke_mode"] = is_smoke
         out_data = analysis
 

@@ -1,6 +1,6 @@
 # v1.5 validation preflight · 2026-09-07
 
-**Inspected commit:** `85350674d1779327d2eb77aa53464d6a3ad31d5d`  
+**Inspected commit:** `1e91a37ecac9a286a00a1cd20dcf7d1e51bddf04`  
 **Machine-readable twin:** [preflight.json](preflight.json)  
 **Plan (proposed, not locked):** [candidate-validation-plan.md](candidate-validation-plan.md)  
 **Declared lock guide inspected:** [aci-1.5.0-related-release-experiment-lock.md](../../proposals/aci-1.5.0-related-release-experiment-lock.md)  

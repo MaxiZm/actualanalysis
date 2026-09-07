@@ -142,12 +142,23 @@ class TestCalibrationSBC(unittest.TestCase):
                 "total_draws": 1000,
                 "ranks": {"param_test": r},
                 "coverage_90": {"param_test": cov},
+                "sampler_diagnostics": {
+                    "r_hat_max": 1.002,
+                    "min_ess": 500.0,
+                    "divergences": 0,
+                },
             })
 
         crit = SBCPowerCriteria(min_replications=100)
-        analysis_good = analyze_sbc_results(good_reps, criteria=crit)
+        analysis_good = analyze_sbc_results(good_reps, criteria=crit, design_hash="hash123", code_identity="commit123")
+        self.assertTrue(analysis_good["passed"])
         self.assertTrue(analysis_good["replications_sufficient"])
         self.assertTrue(analysis_good["parameter_summaries"]["param_test"]["passed"])
+        self.assertEqual(analysis_good["parameter_summaries"]["param_test"]["n_replications"], n_reps)
+        self.assertIn("sampler_diagnostics", analysis_good)
+        self.assertTrue(analysis_good["sampler_diagnostics"]["sampler_ok"])
+        self.assertEqual(analysis_good["design_hash"], "hash123")
+        self.assertEqual(analysis_good["code_identity"], "commit123")
 
         # Biased collection (all ranks low)
         bad_reps = []
@@ -158,6 +169,11 @@ class TestCalibrationSBC(unittest.TestCase):
                 "total_draws": 1000,
                 "ranks": {"param_test": r},
                 "coverage_90": {"param_test": False},
+                "sampler_diagnostics": {
+                    "r_hat_max": 1.002,
+                    "min_ess": 500.0,
+                    "divergences": 0,
+                },
             })
 
         analysis_bad = analyze_sbc_results(bad_reps, criteria=crit)
@@ -179,6 +195,10 @@ class TestCalibrationSBC(unittest.TestCase):
         self.assertEqual(rep["total_draws"], 10)
         self.assertIn("effort_mean", rep["ranks"])
         self.assertIn("effort_mean", rep["coverage_90"])
+        self.assertIn("sampler_diagnostics", rep)
+        self.assertIn("r_hat_max", rep["sampler_diagnostics"])
+        self.assertIn("min_ess", rep["sampler_diagnostics"])
+        self.assertIn("divergences", rep["sampler_diagnostics"])
 
     def test_synthetic_data_generation_unconditioned_nondegenerate(self):
         design = {

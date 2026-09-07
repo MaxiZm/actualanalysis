@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import re
 import sys
 from dataclasses import dataclass, field
@@ -922,6 +923,9 @@ def inspect_comparable_settings(
 def inspect_predictive_workflow(
     calibration_results: dict[str, Any] | None = None,
     expected_design_hash: str | None = None,
+    expected_code_identity: str | None = None,
+    candidate_spec: Mapping[str, Any] | None = None,
+    expected_monitored_parameters: Sequence[str] | set[str] | None = None,
 ) -> GateResult:
     predictive_evaluator_ok = False
     calibration_sbc_ok = False
@@ -977,62 +981,190 @@ def inspect_predictive_workflow(
             "rank uniformity and coverage on this design. Code implementation alone does not "
             "establish calibration readiness without schema-validated empirical calibration evidence."
         )
+    elif not isinstance(calibration_results, dict):
+        issues.append("Calibration evidence must be a dictionary.")
     else:
         details["calibration_status"] = "PROVIDED"
         res_design_hash = calibration_results.get("design_hash")
         details["calibration_design_hash"] = res_design_hash
         details["expected_design_hash"] = expected_design_hash
-        n_reps = int(calibration_results.get("replications_count", calibration_results.get("n_replications", 0)))
-        details["calibration_replications"] = n_reps
-        is_smoke = bool(calibration_results.get("smoke_mode", calibration_results.get("is_smoke", False)))
-        details["calibration_is_smoke"] = is_smoke
 
-        if is_smoke or n_reps < 100:
-            issues.append(
-                f"Calibration evidence is smoke-only or has insufficient replications ({n_reps} < 100 floor). "
-                "Confirmatory calibration requires >= 100 replications."
-            )
-
-        if expected_design_hash and res_design_hash != expected_design_hash:
+        # 1. Validate design hash:
+        if not expected_design_hash or not isinstance(expected_design_hash, str) or not expected_design_hash.strip():
+            issues.append("Expected design hash must be a non-empty string bound to the input dataset.")
+        if not res_design_hash or not isinstance(res_design_hash, str) or not res_design_hash.strip():
+            issues.append("Calibration evidence missing or invalid 'design_hash'.")
+        elif expected_design_hash and res_design_hash != expected_design_hash:
             issues.append(
                 f"Calibration design hash mismatch: result has {res_design_hash!r}, "
                 f"expected {expected_design_hash!r} from input design."
             )
 
+        # 2. Validate code identity:
+        target_code = expected_code_identity or INSPECTED_COMMIT
+        details["expected_code_identity"] = target_code
+        res_code = calibration_results.get("code_identity") or calibration_results.get("commit")
+        details["calibration_code_identity"] = res_code
+        if not target_code or not isinstance(target_code, str) or not target_code.strip():
+            issues.append("Expected code identity must be a non-empty string bound to current commit.")
+        if not res_code or not isinstance(res_code, str) or not res_code.strip():
+            issues.append("Calibration evidence missing 'code_identity' or 'commit' bound to inspected model.")
+        elif res_code != target_code:
+            issues.append(
+                f"Calibration code identity mismatch: result has {res_code!r}, "
+                f"expected {target_code!r}."
+            )
+
+        # 3. Validate passed status:
+        cal_passed = calibration_results.get("passed")
+        if cal_passed is not True:
+            issues.append(f"Calibration evidence indicates non-passing status: passed={cal_passed!r}.")
+
+        # 4. Validate smoke mode:
+        is_smoke = calibration_results.get("smoke_mode", calibration_results.get("is_smoke", False))
+        details["calibration_is_smoke"] = is_smoke
+        if is_smoke is True or not isinstance(is_smoke, bool):
+            issues.append(
+                "Calibration evidence is smoke-only or smoke_mode is True; "
+                "confirmatory calibration requires non-smoke mode."
+            )
+
+        # 5. Validate replications count:
+        n_reps = calibration_results.get("replications_count", calibration_results.get("n_replications"))
+        details["calibration_replications"] = n_reps
+        if isinstance(n_reps, bool) or not isinstance(n_reps, int) or n_reps < 100:
+            issues.append(
+                f"Calibration replications count invalid or insufficient ({n_reps!r} < 100 floor). "
+                "Confirmatory calibration requires >= 100 replications as a strict integer."
+            )
+
+        # 6. Validate sampler diagnostics (mandatory):
+        sampler_diag = calibration_results.get("sampler_diagnostics")
+        if sampler_diag is None or not isinstance(sampler_diag, dict) or not sampler_diag:
+            issues.append("Calibration evidence missing mandatory complete 'sampler_diagnostics' dictionary.")
+        else:
+            r_hat_max = sampler_diag.get("r_hat_max")
+            if (
+                r_hat_max is None
+                or isinstance(r_hat_max, bool)
+                or not isinstance(r_hat_max, (int, float))
+                or not math.isfinite(r_hat_max)
+                or r_hat_max < 0.95
+                or r_hat_max > 1.01
+            ):
+                issues.append(
+                    f"Sampler convergence diagnostic failed: r_hat_max={r_hat_max!r} is non-finite or outside acceptable [0.95, 1.01]."
+                )
+
+            min_ess = sampler_diag.get("min_ess")
+            if (
+                min_ess is None
+                or isinstance(min_ess, bool)
+                or not isinstance(min_ess, (int, float))
+                or not math.isfinite(min_ess)
+                or min_ess < 400.0
+            ):
+                issues.append(
+                    f"Sampler convergence diagnostic failed: min_ess={min_ess!r} is non-finite or < 400.0."
+                )
+
+            divergences = sampler_diag.get("divergences")
+            if (
+                divergences is None
+                or isinstance(divergences, bool)
+                or not isinstance(divergences, int)
+                or divergences != 0
+            ):
+                issues.append(
+                    f"Sampler convergence diagnostic failed: divergences={divergences!r} must be strict nonnegative integer 0."
+                )
+
+            sampler_ok = sampler_diag.get("sampler_ok")
+            if sampler_ok is not None and sampler_ok is not True:
+                issues.append(f"Sampler convergence diagnostic failed: sampler_ok={sampler_ok!r}.")
+
+        # 7. Validate monitored parameters:
+        if expected_monitored_parameters is not None:
+            required_monitored = set(expected_monitored_parameters)
+        else:
+            required_monitored = {"effort_mean", "family_sd", "cell_sigma"}
+            is_class_cand = True
+            if candidate_spec is not None:
+                pooling = candidate_spec.get("pooling")
+                if isinstance(pooling, dict) and pooling.get("kind") == "fixed" and float(pooling.get("value", 0.0)) == 0.0:
+                    is_class_cand = False
+                elif candidate_spec.get("enabled") is False:
+                    is_class_cand = False
+            if is_class_cand:
+                required_monitored.add("class_rho")
+
+        allowed_params = {
+            "effort_mean", "effort_sd", "family_sd", "family_sd_mean",
+            "cell_sigma", "cell_sigma_mean", "class_rho", "varsigma", "varsigma_mean",
+            "cell_kappa", "cell_kappa_mean", "g", "domain_z", "beta", "log_alpha",
+        }
+        allowed_params.update(required_monitored)
+
         param_summaries = calibration_results.get("parameter_summaries")
         if not isinstance(param_summaries, dict) or not param_summaries:
             issues.append("Calibration evidence missing or invalid 'parameter_summaries' dictionary.")
         else:
+            for req_p in sorted(required_monitored):
+                if req_p not in param_summaries and f"{req_p}_mean" not in param_summaries:
+                    issues.append(f"Missing required monitored parameter summary for {req_p!r}.")
+
             for p_name, p_stats in sorted(param_summaries.items()):
+                if p_name not in allowed_params:
+                    issues.append(f"Unrecognized or bogus monitored parameter {p_name!r} in parameter_summaries.")
                 if not isinstance(p_stats, dict):
-                    issues.append(f"Invalid summary for parameter {p_name!r}.")
+                    issues.append(f"Invalid summary structure for parameter {p_name!r}.")
                     continue
-                ks_p = float(p_stats.get("ks_p_value", 0.0))
-                emp_cov = float(p_stats.get("empirical_coverage_90", 0.0))
-                if ks_p < 0.01:
+
+                p_reps = p_stats.get("n_replications", p_stats.get("replications_count"))
+                if isinstance(p_reps, bool) or not isinstance(p_reps, int) or p_reps < 100:
+                    issues.append(
+                        f"Parameter {p_name!r} has insufficient or non-integer replications ({p_reps!r} < 100 floor)."
+                    )
+
+                ks_p = p_stats.get("ks_p_value")
+                if (
+                    ks_p is None
+                    or isinstance(ks_p, bool)
+                    or not isinstance(ks_p, (int, float))
+                    or not math.isfinite(ks_p)
+                    or ks_p < 0.0
+                    or ks_p > 1.0
+                ):
+                    issues.append(f"Parameter {p_name!r} ks_p_value={ks_p!r} is non-finite or outside [0.0, 1.0].")
+                elif ks_p < 0.01:
                     issues.append(
                         f"Parameter {p_name!r} rank uniformity rejected by KS test (p={ks_p:.4f} < 0.01 threshold)."
                     )
-                if not (0.85 <= emp_cov <= 0.95):
+
+                emp_cov = p_stats.get("empirical_coverage_90")
+                if (
+                    emp_cov is None
+                    or isinstance(emp_cov, bool)
+                    or not isinstance(emp_cov, (int, float))
+                    or not math.isfinite(emp_cov)
+                    or emp_cov < 0.0
+                    or emp_cov > 1.0
+                ):
+                    issues.append(f"Parameter {p_name!r} empirical_coverage_90={emp_cov!r} is non-finite or outside [0.0, 1.0].")
+                elif not (0.85 <= emp_cov <= 0.95):
                     issues.append(
                         f"Parameter {p_name!r} 90% coverage {emp_cov:.3f} outside acceptable [0.85, 0.95] interval."
                     )
 
-        sampler_diag = calibration_results.get("sampler_diagnostics")
-        if sampler_diag is not None:
-            r_hat_max = float(sampler_diag.get("r_hat_max", 999.0))
-            min_ess = float(sampler_diag.get("min_ess", 0.0))
-            divergences = int(sampler_diag.get("divergences", 999))
-            if r_hat_max > 1.01:
-                issues.append(f"Sampler convergence diagnostic failed: r_hat_max={r_hat_max:.3f} > 1.01")
-            if min_ess < 400.0:
-                issues.append(f"Sampler convergence diagnostic failed: min_ess={min_ess:.1f} < 400")
-            if divergences > 0:
-                issues.append(f"Sampler convergence diagnostic failed: divergences={divergences} > 0")
+                if p_stats.get("passed") is False:
+                    issues.append(f"Parameter {p_name!r} marked as passed=False.")
 
         if not issues:
             details["simulation_based_calibration_workflow"] = True
             details["calibration_status"] = "PASSED"
+        else:
+            details["simulation_based_calibration_workflow"] = False
+            details["calibration_status"] = "FAILED"
 
     return _gate(
         "predictive_calibration_workflow",
@@ -1123,6 +1255,8 @@ def run_preflight(
         inspect_predictive_workflow(
             calibration_results=calibration_results,
             expected_design_hash=expected_design_hash,
+            expected_code_identity=inspected_commit,
+            candidate_spec=candidate_spec,
         ),
         inspect_nonpublishable_guards(),
     ]

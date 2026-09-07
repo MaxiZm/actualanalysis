@@ -78,6 +78,7 @@ All 7 confirmed findings from independent and host audits were fully resolved:
 | **5. Preflight Audit Integrity:** Stale bypasses in `preflight.json`. | Dynamically resolve commit from HEAD; regenerated `preflight.json` and `preflight.md` reflecting true failure states. | CLI run outputs `NOTREADY`, `fit_authorized: false`, 12 missing prerequisites. |
 | **6. Condition Scale Fallback in CLI:** Silent fallback to 1.0. | Enforced `validate_condition_scales` in `validation_decision.py:main()`, raising `ValueError` on missing or non-positive scales. | `test_cli_fails_closed_on_missing_or_invalid_condition_scale`. |
 | **7. Discrete Rank Normalization:** Exceeded 1.0 when $r=L$. | Normalization updated to $(r + 0.5) / (L + 1.0)$, strictly in $(0, 1)$. | Unit test passing with Uniform KS test. |
+| **8. Calibration Gate Fail-Closed Contract:** Gate allowed missing sampler, bogus parameters, NaN metrics, and missing design hash. | Enforced mandatory `sampler_diagnostics` ($0.95 \le R\text{-hat} \le 1.01$, $\text{ESS} \ge 400$, 0 divergences), strict per-parameter and top-level integer replication floor ($\ge 100$), finite bounded metrics, non-empty design hash matching input, code identity matching inspected commit, and required monitored parameter presence including `class_rho` for class candidate. Updated `calibration_sbc.py` to emit compatible per-replication and aggregate sampler diagnostics. | 10 comprehensive fail-closed regression tests in `TestInspectPredictiveWorkflowFailClosed` verifying host review reproduction, missing sampler, nonfinite metrics, out-of-range metrics, missing/mismatched design hash and code identity, incomplete replications, and missing monitored parameters. |
 
 ---
 
@@ -86,7 +87,7 @@ All 7 confirmed findings from independent and host audits were fully resolved:
 Preflight was executed against `accepted-input.json` and `transfer-classes-reviewed-candidate.json`:
 
 ```text
-v1.5 validation preflight  commit=85350674d1779327d2eb77aa53464d6a3ad31d5d
+v1.5 validation preflight
 VERDICT: NOTREADY
 fit_authorized: False
 promotion_authorized: False
@@ -113,11 +114,11 @@ promotion_claim: not_claimed
 
 ## 5. Verification & Test Suite Summary
 
-- **Python Unit Test Suite:** 154 tests passed (0 failures, 0 errors in 20.9s).
-  - `test_calibration_sbc.py`: 9 tests (deterministic design hashing with observation structure and effort mappings, truth separation, misspecification modes, bounded smoke SBC, nondegenerate unconditioned outcomes, seed sensitivity, conditioned exact fail-closed).
+- **Python Unit Test Suite:** 164 tests passed (0 failures, 0 errors in 16.6s).
+  - `test_calibration_sbc.py`: 9 tests (deterministic design hashing with observation structure and effort mappings, truth separation, misspecification modes, bounded smoke SBC with sampler diagnostics, nondegenerate unconditioned outcomes, seed sensitivity, conditioned exact fail-closed).
   - `test_predictive_evaluator.py`: 12 tests (likelihoods, joint dependency, eval spec, block_joint vs condition_marginal_composite, shared family effects, subprocess reproducibility across PYTHONHASHSEED, model alignment, fail-closed row mappings, conditional cell effects).
   - `test_validation_decision.py`: 10 tests (bootstrap reproducibility, component aggregation, ambiguous provider rejection, condition scale validation, C5 coverage bound, C5 interval score bound, C6 diversity floor, gate verification, CLI fail-closed).
-  - `test_validation_preflight.py`: 27 tests (all preflight gates, missing prerequisites, schema-validated calibration results).
+  - `test_validation_preflight.py`: 37 tests (all preflight gates, missing prerequisites, schema-validated calibration results, and 10 fail-closed regression tests covering missing sampler diagnostics, nonfinite metrics, out-of-range diagnostics, bogus parameters, missing/mismatched design hash and code identity, incomplete replications, and class candidate monitored parameters).
   - All existing scoring, model, preparation, and integration tests passed.
 - **TypeScript / Web Test Suite:** 33 tests passed (0 failures, 0 errors in 2.8s) via Vitest and workspace suites.
 
