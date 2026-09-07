@@ -13,8 +13,8 @@ This is a sufficiency/audit of whether documented non-Gemini release relationshi
 |---|---|
 | Implemented candidate | Restricted exchangeable class prior, global \(\rho\sim\mathrm{Beta}(1,1)\), vs nested independent baseline \(\rho=0\) |
 | Draft lock roster (A/B random-walk siblings) | **Not the implemented candidate.** Lock remains DRAFT / NOT LOCKED; confirmatory candidate UNSET |
-| Relationship-supported candidate components | **5** (upper bound **before** strict config certification) |
-| Providers of those candidates | **2** (Anthropic, DeepSeek) |
+| Relationship-supported candidate components | **8** (upper bound **before** strict config certification) |
+| Providers of those candidates | **5** (Anthropic, DeepSeek, xAI, Z.ai, Meta AI) |
 | Fully reviewed compatible classes | **0** |
 | Providers of fully compatible classes | **0** |
 | Operating floor (lock §7; do not lower) | **≥10 informative original documented components across ≥3 providers** |
@@ -22,7 +22,7 @@ This is a sufficiency/audit of whether documented non-Gemini release relationshi
 | `real_reviewed_classes_exist` | **false** |
 | Empirically validated? | No. No fits were run. |
 
-The 5/2 figure is **not** five certified classes. It is an upper bound on relationship-supported candidate components if reference-configuration compatibility were later established. Compatibility is unresolved for every pair. The floor-relevant certified count is **0**. Do not stretch remaining brand lines, size/speed SKUs, or unfetched pages to manufacture a passing count.
+The 8/5 figure is **not** eight certified classes. It is an upper bound on relationship-supported candidate components if reference-configuration compatibility were later established. Under the actual standard-trait estimand ($Z^{\mathrm{std}}$), separate effort nuisance parameters $\delta_m$ account for test-time compute/dial differences, but baseline evaluation environments, API surfaces, and model changes remain unresolved/uncertified for all pairs. The floor-relevant certified count is **0**. Even the upper bound (8 components) fails the mandatory 10-component floor. Do not stretch remaining brand lines, size/speed SKUs, or unfetched pages to manufacture a passing count.
 
 ## 2. Implemented candidate versus draft lock roster
 
@@ -207,6 +207,57 @@ Opus vs Sonnet kept separate. Anthropic (2025-05-22), https://www.anthropic.com/
 | Fully compatible class? | **No** |
 | Strict availability domains | agentic, reasoning, knowledge-information (both directions). |
 
+### 7.6 `grok-4-fast-line` (xAI)
+
+**Members:** `grok-4-fast`, `grok-4.1-fast`  
+**original_component_id:** `grok-4-fast-line`  
+**review_status:** `relationship-supported-config-unresolved`
+
+| Field | Record |
+|---|---|
+| Relationship | Grok 4.1 Fast presented as agentic performance iteration of Grok 4 Fast in the 2M context window series with ~50% lower hallucination |
+| Source | https://x.ai/news/grok-4-1-fast |
+| Available-at | 2025-11-19 |
+| Retrieval | 2026-09-07 |
+| Paraphrase | xAI (2025-11-19) introduces Grok 4.1 Fast as a direct successor in the Fast series, highlighting improved agentic tool-calling and hallucination rates half those of Grok 4 Fast. |
+| Config evidence | **Unresolved.** Both models fitted at `@max-common`. Grok 4.1 Fast offers dual reasoning and non-reasoning modes while Grok 4 Fast used a unified architecture. Under the standard-trait estimand ($Z^{\mathrm{std}}$), nuisance effort controls $\delta_m$ capture reasoning differences, but baseline evaluation environments and tool scaffolding are uncertified. |
+| Fully compatible class? | **No** |
+| Strict availability domains | agentic, reasoning. |
+
+### 7.7 `glm-4-flagship-line` (Z.ai)
+
+**Members:** `glm-4.5`, `glm-4.6`  
+**original_component_id:** `glm-4-flagship-line`  
+**review_status:** `relationship-supported-config-unresolved`
+
+| Field | Record |
+|---|---|
+| Relationship | GLM-4.6 released as flagship advancement over GLM-4.5 in the GLM-4 MoE family, with drop-in migration guidance |
+| Source | https://z.ai/blog/glm-4.6 and arXiv:2508.06471 |
+| Available-at | 2025-09-30 |
+| Retrieval | 2026-09-07 |
+| Paraphrase | Z.ai (2025-09-30) introduces GLM-4.6 as an advancement over predecessor GLM-4.5, expanding context to 200k tokens and providing API migration instructions. |
+| Config evidence | **Unresolved.** Context window expanded from 128k to 200k tokens and streaming tool-call outputs introduced. While both support Deep Thinking and standard prompting, identical baseline evaluation harness settings are uncertified. |
+| Fully compatible class? | **No** |
+| Strict availability domains | reasoning, communication-professional. |
+
+### 7.8 `muse-spark-revisions` (Meta AI)
+
+**Members:** `muse-spark-1.1`, `muse-spark-1.2`  
+**original_component_id:** `muse-spark-revisions`  
+**review_status:** `relationship-supported-config-unresolved`
+
+| Field | Record |
+|---|---|
+| Relationship | Muse Spark 1.2 released as successor revision in the multimodal Muse Spark family |
+| Source | https://research.meta.ai/blog/introducing-muse-code-and-muse-spark-1-2 |
+| Available-at | 2026-08-05 |
+| Retrieval | 2026-09-07 |
+| Paraphrase | Meta AI (2026-08-05) introduces Muse Spark 1.2 as an upgrade in the Muse model family with multimodal reasoning improvements. |
+| Config evidence | **Unresolved.** Both fitted at `@max-common` with xhigh effort tiers. Under the standard-trait estimand, nuisance effort parameters account for effort gains, but baseline harness environments differ. |
+| Fully compatible class? | **No** |
+| Strict availability domains | agentic, reasoning, knowledge-information, communication-professional. |
+
 ## 8. Candidate versus fully compatible counts
 
 | original_component_id | Provider | Relationship | Config | Fully compatible class | Strict availability blocks |
@@ -216,12 +267,15 @@ Opus vs Sonnet kept separate. Anthropic (2025-05-22), https://www.anthropic.com/
 | claude-sonnet-4-drop-in | Anthropic | supported | unresolved | no | 8 |
 | claude-fable-5-revision | Anthropic | supported | unresolved | no | 10 |
 | deepseek-v4-pro-preview-to-ga | DeepSeek | supported | unresolved | no | 6 |
-| **Relationship-supported candidates (upper bound)** | **2** | | | | 34 |
-| **Fully reviewed compatible classes** | **0** | | | **0** | |
+| grok-4-fast-line | xAI | supported | unresolved | no | 4 |
+| glm-4-flagship-line | Z.ai | supported | unresolved | no | 4 |
+| muse-spark-revisions | Meta AI | supported | unresolved | no | 6 |
+| **Relationship-supported candidates (upper bound)** | **8 components / 5 providers** | | | | 48 |
+| **Fully reviewed compatible classes** | **0 components / 0 providers** | | | **0** | 0 |
 
-Leave-one-provider-out on the **upper bound** still fails the 3-provider floor. The certified count is already 0.
-
-These five trees must not be split into ten units. Domain blocks are not original components.
+Even taking all 8 relationship-supported candidates across 5 providers as an upper bound, the candidate count (8) **fails the mandatory 10-component floor**.
+The certified configuration-compatible count is **0**.
+These eight trees must not be split into arbitrary sub-units. Domain blocks are not original components.
 
 ## 9. Ambiguous (documented relatedness, not candidate components)
 
@@ -256,8 +310,8 @@ Remaining non-Gemini fitted IDs were **not** given individual primary-page revie
 ## 12. Gate decision
 
 ```
-relationship_supported_candidate_components = 5   # upper bound before config certification
-relationship_supported_candidate_providers  = 2
+relationship_supported_candidate_components = 8   # upper bound before config certification
+relationship_supported_candidate_providers  = 5   # Anthropic, DeepSeek, xAI, Z.ai, Meta AI
 fully_compatible_reviewed_classes           = 0
 fully_compatible_reviewed_providers         = 0
 floor                                       = 10 components, 3 providers

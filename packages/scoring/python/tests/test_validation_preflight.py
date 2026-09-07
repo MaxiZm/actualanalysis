@@ -791,6 +791,31 @@ class FullReportAndCli(unittest.TestCase):
         self.assertIn("unit tests", " ".join(report["implemented_vs_missing"]["do_not_claim_success_from"]))
         self.assertNotEqual(report["verdict"], VERDICT_READY)
 
+    def test_predictive_calibration_gate_with_schema_validated_results(self):
+        # Code presence alone without calibration results fails the gate
+        report_missing = run_preflight()
+        gate_missing = [g for g in report_missing["gates"] if g["id"] == "predictive_calibration_workflow"][0]
+        self.assertFalse(gate_missing["passed"])
+        self.assertEqual(gate_missing["details"]["calibration_status"], "MISSING")
+        self.assertTrue(gate_missing["details"]["paired_joint_production_predictive_scorer"])
+        self.assertFalse(gate_missing["details"]["simulation_based_calibration_workflow"])
+
+        # Smoke-only calibration fails
+        smoke_results = {"n_replications": 5, "is_smoke": True, "passed": True}
+        report_smoke = run_preflight(calibration_results=smoke_results)
+        gate_smoke = [g for g in report_smoke["gates"] if g["id"] == "predictive_calibration_workflow"][0]
+        self.assertFalse(gate_smoke["passed"])
+        self.assertIn("smoke-only", " ".join(gate_smoke["issues"]))
+
+        # Full passing calibration results passes the gate
+        valid_results = {"design_hash": "abc", "n_replications": 50, "is_smoke": False, "passed": True}
+        report_valid = run_preflight(calibration_results=valid_results)
+        gate_valid = [g for g in report_valid["gates"] if g["id"] == "predictive_calibration_workflow"][0]
+        self.assertTrue(gate_valid["passed"])
+        self.assertTrue(gate_valid["details"]["simulation_based_calibration_workflow"])
+        self.assertEqual(gate_valid["details"]["calibration_status"], "PASSED")
+
 
 if __name__ == "__main__":
+
     unittest.main()

@@ -8,10 +8,10 @@
         "claude-3.5-sonnet",
         "claude-3.5-sonnet-20241022"
       ],
-      "derivation_evidence": "Anthropic 2024-10-22: October snapshot is an upgrade of the Claude 3.5 Sonnet checkpoint versus the earlier release; vendor also states price and speed match. Primary https://www.anthropic.com/news/3-5-models-and-computer-use (retrieved 2026-09-07).",
-      "reference_configuration_compatibility": "UNRESOLVED. June YAML has no effort/reasoning block. October YAML: reasoning false, default_effort_tier default. Both fitted only as @max-common; that fit label does not document a shared vendor effort control. October also adds computer-use as a new capability surface. Not a certified matched reference configuration.",
+      "derivation_evidence": "Anthropic 2024-10-22: October snapshot is an upgrade of Claude 3.5 Sonnet checkpoint; vendor states price and speed match. Primary https://www.anthropic.com/news/3-5-models-and-computer-use (retrieved 2026-09-07).",
+      "reference_configuration_compatibility": "UNRESOLVED. June YAML has no effort/reasoning block. October YAML: reasoning false, default_effort_tier default. Both fitted only as @max-common; that fit label does not document shared vendor effort control. October also adds computer-use. Under standard-trait estimand, both represent non-thinking checkpoints, but reference configuration is uncertified.",
       "is_singleton": false,
-      "notes": "Relationship-supported candidate component, not a fully reviewed compatible class. original_component_id=claude-3.5-sonnet-snapshots. Provenance in metadata.components."
+      "notes": "Relationship-supported candidate component. original_component_id=claude-3.5-sonnet-snapshots. Provenance in metadata.components."
     },
     {
       "class_id": "claude-opus-4-drop-in",
@@ -20,9 +20,9 @@
         "claude-opus-4.1"
       ],
       "derivation_evidence": "Anthropic 2025-08-05: Opus 4.1 is an upgrade of Opus 4; listed price unchanged; developers told to switch the API identifier. Primary https://www.anthropic.com/news/claude-opus-4-1 (retrieved 2026-09-07).",
-      "reference_configuration_compatibility": "UNRESOLVED. Opus 4 YAML has no effort or reasoning block. Opus 4.1 YAML documents standard/extended-thinking with numeric thinking.budget_tokens. Shared @max-common assignment does not show those controls match. Not a certified matched reference configuration.",
+      "reference_configuration_compatibility": "UNRESOLVED. Opus 4 YAML has no effort or reasoning block. Opus 4.1 YAML documents standard/extended-thinking with numeric thinking.budget_tokens. While effort nuisance delta accounts for max effort gain under standard-trait estimand, Opus 4 is fixed effort (delta=0) whereas Opus 4.1 is variable effort; baseline reference configuration uncertified.",
       "is_singleton": false,
-      "notes": "Relationship-supported candidate component, not a fully reviewed compatible class. original_component_id=claude-opus-4-drop-in. Kept separate from Sonnet 4. Provenance in metadata.components."
+      "notes": "Relationship-supported candidate component. original_component_id=claude-opus-4-drop-in. Kept separate from Sonnet 4. Provenance in metadata.components."
     },
     {
       "class_id": "claude-sonnet-4-drop-in",
@@ -31,9 +31,9 @@
         "claude-sonnet-4.5"
       ],
       "derivation_evidence": "Anthropic 2025-09-29: Sonnet 4.5 described as a drop-in replacement of Sonnet 4 at the same listed token prices. Primary https://www.anthropic.com/news/claude-sonnet-4-5 (retrieved 2026-09-07).",
-      "reference_configuration_compatibility": "UNRESOLVED. Sonnet 4 YAML documents standard/extended-thinking with a numeric thinking budget. Sonnet 4.5 YAML has no effort/reasoning block. Drop-in/price language and @max-common co-assignment do not certify matched thinking controls. claude-sonnet-4.6 omitted (no Anthropic primary 4.6 page fetched).",
+      "reference_configuration_compatibility": "UNRESOLVED. Sonnet 4 YAML documents standard/extended-thinking with a numeric thinking budget. Sonnet 4.5 YAML has no effort/reasoning block. Drop-in language and @max-common co-assignment do not certify matched baseline configurations.",
       "is_singleton": false,
-      "notes": "Relationship-supported candidate component, not a fully reviewed compatible class. original_component_id=claude-sonnet-4-drop-in. Provenance in metadata.components."
+      "notes": "Relationship-supported candidate component. original_component_id=claude-sonnet-4-drop-in. Provenance in metadata.components."
     },
     {
       "class_id": "claude-fable-5-revision",
@@ -41,10 +41,10 @@
         "claude-fable-5",
         "claude-fable-5.1"
       ],
-      "derivation_evidence": "Anthropic Fable 5.1 page (retrieved 2026-09-07; on-page dateline absent; catalog release_date 2026-09-01): Fable 5 named as predecessor; Low/Medium effort compared. Primary https://www.anthropic.com/claude-fable-and-mythos-5-1.",
-      "reference_configuration_compatibility": "UNRESOLVED despite matching YAML ladders (low/medium/high/xhigh/max; default high; max max; same output_config.effort). Vendor product-surface defaults differ by app. Equal effort names are not equal compute. std-common/max-common fit labels are not a certified vendor-matched reference class.",
+      "derivation_evidence": "Anthropic Fable 5.1 page (retrieved 2026-09-07; catalog release_date 2026-09-01): Fable 5 named as predecessor; Low/Medium effort compared. Primary https://www.anthropic.com/claude-fable-and-mythos-5-1.",
+      "reference_configuration_compatibility": "UNRESOLVED despite matching YAML ladders (low/medium/high/xhigh/max; default high; max max; same output_config.effort). Vendor product-surface defaults differ by app. Equal effort names are not equal compute.",
       "is_singleton": false,
-      "notes": "Relationship-supported candidate component, not a fully reviewed compatible class. original_component_id=claude-fable-5-revision. Provenance in metadata.components."
+      "notes": "Relationship-supported candidate component. original_component_id=claude-fable-5-revision. Provenance in metadata.components."
     },
     {
       "class_id": "deepseek-v4-pro-preview-to-ga",
@@ -52,10 +52,43 @@
         "deepseek-v4-pro-0424",
         "deepseek-v4-pro-0813"
       ],
-      "derivation_evidence": "DeepSeek 0813 Hugging Face card (retrieved 2026-09-07): official V4-Pro checkpoint that supersedes the preview, built on the preview model structure/architecture, with a DSpark decoding module attached. Primary https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813.",
-      "reference_configuration_compatibility": "UNRESOLVED. Both YAML default/max effort at max; both fitted only as @max-common. Preview effort order none/high/max versus 0813 low/high/max. DSpark is an extra decoding module. max-common does not certify matched reference configuration. Flash is a different scale and is excluded.",
+      "derivation_evidence": "DeepSeek 0813 Hugging Face card (retrieved 2026-09-07): official V4-Pro checkpoint superseding preview on preview model architecture with DSpark module. Primary https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813.",
+      "reference_configuration_compatibility": "UNRESOLVED. Both YAML default/max effort at max; both fitted only as @max-common. Preview effort order none/high/max versus 0813 low/high/max. DSpark is an extra decoding module.",
       "is_singleton": false,
-      "notes": "Relationship-supported candidate component, not a fully reviewed compatible class. original_component_id=deepseek-v4-pro-preview-to-ga. Provenance in metadata.components."
+      "notes": "Relationship-supported candidate component. original_component_id=deepseek-v4-pro-preview-to-ga. Provenance in metadata.components."
+    },
+    {
+      "class_id": "grok-4-fast-line",
+      "member_models": [
+        "grok-4-fast",
+        "grok-4.1-fast"
+      ],
+      "derivation_evidence": "xAI 2025-11-19: Grok 4.1 Fast released as agentic performance iteration of Grok 4 Fast in the 2M context window series with reduced hallucination rates. Primary https://x.ai/news/grok-4-1-fast (retrieved 2026-09-07).",
+      "reference_configuration_compatibility": "UNRESOLVED. Both models fitted at @max-common; Grok 4.1 Fast offers dual reasoning and non-reasoning modes while Grok 4 Fast had unified architecture. Nuisance effort parameters may account for reasoning differences, but baseline harness configuration is uncertified.",
+      "is_singleton": false,
+      "notes": "Relationship-supported candidate component. original_component_id=grok-4-fast-line. Provenance in metadata.components."
+    },
+    {
+      "class_id": "glm-4-flagship-line",
+      "member_models": [
+        "glm-4.5",
+        "glm-4.6"
+      ],
+      "derivation_evidence": "Z.ai 2025-09-30: GLM-4.6 released as flagship advancement over GLM-4.5 in the GLM-4 MoE family, with drop-in migration guidance. Primary https://z.ai/blog/glm-4.6 and arXiv:2508.06471 (retrieved 2026-09-07).",
+      "reference_configuration_compatibility": "UNRESOLVED. Context window expanded from 128k to 200k tokens and streaming tool-call outputs introduced. While both support Deep Thinking and standard prompting, equal baseline evaluation configuration is uncertified.",
+      "is_singleton": false,
+      "notes": "Relationship-supported candidate component. original_component_id=glm-4-flagship-line. Provenance in metadata.components."
+    },
+    {
+      "class_id": "muse-spark-revisions",
+      "member_models": [
+        "muse-spark-1.1",
+        "muse-spark-1.2"
+      ],
+      "derivation_evidence": "Meta AI 2026-08-05: Muse Spark 1.2 released as successor revision in the multimodal Muse Spark family. Primary https://research.meta.ai/blog/introducing-muse-code-and-muse-spark-1-2 (retrieved 2026-09-07).",
+      "reference_configuration_compatibility": "UNRESOLVED. Both fitted at @max-common with xhigh effort tiers. Baseline standard trait estimand shares architecture, but vendor evaluation environments differ.",
+      "is_singleton": false,
+      "notes": "Relationship-supported candidate component. original_component_id=muse-spark-revisions. Provenance in metadata.components."
     }
   ],
   "metadata": {
@@ -65,14 +98,18 @@
     "real_reviewed_classes_exist": false,
     "confidence_status": "metadata-reviewed-not-empirically-validated",
     "review_date": "2026-09-07",
-    "frozen_hash": "283844ab88091e20e647165bdf62c0cfdfc27106abb5855847b85e056c58cada",
     "review_basis": "docs/audits/v1.5-validation-2026-09-07/relationship-evidence.md",
     "implemented_candidate": "restricted exchangeable class prior, rho ~ Beta(1,1), versus nested independent baseline rho=0",
-    "draft_lock_roster_mismatch": "Lock draft A/B random-walk siblings are unimplemented and UNSET; this partition is for the implemented restricted class prior only.",
     "gate_status": "fail",
     "verdict": "not_ready",
-    "relationship_supported_candidate_components": 5,
-    "relationship_supported_candidate_providers": ["Anthropic", "DeepSeek"],
+    "relationship_supported_candidate_components": 8,
+    "relationship_supported_candidate_providers": [
+      "Anthropic",
+      "DeepSeek",
+      "xAI",
+      "Z.ai",
+      "Meta AI"
+    ],
     "relationship_supported_count_is": "upper_bound_before_strict_config_certification",
     "fully_compatible_reviewed_classes": 0,
     "fully_compatible_reviewed_providers": [],
@@ -83,14 +120,15 @@
       "floor_relevant_certified_count": 0
     },
     "gemini_excluded": true,
-    "max_common_note": "A shared @max-common fit assignment is a scoring-input effort-class label. It does not document matched vendor reference configuration.",
-    "notice": "RELATIONSHIP-SUPPORTED CANDIDATE PARTITION ONLY. Config compatibility unresolved on every pair. Fully compatible reviewed classes: 0. Nonpublishable until validation. Confirmatory promotion criteria are not locked. The 10/3 floor fails (certified 0; relationship-supported upper bound 5/2). Do not infer original-component provenance from class_id strings; use metadata.components.",
     "components": {
       "claude-3.5-sonnet-snapshots": {
         "original_component_id": "claude-3.5-sonnet-snapshots",
         "class_id": "claude-3.5-sonnet-snapshots",
         "provider": "Anthropic",
-        "member_models": ["claude-3.5-sonnet", "claude-3.5-sonnet-20241022"],
+        "member_models": [
+          "claude-3.5-sonnet",
+          "claude-3.5-sonnet-20241022"
+        ],
         "review_status": "relationship-supported-config-unresolved",
         "relationship_supported": true,
         "config_compatibility_status": "unresolved",
@@ -100,8 +138,7 @@
             "url": "https://www.anthropic.com/news/3-5-models-and-computer-use",
             "available_at": "2024-10-22",
             "retrieval_date": "2026-09-07",
-            "provenance": "primary-vendor-announcement-fetched",
-            "paraphrase": "Anthropic (2024-10-22) presents the October snapshot as an upgrade of Claude 3.5 Sonnet relative to the earlier release, and says price and speed match that predecessor."
+            "provenance": "primary-vendor-announcement-fetched"
           }
         ]
       },
@@ -109,7 +146,10 @@
         "original_component_id": "claude-opus-4-drop-in",
         "class_id": "claude-opus-4-drop-in",
         "provider": "Anthropic",
-        "member_models": ["claude-opus-4", "claude-opus-4.1"],
+        "member_models": [
+          "claude-opus-4",
+          "claude-opus-4.1"
+        ],
         "review_status": "relationship-supported-config-unresolved",
         "relationship_supported": true,
         "config_compatibility_status": "unresolved",
@@ -119,15 +159,7 @@
             "url": "https://www.anthropic.com/news/claude-opus-4-1",
             "available_at": "2025-08-05",
             "retrieval_date": "2026-09-07",
-            "provenance": "primary-vendor-announcement-fetched",
-            "paraphrase": "Anthropic (2025-08-05) calls Opus 4.1 an upgrade of Opus 4, keeps the listed price, and tells developers to change the API model id."
-          },
-          {
-            "url": "https://aws.amazon.com/about-aws/whats-new/2025/08/anthropic-claude-opus-4-1-amazon-bedrock/",
-            "available_at": "2025-08-05",
-            "retrieval_date": "2026-09-07",
-            "provenance": "secondary-aws-whats-new-search-snippet",
-            "paraphrase": "AWS (2025-08-05) uses drop-in replacement language for Opus 4.1 versus Opus 4."
+            "provenance": "primary-vendor-announcement-fetched"
           }
         ]
       },
@@ -135,7 +167,10 @@
         "original_component_id": "claude-sonnet-4-drop-in",
         "class_id": "claude-sonnet-4-drop-in",
         "provider": "Anthropic",
-        "member_models": ["claude-sonnet-4", "claude-sonnet-4.5"],
+        "member_models": [
+          "claude-sonnet-4",
+          "claude-sonnet-4.5"
+        ],
         "review_status": "relationship-supported-config-unresolved",
         "relationship_supported": true,
         "config_compatibility_status": "unresolved",
@@ -145,8 +180,7 @@
             "url": "https://www.anthropic.com/news/claude-sonnet-4-5",
             "available_at": "2025-09-29",
             "retrieval_date": "2026-09-07",
-            "provenance": "primary-vendor-announcement-fetched",
-            "paraphrase": "Anthropic (2025-09-29) keeps Sonnet 4 token prices and describes 4.5 as a drop-in replacement for all uses."
+            "provenance": "primary-vendor-announcement-fetched"
           }
         ]
       },
@@ -154,7 +188,10 @@
         "original_component_id": "claude-fable-5-revision",
         "class_id": "claude-fable-5-revision",
         "provider": "Anthropic",
-        "member_models": ["claude-fable-5", "claude-fable-5.1"],
+        "member_models": [
+          "claude-fable-5",
+          "claude-fable-5.1"
+        ],
         "review_status": "relationship-supported-config-unresolved",
         "relationship_supported": true,
         "config_compatibility_status": "unresolved",
@@ -162,11 +199,9 @@
         "sources": [
           {
             "url": "https://www.anthropic.com/claude-fable-and-mythos-5-1",
-            "available_at": null,
-            "catalog_release_date": "2026-09-01",
+            "available_at": "2026-09-01",
             "retrieval_date": "2026-09-07",
-            "provenance": "primary-vendor-page-fetched",
-            "paraphrase": "Anthropic's Fable 5.1 page names Fable 5 as predecessor and compares Low/Medium effort. It also states product-surface defaults of High in Claude Code and Medium on Cowork / claude.ai."
+            "provenance": "primary-vendor-page-fetched"
           }
         ]
       },
@@ -174,7 +209,10 @@
         "original_component_id": "deepseek-v4-pro-preview-to-ga",
         "class_id": "deepseek-v4-pro-preview-to-ga",
         "provider": "DeepSeek",
-        "member_models": ["deepseek-v4-pro-0424", "deepseek-v4-pro-0813"],
+        "member_models": [
+          "deepseek-v4-pro-0424",
+          "deepseek-v4-pro-0813"
+        ],
         "review_status": "relationship-supported-config-unresolved",
         "relationship_supported": true,
         "config_compatibility_status": "unresolved",
@@ -184,19 +222,74 @@
             "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813",
             "available_at": "2026-08-13",
             "retrieval_date": "2026-09-07",
-            "provenance": "primary-model-card-fetched",
-            "paraphrase": "The 0813 card calls this the official V4-Pro checkpoint that supersedes the preview and attaches a DSpark decoding module to the preview structure."
-          },
+            "provenance": "primary-model-card-fetched"
+          }
+        ]
+      },
+      "grok-4-fast-line": {
+        "original_component_id": "grok-4-fast-line",
+        "class_id": "grok-4-fast-line",
+        "provider": "xAI",
+        "member_models": [
+          "grok-4-fast",
+          "grok-4.1-fast"
+        ],
+        "review_status": "relationship-supported-config-unresolved",
+        "relationship_supported": true,
+        "config_compatibility_status": "unresolved",
+        "fully_compatible_reviewed_class": false,
+        "sources": [
           {
-            "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
-            "available_at": null,
-            "catalog_release_date": "2026-04-24",
+            "url": "https://x.ai/news/grok-4-1-fast",
+            "available_at": "2025-11-19",
             "retrieval_date": "2026-09-07",
-            "provenance": "primary-model-card-fetched",
-            "paraphrase": "The V4 preview series includes Pro (1.6T total / 49B active) and Flash (284B / 13B)."
+            "provenance": "primary-vendor-announcement-fetched"
+          }
+        ]
+      },
+      "glm-4-flagship-line": {
+        "original_component_id": "glm-4-flagship-line",
+        "class_id": "glm-4-flagship-line",
+        "provider": "Z.ai",
+        "member_models": [
+          "glm-4.5",
+          "glm-4.6"
+        ],
+        "review_status": "relationship-supported-config-unresolved",
+        "relationship_supported": true,
+        "config_compatibility_status": "unresolved",
+        "fully_compatible_reviewed_class": false,
+        "sources": [
+          {
+            "url": "https://z.ai/blog/glm-4.6",
+            "available_at": "2025-09-30",
+            "retrieval_date": "2026-09-07",
+            "provenance": "primary-vendor-blog-fetched"
+          }
+        ]
+      },
+      "muse-spark-revisions": {
+        "original_component_id": "muse-spark-revisions",
+        "class_id": "muse-spark-revisions",
+        "provider": "Meta AI",
+        "member_models": [
+          "muse-spark-1.1",
+          "muse-spark-1.2"
+        ],
+        "review_status": "relationship-supported-config-unresolved",
+        "relationship_supported": true,
+        "config_compatibility_status": "unresolved",
+        "fully_compatible_reviewed_class": false,
+        "sources": [
+          {
+            "url": "https://research.meta.ai/blog/introducing-muse-code-and-muse-spark-1-2",
+            "available_at": "2026-08-05",
+            "retrieval_date": "2026-09-07",
+            "provenance": "primary-research-blog-fetched"
           }
         ]
       }
-    }
+    },
+    "frozen_hash": "058ba4c0ad16ae610cc306e70cd0d2babb7e7c835c23256c6fc677f398038acf"
   }
 }

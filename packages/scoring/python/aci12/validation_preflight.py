@@ -904,33 +904,100 @@ def inspect_comparable_settings(
     )
 
 
-def inspect_predictive_workflow() -> GateResult:
-    details = {
+def inspect_predictive_workflow(
+    calibration_results: dict[str, Any] | None = None,
+    expected_design_hash: str | None = None,
+) -> GateResult:
+    predictive_evaluator_ok = False
+    calibration_sbc_ok = False
+    validation_decision_ok = False
+    try:
+        from .predictive_evaluator import ProductionPredictiveEvaluator
+        predictive_evaluator_ok = True
+    except ImportError:
+        pass
+
+    try:
+        from .calibration_sbc import generate_synthetic_dataset, analyze_sbc_results
+        calibration_sbc_ok = True
+    except ImportError:
+        pass
+
+    try:
+        from .validation_decision import evaluate_validation_decision
+        validation_decision_ok = True
+    except ImportError:
+        pass
+
+    details: dict[str, Any] = {
         "production_likelihood_implemented": True,
         "production_likelihood_module": "aci12.model.aci_model",
         "production_families": ["obs_normal", "a_single", "a_total", "a_exact"],
-        "validate_predictive_py": {
-            "available": True,
-            "production_faithful": False,
-            "role": "Transformed-normal interpolation CV; not class-prior successor-domain joint score",
-        },
-        "paired_joint_production_predictive_scorer": False,
+        "predictive_evaluator_implemented": predictive_evaluator_ok,
+        "calibration_sbc_implemented": calibration_sbc_ok,
+        "validation_decision_implemented": validation_decision_ok,
+        "paired_joint_production_predictive_scorer": predictive_evaluator_ok,
+        "prior_predictive_workflow": calibration_sbc_ok,
         "simulation_based_calibration_workflow": False,
-        "prior_predictive_workflow": False,
+        "calibration_status": "MISSING",
     }
-    issues = [
-        "No production-faithful paired joint predictive scorer is implemented for "
-        "family-disjoint successor-domain groups. Reuse aci12.model observation "
-        "families and integrate shared held-out effects jointly. Do not treat "
-        "validate_predictive.py as automatically production-faithful.",
-        "Simulation-based calibration and prior-predictive workflows are not implemented as passed checks.",
-    ]
+
+    issues: list[str] = []
+    if not predictive_evaluator_ok:
+        issues.append("ProductionPredictiveEvaluator module is missing or cannot be imported.")
+    if not calibration_sbc_ok:
+        issues.append("Calibration SBC module is missing or cannot be imported.")
+    if not validation_decision_ok:
+        issues.append("Validation decision module is missing or cannot be imported.")
+
+    if calibration_results is None:
+        issues.append(
+            "A production-faithful paired joint predictive scorer and empirical calibration "
+            "are required on family-disjoint successor-domain groups. "
+            "Do not treat validate_predictive.py as automatically production-faithful or "
+            "code existence alone as proof of calibrated fit."
+        )
+        issues.append(
+            "Simulation-based calibration (SBC) has not been run to completion with verified "
+            "rank uniformity and coverage on this design. Code implementation alone does not "
+            "establish calibration readiness without schema-validated empirical calibration evidence."
+        )
+    else:
+        details["calibration_status"] = "PROVIDED"
+        res_design_hash = calibration_results.get("design_hash")
+        details["calibration_design_hash"] = res_design_hash
+        details["expected_design_hash"] = expected_design_hash
+        n_reps = int(calibration_results.get("n_replications", 0))
+        details["calibration_replications"] = n_reps
+        is_smoke = bool(calibration_results.get("is_smoke", False))
+        details["calibration_is_smoke"] = is_smoke
+        sbc_passed = bool(calibration_results.get("passed", False))
+
+        if is_smoke or n_reps < 50:
+            issues.append(
+                f"Calibration evidence is smoke-only or has insufficient replications ({n_reps} < 50 floor). "
+                "Confirmatory calibration requires >= 50 replications."
+            )
+        elif expected_design_hash and res_design_hash != expected_design_hash:
+            issues.append(
+                f"Calibration design hash mismatch: result has {res_design_hash!r}, "
+                f"expected {expected_design_hash!r} from input design."
+            )
+        elif not sbc_passed:
+            issues.append(
+                f"Simulation-based calibration failed quality criteria: {calibration_results.get('reasons', ['Unknown failure'])}"
+            )
+        else:
+            details["simulation_based_calibration_workflow"] = True
+            details["calibration_status"] = "PASSED"
+
     return _gate(
         "predictive_calibration_workflow",
         issues,
         "production-faithful paired predictive and calibration workflows available",
         details,
     )
+
 
 
 def inspect_nonpublishable_guards() -> GateResult:
@@ -989,11 +1056,20 @@ def run_preflight(
     exclusion_metadata: dict[str, Any] | None = None,
     candidate_spec: dict[str, Any] | None = None,
     baseline_spec: dict[str, Any] | None = None,
+    calibration_results: dict[str, Any] | None = None,
     inspected_commit: str = INSPECTED_COMMIT,
 ) -> dict[str, Any]:
     observed = observed_release_ids(input_data)
     excluded = excluded_release_ids(exclusion_metadata, allow_heuristic=True)
     blocks = availability_successor_domain_blocks(input_data, excluded) if input_data else []
+
+    expected_design_hash = None
+    if input_data:
+        try:
+            from .calibration_sbc import compute_design_hash
+            expected_design_hash = compute_design_hash(input_data)
+        except Exception:
+            pass
 
     gates = [
         inspect_class_registry(registry, observed, excluded, blocks),
@@ -1001,7 +1077,10 @@ def run_preflight(
         inspect_lock_and_selection(lock_payload, plan_payload, manifest),
         inspect_exclusion_provenance(exclusion_metadata),
         inspect_comparable_settings(input_data, candidate_spec, baseline_spec),
-        inspect_predictive_workflow(),
+        inspect_predictive_workflow(
+            calibration_results=calibration_results,
+            expected_design_hash=expected_design_hash,
+        ),
         inspect_nonpublishable_guards(),
     ]
     verdict = combine_verdict(gates)
@@ -1196,6 +1275,7 @@ def build_arg_parser() -> argparse.ArgumentParser:
     parser.add_argument("--baseline-spec", type=Path, help="Baseline measurement-settings JSON")
     parser.add_argument("--output", type=Path, help="Write JSON report")
     parser.add_argument("--no-default-lock", action="store_true", help="Do not auto-load the lock draft")
+    parser.add_argument("--calibration-results", type=Path, help="Schema-validated calibration/SBC result JSON")
     return parser
 
 
@@ -1214,6 +1294,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         exclusion_metadata = _load_json(args.exclusion_metadata)
         candidate_spec = _load_json(args.candidate_spec)
         baseline_spec = _load_json(args.baseline_spec)
+        calibration_results = _load_json(args.calibration_results)
     except (OSError, json.JSONDecodeError, ValueError) as exc:
         print(f"Error: failed to load preflight inputs: {exc}", file=sys.stderr)
         return 1
@@ -1227,6 +1308,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         exclusion_metadata=exclusion_metadata,
         candidate_spec=candidate_spec,
         baseline_spec=baseline_spec,
+        calibration_results=calibration_results,
     )
     if args.output:
         write_report(args.output, report)

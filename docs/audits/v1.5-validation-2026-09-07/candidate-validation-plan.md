@@ -104,14 +104,14 @@ Promotion requires the 90% **component-cluster** interval for the component-equa
 
 A development-only precision/power assessment must still show that this interval rule is feasible at the 10/3 floor **before lock completion**. That assessment cannot use confirmation outcomes and cannot lower C4 to “mean > 0.”
 
-### C5. Calibration / noninferiority (proposed-fixed)
+### C5. Calibration / noninferiority (corrected before outcomes; proposed-fixed)
 
 On primary-target groups:
 
-- 90% predictive-interval coverage: \(\mathrm{cov}_\mathrm{cand}\ge\mathrm{cov}_\mathrm{base}-0.05\), and the component-cluster 90% interval for \(\mathrm{cov}_\mathrm{cand}-\mathrm{cov}_\mathrm{base}\) has upper bound ≥ 0.
-- 90% interval score (lower better): the component-cluster 90% interval for \(\mathrm{IS}_\mathrm{cand}-\mathrm{IS}_\mathrm{base}\) has lower bound ≤ 0.
+- 90% predictive-interval coverage: \(\mathrm{cov}_\mathrm{cand}\ge\mathrm{cov}_\mathrm{base}-0.05\), and the component-cluster 90% bootstrap interval for \(\mathrm{cov}_\mathrm{cand}-\mathrm{cov}_\mathrm{base}\) has **lower bound \(\ge -0.05\)**. (Corrected: the previous bound required upper bound \(\ge 0\), which was backwards and permitted arbitrarily imprecise estimates with severe coverage loss to pass).
+- 90% interval score (lower better; normalized by supplied finite positive training-only condition scales): the component-cluster 90% bootstrap interval for \(\mathrm{IS}_\mathrm{cand}-\mathrm{IS}_\mathrm{base}\) has **upper bound \(\le 0\)** unless a scientifically justified prespecified margin already exists. (Corrected: the previous bound required lower bound \(\le 0\), which was backwards and permitted arbitrarily imprecise degraded interval scores to pass).
 
-These tolerances are declared before outcomes. They are not tuned on confirmation.
+These tolerances are declared before candidate outcomes. They are not tuned on confirmation.
 
 ### C6. Diversity floor (already declared)
 

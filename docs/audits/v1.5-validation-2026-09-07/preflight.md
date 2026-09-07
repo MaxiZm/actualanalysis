@@ -24,12 +24,12 @@ Strong gate: insufficient class registry **or** unlocked plan ⇒ no confirmator
 
 | Layer | Meaning | Actual final registry |
 |---|---|---:|
-| candidate | relationship-supported `metadata.components` upper bound | **5 components / 2 providers** (Anthropic, DeepSeek) |
-| informative | availability-qualified; not certified | **5 / 2** |
+| candidate | relationship-supported `metadata.components` upper bound | **8 components / 5 providers** (Anthropic, DeepSeek, xAI, Z.ai, Meta AI) |
+| informative | availability-qualified; not certified | **8 / 5** |
 | eligible | certified configuration-compatible; **floor applies here** | **0 / 0** |
 | floor | 10 components / 3 providers | not met |
 
-`@max-common` co-assignment is not matched settings. Schema-valid with `real_reviewed_classes_exist: false` still fails. Passing unit tests or MCMC convergence is not validation success. A 5/2 candidate upper bound cannot satisfy the eligible floor.
+`@max-common` co-assignment is not matched settings. Under the standard-trait estimand, nuisance effort parameters account for test-time compute dials, but baseline configurations remain uncertified. Schema-valid with `real_reviewed_classes_exist: false` still fails. Passing unit tests or MCMC convergence is not validation success. An 8/5 candidate upper bound cannot satisfy the eligible 10-component floor.
 
 ## Candidate actually implemented (not the old draft)
 
@@ -45,15 +45,15 @@ Comparable measurement settings for the implemented pair **pass** this preflight
 
 | Gate | Result | What was inspected |
 |---|---|---|
-| Class registry | **FAIL** (4 issues) | Edition `metadata-reviewed-candidate-2026-09-07`. Schema-valid; frozen hash `283844ab88091e20e647165bdf62c0cfdfc27106abb5855847b85e056c58cada`. Canonical provenance is `metadata.components` (dict values; dict keys are not `original_component_id`). Five relationship-supported components (`review_status: relationship-supported-config-unresolved`, `relationship_supported: true`, `config_compatibility_status: unresolved`, `fully_compatible_reviewed_class: false`). `real_reviewed_classes_exist` is JSON `false` and is not forced. Counts: candidate 5/2, informative 5/2, eligible **0**. Floor 10/3 applies to eligible, not the 5/2 upper bound. `@max-common` is not matched settings. |
-| Availability family-closure blocks | **PASS** | Loading ≥ 0.25 then family closure, using repaired `prepare` identification (`build_family_index_name_map`, threshold 0.25). **328** successor–domain blocks from row presence; **308** have retained parent-domain rows. By domain: agentic 72, software-code 29, reasoning 86, knowledge-information 69, communication-professional 72. This is **not** 328 independent original components. |
+| Class registry | **FAIL** (4 issues) | Edition `metadata-reviewed-candidate-2026-09-07`. Schema-valid; frozen hash `058ba4c0ad16ae610cc306e70cd0d2babb7e7c835c23256c6fc677f398038acf`. Canonical provenance is `metadata.components` (dict values; dict keys are not `original_component_id`). Eight relationship-supported components (`review_status: relationship-supported-config-unresolved`, `relationship_supported: true`, `config_compatibility_status: unresolved`, `fully_compatible_reviewed_class: false`). `real_reviewed_classes_exist` is JSON `false` and is not forced. Counts: candidate 8/5, informative 8/5, eligible **0**. Floor 10/3 applies to eligible, not the 8/5 upper bound. `@max-common` is not matched settings. |
+| Availability family-closure blocks | **PASS** | Loading ≥ 0.25 then family closure, using repaired `prepare` identification (`build_family_index_name_map`, threshold 0.25). **328** successor–domain blocks from row presence; **308** have retained parent-domain rows. |
 | Frozen lock and selection | **FAIL** (5 issues) | Lock draft: DRAFT, **28 UNSET** tokens, random-walk roster mismatch. Plan markdown is PROPOSED / NOT LOCKED. No frozen prepare manifest. |
-| Confirmation exclusion provenance | **FAIL** | No caller-supplied certified metadata. The conservative Gemini development list is a heuristic and is not confirmatory provenance. |
+| Confirmation exclusion provenance | **PASS** | Caller-supplied certified metadata in `data/experimental/gemini-exclusion-provenance.json` covering all 14 Gemini releases with primary Google DeepMind citations. |
 | Comparable measurement settings | **PASS** | Restricted Beta(1,1) vs nested ρ=0; correlated traits; `production_export_issues` still flags enabled class priors as nonpublishable. |
-| Predictive / calibration workflow | **FAIL** | Production likelihoods exist in `model.py`. `validate_predictive.py` is a transformed-normal interpolation CV and is **not** production-faithful for this experiment. No paired joint successor-domain scorer, SBC, or prior-predictive workflow. |
+| Predictive / calibration workflow | **FAIL** (2 issues) | Tooling is implemented (`aci12.predictive_evaluator`, `aci12.calibration_sbc`, `aci12.validation_decision`), but empirical simulation-based calibration (SBC) has not been run to completion with verified rank uniformity and nominal coverage on this design. Code existence alone does not prove calibrated fit. |
 | Nonpublishable guards | **PASS** | `is_publishable: false`, `confirmatory_criteria_locked: false`, `real_reviewed_classes_exist: false` retained. |
 
-**12** missing prerequisites are listed in [preflight.json](preflight.json). All were reported; none were bypassed with truthy strings.
+**11** missing prerequisites remain before confirmatory fit authorization. All were reported; none were bypassed with truthy strings.
 
 ## What is implemented versus missing
 

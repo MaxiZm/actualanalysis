@@ -26,8 +26,8 @@
       "issues": [
         "metadata.real_reviewed_classes_exist requires actual JSON true; bool=False is rejected (no truthy-string bypass)",
         "metadata.confirmatory_criteria_locked requires actual JSON true; bool=False is rejected (no truthy-string bypass)",
-        "Eligible certified configuration-compatible classes 0 < required floor 10. Candidate relationship-supported upper bound is 5 components / 2 providers and is not the eligible count. Informative availability-qualified components are also not certified. @max-common labels are not matched settings. The floor cannot be relaxed.",
-        "Eligible certified providers 0 < required floor 3 (candidate providers 2 are not the eligible count)."
+        "Eligible certified configuration-compatible classes 0 < required floor 10. Candidate relationship-supported upper bound is 8 components / 5 providers and is not the eligible count. Informative availability-qualified components are also not certified. @max-common labels are not matched settings. The floor cannot be relaxed.",
+        "Eligible certified providers 0 < required floor 3 (candidate providers 5 are not the eligible count)."
       ],
       "details": {
         "registry_supplied": true,
@@ -37,13 +37,13 @@
         "canonical_provenance": "metadata.components",
         "max_common_label_is_not_matched_settings": true,
         "flags_not_forced": true,
-        "n_declared_classes": 5,
-        "n_observed_non_gemini_multi_member_classes": 5,
+        "n_declared_classes": 8,
+        "n_observed_non_gemini_multi_member_classes": 8,
         "n_fake_or_unobserved_members": 0,
-        "n_candidate_components": 5,
-        "n_candidate_providers": 2,
-        "n_informative_original_components": 5,
-        "n_informative_providers": 2,
+        "n_candidate_components": 8,
+        "n_candidate_providers": 5,
+        "n_informative_original_components": 8,
+        "n_informative_providers": 5,
         "n_eligible_reviewed_classes": 0,
         "n_eligible_providers": 0,
         "candidate_component_ids": [
@@ -51,22 +51,34 @@
           "claude-opus-4-drop-in",
           "claude-sonnet-4-drop-in",
           "claude-fable-5-revision",
-          "deepseek-v4-pro-preview-to-ga"
+          "deepseek-v4-pro-preview-to-ga",
+          "grok-4-fast-line",
+          "glm-4-flagship-line",
+          "muse-spark-revisions"
         ],
         "candidate_providers": [
           "Anthropic",
-          "DeepSeek"
+          "DeepSeek",
+          "xAI",
+          "Z.ai",
+          "Meta AI"
         ],
         "informative_original_component_ids": [
           "claude-3.5-sonnet-snapshots",
           "claude-opus-4-drop-in",
           "claude-sonnet-4-drop-in",
           "claude-fable-5-revision",
-          "deepseek-v4-pro-preview-to-ga"
+          "deepseek-v4-pro-preview-to-ga",
+          "grok-4-fast-line",
+          "glm-4-flagship-line",
+          "muse-spark-revisions"
         ],
         "informative_providers": [
           "Anthropic",
-          "DeepSeek"
+          "DeepSeek",
+          "xAI",
+          "Z.ai",
+          "Meta AI"
         ],
         "eligible_component_ids": [],
         "eligible_providers": [],
@@ -78,10 +90,10 @@
         "n_skipped_invalid_component_values": 0,
         "skipped_invalid_component_values": [],
         "registry_schema_valid": true,
-        "registry_frozen_hash": "283844ab88091e20e647165bdf62c0cfdfc27106abb5855847b85e056c58cada",
+        "registry_frozen_hash": "058ba4c0ad16ae610cc306e70cd0d2babb7e7c835c23256c6fc677f398038acf",
         "ignored_noncanonical_class_keys": [],
         "fake_or_unobserved_members": [],
-        "n_declared_original_components": 5,
+        "n_declared_original_components": 8,
         "informative_components": [
           {
             "original_component_id": "claude-3.5-sonnet-snapshots",
@@ -102,7 +114,7 @@
               "claude-opus-4.1"
             ],
             "review_status": "relationship-supported-config-unresolved",
-            "n_sources": 2,
+            "n_sources": 1,
             "n_availability_blocks": 7
           },
           {
@@ -135,8 +147,41 @@
               "deepseek-v4-pro-0813"
             ],
             "review_status": "relationship-supported-config-unresolved",
-            "n_sources": 2,
+            "n_sources": 1,
             "n_availability_blocks": 8
+          },
+          {
+            "original_component_id": "grok-4-fast-line",
+            "provider": "xAI",
+            "observed_non_gemini_members": [
+              "grok-4-fast",
+              "grok-4.1-fast"
+            ],
+            "review_status": "relationship-supported-config-unresolved",
+            "n_sources": 1,
+            "n_availability_blocks": 5
+          },
+          {
+            "original_component_id": "glm-4-flagship-line",
+            "provider": "Z.ai",
+            "observed_non_gemini_members": [
+              "glm-4.5",
+              "glm-4.6"
+            ],
+            "review_status": "relationship-supported-config-unresolved",
+            "n_sources": 1,
+            "n_availability_blocks": 6
+          },
+          {
+            "original_component_id": "muse-spark-revisions",
+            "provider": "Meta AI",
+            "observed_non_gemini_members": [
+              "muse-spark-1.1",
+              "muse-spark-1.2"
+            ],
+            "review_status": "relationship-supported-config-unresolved",
+            "n_sources": 1,
+            "n_availability_blocks": 10
           }
         ]
       }
@@ -217,16 +262,14 @@
     },
     {
       "id": "confirmation_exclusion_provenance",
-      "passed": false,
-      "summary": "confirmation_exclusion_provenance failed (1 issue(s))",
-      "issues": [
-        "Confirmation exclusion metadata with provenance is missing. The CONSERVATIVE_GEMINI_DEVELOPMENT_EXCLUSIONS heuristic cannot be used for confirmatory training, scoring, or hyperprior tuning."
-      ],
+      "passed": true,
+      "summary": "caller-supplied certified exclusion provenance",
+      "issues": [],
       "details": {
-        "supplied": false,
-        "confirmatory_certified": false,
+        "supplied": true,
+        "confirmatory_certified": true,
         "heuristic_development_superset_insufficient": true,
-        "n_members": 0
+        "n_members": 14
       }
     },
     {
@@ -260,8 +303,8 @@
       "passed": false,
       "summary": "predictive_calibration_workflow failed (2 issue(s))",
       "issues": [
-        "No production-faithful paired joint predictive scorer is implemented for family-disjoint successor-domain groups. Reuse aci12.model observation families and integrate shared held-out effects jointly. Do not treat validate_predictive.py as automatically production-faithful.",
-        "Simulation-based calibration and prior-predictive workflows are not implemented as passed checks."
+        "A production-faithful paired joint predictive scorer and empirical calibration are required on family-disjoint successor-domain groups. Do not treat validate_predictive.py as automatically production-faithful or code existence alone as proof of calibrated fit.",
+        "Simulation-based calibration (SBC) has not been run to completion with verified rank uniformity and coverage on this design. Code implementation alone does not establish calibration readiness without schema-validated empirical calibration evidence."
       ],
       "details": {
         "production_likelihood_implemented": true,
@@ -272,14 +315,13 @@
           "a_total",
           "a_exact"
         ],
-        "validate_predictive_py": {
-          "available": true,
-          "production_faithful": false,
-          "role": "Transformed-normal interpolation CV; not class-prior successor-domain joint score"
-        },
-        "paired_joint_production_predictive_scorer": false,
+        "predictive_evaluator_implemented": true,
+        "calibration_sbc_implemented": true,
+        "validation_decision_implemented": true,
+        "paired_joint_production_predictive_scorer": true,
+        "prior_predictive_workflow": true,
         "simulation_based_calibration_workflow": false,
-        "prior_predictive_workflow": false
+        "calibration_status": "MISSING"
       }
     },
     {
@@ -306,16 +348,15 @@
   "missing_prerequisites": [
     "metadata.real_reviewed_classes_exist requires actual JSON true; bool=False is rejected (no truthy-string bypass)",
     "metadata.confirmatory_criteria_locked requires actual JSON true; bool=False is rejected (no truthy-string bypass)",
-    "Eligible certified configuration-compatible classes 0 < required floor 10. Candidate relationship-supported upper bound is 5 components / 2 providers and is not the eligible count. Informative availability-qualified components are also not certified. @max-common labels are not matched settings. The floor cannot be relaxed.",
-    "Eligible certified providers 0 < required floor 3 (candidate providers 2 are not the eligible count).",
+    "Eligible certified configuration-compatible classes 0 < required floor 10. Candidate relationship-supported upper bound is 8 components / 5 providers and is not the eligible count. Informative availability-qualified components are also not certified. @max-common labels are not matched settings. The floor cannot be relaxed.",
+    "Eligible certified providers 0 < required floor 3 (candidate providers 5 are not the eligible count).",
     "Lock record is not complete (28 UNSET token(s); draft=True). A hash without filled decisions is not a complete lock.",
     "Lock draft describes unimplemented random-walk siblings A/B, not the implemented restricted class-prior rho~Beta(1,1) candidate. A new lock for the implemented candidate is required.",
     "Lock does not select the implemented restricted class-prior candidate.",
     "Validation plan text is proposed/not locked. Confirmation cannot open.",
     "Frozen experiment manifest (train/eval hashes, selection rule, threshold, primary scoring rule) is missing.",
-    "Confirmation exclusion metadata with provenance is missing. The CONSERVATIVE_GEMINI_DEVELOPMENT_EXCLUSIONS heuristic cannot be used for confirmatory training, scoring, or hyperprior tuning.",
-    "No production-faithful paired joint predictive scorer is implemented for family-disjoint successor-domain groups. Reuse aci12.model observation families and integrate shared held-out effects jointly. Do not treat validate_predictive.py as automatically production-faithful.",
-    "Simulation-based calibration and prior-predictive workflows are not implemented as passed checks."
+    "A production-faithful paired joint predictive scorer and empirical calibration are required on family-disjoint successor-domain groups. Do not treat validate_predictive.py as automatically production-faithful or code existence alone as proof of calibrated fit.",
+    "Simulation-based calibration (SBC) has not been run to completion with verified rank uniformity and coverage on this design. Code implementation alone does not establish calibration readiness without schema-validated empirical calibration evidence."
   ],
   "no_fit_reasons": [
     "class registry insufficient",
@@ -323,34 +364,46 @@
   ],
   "counts": {
     "candidate": {
-      "components": 5,
-      "providers": 2,
+      "components": 8,
+      "providers": 5,
       "ids": [
         "claude-3.5-sonnet-snapshots",
         "claude-opus-4-drop-in",
         "claude-sonnet-4-drop-in",
         "claude-fable-5-revision",
-        "deepseek-v4-pro-preview-to-ga"
+        "deepseek-v4-pro-preview-to-ga",
+        "grok-4-fast-line",
+        "glm-4-flagship-line",
+        "muse-spark-revisions"
       ],
       "provider_ids": [
         "Anthropic",
-        "DeepSeek"
+        "DeepSeek",
+        "xAI",
+        "Z.ai",
+        "Meta AI"
       ],
       "meaning": "Relationship-supported metadata.components upper bound; not the floor count"
     },
     "informative": {
-      "components": 5,
-      "providers": 2,
+      "components": 8,
+      "providers": 5,
       "ids": [
         "claude-3.5-sonnet-snapshots",
         "claude-opus-4-drop-in",
         "claude-sonnet-4-drop-in",
         "claude-fable-5-revision",
-        "deepseek-v4-pro-preview-to-ga"
+        "deepseek-v4-pro-preview-to-ga",
+        "grok-4-fast-line",
+        "glm-4-flagship-line",
+        "muse-spark-revisions"
       ],
       "provider_ids": [
         "Anthropic",
-        "DeepSeek"
+        "DeepSeek",
+        "xAI",
+        "Z.ai",
+        "Meta AI"
       ],
       "meaning": "Availability-qualified candidates; diagnostic only, not certified"
     },
@@ -393,7 +446,6 @@
   "next_needed_input": [
     "Reviewed class-registry JSON via --registry with canonical metadata.components (original_component_id, provider, member_models, source refs, review_status), certified configuration-compatible classes meeting the 10/3 floor, and metadata.real_reviewed_classes_exist=true (JSON boolean; do not force). External research-worker output; not a private agent path.",
     "Complete lock JSON for the implemented restricted class-prior candidate (not A/B random-walk), plus frozen prepare manifest and locked plan JSON.",
-    "Caller-supplied confirmatory exclusion metadata JSON with non-heuristic provenance, member_models, and confirmatory_certified=true (JSON boolean).",
     "After metadata gates pass: implement paired joint predictive scoring that reuses production likelihoods, then calibration/SBC. Do not start that workflow merely to bypass a missing registry."
   ],
   "notes": [

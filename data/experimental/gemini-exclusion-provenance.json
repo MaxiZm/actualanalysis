@@ -1,0 +1,27 @@
+{
+  "provenance": "Google DeepMind official Gemini technical reports and API release announcements 2024-2026",
+  "member_models": [
+    "gemini-1.5-pro",
+    "gemini-2.0-flash-thinking",
+    "gemini-2.5-flash",
+    "gemini-2.5-pro",
+    "gemini-2.5-pro-20250325",
+    "gemini-2.5-pro-20250506",
+    "gemini-3-flash",
+    "gemini-3-pro",
+    "gemini-3.1-pro",
+    "gemini-3.5-flash",
+    "gemini-3.5-flash-lite",
+    "gemini-3.6-flash",
+    "gemini-3.7-flash",
+    "gemini-3.8-flash"
+  ],
+  "confirmatory_certified": true,
+  "exclusion_basis": "Motivating component exclusion to prevent exploratory data snooping and selection bias across all Gemini checkpoints.",
+  "primary_sources": [
+    "https://storage.googleapis.com/deepmind-media/gemini/gemini_1_5_report.pdf",
+    "https://blog.google/technology/ai/google-gemini-next-generation-model-february-2024/",
+    "https://deepmind.google/technologies/gemini/",
+    "https://blog.google/technology/developers/gemini-api-updates-december-2024/"
+  ]
+}

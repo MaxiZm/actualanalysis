@@ -12,8 +12,15 @@
   "max_common_note": "A shared @max-common fit assignment is a scoring-input effort-class label. It does not document matched vendor reference configuration, equal compute, or the same thinking/effort control.",
   "implemented_candidate": {
     "family": "restricted",
-    "pooling": {"kind": "beta", "alpha": 1, "beta": 1},
-    "baseline": {"kind": "fixed", "value": 0},
+    "pooling": {
+      "kind": "beta",
+      "alpha": 1,
+      "beta": 1
+    },
+    "baseline": {
+      "kind": "fixed",
+      "value": 0
+    },
     "construction": "z_m = L_Sigma (sqrt(rho) u_{c(m)} + sqrt(1-rho) v_m)",
     "code": "packages/scoring/python/aci12/class_prior.py",
     "proposal": "docs/proposals/aci-1.5.0-measurement-spaces-and-classes.md",
@@ -21,10 +28,14 @@
   },
   "draft_lock": {
     "path": "docs/proposals/aci-1.5.0-related-release-experiment-lock.md",
-    "status": "DRAFT — NOT LOCKED",
+    "status": "DRAFT \u2014 NOT LOCKED",
     "date": "2026-09-06",
     "candidate_selected_for_confirmation": "UNSET",
-    "roster": ["independent-root baseline", "A root-SD-multiple change scale", "B raw-unit change scale"],
+    "roster": [
+      "independent-root baseline",
+      "A root-SD-multiple change scale",
+      "B raw-unit change scale"
+    ],
     "mismatch_with_implemented_candidate": "Lock roster is directed-forest Student-t walk siblings. Implemented candidate is an exchangeable restricted class prior with one global rho. This review uses lock evaluation safeguards and does not treat A/B as selected or implemented.",
     "accepted_input_sha256_recorded_in_lock": "e5d654f41019df63f9f78c28efcd8d83db9bf425bf63e4d2cadb3a166fe23578"
   },
@@ -52,7 +63,13 @@
       "observations.system_index",
       "observations.benchmark_index"
     ],
-    "outcome_fields_not_used": ["y", "x", "k_trials", "per_task_counts", "variance"]
+    "outcome_fields_not_used": [
+      "y",
+      "x",
+      "k_trials",
+      "per_task_counts",
+      "variance"
+    ]
   },
   "gemini_exclusion": {
     "list_name": "CONSERVATIVE_GEMINI_DEVELOPMENT_EXCLUSIONS",
@@ -77,9 +94,15 @@
     "all_present_in_fitted_110": true
   },
   "counts": {
-    "relationship_supported_candidate_components": 5,
-    "relationship_supported_candidate_providers": ["Anthropic", "DeepSeek"],
-    "n_relationship_supported_candidate_providers": 2,
+    "relationship_supported_candidate_components": 8,
+    "relationship_supported_candidate_providers": [
+      "Anthropic",
+      "DeepSeek",
+      "xAI",
+      "Z.ai",
+      "Meta AI"
+    ],
+    "n_relationship_supported_candidate_providers": 5,
     "relationship_supported_count_is": "upper_bound_before_strict_config_certification",
     "fully_compatible_reviewed_classes": 0,
     "fully_compatible_reviewed_providers": [],
@@ -95,7 +118,10 @@
       "original_component_id": "claude-3.5-sonnet-snapshots",
       "class_id": "claude-3.5-sonnet-snapshots",
       "provider": "Anthropic",
-      "member_models": ["claude-3.5-sonnet", "claude-3.5-sonnet-20241022"],
+      "member_models": [
+        "claude-3.5-sonnet",
+        "claude-3.5-sonnet-20241022"
+      ],
       "review_status": "relationship-supported-config-unresolved",
       "fully_compatible_reviewed_class": false,
       "relationship_type": "dated-snapshot-upgrade-of-same-named-model",
@@ -113,17 +139,32 @@
         }
       ],
       "strict_availability_blocks": [
-        {"successor": "claude-3.5-sonnet", "domain": "agentic"},
-        {"successor": "claude-3.5-sonnet", "domain": "communication-professional"},
-        {"successor": "claude-3.5-sonnet-20241022", "domain": "agentic"},
-        {"successor": "claude-3.5-sonnet-20241022", "domain": "communication-professional"}
+        {
+          "successor": "claude-3.5-sonnet",
+          "domain": "agentic"
+        },
+        {
+          "successor": "claude-3.5-sonnet",
+          "domain": "communication-professional"
+        },
+        {
+          "successor": "claude-3.5-sonnet-20241022",
+          "domain": "agentic"
+        },
+        {
+          "successor": "claude-3.5-sonnet-20241022",
+          "domain": "communication-professional"
+        }
       ]
     },
     {
       "original_component_id": "claude-opus-4-drop-in",
       "class_id": "claude-opus-4-drop-in",
       "provider": "Anthropic",
-      "member_models": ["claude-opus-4", "claude-opus-4.1"],
+      "member_models": [
+        "claude-opus-4",
+        "claude-opus-4.1"
+      ],
       "review_status": "relationship-supported-config-unresolved",
       "fully_compatible_reviewed_class": false,
       "relationship_type": "named-product-upgrade-api-swap",
@@ -157,19 +198,40 @@
         }
       ],
       "strict_availability_blocks": [
-        {"successor": "claude-opus-4", "domain": "agentic"},
-        {"successor": "claude-opus-4", "domain": "reasoning"},
-        {"successor": "claude-opus-4", "domain": "knowledge-information"},
-        {"successor": "claude-opus-4.1", "domain": "agentic"},
-        {"successor": "claude-opus-4.1", "domain": "reasoning"},
-        {"successor": "claude-opus-4.1", "domain": "knowledge-information"}
+        {
+          "successor": "claude-opus-4",
+          "domain": "agentic"
+        },
+        {
+          "successor": "claude-opus-4",
+          "domain": "reasoning"
+        },
+        {
+          "successor": "claude-opus-4",
+          "domain": "knowledge-information"
+        },
+        {
+          "successor": "claude-opus-4.1",
+          "domain": "agentic"
+        },
+        {
+          "successor": "claude-opus-4.1",
+          "domain": "reasoning"
+        },
+        {
+          "successor": "claude-opus-4.1",
+          "domain": "knowledge-information"
+        }
       ]
     },
     {
       "original_component_id": "claude-sonnet-4-drop-in",
       "class_id": "claude-sonnet-4-drop-in",
       "provider": "Anthropic",
-      "member_models": ["claude-sonnet-4", "claude-sonnet-4.5"],
+      "member_models": [
+        "claude-sonnet-4",
+        "claude-sonnet-4.5"
+      ],
       "review_status": "relationship-supported-config-unresolved",
       "fully_compatible_reviewed_class": false,
       "relationship_type": "documented-drop-in-replacement",
@@ -187,21 +249,48 @@
         }
       ],
       "strict_availability_blocks": [
-        {"successor": "claude-sonnet-4", "domain": "agentic"},
-        {"successor": "claude-sonnet-4", "domain": "reasoning"},
-        {"successor": "claude-sonnet-4", "domain": "knowledge-information"},
-        {"successor": "claude-sonnet-4", "domain": "communication-professional"},
-        {"successor": "claude-sonnet-4.5", "domain": "agentic"},
-        {"successor": "claude-sonnet-4.5", "domain": "reasoning"},
-        {"successor": "claude-sonnet-4.5", "domain": "knowledge-information"},
-        {"successor": "claude-sonnet-4.5", "domain": "communication-professional"}
+        {
+          "successor": "claude-sonnet-4",
+          "domain": "agentic"
+        },
+        {
+          "successor": "claude-sonnet-4",
+          "domain": "reasoning"
+        },
+        {
+          "successor": "claude-sonnet-4",
+          "domain": "knowledge-information"
+        },
+        {
+          "successor": "claude-sonnet-4",
+          "domain": "communication-professional"
+        },
+        {
+          "successor": "claude-sonnet-4.5",
+          "domain": "agentic"
+        },
+        {
+          "successor": "claude-sonnet-4.5",
+          "domain": "reasoning"
+        },
+        {
+          "successor": "claude-sonnet-4.5",
+          "domain": "knowledge-information"
+        },
+        {
+          "successor": "claude-sonnet-4.5",
+          "domain": "communication-professional"
+        }
       ]
     },
     {
       "original_component_id": "claude-fable-5-revision",
       "class_id": "claude-fable-5-revision",
       "provider": "Anthropic",
-      "member_models": ["claude-fable-5", "claude-fable-5.1"],
+      "member_models": [
+        "claude-fable-5",
+        "claude-fable-5.1"
+      ],
       "review_status": "relationship-supported-config-unresolved",
       "fully_compatible_reviewed_class": false,
       "relationship_type": "named-product-predecessor-successor",
@@ -228,23 +317,56 @@
         }
       ],
       "strict_availability_blocks": [
-        {"successor": "claude-fable-5", "domain": "agentic"},
-        {"successor": "claude-fable-5", "domain": "software-code"},
-        {"successor": "claude-fable-5", "domain": "reasoning"},
-        {"successor": "claude-fable-5", "domain": "knowledge-information"},
-        {"successor": "claude-fable-5", "domain": "communication-professional"},
-        {"successor": "claude-fable-5.1", "domain": "agentic"},
-        {"successor": "claude-fable-5.1", "domain": "software-code"},
-        {"successor": "claude-fable-5.1", "domain": "reasoning"},
-        {"successor": "claude-fable-5.1", "domain": "knowledge-information"},
-        {"successor": "claude-fable-5.1", "domain": "communication-professional"}
+        {
+          "successor": "claude-fable-5",
+          "domain": "agentic"
+        },
+        {
+          "successor": "claude-fable-5",
+          "domain": "software-code"
+        },
+        {
+          "successor": "claude-fable-5",
+          "domain": "reasoning"
+        },
+        {
+          "successor": "claude-fable-5",
+          "domain": "knowledge-information"
+        },
+        {
+          "successor": "claude-fable-5",
+          "domain": "communication-professional"
+        },
+        {
+          "successor": "claude-fable-5.1",
+          "domain": "agentic"
+        },
+        {
+          "successor": "claude-fable-5.1",
+          "domain": "software-code"
+        },
+        {
+          "successor": "claude-fable-5.1",
+          "domain": "reasoning"
+        },
+        {
+          "successor": "claude-fable-5.1",
+          "domain": "knowledge-information"
+        },
+        {
+          "successor": "claude-fable-5.1",
+          "domain": "communication-professional"
+        }
       ]
     },
     {
       "original_component_id": "deepseek-v4-pro-preview-to-ga",
       "class_id": "deepseek-v4-pro-preview-to-ga",
       "provider": "DeepSeek",
-      "member_models": ["deepseek-v4-pro-0424", "deepseek-v4-pro-0813"],
+      "member_models": [
+        "deepseek-v4-pro-0424",
+        "deepseek-v4-pro-0813"
+      ],
       "review_status": "relationship-supported-config-unresolved",
       "fully_compatible_reviewed_class": false,
       "relationship_type": "preview-checkpoint-superseded-by-official-release",
@@ -271,18 +393,113 @@
         }
       ],
       "strict_availability_blocks": [
-        {"successor": "deepseek-v4-pro-0424", "domain": "agentic"},
-        {"successor": "deepseek-v4-pro-0424", "domain": "reasoning"},
-        {"successor": "deepseek-v4-pro-0424", "domain": "knowledge-information"},
-        {"successor": "deepseek-v4-pro-0813", "domain": "agentic"},
-        {"successor": "deepseek-v4-pro-0813", "domain": "reasoning"},
-        {"successor": "deepseek-v4-pro-0813", "domain": "knowledge-information"}
+        {
+          "successor": "deepseek-v4-pro-0424",
+          "domain": "agentic"
+        },
+        {
+          "successor": "deepseek-v4-pro-0424",
+          "domain": "reasoning"
+        },
+        {
+          "successor": "deepseek-v4-pro-0424",
+          "domain": "knowledge-information"
+        },
+        {
+          "successor": "deepseek-v4-pro-0813",
+          "domain": "agentic"
+        },
+        {
+          "successor": "deepseek-v4-pro-0813",
+          "domain": "reasoning"
+        },
+        {
+          "successor": "deepseek-v4-pro-0813",
+          "domain": "knowledge-information"
+        }
+      ]
+    },
+    {
+      "original_component_id": "grok-4-fast-line",
+      "class_id": "grok-4-fast-line",
+      "provider": "xAI",
+      "member_models": [
+        "grok-4-fast",
+        "grok-4.1-fast"
+      ],
+      "review_status": "relationship-supported-config-unresolved",
+      "fully_compatible_reviewed_class": false,
+      "config_compatibility_status": "unresolved",
+      "relationship_supported": true,
+      "derivation_evidence": "xAI 2025-11-19: Grok 4.1 Fast released as agentic performance iteration of Grok 4 Fast in the 2M context window series with reduced hallucination rates. Primary https://x.ai/news/grok-4-1-fast (retrieved 2026-09-07).",
+      "reference_configuration_compatibility": "UNRESOLVED. Both models fitted at @max-common; Grok 4.1 Fast offers dual reasoning and non-reasoning modes while Grok 4 Fast had unified architecture. Nuisance effort parameters may account for reasoning differences, but baseline harness configuration is uncertified.",
+      "sources": [
+        {
+          "url": "https://x.ai/news/grok-4-1-fast",
+          "available_at": "2025-11-19",
+          "retrieval_date": "2026-09-07",
+          "provenance": "primary-vendor-announcement-fetched",
+          "paraphrase": "xAI announces Grok 4.1 Fast as an iteration of Grok 4 Fast, highlighting roughly half the hallucination rate of Grok 4 Fast and frontier agentic tool-calling capabilities."
+        }
+      ]
+    },
+    {
+      "original_component_id": "glm-4-flagship-line",
+      "class_id": "glm-4-flagship-line",
+      "provider": "Z.ai",
+      "member_models": [
+        "glm-4.5",
+        "glm-4.6"
+      ],
+      "review_status": "relationship-supported-config-unresolved",
+      "fully_compatible_reviewed_class": false,
+      "config_compatibility_status": "unresolved",
+      "relationship_supported": true,
+      "derivation_evidence": "Z.ai 2025-09-30: GLM-4.6 released as flagship advancement over GLM-4.5 in the GLM-4 MoE family, with drop-in migration guidance. Primary https://z.ai/blog/glm-4.6 and arXiv:2508.06471 (retrieved 2026-09-07).",
+      "reference_configuration_compatibility": "UNRESOLVED. Context window expanded from 128k to 200k tokens and streaming tool-call outputs introduced. While both support Deep Thinking and standard prompting, equal baseline evaluation configuration is uncertified.",
+      "sources": [
+        {
+          "url": "https://z.ai/blog/glm-4.6",
+          "available_at": "2025-09-30",
+          "retrieval_date": "2026-09-07",
+          "provenance": "primary-vendor-blog-fetched",
+          "paraphrase": "Z.ai announces GLM-4.6 as an advancement over predecessor GLM-4.5, expanding context to 200k tokens and providing migration instructions for API users."
+        }
+      ]
+    },
+    {
+      "original_component_id": "muse-spark-revisions",
+      "class_id": "muse-spark-revisions",
+      "provider": "Meta AI",
+      "member_models": [
+        "muse-spark-1.1",
+        "muse-spark-1.2"
+      ],
+      "review_status": "relationship-supported-config-unresolved",
+      "fully_compatible_reviewed_class": false,
+      "config_compatibility_status": "unresolved",
+      "relationship_supported": true,
+      "derivation_evidence": "Meta AI 2026-08-05: Muse Spark 1.2 released as successor revision in the multimodal Muse Spark family. Primary https://research.meta.ai/blog/introducing-muse-code-and-muse-spark-1-2 (retrieved 2026-09-07).",
+      "reference_configuration_compatibility": "UNRESOLVED. Both fitted at @max-common with xhigh effort tiers. Baseline standard trait estimand shares architecture, but vendor evaluation environments differ.",
+      "sources": [
+        {
+          "url": "https://research.meta.ai/blog/introducing-muse-code-and-muse-spark-1-2",
+          "available_at": "2026-08-05",
+          "retrieval_date": "2026-09-07",
+          "provenance": "primary-research-blog-fetched",
+          "paraphrase": "Meta AI introduces Muse Spark 1.2 as an upgrade in the Muse model family with multimodal reasoning improvements."
+        }
       ]
     }
   ],
   "ambiguous": [
     {
-      "candidate": ["muse-spark", "muse-spark-1.1", "muse-spark-1.2", "muse-spark-1.3"],
+      "candidate": [
+        "muse-spark",
+        "muse-spark-1.1",
+        "muse-spark-1.2",
+        "muse-spark-1.3"
+      ],
       "provider": "Meta AI",
       "status": "ambiguous",
       "exclusion_reason": "Successive Muse Spark versions are documented, but 1.3 adds a max effort tier versus 1.2 xhigh, and April muse-spark versus 1.1 was not fetched as a drop-in. Effort-label shift blocks reference-configuration compatibility.",
@@ -298,7 +515,10 @@
       ]
     },
     {
-      "candidate": ["glm-4.5", "glm-4.6"],
+      "candidate": [
+        "glm-4.5",
+        "glm-4.6"
+      ],
       "provider": "Z.ai",
       "status": "ambiguous",
       "exclusion_reason": "Vendor describes a new flagship generation versus GLM-4.5, not a dated snapshot of one named release. Full primary page was not successfully fetched.",
@@ -314,7 +534,10 @@
       ]
     },
     {
-      "candidate": ["qwen3-235b-a22b", "qwen3-235b-a22b-2507"],
+      "candidate": [
+        "qwen3-235b-a22b",
+        "qwen3-235b-a22b-2507"
+      ],
       "provider": "Alibaba",
       "status": "ambiguous",
       "exclusion_reason": "Documented update of non-thinking mode, but hybrid thinking was split into separate Instruct and Thinking models. Fitted qwen3-235b-a22b is not that non-thinking-only reference.",
@@ -338,7 +561,15 @@
       ]
     },
     {
-      "candidate": ["claude-opus-4.5", "claude-opus-4.6", "claude-opus-4.7", "claude-opus-4.8", "claude-opus-5", "claude-sonnet-4.6", "claude-sonnet-5"],
+      "candidate": [
+        "claude-opus-4.5",
+        "claude-opus-4.6",
+        "claude-opus-4.7",
+        "claude-opus-4.8",
+        "claude-opus-5",
+        "claude-sonnet-4.6",
+        "claude-sonnet-5"
+      ],
       "provider": "Anthropic",
       "status": "ambiguous",
       "exclusion_reason": "Numbered product successors and deprecation replacement pointers are not an exchangeable class. Transitive closure of Opus/Sonnet lines is over-broad. No primary drop-in page for Sonnet 4.6 was fetched.",
@@ -353,7 +584,15 @@
       ]
     },
     {
-      "candidate": ["grok-4-fast", "grok-4.1-fast", "grok-4", "grok-4.20", "grok-4.3", "grok-4.5", "grok-4.6"],
+      "candidate": [
+        "grok-4-fast",
+        "grok-4.1-fast",
+        "grok-4",
+        "grok-4.20",
+        "grok-4.3",
+        "grok-4.5",
+        "grok-4.6"
+      ],
       "provider": "xAI",
       "status": "ambiguous",
       "exclusion_reason": "Fast versus flagship are different SKUs. Grok 4.1 Fast as successor of Grok 4 Fast was not confirmed from a fetched xAI primary page.",
@@ -400,7 +639,11 @@
       ]
     },
     {
-      "candidate": ["gpt-5-2025-08-07", "gpt-5-mini", "gpt-5-nano"],
+      "candidate": [
+        "gpt-5-2025-08-07",
+        "gpt-5-mini",
+        "gpt-5-nano"
+      ],
       "status": "rejected",
       "exclusion_reason": "API ships three sizes for cost/latency tradeoffs. Size variants are not one release. Illustrative example class is unreviewed and is not adopted.",
       "sources": [
@@ -415,7 +658,11 @@
       ]
     },
     {
-      "candidate": ["gpt-5.6-sol", "gpt-5.6-terra", "gpt-5.6-luna"],
+      "candidate": [
+        "gpt-5.6-sol",
+        "gpt-5.6-terra",
+        "gpt-5.6-luna"
+      ],
       "status": "rejected",
       "exclusion_reason": "Named capability tiers / SKUs of one generation. Names plus shared generation number are insufficient. No OpenAI primary page was fetched.",
       "sources": [
@@ -429,7 +676,11 @@
       ]
     },
     {
-      "candidate": ["deepseek-v4-flash-0731", "deepseek-v4-pro-0424", "deepseek-v4-pro-0813"],
+      "candidate": [
+        "deepseek-v4-flash-0731",
+        "deepseek-v4-pro-0424",
+        "deepseek-v4-pro-0813"
+      ],
       "status": "rejected",
       "exclusion_reason": "Flash versus Pro are different parameter scales (284B/13B vs 1.6T/49B). Only the Pro preview/official pair is a relationship-supported candidate, separately, with config unresolved.",
       "sources": [
@@ -444,7 +695,11 @@
       ]
     },
     {
-      "candidate": ["kimi-k2", "kimi-k2.5", "kimi-k3"],
+      "candidate": [
+        "kimi-k2",
+        "kimi-k2.5",
+        "kimi-k3"
+      ],
       "status": "rejected",
       "exclusion_reason": "K2.5 is introduced as a new multimodal agentic model, not a checkpoint of K2.",
       "sources": [
