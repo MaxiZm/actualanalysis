@@ -434,6 +434,84 @@ describe("versioned external benchmark overlay", () => {
     expect(data.results.filter((row) => row.displayOnly)).toHaveLength(1);
   });
 
+  it("preserves observation version when present and allows unspecified n_items / repeats in definition", () => {
+    const file = DisplayBenchmarkFileSchema.parse({
+      redistributable: false,
+      warning: "Display only",
+      benchmarks: [
+        {
+          id: "aa-briefcase",
+          name: "AA-Briefcase",
+          version: "index-v4.3",
+          scoring: "Combined Elo",
+          methodology_url:
+            "https://artificialanalysis.ai/methodology/intelligence-benchmarking",
+          harness_url: "https://github.com/ArtificialAnalysis/Stirrup",
+          grader_version: "3-judge panel",
+          score_unit: "elo",
+        },
+      ],
+      observations: [
+        {
+          ...baseObservation,
+          benchmark_id: "aa-briefcase",
+          version: "index-v4.2",
+          score: 1665,
+          score_unit: "elo",
+        },
+      ],
+    });
+    const data = withDisplayBenchmarks(FIXTURE_SITE_DATA, file);
+    expect(data.models[0]?.externalEvaluations?.[0]?.version).toBe("index-v4.2");
+  });
+
+  it("activates v4.3 cost workload and explicitly displays AA 4.3 while leaving older models as null", () => {
+    const file = DisplayCostFileSchema.parse({
+      redistributable: false,
+      warning: "Display only",
+      active_workload: "aa-intelligence-index-v4.3",
+      metric: {
+        id: "aa-cost-per-task",
+        name: "AA cost per task",
+        version: "4.3",
+        definition: "Task cost definition",
+        methodology_url:
+          "https://artificialanalysis.ai/methodology/intelligence-benchmarking",
+        suite: ["AA-Briefcase (15%)", "CritPt (10%)"],
+      },
+      observations: [
+        {
+          model_id: model.id,
+          provider: "First party",
+          usd_per_task: 1.25,
+          configuration: "Model A (max)",
+          workload: "aa-intelligence-index-v4.3",
+          observed_on: "2026-09-09",
+          source_url: "https://artificialanalysis.ai/models/model-a",
+          redistributable: false,
+        },
+        {
+          model_id: FIXTURE_SITE_DATA.models[1]!.id,
+          provider: "First party",
+          usd_per_task: 0.85,
+          configuration: "Model B",
+          workload: "aa-intelligence-index-v4.2",
+          observed_on: "2026-09-04",
+          source_url: "https://artificialanalysis.ai/models/model-b",
+          redistributable: false,
+        },
+      ],
+    });
+    const data = withDisplayCost(FIXTURE_SITE_DATA, file);
+    expect(data.models[0]?.costPerTask?.usdPerTask).toBe(1.25);
+    expect(data.models[0]?.costPerTask?.workload).toBe(
+      "aa-intelligence-index-v4.3",
+    );
+    expect(data.models[0]?.costPerTask?.version).toBe("4.3");
+    expect(data.models[1]?.costPerTask).toBeFalsy();
+    expect(costPerTaskSuiteLabel(data.models)).toBe("AA 4.3");
+  });
+
   it("failsofts a missing or malformed private file without mutating site data", () => {
     expect(parseDisplayBenchmarkFile(undefined)).toBeNull();
     expect(parseDisplayBenchmarkFile({ redistributable: false })).toBeNull();
@@ -443,3 +521,4 @@ describe("versioned external benchmark overlay", () => {
     expect(absent.models[0]?.externalEvaluations).toBeUndefined();
   });
 });
+
