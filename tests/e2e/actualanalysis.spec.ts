@@ -19,7 +19,7 @@ test.describe("ActualAnalysis public experience", () => {
       ).toHaveCount(1);
     }
     await expect(
-      page.getByRole("columnheader", { name: "AA 4.2 $/task", exact: true }),
+      page.getByRole("columnheader", { name: "AA 4.3 $/task", exact: true }),
     ).toBeVisible();
     await page.goto("/compare");
     await page
@@ -28,18 +28,18 @@ test.describe("ActualAnalysis public experience", () => {
       .click();
     await expect(
       page.getByRole("combobox", { name: "Runtime metric" }),
-    ).toHaveText("AA 4.2 cost per task · USD");
+    ).toHaveText("AA 4.3 cost per task · USD");
     if (existsSync(path.resolve("data/manual/cost-aa.yaml"))) {
       await expect(
         page.getByRole("img", {
-          name: "Mixed vs AA 4.2 cost per task",
+          name: "Mixed vs AA 4.3 cost per task",
           exact: true,
         }),
       ).toBeVisible();
       const costCell = page
         .getByRole("table", { name: "Model pricing and runtime" })
         .locator("tbody tr")
-        .filter({ hasText: "Claude Fable 5.1" });
+        .filter({ hasText: "GPT-5.5" });
       await expect(
         costCell.locator('a[href*="artificialanalysis.ai/models/"]').first(),
       ).toHaveText(/^\$/);
