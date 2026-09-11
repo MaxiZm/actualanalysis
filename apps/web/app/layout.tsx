@@ -81,6 +81,11 @@ export default async function RootLayout({
             <aside className="fixture-banner">
               <strong>Fixture data.</strong> {data.status.disclaimer}
             </aside>
+          ) : data.status.isExperimental || !data.status.published ? (
+            <aside className="fixture-banner" role="status" aria-label="Exploratory preview notice">
+              <strong>Exploratory preview (ACI {data.status.methodVersion ?? "1.5.0"}).</strong>{" "}
+              {data.status.disclaimer}
+            </aside>
           ) : null}
           <main className="site-main" id="main-content" tabIndex={-1}>
             {children}

@@ -274,6 +274,7 @@ export interface DataStatus {
   label: string;
   snapshotDate: string | null;
   published: boolean;
+  isExperimental?: boolean;
   methodVersion: string | null;
   disclaimer: string;
 }

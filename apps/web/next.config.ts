@@ -8,6 +8,7 @@ const projectDirectory =
   process.env.ACTUALANALYSIS_PROJECT_DIR ?? path.resolve(appDirectory, "../..");
 const exporting = process.env.NEXT_PUBLIC_STATIC_EXPORT === "1";
 const nextConfig: NextConfig = {
+  distDir: process.env.NEXT_DIST_DIR ?? ".next",
   ...(exporting
     ? { output: "export", trailingSlash: true, images: { unoptimized: true } }
     : {}),

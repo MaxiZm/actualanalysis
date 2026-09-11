@@ -938,13 +938,22 @@ export function mapCommittedSnapshot(raw: unknown, snapshotDate: string): Publis
     return [{ modelSlug, kind: run.kind, runId, createdAt, score: row.score }];
   });
 
+  const rawRecord = snapshot as Record<string, unknown>;
+  const isExperimental = Boolean(
+    rawRecord.is_experimental ||
+    rawRecord.isExperimental
+  );
+
   const status: DataStatus = {
     mode: "snapshot",
-    label: "Published snapshot",
+    label: isExperimental ? "Exploratory preview" : "Published snapshot",
     snapshotDate,
-    published: true,
+    published: !isExperimental,
+    isExperimental,
     methodVersion: selectedRuns.mixed ? runMethodVersion(selectedRuns.mixed) : null,
-    disclaimer: `Validated ${snapshotDate} snapshot. Source licensing is preserved per row; non-redistributable evidence is display-only. Speed data is excluded.`,
+    disclaimer: typeof rawRecord.notice === "string"
+      ? rawRecord.notice
+      : `Validated ${snapshotDate} snapshot. Source licensing is preserved per row; non-redistributable evidence is display-only. Speed data is excluded.`,
   };
 
   return {
